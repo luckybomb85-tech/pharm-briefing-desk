@@ -4,81 +4,80 @@
   "status": "published",
   "domestic": [
     {
-      "tag": "주목",
+      "tag": "기술수출·도입",
       "title": "한미약품, 제넨텍서 벨바라페닙 권리 반환…계약금 8000만달러 반환 없어",
-      "summary": "2016년 제넨텍에 기술이전한 벨바라페닙(HM95573)의 계약 해지·권리 반환 통보. 해지는 12월 27일 효력 발생하며 한미는 국내 흑색종 2상을 진행 중이다.",
+      "summary": "2016년 제넨텍에 기술이전한 벨바라페닙(HM95573)의 계약 해지·권리 반환 통보. 해지는 12월 27일 효력 발생하며 한미는 국내 흑색종 2상을 진행 중이다. 권리 반환 이후 한미약품이 자체 개발을 이어갈 수 있다는 점이 핵심이다. 반환 자체와 국내 임상 지속을 분리해 후속 개발 전략과 경쟁 약물 진행 상황을 함께 볼 필요가 있다.",
       "source": "https://www.yna.co.kr/view/AKR20260929183000017"
     },
     {
-      "tag": "주목",
+      "tag": "M&A",
       "title": "아리바이오홀딩스, 아리바이오 흡수합병 철회",
-      "summary": "2024년 8월부터 추진한 합병을 9월 29일 이사회에서 철회. 반복된 증권신고서 정정요구와 주가가 주식매수청구가격을 밑돌아 대량 매수청구 가능성이 커진 점이 배경이다.",
+      "summary": "2024년 8월부터 추진한 합병을 9월 29일 이사회에서 철회. 반복된 증권신고서 정정요구와 주가가 주식매수청구가격을 밑돌아 대량 매수청구 가능성이 커진 점이 배경이다. 합병을 장기간 추진한 뒤 철회한 사안으로 지배구조·자금조달 계획에도 영향을 줄 수 있다. 향후 독자 경영과 자금 계획이 어떻게 조정되는지가 후속 확인 포인트다.",
       "source": "https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=703702"
     },
     {
-      "tag": "주목",
+      "tag": "경영·재무",
       "title": "셀트리온, 1000억원 자사주 추가 매입…올해 누적 4000억원",
-      "summary": "56만853주를 9월 30일부터 12월 29일까지 장내 매수. 회사는 내년 정기주총에서 소각과 배당 확대 효과를 비교해 환원 방안을 결정할 계획이다.",
+      "summary": "56만853주를 9월 30일부터 12월 29일까지 장내 매수. 회사는 내년 정기주총에서 소각과 배당 확대 효과를 비교해 환원 방안을 결정할 계획이다. 이번 추가 매입으로 올해 자사주 매입 규모가 누적 4000억원으로 늘어난다. 향후 소각과 배당 확대 중 어떤 주주환원 방식을 택할지가 다음 관전 지점이다.",
       "source": "https://celltrion.com/ko-kr/company/media-center/press-release/4933"
     },
     {
-      "tag": "주목",
+      "tag": "정책·규제",
       "title": "이오플로우, 2024년 감사의견 상폐 사유 해소…거래정지는 지속",
-      "summary": "2024사업연도 재감사의견이 적정으로 바뀌었지만 2025사업연도 의견거절과 자본전액잠식 관련 절차가 남아 거래정지는 계속된다.",
+      "summary": "2024사업연도 재감사의견이 적정으로 바뀌었지만 2025사업연도 의견거절과 자본전액잠식 관련 절차가 남아 거래정지는 계속된다. 감사의견 관련 일부 상장폐지 사유는 해소됐지만 거래 재개로 곧바로 이어지는 것은 아니다. 남아 있는 2025사업연도 의견거절과 자본잠식 관련 절차를 별도로 확인해야 한다.",
       "source": "https://dartbrief.com/disclosures/20260929901027"
     },
     {
-      "tag": "분석",
+      "tag": "경영·재무",
       "title": "테라젠이텍스, 자기주식 46만9056주 소각 결정",
-      "summary": "기취득 자기주식 46만9056주를 10월 8일 소각할 예정. 예정금액은 약 18억원이다.",
+      "summary": "기취득 자기주식 46만9056주를 10월 8일 소각할 예정. 예정금액은 약 18억원이다. 소각은 이미 취득한 자기주식을 대상으로 하며 예정일은 10월 8일이다. 발행주식 수 감소에 따른 주주가치 제고 효과와 회사의 추가 자사주 정책을 함께 볼 사안이다.",
       "source": "https://www.awakeplus.co.kr/data/view/20260929900297"
     }
   ],
   "global": [
     {
-      "tag": "주목",
+      "tag": "임상 3상",
       "title": "릴리 레타트루타이드 3상, 당뇨·비만 환자 체중 20.8% 감소",
-      "summary": "TRIUMPH-2에서 12mg 투여군은 80주 평균 20.8% 체중 감소, HbA1c 최대 평균 1.6%p 감소를 보였다.",
+      "summary": "TRIUMPH-2에서 12mg 투여군은 80주 평균 20.8% 체중 감소, HbA1c 최대 평균 1.6%p 감소를 보였다. 비만과 제2형 당뇨를 함께 가진 환자군에서 나온 후기 임상 결과라는 점에서 상업적 의미가 크다. 용량별 효능과 이상반응, 경쟁 GLP-1 계열과의 비교가 후속 기사 핵심이다.",
       "source": "https://investor.lilly.com/node/54981"
     },
     {
-      "tag": "주목",
+      "tag": "기술수출·도입",
       "title": "노보노디스크, 헝루이 주1회 경구 GLP-1/GIP 후보 최대 26억달러 도입",
-      "summary": "HRS-1596의 중화권 제외 글로벌 권리를 확보. 계약금 3억달러와 개발·허가·상업화 마일스톤을 포함해 최대 26억달러 규모다.",
+      "summary": "HRS-1596의 중화권 제외 글로벌 권리를 확보. 계약금 3억달러와 개발·허가·상업화 마일스톤을 포함해 최대 26억달러 규모다. 중국을 제외한 글로벌 권리를 노보노디스크가 가져가는 구조다. 주 1회 경구제라는 투약 편의성과 GLP-1/GIP 이중작용 기전이 기존 비만 치료제 경쟁 구도에서 차별화 포인트다.",
       "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=917052"
     },
     {
-      "tag": "주목",
+      "tag": "허가·승인",
       "title": "AZ·HUTCHMED, 오파시스+타그리소 미국 NDA 제출",
-      "summary": "MET 과발현·증폭 EGFR 변이 비소세포폐암에서 사볼리티닙+오시머티닙 병용 허가를 신청. 글로벌 SAFFRON 3상이 근거다.",
+      "summary": "MET 과발현·증폭 EGFR 변이 비소세포폐암에서 사볼리티닙+오시머티닙 병용 허가를 신청. 글로벌 SAFFRON 3상이 근거다. EGFR 변이 환자 중 MET 과발현·증폭이라는 내성 환자군을 겨냥한 병용 전략이다. FDA 심사 진행과 SAFFRON 3상 세부 결과가 향후 허가 가능성을 가를 핵심이다.",
       "source": "https://www.sec.gov/Archives/edgar/data/1648257/"
     },
     {
-      "tag": "주목",
+      "tag": "임상 1/2상",
       "title": "유니큐어 AMT-130 48개월 데이터…질병 진행 둔화 수치 약화",
-      "summary": "고용량군 cUHDRS 기준 질병 진행 둔화가 44%로 나타났으나 통계적 유의성에 도달하지 못했다. 회사는 TFC에서 61% 둔화를 제시했다.",
+      "summary": "고용량군 cUHDRS 기준 질병 진행 둔화가 44%로 나타났으나 통계적 유의성에 도달하지 못했다. 회사는 TFC에서 61% 둔화를 제시했다. 36개월 분석보다 cUHDRS 둔화 폭이 낮아졌고 통계적 유의성에도 도달하지 못했다는 점이 변화다. 반면 TFC에서는 기능 저하 둔화 신호가 유지돼 규제 판단에서 지표별 해석이 중요해졌다.",
       "source": "https://www.uniqure.com/investors-media"
     },
     {
-      "tag": "주목",
+      "tag": "임상 3상",
       "title": "Invivyd VYD2311 코로나 예방 3상, 안전성·내약성 평가변수 충족",
-      "summary": "LIBERTY 3상에서 VYD2311이 mRNA 백신 대비 안전성·내약성의 1·2차 평가변수를 충족했다고 발표. 회사는 DECLARATION과 함께 가속승인 BLA 근거로 활용할 계획이다.",
+      "summary": "LIBERTY 3상에서 VYD2311이 mRNA 백신 대비 안전성·내약성의 1·2차 평가변수를 충족했다고 발표. 회사는 DECLARATION과 함께 가속승인 BLA 근거로 활용할 계획이다. 회사는 LIBERTY 결과와 다른 임상 자료를 묶어 BLA 전략에 활용할 계획이다. 실제 허가 경로와 예방효과 데이터가 뒤따르는지가 기사 가치의 핵심이다.",
       "source": "https://www.globenewswire.com/news-release/2026/09/29/3370682/0/en/invivyd-announces-positive-topline-results-from-liberty-phase-3-study-demonstrating-vyd2311-safety-and-tolerability-superior-to-mrna-based-covid-19-vaccine-announces-regulatory-sub.html"
     },
     {
-      "tag": "분석",
+      "tag": "임상 2상",
       "title": "Zealand 페트렐린타이드 2상 추가 데이터…글로벌 3상 프로그램 개시",
-      "summary": "ZUPREME-1에서 두 자릿수 체중 감소와 위장관 내약성 결과를 제시했고, 만성 체중관리 적응증 글로벌 3상 등록 프로그램을 시작했다.",
+      "summary": "ZUPREME-1에서 두 자릿수 체중 감소와 위장관 내약성 결과를 제시했고, 만성 체중관리 적응증 글로벌 3상 등록 프로그램을 시작했다. 2상 추가 결과 공개와 동시에 글로벌 3상 단계로 넘어갔다는 점이 핵심이다. 아밀린 계열 비만 치료제로서 체중 감소 폭뿐 아니라 위장관 내약성과 GLP-1 계열 대비 차별성이 관전 포인트다.",
       "source": "https://www.globenewswire.com/news-release/2026/09/29/3371443/0/en/zealand-pharma-to-present-additional-data-from-phase-2-zupreme-1-trial-for-petrelintide-at-easd-2026-and-announces-publication-of-trial-results-in-the-lancet-diabetes-endocrinology.html"
     }
   ],
   "patent": [
     {
-      "tag": "주목",
+      "tag": "특허·소송",
       "title": "바이엘 mRNA 특허소송 계속…화이자·바이오엔텍·모더나 기각신청 배척",
-      "summary": "델라웨어 연방법원이 초기 단계에서 미국 특허 7,741,118의 무효·비침해를 인정해 달라는 피고 측 주장을 받아들이지 않았다. 사건번호는 Moderna 1:26-cv-00012, Pfizer/BioNTech 1:26-cv-00013이다.",
+      "summary": "델라웨어 연방법원이 초기 단계에서 미국 특허 7,741,118의 무효·비침해를 인정해 달라는 피고 측 주장을 받아들이지 않았다. 사건번호는 Moderna 1:26-cv-00012, Pfizer/BioNTech 1:26-cv-00013이다. 초기 기각 신청이 받아들여지지 않아 본안에서 침해·유효성 다툼이 계속된다. 코로나19 mRNA 백신 기술의 권리 범위를 둘러싼 소송이라는 점에서 향후 청구항 해석과 무효 주장 진행을 추적할 필요가 있다.",
       "source": "https://www.reuters.com/legal/legalindustry/pfizer-moderna-lose-bids-escape-bayer-us-mrna-patent-lawsuit-2026-09-28/"
     }
-  ],
-  "telegram_test_retry": "2026-09-30"
+  ]
 }
