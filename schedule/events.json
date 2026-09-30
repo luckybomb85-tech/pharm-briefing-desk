@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "updated_at": "2026-09-30T19:00:00+09:00",
+  "timezone": "Asia/Seoul",
+  "events": [],
+  "tracked_cases": [],
+  "notes": "Shared schedule database. Automated collectors and approved shared entries update this file. Unknown time/place/case number stays blank rather than guessed."
+}
