@@ -27,7 +27,15 @@ jobs:
           token=os.environ['TELEGRAM_BOT_TOKEN']
           chat=os.environ.get('TELEGRAM_CHAT_ID')
           if not chat:
-              raise SystemExit('TELEGRAM_CHAT_ID secret required for health alert')
+              req=urllib.request.Request(f'https://api.telegram.org/bot{token}/getUpdates')
+              with urllib.request.urlopen(req,timeout=20) as r:
+                  updates=json.load(r).get('result',[])
+              for u in reversed(updates):
+                  m=u.get('message') or u.get('channel_post')
+                  if m and m.get('chat',{}).get('id'):
+                      chat=str(m['chat']['id']); break
+          if not chat:
+              raise SystemExit('No Telegram chat found for health alert')
           day=datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d')
           payload=json.dumps({'chat_id':chat,'text':f'⚠️ 제약바이오 브리핑 배포 점검 실패 ({day})\n08:00 기준 오늘자 10/10/5 파일이 없거나 검증에 실패했습니다. 자동 복구 상태를 확인하세요.'}).encode()
           req=urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage',data=payload,headers={'Content-Type':'application/json'})
