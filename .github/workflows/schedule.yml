@@ -1,0 +1,36 @@
+name: update-reporting-schedule
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '50 21 * * 0-4'
+    - cron: '30 7 * * 1-5'
+permissions:
+  contents: write
+concurrency:
+  group: reporting-schedule
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect and merge future reporting events
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-6.1-sol
+        run: python scripts/update_schedule.py
+      - name: Commit schedule if changed
+        run: |
+          git config user.name "pharm-briefing-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add schedule/events.json
+          if git diff --cached --quiet; then
+            echo "No schedule changes"
+            exit 0
+          fi
+          git commit -m "[no-telegram] Update reporting schedule"
+          git push
