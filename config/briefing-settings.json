@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "updated_at": "2026-09-30",
+  "priority_sources": {
+    "domestic": [
+      "dart.fss.or.kr",
+      "kind.krx.co.kr",
+      "mfds.go.kr",
+      "mohw.go.kr",
+      "hira.or.kr",
+      "scourt.go.kr",
+      "patent.scourt.go.kr",
+      "kipris.or.kr"
+    ],
+    "global": [
+      "fda.gov",
+      "ema.europa.eu",
+      "clinicaltrials.gov",
+      "sec.gov",
+      "reuters.com",
+      "statnews.com",
+      "fiercebiotech.com"
+    ],
+    "patent": [
+      "kipris.or.kr",
+      "patent.scourt.go.kr",
+      "scourt.go.kr",
+      "uspto.gov",
+      "ptab.uspto.gov"
+    ]
+  },
+  "notes": "Production source priorities for the daily briefing. The publisher should read this file before research."
+}
