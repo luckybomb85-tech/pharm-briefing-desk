@@ -29,5 +29,37 @@
       "ptab.uspto.gov"
     ]
   },
-  "notes": "Production source priorities for the daily briefing. The publisher should read this file before research."
+  "notes": "Production source priorities for the daily briefing. The publisher should read this file before research.",
+  "target_counts": {
+    "domestic": 10,
+    "global": 10,
+    "patent": 5
+  },
+  "article_tags": [
+    "R&D",
+    "임상 1상",
+    "임상 2상",
+    "임상 3상",
+    "허가·승인",
+    "약가·급여",
+    "정책·규제",
+    "실적",
+    "M&A",
+    "기술수출·도입",
+    "특허·소송",
+    "경영·재무"
+  ],
+  "global_scope": {
+    "direct_korean_company_activity": "domestic",
+    "indirect_korean_company_partner_or_subsidiary": "글로벌·국내기업",
+    "foreign_company": "글로벌·해외"
+  },
+  "summary_rule": "원문·상세 펼침용 요약은 모바일 기준 약 5줄, 3~5문장. 핵심 사실·수치·이전 대비 변화·기사 가치까지 포함하되 추정 금지.",
+  "ui_tabs": [
+    "domestic",
+    "global",
+    "patent"
+  ],
+  "briefing_time": "07:30",
+  "publish_time": "07:40"
 }
