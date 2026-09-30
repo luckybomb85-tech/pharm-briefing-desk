@@ -1,0 +1,41 @@
+name: briefing-healthcheck
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 23 * * 0-4'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Verify today's 10-10-5 briefing
+        id: verify
+        continue-on-error: true
+        run: python scripts/validate_briefing.py --mode today
+      - name: Alert Telegram on failure
+        if: steps.verify.outcome == 'failure'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          token=os.environ['TELEGRAM_BOT_TOKEN']
+          chat=os.environ.get('TELEGRAM_CHAT_ID')
+          if not chat:
+              raise SystemExit('TELEGRAM_CHAT_ID secret required for health alert')
+          day=datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d')
+          payload=json.dumps({'chat_id':chat,'text':f'⚠️ 제약바이오 브리핑 배포 점검 실패 ({day})\n08:00 기준 오늘자 10/10/5 파일이 없거나 검증에 실패했습니다. 자동 복구 상태를 확인하세요.'}).encode()
+          req=urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage',data=payload,headers={'Content-Type':'application/json'})
+          with urllib.request.urlopen(req,timeout=20) as r:
+              out=json.load(r)
+          if not out.get('ok'): raise SystemExit(out)
+          print('health alert sent')
+          PY
+      - name: Fail workflow if invalid
+        if: steps.verify.outcome == 'failure'
+        run: exit 1
