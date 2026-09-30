@@ -37,7 +37,7 @@ main{padding:18px 28px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);ma
 <div class="settingsContent">
 <div class="sPane active" data-pane="brief"><h2>브리핑</h2>
 <h3>최대 기사 수</h3><div class="countGrid"><label>국내<input id="nDomestic" type="number" min="1" max="20" value="10"></label><label>글로벌<input id="nGlobal" type="number" min="1" max="20" value="10"></label><label>특허<input id="nPatent" type="number" min="1" max="10" value="5"></label></div>
-<details class="compactDetails"><summary>우선 검색 사이트</summary><label>국내</label><textarea id="sDomestic"></textarea><label>글로벌</label><textarea id="sGlobal"></textarea><label>특허</label><textarea id="sPatent"></textarea></details>
+<details class="compactDetails" open><summary>우선 검색 사이트</summary><p style="font-size:11px;color:#687789;line-height:1.55;margin:7px 0 10px">한 줄에 한 사이트씩 입력하세요. 추가·삭제 후 저장하면 다음 자동 브리핑부터 실제 검색 우선순위에 반영됩니다. 등록 사이트의 제약바이오 <b>단독·Exclusive</b> 기사는 우선 후보로 검토합니다.</p><label>국내</label><textarea id="sDomestic" placeholder="예: hitnews.co.kr"></textarea><label>글로벌</label><textarea id="sGlobal" placeholder="예: reuters.com"></textarea><label>특허</label><textarea id="sPatent" placeholder="예: kipris.or.kr"></textarea></details>
 <details class="compactDetails"><summary>고급 설정</summary><label>브리핑 수집 원칙</label><textarea id="briefPrinciples"></textarea></details>
 <h3>수집 판단 학습</h3><div id="feedbackStats" class="stats"></div><div id="feedbackRules"></div></div>
 <div class="sPane" data-pane="writing"><h2>기사작성</h2><label>공통 원칙</label><textarea id="wCommon"></textarea><label>바로 기사화</label><textarea id="wQuick"></textarea><label>심층 기사화</label><textarea id="wDiff"></textarea></div>
