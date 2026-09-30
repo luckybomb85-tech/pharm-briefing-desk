@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updated_at": "2026-09-30",
   "priority_sources": {
     "domestic": [
@@ -58,7 +58,8 @@
   "ui_tabs": [
     "domestic",
     "global",
-    "patent"
+    "patent",
+    "schedule"
   ],
   "briefing_time": "07:30",
   "publish_time": "07:40",
@@ -101,5 +102,62 @@
     "telegram_id_management": true,
     "usage_history": true
   },
-  "custom_tab_rule": "탭 추가·삭제·이름 변경 가능. 새 탭은 메뉴에 먼저 추가되며 자동 수집은 분야·우선기업·제외조건·출처·기사 수·중요도 규칙을 연결한 뒤 적용."
+  "custom_tab_rule": "탭 추가·삭제·이름 변경 가능. 새 탭은 메뉴에 먼저 추가되며 자동 수집은 분야·우선기업·제외조건·출처·기사 수·중요도 규칙을 연결한 뒤 적용.",
+  "schedule_settings": {
+    "enabled": true,
+    "label": "일정·행사",
+    "collect_times": [
+      "06:50",
+      "16:30"
+    ],
+    "horizons": {
+      "news_and_press_release_days_back": 90,
+      "future_days": 180
+    },
+    "categories": [
+      "기자간담회",
+      "정부·위원회",
+      "법원·소송",
+      "특허·심판",
+      "학회·세미나",
+      "IR·주총",
+      "허가·규제",
+      "제품출시",
+      "기타"
+    ],
+    "confidence_levels": [
+      "공식확정",
+      "주최측확인",
+      "보도예정",
+      "미확정"
+    ],
+    "priority_sources": [
+      "mohw.go.kr",
+      "mfds.go.kr",
+      "hira.or.kr",
+      "nhis.or.kr",
+      "khidi.or.kr",
+      "scourt.go.kr",
+      "patent.scourt.go.kr",
+      "kipris.or.kr",
+      "kipo.go.kr",
+      "dart.fss.or.kr",
+      "kind.krx.co.kr",
+      "assembly.go.kr",
+      "clinicaltrials.gov",
+      "fda.gov",
+      "ema.europa.eu"
+    ],
+    "extraction_rules": [
+      "기사·보도자료·공시·기관 일정에서 미래 날짜·시간·장소·행사명을 추출",
+      "한 달 전 또는 수개월 전 공개된 일정도 행사일까지 누적 보존",
+      "시간·장소·사건번호를 모르면 빈 값 또는 미정으로 저장하고 추정 금지",
+      "같은 일정은 중복 생성하지 말고 새 정보로 기존 레코드를 보완",
+      "법원 사건은 법원·사건번호·당사자 등 확인 가능한 식별정보를 함께 보존하고 기일 변경을 추적",
+      "허가 예상일은 공식기관 또는 회사가 명시한 경우에만 일정화하고 자체 계산으로 확정일을 만들지 않음"
+    ],
+    "tracked_cases": [],
+    "manual_shared_db": "schedule/events.json",
+    "manual_entry_status": "UI 제공. 안전한 서버 쓰기 연결 전에는 기기 임시저장 후 공유 반영 요청으로 구분"
+  }
 }
