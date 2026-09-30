@@ -7,31 +7,81 @@
       "tag": "기술수출·도입",
       "title": "한미약품, 제넨텍서 벨바라페닙 권리 반환…계약금 8000만달러 반환 없어",
       "summary": "2016년 제넨텍에 기술이전한 벨바라페닙(HM95573)의 계약 해지·권리 반환 통보. 해지는 12월 27일 효력 발생하며 한미는 국내 흑색종 2상을 진행 중이다. 권리 반환 이후 한미약품이 자체 개발을 이어갈 수 있다는 점이 핵심이다. 반환 자체와 국내 임상 지속을 분리해 후속 개발 전략과 경쟁 약물 진행 상황을 함께 볼 필요가 있다.",
-      "source": "https://www.yna.co.kr/view/AKR20260929183000017"
+      "source": "https://www.yna.co.kr/view/AKR20260929183000017",
+      "article_preview": {
+        "quick": {
+          "title": "한미약품, 반환받은 벨바라페닙 개발 계속…국내 2상 승부수",
+          "lead": "제넨텍이 벨바라페닙 권리를 돌려주기로 했지만 한미약품은 개발을 멈추지 않는다. 한미는 국내 흑색종 2상을 이어가며 반환 신약의 자체 개발 가능성을 다시 시험한다."
+        },
+        "diff": {
+          "title": "권리 반환에도 벨바라페닙 놓지 않는 한미…계속 개발하는 이유",
+          "direction": "벨바라페닙을 단순 '권리 반환' 기사로 끝내지 않고 NRAS 변이 흑색종의 미충족 수요, 경쟁약 개발 단계, 한미의 과거 반환 신약 재개발 사례를 묶어 '왜 개발을 계속하는가'를 분석한다."
+        }
+      }
     },
     {
       "tag": "M&A",
       "title": "아리바이오홀딩스, 아리바이오 흡수합병 철회",
       "summary": "2024년 8월부터 추진한 합병을 9월 29일 이사회에서 철회. 반복된 증권신고서 정정요구와 주가가 주식매수청구가격을 밑돌아 대량 매수청구 가능성이 커진 점이 배경이다. 합병을 장기간 추진한 뒤 철회한 사안으로 지배구조·자금조달 계획에도 영향을 줄 수 있다. 향후 독자 경영과 자금 계획이 어떻게 조정되는지가 후속 확인 포인트다.",
-      "source": "https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=703702"
+      "source": "https://www.digitaltoday.co.kr/disclosure/articleView.html?idxno=703702",
+      "article_preview": {
+        "quick": {
+          "title": "아리바이오 합병 결국 철회…주가 하락·매수청구 부담에 제동",
+          "lead": "1년 넘게 추진되던 아리바이오홀딩스와 아리바이오의 합병이 중단됐다. 반복된 증권신고서 정정과 주가 하락으로 주식매수청구 부담이 커지면서 회사가 합병 계획을 접었다."
+        },
+        "diff": {
+          "title": "1년 끈 아리바이오 합병 무산…상장·자금조달 전략 다시 짜나",
+          "direction": "합병 철회의 직접 원인뿐 아니라 상장·자금조달·지배구조 전략이 어떻게 다시 짜일지 추적한다. 합병 추진 당시 계획과 현재 재무·주가 조건을 비교해 철회 이후 선택지를 짚는다."
+        }
+      }
     },
     {
       "tag": "경영·재무",
       "title": "셀트리온, 1000억원 자사주 추가 매입…올해 누적 4000억원",
       "summary": "56만853주를 9월 30일부터 12월 29일까지 장내 매수. 회사는 내년 정기주총에서 소각과 배당 확대 효과를 비교해 환원 방안을 결정할 계획이다. 이번 추가 매입으로 올해 자사주 매입 규모가 누적 4000억원으로 늘어난다. 향후 소각과 배당 확대 중 어떤 주주환원 방식을 택할지가 다음 관전 지점이다.",
-      "source": "https://celltrion.com/ko-kr/company/media-center/press-release/4933"
+      "source": "https://celltrion.com/ko-kr/company/media-center/press-release/4933",
+      "article_preview": {
+        "quick": {
+          "title": "셀트리온 자사주 매입 올해 4000억…다음 카드는 소각·배당",
+          "lead": "셀트리온이 1000억원 규모의 자사주를 추가로 사들이며 올해 매입 규모를 4000억원으로 늘린다. 회사는 내년 정기주총을 앞두고 소각과 배당 확대 효과를 비교해 추가 주주환원 방안을 정할 계획이다."
+        },
+        "diff": {
+          "title": "자사주 4000억 사들인 셀트리온…소각이냐 배당이냐",
+          "direction": "올해 네 차례 자사주 매입 규모와 실제 소각 이력을 정리하고, 소각과 배당 중 어느 방식이 주주환원 효과가 큰지 비교한다. 회사의 현금흐름과 투자계획까지 함께 봐 지속 가능성을 점검한다."
+        }
+      }
     },
     {
       "tag": "정책·규제",
       "title": "이오플로우, 2024년 감사의견 상폐 사유 해소…거래정지는 지속",
       "summary": "2024사업연도 재감사의견이 적정으로 바뀌었지만 2025사업연도 의견거절과 자본전액잠식 관련 절차가 남아 거래정지는 계속된다. 감사의견 관련 일부 상장폐지 사유는 해소됐지만 거래 재개로 곧바로 이어지는 것은 아니다. 남아 있는 2025사업연도 의견거절과 자본잠식 관련 절차를 별도로 확인해야 한다.",
-      "source": "https://dartbrief.com/disclosures/20260929901027"
+      "source": "https://dartbrief.com/disclosures/20260929901027",
+      "article_preview": {
+        "quick": {
+          "title": "이오플로우 2024년 감사의견 '적정'…거래재개까지 남은 산은",
+          "lead": "이오플로우가 2024사업연도 재감사에서 적정 의견을 받아 관련 상장폐지 사유를 해소했다. 그러나 2025사업연도 의견거절과 자본전액잠식 문제가 남아 주식 거래정지는 계속된다."
+        },
+        "diff": {
+          "title": "상폐 사유 하나 지운 이오플로우…거래재개까지 남은 절차",
+          "direction": "'상폐 사유 해소'가 곧 거래재개를 뜻하지 않는 이유를 중심으로 남은 심사 절차와 재무 요건을 단계별로 정리한다. 2024년과 2025년 감사의견 차이, 자본잠식 상태를 함께 비교한다."
+        }
+      }
     },
     {
       "tag": "경영·재무",
       "title": "테라젠이텍스, 자기주식 46만9056주 소각 결정",
       "summary": "기취득 자기주식 46만9056주를 10월 8일 소각할 예정. 예정금액은 약 18억원이다. 소각은 이미 취득한 자기주식을 대상으로 하며 예정일은 10월 8일이다. 발행주식 수 감소에 따른 주주가치 제고 효과와 회사의 추가 자사주 정책을 함께 볼 사안이다.",
-      "source": "https://www.awakeplus.co.kr/data/view/20260929900297"
+      "source": "https://www.awakeplus.co.kr/data/view/20260929900297",
+      "article_preview": {
+        "quick": {
+          "title": "테라젠이텍스, 자사주 46만주 소각…18억원 규모 주주환원",
+          "lead": "테라젠이텍스가 보유 중인 자기주식 46만9056주를 소각한다. 약 18억원 규모로, 소각 예정일은 10월 8일이다."
+        },
+        "diff": {
+          "title": "18억 자사주 소각 테라젠이텍스…주주환원 효과 따져보니",
+          "direction": "이번 소각이 전체 발행주식에서 차지하는 비중과 과거 자사주 취득·소각 이력을 확인해 실질적인 주주가치 제고 효과를 계산한다. 추가 환원 여력도 재무상태와 함께 살핀다."
+        }
+      }
     },
     {
       "tag": "허가·승인",
@@ -39,7 +89,17 @@
       "summary": "한국다이이찌산쿄의 FLT3-ITD 변이 급성골수성백혈병 치료제 반플리타(퀴자티닙)가 삼성서울병원·서울대병원·서울성모병원·서울아산병원·세브란스병원 등 빅5를 포함해 전국 15개 병원 약사위원회를 통과했다. 3상 QuANTUM-First 연구에서 생존 개선 근거를 확보한 약제로, 허가 이후 실제 종합병원 처방 기반이 넓어지고 있다는 점이 핵심이다. 향후 급여와 병원별 처방 확산 속도가 국내 시장 안착을 가를 변수다.",
       "source": "https://new.dailypharm.com/user/news/342911",
       "source_name": "데일리팜",
-      "published_at": "9. 30. 오전 06:00"
+      "published_at": "9. 30. 오전 06:00",
+      "article_preview": {
+        "quick": {
+          "title": "반플리타 빅5 병원 뚫었다…전국 15곳 처방 기반 확보",
+          "lead": "FLT3-ITD 변이 급성골수성백혈병 치료제 반플리타가 국내 빅5 병원을 포함한 15개 병원 약사위원회를 통과했다. 허가 이후 실제 처방으로 이어질 병원 기반이 빠르게 넓어지는 모습이다."
+        },
+        "diff": {
+          "title": "빅5 진입한 반플리타…AML 처방시장 안착 변수는 급여",
+          "direction": "허가 이후 약사위원회 통과 병원이 늘어난 속도를 추적하고 기존 AML 치료 옵션과 경쟁 구도를 비교한다. 급여 조건과 병원별 처방 개시 시점이 실제 시장 침투에 미치는 영향을 짚는다."
+        }
+      }
     },
     {
       "tag": "M&A",
@@ -47,7 +107,17 @@
       "summary": "2013년 지주사와 사업회사로 분리됐던 동아쏘시오홀딩스와 동아제약이 10월 1일 다시 한 회사로 합쳐진다. 동아제약의 영업 현금창출은 2024년 626억원에서 2025년 1024억원으로 늘었다. 재통합 뒤에는 이 현금이 배당을 거치지 않고 통합법인에 직접 귀속돼 신사업과 그룹 투자에 활용될 수 있다. 그룹 경영 효율화 방식이 분리에서 통합으로 바뀐다는 점이 핵심이다.",
       "source": "https://www.dailypharm.com/user/news/342914",
       "source_name": "데일리팜",
-      "published_at": "9. 30. 오전 06:00"
+      "published_at": "9. 30. 오전 06:00",
+      "article_preview": {
+        "quick": {
+          "title": "동아쏘시오홀딩스·동아제약 다시 한몸…13년 분리경영 마침표",
+          "lead": "2013년 지주사와 사업회사로 갈라졌던 동아쏘시오홀딩스와 동아제약이 10월 1일 다시 합쳐진다. 13년 만의 재통합으로 동아제약의 현금창출력이 통합법인의 투자 재원으로 직접 연결된다."
+        },
+        "diff": {
+          "title": "13년 만에 되돌린 동아 지배구조…분리보다 통합 택한 이유",
+          "direction": "왜 13년 전에는 분리했고 지금은 다시 합치는지 지배구조 변화와 현금흐름을 중심으로 분석한다. 동아제약 영업현금 증가가 신사업 투자와 그룹 자본배분에 어떤 변화를 줄지 숫자로 비교한다."
+        }
+      }
     },
     {
       "tag": "허가·승인",
@@ -55,7 +125,17 @@
       "summary": "지엘팜텍이 피타바스타틴 성분의 국내 첫 구강붕해정 '피타엘구강붕해정'을 10월 1일 출시한다. 2mg과 4mg 두 용량으로, 물 없이 입안에서 녹여 복용할 수 있도록 제형을 차별화했다. 회사는 기존 구강붕해정 제품에 이어 이상지질혈증 영역 제품군을 확대하고 있다. 후발 제품 경쟁에서 제형 차별화가 실제 처방과 약가 전략으로 이어질지가 관전 포인트다.",
       "source": "https://www.dailypharm.com/user/news/342927",
       "source_name": "데일리팜",
-      "published_at": "9. 30. 오전 09:09"
+      "published_at": "9. 30. 오전 09:09",
+      "article_preview": {
+        "quick": {
+          "title": "물 없이 먹는 피타바스타틴 나온다…지엘팜텍 첫 구강붕해정 출시",
+          "lead": "지엘팜텍이 국내 첫 피타바스타틴 구강붕해정을 10월 1일 내놓는다. 2mg과 4mg 두 용량으로, 물 없이 복용할 수 있는 제형 차별화를 앞세웠다."
+        },
+        "diff": {
+          "title": "첫 피타바 ODT 등장…제형 차별화가 처방 바꿀까",
+          "direction": "피타바스타틴 시장의 기존 제품·제네릭 약가와 처방 규모를 확인해 ODT가 실제 경쟁력이 있는지 분석한다. 복약 편의성이 처방 전환으로 이어진 유사 ODT 사례도 비교한다."
+        }
+      }
     },
     {
       "tag": "허가·승인",
@@ -63,7 +143,17 @@
       "summary": "한국아스텔라스제약의 아이저베이주가 국내 최초 건성 연령관련황반변성의 지도모양위축 진행 억제제로 허가된 가운데 대상 환자군이 '중심와 중심이 보존된 환자'로 제한된 배경이 공개됐다. 중앙약심은 임상시험에서 중심와 중심 침범 환자가 제외된 점을 반영했고 효능 표현도 '치료'가 아닌 '진행 억제'로 정리했다. 유익성·위해성 표결은 6대 2였으며 CNV 위험을 고려해 1년 이후 격월 투여와 RMP 보강이 반영됐다.",
       "source": "https://m.dailypharm.com/user/news/342933",
       "source_name": "데일리팜",
-      "published_at": "9. 30. 오후 12:00"
+      "published_at": "9. 30. 오후 12:00",
+      "article_preview": {
+        "quick": {
+          "title": "아이저베이 국내 허가 환자군 제한…'중심와 보존' 조건 붙은 이유",
+          "lead": "국내 첫 지도모양위축 진행 억제제 아이저베이의 허가 대상이 중심와 중심이 보존된 환자로 한정됐다. 중앙약심은 임상시험 대상과 CNV 위험을 고려해 환자군과 투여 방식에 조건을 붙였다."
+        },
+        "diff": {
+          "title": "국내 첫 GA 신약 아이저베이…허가 문턱서 환자군 좁아진 이유",
+          "direction": "해외 허가사항과 국내 조건을 비교해 왜 국내에서 환자군이 좁아졌는지 분석한다. 임상 포함·제외 기준, CNV 발생 위험, 1년 이후 격월 투여 결정이 실제 사용 환자 수에 미칠 영향을 짚는다."
+        }
+      }
     },
     {
       "tag": "약가·급여",
@@ -71,7 +161,17 @@
       "summary": "레테브모, 빌로이, 파드셉+키트루다 병용요법이 10월 1일부터 건강보험 급여를 적용받는다. 레테브모는 RET 변이 폐암·갑상선 수질암, 빌로이는 진행성·전이성 위암, 파드셉+키트루다는 요로상피암 1차 치료에 적용된다. 특히 서로 다른 제약사의 고가 신약인 파드셉과 키트루다 병용에 급여가 적용되는 첫 사례라는 점이 정책적으로 중요하다. 정부는 이를 계기로 신약 간 병용요법 급여 제도 개선을 이어갈 계획이다.",
       "source": "https://m.dailypharm.com/user/news/342944",
       "source_name": "데일리팜",
-      "published_at": "9. 30. 오후 12:00"
+      "published_at": "9. 30. 오후 12:00",
+      "article_preview": {
+        "quick": {
+          "title": "고가 신약 병용도 급여 문 열렸다…파드셉+키트루다 첫 사례",
+          "lead": "레테브모와 빌로이, 파드셉+키트루다 병용요법이 10월 1일부터 건강보험 적용을 받는다. 특히 서로 다른 회사의 고가 신약 두 제품을 함께 쓰는 병용요법이 급여권에 들어온 첫 사례가 나왔다."
+        },
+        "diff": {
+          "title": "파드셉+키트루다가 연 '신약 병용급여'…다음 수혜 조합은",
+          "direction": "파드셉+키트루다 사례를 중심으로 서로 다른 제약사 신약 병용에서 약가협상·재정분담이 어떻게 풀렸는지 취재한다. 향후 다른 고가 병용요법 급여 확대의 선례가 될 수 있는지 제도 변화와 연결한다."
+        }
+      }
     }
   ],
   "global": [
@@ -79,37 +179,97 @@
       "tag": "임상 3상",
       "title": "릴리 레타트루타이드 3상, 당뇨·비만 환자 체중 20.8% 감소",
       "summary": "TRIUMPH-2에서 12mg 투여군은 80주 평균 20.8% 체중 감소, HbA1c 최대 평균 1.6%p 감소를 보였다. 비만과 제2형 당뇨를 함께 가진 환자군에서 나온 후기 임상 결과라는 점에서 상업적 의미가 크다. 용량별 효능과 이상반응, 경쟁 GLP-1 계열과의 비교가 후속 기사 핵심이다.",
-      "source": "https://investor.lilly.com/node/54981"
+      "source": "https://investor.lilly.com/node/54981",
+      "article_preview": {
+        "quick": {
+          "title": "릴리 레타트루타이드 3상서 체중 20.8%↓…당뇨·비만 동시 공략",
+          "lead": "릴리의 레타트루타이드가 비만과 제2형 당뇨를 함께 가진 환자 대상 3상에서 80주 평균 최대 20.8%의 체중 감소를 기록했다. HbA1c도 최대 1.6%포인트 낮아졌다."
+        },
+        "diff": {
+          "title": "20% 벽 넘은 레타트루타이드…비만약 경쟁 판도 바꿀까",
+          "direction": "레타트루타이드의 용량별 체중·혈당 효과와 이상반응을 경쟁 GLP-1 계열 후기 임상과 같은 조건으로 비교한다. '삼중작용제'가 기존 비만약 대비 실제 어느 정도 우위를 보였는지가 핵심이다."
+        }
+      }
     },
     {
       "tag": "기술수출·도입",
       "title": "노보노디스크, 헝루이 주1회 경구 GLP-1/GIP 후보 최대 26억달러 도입",
       "summary": "HRS-1596의 중화권 제외 글로벌 권리를 확보. 계약금 3억달러와 개발·허가·상업화 마일스톤을 포함해 최대 26억달러 규모다. 중국을 제외한 글로벌 권리를 노보노디스크가 가져가는 구조다. 주 1회 경구제라는 투약 편의성과 GLP-1/GIP 이중작용 기전이 기존 비만 치료제 경쟁 구도에서 차별화 포인트다.",
-      "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=917052"
+      "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=917052",
+      "article_preview": {
+        "quick": {
+          "title": "노보, 주1회 먹는 비만약 베팅…헝루이 후보에 최대 26억달러",
+          "lead": "노보노디스크가 헝루이의 주 1회 경구 GLP-1/GIP 후보물질 글로벌 권리를 최대 26억달러에 확보했다. 계약금만 3억달러로, 차세대 경구 비만약 경쟁에 추가 승부수를 던졌다."
+        },
+        "diff": {
+          "title": "주사에서 '주1회 먹는 약'으로…노보 비만약 포트폴리오 확장",
+          "direction": "주 1회 경구 투여라는 차별점이 매일 먹는 경구제와 주사제 사이에서 어떤 위치를 차지할지 분석한다. 노보의 기존 비만 파이프라인과 경쟁사의 경구 후보를 함께 놓고 포트폴리오 전략을 비교한다."
+        }
+      }
     },
     {
       "tag": "허가·승인",
       "title": "AZ·HUTCHMED, 오파시스+타그리소 미국 NDA 제출",
       "summary": "MET 과발현·증폭 EGFR 변이 비소세포폐암에서 사볼리티닙+오시머티닙 병용 허가를 신청. 글로벌 SAFFRON 3상이 근거다. EGFR 변이 환자 중 MET 과발현·증폭이라는 내성 환자군을 겨냥한 병용 전략이다. FDA 심사 진행과 SAFFRON 3상 세부 결과가 향후 허가 가능성을 가를 핵심이다.",
-      "source": "https://www.sec.gov/Archives/edgar/data/1648257/"
+      "source": "https://www.sec.gov/Archives/edgar/data/1648257/",
+      "article_preview": {
+        "quick": {
+          "title": "AZ, 타그리소 내성 환자 병용요법 미국 허가 신청",
+          "lead": "아스트라제네카와 HUTCHMED가 MET 과발현·증폭 EGFR 변이 비소세포폐암 환자를 대상으로 사볼리티닙과 타그리소 병용요법의 미국 허가를 신청했다. 글로벌 3상 SAFFRON 결과가 신청 근거다."
+        },
+        "diff": {
+          "title": "타그리소 내성도 타그리소로 잡는다…AZ의 MET 병용 승부",
+          "direction": "타그리소 치료 후 MET 기반 내성이 생긴 환자에서 경쟁 중인 병용 전략들을 비교한다. SAFFRON의 환자군·효능 데이터를 경쟁 후보와 맞춰 AZ가 내성 시장을 얼마나 방어할 수 있을지 본다."
+        }
+      }
     },
     {
       "tag": "임상 1/2상",
       "title": "유니큐어 AMT-130 48개월 데이터…질병 진행 둔화 수치 약화",
       "summary": "고용량군 cUHDRS 기준 질병 진행 둔화가 44%로 나타났으나 통계적 유의성에 도달하지 못했다. 회사는 TFC에서 61% 둔화를 제시했다. 36개월 분석보다 cUHDRS 둔화 폭이 낮아졌고 통계적 유의성에도 도달하지 못했다는 점이 변화다. 반면 TFC에서는 기능 저하 둔화 신호가 유지돼 규제 판단에서 지표별 해석이 중요해졌다.",
-      "source": "https://www.uniqure.com/investors-media"
+      "source": "https://www.uniqure.com/investors-media",
+      "article_preview": {
+        "quick": {
+          "title": "유니큐어 헌팅턴병 유전자치료 48개월…진행둔화 44%, 유의성은 실패",
+          "lead": "유니큐어의 헌팅턴병 유전자치료제 AMT-130 고용량군이 48개월 분석에서 cUHDRS 기준 질병 진행을 44% 늦췄지만 통계적 유의성에는 도달하지 못했다. TFC에서는 61% 둔화가 제시됐다."
+        },
+        "diff": {
+          "title": "44% 둔화에도 웃지 못한 AMT-130…48개월 데이터가 남긴 숙제",
+          "direction": "36개월과 48개월 데이터를 같은 지표로 나란히 놓아 시간이 지나며 효과 신호가 어떻게 달라졌는지 분석한다. cUHDRS와 TFC가 엇갈리는 상황에서 규제기관이 어떤 지표를 중시할지가 핵심이다."
+        }
+      }
     },
     {
       "tag": "임상 3상",
       "title": "Invivyd VYD2311 코로나 예방 3상, 안전성·내약성 평가변수 충족",
       "summary": "LIBERTY 3상에서 VYD2311이 mRNA 백신 대비 안전성·내약성의 1·2차 평가변수를 충족했다고 발표. 회사는 DECLARATION과 함께 가속승인 BLA 근거로 활용할 계획이다. 회사는 LIBERTY 결과와 다른 임상 자료를 묶어 BLA 전략에 활용할 계획이다. 실제 허가 경로와 예방효과 데이터가 뒤따르는지가 기사 가치의 핵심이다.",
-      "source": "https://www.globenewswire.com/news-release/2026/09/29/3370682/0/en/invivyd-announces-positive-topline-results-from-liberty-phase-3-study-demonstrating-vyd2311-safety-and-tolerability-superior-to-mrna-based-covid-19-vaccine-announces-regulatory-sub.html"
+      "source": "https://www.globenewswire.com/news-release/2026/09/29/3370682/0/en/invivyd-announces-positive-topline-results-from-liberty-phase-3-study-demonstrating-vyd2311-safety-and-tolerability-superior-to-mrna-based-covid-19-vaccine-announces-regulatory-sub.html",
+      "article_preview": {
+        "quick": {
+          "title": "Invivyd 코로나 예방항체 3상 안전성 충족…BLA 전략 속도",
+          "lead": "Invivyd의 코로나19 예방항체 VYD2311이 LIBERTY 3상에서 mRNA 백신 대비 안전성·내약성 평가변수를 충족했다. 회사는 다른 임상 자료와 함께 BLA 제출 전략에 활용할 계획이다."
+        },
+        "diff": {
+          "title": "백신 아닌 예방항체 VYD2311…FDA 허가 퍼즐 얼마나 맞췄나",
+          "direction": "안전성 우위가 실제 예방효과와 허가 요건을 얼마나 뒷받침하는지 살핀다. DECLARATION 등 다른 임상 데이터와 FDA가 요구할 효능 근거를 연결해 가속승인 가능성을 따져본다."
+        }
+      }
     },
     {
       "tag": "임상 2상",
       "title": "Zealand 페트렐린타이드 2상 추가 데이터…글로벌 3상 프로그램 개시",
       "summary": "ZUPREME-1에서 두 자릿수 체중 감소와 위장관 내약성 결과를 제시했고, 만성 체중관리 적응증 글로벌 3상 등록 프로그램을 시작했다. 2상 추가 결과 공개와 동시에 글로벌 3상 단계로 넘어갔다는 점이 핵심이다. 아밀린 계열 비만 치료제로서 체중 감소 폭뿐 아니라 위장관 내약성과 GLP-1 계열 대비 차별성이 관전 포인트다.",
-      "source": "https://www.globenewswire.com/news-release/2026/09/29/3371443/0/en/zealand-pharma-to-present-additional-data-from-phase-2-zupreme-1-trial-for-petrelintide-at-easd-2026-and-announces-publication-of-trial-results-in-the-lancet-diabetes-endocrinology.html"
+      "source": "https://www.globenewswire.com/news-release/2026/09/29/3371443/0/en/zealand-pharma-to-present-additional-data-from-phase-2-zupreme-1-trial-for-petrelintide-at-easd-2026-and-announces-publication-of-trial-results-in-the-lancet-diabetes-endocrinology.html",
+      "article_preview": {
+        "quick": {
+          "title": "Zealand 페트렐린타이드 2상 추가 공개…비만 3상 본격 진입",
+          "lead": "Zealand Pharma가 아밀린 계열 비만 후보 페트렐린타이드의 ZUPREME-1 추가 데이터를 공개하고 글로벌 3상 프로그램을 시작했다. 두 자릿수 체중 감소와 위장관 내약성을 차별점으로 내세웠다."
+        },
+        "diff": {
+          "title": "GLP-1 틈 노리는 아밀린…페트렐린타이드 3상의 승부처",
+          "direction": "GLP-1 계열과 다른 아밀린 기전이 효능보다 내약성에서 차별화될 수 있는지 수치로 비교한다. 단독요법과 향후 병용 가능성까지 포함해 비만 시장에서의 자리매김을 분석한다."
+        }
+      }
     },
     {
       "tag": "M&A",
@@ -117,7 +277,17 @@
       "summary": "아스트라제네카가 서밋 테라퓨틱스에 20억달러 규모의 전략적 지분 투자를 결정하고 PD-1/VEGF 이중항체 아이보네시맙과 자사 항암제의 병용 개발을 확대한다. 우선 CLDN18.2 ADC 소네시타툭 베도틴과 위장관암에서 병용 임상을 진행한다. 양사는 각자의 약물 권리를 유지하면서 추가 ADC와 항암제 조합도 검토한다. PD-1/VEGF 계열 경쟁에 아스트라제네카가 대규모 자본과 파이프라인을 결합해 진입한다는 의미가 있다.",
       "source": "https://news.cision.com/astrazeneca/r/astrazeneca-announces-equity-investment-in-summit%2Cc4401887",
       "source_name": "AstraZeneca",
-      "published_at": "9. 29. 오후 03:00"
+      "published_at": "9. 29. 오후 03:00",
+      "article_preview": {
+        "quick": {
+          "title": "AZ, 서밋에 20억달러 투자…아이보네시맙 병용개발 손잡았다",
+          "lead": "아스트라제네카가 서밋 테라퓨틱스에 20억달러를 투자하고 PD-1/VEGF 이중항체 아이보네시맙과 자사 항암제의 병용 개발에 나선다. 첫 조합은 CLDN18.2 ADC 소네시타툭 베도틴이다."
+        },
+        "diff": {
+          "title": "20억달러로 아이보네시맙 올라탄 AZ…PD-1/VEGF 경쟁 재편",
+          "direction": "아이보네시맙을 둘러싼 글로벌 제약사의 협력·경쟁 구도를 정리하고 AZ가 지분투자 방식을 택한 이유를 분석한다. PD-1/VEGF와 ADC 결합이 키트루다 중심 시장에 어떤 위협이 될지도 짚는다."
+        }
+      }
     },
     {
       "tag": "허가·승인",
@@ -125,7 +295,17 @@
       "summary": "FDA가 면역관문억제제와 백금화학요법 이후 진행한 비편평 비소세포폐암에서 플리나불린+도세탁셀 병용에 패스트트랙을 부여했다. 해당 환자군은 글로벌 3상 DUBLIN-4의 대상이며 전체 계획 환자는 약 442명이다. 회사는 중국 자회사 지분 거래를 통해 중국 임상 비용을 외부에서 조달하고 글로벌 권리는 중화권 밖에서 유지한다. 다음 핵심 이정표는 221건의 PFS 이벤트 시점에 예정된 중간분석이다.",
       "source": "https://www.globenewswire.com/news-release/2026/09/29/3370683/0/en/beyondspring-announces-fda-fast-track-designation-for-plinabulin-in-post-ici-non-squamous-nsclc-and-strategic-transaction-to-advance-global-phase-3-dublin-4-trial-toward-planned-in.html",
       "source_name": "BeyondSpring",
-      "published_at": "9. 29. 오후 08:01"
+      "published_at": "9. 29. 오후 08:01",
+      "article_preview": {
+        "quick": {
+          "title": "플리나불린+도세탁셀 FDA 패스트트랙…폐암 3상 중간분석 주목",
+          "lead": "FDA가 면역관문억제제와 백금화학요법 이후 진행한 비편평 비소세포폐암에서 플리나불린+도세탁셀 병용에 패스트트랙을 부여했다. 글로벌 3상 DUBLIN-4는 약 442명을 대상으로 진행된다."
+        },
+        "diff": {
+          "title": "다시 속도 내는 플리나불린…DUBLIN-4 중간분석이 분수령",
+          "direction": "과거 플리나불린 개발 경과와 이번 적응증 전략을 연결해 패스트트랙의 의미를 짚는다. 예정된 221건 PFS 이벤트 중간분석이 개발 지속 여부를 가를 핵심 변곡점인지 분석한다."
+        }
+      }
     },
     {
       "tag": "임상 2상",
@@ -133,7 +313,17 @@
       "summary": "뉴암스테르담파마가 전임상 알츠하이머병 환자를 대상으로 한 SPINOZA 2b상에서 첫 참가자 투약을 시작했다. 바이오마커상 초기 알츠하이머 병리가 있지만 뚜렷한 기억·기능 증상이 없는 성인을 대상으로 오비세트라핍 10mg과 위약을 52주 비교한다. p-tau217 등 혈액 바이오마커와 인지·기능 지표 변화를 평가한다. 기존 심혈관 후보물질의 알츠하이머 영역 확장 가능성을 검증하는 시험이라는 점이 핵심이다.",
       "source": "https://www.globenewswire.com/news-release/2026/09/29/3370754/0/en/newamsterdam-pharma-doses-first-participant-in-phase-2b-spinoza-trial-evaluating-obicetrapib-in-preclinical-alzheimer-s-disease.html",
       "source_name": "NewAmsterdam Pharma",
-      "published_at": "9. 29. 오후 09:00"
+      "published_at": "9. 29. 오후 09:00",
+      "article_preview": {
+        "quick": {
+          "title": "콜레스테롤약 오비세트라핍, 알츠하이머 2b상 첫 환자 투약",
+          "lead": "뉴암스테르담파마가 전임상 알츠하이머병 환자 대상 SPINOZA 2b상에서 오비세트라핍 첫 투약을 시작했다. 52주 동안 p-tau217 등 바이오마커와 인지·기능 변화를 평가한다."
+        },
+        "diff": {
+          "title": "콜레스테롤약이 알츠하이머로…오비세트라핍 적응증 확장 근거는",
+          "direction": "심혈관 후보물질이 알츠하이머로 확장된 생물학적 근거와 선행 데이터를 검토한다. p-tau217 변화가 실제 인지기능 개선으로 이어질 수 있는지 시험 설계를 중심으로 가능성과 한계를 짚는다."
+        }
+      }
     },
     {
       "tag": "임상 1상",
@@ -141,7 +331,17 @@
       "summary": "텍토닉 테라퓨틱은 유전성 출혈성 모세혈관확장증 후보 TX2100의 건강인 1a상 단회 증량 결과에서 전 용량군이 대체로 안전하고 내약성이 양호했다고 밝혔다. 사망·중대한 이상반응·중증 치료유발 이상반응은 보고되지 않았다. FDA는 TX2100에 패스트트랙을 부여하고 환자 대상 1b상 IND도 허용했다. 회사는 2026년 말 1b상, 2027년 초 중등도~중증 HHT 2상을 병행 시작할 계획이다.",
       "source": "https://www.globenewswire.com/news-release/2026/09/29/3370759/0/en/tectonic-therapeutic-announces-favorable-phase-1-safety-tolerability-and-pk-results-for-tx2100-a-novel-approach-for-the-treatment-of-hereditary-hemorrhagic-telangiectasia-hht.html",
       "source_name": "Tectonic Therapeutic",
-      "published_at": "9. 29. 오후 09:00"
+      "published_at": "9. 29. 오후 09:00",
+      "article_preview": {
+        "quick": {
+          "title": "텍토닉 TX2100 1a상 안전성 확인…HHT 환자 임상 연내 진입",
+          "lead": "텍토닉 테라퓨틱이 HHT 후보물질 TX2100의 건강인 1a상에서 양호한 안전성과 내약성을 확인했다. 회사는 연말 환자 대상 1b상에 이어 2027년 초 2상 진입을 계획하고 있다."
+        },
+        "diff": {
+          "title": "치료옵션 적은 HHT 겨냥 TX2100…환자 임상서 확인할 것은",
+          "direction": "HHT의 기존 치료 공백과 TX2100의 기전을 먼저 설명하고, 건강인 안전성 데이터가 환자 효능으로 이어질 수 있는지를 다음 임상 설계와 함께 분석한다. 패스트트랙이 개발 일정에 주는 실질적 효과도 본다."
+        }
+      }
     }
   ],
   "patent": [
@@ -149,7 +349,17 @@
       "tag": "특허·소송",
       "title": "바이엘 mRNA 특허소송 계속…화이자·바이오엔텍·모더나 기각신청 배척",
       "summary": "델라웨어 연방법원이 초기 단계에서 미국 특허 7,741,118의 무효·비침해를 인정해 달라는 피고 측 주장을 받아들이지 않았다. 사건번호는 Moderna 1:26-cv-00012, Pfizer/BioNTech 1:26-cv-00013이다. 초기 기각 신청이 받아들여지지 않아 본안에서 침해·유효성 다툼이 계속된다. 코로나19 mRNA 백신 기술의 권리 범위를 둘러싼 소송이라는 점에서 향후 청구항 해석과 무효 주장 진행을 추적할 필요가 있다.",
-      "source": "https://www.reuters.com/legal/legalindustry/pfizer-moderna-lose-bids-escape-bayer-us-mrna-patent-lawsuit-2026-09-28/"
+      "source": "https://www.reuters.com/legal/legalindustry/pfizer-moderna-lose-bids-escape-bayer-us-mrna-patent-lawsuit-2026-09-28/",
+      "article_preview": {
+        "quick": {
+          "title": "바이엘 mRNA 특허소송 본안 간다…화이자·모더나 기각 실패",
+          "lead": "화이자·바이오엔텍과 모더나가 바이엘의 mRNA 특허소송을 초기에 끝내려 했지만 미국 법원이 받아들이지 않았다. 이에 미국 특허 7,741,118의 침해와 유효성을 둘러싼 다툼은 본안에서 계속된다."
+        },
+        "diff": {
+          "title": "코로나 백신 mRNA 특허전 장기화…바이엘 '118 특허' 쟁점은",
+          "direction": "단순 기각 결정 전달을 넘어 미국 특허 7,741,118의 핵심 청구항과 바이엘이 코로나19 백신에 이를 어떻게 연결하는지 살핀다. 화이자·바이오엔텍과 모더나의 무효·비침해 논리, 향후 청구항 해석 절차까지 정리해 소송의 실질적 위험을 분석한다."
+        }
+      }
     }
   ],
   "target_counts": {
