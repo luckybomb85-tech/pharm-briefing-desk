@@ -6,6 +6,7 @@ on:
       - 'data/*.json'
 jobs:
   telegram:
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[no-telegram]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
