@@ -77,6 +77,7 @@
       "브리핑 설정",
       "기사작성 설정",
       "탭 관리",
+      "일정·행사 설정",
       "좋아요·싫어요 분석 현황",
       "버전업 이력",
       "비밀번호 관리",
@@ -159,5 +160,11 @@
     "tracked_cases": [],
     "manual_shared_db": "schedule/events.json",
     "manual_entry_status": "공용 DB 직접쓰기 준비중. Supabase 인증형 저장소 연결 후 웹에서 즉시 공동등록·수정·삭제."
+  },
+  "shared_schedule_backend": {
+    "provider": "supabase",
+    "enabled": false,
+    "auth": "dailypharm.com 이메일 인증 사용자만 읽기·등록·수정·삭제",
+    "status": "connection_required"
   }
 }
