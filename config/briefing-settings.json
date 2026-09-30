@@ -107,7 +107,7 @@
     "enabled": true,
     "label": "일정·행사",
     "collect_times": [
-      "06:50",
+      "07:40",
       "16:30"
     ],
     "horizons": {
@@ -158,6 +158,6 @@
     ],
     "tracked_cases": [],
     "manual_shared_db": "schedule/events.json",
-    "manual_entry_status": "UI 제공. 안전한 서버 쓰기 연결 전에는 기기 임시저장 후 공유 반영 요청으로 구분"
+    "manual_entry_status": "공용 DB 직접쓰기 준비중. Supabase 인증형 저장소 연결 후 웹에서 즉시 공동등록·수정·삭제."
   }
 }
