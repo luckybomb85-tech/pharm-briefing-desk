@@ -1,6 +1,9 @@
 name: publish-briefing
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'data/*.json'
 jobs:
   telegram:
     runs-on: ubuntu-latest
