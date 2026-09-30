@@ -61,5 +61,45 @@
     "patent"
   ],
   "briefing_time": "07:30",
-  "publish_time": "07:40"
+  "publish_time": "07:40",
+  "article_actions": {
+    "detail_label": "내용 보기",
+    "quick_label": "바로 기사화",
+    "deep_label": "심층 기사화",
+    "preview": "바로 기사화/심층 기사화별 제목 1개와 리드 1~2문장"
+  },
+  "admin_settings": {
+    "gate": "관리자 비밀번호 확인 후에만 설정 진입",
+    "first_password": "최초 1회 8자 이상 생성",
+    "password_change": "변경 즉시 현재 관리자 세션 종료",
+    "tabs": [
+      "브리핑 설정",
+      "기사작성 설정",
+      "탭 관리",
+      "좋아요·싫어요 분석 현황",
+      "버전업 이력",
+      "비밀번호 관리",
+      "회원 관리"
+    ]
+  },
+  "member_management_plan": {
+    "status": "준비중",
+    "approval_required": true,
+    "revoke_anytime": true,
+    "favorite_companies_max": 10,
+    "keywords_max": 5,
+    "permissions": [
+      "브리핑 열람",
+      "바로 기사화",
+      "심층 기사화"
+    ],
+    "token_example": {
+      "브리핑": 1,
+      "바로 기사화": 1,
+      "심층 기사화": 3
+    },
+    "telegram_id_management": true,
+    "usage_history": true
+  },
+  "custom_tab_rule": "탭 추가·삭제·이름 변경 가능. 새 탭은 메뉴에 먼저 추가되며 자동 수집은 분야·우선기업·제외조건·출처·기사 수·중요도 규칙을 연결한 뒤 적용."
 }
