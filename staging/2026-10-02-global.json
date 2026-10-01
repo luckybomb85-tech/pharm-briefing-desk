@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-02",
+  "generated_at": "2026-10-02T06:47:15+09:00",
+  "count": 15,
+  "shortfall_reason": "직전 24시간을 엄격 적용하고 단순 홍보·인사·행사·중복을 제외한 결과 20건 미달. 추가검색 후에도 검증 가능한 고가치 신규 사건이 부족해 저가치 항목으로 채우지 않음.",
+  "items": [
+    {
+      "tag": "라이선스/R&D",
+      "title": "사노피-리제네론, 면역질환 4개 프로그램 최대 80억달러 공동개발",
+      "source": "https://www.reuters.com/legal/litigation/sanofi-pay-regeneron-1-billion-upfront-expanded-immunology-deal-2026-10-01/",
+      "source_name": "Reuters",
+      "published_at": "2026-10-01",
+      "facts": "10억달러 선급+최대 70억달러 마일스톤, 4개 항체 프로그램, 비용·이익 50:50.",
+      "primary_source": "Sanofi/Regeneron",
+      "verification_source": "Reuters; Fierce Biotech",
+      "story_angle": "듀피젠트 특허만료 앞둔 후속 성장축 확보."
+    },
+    {
+      "tag": "바이오시밀러",
+      "title": "삼성바이오에피스-테바, 최대 6개 바이오시밀러 글로벌 협력",
+      "source": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/Samsung-Bioepis-and-Teva-Expand-Strategic-Partnership-to-Advance-Up-to-Six-Potential-Biosimilar-Candidates/default.aspx",
+      "source_name": "Teva IR",
+      "published_at": "2026-10-01T04:30:00-04:00",
+      "facts": "SB41(파센라), SB44(일라리스)+4개 옵션. 미국·유럽·캐나다.",
+      "primary_source": "Teva/Samsung Bioepis",
+      "verification_source": "American Pharmaceutical Review",
+      "story_angle": "국내 기업 글로벌 바이오시밀러 포트폴리오 확장."
+    },
+    {
+      "tag": "임상3상",
+      "title": "서보두타이드 3상, 당뇨 동반 비만서 최대 13.1% 체중감량",
+      "source": "https://www.globenewswire.com/news-release/2026/10/01/3372565/0/en/zealand-pharma-announces-boehringer-ingelheim-s-survodutide-achieves-up-to-13-1-weight-loss-in-new-phase-iii-trial-alongside-significant-improvements-in-glycemic-control-in-people-.html",
+      "source_name": "Zealand Pharma",
+      "published_at": "2026-10-01T03:30:00-04:00",
+      "facts": "SYNCHRONIZE-2 755명, 76주 13.1% vs 3.1%; HbA1c 최대 -1.21%p.",
+      "primary_source": "Zealand/Boehringer",
+      "verification_source": "Fierce Biotech; NEJM",
+      "story_angle": "효능 충족에도 GI 이상반응·중단률 경쟁력 변수."
+    },
+    {
+      "tag": "안전성/3상",
+      "title": "BMS 폐섬유증 3상서 간손상 관련 사망 사례 공개",
+      "source": "https://www.fiercebiotech.com/biotech/patient-death-bms-pulmonary-fibrosis-trial-raises-questions-analysts-unshaken",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-01T10:22:00-04:00",
+      "facts": "ALOFT 유럽 프로토콜에 급성 간손상 동반 다장기부전 사망 등 간독성. DMC는 지속 권고.",
+      "primary_source": "ALOFT protocol/BMS",
+      "verification_source": "Fierce Biotech",
+      "story_angle": "3상 판독 전 안전성 변수."
+    },
+    {
+      "tag": "임상중단",
+      "title": "포그혼, 릴리 협업 항암제 중단 후 인력 40% 감축",
+      "source": "https://www.fiercebiotech.com/ai-and-machine-learning/foghorn-lays-40-employees-lilly-collab-collapses-over-poor-data",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-01T08:36:00-04:00",
+      "facts": "SMARCA2/4 프로그램 1상 효능 부족. 2021년 선급 3억달러+지분 8천만달러 협업.",
+      "primary_source": "Foghorn",
+      "verification_source": "Fierce Biotech",
+      "story_angle": "대형 초기 딜의 임상 실패 리스크."
+    },
+    {
+      "tag": "임상2a",
+      "title": "아고맙 온투니서팁 장기연장…협착 관련 사건 연 3%",
+      "source": "https://www.globenewswire.com/news-release/2026/10/01/3372696/0/en/agomab-reports-positive-topline-data-from-stenova-open-label-extension-study-of-ontunisertib-in-fibrostenosing-crohn-s-disease.html",
+      "source_name": "Agomab",
+      "published_at": "2026-10-01T06:30:00-04:00",
+      "facts": "최대 60주, FSCD 사건률 3%, 풍선확장 1건·수술 0건. 2b 추진.",
+      "primary_source": "Agomab",
+      "verification_source": "GlobeNewswire",
+      "story_angle": "섬유협착성 크론병 항섬유화 신호."
+    },
+    {
+      "tag": "규제/RNA편집",
+      "title": "웨이브 WVE-006, FDA와 단일 2년 등록임상 경로 합의",
+      "source": "https://6ix.com/news/wave-life-sciences-announces-fda-feedback-supports-registrational-pathway-for-wve-006-rna-editing-in-aatd",
+      "source_name": "Wave release mirror",
+      "published_at": "2026-10-01T11:30:00Z",
+      "facts": "AATD RNA editing. 2년 등록임상, 1년 중간분석 바이오마커 기반 가속승인 가능.",
+      "primary_source": "Wave Life Sciences",
+      "verification_source": "NCT06405633",
+      "story_angle": "RNA 편집 첫 등록전략 구체화."
+    },
+    {
+      "tag": "임상1상",
+      "title": "몬테로사 MRT-8102 1상서 NEK7 분해·염증 바이오마커 정상화",
+      "source": "https://rss.globenewswire.com/news-release/2026/10/01/3372740/0/en/monte-rosa-therapeutics-announces-positive-results-for-mrt-8102-in-gforce-1-phase-1-study-showing-normalization-of-key-pathogenic-drivers-of-ascvd-in-subjects-with-elevated-cvd-ris.html",
+      "source_name": "Monte Rosa",
+      "published_at": "2026-10-01T07:00:00-04:00",
+      "facts": "5/20/40mg NEK7 지속 분해, IL-1β 등 감소, SAE 증가 없음. CAD·통풍·HS 2상 계획.",
+      "primary_source": "Monte Rosa",
+      "verification_source": "GlobeNewswire",
+      "story_angle": "분자접착제의 심혈관·염증 확장."
+    },
+    {
+      "tag": "임상등록/3상",
+      "title": "OKYO, 신경병성 각막통증 우르코시모드 3상 등록",
+      "source": "https://www.trialticker.com/news/okyo-pharma-new-study-nct07838506",
+      "source_name": "ClinicalTrials.gov",
+      "published_at": "2026-10-01",
+      "facts": "NCT07838506, 미국 111명, 무작위 이중눈가림, 12주.",
+      "primary_source": "NCT07838506",
+      "verification_source": "Trialticker",
+      "story_angle": "희귀 안과 통증 3상 진입."
+    },
+    {
+      "tag": "임상등록/3상",
+      "title": "BeOne, 재발 간세포암 BGB-B2033 3상 492명 계획",
+      "source": "https://www.trialticker.com/news/beone-medicines-new-study-nct07836530",
+      "source_name": "ClinicalTrials.gov",
+      "published_at": "2026-10-01",
+      "facts": "NCT07836530, BGB-B2033 vs sorafenib/lenvatinib, 492명.",
+      "primary_source": "NCT07836530",
+      "verification_source": "Trialticker",
+      "story_angle": "간암 후기임상 확대."
+    },
+    {
+      "tag": "임상등록/2상",
+      "title": "Redx, 크론병 협착 RXC008 2상 ROCKETEER 등록",
+      "source": "https://www.trialticker.com/news/redx-pharma-new-study-nct07832435",
+      "source_name": "ClinicalTrials.gov",
+      "published_at": "2026-10-01",
+      "facts": "NCT07832435, 180명, 경구 RXC008 위약대조.",
+      "primary_source": "NCT07832435",
+      "verification_source": "Trialticker",
+      "story_angle": "크론병 협착 항섬유화 경쟁."
+    },
+    {
+      "tag": "R&D정책/AI",
+      "title": "미 HHS·ARPA-H, AI 임상시험 가속 프로그램 추진",
+      "source": "https://www.statnews.com/2026/09/30/hhs-arpa-h-clinical-trials-artificial-intelligence-surpass-program/",
+      "source_name": "STAT",
+      "published_at": "2026-09-30",
+      "facts": "AI로 임상시험 속도와 참여 접근성을 높이는 연방 프로그램.",
+      "primary_source": "HHS/ARPA-H",
+      "verification_source": "STAT",
+      "story_angle": "미국 임상 경쟁력 강화와 국내 CRO 시사점."
+    },
+    {
+      "tag": "투자/3상",
+      "title": "TriGemX Bio 9400만달러 조달…편두통 3상 집중",
+      "source": "https://www.fiercebiotech.com/biotech/fierce-biotech-fundraising-tracker-26",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-01",
+      "facts": "Kallyope→TriGemX 사명변경, 9400만달러 조달, elismetrep 3상.",
+      "primary_source": "TriGemX",
+      "verification_source": "Fierce Biotech",
+      "story_angle": "후기임상 중심 VC 조달."
+    },
+    {
+      "tag": "임상1상/종양",
+      "title": "ViroMissile IDOV-2 1상 첫 코호트 통과",
+      "source": "https://www.biospace.com/press-releases/viromissile-completes-first-dose-cohort-of-phase-i-trial-of-intravenously-dosed-idov-2-safety-review-committee-clears-advancement-to-next-cohort",
+      "source_name": "ViroMissile",
+      "published_at": "2026-10-01",
+      "facts": "NCT06910657 첫 코호트 후 SRC 상위 용량 승인.",
+      "primary_source": "ViroMissile",
+      "verification_source": "NCT06910657",
+      "story_angle": "정맥투여 종양용해바이러스 초기 진전."
+    },
+    {
+      "tag": "R&D전략",
+      "title": "제넨텍, AI 협업·후기 파이프라인 중심 미래 전략 공개",
+      "source": "https://www.fiercebiotech.com/biotech/none-changing-genentechs-magargee-next-50-years-original-biotech-company",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-01T08:00:00-04:00",
+      "facts": "CEO가 AI 협업, R&D 속도, 캠퍼스 재편, 후기 파이프라인을 미래축으로 제시.",
+      "primary_source": "Genentech CEO interview",
+      "verification_source": "Fierce Biotech",
+      "story_angle": "빅바이오텍 AI R&D 운영모델 변화."
+    }
+  ]
+}
