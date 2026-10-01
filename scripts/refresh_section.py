@@ -1,4 +1,5 @@
-import json, os, sys, urllib.parse, urllib.request, re, html\nimport xml.etree.ElementTree as ET
+import json, os, sys, urllib.parse, urllib.request, re, html
+import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
