@@ -1,8 +1,9 @@
 import json, os, sys, urllib.parse, urllib.request, re, html
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from email.utils import parsedate_to_datetime
 
 SUPABASE_URL="https://mqkhtnryxyntrrfrfing.supabase.co"
 SUPABASE_KEY="sb_publishable_GLp72jjAPgHWqUEpqtnw5Q_rY3lfcB8"
@@ -97,6 +98,7 @@ def search_candidates(section, settings):
         market="ko-KR"
     rows=[]
     for q in queries:
+        q=q+(' when:3d' if section=='patent' else ' when:1d')
         enc=urllib.parse.quote(q)
         urls=[
           f"https://www.bing.com/news/search?q={enc}&format=rss&mkt={market}",
@@ -160,8 +162,20 @@ def candidate_score(x,section,priority):
     if section=="patent" and any(k in t for k in ["판결","소송","침해","무효","심판","우선판매","patent","lawsuit","ptab"]): score += 3
     return score
 
+def candidate_day(x):
+    raw=urllib.parse.unquote(str(x.get("source","")))
+    m=re.search(r"(20\\d{2})[-_/]?(0[1-9]|1[0-2])[-_/]?([0-3]\\d)",raw)
+    if m:
+        try: return datetime(int(m.group(1)),int(m.group(2)),int(m.group(3))).date()
+        except Exception: pass
+    try: return parsedate_to_datetime(str(x.get("published_at",""))).date()
+    except Exception: return None
+
 def fallback_refresh(day, section, request_at, settings, base, live):
     candidates=search_candidates(section,settings)
+    target=datetime.strptime(day,"%Y-%m-%d").date()
+    oldest=target-timedelta(days=2 if section=="patent" else 0)
+    candidates=[x for x in candidates if candidate_day(x) is not None and oldest <= candidate_day(x) <= target]
     known=[x.get("title","") for x in base.get(section,[])]+[x.get("title","") for x in live.get("items",[])]
     priority=settings.get("priority_sources",{}).get(section,[]) or []
     ranked=[]
