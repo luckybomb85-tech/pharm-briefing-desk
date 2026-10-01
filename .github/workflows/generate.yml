@@ -1,15 +1,19 @@
 name: generate-daily-briefing
 on:
   workflow_dispatch:
+  schedule:
+    # 07:20 KST, Monday-Friday (GitHub Actions cron uses UTC)
+    - cron: '20 22 * * 0-4'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: daily-briefing-generation
   cancel-in-progress: false
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,7 +25,17 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-6.1-sol
-        run: python scripts/generate_briefing.py
+        run: |
+          set +e
+          python scripts/generate_briefing.py
+          rc=$?
+          if [ $rc -ne 0 ]; then
+            echo "First generation attempt failed; retrying once after 60 seconds"
+            sleep 60
+            python scripts/generate_briefing.py
+            rc=$?
+          fi
+          exit $rc
       - name: Hard validate 10-10-5
         run: python scripts/validate_briefing.py --mode today
       - name: Commit today's briefing
@@ -35,4 +49,5 @@ jobs:
             exit 0
           fi
           git commit -m "Publish $DAY automated briefing 10-10-5"
+          git pull --rebase origin main
           git push
