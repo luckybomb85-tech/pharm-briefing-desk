@@ -143,8 +143,16 @@ article_preview.quick={{"title":"","lead":"","title_options":["",""]}}
 article_preview.diff={{"title":"","direction":"","title_options":["",""]}}
 Return {{"items":[]}} JSON only."""
     res=call_github_models(prompt)
-    content=res.get("choices",[{}])[0].get("message",{}).get("content","{}")
-    return json.loads(content)
+    content=res.get("choices",[{}])[0].get("message",{}).get("content","")
+    if isinstance(content,list):
+        content="".join(str(x.get("text","")) if isinstance(x,dict) else str(x) for x in content)
+    content=str(content).strip()
+    if content.startswith("```"):
+        content=re.sub(r"^```(?:json)?\\s*|\\s*```$","",content,flags=re.I|re.S).strip()
+    a,b=content.find("{"),content.rfind("}")
+    if a<0 or b<a:
+        raise RuntimeError("GitHub Models returned no JSON object")
+    return json.loads(content[a:b+1])
 
 def load_json(path, default):
     try:
@@ -265,11 +273,15 @@ def main():
     except Exception:
         settings=load_json("config/briefing-settings.json",{})
     changed=False
+    failures=[]
     for section,req in reqs.items():
         try:
             changed=process_section(day,section,req,settings,base) or changed
         except Exception as e:
+            failures.append(section)
             print(f"{section} refresh failed: {e}",file=sys.stderr)
+    if failures:
+        raise SystemExit("refresh failed for: "+", ".join(failures))
     if not changed:
         print("no unprocessed refresh requests")
 
