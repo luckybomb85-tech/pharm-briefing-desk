@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-02",
+  "generated_at": "2026-10-02T06:47:15+09:00",
+  "count": 4,
+  "window_hours": 72,
+  "shortfall_reason": "직전 24시간 적격 IP 사건이 적어 72시간까지 확장. 기관·전문매체·전체 웹 추가검색 후에도 실제 발생/보도시점이 72시간 이내이고 의약품 기사화 가치가 확인되는 중복 없는 사건은 4건. 오래된 사건·단순 DB 갱신은 제외.",
+  "items": [
+    {
+      "tag": "특허침해/Hatch-Waxman",
+      "title": "유나이티드테라퓨틱스, 리퀴디아 YUTREPIA 특허전 일부 승소",
+      "source": "https://www.reuters.com/business/healthcare-pharmaceuticals/liquidia-slumps-after-us-court-rules-united-therapeutics-patent-fight-2026-09-30/",
+      "source_name": "Reuters",
+      "published_at": "2026-09-30",
+      "issue": "델라웨어 연방법원이 US 11,826,327 청구항 1·14를 유효·침해로 판단, 나머지 4개는 무효. PH-ILD 흡입 treprostinil 관련.",
+      "patent_or_case": "US 11,826,327; U.S. District Court for the District of Delaware",
+      "primary_source": "Liquidia 2026-09-30 litigation update",
+      "verification_source": "Reuters",
+      "korea_angle": "적응증·용법 특허의 시장진입 제한과 국내 carve-out 비교."
+    },
+    {
+      "tag": "특허침해/정부조달",
+      "title": "모더나, 노스웨스턴 특허소송서 미 정부 라이선스 방어 기각",
+      "source": "https://www.reuters.com/legal/government/moderna-loses-us-government-license-defense-northwestern-patent-case-2026-10-01/",
+      "source_name": "Reuters",
+      "published_at": "2026-10-01",
+      "issue": "연방정부 연구성과 특허 사용권 때문에 정부 판매분 책임이 면제된다는 모더나 주장을 법원이 받아들이지 않아 소송 계속.",
+      "patent_or_case": "Northwestern University v. Moderna Inc., No. 1:24-cv-01151 (D. Del.)",
+      "primary_source": "D. Delaware ruling",
+      "verification_source": "Reuters",
+      "korea_angle": "정부지원 연구 특허·정부조달 의약품 실시권 범위와 mRNA IP 분쟁."
+    },
+    {
+      "tag": "영업비밀/유전자편집",
+      "title": "Beam-YolTech 영업비밀 소송, 유전자편집 기술유출 공방 심화",
+      "source": "https://www.biocentury.com/article/660972/yoltech-says-evidence-rebuts-beam-s-assertions-of-trade-secret-theft",
+      "source_name": "BioCentury",
+      "published_at": "2026-10-01T00:30:00Z",
+      "issue": "Beam은 전 직원과 YolTech·Serapha가 영업비밀을 이용해 AATD 치료제를 개발·라이선스했다고 주장; YolTech 측은 독자개발 반박.",
+      "patent_or_case": "U.S. District Court for the District of Massachusetts; 사건번호 추가 확인 필요",
+      "primary_source": "Massachusetts federal complaint",
+      "verification_source": "BioCentury; Fierce Biotech",
+      "korea_angle": "미중 바이오 인력 이동·영업비밀 보호와 플랫폼 라이선스 실사 리스크."
+    },
+    {
+      "tag": "IP/협업분쟁합의",
+      "title": "사노피-리제네론, 신규 80억달러 협력과 함께 기존 법적 분쟁 종결",
+      "source": "https://www.reuters.com/legal/litigation/sanofi-pay-regeneron-1-billion-upfront-expanded-immunology-deal-2026-10-01/",
+      "source_name": "Reuters",
+      "published_at": "2026-10-01",
+      "issue": "기존 법적 분쟁을 합의로 종결하면서 4개 면역질환 프로그램 공동개발 계약 체결. 공동개발 권리·경제조건 분쟁의 합의 성격.",
+      "patent_or_case": "구체 사건번호/특허번호 공개 기사에서 미확인",
+      "primary_source": "Sanofi/Regeneron agreement",
+      "verification_source": "Reuters",
+      "korea_angle": "공동개발 분쟁을 차세대 파이프라인 딜로 재설계한 계약 사례."
+    }
+  ]
+}
