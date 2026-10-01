@@ -1,5 +1,9 @@
 name: refresh-live-briefing
 on:
+  push:
+    paths:
+      - '.github/workflows/refresh-live.yml'
+      - 'scripts/refresh_section.py'
   schedule:
     - cron: '*/5 21-23 * * 0-4'
     - cron: '*/5 0-14 * * 1-5'
