@@ -125,34 +125,80 @@ def call_github_models(prompt):
       {"Authorization":f"Bearer {token}","Content-Type":"application/json"},
       json.dumps(payload).encode(),180)
 
+def title_tokens(t):
+    return set(re.findall(r"[0-9A-Za-z가-힣]{2,}",str(t or "").lower()))
+
+def similar_title(a,b):
+    x,y=title_tokens(a),title_tokens(b)
+    if not x or not y: return False
+    return len(x&y)/max(1,min(len(x),len(y))) >= 0.6
+
+def infer_tag(title,section):
+    t=title.lower()
+    if section=="patent":
+        return "특허·소송" if any(k in t for k in ["소송","침해","법원","판결","lawsuit","court"]) else "특허·IP"
+    if any(k in t for k in ["3상","phase 3","pivotal"]): return "임상 3상"
+    if any(k in t for k in ["2상","phase 2"]): return "임상 2상"
+    if any(k in t for k in ["허가","승인","fda","ema"]): return "허가·규제"
+    if any(k in t for k in ["인수","합병","m&a","acquisition"]): return "M&A"
+    if any(k in t for k in ["투자","기술수출","라이선스","license","deal"]): return "투자·기술거래"
+    if any(k in t for k in ["급여","약가","보험"]): return "약가·급여"
+    return "산업"
+
+def candidate_score(x,section,priority):
+    t=(x.get("title","")+" "+x.get("description","")).lower()
+    score=0
+    high=["단독","exclusive","3상","phase 3","pivotal","fda","ema","식약처","허가","승인","급여","약가","기술수출","라이선스","license","인수","합병","m&a","acquisition","투자","임상 중단","safety","안전성","판결","소송","특허","patent","lawsuit","영업비밀","우선판매"]
+    for k in high:
+        if k in t: score += 2
+    if "단독" in t or "exclusive" in t: score += 4
+    low=["채용","부고","봉사","기부","행사 참가","세미나 참가","홍보대사","수상","주가","급등","급락"]
+    for k in low:
+        if k in t: score -= 4
+    src=(x.get("source_name","")+" "+x.get("source","")).lower()
+    if any(str(d).lower() in src for d in priority): score += 2
+    if section=="patent" and any(k in t for k in ["판결","소송","침해","무효","심판","우선판매","patent","lawsuit","ptab"]): score += 3
+    return score
+
 def fallback_refresh(day, section, request_at, settings, base, live):
     candidates=search_candidates(section,settings)
-    if not candidates:
-        return {"items":[]}
-    morning=[x.get("title","") for x in base.get(section,[])]
-    existing=[x.get("title","") for x in live.get("items",[])]
-    prompt=f"""Select only genuinely important NEW {section} pharma/biotech stories for {day} after the 07:20 KST morning edition.
-There is no target count; zero is valid. Exclude duplicate events even when another outlet covers them.
-Morning titles: {json.dumps(morning,ensure_ascii=False)}
-Already-added live titles: {json.dumps(existing,ensure_ascii=False)}
-Candidate search results: {json.dumps(candidates,ensure_ascii=False)}
-Use only facts present in candidate titles/descriptions. Do not infer missing numbers or outcomes.
-For each selected story output tag,title,summary,source,source_name,published_at,article_preview.
-summary may be 1-3 concise factual sentences if the search snippet is limited.
-article_preview.quick={{"title":"","lead":"","title_options":["",""]}}
-article_preview.diff={{"title":"","direction":"","title_options":["",""]}}
-Return {{"items":[]}} JSON only."""
-    res=call_github_models(prompt)
-    content=res.get("choices",[{}])[0].get("message",{}).get("content","")
-    if isinstance(content,list):
-        content="".join(str(x.get("text","")) if isinstance(x,dict) else str(x) for x in content)
-    content=str(content).strip()
-    if content.startswith("```"):
-        content=re.sub(r"^```(?:json)?\\s*|\\s*```$","",content,flags=re.I|re.S).strip()
-    a,b=content.find("{"),content.rfind("}")
-    if a<0 or b<a:
-        raise RuntimeError("GitHub Models returned no JSON object")
-    return json.loads(content[a:b+1])
+    known=[x.get("title","") for x in base.get(section,[])]+[x.get("title","") for x in live.get("items",[])]
+    priority=settings.get("priority_sources",{}).get(section,[]) or []
+    ranked=[]
+    for x in candidates:
+        if any(similar_title(x.get("title",""),k) for k in known):
+            continue
+        sc=candidate_score(x,section,priority)
+        threshold=4 if section!="patent" else 5
+        if sc < threshold:
+            continue
+        ranked.append((sc,x))
+    ranked.sort(key=lambda z:z[0],reverse=True)
+    selected=[]
+    for sc,x in ranked:
+        if any(similar_title(x.get("title",""),y.get("title","")) for y in selected):
+            continue
+        title=x.get("title","").strip()
+        desc=clean_text(x.get("description",""))
+        if not desc: desc=title
+        src=x.get("source","").strip()
+        source_name=x.get("source_name","").strip() or urllib.parse.urlparse(src).netloc.replace("www.","")
+        item={
+          "tag":infer_tag(title,section),
+          "title":title,
+          "summary":desc[:700],
+          "source":src,
+          "source_name":source_name,
+          "published_at":x.get("published_at",""),
+          "article_preview":{
+            "quick":{"title":title,"lead":desc[:350],"title_options":[title,title]},
+            "diff":{"title":title,"direction":"원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.","title_options":[title,title]}
+          }
+        }
+        selected.append(item)
+        if len(selected)>=8:
+            break
+    return {"items":selected}
 
 def load_json(path, default):
     try:
