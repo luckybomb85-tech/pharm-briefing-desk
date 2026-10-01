@@ -1,0 +1,39 @@
+name: refresh-live-briefing
+on:
+  schedule:
+    - cron: '*/5 21-23 * * 0-4'
+    - cron: '*/5 0-8 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: live-briefing-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Process section refresh requests
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-6.1-sol
+        run: python scripts/refresh_section.py
+      - name: Commit live updates
+        run: |
+          git config user.name "pharm-briefing-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add live/*.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No live refresh changes"
+            exit 0
+          fi
+          git commit -m "[no-telegram] Update live briefing"
+          git pull --rebase origin main
+          git push
