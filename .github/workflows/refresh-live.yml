@@ -1,5 +1,5 @@
 name: refresh-live-briefing
-# live refresh worker
+# live refresh worker v2
 on:
   push:
     paths:
