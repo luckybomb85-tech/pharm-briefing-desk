@@ -2,20 +2,52 @@ name: briefing-healthcheck
 on:
   workflow_dispatch:
   schedule:
+    # 08:00 KST, Monday-Friday
     - cron: '0 23 * * 0-4'
+permissions:
+  contents: write
+  actions: write
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - name: Verify today's 10-10-5 briefing
         id: verify
         continue-on-error: true
         run: python scripts/validate_briefing.py --mode today
-      - name: Alert Telegram on failure
+      - name: Auto-recover missing or invalid briefing
+        id: recover
         if: steps.verify.outcome == 'failure'
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-6.1-sol
+        run: |
+          python scripts/generate_briefing.py
+          python scripts/validate_briefing.py --mode today
+          DAY=$(TZ=Asia/Seoul date +%F)
+          git config user.name "pharm-briefing-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "data/$DAY.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "Recover $DAY automated briefing 10-10-5"
+            git pull --rebase origin main
+            git push
+          fi
+      - name: Recheck recovered briefing
+        id: recheck
+        if: steps.verify.outcome == 'failure' && steps.recover.outcome == 'success'
+        continue-on-error: true
+        run: |
+          git pull --rebase origin main
+          python scripts/validate_briefing.py --mode today
+      - name: Alert Telegram only if recovery failed
+        if: steps.verify.outcome == 'failure' && (steps.recover.outcome != 'success' || steps.recheck.outcome != 'success')
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -24,26 +56,22 @@ jobs:
           import json, os, urllib.request
           from datetime import datetime
           from zoneinfo import ZoneInfo
-          token=os.environ['TELEGRAM_BOT_TOKEN']
-          chat=os.environ.get('TELEGRAM_CHAT_ID')
+          token=os.environ['TELEGRAM_BOT_TOKEN']; chat=os.environ.get('TELEGRAM_CHAT_ID')
           if not chat:
               req=urllib.request.Request(f'https://api.telegram.org/bot{token}/getUpdates')
-              with urllib.request.urlopen(req,timeout=20) as r:
-                  updates=json.load(r).get('result',[])
+              with urllib.request.urlopen(req,timeout=20) as r: updates=json.load(r).get('result',[])
               for u in reversed(updates):
                   m=u.get('message') or u.get('channel_post')
                   if m and m.get('chat',{}).get('id'):
                       chat=str(m['chat']['id']); break
-          if not chat:
-              raise SystemExit('No Telegram chat found for health alert')
+          if not chat: raise SystemExit('No Telegram chat found for health alert')
           day=datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d')
-          payload=json.dumps({'chat_id':chat,'text':f'⚠️ 제약바이오 브리핑 배포 점검 실패 ({day})\n08:00 기준 오늘자 10/10/5 파일이 없거나 검증에 실패했습니다. 자동 복구 상태를 확인하세요.'}).encode()
+          payload=json.dumps({'chat_id':chat,'text':f'⚠️ 제약바이오 브리핑 자동복구 실패 ({day})\n08:00 점검에서 오늘자 10/10/5 생성 또는 검증에 실패했습니다.'}).encode()
           req=urllib.request.Request(f'https://api.telegram.org/bot{token}/sendMessage',data=payload,headers={'Content-Type':'application/json'})
-          with urllib.request.urlopen(req,timeout=20) as r:
-              out=json.load(r)
+          with urllib.request.urlopen(req,timeout=20) as r: out=json.load(r)
           if not out.get('ok'): raise SystemExit(out)
           print('health alert sent')
           PY
-      - name: Fail workflow if invalid
-        if: steps.verify.outcome == 'failure'
+      - name: Fail workflow only if still invalid
+        if: steps.verify.outcome == 'failure' && (steps.recover.outcome != 'success' || steps.recheck.outcome != 'success')
         run: exit 1
