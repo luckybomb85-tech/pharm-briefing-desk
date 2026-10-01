@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "priority_sources": {
     "domestic": [
+      "dailypharm.com",
+      "medipana.com",
+      "hitnews.co.kr",
+      "sisajournal-e.com",
+      "thebionews.net",
+      "dealsite.co.kr",
+      "businesspost.co.kr",
+      "newspim.com",
+      "newsthevoice.com",
+      "newdaily.co.kr",
+      "pharmstoday.com",
       "dart.fss.or.kr",
       "kind.krx.co.kr",
       "mfds.go.kr",
@@ -19,14 +30,21 @@
       "sec.gov",
       "reuters.com",
       "statnews.com",
+      "endpts.com",
+      "biopharmadive.com",
       "fiercebiotech.com"
     ],
     "patent": [
       "kipris.or.kr",
+      "kipo.go.kr",
       "patent.scourt.go.kr",
       "scourt.go.kr",
+      "mfds.go.kr",
+      "ip-navi.or.kr",
+      "hkn24.com",
       "uspto.gov",
-      "ptab.uspto.gov"
+      "ptab.uspto.gov",
+      "reuters.com"
     ]
   },
   "notes": "Production source priorities for the daily briefing. The publisher should read this file before research.",
@@ -166,5 +184,40 @@
     "enabled": false,
     "auth": "dailypharm.com 이메일 인증 사용자만 읽기·등록·수정·삭제",
     "status": "connection_required"
-  }
+  },
+  "source_policy": {
+    "scan_order": [
+      "우선매체 최신기사·섹션 페이지 전수 스캔",
+      "단독·독자·확인 기사 별도 스캔",
+      "제약바이오 핵심 키워드 확장 검색",
+      "공식자료·공시·규제기관·법원·특허기관 원문 교차검증",
+      "전체 웹 보완검색으로 미등록 매체 중요뉴스 회수",
+      "중복 제거 후 중요도 기준 최종선정"
+    ],
+    "exclusive_priority": "단독·독자·확인 기사는 별도 후보 풀에 넣고 같은 중요도 후보보다 우선한다. 단독 표기만으로 자동 선정하지 않고 새 정보와 기사화 가치를 함께 평가한다.",
+    "discovery": "우선매체는 검색엔진 결과만 기다리지 않고 최신기사/섹션 목록을 직접 확인한다. 우선매체 밖의 중요뉴스를 놓치지 않도록 전체 웹·공식자료 검색을 병행한다.",
+    "selection_criteria": [
+      "객관적 중요도",
+      "새 정보의 크기",
+      "데일리팜 기사화·후속취재 가치",
+      "출처 신뢰도·원문 확인 가능성",
+      "단독·독자 취재 여부"
+    ],
+    "domestic_excluded": [
+      "의협신문",
+      "메디게이트뉴스",
+      "팜뉴스",
+      "약업신문",
+      "약사공론",
+      "메디칼타임즈",
+      "블로터",
+      "데일리메디",
+      "ZDNet"
+    ],
+    "noise_filter": "봉사활동·내부행사·단순 제품홍보·반복 보도자료는 원칙적으로 제외한다. 주가 등락 기사 자체는 후순위로 두되 큰 변동의 원인이 새로운 임상·공시·딜·규제·특허 이슈이면 원인 뉴스를 후보로 승격한다.",
+    "verification": "핵심 수치·임상 결과·투자액·지분율·허가·급여·판결·특허 사실은 가능한 한 회사/공시/정부기관/법원/등록자료 등 1차 출처로 재확인한다.",
+    "time_window": "기본 직전 24시간. 특허·IP가 5건 미만일 때만 최대 72시간으로 확장하고 실제 발생·보도 시점을 명시한다.",
+    "target_rule": "국내 10·글로벌 10·특허 5를 기본 완료조건으로 탐색한다. 1차 검색에서 부족하면 검색어·출처·언어를 넓혀 재검색하되 저가치 기사로 숫자만 채우지 않는다."
+  },
+  "briefing_principles": "직전 24시간 기준 · 우선매체 최신기사/섹션 전수 스캔 · 단독/독자/확인 기사 별도 스캔 · 키워드 확장검색 · 공식 원문 교차검증 · 전체 웹 보완검색 · 중복 제거 · 객관적 중요도/새 정보/데일리팜 기사화 가치/출처 신뢰도/단독 여부로 최종선정 · 주가 단순등락은 후순위, 원인 뉴스가 새 정보면 승격 · 특허 부족 시에만 72시간 확장 · 국내10/글로벌10/특허5 기본 완료조건"
 }
