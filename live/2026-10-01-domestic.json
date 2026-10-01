@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-01",
+  "section": "domestic",
+  "morning_count": 10,
+  "updated_at": "2026-10-01T14:43:17.659088+09:00",
+  "last_request_at": "2026-10-01T05:36:00.564113+00:00",
+  "batches": [
+    {
+      "request_id": "1ce59bcf-3c94-4d29-8e13-ff1ee65bc46b",
+      "requested_at": "2026-10-01T05:36:00.564113+00:00",
+      "completed_at": "2026-10-01T14:43:17.659088+09:00",
+      "added_count": 4
+    }
+  ],
+  "items": [
+    {
+      "tag": "허가·규제",
+      "title": "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com",
+      "summary": "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입    newsthevoice.com",
+      "source": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5rWDRZMXFlNjRpaEZjVm42MHhqRlZqc2pJWjNNdmlpejJJS0ZsXzR5eDd4aHFUVS1Pcm83SzdZMk5CMmVJMkY3enB0X3JpdUNnRUJ6N0p6ZDNYTmhYZzJVY1JXQTJ3cHIwLUxkYUE3NA?oc=5",
+      "source_name": "newsthevoice.com",
+      "published_at": "Thu, 01 Oct 2026 01:21:32 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com",
+          "lead": "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입    newsthevoice.com",
+          "title_options": [
+            "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com",
+            "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com"
+          ]
+        },
+        "diff": {
+          "title": "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com",
+            "[얀센] 리브리반트, 허가 4년 반 만에 폐암 2차 치료 급여 진입 - newsthevoice.com"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-01T14:43:17.659088+09:00",
+      "update_batch": "1ce59bcf-3c94-4d29-8e13-ff1ee65bc46b",
+      "is_live": true
+    },
+    {
+      "tag": "산업",
+      "title": "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz",
+      "summary": "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈    Chosunbiz",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMW1odHJyX0I0VzNTQ1BlOVBGNzNuUENvUXNiQkRpREExb0d1NnBlWENWRUVWQ1U1U2EyVl80TkoyYmJtamhvRTc0Qy1BZmRCT2F4bW1CT1EtQ1h1VWNBLXQ3Zmo2b1NWVGNNV1JwWHhBVkRQUXZOa1hIUHVxeGo2UmZXejM4ZUXSAZsBQVVfeXFMT29jeVBwU0JLaWJwUUpJbkdIa1FKOXRqakxuUlZWdHlMTG9PTFVBQnJ0QWZHM0JXeVFTa3pKRkdFRmZLWHhZX1FnMG9sUVplazdTVV9ZMU9rQUctdjQtN1pJbVQyMm1GbXVMNUFPRG1lel9waXQwdXdNS2g0aDg4TFctLTJNOUpoN2FxQW55aTV0cGxLbDYyYkF1Z0U?oc=5",
+      "source_name": "Chosunbiz",
+      "published_at": "Thu, 01 Oct 2026 05:02:00 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz",
+          "lead": "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈    Chosunbiz",
+          "title_options": [
+            "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz",
+            "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz"
+          ]
+        },
+        "diff": {
+          "title": "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz",
+            "[단독] 한미약품, ‘신동국 측’ 안종균에 임상·품질도 맡겼다…경영 넘어 신약개발까지 손 뻗나 - 조선비즈 - Chosunbiz"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-01T14:43:17.659088+09:00",
+      "update_batch": "1ce59bcf-3c94-4d29-8e13-ff1ee65bc46b",
+      "is_live": true
+    },
+    {
+      "tag": "산업",
+      "title": "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스",
+      "summary": "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로    히트뉴스",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBkZnJhRlctWGtxTEplNHlHY0x2Z1NTWWtwMXBCbl96eXhaaTJOQjM4XzdHWVE1d0JrUzR0QUl0ZC1YWlRHMXFkWjR3eVZqbDYzOUNnQmJVWXdKdjZhZWVvY2NuWnZYU0loZks0?oc=5",
+      "source_name": "히트뉴스",
+      "published_at": "Thu, 01 Oct 2026 02:34:00 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스",
+          "lead": "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로    히트뉴스",
+          "title_options": [
+            "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스",
+            "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스"
+          ]
+        },
+        "diff": {
+          "title": "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스",
+            "고려제약 2세 박상훈 대표 사임, 박해룡 회장 단독 체제로 - 히트뉴스"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-01T14:43:17.659088+09:00",
+      "update_batch": "1ce59bcf-3c94-4d29-8e13-ff1ee65bc46b",
+      "is_live": true
+    },
+    {
+      "tag": "M&A",
+      "title": "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr",
+      "summary": "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯”    fetv.co.kr",
+      "source": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5jRjhnTGdtMmVweVBtbld6a2FxcVhHaFVxSFBoZnVNTDRDcG9VbjA0bzM1YU9ta1R6ODVvTU1EczFiaG0tUFozS0tWMmVwcERsZGdDM193bDljTE5GVTZwVmZZdUw1VG9t?oc=5",
+      "source_name": "fetv.co.kr",
+      "published_at": "Thu, 01 Oct 2026 05:22:23 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr",
+          "lead": "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯”    fetv.co.kr",
+          "title_options": [
+            "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr",
+            "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr"
+          ]
+        },
+        "diff": {
+          "title": "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr",
+            "[현장] 정재준 아리바이오 회장 “합병 철회 관련 소송, 문제 없을 듯” - fetv.co.kr"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-01T14:43:17.659088+09:00",
+      "update_batch": "1ce59bcf-3c94-4d29-8e13-ff1ee65bc46b",
+      "is_live": true
+    }
+  ]
+}
