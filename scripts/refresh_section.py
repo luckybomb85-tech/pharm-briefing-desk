@@ -1,4 +1,4 @@
-import json, os, sys, urllib.parse, urllib.request
+import json, os, sys, urllib.parse, urllib.request, re, html\nimport xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -41,6 +41,109 @@ def call_openai(prompt):
     if not chunks:
         raise RuntimeError("OpenAI response contained no output_text")
     return json.loads("".join(chunks))
+
+
+def clean_text(v):
+    return re.sub(r"\\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",str(v or "")))).strip()
+
+def rss_items(url):
+    req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req,timeout=20) as r:
+            root=ET.fromstring(r.read())
+    except Exception as e:
+        print("rss failed",url,e,file=sys.stderr); return []
+    out=[]
+    for item in root.findall(".//item"):
+        title=clean_text(item.findtext("title"))
+        link=clean_text(item.findtext("link"))
+        desc=clean_text(item.findtext("description"))
+        pub=clean_text(item.findtext("pubDate"))
+        src=item.find("source")
+        source=clean_text(src.text if src is not None else "")
+        if title and link:
+            out.append({"title":title,"source":link,"description":desc[:900],"published_at":pub,"source_name":source})
+    return out
+
+def search_candidates(section, settings):
+    if section=="domestic":
+        queries=[
+          '제약 바이오 임상 허가 투자 인수 합병 단독',
+          '"단독" 제약 바이오',
+          '제약 약가 급여 식약처 심평원',
+          '바이오 임상 2상 3상 기술수출'
+        ]
+        domains=(settings.get("priority_sources",{}).get("domestic") or [])[:12]
+        queries += [f"site:{d} 제약 바이오" for d in domains if "." in d]
+        market="ko-KR"
+    elif section=="global":
+        queries=[
+          'pharma biotech phase 2 phase 3 FDA approval deal acquisition',
+          'biotech topline pivotal trial safety licensing',
+          'pharma M&A licensing FDA EMA'
+        ]
+        domains=(settings.get("priority_sources",{}).get("global") or [])[:10]
+        queries += [f"site:{d} pharma biotech" for d in domains if "." in d]
+        market="en-US"
+    else:
+        queries=[
+          '제약 특허 소송 특허심판 제네릭 우선판매',
+          '바이오 특허 침해 영업비밀 소송',
+          'pharma patent lawsuit generic PTAB'
+        ]
+        domains=(settings.get("priority_sources",{}).get("patent") or [])[:10]
+        queries += [f"site:{d} 제약 특허" for d in domains if "." in d]
+        market="ko-KR"
+    rows=[]
+    for q in queries:
+        enc=urllib.parse.quote(q)
+        urls=[
+          f"https://www.bing.com/news/search?q={enc}&format=rss&mkt={market}",
+          f"https://news.google.com/rss/search?q={enc}&hl={'ko' if market=='ko-KR' else 'en-US'}&gl={'KR' if market=='ko-KR' else 'US'}&ceid={'KR:ko' if market=='ko-KR' else 'US:en'}"
+        ]
+        for u in urls:
+            rows.extend(rss_items(u))
+    seen=set(); out=[]
+    for x in rows:
+        k=re.sub(r"[^0-9A-Za-z가-힣]+","",x["title"]).lower()
+        if not k or k in seen: continue
+        seen.add(k); out.append(x)
+    return out[:100]
+
+def call_github_models(prompt):
+    token=os.environ.get("GITHUB_TOKEN")
+    if not token:
+        raise RuntimeError("GITHUB_TOKEN unavailable for fallback ranking")
+    payload={
+      "model":"openai/gpt-4.1-mini",
+      "messages":[{"role":"system","content":"Return only valid JSON. Never invent facts beyond supplied search results."},{"role":"user","content":prompt}],
+      "temperature":0.1,
+      "response_format":{"type":"json_object"}
+    }
+    return get_json("https://models.github.ai/inference/chat/completions",
+      {"Authorization":f"Bearer {token}","Content-Type":"application/json"},
+      json.dumps(payload).encode(),180)
+
+def fallback_refresh(day, section, request_at, settings, base, live):
+    candidates=search_candidates(section,settings)
+    if not candidates:
+        return {"items":[]}
+    morning=[x.get("title","") for x in base.get(section,[])]
+    existing=[x.get("title","") for x in live.get("items",[])]
+    prompt=f"""Select only genuinely important NEW {section} pharma/biotech stories for {day} after the 07:20 KST morning edition.
+There is no target count; zero is valid. Exclude duplicate events even when another outlet covers them.
+Morning titles: {json.dumps(morning,ensure_ascii=False)}
+Already-added live titles: {json.dumps(existing,ensure_ascii=False)}
+Candidate search results: {json.dumps(candidates,ensure_ascii=False)}
+Use only facts present in candidate titles/descriptions. Do not infer missing numbers or outcomes.
+For each selected story output tag,title,summary,source,source_name,published_at,article_preview.
+summary may be 1-3 concise factual sentences if the search snippet is limited.
+article_preview.quick={{"title":"","lead":"","title_options":["",""]}}
+article_preview.diff={{"title":"","direction":"","title_options":["",""]}}
+Return {{"items":[]}} JSON only."""
+    res=call_github_models(prompt)
+    content=res.get("choices",[{}])[0].get("message",{}).get("content","{}")
+    return json.loads(content)
 
 def load_json(path, default):
     try:
@@ -121,7 +224,7 @@ def process_section(day, section, req, settings, base):
     if live.get("last_request_at","") >= request_at:
         print(section,"already processed",request_at)
         return False
-    result=call_openai(make_prompt(day,section,request_at,settings,base,live))
+    result=call_openai(make_prompt(day,section,request_at,settings,base,live)) if os.environ.get('OPENAI_API_KEY') else fallback_refresh(day,section,request_at,settings,base,live)
     now=datetime.now(ZoneInfo("Asia/Seoul")).isoformat()
     batch_id=req["id"]
     existing_urls={str(x.get("source","")).strip() for x in base.get(section,[])+live.get("items",[]) if x.get("source")}
