@@ -1,9 +1,9 @@
 {
   "date": "2026-10-02",
   "generated_at": "2026-10-02T06:47:15+09:00",
-  "count": 4,
+  "count": 5,
   "window_hours": 72,
-  "shortfall_reason": "직전 24시간 적격 IP 사건이 적어 72시간까지 확장. 기관·전문매체·전체 웹 추가검색 후에도 실제 발생/보도시점이 72시간 이내이고 의약품 기사화 가치가 확인되는 중복 없는 사건은 4건. 오래된 사건·단순 DB 갱신은 제외.",
+  "shortfall_reason": "직전 24시간 적격 IP 사건이 부족해 72시간까지 확장. 실제 발생·보도시점이 72시간 이내인 의약품·바이오 IP 사건 5건을 검증해 구성.",
   "items": [
     {
       "tag": "특허침해/Hatch-Waxman",
@@ -52,6 +52,18 @@
       "primary_source": "Sanofi/Regeneron agreement",
       "verification_source": "Reuters",
       "korea_angle": "공동개발 분쟁을 차세대 파이프라인 딜로 재설계한 계약 사례."
+    },
+    {
+      "tag": "특허침해/합의",
+      "title": "Nxera-OMass, miniG 플랫폼 특허침해 분쟁 합의로 종결",
+      "source": "https://www.globenewswire.com/news-release/2026/10/01/3372695/0/en/nxera-announces-successful-resolution-of-minig-patent-infringement-action.html",
+      "source_name": "Nxera Pharma",
+      "published_at": "2026-09-30",
+      "issue": "Nxera Pharma UK가 OMass Therapeutics의 과거 miniG 플랫폼 특허 침해와 관련해 합의계약을 체결해 분쟁을 종결.",
+      "patent_or_case": "EP 3 408 286 B1; GB 2 558 968 B",
+      "primary_source": "Nxera Pharma",
+      "verification_source": "GlobeNewswire; Life Sciences IP Review",
+      "korea_angle": "신약발굴 플랫폼 특허의 권리범위와 협업·라이선스 실사 리스크."
     }
   ]
 }
