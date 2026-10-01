@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write
   models: read
+  actions: write
 concurrency:
   group: live-briefing-refresh
   cancel-in-progress: false
@@ -44,3 +45,6 @@ jobs:
           git commit -m "[no-telegram] Update live briefing"
           git pull --rebase origin main
           git push
+          gh workflow run pages.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
