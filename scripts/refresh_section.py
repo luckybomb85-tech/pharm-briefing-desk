@@ -77,6 +77,7 @@ def search_candidates(section, settings):
         ]
         domains=(settings.get("priority_sources",{}).get("domestic") or [])[:12]
         queries += [f"site:{d} 제약 바이오" for d in domains if "." in d]
+        queries += [f"site:{d} 단독" for d in domains[:10] if "." in d]
         market="ko-KR"
     elif section=="global":
         queries=[
