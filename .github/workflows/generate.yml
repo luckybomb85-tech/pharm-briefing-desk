@@ -1,6 +1,9 @@
 name: generate-daily-briefing
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'config/briefing-refresh-trigger.txt'
   schedule:
     # 07:20 KST, Monday-Friday (GitHub Actions cron uses UTC)
     - cron: '20 22 * * 0-4'
