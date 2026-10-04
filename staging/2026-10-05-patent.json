@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-05",
+  "generated_at": "2026-10-05T06:54:13+09:00",
+  "count": 1,
+  "window_hours": 72,
+  "shortage_reason": "직전 24시간에 적격 특허·IP 신규 사건이 확인되지 않아 72시간으로 확장했다. 기관·법원·미국 특허소송·전문매체 검색을 넓혔으나 실제 발생·공개시점이 72시간 안이고 기사화 가치가 있는 건은 1건만 확인됐다. 오래된 사건 재보도는 제외했다.",
+  "items": [
+    {
+      "tag": "제네릭 특허도전",
+      "title": "닥터레디스, Tonmya 제네릭 ANDA Paragraph IV…오렌지북 특허 4건 도전",
+      "source": "https://www.sec.gov/",
+      "source_name": "Tonix SEC disclosure / secondary verification",
+      "published_at": "2026-10-02 (notice received 2026-10-01)",
+      "key_issue": "Dr. Reddy's가 Tonmya(cyclobenzaprine HCl 설하정 2.8mg) 제네릭 ANDA에 Paragraph IV 인증. Tonix는 권리행사 방침. 통지 후 45일 내 소송 시 30개월 승인정지 가능.",
+      "patent_or_case_numbers": [
+        "US 9,636,408",
+        "US 9,956,188",
+        "US 10,117,936",
+        "US 10,864,175"
+      ],
+      "primary_source": "Tonix Pharmaceuticals SEC filing/disclosure",
+      "verification_sources": [
+        "Trendonify SEC filing summary 2026-10-02",
+        "Panabee 2026-10-02/03"
+      ],
+      "korea_article_angle": "신약 출시 직후 오렌지북 특허를 한꺼번에 도전한 Hatch-Waxman 사례로 국내사의 미국 Paragraph IV 전략과 비교 가능."
+    }
+  ]
+}
