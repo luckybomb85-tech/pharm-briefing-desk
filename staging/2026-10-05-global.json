@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-05",
+  "generated_at": "2026-10-05T06:54:13+09:00",
+  "count": 3,
+  "shortage_reason": "주말 직전 24시간 창에서 공식·전문매체를 확대 검색했으나 기준을 충족하고 발생·보도 시점을 확인할 수 있는 중복 없는 후보가 20건에 미달했다. 오래된 발표·단순 일정·저가치 기업홍보는 제외했다.",
+  "items": [
+    {
+      "tag": "임상2/3상",
+      "title": "INBRX-106+키트루다, PD-L1 고발현 두경부암 1차서 ORR 48.3%·mPFS 9.6개월",
+      "source": "https://www.onclive.com/view/inbrx-106-plus-pembrolizumab-improves-responses-and-pfs-in-first-line-pd-l1-positive-hnscc",
+      "source_name": "OncLive",
+      "published_at": "2026-10-04",
+      "key_facts": "HexAgon-HN 2/3상: cORR 48.3% vs 26.5%, 중간 mPFS 9.6 vs 4.9개월. HPV+ 하위군 cORR 80%, CR 30%.",
+      "primary_source": "HexAgon-HN 원 발표 추가 대조 필요",
+      "verification_sources": [
+        "OncLive 2026-10-04"
+      ],
+      "article_angle": "키트루다 단독 대비 초기 효능 신호와 HPV+ 확장·확증 3상 전략 주목."
+    },
+    {
+      "tag": "허가·규제",
+      "title": "벨주티판+렌바티닙 진행성 신세포암 적응증 FDA 결정 확인 후보",
+      "source": "https://www.pharmacytimes.com/view/fda-approves-belzutifan-plus-lenvatinib-for-advanced-renal-cell-carcinoma-after-immunotherapy",
+      "source_name": "Pharmacy Times",
+      "published_at": "2026-10-04-window verification",
+      "key_facts": "LITESPARK-011: PFS HR 0.70, mPFS 14.8 vs 10.7개월, ORR 52.6% vs 39.6%. PDUFA 목표일 10월4일. FDA 원문 게시 시각 직접 확인 필요.",
+      "primary_source": "FDA/Merck·Eisai 원문 확인 필요",
+      "verification_sources": [
+        "Pharmacy Times",
+        "Merck PDUFA 자료"
+      ],
+      "article_angle": "면역항암제 이후 ccRCC에서 HIF-2α 억제제+TKI 치료순서 변화 가능성."
+    },
+    {
+      "tag": "임상3상",
+      "title": "노바티스, 골수섬유증 pelabresib+ruxolitinib 새 3상 등록",
+      "source": "https://clinicaltrials.gov/study/NCT07357727",
+      "source_name": "ClinicalTrials.gov",
+      "published_at": "2026-10-04 record sync",
+      "key_facts": "NCT07357727. JAK 억제제 치료 경험 없는 골수섬유증 성인에서 pelabresib+ruxolitinib 대 placebo+ruxolitinib 무작위 이중맹검 3상.",
+      "primary_source": "ClinicalTrials.gov NCT07357727",
+      "verification_sources": [
+        "ClinicalTrials.gov"
+      ],
+      "article_angle": "기존 개발 경과 대비 신규 확증전략 재설계 여부 추적 가치."
+    }
+  ]
+}
