@@ -1,0 +1,1 @@
+Retry Telegram delivery after user sent /start to @daily_pharm_bot.
