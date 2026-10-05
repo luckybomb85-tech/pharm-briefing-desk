@@ -5,13 +5,15 @@ on:
   push:
     branches: [main]
     paths:
-      - 'config/publish-now.txt'
+      - '.github/publish-now.txt'
   schedule:
     # 07:30 KST Monday-Friday. Generation is completed beforehand by ChatGPT.
     - cron: '30 22 * * 0-4'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: publish-briefing
@@ -19,6 +21,9 @@ concurrency:
 
 jobs:
   publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,6 +63,17 @@ jobs:
             git commit -m "Publish briefing ${DAY} [no-telegram]"
             git push
           fi
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
       - name: Send Telegram once
         run: python scripts/send_telegram.py
         env:
