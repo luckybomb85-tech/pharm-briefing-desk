@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
-      - name: Validate 10-10-5 briefing
+      - name: Validate briefing (10 domestic, 10 global, patent up to 5)
         run: python scripts/validate_briefing.py --mode today
       - name: Send Telegram
         run: python scripts/send_telegram.py
