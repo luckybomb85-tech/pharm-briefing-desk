@@ -2,6 +2,10 @@ name: publish-briefing
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'config/publish-now.txt'
   schedule:
     # 07:30 KST Monday-Friday. Generation is completed beforehand by ChatGPT.
     - cron: '30 22 * * 0-4'
