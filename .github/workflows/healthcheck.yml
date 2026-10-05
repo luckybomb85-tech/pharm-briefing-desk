@@ -3,8 +3,8 @@ name: briefing-healthcheck
 on:
   workflow_dispatch:
   schedule:
-    # 08:00 KST, Monday-Friday. ChatGPT owns generation/recovery.
-    - cron: '0 23 * * 0-4'
+    # 07:35 KST Monday-Friday. Validation only; recovery is handled by the ChatGPT post-check.
+    - cron: '35 22 * * 0-4'
 
 permissions:
   contents: read
@@ -17,5 +17,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify today's 10-10-5 briefing
+      - name: Verify today's briefing (10 domestic, 10 global, patent up to 5)
         run: python scripts/validate_briefing.py --mode today
