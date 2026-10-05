@@ -1,20 +1,60 @@
 name: publish-briefing
+
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'data/*.json'
+  schedule:
+    # 07:30 KST Monday-Friday. Generation is completed beforehand by ChatGPT.
+    - cron: '30 22 * * 0-4'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-briefing
+  cancel-in-progress: false
+
 jobs:
-  telegram:
-    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[no-telegram]') }}
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - name: Validate briefing (10 domestic, 10 global, patent up to 5)
-        run: python scripts/validate_briefing.py --mode today
-      - name: Send Telegram
+        with:
+          python-version: '3.12'
+      - name: Promote validated staging briefing
+        shell: bash
+        run: |
+          DAY=$(TZ=Asia/Seoul date +%F)
+          SRC="staging/${DAY}-final.json"
+          DST="data/${DAY}.json"
+          test -f "$SRC" || { echo "Missing $SRC"; exit 1; }
+          python scripts/validate_briefing.py --path "$SRC" --staging
+          python - "$SRC" "$DST" <<'PY'
+          import json, pathlib, sys
+          src, dst = map(pathlib.Path, sys.argv[1:3])
+          d = json.loads(src.read_text(encoding='utf-8'))
+          d['status'] = 'published'
+          d['timezone'] = 'Asia/Seoul'
+          dst.parent.mkdir(parents=True, exist_ok=True)
+          dst.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+          python scripts/validate_briefing.py --mode today
+      - name: Commit published briefing
+        shell: bash
+        run: |
+          DAY=$(TZ=Asia/Seoul date +%F)
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add "data/${DAY}.json"
+          if git diff --cached --quiet; then
+            echo "Today's published briefing is already current."
+          else
+            git commit -m "Publish briefing ${DAY} [no-telegram]"
+            git push
+          fi
+      - name: Send Telegram once
         run: python scripts/send_telegram.py
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
