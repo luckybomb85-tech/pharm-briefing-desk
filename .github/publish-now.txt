@@ -1,1 +1,1 @@
-2026-10-06 retry 2 after Telegram /start
+2026-10-06 immediate republish 08:40 KST
