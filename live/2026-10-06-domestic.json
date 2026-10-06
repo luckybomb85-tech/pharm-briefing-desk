@@ -1,0 +1,220 @@
+{
+  "date": "2026-10-06",
+  "section": "domestic",
+  "morning_count": 10,
+  "updated_at": "2026-10-06T12:42:41.074155+09:00",
+  "last_request_at": "2026-10-06T03:31:21.968232+00:00",
+  "batches": [
+    {
+      "request_id": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "requested_at": "2026-10-06T03:31:21.968232+00:00",
+      "completed_at": "2026-10-06T12:42:41.074155+09:00",
+      "added_count": 7
+    }
+  ],
+  "items": [
+    {
+      "tag": "산업",
+      "title": "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보",
+      "summary": "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가    매일일보",
+      "source": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5idVdaV1pZVFY4YUZlZ2VSY2x3MXB1RjdtVWpGVGgxb2doZW1UdjZMRllWMldJRmhRak9fOFg0Wk9zdmlPaUJaTFBpWUxwQU15NHB2TWJCcDhYMVBaYUQwRW9zRnk?oc=5",
+      "source_name": "매일일보",
+      "published_at": "Tue, 06 Oct 2026 00:28:48 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보",
+          "lead": "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가    매일일보",
+          "title_options": [
+            "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보",
+            "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보"
+          ]
+        },
+        "diff": {
+          "title": "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보",
+            "유한양행, ‘CPHI Milan 2026’ 단독 부스 참가 - 매일일보"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    },
+    {
+      "tag": "산업",
+      "title": "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스",
+      "summary": "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보    히트뉴스",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9OREVsN1dNa1h6c1kzWG5TdHRucWpEdlVJMGNjMnRIdmhac09uYkdMb19Da3JBTUd0OHRxb1ZOcG5fOWtxMmE2QXA3MDNYZDlwcnE0NWNRaXg2MjF1eFJvbklsd0FILWlHYTUw?oc=5",
+      "source_name": "히트뉴스",
+      "published_at": "Tue, 06 Oct 2026 00:09:32 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스",
+          "lead": "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보    히트뉴스",
+          "title_options": [
+            "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스",
+            "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스"
+          ]
+        },
+        "diff": {
+          "title": "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스",
+            "유한양행, 밀라노 CPHI 단독 부스서 CDMO 홍보 - 히트뉴스"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    },
+    {
+      "tag": "산업",
+      "title": "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr",
+      "summary": "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대    fetv.co.kr",
+      "source": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE14OUdHcDJ5bVNpSG9tZ1JUczM4cW43N05YSm9yVnVxWXBRMHJMajlZTU8yZVg5emRSSTE5Z0VfV05aRDk2dDZlNnpQLUc2WFhac3UxcWJNVTJPeWsyMjhQZS1SaXRpckZa?oc=5",
+      "source_name": "fetv.co.kr",
+      "published_at": "Tue, 06 Oct 2026 00:17:04 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr",
+          "lead": "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대    fetv.co.kr",
+          "title_options": [
+            "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr",
+            "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr"
+          ]
+        },
+        "diff": {
+          "title": "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr",
+            "유한양행, CPHI 단독부스 참가…글로벌 CDMO 수주 확대 - fetv.co.kr"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    },
+    {
+      "tag": "산업",
+      "title": "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스",
+      "summary": "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원'    더파마뉴스",
+      "source": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1pdm9nZVpNOTNXLTY5YjlVeGw3bFdPMTdOam44ejZpQkhqZFNWUGdhcHBLQ2xxenNSQmxhaTRNeWhuX0JUY2c0T2pLdFA4UnNfMGQxQnpMUkZTT053S0FxdTl4Zi1RTUo3NTRtclN2WmxDMFVs?oc=5",
+      "source_name": "더파마뉴스",
+      "published_at": "Tue, 06 Oct 2026 01:39:00 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스",
+          "lead": "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원'    더파마뉴스",
+          "title_options": [
+            "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스",
+            "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스"
+          ]
+        },
+        "diff": {
+          "title": "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스",
+            "유한양행, 밀라노 전시회 단독 부스… 원료의약품 위탁개발생산 계약 '2,660억원' - 더파마뉴스"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    },
+    {
+      "tag": "산업",
+      "title": "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보",
+      "summary": "BC카드, '파리나무십자가 소년합창단' 단독 제휴    매일일보",
+      "source": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAtMUZtQU1FRndmWDA0M1lGaW55a3NsamY3ZS1PbUJiM1RONzZ0RFZNVFBQSkxMZzNJUnZWSE54WEJjZFIzZ1hrSTlfTjlDaWZ6ODFYVWctaFJNM0Y5dG9FY1V3NVc?oc=5",
+      "source_name": "매일일보",
+      "published_at": "Tue, 06 Oct 2026 00:44:35 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보",
+          "lead": "BC카드, '파리나무십자가 소년합창단' 단독 제휴    매일일보",
+          "title_options": [
+            "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보",
+            "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보"
+          ]
+        },
+        "diff": {
+          "title": "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보",
+            "BC카드, '파리나무십자가 소년합창단' 단독 제휴 - 매일일보"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    },
+    {
+      "tag": "허가·규제",
+      "title": "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com",
+      "summary": "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고    medipana.com",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBSdjZkNTFCbnktQ0taZElWZFJ4VUh0WUxBZ0JoaFdtbHVWTko5VXZqekl6eU9hdlZGNkpqNG9KZVNqbzdLd1M0ZHZLem1Qa1gweDVPNUJxUDJUZjRMdERzYmNMY05zVHN2VVY4?oc=5",
+      "source_name": "medipana.com",
+      "published_at": "Tue, 06 Oct 2026 01:05:43 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com",
+          "lead": "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고    medipana.com",
+          "title_options": [
+            "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com",
+            "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com"
+          ]
+        },
+        "diff": {
+          "title": "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com",
+            "한독 레졸루트 '에르소데투그', FDA pre-BLA 미팅 권고 - medipana.com"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    },
+    {
+      "tag": "허가·규제",
+      "title": "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com",
+      "summary": "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득    medipana.com",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE01bG95QmN3QnJWWVJlSUNBZ0RnREJ0Rk8zazlKUENuMFh0ZHJfOUxrdG9XMEpLc3hIWDI4VTlKVTN0Q21XU0ZuTlpJNzhGQndodE9nYllIeXdZbUdGdjI4QWg0TF9LT1pwN0tR?oc=5",
+      "source_name": "medipana.com",
+      "published_at": "Tue, 06 Oct 2026 00:25:37 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com",
+          "lead": "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득    medipana.com",
+          "title_options": [
+            "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com",
+            "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com"
+          ]
+        },
+        "diff": {
+          "title": "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com",
+            "메디쎄이 '넥튠 SA 경추 케이지', 美 FDA 510(k) 획득 - medipana.com"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:42:41.074155+09:00",
+      "update_batch": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
+      "is_live": true
+    }
+  ]
+}
