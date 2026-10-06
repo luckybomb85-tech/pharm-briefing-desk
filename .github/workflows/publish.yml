@@ -1,81 +1,18 @@
 name: publish-briefing
 
+# Distribution is intentionally paused while briefing search/selection quality is being tuned.
+# Re-enable schedule/manual publishing only after editorial review.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/publish-now.txt'
-  schedule:
-    # 07:30 KST Monday-Friday. Generation is completed beforehand by ChatGPT.
-    - cron: '30 22 * * 0-4'
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: publish-briefing
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  publish:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  paused:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Promote validated staging briefing
-        shell: bash
+      - name: Distribution paused
         run: |
-          DAY=$(TZ=Asia/Seoul date +%F)
-          SRC="staging/${DAY}-final.json"
-          DST="data/${DAY}.json"
-          test -f "$SRC" || { echo "Missing $SRC"; exit 1; }
-          python scripts/validate_briefing.py --path "$SRC" --staging
-          python - "$SRC" "$DST" <<'PY'
-          import json, pathlib, sys
-          src, dst = map(pathlib.Path, sys.argv[1:3])
-          d = json.loads(src.read_text(encoding='utf-8'))
-          d['status'] = 'published'
-          d['timezone'] = 'Asia/Seoul'
-          dst.parent.mkdir(parents=True, exist_ok=True)
-          dst.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-          PY
-          python scripts/validate_briefing.py --mode today
-      - name: Commit published briefing
-        shell: bash
-        run: |
-          DAY=$(TZ=Asia/Seoul date +%F)
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add "data/${DAY}.json"
-          if git diff --cached --quiet; then
-            echo "Today's published briefing is already current."
-          else
-            git commit -m "Publish briefing ${DAY} [no-telegram]"
-            git push
-          fi
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Deploy Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Send Telegram once
-        run: python scripts/send_telegram.py
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          echo "Briefing distribution is paused."
+          echo "No Telegram send, Pages deploy, or data promotion will run."
