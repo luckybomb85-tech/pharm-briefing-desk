@@ -1,40 +1,86 @@
 {
-  "version": 3,
-  "updated_at": "2026-10-02",
-  "priority_sources": {
-    "domestic": ["dailypharm.com","medipana.com","hitnews.co.kr","sisajournal-e.com","thebionews.net","dealsite.co.kr","businesspost.co.kr","newspim.com","newsthevoice.com","newdaily.co.kr","pharmstoday.com","dart.fss.or.kr","kind.krx.co.kr","mfds.go.kr","mohw.go.kr","hira.or.kr","scourt.go.kr","patent.scourt.go.kr","kipris.or.kr"],
-    "global": ["fda.gov","ema.europa.eu","clinicaltrials.gov","sec.gov","reuters.com","statnews.com","endpts.com","biopharmadive.com","fiercebiotech.com"],
-    "patent": ["kipris.or.kr","kipo.go.kr","patent.scourt.go.kr","scourt.go.kr","mfds.go.kr","ip-navi.or.kr","hkn24.com","uspto.gov","ptab.uspto.gov","reuters.com"]
-  },
-  "notes": "Production source priorities for the daily briefing. The publisher should read this file before research.",
-  "target_counts": {"domestic":10,"global":10,"patent":5},
-  "article_tags": ["R&D","임상 1상","임상 2상","임상 3상","허가·승인","약가·급여","정책·규제","실적","M&A","기술수출·도입","특허·소송","경영·재무"],
-  "global_scope": {"direct_korean_company_activity":"domestic","indirect_korean_company_partner_or_subsidiary":"글로벌·국내기업","foreign_company":"글로벌·해외"},
-  "summary_rule": "원문·상세 펼침용 요약은 모바일 기준 약 5줄, 3~5문장. 핵심 사실·수치·이전 대비 변화·기사 가치까지 포함하되 추정 금지.",
-  "ui_tabs": ["domestic","global","patent","schedule"],
+  "version": "1.0",
+  "updated_at": "2026-10-07",
+  "timezone": "Asia/Seoul",
   "briefing_time": "07:30",
-  "publish_time": "07:40",
-  "article_actions": {"detail_label":"내용 보기","quick_label":"바로 기사화","deep_label":"심층 기사화","preview":"바로 기사화/심층 기사화별 제목 1개와 리드 1~2문장"},
-  "source_policy": {
-    "scan_order": ["우선매체별 최신기사·섹션 페이지를 각각 스캔해 넓은 후보군 구성","단독·독자·확인 기사 별도 스캔","제약바이오 핵심 키워드 확장 검색","공식자료·공시·규제기관·법원·특허기관 원문 교차검증","전체 웹 보완검색으로 미등록 매체 중요뉴스 회수","중복 제거 후 중요도 기준 최종선정","특정 매체 3건 이상 선정 시 해당 매체의 3번째 이후 기사와 다른 매체 탈락 후보를 재비교"],
-    "exclusive_priority": "단독·독자·확인 기사는 별도 후보 풀에 넣고 같은 중요도 후보보다 우선한다. 단독 표기만으로 자동 선정하지 않고 새 정보와 기사화 가치를 함께 평가한다.",
-    "discovery": "한두 매체에서 목표 개수를 확보해도 검색을 종료하지 않는다. 매체별 후보를 충분히 수집한 뒤 전체 후보를 한 번에 경쟁시킨다. 매체 다양성 자체를 할당량으로 강제하지 않되, 특정 매체 편중은 검색 누락 가능성을 뜻하는 경고 신호로 보고 재검색·재비교한다.",
-    "selection_criteria": ["객관적 중요도","새 정보의 크기","데일리팜 기사화·후속취재 가치","출처 신뢰도·원문 확인 가능성","단독·독자 취재 여부"],
-    "domestic_excluded": ["의협신문","메디게이트뉴스","팜뉴스","약업신문","약사공론","메디칼타임즈","블로터","데일리메디","ZDNet"],
-    "noise_filter": "봉사활동·내부행사·단순 제품홍보·반복 보도자료는 원칙적으로 제외한다. 주가 등락 기사 자체는 후순위로 두되 큰 변동의 원인이 새로운 임상·공시·딜·규제·특허 이슈이면 원인 뉴스를 후보로 승격한다.",
-    "verification": "핵심 수치·임상 결과·투자액·지분율·허가·급여·판결·특허 사실은 가능한 한 회사/공시/정부기관/법원/등록자료 등 1차 출처로 재확인한다.",
-    "time_window": "국내·글로벌·특허 모두 실행 시점에서 정확히 직전 24시간만 허용한다. 24시간 밖의 기사는 개수 부족을 이유로 가져오지 않는다.",
-    "target_rule": "국내 최대10·글로벌 최대10·특허 최대5를 목표로 탐색한다. 24시간 안에 기사 가치가 있는 후보가 목표보다 적으면 적은 개수 그대로 발행한다. 저가치 기사나 24시간 밖 기사를 넣어 숫자를 맞추지 않는다.",
-    "cross_day_dedupe": "전날 브리핑에 실린 동일 사건은 오늘 다시 넣지 않는다. URL이 달라도 사건이 같으면 중복으로 본다. 다만 직전 24시간 안에 새 판결·새 임상결과·새 계약조건·새 허가결정 등 실질적인 후속 사실이 발생한 경우에는 새 사건으로 선정할 수 있고 무엇이 새 정보인지 요약에 명시한다."
+  "domestic": {
+    "morning_window": {
+      "rule": "today_plus_previous_day_from_noon",
+      "previous_day_start": "12:00",
+      "note": "당일 전수 + 전날 12:00 이후. 전날 오전 사건의 오후 재보도는 제외."
+    },
+    "target_rule": "10건을 기본 목표로 적극 확보하되 상한은 없다. 가치 있는 기사가 10건을 넘으면 모두 제공한다. 10건 미만이면 후보 풀을 한 차례 재검토하되 단순 행사·봉사·제품홍보·재탕으로 채우지 않는다.",
+    "collectors": {
+      "A": ["dailypharm.com","medipana.com","hitnews.co.kr","thebionews.net"],
+      "B": ["newsthevoice.com","pharmstoday.com","biospectator.com","biotimes.co.kr"],
+      "C": ["dealsite.co.kr","businesspost.co.kr","newspim.com","newdaily.co.kr"],
+      "D": ["hankyung.com/bioinsight","pharm.edaily.co.kr"],
+      "WEB": ["조선비즈","서울경제","머니투데이","매일경제","아시아경제","파이낸셜뉴스","헤럴드경제","이투데이","기타 전체 웹"]
+    },
+    "scan_method": "고정매체는 최신기사/관련 섹션 직접 확인을 우선하고 검색엔진을 보완 수단으로 사용한다. WEB은 키워드 축별 누락검색을 수행한다.",
+    "web_keyword_axes": {
+      "rnd": ["제약 임상","바이오 임상","임상 3상","신약 허가","FDA","임상 실패","임상 중단"],
+      "bd": ["기술수출","기술이전","라이선스","계약금","마일스톤","권리 반환","계약해지"],
+      "governance": ["최대주주","경영권","지분","증여","승계","인수","합병","매각","유상증자"],
+      "court": ["제약 판결","바이오 판결","대법원","고등법원","지방법원","가처분","집행정지","손해배상"],
+      "market_risk": ["거래정지","상장폐지","관리종목"],
+      "policy": ["약가","급여","건강보험","약사법","의약품 허가"]
+    },
+    "excluded_general_news": ["의협신문","메디게이트뉴스","팜뉴스","약업신문","약사공론","메디칼타임즈","블로터","데일리메디","ZDNet"],
+    "noise_filter": "봉사활동·내부행사·단순 제품홍보·반복 PR은 원칙적으로 제외. 주가 등락 자체는 후순위이며 원인이 새 임상·공시·딜·규제·특허 사건이면 원인 사건을 후보화."
   },
-  "briefing_principles": "실행시점 기준 정확히 직전 24시간만 사용 · 국내/글로벌/특허 모두 동일 · 부족하면 없는 만큼 비워두고 72시간 확장 금지 · 전날 브리핑 동일 사건 재수록 금지(실질적 새 후속사실 예외) · 우선매체별 후보를 폭넓게 수집한 뒤 전체 후보 경쟁 · 특정 매체 편중 시 재검색/재비교 · 단독/독자/확인 별도 스캔 · 공식 원문 교차검증 · 전체 웹 보완검색 · 객관적 중요도/새 정보/데일리팜 기사화 가치/출처 신뢰도/단독 여부로 최종선정",
-  "live_update_policy": {
-    "morning_immutable": "07:20 아침판은 당일 공식 스냅샷으로 고정하며 이후 업데이트가 원본을 교체하거나 삭제하지 않는다.",
-    "per_section_refresh": "국내·글로벌·특허 탭은 각각 독립적으로 업데이트한다. 사용자가 누른 섹션만 재검색한다.",
-    "append_only": "업데이트에서 새로 확인된 중요기사만 기존 아침판 위에 누적한다.",
-    "no_quota": "업데이트에는 목표 개수를 두지 않는다. 추가할 중요뉴스가 없으면 0건으로 기록하고 마지막 확인시각만 갱신한다.",
-    "dedupe": "동일 URL뿐 아니라 같은 사건의 타 매체 보도 및 전날 브리핑에 실린 동일 사건도 중복으로 추가하지 않는다. 실질적인 새 후속사실이 생긴 경우만 예외다.",
-    "display": "추가 항목은 신규 표시와 추가시각을 표시하고 아침판 개수와 업데이트 누적 개수를 구분한다.",
-    "archive": "당일 누적 결과는 날짜별 기록으로 보존하고 다음 날 새 아침판은 다시 직전 24시간 기준으로 시작한다."
+  "event_map": {
+    "dedupe_unit": "event",
+    "statuses": ["NEW","UPDATE","DUPLICATE"],
+    "fields": ["event_id","event_type","first_published_at","first_seen_at","companies","headline","core_facts","sources","priority_signals","priority_level","verification_status","delivery_status"],
+    "cross_day_rule": "URL이 달라도 같은 사건이면 중복. 실질적인 새 판결·임상결과·계약조건·허가결정 등 새 사실이 생기면 UPDATE."
+  },
+  "priority": {
+    "levels": ["P0","P1","P2","P3"],
+    "P0": ["FDA 승인·CRL 등 중대한 규제결정","임상 3상 성공·실패","임상 중단·중대한 안전성 문제","거래정지·상장폐지","최대주주 변경","대규모 M&A·경영권 거래","대형 기술수출","중요 기술반환·계약해지","대법원 주요 판결·결정"],
+    "P1": ["제목에 단독 포함","고등법원 주요 판결·결정","오너일가 승계·중대한 지분변동","합병·분할 등 지배구조 재편","중요 임상 1·2상 결과","국내 주요 품목허가·급여·약가 변화"],
+    "court_order": ["대법원","고등법원","지방법원"],
+    "license_thresholds_krw": {
+      "upfront": 10000000000,
+      "max_contract": 200000000000
+    },
+    "foreign_currency_rule": "발견 시점 환율로 원화 환산해 계약금 100억원 이상 또는 최대 계약규모 2000억원 이상이면 우선 탐지.",
+    "stacking_rule": "단독·최대주주·오너일가·기술수출 등 신호가 중첩될수록 우선순위를 높인다."
+  },
+  "verification": {
+    "mode": "minimal_only",
+    "no_separate_verifier": true,
+    "required_when": ["판결 승패·인용·기각·심급","FDA 승인·CRL","임상 3상 성공·실패·중단","기술수출 계약금·총액이 야마인 경우","최대주주 변경·핵심 지분율","검색결과만 보고 후보화한 경우 원문 확인"],
+    "rule": "브리핑은 취재 아이템 탐색 시스템이므로 전수 원자료 검증을 하지 않는다. 기사 야마를 바꾸는 핵심 사실만 최소 확인."
+  },
+  "pipeline": {
+    "morning": [
+      {"time":"06:05","task":"collector_A"},
+      {"time":"06:12","task":"collector_B"},
+      {"time":"06:19","task":"collector_C"},
+      {"time":"06:26","task":"collector_D"},
+      {"time":"06:33","task":"collector_WEB"},
+      {"time":"06:45","task":"event_merge_dedupe"},
+      {"time":"06:55","task":"editorial_priority_and_minimal_check"},
+      {"time":"07:15","task":"briefing_build"},
+      {"time":"07:25","task":"completeness_gate"},
+      {"time":"07:30","task":"deliver"}
+    ],
+    "collector_status": ["PASS","PARTIAL","FAIL"],
+    "completeness_rule": "검색 실패와 정상 검색 0건을 구분한다. 실패한 Collector만 1회 재시도하고 계속 실패하면 PARTIAL/FAIL을 명시한다."
+  },
+  "intraday": {
+    "times": ["10:00","12:00","14:00","16:00","18:00"],
+    "rule": "직전 checkpoint 이후 신규기사만 수집해 Event Map과 비교. NEW/UPDATE만 전달하고 DUPLICATE는 전달하지 않는다.",
+    "no_quota": true
+  },
+  "urgent_watch": {
+    "separate_lightweight_lane": true,
+    "triggers": ["단독 중 핵심사건","FDA 승인·CRL","임상 3상 성공·실패","임상 중단·중대한 안전성","거래정지·상장폐지","최대주주 변경","중대한 오너일가 변화","대규모 M&A·경영권 거래","기술수출 기준 충족","중요 기술반환·계약해지","주요 법원 판결·결정"],
+    "rule": "트리거 중심으로 가볍게 감시하고 조건 충족 시 Event Map 중복 확인과 최소 팩트 확인 후 푸시 후보로 처리."
+  },
+  "distribution": {
+    "github_publish_workflow": "paused_until_v1_validation",
+    "note": "검색·선정 v1.0 안정화 전 Telegram/Pages 자동 배포는 재개하지 않는다."
   }
 }
