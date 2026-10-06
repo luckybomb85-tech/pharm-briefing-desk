@@ -2,14 +2,20 @@
   "date": "2026-10-06",
   "section": "domestic",
   "morning_count": 10,
-  "updated_at": "2026-10-06T12:42:41.074155+09:00",
-  "last_request_at": "2026-10-06T03:31:21.968232+00:00",
+  "updated_at": "2026-10-06T14:49:07.975779+09:00",
+  "last_request_at": "2026-10-06T05:38:07.330319+00:00",
   "batches": [
     {
       "request_id": "9e6874cc-ca6c-4ddc-9956-700166ae8a17",
       "requested_at": "2026-10-06T03:31:21.968232+00:00",
       "completed_at": "2026-10-06T12:42:41.074155+09:00",
       "added_count": 7
+    },
+    {
+      "request_id": "211ed0c5-228c-441d-a470-75656ce861b0",
+      "requested_at": "2026-10-06T05:38:07.330319+00:00",
+      "completed_at": "2026-10-06T14:49:07.975779+09:00",
+      "added_count": 0
     }
   ],
   "items": [
