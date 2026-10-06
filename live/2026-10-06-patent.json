@@ -2,15 +2,51 @@
   "date": "2026-10-06",
   "section": "patent",
   "morning_count": 0,
-  "updated_at": "2026-10-06T12:42:27.436125+09:00",
-  "last_request_at": "2026-10-06T03:39:56.690561+00:00",
+  "updated_at": "2026-10-06T12:46:33.341674+09:00",
+  "last_request_at": "2026-10-06T03:45:14.781406+00:00",
   "batches": [
     {
       "request_id": "34752d46-2e17-488e-8d83-97013ce7ae03",
       "requested_at": "2026-10-06T03:39:56.690561+00:00",
       "completed_at": "2026-10-06T12:42:27.436125+09:00",
       "added_count": 0
+    },
+    {
+      "request_id": "a3428a4d-7027-4904-985d-e0c627c16066",
+      "requested_at": "2026-10-06T03:45:14.781406+00:00",
+      "completed_at": "2026-10-06T12:46:33.341674+09:00",
+      "added_count": 1
     }
   ],
-  "items": []
+  "items": [
+    {
+      "tag": "특허·IP",
+      "title": "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'",
+      "summary": "The euro sank to a 17-month low after a jump in the cost of government borrowing, especially in France. Laura Cooper of Nuveen told Reuters markets are reflecting worries that none of the candidates ...",
+      "source": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ac46f19b5464f148969114d53f734d3&url=https%3a%2f%2fwww.reuters.com%2fvideo%2fwatch%2fidRW758905102026RP1%2f&c=4092147334478454686&mkt=ko-kr",
+      "source_name": "bing.com",
+      "published_at": "Mon, 05 Oct 2026 06:59:00 GMT",
+      "article_preview": {
+        "quick": {
+          "title": "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'",
+          "lead": "The euro sank to a 17-month low after a jump in the cost of government borrowing, especially in France. Laura Cooper of Nuveen told Reuters markets are reflecting worries that none of the candidates ...",
+          "title_options": [
+            "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'",
+            "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'"
+          ]
+        },
+        "diff": {
+          "title": "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'",
+          "direction": "원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.",
+          "title_options": [
+            "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'",
+            "Sectors Up Close: Big pharma 'needs to replace drugs coming off patent'"
+          ]
+        }
+      },
+      "live_added_at": "2026-10-06T12:46:33.341674+09:00",
+      "update_batch": "a3428a4d-7027-4904-985d-e0c627c16066",
+      "is_live": true
+    }
+  ]
 }
