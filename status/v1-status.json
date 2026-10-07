@@ -1,0 +1,15 @@
+{
+  "schema_version": "briefing-status-v1.0",
+  "version": "1.0",
+  "authoritative_config": "config/briefing-settings.json",
+  "state": "validation",
+  "legacy_outputs": "ignored",
+  "distribution": "paused",
+  "last_reset": "2026-10-07",
+  "checks": {
+    "config_contract": "PASS",
+    "legacy_quota_disabled": "PASS",
+    "publish_paused": "PASS",
+    "staging_schema_required": "PASS"
+  }
+}
