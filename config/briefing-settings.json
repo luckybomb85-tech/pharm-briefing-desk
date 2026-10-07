@@ -263,6 +263,16 @@
   "pipeline": {
     "morning": [
       {
+        "time": "05:40",
+        "task": "schedule_update",
+        "note": "기사검색과 독립. 향후 취재일정만 갱신"
+      },
+      {
+        "time": "05:45",
+        "task": "global_collector",
+        "note": "국내 아침 기사 발행 전 글로벌을 먼저 수집"
+      },
+      {
         "time": "06:05",
         "task": "collector_A"
       },
@@ -283,11 +293,16 @@
         "task": "collector_WEB"
       },
       {
-        "time": "06:45",
-        "task": "event_merge_dedupe"
+        "time": "06:40",
+        "task": "patent_collector",
+        "note": "국내 기사에 포착된 특허 이벤트도 함께 반영하고 1차소스 9축 확인"
       },
       {
         "time": "06:55",
+        "task": "event_merge_dedupe"
+      },
+      {
+        "time": "07:05",
         "task": "editorial_priority_and_minimal_check"
       },
       {
@@ -308,7 +323,19 @@
       "PARTIAL",
       "FAIL"
     ],
-    "completeness_rule": "각 소스는 DIRECT_LIST 실패만으로 PARTIAL 처리하지 않는다. SITE_SEARCH/WEB_SEARCH_RECOVERY로 시간창을 실질 확인하고 원문 제목·발행시각을 확인하면 PASS 가능하다. 정상 0건과 검색 실패는 반드시 구분한다. PARTIAL/FAIL 소스만 1회 재시도한다."
+    "completeness_rule": "각 소스는 DIRECT_LIST 실패만으로 PARTIAL 처리하지 않는다. SITE_SEARCH/WEB_SEARCH_RECOVERY로 시간창을 실질 확인하고 원문 제목·발행시각을 확인하면 PASS 가능하다. 정상 0건과 검색 실패는 반드시 구분한다. PARTIAL/FAIL 소스만 1회 재시도한다.",
+    "execution_order": [
+      "schedule_update",
+      "global_collector",
+      "domestic_collectors",
+      "patent_collector",
+      "event_merge_dedupe",
+      "editorial_priority_and_minimal_check",
+      "briefing_build",
+      "completeness_gate",
+      "deliver"
+    ],
+    "order_rule": "국내 아침 기사 발행을 반영하기 위해 국내 고정매체 검색은 06:00 KST 이전에 시작하지 않는다. 글로벌은 국내보다 먼저 수집한다. 특허는 국내 검색 뒤 수행해 국내 기사에서 발견된 특허 이벤트를 교차탭에 포함한다."
   },
   "intraday": {
     "times": [
@@ -583,6 +610,8 @@
     },
     "checkpoint_rule": "domestic 완료, global 완료, patent 완료 시점마다 staging 중간결과를 저장한다. 후속 단계가 실패해도 이전 섹션 결과를 잃지 않는다.",
     "degradation_rule": "시간/접근 문제로 일부 검사가 끝나지 않으면 확보된 기사와 상태를 partial staging으로 남긴다. 누락 상태를 PASS_ZERO로 변환하지 않는다.",
-    "no_unbounded_search": true
+    "no_unbounded_search": true,
+    "domestic_not_before_kst": "06:00",
+    "global_before_domestic": true
   }
 }
