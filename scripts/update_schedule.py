@@ -3,7 +3,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-MODEL=os.getenv("OPENAI_MODEL","gpt-6.1-sol")
+MODEL=os.getenv("OPENAI_MODEL","gpt-5.6")
 URL="https://mqkhtnryxyntrrfrfing.supabase.co"
 KEY="sb_publishable_GLp72jjAPgHWqUEpqtnw5Q_rY3lfcB8"
 
@@ -26,6 +26,12 @@ def call(prompt):
     text="".join(c.get("text","") for i in out.get("output",[]) if i.get("type")=="message" for c in i.get("content",[]) if c.get("type")=="output_text")
     return json.loads(text)
 
+def write_health(status, now, detail, event_count=None):
+    p=Path("status/schedule-health.json"); p.parent.mkdir(parents=True,exist_ok=True)
+    payload={"status":status,"checked_at":now.isoformat(timespec="seconds"),"timezone":"Asia/Seoul","detail":detail}
+    if event_count is not None: payload["event_count"]=event_count
+    p.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
+
 def main():
     p=Path("schedule/events.json"); old=json.loads(p.read_text(encoding="utf-8"))
     now=datetime.now(ZoneInfo("Asia/Seoul")); today=now.strftime("%Y-%m-%d")
@@ -40,7 +46,12 @@ live web search를 사용해 앞으로 180일 내 취재 가치가 있는 일정
 기존 일정={json.dumps(existing,ensure_ascii=False)}
 공개 관심소송={json.dumps(cases,ensure_ascii=False)}
 최상위 JSON은 {{"events":[...]}}만. 각 event는 id,date,end_date,time,end_time,title,category,confidence,place,organization,case_number,memo,source,source_name,first_seen,last_checked,entry_type 필드를 모두 가진다. confidence는 공식확정/주최측확인/보도예정/미확정 중 하나. entry_type='auto'. JSON만 출력."""
-    d=call(prompt); events=d.get("events")
+    try:
+        d=call(prompt)
+    except Exception as e:
+        write_health("FAIL",now,f"schedule collector failed: {type(e).__name__}: {e}")
+        raise
+    events=d.get("events")
     if not isinstance(events,list): raise SystemExit("invalid events output")
     seen=set()
     for e in events:
@@ -49,6 +60,7 @@ live web search를 사용해 앞으로 180일 내 취재 가치가 있는 일정
         seen.add(e["id"])
     out={"version":1,"updated_at":now.isoformat(timespec="seconds"),"timezone":"Asia/Seoul","events":events,"tracked_cases":[],"notes":old.get("notes","Shared schedule database.")}
     p.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
+    write_health("PASS",now,"same-day schedule collection completed",len(events))
     print(f"schedule updated: {len(events)} future events")
 
 if __name__=="__main__": main()
