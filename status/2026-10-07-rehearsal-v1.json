@@ -1,0 +1,83 @@
+{
+  "schema_version": "briefing-rehearsal-v1.0",
+  "date": "2026-10-07",
+  "timezone": "Asia/Seoul",
+  "run_at": "2026-10-07T15:24:00+09:00",
+  "scope": "v1.0 pre-production rehearsal; fresh web collection, not public briefing",
+  "verdict": "PARTIAL",
+  "section_health": {
+    "domestic": "PARTIAL",
+    "global": "PARTIAL",
+    "patent": "PARTIAL",
+    "schedule": "FAIL"
+  },
+  "metrics": {
+    "domestic": {
+      "fresh_verified_examples": 7,
+      "note": "오후 신규 기사와 원문 URL/시각 확보 경로 확인. 다만 A/B/C/D/WEB 전 고정매체의 source_status를 이번 수동 리허설에서 완전 확정하지 않아 PASS 보류."
+    },
+    "global": {
+      "in_window_high_value_examples": 1,
+      "supplemental_recent_examples": 6,
+      "note": "엄격 시간창 내 기사 가치 있는 후보가 10건에 못 미침. 10건 목표를 채우기 위해 10/5 이전 사건을 섞지 않음. FDA/회사 공식/전문매체 source-group별 완료상태가 필요."
+    },
+    "patent": {
+      "priority_axes_total": 9,
+      "web_axes_searched": 9,
+      "axes_fully_primary_verified": 0,
+      "note": "일반 웹검색만으로 국내 심판청구·심결·우판권·통지의약품 핵심 이벤트를 충분히 포착하지 못함. 특허심판원/식약처/국회/KIPRIS 등 1차소스 직접 확인 전 PASS 금지."
+    },
+    "schedule": {
+      "repository_updated_at": "2026-10-02T09:40:00+09:00",
+      "freshness_days": 5,
+      "note": "당일 05:40 이후 갱신 조건 미충족."
+    }
+  },
+  "findings": [
+    "국내 오후 신규 기사에서 실제 원문 URL과 정확한 발행시각을 확보할 수 있음을 확인.",
+    "글로벌 10건은 품질 목표이며 시간창 밖 과거 딜로 패딩하면 안 됨.",
+    "특허 9개 검색축은 일반 웹검색 완료만으로 PASS 처리할 수 없고 핵심 1차소스 직접확인이 필요.",
+    "일정은 화면 노출과 별개로 데이터가 5일 stale 상태이므로 FAIL."
+  ],
+  "verified_examples": {
+    "domestic": [
+      {
+        "title": "“미팅 잡아라” K바이오, 바이오재팬서 종횡무진…파트너링 열기 ‘후끈’",
+        "published_at": "2026-10-07T12:53:59+09:00",
+        "source": "https://pharm.edaily.co.kr/News/Read?newsId=03775286645610624"
+      },
+      {
+        "title": "삼성바이오로직스, 일본서 ‘통합 CDMO’ 승부…아태 고객 잡는다",
+        "published_at": "2026-10-07T13:15:03+09:00",
+        "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03827766645610624"
+      },
+      {
+        "title": "메드팩토, 바이오 재팬 참가…항암제 후보 기술이전 논의",
+        "published_at": "2026-10-07T13:40:00+09:00",
+        "source": "https://member.newspim.com/news/view/20261007000884"
+      }
+    ],
+    "global": [
+      {
+        "title": "ArriVent firmonertinib Phase 3 missed primary endpoint",
+        "published_at": "2026-10-07",
+        "source_name": "Barron's",
+        "status": "in-window; exact time not verified"
+      }
+    ],
+    "patent": [
+      {
+        "title": "국내 특허 9개 핵심 검색축 일반 웹 검색",
+        "status": "PARTIAL",
+        "reason": "primary-source sweep incomplete"
+      }
+    ]
+  },
+  "next_gate": [
+    "schedule workflow successful same-day run",
+    "domestic fixed-source status A/B/C/D/WEB fully recorded",
+    "global source-group search status recorded and P0/P1 timestamps verified",
+    "patent nine priority axes primary-source status recorded",
+    "only then generate new staging final and test-publish"
+  ]
+}
