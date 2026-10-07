@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "briefing-event-map-v1.0",
+  "title": "Pharm Briefing Event Map v1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "date",
+    "events"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "briefing-event-map-v1.0"
+    },
+    "date": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "event_type",
+          "first_published_at",
+          "companies",
+          "headline",
+          "core_facts",
+          "sources",
+          "priority_signals",
+          "priority_level",
+          "verification_status",
+          "delivery_status"
+        ]
+      }
+    }
+  }
+}
