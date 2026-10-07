@@ -2,9 +2,9 @@
   "schema_version": "briefing-final-v1.0",
   "date": "2026-10-07",
   "timezone": "Asia/Seoul",
-  "status": "test-published",
+  "status": "rehearsal-published",
   "test_run": true,
-  "test_banner": "TEST · v1.0 재배포 검증 · 국내/글로벌/특허/일정",
+  "test_banner": "10/7 리허설 배포 · v1.0 운영 전 검증판",
   "search_window": {
     "rule": "today_plus_previous_day_from_noon",
     "from": "2026-10-06T12:00:00+09:00",
@@ -533,5 +533,11 @@
     "global": "PARTIAL",
     "patent": "PARTIAL",
     "schedule": "PARTIAL"
+  },
+  "publication": {
+    "type": "rehearsal",
+    "published": true,
+    "label": "리허설 배포",
+    "note": "운영 전 수동 리허설 결과. 일부 수집·원문 URL·일정 검증이 PARTIAL/FAIL인 상태를 포함한다."
   }
 }
