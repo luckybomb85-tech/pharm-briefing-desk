@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-08",
+  "timezone": "Asia/Seoul",
+  "checked_at": "2026-10-07T21:08:41.673Z",
+  "status": "PARTIAL",
+  "collector_status": {
+    "A": "PARTIAL",
+    "B": "PARTIAL",
+    "C": "PARTIAL",
+    "D": "PARTIAL",
+    "WEB": "PARTIAL"
+  },
+  "candidates_verified": 3,
+  "candidate_records_persisted": false,
+  "reason": "Collector coverage incomplete; candidate-content repository write was not accepted."
+}
