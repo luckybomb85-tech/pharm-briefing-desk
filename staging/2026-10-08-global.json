@@ -1,1 +1,1 @@
-{"date":"2026-10-08","global":[],"no_telegram":true,"status":"PARTIAL","count":13}
+{"date":"2026-10-08","timezone":"Asia/Seoul","status":"FAIL","no_telegram":true,"publish_allowed":false,"global":[],"discovered_count":13,"staged_count":0,"global_search_status":{"PRIMARY_REGULATORY_AND_COMPANY":"PASS","TRADE_AND_WIRE":"PASS","WHOLE_WEB_RECOVERY":"PASS"},"errors":["GitHub candidate content write blocked by safety checks; no candidate records persisted"],"warnings":["Do not treat empty global array as PASS_ZERO"]}
