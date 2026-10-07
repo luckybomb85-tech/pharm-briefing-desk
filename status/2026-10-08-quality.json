@@ -1,0 +1,56 @@
+{
+  "schema_version": "briefing-quality-v1.0",
+  "date": "2026-10-08",
+  "checked_at": "2026-10-07T21:08:41.673Z",
+  "overall": "PARTIAL",
+  "blocking": [
+    "domestic_collectors",
+    "global_persistence",
+    "patent_axes",
+    "schedule",
+    "candidate_persistence"
+  ],
+  "sections": {
+    "domestic": {
+      "status": "PARTIAL",
+      "verified_candidate_count": 3,
+      "persisted_count": 0
+    },
+    "global": {
+      "status": "FAIL",
+      "discovered_count": 13,
+      "persisted_count": 0
+    },
+    "patent": {
+      "status": "PARTIAL",
+      "count": 0
+    },
+    "schedule": {
+      "status": "FAIL"
+    }
+  },
+  "domestic_collectors": {
+    "A": "PARTIAL",
+    "B": "PARTIAL",
+    "C": "PARTIAL",
+    "D": "PARTIAL",
+    "WEB": "PARTIAL"
+  },
+  "global_source_groups": {
+    "PRIMARY_REGULATORY_AND_COMPANY": "PASS",
+    "TRADE_AND_WIRE": "PASS",
+    "WHOLE_WEB_RECOVERY": "PASS"
+  },
+  "patent_axes": {
+    "특허심판 청구": "PARTIAL",
+    "특허심판원 심결": "PARTIAL",
+    "특허법원·각급법원 판결·결정": "PARTIAL",
+    "우선판매품목허가": "PARTIAL",
+    "통지의약품": "PARTIAL",
+    "의약품 특허기간 만료·임박": "PARTIAL",
+    "우판기간 만료·임박": "PARTIAL",
+    "특허법·허가특허연계 입법": "PARTIAL",
+    "국내사 특허도전·소송 및 출시·독점기간 변화": "PARTIAL"
+  },
+  "publish_allowed": false
+}
