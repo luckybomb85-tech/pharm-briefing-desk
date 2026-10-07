@@ -1,0 +1,186 @@
+{
+  "schema_version": "briefing-final-v1.0",
+  "date": "2026-10-07",
+  "timezone": "Asia/Seoul",
+  "test_run": true,
+  "run_label": "manual-v1.0-smoke-test",
+  "status": "partial",
+  "search_window": {
+    "rule": "today_plus_previous_day_from_noon",
+    "from": "2026-10-06T12:00:00+09:00",
+    "to": "2026-10-07T11:00:00+09:00",
+    "note": "시범 실행 기준시각"
+  },
+  "collector_status": {
+    "A": "PASS",
+    "B": "PARTIAL",
+    "C": "PARTIAL",
+    "D": "PARTIAL",
+    "WEB": "PASS"
+  },
+  "completeness_status": "partial",
+  "completeness_notes": [
+    "검색엔진 기반 시범으로 일부 고정매체 최신목록 직접 접근이 불완전해 PARTIAL 처리",
+    "정상 0건과 접근 불완전을 구분함",
+    "배포 금지 TEST"
+  ],
+  "domestic": [
+    {
+      "rank": 1,
+      "event_id": "20261007-CELLTRION-APTOZMA-FDA-PEDS",
+      "priority": "P0",
+      "title": "앱토즈마 美 소아 코로나19 적응증 추가 승인",
+      "core_facts": [
+        "FDA가 앱토즈마 IV 제형의 코로나19 치료 대상을 2세 이상 소아·청소년으로 확대 승인"
+      ],
+      "sources": [
+        "뉴스핌",
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 2,
+      "event_id": "20261006-REZOLUTE-RZ358-PH3-MISS",
+      "priority": "P0",
+      "title": "한독 파트너 레졸루트 RZ358 글로벌 3상 1차평가지표 미충족",
+      "core_facts": [
+        "sunRIZE 글로벌 3상 1차평가지표 미충족",
+        "FDA가 추가자료 검토 후 pre-BLA 미팅 권고"
+      ],
+      "sources": [
+        "파이낸셜뉴스"
+      ]
+    },
+    {
+      "rank": 3,
+      "event_id": "20261006-ALTEOGEN-MERGER-FUNDING",
+      "priority": "P1",
+      "title": "알테오젠 2000억 투자유치·자회사 흡수합병",
+      "core_facts": [
+        "2000억원 투자유치",
+        "알테오젠바이오로직스 흡수합병 결정"
+      ],
+      "sources": [
+        "뉴스핌",
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 4,
+      "event_id": "20261006-IL-YANG-SUCCESSION",
+      "priority": "P1",
+      "title": "국제약품 남영우 지분 전량 3세 증여",
+      "core_facts": [
+        "남영우 보유지분 전량을 남태훈에게 증여",
+        "승계·오너일가 지분변화"
+      ],
+      "sources": [
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 5,
+      "event_id": "20261007-LOTTEBIO-ALVOTECH-CDMO",
+      "priority": "P1",
+      "title": "롯데바이오로직스, 알보텍 바이오시밀러 생산 수주",
+      "core_facts": [
+        "미국 시러큐스 공장에서 알보텍 항체 바이오시밀러 원료의약품 생산"
+      ],
+      "sources": [
+        "팜이데일리",
+        "바이오스펙테이터",
+        "뉴스핌"
+      ]
+    },
+    {
+      "rank": 6,
+      "event_id": "20261007-KUKJEON-BLUEPHARMA",
+      "priority": "P1",
+      "title": "국전, 블루파마 기술 이전받아 글로벌 무균주사제 사업 추진",
+      "core_facts": [
+        "블루파마 축적 기술 이전",
+        "미국·유럽 공급 가능한 상업생산 체계 구축 추진",
+        "연내 장기공급 포함 본계약 목표"
+      ],
+      "sources": [
+        "데일리팜"
+      ]
+    },
+    {
+      "rank": 7,
+      "event_id": "20261006-STPHARM-STP0404-PH2A",
+      "priority": "P1",
+      "title": "에스티팜 HIV 치료제 STP0404 2a상 항바이러스 효과 확인",
+      "core_facts": [
+        "세 용량 모두 위약 대비 바이러스량 유의 감소",
+        "중대한 안전성 문제 확인되지 않음"
+      ],
+      "sources": [
+        "데일리팜",
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 8,
+      "event_id": "20261007-GCCELL-GCC2005-PH1B",
+      "priority": "P2",
+      "title": "지씨셀 GCC2005 임상 1b상 돌입",
+      "core_facts": [
+        "CD5 CAR-NK 후보 임상 1a상 용량증량 완료",
+        "1b상 첫 환자 투약 완료"
+      ],
+      "sources": [
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 9,
+      "event_id": "20261007-HLB-LIRAFUGRATINIB-EU",
+      "priority": "P2",
+      "title": "HLB 리라푸그라티닙 유럽 품목허가 본심사 착수",
+      "core_facts": [
+        "담관암 신약 유럽 품목허가 본심사 착수"
+      ],
+      "sources": [
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 10,
+      "event_id": "20261007-WELYSIS-FDA510K",
+      "priority": "P2",
+      "title": "웰리시스 AI 심전도 판독 소프트웨어 FDA 510(k) 인증",
+      "core_facts": [
+        "AI 심전도 판독 소프트웨어 미국 FDA 510(k) 인증"
+      ],
+      "sources": [
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 11,
+      "event_id": "20261007-GIINNOVATION-GI301-JP2",
+      "priority": "P2",
+      "title": "지아이이노베이션 GI-301 일본 2상 첫 환자 투약 예정",
+      "core_facts": [
+        "일본 임상 2상 전략 및 첫 환자 투약 일정 진행"
+      ],
+      "sources": [
+        "팜이데일리"
+      ]
+    },
+    {
+      "rank": 12,
+      "event_id": "20261007-PHAROS-PHI101-CSR",
+      "priority": "P2",
+      "title": "파로스아이바이오 PHI-101 글로벌 1상 CSR 확보",
+      "core_facts": [
+        "평가 가능 환자 종합완전관해 50%",
+        "객관적반응률 67%"
+      ],
+      "sources": [
+        "메디파나"
+      ]
+    }
+  ]
+}
