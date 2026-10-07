@@ -11,14 +11,17 @@
     "search_window",
     "collector_status",
     "completeness_status",
-    "domestic"
+    "domestic",
+    "global",
+    "patent"
   ],
   "properties": {
     "schema_version": {
       "const": "briefing-final-v1.0"
     },
     "date": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "timezone": {
       "const": "Asia/Seoul"
@@ -27,7 +30,9 @@
       "enum": [
         "ready",
         "partial",
-        "failed"
+        "failed",
+        "published",
+        "test-published"
       ]
     },
     "search_window": {
@@ -42,7 +47,6 @@
         "D",
         "WEB"
       ],
-      "additionalProperties": false,
       "properties": {
         "A": {
           "enum": [
@@ -88,7 +92,46 @@
         "failed"
       ]
     },
+    "section_health": {
+      "type": "object",
+      "properties": {
+        "domestic": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "global": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "patent": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "schedule": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        }
+      }
+    },
     "domestic": {
+      "type": "array"
+    },
+    "global": {
+      "type": "array"
+    },
+    "patent": {
       "type": "array"
     }
   },
