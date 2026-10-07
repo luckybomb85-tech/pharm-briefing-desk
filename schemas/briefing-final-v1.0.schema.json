@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "briefing-final-v1.0",
+  "title": "Pharm Briefing Final v1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "date",
+    "timezone",
+    "status",
+    "search_window",
+    "collector_status",
+    "completeness_status",
+    "domestic"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "briefing-final-v1.0"
+    },
+    "date": {
+      "type": "string"
+    },
+    "timezone": {
+      "const": "Asia/Seoul"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "partial",
+        "failed"
+      ]
+    },
+    "search_window": {
+      "type": "object"
+    },
+    "collector_status": {
+      "type": "object",
+      "required": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "WEB"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "B": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "C": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "D": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        },
+        "WEB": {
+          "enum": [
+            "PASS",
+            "PARTIAL",
+            "FAIL"
+          ]
+        }
+      }
+    },
+    "completeness_status": {
+      "enum": [
+        "ready",
+        "partial",
+        "failed"
+      ]
+    },
+    "domestic": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
