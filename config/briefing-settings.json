@@ -371,7 +371,11 @@
       "completeness_status",
       "domestic",
       "global",
-      "patent"
+      "patent",
+      "source_status",
+      "section_health",
+      "global_search_status",
+      "patent_axis_status"
     ],
     "forbidden_legacy_assumptions": [
       "domestic_exactly_10",
@@ -393,7 +397,9 @@
       "tag_rule": "P0/P1/P2/P3는 priority 필드에 저장하고 tag에는 기사 주제 분류만 넣는다. 예: 임상 3상, 허가·규제, 기술수출, M&A·지배구조, 특허·소송, 약가·급여, 투자·재무.",
       "time_rule": "published_at은 원문 발행시각을 Asia/Seoul 기준 ISO 8601(YYYY-MM-DDTHH:MM:SS+09:00)로 저장한다. 원문 시각을 확인하지 못하면 빈 문자열과 timestamp_unverified=true를 함께 저장하며 추정시각을 넣지 않는다.",
       "test_rule": "시범 여부는 최상위 test_run/test_banner로 표시하고 개별 기사 tag/title에 TEST 문자열을 섞지 않는다."
-    }
+    },
+    "quality_report": "status/YYYY-MM-DD-quality.json",
+    "quality_rule": "운영 승격 전 scripts/quality_report.py를 실행하고 overall=PASS일 때만 data/YYYY-MM-DD.json 승격 허용."
   },
   "global": {
     "morning_window": {
