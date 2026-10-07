@@ -1,5 +1,8 @@
 name: update-reporting-schedule
 on:
+  schedule:
+    # Weekdays 05:40 KST = previous day 20:40 UTC
+    - cron: '40 20 * * 0-4'
   workflow_dispatch:
 permissions:
   contents: write
@@ -30,4 +33,5 @@ jobs:
             exit 0
           fi
           git commit -m "[no-telegram] Update reporting schedule"
+          git pull --rebase origin main
           git push
