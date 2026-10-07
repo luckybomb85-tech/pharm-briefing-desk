@@ -1,0 +1,46 @@
+name: recover-global-staging-manual
+# Explicit manual fallback; no OpenAI tool write is required for the actual commit.
+# No public data promotion, Telegram, or Pages deployment.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "KST date YYYY-MM-DD"
+        required: true
+        type: string
+      payload_b64:
+        description: "Base64-encoded UTF-8 JSON recovery payload"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: global-staging-recovery
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate and stage recovery payload
+        env:
+          GLOBAL_PAYLOAD_B64: ${{ inputs.payload_b64 }}
+          STAGING_DATE: ${{ inputs.date }}
+        run: python scripts/ingest_global_recovery.py --date "$STAGING_DATE"
+      - name: Commit only recovered staging file
+        env:
+          STAGING_DATE: ${{ inputs.date }}
+        run: |
+          git config user.name "pharm-briefing-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "staging/${STAGING_DATE}-global.json"
+          git diff --cached --quiet && exit 0
+          git commit -m "[no-telegram] Recover global staging ${STAGING_DATE}"
+          git pull --rebase origin main
+          git push origin HEAD:main
