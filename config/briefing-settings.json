@@ -340,7 +340,7 @@
   },
   "distribution": {
     "github_publish_workflow": "paused_until_v1_validation",
-    "note": "검색·선정 v1.0 안정화 전 Telegram/Pages 자동 배포는 재개하지 않는다."
+    "note": "v1.0 시범 Pages 배포 검증 중. Telegram 자동 배포는 계속 중지한다."
   },
   "schema_version": "briefing-v1.0",
   "authoritative": true,
@@ -369,7 +369,9 @@
       "search_window",
       "collector_status",
       "completeness_status",
-      "domestic"
+      "domestic",
+      "global",
+      "patent"
     ],
     "forbidden_legacy_assumptions": [
       "domestic_exactly_10",
@@ -377,6 +379,91 @@
       "patent_exactly_5",
       "empty_search_equals_pass"
     ],
-    "publish_allowed": false
+    "publish_allowed": false,
+    "desk_item_contract": {
+      "required": [
+        "tag",
+        "title",
+        "summary",
+        "source",
+        "source_name",
+        "published_at",
+        "article_preview"
+      ],
+      "tag_rule": "P0/P1/P2/P3는 priority 필드에 저장하고 tag에는 기사 주제 분류만 넣는다. 예: 임상 3상, 허가·규제, 기술수출, M&A·지배구조, 특허·소송, 약가·급여, 투자·재무.",
+      "time_rule": "published_at은 원문 발행시각을 Asia/Seoul 기준 ISO 8601(YYYY-MM-DDTHH:MM:SS+09:00)로 저장한다. 원문 시각을 확인하지 못하면 빈 문자열과 timestamp_unverified=true를 함께 저장하며 추정시각을 넣지 않는다.",
+      "test_rule": "시범 여부는 최상위 test_run/test_banner로 표시하고 개별 기사 tag/title에 TEST 문자열을 섞지 않는다."
+    }
+  },
+  "global": {
+    "morning_window": {
+      "rule": "today_plus_previous_day_from_noon",
+      "previous_day_start": "12:00",
+      "note": "당일 전수 + 전날 12:00 이후. 전날 오전 사건의 오후 재보도는 제외."
+    },
+    "target_rule": "10건을 기본 목표로 적극 확보하되 상한은 없다. 가치 있는 기사가 10건을 넘으면 모두 제공하고, 부족하면 억지로 채우지 않는다.",
+    "sources": [
+      "FDA",
+      "EMA",
+      "SEC",
+      "ClinicalTrials.gov",
+      "기업 공식 IR/Newsroom",
+      "Reuters",
+      "STAT",
+      "Endpoints News",
+      "BioPharma Dive",
+      "Fierce Pharma",
+      "Fierce Biotech",
+      "BioSpace",
+      "FirstWord Pharma",
+      "Scrip/Pink Sheet",
+      "Evaluate",
+      "Pharmaceutical Technology",
+      "Labiotech",
+      "GEN"
+    ],
+    "priority_rule": "회사 공식 발표와 FDA/EMA/SEC/ClinicalTrials.gov를 우선 확인하고 주요 임상 결과·허가·안전성·대형 기술거래·M&A를 선별한다. 한국 기업 직접 이슈는 domestic으로 분류한다."
+  },
+  "patent": {
+    "morning_window": {
+      "rule": "today_plus_previous_day_from_noon",
+      "previous_day_start": "12:00",
+      "note": "당일 전수 + 전날 12:00 이후. 전날 오전 사건의 오후 재보도는 제외."
+    },
+    "target_rule": "고정 개수를 강제하지 않는다. 기사 가치 있는 국내 특허·소송을 우선하고 부족할 때만 주요 해외 사건을 보충한다.",
+    "sources": [
+      "KIPRIS",
+      "특허심판원",
+      "특허법원",
+      "대법원·각급법원",
+      "식약처 허가특허연계",
+      "지식재산처/IP-NAVI",
+      "데일리팜",
+      "히트뉴스",
+      "메디파나",
+      "헬스코리아",
+      "바이오스펙테이터",
+      "한경 BIO Insight",
+      "팜이데일리",
+      "Reuters Legal",
+      "Law360 Life Sciences",
+      "Bloomberg Law",
+      "IAM"
+    ],
+    "priority_rule": "국내 제약사 신규 특허도전 > 심결·판결 > 항소·소송 제기 > 우판권·출시일 변화 > 국내사 당사자 해외소송 > 글로벌 대형 제약 특허판결. 단순 등록/PTE 행정절차는 시장 영향이 없으면 제외한다."
+  },
+  "schedule_update": {
+    "enabled": true,
+    "cadence": "weekdays_05:40_KST",
+    "rule": "기존 일정을 보존하고 새로 공식 확인된 향후 제약바이오 취재 일정을 병합한다. 날짜·시간·장소를 추정하지 않는다. 일정 데이터는 schedule/events.json 및 데스크의 schedule_events 경로와 호환되게 유지한다.",
+    "categories": [
+      "법원·소송",
+      "특허·심판",
+      "규제·정책",
+      "기업·주총·IR",
+      "학회·세미나",
+      "임상·허가",
+      "약가·급여"
+    ]
   }
 }
