@@ -1,0 +1,25 @@
+name: validate-global-staging
+# Diagnostic only: no publishing, Telegram, or public data mutation.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Staging date (YYYY-MM-DD)"
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate staged global payload
+        env:
+          STAGING_DATE: ${{ inputs.date }}
+        run: |
+          [[ "$STAGING_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || exit 2
+          python scripts/validate_global_staging.py "staging/${STAGING_DATE}-global.json"
