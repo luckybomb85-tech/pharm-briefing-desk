@@ -594,7 +594,7 @@
   },
   "runtime_safety": {
     "mode": "fail_soft_bounded",
-    "total_run_target_minutes": 70,
+    "total_run_target_minutes": 60,
     "rule": "한 소스/축 실패가 전체 실행을 중단시키지 않는다. 실패 상태를 기록하고 다음 영역으로 진행하며 확보된 결과는 staging에 보존한다.",
     "retry_budget": {
       "domestic_source_max_retry": 1,
@@ -613,5 +613,35 @@
     "no_unbounded_search": true,
     "domestic_not_before_kst": "06:00",
     "global_before_domestic": true
+  },
+  "collection_efficiency": {
+    "principle": "완전성은 모든 경로를 반복 실행하는 것이 아니라, 각 감시축에서 최소 1개의 신뢰 가능한 경로가 정상 완료됐는지로 판단한다. 실패·의심 때만 fallback한다.",
+    "domestic": {
+      "normal_route": "고정매체별 대표 검색경로 1개를 먼저 실행. 해당 경로에서 시간창 확인과 원문 URL·발행시각 확인이 가능하면 PASS하고 추가 경로는 생략.",
+      "fallback_route": "대표 경로 실패/검색결과 이상/원문 확인 불가일 때만 SITE_SEARCH 또는 WEB_SEARCH_RECOVERY를 최대 1개 추가.",
+      "collector_pass_rule": "그룹 내 각 매체가 PASS 또는 실질 검색완료 후 0건이면 collector PASS. 동일 매체를 DIRECT+SITE+WEB로 삼중 확인하지 않는다."
+    },
+    "global": {
+      "rule": "3 source group은 유지하되 동일 사건의 다중매체 확인은 P0/P1 최소검증 때만 수행. 일반 P2/P3는 원문 1개 확보 후 중단.",
+      "no_count_chasing": true
+    },
+    "patent": {
+      "daily_primary_mode": "9축을 유지하되 축마다 대표 1차소스/대표 쿼리 1회가 정상 완료되면 PASS 또는 PASS_ZERO 가능. 같은 축에서 KIPRIS·언론·법원·웹을 모두 중복 순회하지 않는다.",
+      "deep_check_when": [
+        "언론/국내검색에서 신규 특허 이벤트 발견",
+        "P0/P1 후보",
+        "출시일·독점기간·우판권·판결 결과가 기사 야마",
+        "대표 1차소스 결과가 불명확"
+      ],
+      "expiry_mode": "특허·우판 만료는 매일 전수 재검색하지 않고 일정/기존 감시목록을 기준으로 임박 구간에서만 재확인.",
+      "legislation_mode": "발의·위원회·본회의·공포·시행 상태 변화가 있는 후보만 상세 확인."
+    },
+    "stop_rules": [
+      "PASS된 소스/축은 같은 실행에서 재검색하지 않음",
+      "동일 Event 원문 확보 후 단순 재보도 추가 탐색 중단",
+      "10건 목표를 맞추기 위한 추가 검색 금지",
+      "P2/P3에 2차·3차 교차검증 금지",
+      "검색결과 0건이더라도 대표 경로가 정상 완료됐으면 실패로 간주하지 않음"
+    ]
   }
 }
