@@ -503,5 +503,60 @@
       "임상·허가",
       "약가·급여"
     ]
+  },
+  "readiness_gate": {
+    "rule": "기사 수가 아니라 검색 완전성과 필드 검증으로 READY를 결정한다.",
+    "domestic": {
+      "required_collectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "WEB"
+      ],
+      "required_status": "PASS",
+      "final_item_source_url_required": true,
+      "p0_p1_verified_timestamp_required": true
+    },
+    "global": {
+      "required_source_groups": [
+        "PRIMARY_REGULATORY_AND_COMPANY",
+        "TRADE_AND_WIRE",
+        "WHOLE_WEB_RECOVERY"
+      ],
+      "target_count": 10,
+      "target_is_hard_minimum": false,
+      "no_padding_outside_window": true,
+      "p0_p1_verified_timestamp_required": true
+    },
+    "patent": {
+      "priority_axes": [
+        "특허심판 청구",
+        "특허심판원 심결",
+        "특허법원·각급법원 판결·결정",
+        "우선판매품목허가",
+        "통지의약품",
+        "의약품 특허기간 만료·임박",
+        "우판기간 만료·임박",
+        "특허법·허가특허연계 입법",
+        "국내사 특허도전·소송 및 출시·독점기간 변화"
+      ],
+      "primary_source_check_required": true,
+      "allowed_axis_status": [
+        "PASS",
+        "PASS_ZERO",
+        "PARTIAL",
+        "FAIL"
+      ],
+      "ready_axis_status": [
+        "PASS",
+        "PASS_ZERO"
+      ]
+    },
+    "schedule": {
+      "same_day_refresh_required": true,
+      "minimum_refresh_time_kst": "05:40"
+    },
+    "overall": "domestic/global/patent/schedule section_health가 모두 PASS일 때만 completeness_status=ready. 기사 수 목표 충족만으로 PASS 금지."
   }
 }
