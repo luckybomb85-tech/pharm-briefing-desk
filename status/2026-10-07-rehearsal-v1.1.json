@@ -1,0 +1,57 @@
+{
+  "schema_version": "briefing-rehearsal-v1.1",
+  "date": "2026-10-07",
+  "timezone": "Asia/Seoul",
+  "mode": "manual_no_publish",
+  "verdict": "PARTIAL",
+  "section_health": {
+    "global": "PARTIAL",
+    "domestic": "PARTIAL",
+    "patent": "PARTIAL",
+    "schedule": "FAIL"
+  },
+  "domestic": {
+    "collector_status": {
+      "A": "PARTIAL",
+      "B": "PARTIAL",
+      "C": "PARTIAL",
+      "D": "PASS",
+      "WEB": "PASS"
+    },
+    "finding": "06:00 이후 기사 탐지와 원문 URL/시각 확보는 정상. 일부 고정매체 당일 전수확인은 미완료."
+  },
+  "global": {
+    "source_groups": {
+      "PRIMARY_REGULATORY_AND_COMPANY": "PARTIAL",
+      "TRADE_AND_WIRE": "PASS",
+      "WHOLE_WEB_RECOVERY": "PASS"
+    },
+    "finding": "전문매체/전체웹 탐지는 정상. 공식·규제 source group 전수확인은 미완료."
+  },
+  "patent": {
+    "axes": {
+      "특허심판 청구": "PARTIAL",
+      "특허심판원 심결": "PARTIAL",
+      "특허법원·각급법원 판결·결정": "PARTIAL",
+      "우선판매품목허가": "PASS",
+      "통지의약품": "PARTIAL",
+      "의약품 특허기간 만료·임박": "PASS",
+      "우판기간 만료·임박": "PARTIAL",
+      "특허법·허가특허연계 입법": "PARTIAL",
+      "국내사 특허도전·소송 및 출시·독점기간 변화": "PASS"
+    },
+    "finding": "일반 웹검색만으로 1차소스 9축 전수확인 불가. 미확인 축은 PASS_ZERO가 아닌 PARTIAL."
+  },
+  "schedule": {
+    "updated_at": "2026-10-02T09:40:00+09:00",
+    "health_file": "missing",
+    "finding": "새 코드의 실제 성공 실행 전이므로 FAIL."
+  },
+  "blockers": [
+    "schedule actual run",
+    "patent primary-source checks",
+    "domestic fixed-source completeness",
+    "global official/regulatory completeness"
+  ],
+  "publish_allowed": false
+}
