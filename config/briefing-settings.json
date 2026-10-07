@@ -11,35 +11,161 @@
     },
     "target_rule": "10건을 기본 목표로 적극 확보하되 상한은 없다. 가치 있는 기사가 10건을 넘으면 모두 제공한다. 10건 미만이면 후보 풀을 한 차례 재검토하되 단순 행사·봉사·제품홍보·재탕으로 채우지 않는다.",
     "collectors": {
-      "A": ["dailypharm.com","medipana.com","hitnews.co.kr","thebionews.net"],
-      "B": ["newsthevoice.com","pharmstoday.com","biospectator.com","biotimes.co.kr"],
-      "C": ["dealsite.co.kr","businesspost.co.kr","newspim.com","newdaily.co.kr"],
-      "D": ["hankyung.com/bioinsight","pharm.edaily.co.kr"],
-      "WEB": ["조선비즈","서울경제","머니투데이","매일경제","아시아경제","파이낸셜뉴스","헤럴드경제","이투데이","기타 전체 웹"]
+      "A": [
+        "dailypharm.com",
+        "medipana.com",
+        "hitnews.co.kr",
+        "thebionews.net"
+      ],
+      "B": [
+        "newsthevoice.com",
+        "pharmstoday.com",
+        "biospectator.com",
+        "biotimes.co.kr"
+      ],
+      "C": [
+        "dealsite.co.kr",
+        "businesspost.co.kr",
+        "newspim.com",
+        "newdaily.co.kr"
+      ],
+      "D": [
+        "hankyung.com/bioinsight",
+        "pharm.edaily.co.kr"
+      ],
+      "WEB": [
+        "조선비즈",
+        "서울경제",
+        "머니투데이",
+        "매일경제",
+        "아시아경제",
+        "파이낸셜뉴스",
+        "헤럴드경제",
+        "이투데이",
+        "기타 전체 웹"
+      ]
     },
     "scan_method": "고정매체는 최신기사/관련 섹션 직접 확인을 우선하고 검색엔진을 보완 수단으로 사용한다. WEB은 키워드 축별 누락검색을 수행한다.",
     "web_keyword_axes": {
-      "rnd": ["제약 임상","바이오 임상","임상 3상","신약 허가","FDA","임상 실패","임상 중단"],
-      "bd": ["기술수출","기술이전","라이선스","계약금","마일스톤","권리 반환","계약해지"],
-      "governance": ["최대주주","경영권","지분","증여","승계","인수","합병","매각","유상증자"],
-      "court": ["제약 판결","바이오 판결","대법원","고등법원","지방법원","가처분","집행정지","손해배상"],
-      "market_risk": ["거래정지","상장폐지","관리종목"],
-      "policy": ["약가","급여","건강보험","약사법","의약품 허가"]
+      "rnd": [
+        "제약 임상",
+        "바이오 임상",
+        "임상 3상",
+        "신약 허가",
+        "FDA",
+        "임상 실패",
+        "임상 중단"
+      ],
+      "bd": [
+        "기술수출",
+        "기술이전",
+        "라이선스",
+        "계약금",
+        "마일스톤",
+        "권리 반환",
+        "계약해지"
+      ],
+      "governance": [
+        "최대주주",
+        "경영권",
+        "지분",
+        "증여",
+        "승계",
+        "인수",
+        "합병",
+        "매각",
+        "유상증자"
+      ],
+      "court": [
+        "제약 판결",
+        "바이오 판결",
+        "대법원",
+        "고등법원",
+        "지방법원",
+        "가처분",
+        "집행정지",
+        "손해배상"
+      ],
+      "market_risk": [
+        "거래정지",
+        "상장폐지",
+        "관리종목"
+      ],
+      "policy": [
+        "약가",
+        "급여",
+        "건강보험",
+        "약사법",
+        "의약품 허가"
+      ]
     },
-    "excluded_general_news": ["의협신문","메디게이트뉴스","팜뉴스","약업신문","약사공론","메디칼타임즈","블로터","데일리메디","ZDNet"],
+    "excluded_general_news": [
+      "의협신문",
+      "메디게이트뉴스",
+      "팜뉴스",
+      "약업신문",
+      "약사공론",
+      "메디칼타임즈",
+      "블로터",
+      "데일리메디",
+      "ZDNet"
+    ],
     "noise_filter": "봉사활동·내부행사·단순 제품홍보·반복 PR은 원칙적으로 제외. 주가 등락 자체는 후순위이며 원인이 새 임상·공시·딜·규제·특허 사건이면 원인 사건을 후보화."
   },
   "event_map": {
     "dedupe_unit": "event",
-    "statuses": ["NEW","UPDATE","DUPLICATE"],
-    "fields": ["event_id","event_type","first_published_at","first_seen_at","companies","headline","core_facts","sources","priority_signals","priority_level","verification_status","delivery_status"],
+    "statuses": [
+      "NEW",
+      "UPDATE",
+      "DUPLICATE"
+    ],
+    "fields": [
+      "event_id",
+      "event_type",
+      "first_published_at",
+      "first_seen_at",
+      "companies",
+      "headline",
+      "core_facts",
+      "sources",
+      "priority_signals",
+      "priority_level",
+      "verification_status",
+      "delivery_status"
+    ],
     "cross_day_rule": "URL이 달라도 같은 사건이면 중복. 실질적인 새 판결·임상결과·계약조건·허가결정 등 새 사실이 생기면 UPDATE."
   },
   "priority": {
-    "levels": ["P0","P1","P2","P3"],
-    "P0": ["FDA 승인·CRL 등 중대한 규제결정","임상 3상 성공·실패","임상 중단·중대한 안전성 문제","거래정지·상장폐지","최대주주 변경","대규모 M&A·경영권 거래","대형 기술수출","중요 기술반환·계약해지","대법원 주요 판결·결정"],
-    "P1": ["제목에 단독 포함","고등법원 주요 판결·결정","오너일가 승계·중대한 지분변동","합병·분할 등 지배구조 재편","중요 임상 1·2상 결과","국내 주요 품목허가·급여·약가 변화"],
-    "court_order": ["대법원","고등법원","지방법원"],
+    "levels": [
+      "P0",
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "P0": [
+      "FDA 승인·CRL 등 중대한 규제결정",
+      "임상 3상 성공·실패",
+      "임상 중단·중대한 안전성 문제",
+      "거래정지·상장폐지",
+      "최대주주 변경",
+      "대규모 M&A·경영권 거래",
+      "대형 기술수출",
+      "중요 기술반환·계약해지",
+      "대법원 주요 판결·결정"
+    ],
+    "P1": [
+      "제목에 단독 포함",
+      "고등법원 주요 판결·결정",
+      "오너일가 승계·중대한 지분변동",
+      "합병·분할 등 지배구조 재편",
+      "중요 임상 1·2상 결과",
+      "국내 주요 품목허가·급여·약가 변화"
+    ],
+    "court_order": [
+      "대법원",
+      "고등법원",
+      "지방법원"
+    ],
     "license_thresholds_krw": {
       "upfront": 10000000000,
       "max_contract": 200000000000
@@ -50,37 +176,133 @@
   "verification": {
     "mode": "minimal_only",
     "no_separate_verifier": true,
-    "required_when": ["판결 승패·인용·기각·심급","FDA 승인·CRL","임상 3상 성공·실패·중단","기술수출 계약금·총액이 야마인 경우","최대주주 변경·핵심 지분율","검색결과만 보고 후보화한 경우 원문 확인"],
+    "required_when": [
+      "판결 승패·인용·기각·심급",
+      "FDA 승인·CRL",
+      "임상 3상 성공·실패·중단",
+      "기술수출 계약금·총액이 야마인 경우",
+      "최대주주 변경·핵심 지분율",
+      "검색결과만 보고 후보화한 경우 원문 확인"
+    ],
     "rule": "브리핑은 취재 아이템 탐색 시스템이므로 전수 원자료 검증을 하지 않는다. 기사 야마를 바꾸는 핵심 사실만 최소 확인."
   },
   "pipeline": {
     "morning": [
-      {"time":"06:05","task":"collector_A"},
-      {"time":"06:12","task":"collector_B"},
-      {"time":"06:19","task":"collector_C"},
-      {"time":"06:26","task":"collector_D"},
-      {"time":"06:33","task":"collector_WEB"},
-      {"time":"06:45","task":"event_merge_dedupe"},
-      {"time":"06:55","task":"editorial_priority_and_minimal_check"},
-      {"time":"07:15","task":"briefing_build"},
-      {"time":"07:25","task":"completeness_gate"},
-      {"time":"07:30","task":"deliver"}
+      {
+        "time": "06:05",
+        "task": "collector_A"
+      },
+      {
+        "time": "06:12",
+        "task": "collector_B"
+      },
+      {
+        "time": "06:19",
+        "task": "collector_C"
+      },
+      {
+        "time": "06:26",
+        "task": "collector_D"
+      },
+      {
+        "time": "06:33",
+        "task": "collector_WEB"
+      },
+      {
+        "time": "06:45",
+        "task": "event_merge_dedupe"
+      },
+      {
+        "time": "06:55",
+        "task": "editorial_priority_and_minimal_check"
+      },
+      {
+        "time": "07:15",
+        "task": "briefing_build"
+      },
+      {
+        "time": "07:25",
+        "task": "completeness_gate"
+      },
+      {
+        "time": "07:30",
+        "task": "deliver"
+      }
     ],
-    "collector_status": ["PASS","PARTIAL","FAIL"],
+    "collector_status": [
+      "PASS",
+      "PARTIAL",
+      "FAIL"
+    ],
     "completeness_rule": "검색 실패와 정상 검색 0건을 구분한다. 실패한 Collector만 1회 재시도하고 계속 실패하면 PARTIAL/FAIL을 명시한다."
   },
   "intraday": {
-    "times": ["10:00","12:00","14:00","16:00","18:00"],
+    "times": [
+      "10:00",
+      "12:00",
+      "14:00",
+      "16:00",
+      "18:00"
+    ],
     "rule": "직전 checkpoint 이후 신규기사만 수집해 Event Map과 비교. NEW/UPDATE만 전달하고 DUPLICATE는 전달하지 않는다.",
     "no_quota": true
   },
   "urgent_watch": {
     "separate_lightweight_lane": true,
-    "triggers": ["단독 중 핵심사건","FDA 승인·CRL","임상 3상 성공·실패","임상 중단·중대한 안전성","거래정지·상장폐지","최대주주 변경","중대한 오너일가 변화","대규모 M&A·경영권 거래","기술수출 기준 충족","중요 기술반환·계약해지","주요 법원 판결·결정"],
+    "triggers": [
+      "단독 중 핵심사건",
+      "FDA 승인·CRL",
+      "임상 3상 성공·실패",
+      "임상 중단·중대한 안전성",
+      "거래정지·상장폐지",
+      "최대주주 변경",
+      "중대한 오너일가 변화",
+      "대규모 M&A·경영권 거래",
+      "기술수출 기준 충족",
+      "중요 기술반환·계약해지",
+      "주요 법원 판결·결정"
+    ],
     "rule": "트리거 중심으로 가볍게 감시하고 조건 충족 시 Event Map 중복 확인과 최소 팩트 확인 후 푸시 후보로 처리."
   },
   "distribution": {
     "github_publish_workflow": "paused_until_v1_validation",
     "note": "검색·선정 v1.0 안정화 전 Telegram/Pages 자동 배포는 재개하지 않는다."
+  },
+  "schema_version": "briefing-v1.0",
+  "authoritative": true,
+  "compatibility": {
+    "legacy_outputs": "non_authoritative",
+    "legacy_quota_rules": "disabled",
+    "allowed_final_schema": "briefing-final-v1.0",
+    "rule": "v1.0 실행은 구버전 staging/status/data를 입력으로 사용하지 않는다. 과거 data는 기록 보존용이며 신규 실행 판단에 사용하지 않는다."
+  },
+  "output_contract": {
+    "staging_only": true,
+    "collector_files": [
+      "collector-A",
+      "collector-B",
+      "collector-C",
+      "collector-D",
+      "collector-WEB"
+    ],
+    "event_map_schema": "briefing-event-map-v1.0",
+    "final_schema": "briefing-final-v1.0",
+    "final_required": [
+      "schema_version",
+      "date",
+      "timezone",
+      "status",
+      "search_window",
+      "collector_status",
+      "completeness_status",
+      "domestic"
+    ],
+    "forbidden_legacy_assumptions": [
+      "domestic_exactly_10",
+      "global_exactly_10",
+      "patent_exactly_5",
+      "empty_search_equals_pass"
+    ],
+    "publish_allowed": false
   }
 }
