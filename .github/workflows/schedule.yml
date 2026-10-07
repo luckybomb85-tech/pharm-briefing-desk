@@ -21,7 +21,7 @@ jobs:
       - name: Collect and merge future reporting events
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-6.1-sol
+          OPENAI_MODEL: gpt-5.6
         run: python scripts/update_schedule.py
       - name: Commit schedule if changed
         run: |
