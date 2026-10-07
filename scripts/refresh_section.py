@@ -93,13 +93,31 @@ def search_candidates(section,settings):
     if section=="domestic":
         queries=['제약 바이오 임상 허가 투자 인수 합병','"단독" 제약 바이오','제약 약가 급여 식약처 심평원','바이오 임상 2상 3상 기술수출']; market="ko-KR"
     elif section=="global":
-        queries=['pharma biotech phase 2 phase 3 FDA approval deal acquisition','biotech topline pivotal trial safety licensing','pharma M&A licensing FDA EMA']; market="en-US"
+        queries=[
+          'pharma biotech phase 3 topline pivotal FDA approval CRL acquisition licensing',
+          'biotech phase 2 phase 3 clinical trial results safety halt',
+          'FDA drug approval priority review complete response letter pharma',
+          'EMA CHMP medicine approval pharma biotech',
+          'pharma biotech M&A licensing deal upfront milestone'
+        ]; market="en-US"
     else:
-        queries=['제약 특허 소송 특허심판 제네릭 우선판매','바이오 특허 침해 영업비밀 소송','pharma patent lawsuit generic PTAB']; market="ko-KR"
-    domains=settings.get("priority_sources",{}).get(section,[]) or []
-    # Source-by-source discovery is mandatory; generic queries are only one part of candidate generation.
-    if section=="domestic": queries += [f"site:{d} 제약 바이오" for d in domains if "." in d]
-    else: queries += [f"site:{d} pharma biotech" for d in domains if "." in d]
+        queries=[
+          '제약 특허심판 청구 무효 소극적 권리범위확인',
+          '제약 특허심판원 심결 특허법원 판결',
+          '제약 우선판매품목허가 우판권 통지의약품',
+          '의약품 특허 만료 우판기간 만료',
+          '제약 특허법 개정 허가특허연계 법안',
+          '국내 제약사 해외 특허 소송 판결',
+          'pharma patent lawsuit generic exclusivity court'
+        ]; market="ko-KR"
+    domains=[]
+    if section=="domestic":
+        domains=[d for grp in settings.get("domestic",{}).get("collectors",{}).values() for d in grp if "." in d]
+        queries += [f"site:{d} 제약 바이오" for d in domains]
+    elif section=="global":
+        domains=[d for d in settings.get("global",{}).get("sources",[]) if "." in d]
+    else:
+        domains=[d for d in settings.get("patent",{}).get("sources",[]) if "." in d]
     rows=[]
     for q in queries:
         q += (' when:3d' if section=='patent' else ' when:1d'); enc=urllib.parse.quote(q)
@@ -139,7 +157,7 @@ def fallback_refresh(day,section,request_at,settings,base,live):
     candidates=search_candidates(section,settings); target=datetime.strptime(day,"%Y-%m-%d").date(); oldest=target-timedelta(days=2 if section=="patent" else 0)
     candidates=[x for x in candidates if candidate_day(x) and oldest<=candidate_day(x)<=target]
     known=[x.get("title","") for x in base.get(section,[])]+[x.get("title","") for x in live.get("items",[])]
-    priority=settings.get("priority_sources",{}).get(section,[]) or []; ranked=[]
+    priority=(settings.get("global",{}).get("sources",[]) if section=="global" else settings.get("patent",{}).get("sources",[]) if section=="patent" else [d for grp in settings.get("domestic",{}).get("collectors",{}).values() for d in grp]); ranked=[]
     for x in candidates:
         if any(same_event(x.get("title",""),k) for k in known): continue
         sc=candidate_score(x,section,priority)
@@ -156,7 +174,7 @@ def fallback_refresh(day,section,request_at,settings,base,live):
 def section_instructions(section):
     if section=="domestic": return "국내 제약바이오 뉴스. 단순 PR·봉사·행사·제품소개·주가등락은 제외. 동일 사건의 여러 매체 보도는 반드시 1건으로 묶고 가장 정보량과 원문성이 높은 출처만 남긴다. DART/KIND/식약처/복지부/심평원/법원 등 1차자료를 우선 검증한다."
     if section=="global": return "글로벌 제약바이오 뉴스. FDA/EMA/SEC/ClinicalTrials.gov/회사 원문을 우선하고 주요 임상·허가·안전성·대형 딜만 선별한다. 동일 사건 교차매체 보도는 1건만 남긴다."
-    return "제약바이오 특허·IP 뉴스. KIPRIS/특허청·심판원/법원/식약처 허가특허연계 등 원문을 우선하며 동일 사건은 1건만 남긴다."
+    return "국내 제약바이오 특허·독점권 전용 뉴스. 최우선은 국내사의 특허심판 청구, 특허심판원 심결, 특허법원·각급법원 판결, 우선판매품목허가, 통지의약품, 특허기간·우판기간 만료, 제약바이오에 영향을 주는 특허법·허가특허연계 입법이다. 다음은 국내 제약바이오기업의 글로벌 특허 사건, 그 다음이 일반 글로벌 대형 특허 사건이다. domestic에 이미 실린 사건도 patent에는 다시 포함할 수 있다. patent 내부 동일 사건만 중복 제거한다."
 
 def make_prompt(day,section,request_at,settings,base,live):
     known=[x.get("title","") for x in base.get(section,[])]+[x.get("title","") for x in live.get("items",[])]
@@ -164,7 +182,7 @@ def make_prompt(day,section,request_at,settings,base,live):
 오늘 아침 이후 새로 발생/보도된 기사 중 기사화 가치가 높은 것만 찾는다. 개수 목표는 없으며 0건도 정상이다.
 기존 제목: {json.dumps(known,ensure_ascii=False)}
 {section_instructions(section)}
-우선 출처: {json.dumps(settings.get("priority_sources",{}).get(section,[]),ensure_ascii=False)}
+우선 출처: {json.dumps(settings.get("global",{}).get("sources",[]) if section=="global" else settings.get("patent",{}).get("sources",[]) if section=="patent" else settings.get("domestic",{}).get("collectors",{}),ensure_ascii=False)}
 중요: 제목이 달라도 같은 회사·제품·행사·임상·딜·판결을 다루면 동일 사건이다. 동일 사건은 절대 복수 추가하지 말고 가장 원문성/정보량 높은 1건만 반환한다. 제약바이오와 직접 무관한 기사는 제외한다. 행사 참가·부스 운영·봉사·수상·단순 홍보는 중요한 신규 계약/수치/규제 변화가 없는 한 제외한다. 핵심 사실은 가능한 1차 자료로 검증한다.
 각 item은 tag,title,summary,source,source_name,published_at,article_preview를 가진다. article_preview.quick={{title,lead,title_options:[2개]}}, diff={{title,direction,title_options:[2개]}}. 실제 확인 URL만 사용한다. 설명 없이 {{"items":[...]}} JSON만 반환하라.'''
 
