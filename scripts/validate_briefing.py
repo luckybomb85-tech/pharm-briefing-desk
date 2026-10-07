@@ -65,7 +65,7 @@ def validate_v1(d,path):
     if d.get("date")!=day: raise ValueError(f"date mismatch: file={day}, json={d.get('date')}")
     if d.get("timezone")!="Asia/Seoul": raise ValueError("timezone must be Asia/Seoul")
     status=d.get("status")
-    if status not in ("ready","partial","failed","published","test-published"): raise ValueError("invalid v1 status")
+    if status not in ("ready","partial","failed","published","test-published","rehearsal-published"): raise ValueError("invalid v1 status")
     if not isinstance(d.get("search_window"),dict): raise ValueError("search_window missing")
     cs=d.get("collector_status")
     if not isinstance(cs,dict) or any(k not in cs for k in ("A","B","C","D","WEB")): raise ValueError("collector_status incomplete")
@@ -82,7 +82,7 @@ def validate_v1(d,path):
         if not isinstance(health,dict): raise ValueError("READY/published requires section_health")
         for section in ("domestic","global","patent","schedule"):
             if health.get(section)!="PASS": raise ValueError(f"READY/published requires section_health.{section}=PASS")
-    if status=="test-published" and not d.get("test_run",False): raise ValueError("test-published requires test_run=true")
+    if status in ("test-published","rehearsal-published") and not d.get("test_run",False): raise ValueError(f"{status} requires test_run=true")
     return d
 
 def validate_legacy_items(section,items,expected=None):
