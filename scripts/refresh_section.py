@@ -7,7 +7,7 @@ from email.utils import parsedate_to_datetime
 
 SUPABASE_URL="https://mqkhtnryxyntrrfrfing.supabase.co"
 SUPABASE_KEY="sb_publishable_GLp72jjAPgHWqUEpqtnw5Q_rY3lfcB8"
-MODEL=os.getenv("OPENAI_MODEL","gpt-6.1-sol")
+MODEL=os.getenv("OPENAI_MODEL","gpt-5.6")
 SECTIONS=("domestic","global","patent")
 
 # Hard editorial gates are code, not prompt-only policy. This keeps fallback and AI paths consistent.
@@ -85,9 +85,33 @@ def candidate_score(x,section,priority):
     if section=="patent" and any(k in text for k in ("판결","소송","침해","무효","심판","우선판매","patent","lawsuit","ptab")): score+=3
     return score
 
-def candidate_day(x):
-    try: return parsedate_to_datetime(str(x.get("published_at",""))).date()
+def candidate_dt_kst(x):
+    try:
+        d=parsedate_to_datetime(str(x.get("published_at","")))
+        if d.tzinfo is None: d=d.replace(tzinfo=ZoneInfo("UTC"))
+        return d.astimezone(ZoneInfo("Asia/Seoul"))
     except Exception: return None
+
+def in_morning_window(x,target):
+    d=candidate_dt_kst(x)
+    if not d: return False
+    start=datetime.combine(target-timedelta(days=1),datetime.min.time(),ZoneInfo("Asia/Seoul")).replace(hour=12)
+    end=datetime.combine(target,datetime.max.time(),ZoneInfo("Asia/Seoul"))
+    return start <= d <= end
+
+def infer_priority(title,section):
+    t=str(title or "").lower()
+    if any(k in t for k in ("3상","phase 3","pivotal","crl","complete response letter","임상 중단","clinical hold","최대주주 변경","상장폐지")): return "P0"
+    if any(k in t for k in ("단독","exclusive","2상","phase 2","고등법원","합병","분할","지배구조","급여","약가")): return "P1"
+    if any(k in t for k in ("임상","허가","승인","투자","특허","소송","기술이전","license","acquisition","m&a")): return "P2"
+    return "P3"
+
+def iso_kst(v):
+    try:
+        d=parsedate_to_datetime(str(v or ""))
+        if d.tzinfo is None: d=d.replace(tzinfo=ZoneInfo("UTC"))
+        return d.astimezone(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
+    except Exception: return ""
 
 def search_candidates(section,settings):
     if section=="domestic":
@@ -154,8 +178,8 @@ def latest_requests(day):
     return out
 
 def fallback_refresh(day,section,request_at,settings,base,live):
-    candidates=search_candidates(section,settings); target=datetime.strptime(day,"%Y-%m-%d").date(); oldest=target-timedelta(days=2 if section=="patent" else 0)
-    candidates=[x for x in candidates if candidate_day(x) and oldest<=candidate_day(x)<=target]
+    candidates=search_candidates(section,settings); target=datetime.strptime(day,"%Y-%m-%d").date()
+    candidates=[x for x in candidates if in_morning_window(x,target)]
     known=[x.get("title","") for x in base.get(section,[])]+[x.get("title","") for x in live.get("items",[])]
     priority=(settings.get("global",{}).get("sources",[]) if section=="global" else settings.get("patent",{}).get("sources",[]) if section=="patent" else [d for grp in settings.get("domestic",{}).get("collectors",{}).values() for d in grp]); ranked=[]
     for x in candidates:
@@ -167,7 +191,8 @@ def fallback_refresh(day,section,request_at,settings,base,live):
     for sc,x in ranked:
         if any(same_event(x.get("title",""),y.get("title","")) for y in selected): continue
         title=x.get("title","").strip(); desc=clean_text(x.get("description","")) or title; src=x.get("source","").strip(); source_name=x.get("source_name","").strip() or urllib.parse.urlparse(src).netloc.replace("www.","")
-        selected.append({"tag":infer_tag(title,section),"title":title,"summary":desc[:700],"source":src,"source_name":source_name,"published_at":x.get("published_at",""),"article_preview":{"quick":{"title":title,"lead":desc[:350],"title_options":[title,title]},"diff":{"title":title,"direction":"원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.","title_options":[title,title]}}})
+        pub=iso_kst(x.get("published_at",""))
+        selected.append({"tag":infer_tag(title,section),"title":title,"summary":desc[:700],"source":src,"source_name":source_name,"published_at":pub,"timestamp_unverified":not bool(pub),"priority":infer_priority(title,section),"article_preview":{"quick":{"title":title,"lead":desc[:350],"title_options":[title,title]},"diff":{"title":title,"direction":"원문과 1차 자료를 추가 확인해 경쟁구도·수치·국내 업계 파급효과를 후속 취재한다.","title_options":[title,title]}}})
         if len(selected)>=8: break
     return {"items":selected}
 
@@ -184,7 +209,7 @@ def make_prompt(day,section,request_at,settings,base,live):
 {section_instructions(section)}
 우선 출처: {json.dumps(settings.get("global",{}).get("sources",[]) if section=="global" else settings.get("patent",{}).get("sources",[]) if section=="patent" else settings.get("domestic",{}).get("collectors",{}),ensure_ascii=False)}
 중요: 제목이 달라도 같은 회사·제품·행사·임상·딜·판결을 다루면 동일 사건이다. 동일 사건은 절대 복수 추가하지 말고 가장 원문성/정보량 높은 1건만 반환한다. 제약바이오와 직접 무관한 기사는 제외한다. 행사 참가·부스 운영·봉사·수상·단순 홍보는 중요한 신규 계약/수치/규제 변화가 없는 한 제외한다. 핵심 사실은 가능한 1차 자료로 검증한다.
-각 item은 tag,title,summary,source,source_name,published_at,article_preview를 가진다. article_preview.quick={{title,lead,title_options:[2개]}}, diff={{title,direction,title_options:[2개]}}. 실제 확인 URL만 사용한다. 설명 없이 {{"items":[...]}} JSON만 반환하라.'''
+각 item은 tag,title,summary,source,source_name,published_at,timestamp_unverified,priority,article_preview를 가진다. article_preview.quick={{title,lead,title_options:[2개]}}, diff={{title,direction,title_options:[2개]}}. 실제 확인 URL만 사용한다. 설명 없이 {{"items":[...]}} JSON만 반환하라.'''
 
 def call_openai(prompt):
     key=os.environ.get("OPENAI_API_KEY")
@@ -199,7 +224,8 @@ def call_openai(prompt):
     return json.loads("".join(chunks))
 
 def normalize_item(x,completed_at,batch_id):
-    return {"tag":x.get("tag",""),"title":x.get("title","").strip(),"summary":x.get("summary","").strip(),"source":x.get("source","").strip(),"source_name":x.get("source_name","").strip(),"published_at":x.get("published_at",""),"article_preview":x.get("article_preview") or {},"live_added_at":completed_at,"update_batch":batch_id,"is_live":True}
+    pub=iso_kst(x.get("published_at","")) or str(x.get("published_at","") or "")
+    return {"tag":x.get("tag",""),"title":x.get("title","").strip(),"summary":x.get("summary","").strip(),"source":x.get("source","").strip(),"source_name":x.get("source_name","").strip(),"published_at":pub,"timestamp_unverified":bool(x.get("timestamp_unverified",not bool(pub))),"priority":x.get("priority") or infer_priority(x.get("title",""),""),"article_preview":x.get("article_preview") or {},"live_added_at":completed_at,"update_batch":batch_id,"is_live":True}
 
 def process_section(day,section,req,settings,base):
     path=Path("live")/f"{day}-{section}.json"; live=load_json(path,{"date":day,"section":section,"morning_count":len(base.get(section,[])),"updated_at":"","last_request_at":"","batches":[],"items":[]})
