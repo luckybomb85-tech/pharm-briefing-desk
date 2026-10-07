@@ -3,13 +3,6 @@ name: refresh-live-briefing
 # User-triggered live updates are separate from the 07:30 daily publish pipeline.
 # This worker only processes queued refresh requests and updates live/*.json.
 on:
-  push:
-    paths:
-      - '.github/workflows/refresh-live.yml'
-      - 'scripts/refresh_section.py'
-  schedule:
-    - cron: '*/5 21-23 * * 0-4'
-    - cron: '*/5 0-14 * * 1-5'
   workflow_dispatch:
 
 permissions:
