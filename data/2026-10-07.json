@@ -522,6 +522,16 @@
     "국내 기존 12건은 분류/시간 필드 교정 유지. 원문 URL 미확보 항목은 이번 재배포에서 링크를 임의 생성하지 않음.",
     "글로벌은 날짜만 확인된 기사에 00:00 추정시각을 사용하지 않고 timestamp_unverified=true 처리.",
     "특허는 국내 우선 규칙을 적용하고 확인되지 않은 placeholder 특허 2건 제거.",
-    "일정은 schedule/events.json과 프런트 병합 경로로 표시."
-  ]
+    "일정은 schedule/events.json과 프런트 병합 경로로 표시.",
+    "v1.0 hard gate 적용: 국내 원문 URL 공란으로 domestic=FAIL.",
+    "글로벌 3단계 수집 미완료 및 P0/P1 발행시각 미확인으로 global=PARTIAL.",
+    "특허 1순위 9개 검색축 완전성 미검증으로 patent=PARTIAL.",
+    "schedule/events.json 당일 갱신 미확인으로 schedule=PARTIAL."
+  ],
+  "section_health": {
+    "domestic": "FAIL",
+    "global": "PARTIAL",
+    "patent": "PARTIAL",
+    "schedule": "PARTIAL"
+  }
 }
