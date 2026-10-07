@@ -19,11 +19,14 @@ jobs:
         with:
           python-version: '3.12'
       - name: Collect and merge future reporting events
+        id: collect
+        continue-on-error: true
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-5.6
         run: python scripts/update_schedule.py
-      - name: Commit schedule if changed
+      - name: Commit schedule and health
+        if: always()
         run: |
           git config user.name "pharm-briefing-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -35,3 +38,7 @@ jobs:
           git commit -m "[no-telegram] Update reporting schedule"
           git pull --rebase origin main
           git push
+
+      - name: Fail workflow when collector failed
+        if: steps.collect.outcome == 'failure'
+        run: exit 1
