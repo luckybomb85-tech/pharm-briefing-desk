@@ -564,5 +564,25 @@
       "minimum_refresh_time_kst": "05:40"
     },
     "overall": "domestic/global/patent/schedule section_health가 모두 PASS일 때만 completeness_status=ready. 기사 수 목표 충족만으로 PASS 금지."
+  },
+  "runtime_safety": {
+    "mode": "fail_soft_bounded",
+    "total_run_target_minutes": 70,
+    "rule": "한 소스/축 실패가 전체 실행을 중단시키지 않는다. 실패 상태를 기록하고 다음 영역으로 진행하며 확보된 결과는 staging에 보존한다.",
+    "retry_budget": {
+      "domestic_source_max_retry": 1,
+      "global_supplemental_search_max_retry": 1,
+      "patent_axis_max_retry": 1,
+      "schedule_retry_in_morning_briefing": 0
+    },
+    "collector_isolation": {
+      "domestic": "소스 단위 예외를 잡아 source_status=PARTIAL/FAIL로 기록하고 다음 소스로 진행",
+      "global": "source group 단위 실패를 기록하고 다른 group 및 후속 단계 계속 진행",
+      "patent": "9개 축을 독립 처리하고 한 축 접근 실패 시 해당 축만 PARTIAL/FAIL, 나머지 축 계속 진행",
+      "schedule": "05:40 결과를 읽기만 하며 06:05 브리핑에서 일정 재수집하지 않음"
+    },
+    "checkpoint_rule": "domestic 완료, global 완료, patent 완료 시점마다 staging 중간결과를 저장한다. 후속 단계가 실패해도 이전 섹션 결과를 잃지 않는다.",
+    "degradation_rule": "시간/접근 문제로 일부 검사가 끝나지 않으면 확보된 기사와 상태를 partial staging으로 남긴다. 누락 상태를 PASS_ZERO로 변환하지 않는다.",
+    "no_unbounded_search": true
   }
 }
