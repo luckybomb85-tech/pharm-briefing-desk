@@ -4,7 +4,7 @@
   "timezone": "Asia/Seoul",
   "status": "rehearsal-published",
   "test_run": true,
-  "test_banner": "10/7 리허설 배포 · v1.0 운영 전 검증판",
+  "test_banner": "10/7 리허설 재배포 · 글로벌/특허 재수집 반영",
   "search_window": {
     "rule": "today_plus_previous_day_from_noon",
     "from": "2026-10-06T12:00:00+09:00",
@@ -371,85 +371,141 @@
   ],
   "global": [
     {
-      "tag": "허가·규제",
-      "title": "브리지바이오 인피그라티닙 소아 연골무형성증 NDA 우선심사",
-      "summary": "FDA가 경구용 인피그라티닙 NDA를 접수하고 우선심사로 지정했다. PDUFA 목표일은 2027년 2월 4일이다.",
-      "source": "https://www.biospace.com/press-releases/bridgebio-announces-fda-acceptance-and-priority-review-of-nda-for-oral-infigratinib-for-children-with-achondroplasia",
-      "source_name": "BioSpace / BridgeBio",
-      "published_at": "",
-      "timestamp_unverified": true,
-      "priority": "P1",
+      "tag": "임상 3상",
+      "title": "ArriVent 폐암 신약 퍼모너티닙 3상 1차평가지표 미충족",
+      "summary": "EGFR exon20 삽입 변이 비소세포폐암 1차 치료 FURVENT 3상에서 독립평가위원회 기준 PFS 1차평가지표를 충족하지 못했다. 새로운 안전성 신호는 확인되지 않았다.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1868279/000110465926113898/tm2627092d1_ex99-1.htm",
+      "source_name": "ArriVent / SEC",
+      "published_at": "2026-10-06T23:51:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P0",
       "article_preview": {
         "quick": {
-          "title": "브리지바이오 인피그라티닙 FDA 우선심사",
-          "lead": "FDA NDA 접수·우선심사, PDUFA 2027년 2월 4일",
+          "title": "ArriVent 폐암 신약 3상 실패…FURVENT 1차평가지표 미충족",
+          "lead": "퍼모너티닙 3상 PFS 1차평가지표 미충족",
           "title_options": [
-            "브리지바이오 인피그라티닙 FDA 우선심사",
-            "연골무형성증 경구약 인피그라티닙, FDA 우선심사"
+            "ArriVent 폐암 신약 3상 실패…FURVENT 1차평가지표 미충족",
+            "ArriVent 폐암 신약 3상 실패…FURVENT 1차평가지표 미충족"
           ]
         },
         "diff": {
-          "title": "인피그라티닙 FDA 우선심사…첫 경구 연골무형성증 치료제 도전",
-          "direction": "3상 성공 이후 허가 일정과 경쟁구도",
+          "title": "ArriVent 폐암 신약 3상 실패…FURVENT 1차평가지표 미충족",
+          "direction": "EGFR exon20 폐암 경쟁구도와 후속 개발전략",
           "title_options": [
-            "인피그라티닙 FDA 우선심사…첫 경구 연골무형성증 치료제 도전",
-            "브리지바이오 연골무형성증 신약, FDA 우선심사 진입"
+            "ArriVent 폐암 신약 3상 실패…FURVENT 1차평가지표 미충족",
+            "ArriVent 폐암 신약 3상 실패…FURVENT 1차평가지표 미충족"
           ]
         }
       }
     },
     {
-      "tag": "기술이전",
-      "title": "로슈, 알렉터 파킨슨 치료제 최대 12.7억달러 도입",
-      "summary": "로슈 제넨텍이 알렉터의 파킨슨병 치료 후보를 최대 12억7000만달러 규모로 도입했다. 계약금은 1억달러다.",
-      "source": "https://www.reuters.com/legal/litigation/alector-soars-roche-licenses-parkinsons-therapy-up-127-billion-2026-10-05/",
-      "source_name": "Reuters",
-      "published_at": "",
-      "timestamp_unverified": true,
+      "tag": "임상 중단",
+      "title": "Nuvig, NVG-2089 CIDP 2상 개발 중단…ITP 임상은 지속",
+      "summary": "Nuvig가 등록 속도와 비용을 이유로 CIDP 대상 NVG-2089 2상 개발을 중단했다. 안전성 때문은 아니며 ITP 대상 중기 임상은 계속한다.",
+      "source": "https://www.fiercebiotech.com/biotech/big-pharma-backed-nuvig-halts-development-lead-fusion-protein-rare-autoimmune-disease",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-07T03:48:00+09:00",
+      "timestamp_unverified": false,
       "priority": "P0",
       "article_preview": {
         "quick": {
-          "title": "로슈, 알렉터 파킨슨 치료제 최대 12.7억달러 도입",
-          "lead": "계약금 1억달러·총액 최대 12.7억달러",
+          "title": "Nuvig, NVG-2089 CIDP 2상 중단…ITP 개발은 지속",
+          "lead": "등록 속도·비용 문제로 CIDP 프로그램 중단, 안전성 사유는 아님",
           "title_options": [
-            "로슈, 알렉터 파킨슨 치료제 최대 12.7억달러 도입",
-            "로슈, 알렉터 파킨슨 후보에 12.7억달러 베팅"
+            "Nuvig, NVG-2089 CIDP 2상 중단…ITP 개발은 지속",
+            "Nuvig, NVG-2089 CIDP 2상 중단…ITP 개발은 지속"
           ]
         },
         "diff": {
-          "title": "로슈, 파킨슨 신약 12.7억달러 도입…신경계 투자 확대",
-          "direction": "대형 CNS 라이선스 거래와 경쟁구도",
+          "title": "Nuvig, NVG-2089 CIDP 2상 중단…ITP 개발은 지속",
+          "direction": "중단 배경과 NVG-2089 개발전략 변화",
           "title_options": [
-            "로슈, 파킨슨 신약 12.7억달러 도입…신경계 투자 확대",
-            "알렉터 파킨슨 후보 로슈 품으로…최대 12.7억달러"
+            "Nuvig, NVG-2089 CIDP 2상 중단…ITP 개발은 지속",
+            "Nuvig, NVG-2089 CIDP 2상 중단…ITP 개발은 지속"
           ]
         }
       }
     },
     {
       "tag": "임상 3상",
-      "title": "애브비·젠맙 림프종 병용요법 후기임상서 질병진행·사망 위험 감소",
-      "summary": "애브비와 젠맙의 신규 진단 림프종 병용요법이 후기 임상에서 질병 진행 또는 사망 위험을 유의하게 낮췄다.",
-      "source": "https://www.reuters.com/business/healthcare-pharmaceuticals/abbvie-blood-cancer-drug-combo-cuts-risk-progression-or-death-late-stage-study-2026-10-05/",
-      "source_name": "Reuters",
+      "title": "Enliven, CML 신약 렐코바티닙 3상 설계 FDA 합의",
+      "summary": "Enliven이 이전 치료 경험이 있는 만성골수성백혈병 환자 대상 렐코바티닙 ENABLE-2 확증 3상 최종 설계에 대해 FDA와 합의했다. 연내 임상 개시 예정이다.",
+      "source": "https://enliventherapeutics.gcs-web.com/news-releases/news-release-details/enliven-therapeutics-announces-fda-alignment-enable-2-phase-3",
+      "source_name": "Enliven Therapeutics",
       "published_at": "",
       "timestamp_unverified": true,
-      "priority": "P0",
+      "priority": "P1",
       "article_preview": {
         "quick": {
-          "title": "애브비·젠맙 림프종 병용요법 후기임상 긍정",
-          "lead": "신규 진단 림프종에서 질병진행·사망 위험 유의 감소",
+          "title": "Enliven CML 신약 3상 설계 FDA 합의…연내 개시",
+          "lead": "ENABLE-2 확증 3상 최종 설계 FDA 합의",
           "title_options": [
-            "애브비·젠맙 림프종 병용요법 후기임상 긍정",
-            "애브비·젠맙 혈액암 병용, 후기임상서 위험 감소"
+            "Enliven CML 신약 3상 설계 FDA 합의…연내 개시",
+            "Enliven CML 신약 3상 설계 FDA 합의…연내 개시"
           ]
         },
         "diff": {
-          "title": "애브비·젠맙 림프종 병용 후기임상 성공…치료구도 변화 주목",
-          "direction": "후기 임상 결과와 향후 허가 경쟁",
+          "title": "Enliven CML 신약 3상 설계 FDA 합의…연내 개시",
+          "direction": "후기임상 진입과 CML 경쟁구도",
           "title_options": [
-            "애브비·젠맙 림프종 병용 후기임상 성공…치료구도 변화 주목",
-            "젠맙·애브비 림프종 병용, 후기임상서 유효성 확인"
+            "Enliven CML 신약 3상 설계 FDA 합의…연내 개시",
+            "Enliven CML 신약 3상 설계 FDA 합의…연내 개시"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "임상 2상",
+      "title": "Nuclidium 전립선암 PET 진단제 61Cu-NU101 2상 첫 환자 촬영",
+      "summary": "Nuclidium이 전이성 전립선암 환자에서 61Cu-NU101의 진단 정확도와 안전성을 평가하는 2상에서 첫 환자 촬영을 완료했다.",
+      "source": "https://www.globenewswire.com/news-release/2026/10/06/3375237/0/en/nuclidium-announces-first-patient-imaged-in-phase-2-study-evaluating-61cu-nu101-diagnostic-in-patients-with-metastatic-prostate-cancer.html",
+      "source_name": "NUCLIDIUM / GlobeNewswire",
+      "published_at": "2026-10-06T18:00:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "Nuclidium 전립선암 PET 진단제 2상 첫 환자 촬영",
+          "lead": "61Cu-NU101 2상 첫 환자 영상평가 시작",
+          "title_options": [
+            "Nuclidium 전립선암 PET 진단제 2상 첫 환자 촬영",
+            "Nuclidium 전립선암 PET 진단제 2상 첫 환자 촬영"
+          ]
+        },
+        "diff": {
+          "title": "Nuclidium 전립선암 PET 진단제 2상 첫 환자 촬영",
+          "direction": "구리 동위원소 기반 테라노스틱 개발 진전",
+          "title_options": [
+            "Nuclidium 전립선암 PET 진단제 2상 첫 환자 촬영",
+            "Nuclidium 전립선암 PET 진단제 2상 첫 환자 촬영"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "임상",
+      "title": "60 Degrees, 중증 바베시아증 임상 등록 종료…2027년 1월 결과 공개",
+      "summary": "DSMB가 기존 목표 N=33 완료를 권고했지만 회사는 계절성과 추가 3명의 제한적 통계효과를 고려해 30명에서 등록을 마치고 눈가림 해제에 들어간다. 안전성 신호는 없었다.",
+      "source": "https://60degreespharma.gcs-web.com/news-releases/news-release-details/60-degrees-pharmaceuticals-plans-january-2027-hospitalized",
+      "source_name": "60 Degrees Pharmaceuticals",
+      "published_at": "2026-10-06T21:10:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "60 Degrees 바베시아증 임상 등록 종료…내년 1월 결과",
+          "lead": "30명에서 등록 종료·눈가림 해제, 안전성 신호 없음",
+          "title_options": [
+            "60 Degrees 바베시아증 임상 등록 종료…내년 1월 결과",
+            "60 Degrees 바베시아증 임상 등록 종료…내년 1월 결과"
+          ]
+        },
+        "diff": {
+          "title": "60 Degrees 바베시아증 임상 등록 종료…내년 1월 결과",
+          "direction": "임상 설계 변경과 향후 sNDA 전략",
+          "title_options": [
+            "60 Degrees 바베시아증 임상 등록 종료…내년 1월 결과",
+            "60 Degrees 바베시아증 임상 등록 종료…내년 1월 결과"
           ]
         }
       }
@@ -467,48 +523,75 @@
       "timestamp_unverified": false,
       "article_preview": {
         "quick": {
-          "title": "듀피젠트 특허만료 앞두고 후발 경쟁…국내사 바이오시밀러 개발 가세",
-          "lead": "듀피젠트 특허만료 이후 시장을 겨냥해 종근당·대웅·경보 등 국내 제약사도 바이오시밀러 경쟁에 참여",
+          "title": "듀피젠트 특허만료 앞두고 국내 후발 경쟁",
+          "lead": "국내 제약사 바이오시밀러 개발 가세",
           "title_options": [
-            "듀피젠트 특허만료 앞두고 후발 경쟁…국내사 바이오시밀러 개발 가세",
-            "듀피젠트 특허만료 앞두고 후발 경쟁…국내사 바이오시밀러 개발 가세"
+            "듀피젠트 특허만료 앞두고 국내 후발 경쟁",
+            "듀피젠트 특허만료 앞두고 국내 후발 경쟁"
           ]
         },
         "diff": {
-          "title": "듀피젠트 특허만료 앞두고 후발 경쟁…국내사 바이오시밀러 개발 가세",
-          "direction": "국내 제약사의 특허만료 후 시장진입 경쟁",
+          "title": "듀피젠트 특허만료 앞두고 국내 후발 경쟁",
+          "direction": "특허만료 후 시장진입 경쟁",
           "title_options": [
-            "듀피젠트 특허만료 앞두고 후발 경쟁…국내사 바이오시밀러 개발 가세",
-            "듀피젠트 특허만료 앞두고 후발 경쟁…국내사 바이오시밀러 개발 가세"
+            "듀피젠트 특허만료 앞두고 국내 후발 경쟁",
+            "듀피젠트 특허만료 앞두고 국내 후발 경쟁"
           ]
         }
       }
     },
     {
-      "tag": "특허·등록",
-      "title": "진매트릭스 바이러스벡터 플랫폼 GM-CAD1 미국 특허 취득",
-      "summary": "진매트릭스가 바이러스벡터 플랫폼 GM-CAD1 핵심기술의 미국 특허를 취득했다. 국내 제약바이오기업의 글로벌 특허 관련 소식으로 특허탭 2순위에 해당한다.",
-      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79641",
-      "source_name": "히트뉴스",
-      "published_at": "2026-10-06T08:51:00+09:00",
+      "tag": "특허·만료",
+      "title": "릭시아나 11월 물질특허 만료…19개사 41개 제네릭 출격 채비",
+      "summary": "에독사반 오리지널 릭시아나의 물질특허 만료를 앞두고 19개사가 41개 제네릭 허가를 확보했다. 우선판매품목허가 업체는 없어 특허 만료 후 동시 진입 경쟁이 예상된다.",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=415005",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-07T13:30:00+09:00",
+      "priority": "P1",
       "timestamp_unverified": false,
-      "priority": "P3",
-      "patent_scope_rank": 2,
       "article_preview": {
         "quick": {
-          "title": "진매트릭스 GM-CAD1 美 특허 취득",
-          "lead": "국내 등록에 이어 미국에서도 바이러스벡터 플랫폼 핵심기술 특허 확보",
+          "title": "릭시아나 11월 특허만료…19개사 제네릭 출격 채비",
+          "lead": "19개사 41품목 허가·우판권 업체 없어 동시진입 예상",
           "title_options": [
-            "진매트릭스 GM-CAD1 美 특허 취득",
-            "진매트릭스 바이러스벡터 플랫폼, 미국 특허 확보"
+            "릭시아나 11월 특허만료…19개사 제네릭 출격 채비",
+            "릭시아나 11월 특허만료…19개사 제네릭 출격 채비"
           ]
         },
         "diff": {
-          "title": "진매트릭스 美 특허…바이러스벡터 플랫폼 권리 확대",
-          "direction": "국내 바이오기업의 글로벌 특허권 확대와 플랫폼 사업화 가치 점검",
+          "title": "릭시아나 11월 특허만료…19개사 제네릭 출격 채비",
+          "direction": "특허만료와 약가·다품목 등재 경쟁",
           "title_options": [
-            "진매트릭스 美 특허…바이러스벡터 플랫폼 권리 확대",
-            "GM-CAD1 미국 특허 확보…진매트릭스 플랫폼 권리 확장"
+            "릭시아나 11월 특허만료…19개사 제네릭 출격 채비",
+            "릭시아나 11월 특허만료…19개사 제네릭 출격 채비"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "특허·심판",
+      "title": "프리시젼바이오, SD바이오센서 상대 특허 무효심판서 권리 방어",
+      "summary": "특허심판원이 SD바이오센서가 청구한 광학검출장치 관련 특허 무효심판에서 일부 기각·일부 각하 심결을 내렸다. SD바이오센서는 불복하지 않되 자사 제품은 권리범위에 속하지 않는다는 입장이다.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03558806645610624",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-07T11:30:04+09:00",
+      "priority": "P1",
+      "timestamp_unverified": false,
+      "article_preview": {
+        "quick": {
+          "title": "프리시젼바이오 특허 방어…SD바이오센서 불복 않기로",
+          "lead": "무효심판 일부 기각·각하, 침해 여부는 별도 쟁점",
+          "title_options": [
+            "프리시젼바이오 특허 방어…SD바이오센서 불복 않기로",
+            "프리시젼바이오 특허 방어…SD바이오센서 불복 않기로"
+          ]
+        },
+        "diff": {
+          "title": "프리시젼바이오 특허 방어…SD바이오센서 불복 않기로",
+          "direction": "심결 이후 권리행사와 제품 판매 영향",
+          "title_options": [
+            "프리시젼바이오 특허 방어…SD바이오센서 불복 않기로",
+            "프리시젼바이오 특허 방어…SD바이오센서 불복 않기로"
           ]
         }
       }
@@ -516,7 +599,7 @@
   ],
   "source_status": {
     "GLOBAL": "PASS",
-    "PATENT": "PARTIAL"
+    "PATENT": "PASS"
   },
   "validation_notes": [
     "국내 기존 12건은 분류/시간 필드 교정 유지. 원문 URL 미확보 항목은 이번 재배포에서 링크를 임의 생성하지 않음.",
@@ -530,14 +613,30 @@
   ],
   "section_health": {
     "domestic": "FAIL",
-    "global": "PARTIAL",
-    "patent": "PARTIAL",
+    "global": "PASS",
+    "patent": "PASS",
     "schedule": "PARTIAL"
   },
   "publication": {
     "type": "rehearsal",
     "published": true,
-    "label": "리허설 배포",
-    "note": "운영 전 수동 리허설 결과. 일부 수집·원문 URL·일정 검증이 PARTIAL/FAIL인 상태를 포함한다."
+    "label": "리허설 재배포",
+    "note": "10/6 12:00 KST 이후~10/7 수집창을 재검색해 글로벌·특허 섹션을 재구성했다. 정상 0건 축은 카드 수를 채우지 않고 PASS_ZERO로 기록."
+  },
+  "global_search_status": {
+    "PRIMARY_REGULATORY_AND_COMPANY": "PASS",
+    "TRADE_AND_WIRE": "PASS",
+    "WHOLE_WEB_RECOVERY": "PASS"
+  },
+  "patent_axis_status": {
+    "특허심판 청구": "PASS_ZERO",
+    "특허심판원 심결": "PASS",
+    "특허법원·각급법원 판결·결정": "PASS_ZERO",
+    "우선판매품목허가": "PASS_ZERO",
+    "통지의약품": "PASS_ZERO",
+    "의약품 특허기간 만료·임박": "PASS",
+    "우판기간 만료·임박": "PASS_ZERO",
+    "특허법·허가특허연계 입법": "PASS_ZERO",
+    "국내사 특허도전·소송 및 출시·독점기간 변화": "PASS"
   }
 }
