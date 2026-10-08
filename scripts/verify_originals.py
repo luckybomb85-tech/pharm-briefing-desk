@@ -136,5 +136,5 @@ if __name__=="__main__":
     from collections import Counter
     print("ORIGINAL_VERIFICATION",d["original_verification_summary"])
     print("REJECTION_REASONS",dict(Counter(x.get("original_verification",{}).get("reason","OK") for x in d["candidates"][:args.limit])))
-    print("SAMPLE_FAILURES",[(x.get("original_verification",{}).get("error"),x.get("original_verification",{}).get("resolved_from_aggregator")) for x in d["candidates"][:3]])
+    print("SAMPLE_FAILURES",[(x.get("original_verification",{}).get("error"),x.get("original_verification",{}).get("attempted_url")) for x in d["candidates"][:3]])
     print("SAMPLE_INPUT_HOSTS",dict(Counter(urllib.parse.urlparse(x.get("url","")).hostname for x in d["candidates"][:args.limit])))
