@@ -20,10 +20,10 @@ class TestEventMap(unittest.TestCase):
         d=build({'candidates':items})
         self.assertEqual(len(d['unique_candidates']),4)
         self.assertEqual(len(d['event_recommendations']['HANMI-EPHE-APPROVAL']),2)
-    def test_unverified_not_recommended(self):
+    def test_unverified_discovery_is_recommended(self):
         d=build({'candidates':[{'title':'에페오토 허가','url':'https://example.com/a'}]})
-        self.assertEqual(d['event_recommendations']['HANMI-EPHE-APPROVAL'],[])
-        self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'UNVERIFIED_ONLY')
+        self.assertEqual(len(d['event_recommendations']['HANMI-EPHE-APPROVAL']),1)
+        self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'DISCOVERED_FOLLOWUP')
     def test_absent_not_success(self):
         d=build({'candidates':[]})
         self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'NOT_FOUND_IN_SCAN')
