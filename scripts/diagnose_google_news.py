@@ -25,3 +25,6 @@ for marker in ('data-n-a-','garturlreq','Fbv4je','https://www.','https://news.go
 from verify_originals import resolve_google_news
 resolved=resolve_google_news(link)
 print('RESOLVED_HOST',urllib.parse.urlparse(resolved or '').hostname,'SUCCESS',bool(resolved))
+
+print('ATTR_ORDER',[(x,page.find(x)) for x in ('data-n-a-id','data-n-a-ts','data-n-a-sg')])
+print('ATTR_CONTEXT',repr(page[page.find('data-n-a-id')-35:page.find('data-n-a-id')+390])[:550])
