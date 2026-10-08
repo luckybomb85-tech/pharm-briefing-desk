@@ -28,11 +28,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Diagnose live Google News token
-        continue-on-error: true
-        env:
-          DEBUG_GOOGLE: '1'
-        run: python scripts/diagnose_google_news.py
       - name: Unit test original-source verification
         run: python -m unittest discover -s scripts -p 'test_verify_originals.py' -v
       - name: Unit test duplicate and follow-up event map
