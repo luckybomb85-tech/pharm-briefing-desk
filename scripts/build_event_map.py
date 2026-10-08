@@ -7,9 +7,6 @@ def key(item):
     url=v.get('resolved_url') or item.get('url','')
     p=urllib.parse.urlparse(url)
     query=urllib.parse.parse_qsl(p.query,keep_blank_values=True)
-    if (p.hostname or '').endswith('bing.com'):
-        target=next((v for k,v in query if k.lower()=='url' and v.startswith(('https://','http://'))),None)
-        if target:return key({'url':target})
     query=sorted((k,v) for k,v in query if not k.lower().startswith(('utm_','fbclid','gclid')))
     return (p.hostname or '').removeprefix('www.')+p.path.rstrip('/')+('?' + urllib.parse.urlencode(query) if query else '')
 
