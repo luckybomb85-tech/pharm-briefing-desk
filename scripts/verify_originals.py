@@ -80,7 +80,7 @@ def verify(item,opener=None):
     url=item.get("url","");p=urllib.parse.urlparse(url)
     result={"url":url,"verified_original":False,"status":"UNVERIFIED"}
     if p.scheme not in ("http","https") or not p.hostname:return {**result,"reason":"INVALID_URL"}
-    if p.hostname.endswith(("google.com","google.co.kr","bing.com")):
+    if p.hostname in ("news.google.com","news.google.co.kr"):
         resolved=resolve_google_news(url,opener)
         if not resolved:return {**result,"reason":"AGGREGATOR_UNRESOLVED"}
         url=resolved
@@ -92,7 +92,7 @@ def verify(item,opener=None):
             if "html" not in resp.headers.get("Content-Type","").lower():return {**result,"reason":"NOT_HTML"}
             body=resp.read(350000).decode("utf-8","replace")
         final_host=urllib.parse.urlparse(final).hostname or ""
-        if final_host.endswith(("google.com","bing.com")) or final_host.startswith("www.bing."):
+        if final_host in ("news.google.com","news.google.co.kr"):
             return {**result,"reason":"AGGREGATOR_REDIRECT"}
         m=Metadata();m.feed(body)
         title=html.unescape((m.meta.get("og:title") or [m.title])[0]).strip()
