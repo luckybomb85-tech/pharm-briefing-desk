@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 TZ=ZoneInfo("Asia/Seoul")
 def now(): return datetime.now(TZ).isoformat(timespec="seconds")
 def fetch(q):
-    url="https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":q,"hl":"ko","gl":"KR","ceid":"KR:ko"})
+    url="https://www.bing.com/news/search?"+urllib.parse.urlencode({"q":q,"format":"rss","mkt":"ko-KR"})
     req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (briefing-audit/2.0)"})
     with urllib.request.urlopen(req,timeout=18) as r: body=r.read()
     root=ET.fromstring(body)
@@ -16,7 +16,7 @@ def fetch(q):
 def scan_extra(queries,group,candidates):
     routes=[]
     for q in queries:
-        route={"query":q,"checked_at":now(),"method":"GOOGLE_NEWS_RSS","status":"FAIL","hits":0}
+        route={"query":q,"checked_at":now(),"method":"BING_NEWS_RSS","status":"FAIL","hits":0}
         try:
             hits=fetch(q)
             route["hits"]=len(hits)
