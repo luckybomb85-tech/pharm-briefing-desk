@@ -114,7 +114,7 @@ def verify(item,opener=None):
             date=date_iso(value)
             if date:return {**result,"verified_original":True,"status":"VERIFIED","resolved_url":final,"original_title":title,"published_at_verified":date,"date_source":source}
         return {**result,"reason":"NO_VERIFIABLE_PUBLICATION_DATE","original_title":title}
-    except Exception as exc:return {**result,"reason":"FETCH_FAILED","error":str(exc)[:200]}
+    except Exception as exc:return {**result,"reason":"FETCH_FAILED","error":str(exc)[:200],"attempted_url":url}
 def process(data,limit=100):
     cache={};counts={"VERIFIED":0,"UNVERIFIED":0,"NOT_CHECKED":0}
     for i,item in enumerate(data.get("candidates",[])):
