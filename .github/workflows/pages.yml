@@ -9,6 +9,7 @@ on:
       - 'schedule/**'
       - 'config/**'
       - 'scripts/validate_briefing.py'
+      - 'scripts/verify_live_briefing.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -43,3 +44,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify public deployed briefing
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python scripts/verify_live_briefing.py
