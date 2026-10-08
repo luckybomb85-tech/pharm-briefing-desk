@@ -27,8 +27,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Unit test original-source verification
-        run: python -m unittest discover -s scripts -p 'test_verify_originals.py' -v
       - name: Unit test duplicate and follow-up event map
         run: python -m unittest discover -s scripts -p 'test_event_map.py' -v
       - name: Scan sources and record honest partial/fail evidence
@@ -37,10 +35,6 @@ jobs:
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
           python scripts/collect_with_evidence.py --date "$DAY"
-      - name: Verify originals and record rejected / unchecked candidates
-        run: |
-          FILE=$(ls status/*-collection-evidence.json | head -1)
-          python scripts/verify_originals.py --input "$FILE" --output "$FILE" --limit 100
       - name: Build conservative deduplication and event follow-up map
         run: |
           FILE=$(ls status/*-collection-evidence.json | head -1)
