@@ -27,27 +27,6 @@ def scan_extra(queries,group,candidates):
         routes.append(route)
     return {"checked_at":now(),"status":"PARTIAL" if any(r["status"]=="PARTIAL" for r in routes) else "FAIL","routes":routes}
 
-def verify_article(candidate):
-    """Verify a non-aggregator article URL has HTML title and publication metadata."""
-    import re
-    url=candidate.get("url","")
-    host=urllib.parse.urlparse(url).hostname or ""
-    if not url.startswith("https://") or "google." in host or "bing." in host:
-        return {"verified_original":False,"verification_error":"aggregator URL"}
-    try:
-        req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
-        with urllib.request.urlopen(req,timeout=8) as response:
-            if "html" not in response.headers.get("Content-Type","").lower():
-                raise ValueError("not HTML")
-            body=response.read(180000).decode("utf-8","replace")
-            final_url=response.geturl()
-        if not re.search(r"<title\\b",body,re.I): raise ValueError("title missing")
-        if not re.search(r"article:published_time|datePublished|pubdate",body,re.I):
-            raise ValueError("publication metadata missing")
-        return {"verified_original":True,"verified_url":final_url,"verified_at":now()}
-    except Exception as exc:
-        return {"verified_original":False,"verification_error":str(exc)[:200]}
-
 def scan(day,settings):
     start=(datetime.fromisoformat(day+"T00:00:00+09:00")-timedelta(hours=12))
     end=datetime.fromisoformat(day+"T23:59:59+09:00")
@@ -56,7 +35,7 @@ def scan(day,settings):
         routes=[]
         for domain in domains:
             query=f'site:{domain} (제약 OR 바이오 OR 신약 OR 임상 OR 특허) after:{start.date()} before:{(end+timedelta(days=1)).date()}'
-            route={"source":domain,"query":query,"checked_at":now(),"method":"GOOGLE_NEWS_RSS","status":"FAIL","hits":0}
+            route={"source":domain,"query":query,"checked_at":now(),"method":"BING_NEWS_RSS","status":"FAIL","hits":0}
             try:
                 hits=fetch(query)
                 route["hits"]=len(hits)
@@ -78,11 +57,6 @@ def scan(day,settings):
         gap.append(route)
     global_audit=scan_extra(["FDA biotech drug approval phase 3 when:2d","EMA pharmaceutical CHMP trial results when:2d","site:clinicaltrials.gov phase 3 biotech when:2d","pharma licensing clinical results Reuters when:2d"],"GLOBAL",candidates)
     patent_audit=scan_extra(["제약 특허심판원 심결 특허법원 판결 when:3d","제약 우선판매품목허가 통지의약품 when:3d","의약품 특허만료 제네릭 출시 when:3d","pharma patent litigation biosimilar when:3d"],"PATENT",candidates)
-    verified=0
-    for item in candidates:
-        if verified>=30: break
-        item.update(verify_article(item))
-        verified+=1
     p0=[]
     for x in candidates:
         if any(k in x["title"].lower() for k in ("에페글레나타이드","에페오토","epheglena")):
