@@ -72,7 +72,25 @@ def validate_v1(d,path):
     if any(cs[k] not in ("PASS","PARTIAL","FAIL") for k in ("A","B","C","D","WEB")): raise ValueError("collector_status invalid")
     comp=d.get("completeness_status")
     if comp not in ("ready","partial","failed"): raise ValueError("completeness_status invalid")
-    strict=status in ("ready","published") and not d.get("test_run",False)
+    strict=status in ("ready","published")
+    if status in ("ready","published") and d.get("test_run",False): raise ValueError("production status cannot use test_run bypass")
+    evidence=d.get("collection_evidence")
+    if strict:
+        if not isinstance(evidence,dict): raise ValueError("production requires collection_evidence")
+        groups=evidence.get("domestic_groups",{})
+        for group in ("A","B","C","D","WEB"):
+            x=groups.get(group,{})
+            if x.get("status") not in ("PASS","PASS_ZERO") or not x.get("checked_at") or not x.get("routes"):
+                raise ValueError(f"missing actual collection evidence for {group}")
+        for section in ("global","patent"):
+            x=evidence.get(section,{})
+            if x.get("status") not in ("PASS","PASS_ZERO") or not x.get("checked_at") or not x.get("routes"):
+                raise ValueError(f"missing actual collection evidence for {section}")
+        if not evidence.get("web_gap_scan",{}).get("checked_at"):
+            raise ValueError("missing independent web gap scan evidence")
+        for item in d.get("domestic",[]):
+            if item.get("priority")=="P0" and not any(y.get("event_id")==item.get("event_id") for y in evidence.get("p0_followups",[])):
+                raise ValueError(f"missing P0 followup scan: {item.get('event_id')}")
     for section in ("domestic","global","patent"):
         validate_v1_items(section,d.get(section),strict)
     if strict:
