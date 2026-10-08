@@ -5,7 +5,6 @@ on:
     paths:
       - 'scripts/collect_with_evidence.py'
       - 'scripts/verify_originals.py'
-      - 'scripts/diagnose_google_news.py'
       - 'scripts/test_verify_originals.py'
       - 'scripts/build_event_map.py'
       - 'scripts/test_event_map.py'
