@@ -21,3 +21,7 @@ print('FINAL_PATH',urllib.parse.urlparse(final).path[:100])
 
 for marker in ('data-n-a-','garturlreq','Fbv4je','https://www.','https://news.google.com'):
  print('MARKER',marker,page.find(marker))
+
+from verify_originals import resolve_google_news
+resolved=resolve_google_news(link)
+print('RESOLVED_HOST',urllib.parse.urlparse(resolved or '').hostname,'SUCCESS',bool(resolved))
