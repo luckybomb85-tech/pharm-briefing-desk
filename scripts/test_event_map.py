@@ -18,6 +18,12 @@ class TestEventMap(unittest.TestCase):
         a={'title':'First','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Fone.example%2F1'}
         b={'title':'Second','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Ftwo.example%2F2'}
         self.assertEqual(build({'candidates':[a,b]})['deduplication']['unique'],2)
+    def test_followup_cap(self):
+        titles=['에페글레나타이드 허가','에페글레나타이드 급여','에페글레나타이드 출시','에페글레나타이드 경쟁']
+        items=[{'title':t,'url':'https://example.com/'+str(i),'verified_original':True} for i,t in enumerate(titles)]
+        d=build({'candidates':items})
+        self.assertEqual(len(d['unique_candidates']),4)
+        self.assertEqual(len(d['event_recommendations']['HANMI-EPHE-APPROVAL']),2)
     def test_absent_not_success(self):
         d=build({'candidates':[]})
         self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'NOT_FOUND_IN_SCAN')
