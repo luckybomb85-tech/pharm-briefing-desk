@@ -7,6 +7,9 @@ def key(item):
     url=v.get('resolved_url') or item.get('url','')
     p=urllib.parse.urlparse(url)
     query=urllib.parse.parse_qsl(p.query,keep_blank_values=True)
+    if (p.hostname or '').endswith('bing.com'):
+        target=next((v for k,v in query if k.lower()=='url' and v.startswith(('https://','http://'))),None)
+        if target:return key({'url':target})
     query=sorted((k,v) for k,v in query if not k.lower().startswith(('utm_','fbclid','gclid')))
     return (p.hostname or '').removeprefix('www.')+p.path.rstrip('/')+('?' + urllib.parse.urlencode(query) if query else '')
 
@@ -47,7 +50,7 @@ def build(data):
         recommendations[event_id]=picks
     data['event_recommendations']=recommendations
     data['event_map']=events
-    data['event_watch_status']={'HANMI-EPHE-APPROVAL':'FOUND' if events else 'NOT_FOUND_IN_SCAN'}
+    data['event_watch_status']={'HANMI-EPHE-APPROVAL':('VERIFIED_FOLLOWUP_FOUND' if recommendations.get('HANMI-EPHE-APPROVAL') else 'UNVERIFIED_ONLY' if events else 'NOT_FOUND_IN_SCAN')}
     return data
 
 if __name__=='__main__':
