@@ -34,6 +34,18 @@ def build(data):
             for stage in stages:e['milestones'].setdefault(stage,[]).append(article)
     data['unique_candidates']=unique
     data['deduplication']={'input':len(data.get('candidates',[])),'unique':len(unique),'duplicates':len(duplicates),'removed':duplicates}
+    # Preserve the full event map for auditing; recommend at most two distinct, verified follow-ups.
+    recommendations={}
+    for event_id,event in events.items():
+        picks=[];used=set()
+        for stage in ('approval','reimbursement','launch','competition','clinical','general'):
+            for article in event['milestones'].get(stage,[]):
+                if not article['verified_original'] or article['url'] in used:continue
+                picks.append({'angle':stage,**article});used.add(article['url'])
+                break
+            if len(picks)>=2:break
+        recommendations[event_id]=picks
+    data['event_recommendations']=recommendations
     data['event_map']=events
     data['event_watch_status']={'HANMI-EPHE-APPROVAL':'FOUND' if events else 'NOT_FOUND_IN_SCAN'}
     return data
