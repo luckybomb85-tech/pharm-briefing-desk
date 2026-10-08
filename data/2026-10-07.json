@@ -4,7 +4,7 @@
   "timezone": "Asia/Seoul",
   "status": "rehearsal-published",
   "test_run": true,
-  "test_banner": "10/7 리허설 재배포 · 글로벌/특허 재수집 반영",
+  "test_banner": "10/7 수동 재점검판 · 국내 주요 후속 이벤트 반영",
   "search_window": {
     "rule": "today_plus_previous_day_from_noon",
     "from": "2026-10-06T12:00:00+09:00",
@@ -367,6 +367,64 @@
       "event_id": "20261007-PHAROS-PHI101-CSR",
       "priority": "P2",
       "timestamp_unverified": false
+    },
+    {
+      "tag": "국내 신약 허가",
+      "title": "한미약품 에페글레나타이드 국내 45호 신약 허가",
+      "summary": "식약처가 7일 에페오토인젝터주 5개 함량을 허가했다. 국내 개발 첫 GLP-1 계열 비만치료 신약으로 연내 출시를 목표로 한다.",
+      "source": "https://eiec.kdi.re.kr/policy/materialView.do?num=287895&pg=&pp=20&topic=L",
+      "source_name": "식품의약품안전처 보도자료",
+      "published_at": "2026-10-07T17:35:00+09:00",
+      "timestamp_unverified": true,
+      "priority": "P0",
+      "event_id": "20261007-HANMI-EPHE-APPROVAL",
+      "article_preview": {
+        "quick": {
+          "title": "한미약품 에페글레나타이드 국내 45호 신약 허가",
+          "lead": "식약처가 7일 에페오토인젝터주 5개 함량을 허가했다. 국내 개발 첫 GLP-1 계열 비만치료 신약으로 연내 출시를 목표로 한다.",
+          "title_options": [
+            "한미약품 에페글레나타이드 국내 45호 신약 허가",
+            "한미약품 에페글레나타이드 국내 45호 신약 허가"
+          ]
+        },
+        "diff": {
+          "title": "한미약품 에페글레나타이드 국내 45호 신약 허가",
+          "direction": "10월 7일 확인된 신규 핵심 이벤트",
+          "title_options": [
+            "한미약품 에페글레나타이드 국내 45호 신약 허가",
+            "한미약품 에페글레나타이드 국내 45호 신약 허가"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "기술협력",
+      "title": "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결",
+      "summary": "펩트론이 7일 릴리와 스마트데포 플랫폼 기술평가 기간 종료를 공지했다. 종료 시점에 상업화 계약은 체결되지 않았지만 향후 협력 가능성은 열려 있다는 입장이다.",
+      "source": "https://www.hankyung.com/article/202610078926i",
+      "source_name": "한국경제 바이오인사이트",
+      "published_at": "2026-10-07T16:53:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P0",
+      "event_id": "20261007-PEPTRON-LILLY-EVALUATION-END",
+      "article_preview": {
+        "quick": {
+          "title": "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결",
+          "lead": "펩트론이 7일 릴리와 스마트데포 플랫폼 기술평가 기간 종료를 공지했다. 종료 시점에 상업화 계약은 체결되지 않았지만 향후 협력 가능성은 열려 있다는 입장이다.",
+          "title_options": [
+            "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결",
+            "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결"
+          ]
+        },
+        "diff": {
+          "title": "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결",
+          "direction": "10월 7일 확인된 신규 핵심 이벤트",
+          "title_options": [
+            "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결",
+            "펩트론·릴리 기술평가 종료…후속 상업화 계약 미체결"
+          ]
+        }
+      }
     }
   ],
   "global": [
@@ -609,7 +667,8 @@
     "v1.0 hard gate 적용: 국내 원문 URL 공란으로 domestic=FAIL.",
     "글로벌 3단계 수집 미완료 및 P0/P1 발행시각 미확인으로 global=PARTIAL.",
     "특허 1순위 9개 검색축 완전성 미검증으로 patent=PARTIAL.",
-    "schedule/events.json 당일 갱신 미확인으로 schedule=PARTIAL."
+    "schedule/events.json 당일 갱신 미확인으로 schedule=PARTIAL.",
+    "2026-10-08 수동 재점검: 국내 에페 허가·펩트론 릴리 기술평가 종료 보강. 기존 국내 카드 원문 URL 미확보로 정식 검증 완료 아님."
   ],
   "section_health": {
     "domestic": "FAIL",
@@ -620,8 +679,8 @@
   "publication": {
     "type": "rehearsal",
     "published": true,
-    "label": "리허설 재배포",
-    "note": "10/6 12:00 KST 이후~10/7 수집창을 재검색해 글로벌·특허 섹션을 재구성했다. 정상 0건 축은 카드 수를 채우지 않고 PASS_ZERO로 기록."
+    "label": "수동 재점검판",
+    "note": "국내·글로벌·특허 3영역 점검. 기존 국내 일부 카드의 원문 URL 미확보 상태를 유지해 정식 PASS가 아닌 리허설로 표시."
   },
   "global_search_status": {
     "PRIMARY_REGULATORY_AND_COMPANY": "PASS",
