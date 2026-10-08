@@ -60,7 +60,8 @@ def resolve_google_news(url,opener=None):
             return None
         aid,ts,sig=match.groups()
         import urllib.parse as up
-        payload=f'[[["Fbv4je","[\\\"garturlreq\\\",[[\\\"en-US\\\",\\\"US\\\",[\\\"FINANCE_TOP_INDICES\\\",\\\"WEB_TEST_1_0_0\\\"]],null,null,1,1,\\\"US:en\\\",null,180,null,null,null,null,null,0,null,null,[1608992183,723341000]],\\\"{aid}\\\",{ts},\\\"{sig}\\\"]",null,"generic"]]]'
+        request_args=["garturlreq",[["en-US","US",["FINANCE_TOP_INDICES","WEB_TEST_1_0_0"],None,None,1,1,"US:en",None,180,None,None,None,None,None,0,None,None,[1608992183,723341000]],"en-US","US",1,[2,3,4,8],1,0,"655000234",0,0,None,0],aid,int(ts),sig]
+        payload=json.dumps([[["Fbv4je",json.dumps(request_args,separators=(",",":")),None,"generic"]]],separators=(",",":"))
         data=up.urlencode({"f.req":payload}).encode()
         req=urllib.request.Request("https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je",data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded"})
         with open_fn(req,timeout=12) as resp:answer=resp.read(200000).decode("utf-8","replace")
