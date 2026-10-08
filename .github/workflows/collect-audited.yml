@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/collect_with_evidence.py'
+      - 'scripts/verify_originals.py'
+      - 'scripts/test_verify_originals.py'
       - '.github/workflows/collect-audited.yml'
   workflow_dispatch:
     inputs:
@@ -23,12 +25,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Unit test original-source verification
+        run: python -m unittest discover -s scripts -p 'test_verify_originals.py' -v
       - name: Scan sources and record honest partial/fail evidence
         env:
           REQUESTED_DATE: ${{ inputs.briefing_date }}
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
           python scripts/collect_with_evidence.py --date "$DAY"
+      - name: Verify originals and record rejected / unchecked candidates
+        run: |
+          FILE=$(ls status/*-collection-evidence.json | head -1)
+          python scripts/verify_originals.py --input "$FILE" --output "$FILE" --limit 100
       - uses: actions/upload-artifact@v4
         with:
           name: source-evidence
