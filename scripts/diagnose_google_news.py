@@ -15,3 +15,6 @@ for attr in ('data-n-a-id','data-n-a-ts','data-n-a-sg'):
  m=re.search(attr+r'=[\"\']([^\"\']+)',page)
  print('ATTR',attr,'FOUND',bool(m),'VALUE_LENGTH',len(m.group(1)) if m else 0)
 print('META_MARKERS',[(x,x in page) for x in ('Fbv4je','garturlreq','data-n-a-id')])
+
+print('PAGE_LENGTH',len(page),'PAGE_START',repr(page[:350]))
+print('FINAL_PATH',urllib.parse.urlparse(final).path[:100])
