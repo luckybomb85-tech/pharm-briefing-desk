@@ -4,7 +4,7 @@
   "timezone": "Asia/Seoul",
   "status": "rehearsal-published",
   "test_run": true,
-  "test_banner": "10/8 수동 재검증판 · 국내 6건 / 글로벌 1건 / 특허 2건",
+  "test_banner": "10/8 수동 수집판 · 국내 7건(2개 매체) / 글로벌 1건 / 특허 2건 · PARTIAL",
   "search_window": {
     "start": "2026-10-07T12:00:00+09:00",
     "end": "2026-10-08T19:09:00+09:00"
@@ -185,6 +185,34 @@
           ]
         }
       }
+    },
+    {
+      "tag": "CDMO",
+      "title": "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색",
+      "summary": "에스티팜이 8일 CPHI 참가 사실을 발표하고 올리고뉴클레오타이드 CDMO 역량과 글로벌 고객사 협력 확대 계획을 소개했다.",
+      "source": "https://www.biospectator.com/news/view/30036",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-08T10:22:00+09:00",
+      "priority": "P2",
+      "event_id": "20261008-STPHARM-CPHI",
+      "article_preview": {
+        "quick": {
+          "title": "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색",
+          "lead": "에스티팜이 8일 CPHI 참가 사실을 발표하고 올리고뉴클레오타이드 CDMO 역량과 글로벌 고객사 협력 확대 계획을 소개했다.",
+          "title_options": [
+            "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색",
+            "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색"
+          ]
+        },
+        "diff": {
+          "title": "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색",
+          "direction": "신규 수주 계약 여부는 별도 확인 필요",
+          "title_options": [
+            "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색",
+            "에스티팜, CPHI 2026서 올리고뉴클레오타이드 CDMO 수주 확대 모색"
+          ]
+        }
+      }
     }
   ],
   "global": [
@@ -281,7 +309,8 @@
   },
   "validation_notes": [
     "국내 6건 중 영진약품·에이비엘바이오·휴온스는 개별 기사 원문 URL 확인",
-    "검증 불가한 국감 기사목록 카드는 삭제. 전체 매체 수집은 여전히 PARTIAL."
+    "검증 불가한 국감 기사목록 카드는 삭제. 전체 매체 수집은 여전히 PARTIAL.",
+    "바이오스펙테이터 10/8 원문 1건 추가. 전체 A/B/C/D/WEB 커버리지는 미달."
   ],
   "section_health": {
     "domestic": "PARTIAL",
