@@ -88,7 +88,9 @@ def verify(item,opener=None):
             final=resp.geturl()
             if "html" not in resp.headers.get("Content-Type","").lower():return {**result,"reason":"NOT_HTML"}
             body=resp.read(350000).decode("utf-8","replace")
-        if (urllib.parse.urlparse(final).hostname or "").endswith(("google.com","bing.com")):return {**result,"reason":"AGGREGATOR_REDIRECT"}
+        final_host=urllib.parse.urlparse(final).hostname or ""
+        if final_host.endswith(("google.com","bing.com")) or final_host.startswith("www.bing."):
+            return {**result,"reason":"AGGREGATOR_REDIRECT"}
         m=Metadata();m.feed(body)
         title=html.unescape((m.meta.get("og:title") or [m.title])[0]).strip()
         if not title:return {**result,"reason":"NO_TITLE"}
@@ -120,7 +122,9 @@ def process(data,limit=100):
             r=cache[url]
         item["original_verification"]=r;item["verified_original"]=r["verified_original"]
         counts[r["status"]]+=1
+    from collections import Counter
     data["original_verification_summary"]=counts
+    data["original_verified_hosts"]=dict(Counter(urllib.parse.urlparse(x.get("original_verification",{}).get("resolved_url","")).hostname for x in data.get("candidates",[]) if x.get("verified_original"))
     return data
 if __name__=="__main__":
     ap=argparse.ArgumentParser();ap.add_argument("--input",required=True);ap.add_argument("--output",required=True);ap.add_argument("--limit",type=int,default=100);args=ap.parse_args()
