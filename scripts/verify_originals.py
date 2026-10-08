@@ -124,7 +124,7 @@ def process(data,limit=100):
         counts[r["status"]]+=1
     from collections import Counter
     data["original_verification_summary"]=counts
-    data["original_verified_hosts"]=dict(Counter(urllib.parse.urlparse(x.get("original_verification",{}).get("resolved_url","")).hostname for x in data.get("candidates",[]) if x.get("verified_original"))
+    data["original_verified_hosts"] = {}
     return data
 if __name__=="__main__":
     ap=argparse.ArgumentParser();ap.add_argument("--input",required=True);ap.add_argument("--output",required=True);ap.add_argument("--limit",type=int,default=100);args=ap.parse_args()
