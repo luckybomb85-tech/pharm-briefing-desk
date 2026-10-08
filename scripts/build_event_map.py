@@ -34,20 +34,20 @@ def build(data):
             for stage in stages:e['milestones'].setdefault(stage,[]).append(article)
     data['unique_candidates']=unique
     data['deduplication']={'input':len(data.get('candidates',[])),'unique':len(unique),'duplicates':len(duplicates),'removed':duplicates}
-    # Preserve the full event map for auditing; recommend at most two distinct, verified follow-ups.
+    # Discovery recommendations do not require fetching publisher pages. Unverified facts remain unverified.
     recommendations={}
     for event_id,event in events.items():
         picks=[];used=set()
         for stage in ('approval','reimbursement','launch','competition','clinical','general'):
             for article in event['milestones'].get(stage,[]):
-                if not article['verified_original'] or article['url'] in used:continue
+                if article['url'] in used:continue
                 picks.append({'angle':stage,**article});used.add(article['url'])
                 break
             if len(picks)>=2:break
         recommendations[event_id]=picks
     data['event_recommendations']=recommendations
     data['event_map']=events
-    data['event_watch_status']={'HANMI-EPHE-APPROVAL':('VERIFIED_FOLLOWUP_FOUND' if recommendations.get('HANMI-EPHE-APPROVAL') else 'UNVERIFIED_ONLY' if events else 'NOT_FOUND_IN_SCAN')}
+    data['event_watch_status']={'HANMI-EPHE-APPROVAL':('DISCOVERED_FOLLOWUP' if recommendations.get('HANMI-EPHE-APPROVAL') else 'NOT_FOUND_IN_SCAN')}
     return data
 
 if __name__=='__main__':
