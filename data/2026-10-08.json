@@ -4,7 +4,7 @@
   "timezone": "Asia/Seoul",
   "status": "rehearsal-published",
   "test_run": true,
-  "test_banner": "10/8 수동 임시판 · 미검증 영역 포함",
+  "test_banner": "10/8 수동 수집판 · 국내 7건 / 글로벌 1건 / 특허 2건 · 일부 수집 미완료",
   "search_window": {
     "start": "2026-10-07T12:00:00+09:00",
     "end": "2026-10-08T19:09:00+09:00"
@@ -17,7 +17,204 @@
     "WEB": "PARTIAL"
   },
   "completeness_status": "partial",
-  "domestic": [],
+  "domestic": [
+    {
+      "tag": "국내 제약바이오",
+      "title": "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입",
+      "summary": "프랑스 아테나와 국내 라이선스·공급계약 체결, 기존 캡슐제에서 산제로 확대",
+      "source": "https://www.medipana.com/news/articleList.html?view_type=sm",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T13:29:00+09:00",
+      "priority": "P2",
+      "event_id": "20261008-DOM-1",
+      "article_preview": {
+        "quick": {
+          "title": "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입",
+          "lead": "프랑스 아테나와 국내 라이선스·공급계약 체결, 기존 캡슐제에서 산제로 확대",
+          "title_options": [
+            "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입",
+            "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입"
+          ]
+        },
+        "diff": {
+          "title": "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입",
+            "영진약품, 소아 설사 치료제 라세카도트릴 산제 도입"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "국내 제약바이오",
+      "title": "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시",
+      "summary": "IGF1R 기반 BBB 셔틀의 엔도솜·골지체 이동경로와 세포 내 수송기전 분석",
+      "source": "https://www.medipana.com/news/articleList.html?view_type=sm",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T12:38:00+09:00",
+      "priority": "P1",
+      "event_id": "20261008-DOM-2",
+      "article_preview": {
+        "quick": {
+          "title": "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시",
+          "lead": "IGF1R 기반 BBB 셔틀의 엔도솜·골지체 이동경로와 세포 내 수송기전 분석",
+          "title_options": [
+            "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시",
+            "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시"
+          ]
+        },
+        "diff": {
+          "title": "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시",
+            "에이비엘바이오, 그랩바디-B 뇌혈관장벽 셔틀 세포 내 이동기전 제시"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "국내 제약바이오",
+      "title": "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약",
+      "summary": "서브스티팜 바이오로직스와 계약, 백신 취급 품목 6종으로 확대",
+      "source": "https://www.medipana.com/news/articleList.html?view_type=sm",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T11:55:00+09:00",
+      "priority": "P2",
+      "event_id": "20261008-DOM-3",
+      "article_preview": {
+        "quick": {
+          "title": "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약",
+          "lead": "서브스티팜 바이오로직스와 계약, 백신 취급 품목 6종으로 확대",
+          "title_options": [
+            "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약",
+            "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약"
+          ]
+        },
+        "diff": {
+          "title": "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약",
+            "휴온스, 일본뇌염 백신 이모젭 국내 독점 유통계약"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "국내 제약바이오",
+      "title": "한미약품 비만신약 에페 허가 후 국내 3파전 본격화",
+      "summary": "한미 에페 허가로 위고비·마운자로와 국내 비만치료제 경쟁 구도 형성",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=418942",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T13:25:00+09:00",
+      "priority": "P0",
+      "event_id": "20261008-DOM-4",
+      "article_preview": {
+        "quick": {
+          "title": "한미약품 비만신약 에페 허가 후 국내 3파전 본격화",
+          "lead": "한미 에페 허가로 위고비·마운자로와 국내 비만치료제 경쟁 구도 형성",
+          "title_options": [
+            "한미약품 비만신약 에페 허가 후 국내 3파전 본격화",
+            "한미약품 비만신약 에페 허가 후 국내 3파전 본격화"
+          ]
+        },
+        "diff": {
+          "title": "한미약품 비만신약 에페 허가 후 국내 3파전 본격화",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "한미약품 비만신약 에페 허가 후 국내 3파전 본격화",
+            "한미약품 비만신약 에페 허가 후 국내 3파전 본격화"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "국내 제약바이오",
+      "title": "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개",
+      "summary": "중국 CSPC가 EASD 2026에서 메트포르민 병용 3상 결과 발표, 7일 주가 반응",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=418873",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T13:25:00+09:00",
+      "priority": "P1",
+      "event_id": "20261008-DOM-5",
+      "article_preview": {
+        "quick": {
+          "title": "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개",
+          "lead": "중국 CSPC가 EASD 2026에서 메트포르민 병용 3상 결과 발표, 7일 주가 반응",
+          "title_options": [
+            "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개",
+            "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개"
+          ]
+        },
+        "diff": {
+          "title": "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개",
+            "제넥신 GLP-1 후보 TG103 중국 3상 비열등성 결과 공개"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "국내 제약바이오",
+      "title": "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상",
+      "summary": "국정감사에서 혁신형제약 인증 및 CSO 수수료 문제 등 제도상 공백 제기",
+      "source": "https://www.hitnews.co.kr/news/articleList.html?sc_area=A&sc_word=%EB%A9%94%EB%94%94%EC%BB%AC%EC%BD%94%EC%8A%A4%EB%A9%94%ED%8B%B1",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-08T06:07:00+09:00",
+      "priority": "P1",
+      "event_id": "20261008-DOM-6",
+      "article_preview": {
+        "quick": {
+          "title": "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상",
+          "lead": "국정감사에서 혁신형제약 인증 및 CSO 수수료 문제 등 제도상 공백 제기",
+          "title_options": [
+            "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상",
+            "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상"
+          ]
+        },
+        "diff": {
+          "title": "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상",
+            "혁신형제약·CSO 수수료, 국회 복지위 국정감사 쟁점 부상"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "국내 제약바이오",
+      "title": "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진",
+      "summary": "밀라노 CPHI에서 Multi-Stra·EnveLipo 플랫폼 및 한중 생산거점 연계 전략 소개",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=419008",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T17:05:00+09:00",
+      "priority": "P3",
+      "event_id": "20261008-DOM-7",
+      "article_preview": {
+        "quick": {
+          "title": "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진",
+          "lead": "밀라노 CPHI에서 Multi-Stra·EnveLipo 플랫폼 및 한중 생산거점 연계 전략 소개",
+          "title_options": [
+            "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진",
+            "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진"
+          ]
+        },
+        "diff": {
+          "title": "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진",
+            "다산제약, CPHI 2026서 DDS·CDMO 사업 확장 추진"
+          ]
+        }
+      }
+    }
+  ],
   "global": [
     {
       "tag": "FDA 허가",
@@ -76,6 +273,34 @@
           ]
         }
       }
+    },
+    {
+      "tag": "특허 등록결정",
+      "title": "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정",
+      "summary": "SmartDepot 기반 세마글루타이드·터제파타이드 서방형 제형 관련 국내 특허 등록결정. 기사 본문에 회사 발표 시점이 10월 1일로 표기돼 신규 사건 여부 확인 필요.",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=418601",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-08T10:15:00+09:00",
+      "priority": "P2",
+      "event_id": "20261008-PEPTRON-PATENT",
+      "article_preview": {
+        "quick": {
+          "title": "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정",
+          "lead": "서방형 GLP-1 제형 특허 등록결정",
+          "title_options": [
+            "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정",
+            "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정"
+          ]
+        },
+        "diff": {
+          "title": "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정",
+          "direction": "원문 및 후속 취재로 차별화 검토",
+          "title_options": [
+            "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정",
+            "펩트론, 터제파타이드 장기지속형 제형 국내 특허 등록결정"
+          ]
+        }
+      }
     }
   ],
   "source_status": {
@@ -83,7 +308,8 @@
     "PATENT": "PASS"
   },
   "validation_notes": [
-    "국내 미수집. 정식 완료가 아닌 10/8 화면 노출용 임시판."
+    "10/8 국내 메디파나·히트뉴스 수집 7건 반영. 전체 매체·공식 자료 감시는 미완료.",
+    "일부 카드가 기사목록 URL을 사용하므로 직접 원문 연결 추가 보완 필요."
   ],
   "section_health": {
     "domestic": "PARTIAL",
@@ -95,7 +321,7 @@
     "type": "rehearsal",
     "published": true,
     "label": "10/8 임시판",
-    "note": "10월 8일 날짜로 새로 생성한 임시판. 국내 수집 미완료, 글로벌·특허 일부 원문 시각 및 판결 검증 미완료. 10/7 기사를 날짜만 바꿔 복사하지 않음."
+    "note": "국내 7건, 글로벌 1건, 특허 2건의 수동 부분 수집판. 국내 전매체 완전 수집 및 일부 원문 링크 검증 미완료."
   },
   "global_search_status": {
     "PRIMARY_REGULATORY_AND_COMPANY": "PARTIAL",
