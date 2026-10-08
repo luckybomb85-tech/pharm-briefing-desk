@@ -114,4 +114,7 @@ if __name__=="__main__":
     ap=argparse.ArgumentParser();ap.add_argument("--input",required=True);ap.add_argument("--output",required=True);ap.add_argument("--limit",type=int,default=100);args=ap.parse_args()
     d=process(json.loads(Path(args.input).read_text(encoding="utf-8")),args.limit)
     Path(args.output).write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    from collections import Counter
     print("ORIGINAL_VERIFICATION",d["original_verification_summary"])
+    print("REJECTION_REASONS",dict(Counter(x.get("original_verification",{}).get("reason","OK") for x in d["candidates"][:args.limit])))
+    print("SAMPLE_INPUT_HOSTS",dict(Counter(urllib.parse.urlparse(x.get("url","")).hostname for x in d["candidates"][:args.limit])))
