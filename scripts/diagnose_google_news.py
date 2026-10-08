@@ -28,3 +28,13 @@ print('RESOLVED_HOST',urllib.parse.urlparse(resolved or '').hostname,'SUCCESS',b
 
 print('ATTR_ORDER',[(x,page.find(x)) for x in ('data-n-a-id','data-n-a-ts','data-n-a-sg')])
 print('ATTR_CONTEXT',repr(page[page.find('data-n-a-id')-35:page.find('data-n-a-id')+390])[:550])
+
+from verify_originals import verify
+items=root.findall('.//item')[:5]
+for i,item in enumerate(items):
+ u=item.findtext('link') or ''
+ resolved=resolve_google_news(u)
+ print('SAMPLE',i,'HOST',urllib.parse.urlparse(resolved or '').hostname,'RESOLVED',bool(resolved))
+ if i==0:
+  result=verify({'url':u,'title':item.findtext('title') or ''})
+  print('SAMPLE_VERIFICATION',result.get('status'),result.get('reason'),result.get('published_at_verified'))
