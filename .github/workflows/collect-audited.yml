@@ -1,5 +1,10 @@
 name: auditable-briefing-collection
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/collect_with_evidence.py'
+      - '.github/workflows/collect-audited.yml'
   workflow_dispatch:
     inputs:
       briefing_date:
