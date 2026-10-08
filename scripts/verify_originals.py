@@ -64,12 +64,14 @@ def resolve_google_news(url,opener=None):
         data=up.urlencode({"f.req":payload}).encode()
         req=urllib.request.Request("https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je",data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded"})
         with open_fn(req,timeout=12) as resp:answer=resp.read(200000).decode("utf-8","replace")
+        if __import__("os").environ.get("DEBUG_GOOGLE"):print("GOOGLE_RPC_RESPONSE",repr(answer[:350]))
         urls=re.findall(r'https?://[^\\\\\\\"\\s]+',answer)
         for candidate in urls:
             candidate=candidate.replace("\\\\/","/").replace("\\u003d","=")
             host=up.urlparse(candidate).hostname or ""
             if host and "google." not in host:return candidate
-    except Exception:
+    except Exception as exc:
+        if __import__("os").environ.get("DEBUG_GOOGLE"):print("GOOGLE_RPC_EXCEPTION",type(exc).__name__,str(exc)[:150])
         return None
     return None
 
