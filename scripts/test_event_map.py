@@ -14,6 +14,10 @@ class TestEventMap(unittest.TestCase):
         self.assertEqual(d['deduplication']['unique'],2)
         self.assertIn('approval',d['event_map']['HANMI-EPHE-APPROVAL']['milestones'])
         self.assertIn('reimbursement',d['event_map']['HANMI-EPHE-APPROVAL']['milestones'])
+    def test_distinct_bing_links(self):
+        a={'title':'First','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Fone.example%2F1'}
+        b={'title':'Second','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Ftwo.example%2F2'}
+        self.assertEqual(build({'candidates':[a,b]})['deduplication']['unique'],2)
     def test_absent_not_success(self):
         d=build({'candidates':[]})
         self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'NOT_FOUND_IN_SCAN')
