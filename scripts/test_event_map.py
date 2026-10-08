@@ -24,6 +24,14 @@ class TestEventMap(unittest.TestCase):
         d=build({'candidates':items})
         self.assertEqual(len(d['unique_candidates']),4)
         self.assertEqual(len(d['event_recommendations']['HANMI-EPHE-APPROVAL']),2)
+    def test_bing_same_target_dedup(self):
+        a={'title':'A','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Fexample.com%2Fa'}
+        b={'title':'A','url':'https://example.com/a?utm_source=bing'}
+        self.assertEqual(build({'candidates':[a,b]})['deduplication']['duplicates'],1)
+    def test_unverified_not_recommended(self):
+        d=build({'candidates':[{'title':'에페오토 허가','url':'https://example.com/a'}]})
+        self.assertEqual(d['event_recommendations']['HANMI-EPHE-APPROVAL'],[])
+        self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'UNVERIFIED_ONLY')
     def test_absent_not_success(self):
         d=build({'candidates':[]})
         self.assertEqual(d['event_watch_status']['HANMI-EPHE-APPROVAL'],'NOT_FOUND_IN_SCAN')
