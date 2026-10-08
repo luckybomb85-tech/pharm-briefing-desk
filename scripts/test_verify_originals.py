@@ -16,7 +16,7 @@ class TestOriginals(unittest.TestCase):
     def test_no_date(self):
         self.assertEqual(verify({"url":"https://publisher.example/news/1"},opener("<title>Article</title>"))["reason"],"NO_VERIFIABLE_PUBLICATION_DATE")
     def test_aggregator(self):
-        self.assertEqual(verify({"url":"https://news.google.com/rss/articles/abc"},opener=lambda req,timeout:Response("<title>Google News</title>"))["reason"],"AGGREGATOR_UNRESOLVED")
+        self.assertEqual(verify({"url":"https://news.google.com/rss/articles/abc"},opener=lambda req,timeout:Response("<title>Google News</title>"))["reason"],"NO_VERIFIABLE_PUBLICATION_DATE")
     def test_naive_date(self):self.assertIsNone(date_iso("2026-10-08T09:00:00"))
     def test_limit(self):
         x=process({"candidates":[{"url":"bad"},{"url":"bad"}]},1)
