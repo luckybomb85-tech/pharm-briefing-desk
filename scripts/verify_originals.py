@@ -25,11 +25,51 @@ def date_iso(value):
         dt=datetime.fromisoformat(str(value).strip().replace("Z","+00:00"))
         return dt.astimezone(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds") if dt.tzinfo else None
     except (ValueError,TypeError):return None
+
+def resolve_google_news(url,opener=None):
+    """Resolve Google News RSS token via its public article metadata endpoint."""
+    import re
+    parsed=urllib.parse.urlparse(url)
+    if parsed.hostname not in ("news.google.com","news.google.co.kr"):
+        return url
+    token=parsed.path.rstrip("/").split("/")[-1]
+    if not token or not re.fullmatch(r"[A-Za-z0-9_-]+",token):
+        return None
+    open_fn=opener or urllib.request.urlopen
+    try:
+        req=urllib.request.Request("https://news.google.com/rss/articles/"+token,headers={"User-Agent":"Mozilla/5.0"})
+        with open_fn(req,timeout=12) as resp:
+            page=resp.read(220000).decode("utf-8","replace")
+            final=resp.geturl()
+        if urllib.parse.urlparse(final).hostname not in ("news.google.com","news.google.co.kr"):
+            return final
+        match=re.search(r'data-n-a-id="([^"]+)"[^>]*data-n-a-ts="([^"]+)"[^>]*data-n-a-sg="([^"]+)"',page)
+        if not match:
+            return None
+        aid,ts,sig=match.groups()
+        import urllib.parse as up
+        payload=f'[[["Fbv4je","[\\\"garturlreq\\\",[[\\\"en-US\\\",\\\"US\\\",[\\\"FINANCE_TOP_INDICES\\\",\\\"WEB_TEST_1_0_0\\\"]],null,null,1,1,\\\"US:en\\\",null,180,null,null,null,null,null,0,null,null,[1608992183,723341000]],\\\"{aid}\\\",{ts},\\\"{sig}\\\"]",null,"generic"]]]'
+        data=up.urlencode({"f.req":payload}).encode()
+        req=urllib.request.Request("https://news.google.com/_/DotsSplashUi/data/batchexecute?rpcids=Fbv4je",data=data,headers={"User-Agent":"Mozilla/5.0","Content-Type":"application/x-www-form-urlencoded"})
+        with open_fn(req,timeout=12) as resp:answer=resp.read(200000).decode("utf-8","replace")
+        urls=re.findall(r'https?://[^\\\\\\\"\\s]+',answer)
+        for candidate in urls:
+            candidate=candidate.replace("\\\\/","/").replace("\\u003d","=")
+            host=up.urlparse(candidate).hostname or ""
+            if host and "google." not in host:return candidate
+    except Exception:
+        return None
+    return None
+
 def verify(item,opener=None):
     url=item.get("url","");p=urllib.parse.urlparse(url)
     result={"url":url,"verified_original":False,"status":"UNVERIFIED"}
     if p.scheme not in ("http","https") or not p.hostname:return {**result,"reason":"INVALID_URL"}
-    if p.hostname.endswith(("google.com","google.co.kr","bing.com")):return {**result,"reason":"AGGREGATOR_URL"}
+    if p.hostname.endswith(("google.com","google.co.kr","bing.com")):
+        resolved=resolve_google_news(url,opener)
+        if not resolved:return {**result,"reason":"AGGREGATOR_UNRESOLVED"}
+        url=resolved
+        result["resolved_from_aggregator"]=True
     try:
         req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
         with (opener or urllib.request.urlopen)(req,timeout=12) as resp:
