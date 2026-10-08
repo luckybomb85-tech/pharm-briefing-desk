@@ -51,7 +51,7 @@ def resolve_google_news(url,opener=None):
     try:
         req=urllib.request.Request("https://news.google.com/rss/articles/"+token,headers={"User-Agent":"Mozilla/5.0"})
         with open_fn(req,timeout=12) as resp:
-            page=resp.read(220000).decode("utf-8","replace")
+            page=resp.read(1200000).decode("utf-8","replace")
             final=resp.geturl()
         if urllib.parse.urlparse(final).hostname not in ("news.google.com","news.google.co.kr"):
             return final
