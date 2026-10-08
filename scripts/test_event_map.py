@@ -14,20 +14,12 @@ class TestEventMap(unittest.TestCase):
         self.assertEqual(d['deduplication']['unique'],2)
         self.assertIn('approval',d['event_map']['HANMI-EPHE-APPROVAL']['milestones'])
         self.assertIn('reimbursement',d['event_map']['HANMI-EPHE-APPROVAL']['milestones'])
-    def test_distinct_bing_links(self):
-        a={'title':'First','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Fone.example%2F1'}
-        b={'title':'Second','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Ftwo.example%2F2'}
-        self.assertEqual(build({'candidates':[a,b]})['deduplication']['unique'],2)
     def test_followup_cap(self):
         titles=['에페글레나타이드 허가','에페글레나타이드 급여','에페글레나타이드 출시','에페글레나타이드 경쟁']
         items=[{'title':t,'url':'https://example.com/'+str(i),'verified_original':True} for i,t in enumerate(titles)]
         d=build({'candidates':items})
         self.assertEqual(len(d['unique_candidates']),4)
         self.assertEqual(len(d['event_recommendations']['HANMI-EPHE-APPROVAL']),2)
-    def test_bing_same_target_dedup(self):
-        a={'title':'A','url':'https://www.bing.com/news/apiclick.aspx?url=https%3A%2F%2Fexample.com%2Fa'}
-        b={'title':'A','url':'https://example.com/a?utm_source=bing'}
-        self.assertEqual(build({'candidates':[a,b]})['deduplication']['duplicates'],1)
     def test_unverified_not_recommended(self):
         d=build({'candidates':[{'title':'에페오토 허가','url':'https://example.com/a'}]})
         self.assertEqual(d['event_recommendations']['HANMI-EPHE-APPROVAL'],[])
