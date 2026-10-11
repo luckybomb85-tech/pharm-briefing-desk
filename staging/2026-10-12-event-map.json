@@ -1,0 +1,85 @@
+{
+  "schema_version": "briefing-event-map-v1.0",
+  "date": "2026-10-12",
+  "mode": "manual_diagnostic",
+  "events": [
+    {
+      "event_id": "KR-LICENSE-2026Q3-AGGREGATE",
+      "headline": "기술수출 '22조' 역대급 실적인데... 주가 꿈쩍 안한 이유 있었다",
+      "status": "NEW",
+      "priority": "P2",
+      "sources": [
+        "https://www.hitnews.co.kr/news/articleView.html?idxno=79773"
+      ],
+      "tabs": [
+        "domestic"
+      ]
+    },
+    {
+      "event_id": "MOTHERS-IPO-20261007",
+      "headline": "마더스제약, 코스닥 문턱 넘었다…성장성 시험대",
+      "status": "UPDATE",
+      "priority": "P2",
+      "sources": [
+        "https://www.medipana.com/news/articleView.html?idxno=419039"
+      ],
+      "tabs": [
+        "domestic"
+      ]
+    },
+    {
+      "event_id": "KPA-DELIVERY-RESOLUTION-20261011",
+      "headline": "약 배송 대응 놓고 내부 진통… 결의문 채택으로 마무리",
+      "status": "NEW",
+      "priority": "P2",
+      "sources": [
+        "https://www.hitnews.co.kr/news/articleView.html?idxno=79786"
+      ],
+      "tabs": [
+        "domestic"
+      ]
+    },
+    {
+      "event_id": "HANMI-RETURNED-PIPELINE-REVIEW-20261012",
+      "headline": "'에페'는 시작일 뿐… 한미약품 '기술 반환 신약' 재도약 노린다",
+      "status": "UPDATE",
+      "priority": "P2",
+      "sources": [
+        "https://www.hitnews.co.kr/news/articleView.html?idxno=79787"
+      ],
+      "tabs": [
+        "domestic"
+      ]
+    },
+    {
+      "event_id": "ALGENOMICS-BIOJAPAN-BD-20261012",
+      "headline": "알지노믹스, 기술 설명서 공동개발 논의로… 달라진 빅파마 미팅",
+      "status": "NEW",
+      "priority": "P2",
+      "sources": [
+        "https://www.hitnews.co.kr/news/articleView.html?idxno=79788"
+      ],
+      "tabs": [
+        "domestic"
+      ]
+    },
+    {
+      "event_id": "EPE-OBESITY-MARKET-ANALYSIS-20261012",
+      "headline": "'에페' 등장에 국내 비만신약 3파전으로…후발 체인저 나오나",
+      "status": "UPDATE",
+      "priority": "P2",
+      "sources": [
+        "https://www.medipana.com/news/articleView.html?idxno=418942"
+      ],
+      "tabs": [
+        "domestic"
+      ]
+    }
+  ],
+  "counts": {
+    "NEW": 3,
+    "UPDATE": 3,
+    "DUPLICATE": 0
+  },
+  "publish_allowed": false
+}
