@@ -1,0 +1,15 @@
+{
+  "schema_version": "briefing-global-recovery-v1.0",
+  "date": "2026-10-12",
+  "status": "FAIL",
+  "global_precollection": "MISSING",
+  "attempted_supplemental_searches": 1,
+  "global": [],
+  "notes": [
+    "05:45 global 선행수집 정상파일 미발견.",
+    "공식 FDA/Reuters/기업 PR 기간검색 1회. 신규로 적격성과 발행시각이 확보된 후보 없음.",
+    "argenx 임상 3상 중단은 10월 8일 발표이며 지정 시간창 외. 국내 스캔상 10월 12일 분석기사 발견됐으나 신규 사건으로 편입하지 않음.",
+    "3 source group 각각 정상 수집 완료를 입증하지 못했으므로 global FAIL 유지."
+  ],
+  "publish_allowed": false
+}
