@@ -1,112 +1,10 @@
 {
+  "schema_version": "briefing-source-audit-v1.0",
   "date": "2026-10-12",
-  "timezone": "Asia/Seoul",
-  "mode": "manual_rerun",
-  "route_limit": "대표 1경로, 오류시 fallback 1경로",
-  "source_checks": {
-    "A": {
-      "dailypharm.com": {
-        "status": "PASS",
-        "route": "DIRECT_LIST",
-        "original_checked": true,
-        "detail": "당일 제약바이오/약가/IPO 원문과 발행시각 직접 확인",
-        "items": [
-          "343267",
-          "343265",
-          "343242"
-        ]
-      },
-      "medipana.com": {
-        "status": "PASS",
-        "route": "DIRECT_LIST",
-        "original_checked": true,
-        "detail": "기존 checkpoint 원문·발행시각 확보, 동일 실행에서 불필요한 재검색 생략"
-      },
-      "hitnews.co.kr": {
-        "status": "PASS",
-        "route": "DIRECT_LIST",
-        "original_checked": true,
-        "detail": "기존 checkpoint 원문·발행시각 확보"
-      },
-      "thebionews.net": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST+SITE_SEARCH",
-        "original_checked": false,
-        "detail": "실시간 목록은 표시되나 개별 기사 URL 403. 검색 fallback은 구기사 혼재로 시간창 완료 미확인"
-      }
-    },
-    "B": {
-      "newsthevoice.com": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST+SITE_SEARCH",
-        "original_checked": false,
-        "detail": "직접 접근 오류; 대체 검색은 구기사 위주"
-      },
-      "pharmstoday.com": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST",
-        "original_checked": true,
-        "detail": "apsk.co.kr 이전 확인. 3분기 처방실적 원문은 열렸지만 발행시각이 페이지에 나타나지 않음"
-      },
-      "biospectator.com": {
-        "status": "PASS",
-        "route": "DIRECT_LIST",
-        "original_checked": true,
-        "detail": "10월 12일 06:34 게시된 아젠엑스 분석 원문 확인; 사건 본 발표는 10월 8일이라 아침 신규에서 제외"
-      },
-      "biotimes.co.kr": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST+SITE_SEARCH",
-        "original_checked": false,
-        "detail": "홈 노출 기사 확인, 전체기사 원문목록 403 및 해당 시간창 실질 확인 불충분"
-      }
-    },
-    "C": {
-      "dealsite.co.kr": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST+SITE_SEARCH",
-        "original_checked": false,
-        "detail": "홈 접근 오류 및 대체검색 구기사 편중"
-      },
-      "businesspost.co.kr": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST+SITE_SEARCH",
-        "original_checked": false,
-        "detail": "홈 접근 오류 및 대체검색 구기사 편중"
-      },
-      "newspim.com": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST",
-        "original_checked": false,
-        "detail": "홈 접근 및 10월 12일 기사 발행시각 확인 가능하나 제약바이오 섹션 기간 전체 확인 불충분"
-      },
-      "newdaily.co.kr": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST+SITE_SEARCH",
-        "original_checked": false,
-        "detail": "일반 홈 접근 가능, 제약바이오/경제 하위매체 시간창 확인 불충분"
-      }
-    },
-    "D": {
-      "hankyung.com/bioinsight": {
-        "status": "PARTIAL",
-        "route": "DIRECT_LIST",
-        "original_checked": false,
-        "detail": "10월 11일 기사 목록이 표시되나 오전 12일 최신 동기화가 확인되지 않음"
-      },
-      "pharm.edaily.co.kr": {
-        "status": "PASS",
-        "route": "DIRECT_LIST",
-        "original_checked": true,
-        "detail": "10월 12일 07:00 및 07:10 유료기사 원문 제목·발행시각 확인. 유료 본문 세부 내용은 미확인"
-      }
-    },
-    "WEB": {
-      "status": "PARTIAL",
-      "route": "WEB_KEYWORD_SEARCH",
-      "detail": "조선비즈·서울경제·머니투데이·이데일리 및 전반 웹 대표 검색 수행; 전체 웹 키워드 축별 시간창 커버리지 확인 불충분"
-    }
-  },
+  "scope": "domestic_only",
+  "mode": "manual_domestic_targeted_completion",
+  "search_window_start": "2026-10-11T12:00:00+09:00",
+  "latest_verified_publication": "2026-10-12T08:05:04+09:00",
   "collector_status": {
     "A": "PARTIAL",
     "B": "PARTIAL",
@@ -114,5 +12,267 @@
     "D": "PARTIAL",
     "WEB": "PARTIAL"
   },
+  "source_checks": {
+    "A": {
+      "dailypharm.com": {
+        "group": "A",
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "홈의 당일 제약바이오/정책 최신기사 목록 및 원문·시간 확인",
+        "evidence": [
+          "https://www.dailypharm.com/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "medipana.com": {
+        "group": "A",
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "전체기사 날짜순 목록에서 10/11~12 시간창 경계 확인, 원문 기사 URL 및 상세 연구 내용 확인",
+        "evidence": [
+          "https://www.medipana.com/news/articleList.html?view_type=sm",
+          "https://www.medipana.com/news/articleView.html?idxno=419079"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "hitnews.co.kr": {
+        "group": "A",
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "실시간 뉴스 10/12 06:00 및 10/11 19:17 목록에서 시간창 확인, 기사 원문 확보",
+        "evidence": [
+          "https://www.hitnews.co.kr/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "thebionews.net": {
+        "group": "A",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PARTIAL",
+        "reason": "홈은 접근되나 전체기사 목록 및 개별 원문에서 403/도구 오류; 검색 복구도 원문 시각·시간창 확인 불충분",
+        "evidence": [
+          "https://www.thebionews.net/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      }
+    },
+    "B": {
+      "newsthevoice.com": {
+        "group": "B",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PASS",
+        "reason": "초기 홈 접근 오류였으나 검색 결과/내부 기사 링크로 당일 06:02~06:21 기사들의 원문·발행시각 복수 확인",
+        "evidence": [
+          "https://www.newsthevoice.com/news/articleView.html?idxno=47449",
+          "https://www.newsthevoice.com/news/articleView.html?idxno=47469"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "apsk.co.kr": {
+        "group": "B",
+        "representative_route": "DIRECT_LIST",
+        "status": "PARTIAL",
+        "reason": "옛 pharmstoday.com이 apsk.co.kr로 리다이렉트함을 확인하고 config 주소·site 쿼리 변경. 대표기사 원문 읽었으나 발행시각 미표시, 전체기사 카테고리 403.",
+        "evidence": [
+          "https://www.apsk.co.kr/news/articleView.html?idxno=540689"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "biospectator.com": {
+        "group": "B",
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "전체기사 날짜순 10/12 06:34에서 10/8 과거기사로 이어지는 목록 확인. 원 소식 10/8인 아젠엑스 3상 분석은 단순 재보도라 별도 NEW 미추가",
+        "evidence": [
+          "https://www.biospectator.com/section/section_list?MID=10000"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "biotimes.co.kr": {
+        "group": "B",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PARTIAL",
+        "reason": "메인 최신기사 목록 확인했으나 원문·전체기사 진입에서 오류, 10/12 신규 고유 사건 및 발행시각 입증 불충분",
+        "evidence": [
+          "https://www.biotimes.co.kr/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      }
+    },
+    "C": {
+      "dealsite.co.kr": {
+        "group": "C",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PARTIAL",
+        "reason": "메인 정상 기사목록 접근 오류. 검색은 포럼·홈 등 일부만 노출해 10/11~12 신규 제약 기사 판단 불가",
+        "evidence": [
+          "https://dealsite.co.kr/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "businesspost.co.kr": {
+        "group": "C",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PARTIAL",
+        "reason": "데스크톱 직접 목록 오류, 모바일은 내용 미노출, 대체 검색도 당일 원문·발행시각 확보 실패",
+        "evidence": [
+          "https://www.businesspost.co.kr/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "newspim.com": {
+        "group": "C",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PARTIAL",
+        "reason": "홈 접근 성공 및 제약바이오 섹션 위치 확인; 전체 당일 섹션 목록을 열지 못하고 검색은 과거기사 편중",
+        "evidence": [
+          "https://www.newspim.com/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "newdaily.co.kr": {
+        "group": "C",
+        "representative_route": "DIRECT_LIST→SITE_SEARCH",
+        "status": "PARTIAL",
+        "reason": "경제판 메인·제약의료 영역 접근했지만 해당 시간창의 전체 기사 확인 실패; 발견된 기사들의 날짜가 불명확",
+        "evidence": [
+          "https://biz.newdaily.co.kr/"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      }
+    },
+    "D": {
+      "hankyung.com/bioinsight": {
+        "group": "D",
+        "representative_route": "DIRECT_LIST",
+        "status": "PARTIAL",
+        "reason": "바이오인사이트 기사 목록 접근 가능하나 최근 10/11 17:23까지 표시돼 10/12 동기화 완전성 미입증",
+        "evidence": [
+          "https://www.hankyung.com/bioinsight"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "pharm.edaily.co.kr": {
+        "group": "D",
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "전체기사 목록에서 10/11 18:00부터 10/12 08:05까지 시각·원문 URL 확인, 유료 프리미엄 세부내용은 별도 주의 표시",
+        "evidence": [
+          "https://pharm.edaily.co.kr/News/List_All?cd=PE"
+        ],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      }
+    },
+    "WEB": {
+      "조선비즈": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "지정 기간 바이오 원문·발행시각 포괄확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "서울경제": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "지정 기간 바이오 원문·발행시각 포괄확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "머니투데이": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "대표 검색 반환 결과 과거기사 편중",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "매일경제": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "시간창 원문 확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "아시아경제": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "시간창 원문 확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "파이낸셜뉴스": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "시간창 원문 확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "헤럴드경제": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "시간창 원문 확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "이투데이": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "시간창 원문 확인 불가",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      },
+      "기타 전체 웹": {
+        "group": "WEB",
+        "representative_route": "WEB_KEYWORD_SEARCH",
+        "status": "PARTIAL",
+        "reason": "임상·기술수출·지배구조·법원·상장리스크·정책 대표 검색을 수행했으나 결과가 구기사 편중되어 완전성을 입증하지 못함",
+        "evidence": [],
+        "checked_window_start": "2026-10-11T12:00:00+09:00",
+        "no_unverified_zero": true
+      }
+    }
+  },
+  "remediation": [
+    {
+      "source": "pharmstoday.com",
+      "change": "canonical domain and site queries replaced with apsk.co.kr",
+      "config_commit": "8644cd6807e799aebf7bec78fce5c58593907746"
+    }
+  ],
+  "notes": [
+    "각 고정매체 대표 경로 1개, 실패할 경우 대체 경로 1개 이하",
+    "검색 결과 0건을 신뢰 경로의 PASS_ZERO와 혼동하지 않음",
+    "C 그룹 및 WEB은 PASS 처리하지 않음",
+    "글로벌·특허·일정은 실행하지 않음"
+  ],
   "publish_allowed": false
 }
