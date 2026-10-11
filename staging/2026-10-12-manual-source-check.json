@@ -1,84 +1,118 @@
 {
-  "A": {
-    "dailypharm.com": {
-      "route": "DIRECT_LIST",
+  "date": "2026-10-12",
+  "timezone": "Asia/Seoul",
+  "mode": "manual_rerun",
+  "route_limit": "대표 1경로, 오류시 fallback 1경로",
+  "source_checks": {
+    "A": {
+      "dailypharm.com": {
+        "status": "PASS",
+        "route": "DIRECT_LIST",
+        "original_checked": true,
+        "detail": "당일 제약바이오/약가/IPO 원문과 발행시각 직접 확인",
+        "items": [
+          "343267",
+          "343265",
+          "343242"
+        ]
+      },
+      "medipana.com": {
+        "status": "PASS",
+        "route": "DIRECT_LIST",
+        "original_checked": true,
+        "detail": "기존 checkpoint 원문·발행시각 확보, 동일 실행에서 불필요한 재검색 생략"
+      },
+      "hitnews.co.kr": {
+        "status": "PASS",
+        "route": "DIRECT_LIST",
+        "original_checked": true,
+        "detail": "기존 checkpoint 원문·발행시각 확보"
+      },
+      "thebionews.net": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST+SITE_SEARCH",
+        "original_checked": false,
+        "detail": "실시간 목록은 표시되나 개별 기사 URL 403. 검색 fallback은 구기사 혼재로 시간창 완료 미확인"
+      }
+    },
+    "B": {
+      "newsthevoice.com": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST+SITE_SEARCH",
+        "original_checked": false,
+        "detail": "직접 접근 오류; 대체 검색은 구기사 위주"
+      },
+      "pharmstoday.com": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST",
+        "original_checked": true,
+        "detail": "apsk.co.kr 이전 확인. 3분기 처방실적 원문은 열렸지만 발행시각이 페이지에 나타나지 않음"
+      },
+      "biospectator.com": {
+        "status": "PASS",
+        "route": "DIRECT_LIST",
+        "original_checked": true,
+        "detail": "10월 12일 06:34 게시된 아젠엑스 분석 원문 확인; 사건 본 발표는 10월 8일이라 아침 신규에서 제외"
+      },
+      "biotimes.co.kr": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST+SITE_SEARCH",
+        "original_checked": false,
+        "detail": "홈 노출 기사 확인, 전체기사 원문목록 403 및 해당 시간창 실질 확인 불충분"
+      }
+    },
+    "C": {
+      "dealsite.co.kr": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST+SITE_SEARCH",
+        "original_checked": false,
+        "detail": "홈 접근 오류 및 대체검색 구기사 편중"
+      },
+      "businesspost.co.kr": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST+SITE_SEARCH",
+        "original_checked": false,
+        "detail": "홈 접근 오류 및 대체검색 구기사 편중"
+      },
+      "newspim.com": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST",
+        "original_checked": false,
+        "detail": "홈 접근 및 10월 12일 기사 발행시각 확인 가능하나 제약바이오 섹션 기간 전체 확인 불충분"
+      },
+      "newdaily.co.kr": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST+SITE_SEARCH",
+        "original_checked": false,
+        "detail": "일반 홈 접근 가능, 제약바이오/경제 하위매체 시간창 확인 불충분"
+      }
+    },
+    "D": {
+      "hankyung.com/bioinsight": {
+        "status": "PARTIAL",
+        "route": "DIRECT_LIST",
+        "original_checked": false,
+        "detail": "10월 11일 기사 목록이 표시되나 오전 12일 최신 동기화가 확인되지 않음"
+      },
+      "pharm.edaily.co.kr": {
+        "status": "PASS",
+        "route": "DIRECT_LIST",
+        "original_checked": true,
+        "detail": "10월 12일 07:00 및 07:10 유료기사 원문 제목·발행시각 확인. 유료 본문 세부 내용은 미확인"
+      }
+    },
+    "WEB": {
       "status": "PARTIAL",
-      "reason": "홈페이지 접근 성공. 전체 최신 시간창 포괄 검증 미완료"
-    },
-    "medipana.com": {
-      "route": "DIRECT_LIST",
-      "status": "PASS",
-      "reason": "홈과 원문 페이지에서 당일 기사 및 발행시각 확인"
-    },
-    "hitnews.co.kr": {
-      "route": "DIRECT_LIST",
-      "status": "PASS",
-      "reason": "실시간 목록 및 원문 발행시각 확인"
-    },
-    "thebionews.net": {
-      "route": "DIRECT_LIST",
-      "status": "PARTIAL",
-      "reason": "홈 최신기사 접근 성공, 기사 링크 원문 접근 일부 실패"
+      "route": "WEB_KEYWORD_SEARCH",
+      "detail": "조선비즈·서울경제·머니투데이·이데일리 및 전반 웹 대표 검색 수행; 전체 웹 키워드 축별 시간창 커버리지 확인 불충분"
     }
   },
-  "B": {
-    "newsthevoice.com": {
-      "route": "DIRECT_LIST→SITE_SEARCH",
-      "status": "PARTIAL",
-      "reason": "www 포함 직접접근 redirect loop. site 검색 오래된 결과 치우침"
-    },
-    "pharmstoday.com": {
-      "route": "DIRECT_LIST",
-      "status": "PARTIAL",
-      "reason": "apsk.co.kr로 이전, 홈페이지 접근 성공하지만 일부 기사 원문 403"
-    },
-    "biospectator.com": {
-      "route": "DIRECT_LIST",
-      "status": "PARTIAL",
-      "reason": "홈페이지 조회 성공, 시간창 완전성 미입증"
-    },
-    "biotimes.co.kr": {
-      "route": "DIRECT_LIST",
-      "status": "PARTIAL",
-      "reason": "홈페이지 조회 성공, 시간창 완전성 미입증"
-    }
+  "collector_status": {
+    "A": "PARTIAL",
+    "B": "PARTIAL",
+    "C": "PARTIAL",
+    "D": "PARTIAL",
+    "WEB": "PARTIAL"
   },
-  "C": {
-    "dealsite.co.kr": {
-      "route": "DIRECT_LIST→SITE_SEARCH",
-      "status": "PARTIAL",
-      "reason": "섹션 페이지 기사목록 누락, 검색결과 구기사 위주"
-    },
-    "businesspost.co.kr": {
-      "route": "DIRECT_LIST→SITE_SEARCH",
-      "status": "PARTIAL",
-      "reason": "홈페이지 직접접근 오류, 검색결과 구기사 위주"
-    },
-    "newspim.com": {
-      "route": "SITE_SEARCH",
-      "status": "PARTIAL",
-      "reason": "대표 검색 당일 결과 미확인"
-    },
-    "newdaily.co.kr": {
-      "route": "DIRECT_LIST",
-      "status": "PARTIAL",
-      "reason": "홈 접근 성공, 제약기사 시간창 미확인"
-    }
-  },
-  "D": {
-    "hankyung.com/bioinsight": {
-      "route": "DIRECT_LIST→SITE_SEARCH",
-      "status": "PARTIAL",
-      "reason": "바이오인사이트 페이지 목록이 7월 등 오래된 시점, 당일 기사 누락 가능"
-    },
-    "pharm.edaily.co.kr": {
-      "route": "SITE_SEARCH",
-      "status": "PARTIAL",
-      "reason": "당일 원문 발행시각 확인에 실패"
-    }
-  },
-  "WEB": {
-    "status": "PARTIAL",
-    "note": "조선비즈·서울경제·머니투데이 등 일부 대표 검색만 점검; 전체 키워드 축/매체 시간창 완료 아님"
-  }
+  "publish_allowed": false
 }
