@@ -135,9 +135,9 @@
           "site:newsthevoice.com 임상 OR 허가 OR 약가"
         ],
         "메디팜스투데이": [
-          "site:pharmstoday.com 제약",
-          "site:pharmstoday.com 바이오",
-          "site:pharmstoday.com 임상 OR 허가 OR 판결"
+          "site:apsk.co.kr 제약",
+          "site:apsk.co.kr 바이오",
+          "site:apsk.co.kr 임상 OR 허가 OR 판결"
         ],
         "바이오스펙테이터": [
           "site:biospectator.com 임상",
