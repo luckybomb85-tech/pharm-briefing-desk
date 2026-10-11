@@ -1,0 +1,59 @@
+{
+  "schema_version": "briefing-collector-v1.0",
+  "date": "2026-10-12",
+  "status": "PARTIAL",
+  "mode": "manual_diagnostic",
+  "collector_status": {
+    "A": "PARTIAL",
+    "B": "PARTIAL",
+    "C": "PARTIAL",
+    "D": "PARTIAL",
+    "WEB": "PARTIAL"
+  },
+  "domestic": [
+    {
+      "tag": "기술수출",
+      "title": "기술수출 '22조' 역대급 실적인데... 주가 꿈쩍 안한 이유 있었다",
+      "summary": "2026년 3분기까지 공개된 기술이전 계약 총액과 후속 성과를 분석한 기사. 계약 규모 집계의 확인 범위에 주의.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79773",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-12T06:05:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "공개 계약의 전체 규모와 주요 기업 집중도를 분석.",
+      "event_id": "KR-LICENSE-2026Q3-AGGREGATE",
+      "event_status": "NEW"
+    },
+    {
+      "tag": "IPO·재무",
+      "title": "마더스제약, 코스닥 문턱 넘었다…성장성 시험대",
+      "summary": "마더스제약 상장예비심사 승인 이후 실적 및 설비투자 분석.",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=419039",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-12T05:25:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "상장예비심사 승인에 이은 후속 재무 분석.",
+      "event_id": "MOTHERS-IPO-20261007",
+      "event_status": "UPDATE"
+    },
+    {
+      "tag": "의약품 유통·정책",
+      "title": "약 배송 대응 놓고 내부 진통… 결의문 채택으로 마무리",
+      "summary": "대한약사회 임시대의원총회에서 약 배송 확대 대응 결의문을 채택하고 별도 비대위 구성안은 부결.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79786",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-11T19:21:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "결의문 채택과 별도 비대위 구성 부결.",
+      "event_id": "KPA-DELIVERY-RESOLUTION-20261011",
+      "event_status": "NEW"
+    }
+  ],
+  "publish_allowed": false,
+  "notes": [
+    "10월 12일 이전 부분 실행에서 확보한 후보 3건을 수동 복원한 진단 파일",
+    "새 수집 완료 또는 전체 소스 PASS를 의미하지 않음"
+  ]
+}
