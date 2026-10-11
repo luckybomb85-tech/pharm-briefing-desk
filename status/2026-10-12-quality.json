@@ -1,121 +1,48 @@
 {
   "schema_version": "briefing-quality-v1.0",
   "date": "2026-10-12",
+  "mode": "manual_rerun",
   "overall": "PARTIAL",
-  "mode": "manual_diagnostic",
   "blocking": [
     "domestic_collectors",
-    "global_precollection",
+    "global_precollection_and_source_groups",
     "patent_axes",
-    "schedule"
+    "schedule",
+    "p0_p1_timestamp_unverified",
+    "core_fact_unverified_paywall"
   ],
   "sections": {
     "domestic": {
       "status": "PARTIAL",
-      "persisted_count": 6
+      "verified_or_captured_candidate_count": 12,
+      "persisted_count": 12
     },
     "global": {
       "status": "FAIL",
-      "persisted_count": 0
+      "persisted_count": 0,
+      "precollection": "MISSING",
+      "recovery_search_count": 1
     },
     "patent": {
       "status": "PARTIAL",
-      "persisted_count": 0
+      "count": 1
     },
     "schedule": {
-      "status": "FAIL"
+      "status": "FAIL",
+      "details": "schedule collector failed: RuntimeError: OPENAI_API_KEY is not configured"
     }
   },
-  "collector_status": {
+  "domestic_collectors": {
     "A": "PARTIAL",
     "B": "PARTIAL",
     "C": "PARTIAL",
     "D": "PARTIAL",
     "WEB": "PARTIAL"
   },
-  "source_checks": {
-    "A": {
-      "dailypharm.com": {
-        "route": "DIRECT_LIST",
-        "status": "PARTIAL",
-        "reason": "홈페이지 접근 성공. 전체 최신 시간창 포괄 검증 미완료"
-      },
-      "medipana.com": {
-        "route": "DIRECT_LIST",
-        "status": "PASS",
-        "reason": "홈과 원문 페이지에서 당일 기사 및 발행시각 확인"
-      },
-      "hitnews.co.kr": {
-        "route": "DIRECT_LIST",
-        "status": "PASS",
-        "reason": "실시간 목록 및 원문 발행시각 확인"
-      },
-      "thebionews.net": {
-        "route": "DIRECT_LIST",
-        "status": "PARTIAL",
-        "reason": "홈 최신기사 접근 성공, 기사 링크 원문 접근 일부 실패"
-      }
-    },
-    "B": {
-      "newsthevoice.com": {
-        "route": "DIRECT_LIST→SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "www 포함 직접접근 redirect loop. site 검색 오래된 결과 치우침"
-      },
-      "pharmstoday.com": {
-        "route": "DIRECT_LIST",
-        "status": "PARTIAL",
-        "reason": "apsk.co.kr로 이전, 홈페이지 접근 성공하지만 일부 기사 원문 403"
-      },
-      "biospectator.com": {
-        "route": "DIRECT_LIST",
-        "status": "PARTIAL",
-        "reason": "홈페이지 조회 성공, 시간창 완전성 미입증"
-      },
-      "biotimes.co.kr": {
-        "route": "DIRECT_LIST",
-        "status": "PARTIAL",
-        "reason": "홈페이지 조회 성공, 시간창 완전성 미입증"
-      }
-    },
-    "C": {
-      "dealsite.co.kr": {
-        "route": "DIRECT_LIST→SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "섹션 페이지 기사목록 누락, 검색결과 구기사 위주"
-      },
-      "businesspost.co.kr": {
-        "route": "DIRECT_LIST→SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "홈페이지 직접접근 오류, 검색결과 구기사 위주"
-      },
-      "newspim.com": {
-        "route": "SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "대표 검색 당일 결과 미확인"
-      },
-      "newdaily.co.kr": {
-        "route": "DIRECT_LIST",
-        "status": "PARTIAL",
-        "reason": "홈 접근 성공, 제약기사 시간창 미확인"
-      }
-    },
-    "D": {
-      "hankyung.com/bioinsight": {
-        "route": "DIRECT_LIST→SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "바이오인사이트 페이지 목록이 7월 등 오래된 시점, 당일 기사 누락 가능"
-      },
-      "pharm.edaily.co.kr": {
-        "route": "SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "당일 원문 발행시각 확인에 실패"
-      }
-    },
-    "WEB": {
-      "status": "PARTIAL",
-      "note": "조선비즈·서울경제·머니투데이 등 일부 대표 검색만 점검; 전체 키워드 축/매체 시간창 완료 아님"
-    }
+  "global_source_groups": {
+    "PRIMARY_REGULATORY_AND_COMPANY": "FAIL",
+    "TRADE_AND_WIRE": "FAIL",
+    "WHOLE_WEB_RECOVERY": "FAIL"
   },
   "patent_axes": {
     "특허심판 청구": "PARTIAL",
@@ -128,5 +55,46 @@
     "특허법·허가특허연계 입법": "PARTIAL",
     "국내사 특허도전·소송 및 출시·독점기간 변화": "PARTIAL"
   },
-  "publish_allowed": false
+  "checks": {
+    "required_item_fields": {
+      "pass": true,
+      "bad_count": 0
+    },
+    "url_format": {
+      "pass": true,
+      "bad_count": 0
+    },
+    "p0_p1_article_timestamp": {
+      "pass": false,
+      "bad_count": 1,
+      "items": [
+        "케이캡·로수젯, 엎치락뒤치락 선두 경쟁…K-신약 처방시장 초강세"
+      ]
+    },
+    "domestic_url_duplicates": {
+      "pass": true,
+      "duplicate_count": 0
+    },
+    "event_deduplication": {
+      "pass": true,
+      "unique_events": 12,
+      "cross_tab_shared_event_count": 1
+    },
+    "source_group_completion": {
+      "pass": false
+    },
+    "patent_9axes_completion": {
+      "pass": false
+    },
+    "schedule_health": {
+      "pass": false
+    }
+  },
+  "source_audit_path": "staging/2026-10-12-manual-source-check.json",
+  "publish_allowed": false,
+  "promotion": {
+    "data": false,
+    "pages": false,
+    "telegram": false
+  }
 }
