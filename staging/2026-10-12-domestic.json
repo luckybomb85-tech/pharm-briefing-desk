@@ -2,7 +2,7 @@
   "schema_version": "briefing-collector-v1.0",
   "date": "2026-10-12",
   "status": "PARTIAL",
-  "mode": "manual_diagnostic",
+  "mode": "manual_rerun",
   "collector_status": {
     "A": "PARTIAL",
     "B": "PARTIAL",
@@ -88,6 +88,90 @@
       "article_preview": "GLP-1 비만치료제 시장 진입과 공급·가격·영업력 변수에 대한 전망. 신규 허가 사건 재보도 아님.",
       "event_id": "EPE-OBESITY-MARKET-ANALYSIS-20261012",
       "event_status": "UPDATE"
+    },
+    {
+      "tag": "약가제도·급여",
+      "title": "약가개편에 제네릭 등재 절벽...계단식 피해 'ODT' 전략",
+      "summary": "새 약가 산정률 적용 후 10월 산정대상 약제 등재가 월평균보다 크게 감소. 구강붕해정(ODT) 등의 제형 차별화에 주목.",
+      "source": "https://eng.dailypharm.com/user/news/343267",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-12T06:00:54+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": "새 산정률 45% 및 계단식 약가 개편 첫 적용에 따른 신규 제네릭 진입 변화.",
+      "event_id": "KR-PRICING-FIRST-IMPLEMENTATION-OCT26",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL"
+    },
+    {
+      "tag": "보험급여·비만",
+      "title": "승부수 띄운 '위고비', 청소년·고도 비만 보험급여 도전",
+      "summary": "노보노디스크가 위고비의 요양급여 결정신청서를 심평원에 제출했다는 취재보도. 신청과 급여 인정·등재를 구분해야 함.",
+      "source": "https://m.dailypharm.com/user/news/343265",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-12T06:00:50+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": "청소년 비만·고도비만·심혈관질환 관련 적응증에 대한 건강보험 급여 진입 시도.",
+      "event_id": "WEGOVY-KR-REIMBURSEMENT-APPLICATION-202610",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL"
+    },
+    {
+      "tag": "IPO·투자",
+      "title": "넥스아이, 녹십자·대웅 투자 유치…IPO 도전·LO 6건 목표",
+      "summary": "넥스아이 공모 절차와 녹십자·대웅제약 전략 투자 참여, 회사 측 중장기 기술수출 목표를 보도. LO 6건은 실적이 아닌 목표.",
+      "source": "https://new.dailypharm.com/user/news/343242",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-12T06:00:46+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "넥스아이 증권신고서 제출, 코스닥 IPO 추진과 연구개발 자금 확보 전략.",
+      "event_id": "NEXI-IPO-PROSPECTUS-202610",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL"
+    },
+    {
+      "tag": "처방실적·시장",
+      "title": "케이캡·로수젯, 엎치락뒤치락 선두 경쟁…K-신약 처방시장 초강세",
+      "summary": "유비스트 기준 케이캡 3분기 외래 처방액 654억원, 로수젯 652억원으로 분기 순위 역전. 다만 3분기 누적에선 로수젯이 앞섬.",
+      "source": "https://www.apsk.co.kr/news/articleView.html?idxno=540689",
+      "source_name": "메디팜스투데이",
+      "published_at": null,
+      "timestamp_unverified": true,
+      "priority": "P1",
+      "article_preview": "케이캡의 첫 분기 1위, 펙수클루·자큐보·리바로젯 등 국내 신약과 복합제 처방 동향. 원문 시각 미노출.",
+      "event_id": "UBIST-Q3-2026-KCAB-ROSUZET",
+      "event_status": "NEW",
+      "verification_status": "TIMESTAMP_UNVERIFIED"
+    },
+    {
+      "tag": "특허·비만 DDS",
+      "title": "[단독]월1회·최대 3개월 내세웠던 펩트론…특허 속 효능시험은 최대 2주 간격",
+      "summary": "펩트론 장기지속형 제형 관련 특허 내 효능시험 간격과 개발 목표 사이의 차이를 제기한 유료 단독기사. 본문 비공개로 세부 주장 검증 필요.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01843366645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T07:00:10+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": "장기지속형 약물전달 플랫폼의 효능시험 간격을 둘러싼 특허 문헌 분석. 원문 유료, 상세 미확인.",
+      "event_id": "PEPTRON-DDS-PATENT-INTERVAL-ANALYSIS-20261012",
+      "event_status": "NEW",
+      "verification_status": "PAYWALL_CORE_FACT_UNVERIFIED"
+    },
+    {
+      "tag": "기업재무·개발비",
+      "title": "릴리 후속계약 불발, 공장·임상비는 현실…펩트론의 자금 딜레마",
+      "summary": "펩트론-릴리 플랫폼 기술평가 종료 이후 후속 계약 미체결 상황과 투자·임상비 부담을 분석한 유료기사. 세부 수치 유료 미확인.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01882726645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T07:10:03+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "기술평가 종료 후 자금 집행과 공장 증설 등 재무변수 검토.",
+      "event_id": "PEPTRON-LILLY-TECH-EVAL-END-20261007",
+      "event_status": "UPDATE",
+      "verification_status": "PAYWALL_DETAILS_UNVERIFIED"
     }
   ],
   "publish_allowed": false,
@@ -95,6 +179,9 @@
     "10월 12일 이전 부분 실행에서 확보한 후보 3건을 수동 복원한 진단 파일",
     "새 수집 완료 또는 전체 소스 PASS를 의미하지 않음",
     "수동 A그룹 재확인에서 원문 시각 확인한 신규 후보 3건 추가",
-    "B/C/D/WEB 전 소스 정상 완료 판정은 아직 아님"
+    "B/C/D/WEB 전 소스 정상 완료 판정은 아직 아님",
+    "2026-10-12 수동 재검색에서 추가 기사와 개별 시간 검증 결과를 반영. B/C/D/WEB 전체 완전성 검증 미완료.",
+    "기사 원문 발행시각 미노출 또는 유료 본문 미확인 후보는 플래그 유지.",
+    "당일 재검색은 06:00 KST 이후 수행. 전일 12:00 KST 이전 기사는 제외."
   ]
 }
