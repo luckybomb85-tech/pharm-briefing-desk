@@ -2,7 +2,7 @@
   "schema_version": "briefing-collector-v1.0",
   "date": "2026-10-12",
   "status": "PARTIAL",
-  "mode": "manual_domestic_targeted_completion",
+  "mode": "manual_domestic_90pct_target",
   "collector_status": {
     "A": "PARTIAL",
     "B": "PARTIAL",
@@ -307,6 +307,81 @@
       "event_status": "NEW",
       "verification_status": "ORIGINAL_CHECKED",
       "collector_group": "D"
+    },
+    {
+      "tag": "재무·실적",
+      "title": "셀트리온, 3분기 영업익 첫 5000억원 돌파…잠정 5100억원",
+      "summary": "셀트리온은 2026년 3분기 연결 매출 1조5000억원, 영업이익 5100억원의 잠정 실적을 공시했다고 보도했다. 전년 동기 대비 영업이익 69.2% 증가. 확정 실적이 아닌 잠정 수치.",
+      "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/12/2026101200030.html",
+      "source_name": "뉴데일리 경제",
+      "published_at": "2026-10-12T08:15:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": "3분기 분기 최고 매출·영업익, 신규 바이오시밀러 매출 비중 확대와 수익성 개선",
+      "event_id": "CELLTRION-2026Q3-PRELIMINARY-EARNINGS",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL_TWO_REPORTS",
+      "collector_group": "C"
+    },
+    {
+      "tag": "기술협력·AI 신약개발",
+      "title": "루닛, 미국 디스커버리라이프사이언스와 AI 병리 분석 협업",
+      "summary": "루닛이 미국 디스커버리라이프사이언스와 전략적 협업을 발표. 루닛 스코프를 활용해 제약사 대상 조직·바이오마커 분석을 제공하며 계약금·확정 매출은 공개되지 않음.",
+      "source": "https://www.mt.co.kr/index.php/thebio/2026/10/12/2026101208260289575",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T08:26:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "신약 임상 바이오마커 분석에 AI 병리 플랫폼 활용하기 위한 기업 간 전략적 협업",
+      "event_id": "LUNIT-DISCOVERY-LIFE-SCIENCES-PARTNERSHIP-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "WEB"
+    },
+    {
+      "tag": "M&A·지배구조·자금조달",
+      "title": "신동국, 한미사이언스 추가 지분 매입 위해 차입 확대…이자부담 주목",
+      "summary": "신동국 회장의 138만2832주(약 693억원) 장외매입 계약을 토대로 기존 주식담보대출 4322억원과 추가 차입 시 5000억원대 가능성을 분석. 5000억원과 연 이자 200억원 이상은 가정에 따른 추정치이며 확정 차입액 아님. 기사 최초 유료공개는 10월 11일 17시.",
+      "source": "https://www.etoday.co.kr/news/view/2633862",
+      "source_name": "이투데이",
+      "published_at": "2026-10-11T17:00:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": "지분 30% 돌파 예정, 한양정밀 합산 37.13% 예상, 차입 구조와 추가 지분 매입의 금융비용 분석",
+      "event_id": "HANMI-SHINDONGGUK-1382832-SHARE-SPA-20261002",
+      "event_status": "UPDATE",
+      "verification_status": "ORIGINAL_CHECKED_ESTIMATES_FLAGGED",
+      "collector_group": "WEB"
+    },
+    {
+      "tag": "비만치료제·신약개발",
+      "title": "온코닉테라퓨틱스, GLP-1 병용 신약후보 OCN-501 개발 방향 공개",
+      "summary": "온코닉테라퓨틱스가 OCN-501을 세마글루타이드 병용 시 체중감량 과정의 골격근 보존을 겨냥한 신약 후보로 처음 공개. 구체 연구방법·효과 수치는 11월 학회 발표 예정으로 현재 확인되지 않음.",
+      "source": "https://www.mt.co.kr/thebio/2026/10/12/2026101209295882532",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T09:31:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "ObesityWeek 2026 구두발표 초록 제목 공개와 GLP-1 병용 후보 OCN-501 전략",
+      "event_id": "ONCONIC-OCN501-OBESITY-ADDON-REVEAL-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "WEB"
+    },
+    {
+      "tag": "해외 출시·바이오시밀러",
+      "title": "동아ST, 빈혈치료제 바이오시밀러 다베크론 UAE 출시",
+      "summary": "동아ST가 다베포에틴알파 바이오시밀러 다베크론의 아랍에미리트 첫 상업화 출시를 완료했다고 발표. 2024년 줄파와 MENA 18개국 라이선스 계약, 2026년 6월 UAE 허가 이후의 실제 출시 단계.",
+      "source": "https://www.mt.co.kr/thebio/2026/10/12/2026101208493459092",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T09:11:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": "다베크론의 UAE 출시 및 중동·북아프리카 시장 상업화 확대",
+      "event_id": "DONGAST-DARBECON-UAE-LAUNCH-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "WEB"
     }
   ],
   "publish_allowed": false,
@@ -320,7 +395,10 @@
     "당일 재검색은 06:00 KST 이후 수행. 전일 12:00 KST 이전 기사는 제외.",
     "국내 검색 추가분: 원문/발행시각 확인 후 후보 확보, 미검증 세부사항 플래그 유지",
     "C 일부 매체 및 WEB 시간창 실질 확인 미완료이므로 PARTIAL 유지",
-    "글로벌/특허/일정 작업을 실행하지 않음"
+    "글로벌/특허/일정 작업을 실행하지 않음",
+    "C/WEB 집중 점검에서 원문 시각 확인한 후보 추가. 중복 사건은 단순 재보도 배제.",
+    "원문 유료공개 시각을 확인한 이투데이 기사는 본문 유료 최초공개 2026-10-11 17:00 적용.",
+    "90% 목표는 기사 개수 목표가 아니라 감시소스 커버리지 목표이며 미달 소스는 PARTIAL 유지."
   ],
   "source_scope": "domestic_only"
 }
