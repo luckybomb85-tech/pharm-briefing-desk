@@ -1,0 +1,119 @@
+{
+  "schema_version": "domestic-remediation-issues-v1.0",
+  "date": "2026-10-12",
+  "scope": "DOMESTIC_ONLY",
+  "status": "TWO_REQUESTED_FIXES_IMPLEMENTED; ADDITIONAL_ISSUES_FOR_DISCUSSION",
+  "publish_allowed": false,
+  "implemented": {
+    "native_window_depth": {
+      "code": "scripts/domestic_window_paging.py",
+      "configured": "config/briefing-settings.json:domestic.native_pagination",
+      "logic": "Read dates beside article headlines; retain early morning; selected source page2 at most once, only until cutoff; no unbounded search.",
+      "live_small_probe": {
+        "action_url": "https://github.com/luckybomb85-tech/pharm-briefing-desk/actions/runs/38197866613",
+        "outlets": 3,
+        "article_dates_recognized": 61,
+        "page_requests": 5,
+        "extra_pages": 2,
+        "full_window_coverage_proven": false,
+        "news_the_voice_second_page_disabled_after_repeated_content": true
+      }
+    },
+    "realistic_search_gate": {
+      "code": [
+        "scripts/domestic_coverage_gate.py",
+        "scripts/quality_report.py",
+        "scripts/validate_briefing.py",
+        "scripts/evaluate_domestic_step5.py"
+      ],
+      "denominator": "14 configured source routes + 6 shared WEB queries",
+      "target": "at least 18/20 successfully parsed search tasks",
+      "editorial_recall_claim": "UNMEASURED; NEVER CONFLATE WITH 90 PERCENT ARTICLES",
+      "p0_p1_core_fact_guard_retained": true,
+      "other_section_safety_retained": true
+    },
+    "tests": {
+      "count": 68,
+      "ci_status": "success",
+      "action_url": "https://github.com/luckybomb85-tech/pharm-briefing-desk/actions/runs/38198065383",
+      "live_end_to_end_retest_of_20_new_routes": false
+    }
+  },
+  "other_issues_unmodified": [
+    {
+      "id": "ISSUE_01",
+      "priority": "HIGH",
+      "topic": "Morning/previous afternoon full-window coverage still unproven",
+      "evidence": "Small probe found earliest listing time 09:58 on medipana and 09:19 on newsthevoice despite 2-page attempt, with source statuses PARTIAL.",
+      "cause": "Page listings/sections do not consistently carry yesterday-noon articles; daypart-balanced candidates cannot replace a past checkpoint.",
+      "proposal": "Retain 06:05 morning snapshot and compare with later incremental changes; only add a narrow historical scan for sources with demonstrated gaps. Do not perform unconditional multi-page crawls.",
+      "tradeoff": "Checkpoint retention/storage changes needed; later delta run optional and may add requests."
+    },
+    {
+      "id": "ISSUE_02",
+      "priority": "HIGH",
+      "topic": "Scheduled collection writes artifacts, not persistent GitHub staging",
+      "evidence": "Collection workflow has contents:read and upload-artifact retention-days 14. It does not commit source staging JSON to main.",
+      "cause": "No automatic persistent checkpoint publishing path in workflow.",
+      "proposal": "Store a validated, nonpublic staging checkpoint after each collection with immutable run ID and safe overwrite/concurrency; keep Pages/data promotion disabled.",
+      "tradeoff": "Requires carefully scoped workflow write permission and concurrency test before enabling."
+    },
+    {
+      "id": "ISSUE_03",
+      "priority": "HIGH",
+      "topic": "Measured article recall has no valid independent denominator",
+      "evidence": "Third Oct12 benchmark only matched 8 of 26 previously reviewed examples by exact URL/normalized headline; these are historical and not independent ground truth.",
+      "cause": "Google index and observed native listing reflect discovery, not the total relevant published-article universe.",
+      "proposal": "Use a small, date-matched, independently reviewed priority-event sample; report measured recall and omissions separately from 20/20 route success.",
+      "tradeoff": "Light editorial sampling required for initial calibration, not 23 exhaustive crawls."
+    },
+    {
+      "id": "ISSUE_04",
+      "priority": "MEDIUM_HIGH",
+      "topic": "Original verification has very low ratio in high-volume discovery",
+      "evidence": "Third live collection produced 334 discovery candidates but only 12 verified originals in the stage4 output at that time.",
+      "cause": "Verification budget 12, RSS aggregator token redirects, and a shared queue of noisy headlines.",
+      "proposal": "Dedup by original-article URL first; verify P0/P1 publishers directly when available, reuse existing verification cache, record unresolved RSS tokens explicitly.",
+      "tradeoff": "May shift the fixed 12-verification budget toward priority items, without increasing budget."
+    },
+    {
+      "id": "ISSUE_05",
+      "priority": "MEDIUM",
+      "topic": "40-item review queue can hide useful priority items",
+      "evidence": "Stage4 limits output to 40 after sorting; all raw discoveries remain in separate evidence but may not be visible to editors.",
+      "cause": "Hard cap optimizes review workload but is not an editorial recall guarantee.",
+      "proposal": "Give P0 and strong P1 items a protected queue and show count/examples of overflow; calibrate threshold against observed misses.",
+      "tradeoff": "Occasional larger displayed priority queue, but not more search requests."
+    },
+    {
+      "id": "ISSUE_06",
+      "priority": "MEDIUM",
+      "topic": "Stage4 output has unenriched previews while strict final validator requires structured quick/diff previews",
+      "evidence": "Stage4 falls back to article_preview={} and summary='', whereas validate_briefing.py requires populated quick/diff previews.",
+      "cause": "Discovery candidate schema is intentionally not publication-ready.",
+      "proposal": "Add narrow editorial enrichment only for selected verified items after the 40-item review queue; do not fabricate summaries from RSS titles.",
+      "tradeoff": "Additional language-model processing on selected items; separate approval needed."
+    },
+    {
+      "id": "ISSUE_07",
+      "priority": "LOW_OUT_OF_SCOPE",
+      "topic": "Global/patent/schedule remain separate unresolved work",
+      "evidence": "No global, patent or schedule collector changes were made in these two domestic fixes.",
+      "proposal": "Do not resume until domestic checkpoint and core news discovery are stable.",
+      "tradeoff": "Overall complete briefing remains blocked."
+    }
+  ],
+  "recommended_discussion_order": [
+    "ISSUE_02",
+    "ISSUE_01",
+    "ISSUE_03",
+    "ISSUE_04",
+    "ISSUE_05",
+    "ISSUE_06"
+  ],
+  "notes": [
+    "All statuses use strict evidence; native text dates are index evidence only, original publisher timestamps needed for article finalization.",
+    "GitHub CI is offline only on code pushes; mini probe accessed only three domestic sources.",
+    "Do not create automatic Pages/Telegram release or expand into global/patent."
+  ]
+}
