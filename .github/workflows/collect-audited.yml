@@ -6,6 +6,10 @@ on:
       - 'scripts/collect_with_evidence.py'
       - 'scripts/domestic_route_collector.py'
       - 'scripts/test_domestic_routes.py'
+      - 'scripts/domestic_window_paging.py'
+      - 'scripts/test_domestic_window_paging.py'
+      - 'scripts/domestic_coverage_gate.py'
+      - 'scripts/test_domestic_coverage_gate.py'
       - 'scripts/web_unified_collector.py'
       - 'scripts/test_web_unified.py'
       - 'scripts/test_web_integration.py'
@@ -38,6 +42,10 @@ jobs:
         run: python -m unittest discover -s scripts -p 'test_event_map.py' -v
       - name: Unit test domestic routes (no network)
         run: python -m unittest discover -s scripts -p 'test_domestic_routes.py' -v
+      - name: Unit test native page/window and 14+6 operational coverage (no network)
+        run: |
+          python -m unittest discover -s scripts -p 'test_domestic_window_paging.py' -v
+          python -m unittest discover -s scripts -p 'test_domestic_coverage_gate.py' -v
       - name: Unit test unified WEB discovery and integration (no network)
         run: python -m unittest discover -s scripts -p 'test_web*.py' -v
       - name: Unit test domestic event dedup and verification (no network)
