@@ -1,0 +1,81 @@
+{
+  "schema_version": "briefing-domestic-step5-summary-v1.0",
+  "date": "2026-10-12",
+  "timezone": "Asia/Seoul",
+  "scope": "DOMESTIC_A_B_C_D_WEB_ONLY",
+  "status": "PARTIAL",
+  "goal": "90% real domestic search completeness with bounded operational load",
+  "goal_reached": false,
+  "first_live_run": {
+    "url": "https://github.com/luckybomb85-tech/pharm-briefing-desk/actions/runs/38195077202",
+    "runtime_seconds": 116,
+    "discovered_candidates": 41,
+    "verified_originals": 28,
+    "verified_publisher_coverage": {
+      "completed": 0,
+      "total": 23
+    },
+    "verified_case_recovery": {
+      "matched": 1,
+      "reviewed_examples": 26
+    },
+    "fallback_source_count": 14,
+    "fixed_discovery_route_calls": 28,
+    "web_rss_calls": 6,
+    "original_verifier_calls": 93,
+    "logical_calls": 127
+  },
+  "second_live_run": {
+    "url": "https://github.com/luckybomb85-tech/pharm-briefing-desk/actions/runs/38195655607",
+    "runtime_seconds": 46,
+    "discovered_candidates": 154,
+    "stage4_candidates": 147,
+    "verified_originals": 11,
+    "originals_unverified": 136,
+    "pending_high_priority_core_fact_checks": 9,
+    "verified_publisher_coverage": {
+      "completed": 0,
+      "total": 23
+    },
+    "verified_case_recovery": {
+      "matched": 4,
+      "reviewed_examples": 26
+    },
+    "route_discovery": {
+      "fixed_sources_with_usable_index": 14,
+      "fixed_total": 14,
+      "web_axes_responding": 6,
+      "web_axes_total": 6
+    },
+    "fallback_source_count": 0,
+    "fixed_discovery_route_calls": 14,
+    "web_rss_calls": 6,
+    "original_verifier_calls": 26,
+    "logical_calls": 46
+  },
+  "improvement": {
+    "runtime_reduction_pct": 60.3,
+    "logical_calls_reduction_pct": 63.8,
+    "fallback_calls_reduction": 14,
+    "known_case_matches_change": 3
+  },
+  "root_causes": [
+    "Native publisher listings contained 19-50 article links but omitted machine-readable <time datetime>; native date boundary verification stays PARTIAL.",
+    "Initial implementation verified only first 3 items, dropped remaining valid listing URLs, and reran every source fallback.",
+    "Second implementation collects up to 12 potentially relevant links/source, verifies one original/source and keeps unverified candidates for editorial gate.",
+    "Earlier reviewed morning articles have scrolled beyond the latest 12/first page at later collection time; reviewed 26-case comparison is not a valid independent full-news recall denominator.",
+    "WEB six RSS index queries cannot certify nine individual publisher PASS/PASS_ZERO outcomes; 21/23 publisher gate is structurally unreachable without alternative independent evidence."
+  ],
+  "quality_notes": [
+    "46 logical calls != exact HTTP requests; Google token resolution may make multiple HTTP calls.",
+    "100% query-route accessibility does NOT mean 100% article coverage.",
+    "Source verification 0/23 is reported strictly; no fake PASS_ZERO.",
+    "154 discoveries include many unverified headlines, not finished publish-ready briefing articles.",
+    "Full publishing validation also requires editorial article previews, high-priority fact checks and other sections."
+  ],
+  "publish_allowed": false,
+  "global_patent_schedule_untouched": true,
+  "next_required": "Rework time-window coverage of high-volume publisher listings, and define 90% search-completeness measurement from independently checked cases without conflating Google index response with publisher PASS.",
+  "code_sha": "82f23e7341531b6a0bbf0bc4595ccc54b1874c89",
+  "artifact_retention_days": 14
+}
