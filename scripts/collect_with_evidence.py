@@ -5,6 +5,7 @@ from datetime import datetime,timedelta
 from zoneinfo import ZoneInfo
 from domestic_route_collector import scan_fixed
 from web_unified_collector import scan_web
+from domestic_candidate_pipeline import build_domestic_stage4
 
 TZ=ZoneInfo("Asia/Seoul")
 def now(): return datetime.now(TZ).isoformat(timespec="seconds")
@@ -93,6 +94,15 @@ if __name__=="__main__":
     a=ap.parse_args()
     settings=json.loads(Path("config/briefing-settings.json").read_text(encoding="utf-8"))
     out=scan(a.date,settings,domestic_only=a.domestic_only)
+    # Merge A/B/C/D/WEB first, then verify only previously unverified
+    # distinct candidates. Never re-open an already-confirmed original.
+    stage4=build_domestic_stage4(a.date,out.get("candidates",[]),settings)
+    stage4_path=Path("staging")/f"{a.date}-domestic-stage4.json"
+    stage4_path.parent.mkdir(exist_ok=True)
+    stage4_path.write_text(json.dumps(stage4,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    out["domestic_stage4_path"]=str(stage4_path)
+    out["domestic_stage4_statistics"]=stage4["statistics"]
+    out["publish_allowed"]=False
     # Audit is a checkpoint, NOT a publication or a claim of readiness.
     health=source_health_checkpoint(a.date,out)
     health_path=Path("staging")/f"{a.date}-source-health.json"
@@ -103,3 +113,4 @@ if __name__=="__main__":
     p.parent.mkdir(exist_ok=True)
     p.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(f"AUDIT {p}: candidates={len(out['candidates'])} groups="+str({k:v['status'] for k,v in out['domestic_groups'].items()}))
+    print("STAGE4",stage4_path,"verifier_calls",stage4["statistics"]["new_original_verifier_calls"],"duplicates",stage4["statistics"]["duplicates_suppressed"])
