@@ -1,0 +1,865 @@
+{
+  "schema_version": "briefing-final-v1.0",
+  "date": "2026-10-12",
+  "timezone": "Asia/Seoul",
+  "status": "rehearsal-published",
+  "test_run": true,
+  "test_banner": "10월 12일 브리핑 편집본 · 자료 검증 진행 중 (자동수집 전수 완료 아님)",
+  "search_window": {
+    "rule": "today_plus_previous_day_from_noon",
+    "from": "2026-10-11T12:00:00+09:00",
+    "to": "2026-10-12T22:49:00+09:00"
+  },
+  "collector_status": {
+    "A": "PARTIAL",
+    "B": "PARTIAL",
+    "C": "PARTIAL",
+    "D": "PARTIAL",
+    "WEB": "PARTIAL"
+  },
+  "completeness_status": "partial",
+  "source_status": {
+    "domestic": "PARTIAL",
+    "global": "PARTIAL",
+    "patent": "PARTIAL",
+    "schedule": "FAIL"
+  },
+  "section_health": {
+    "domestic": "PARTIAL",
+    "global": "PARTIAL",
+    "patent": "PARTIAL",
+    "schedule": "FAIL"
+  },
+  "global_search_status": {
+    "PRIMARY_REGULATORY_AND_COMPANY": "PARTIAL",
+    "TRADE_AND_WIRE": "PARTIAL",
+    "WHOLE_WEB_RECOVERY": "PARTIAL"
+  },
+  "patent_axis_status": {
+    "특허심판 청구": "PARTIAL",
+    "특허심판원 심결": "PARTIAL",
+    "특허법원·각급법원 판결·결정": "PARTIAL",
+    "우선판매품목허가": "PARTIAL",
+    "통지의약품": "PARTIAL",
+    "의약품 특허기간 만료·임박": "PARTIAL",
+    "우판기간 만료·임박": "PARTIAL",
+    "특허법·허가특허연계 입법": "PARTIAL",
+    "국내사 특허도전·소송 및 출시·독점기간 변화": "PARTIAL"
+  },
+  "domestic": [
+    {
+      "tag": "임상·규제",
+      "title": "올릭스, 황반변성 치료제 뉴질랜드 2a상 신청 반려…재제출 추진",
+      "summary": "올릭스는 OLX10212(OLX301A)의 뉴질랜드 임상 2a상 시험계획 신청이 현지 윤리위원회의 윤리·법규 요건 미충족 판단으로 반려됐다고 공시했다. 회사는 보완 후 재심의를 추진한다. 약효·안전성 임상시험 결과가 실패했다는 의미는 아니다.",
+      "source": "https://www.mt.co.kr/thebio/2026/10/12/2026101216261862201",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T16:31:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "event_id": "OLIX-OLX10212-NZ-ETHICS-REJECTION-20261012",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL_DART_CROSSCHECK",
+      "review_state": "기사후보",
+      "article_preview": {
+        "quick": {
+          "title": "올릭스, 황반변성 임상 2a상 신청 뉴질랜드서 반려",
+          "lead": "올릭스의 OLX10212 임상 2a상 계획이 현지 윤리위원회에서 반려됐다. 회사는 보완·재신청을 추진한다."
+        },
+        "diff": {
+          "title": "올릭스 뉴질랜드 임상 반려, 호주·한국 개발 일정 변수는",
+          "direction": "윤리위원회 보완 요구의 구체 내용과 뉴질랜드 재제출 일정, 호주 IND와 다른 국가 개발계획의 관계를 회사에 확인한다."
+        }
+      }
+    },
+    {
+      "tag": "재무·실적",
+      "title": "셀트리온, 3분기 영업익 첫 5000억원 돌파…잠정 5100억원",
+      "summary": "셀트리온은 2026년 3분기 연결 매출 1조5000억원, 영업이익 5100억원의 잠정 실적을 공시했다고 보도했다. 전년 동기 대비 영업이익 69.2% 증가. 확정 실적이 아닌 잠정 수치.",
+      "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/12/2026101200030.html",
+      "source_name": "뉴데일리 경제",
+      "published_at": "2026-10-12T08:15:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "셀트리온, 3분기 영업익 첫 5000억원 돌파…잠정 5100억원",
+          "lead": "셀트리온은 2026년 3분기 연결 매출 1조5000억원, 영업이익 5100억원의 잠정 실적을 공시했다고 보도했다. 전년 동기 대비 영업이익 69.2% 증가. 확정 실적이 아닌 잠정 수치."
+        },
+        "diff": {
+          "title": "셀트리온 3분기 잠정실적 호조, 수익성 개선 구조는",
+          "direction": "고마진 제품 비중과 일회성 요인 및 잠정·확정 수치를 분리해 분석"
+        }
+      },
+      "event_id": "CELLTRION-2026Q3-PRELIMINARY-EARNINGS",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL_TWO_REPORTS",
+      "collector_group": "C",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "국내 신약·미국 임상",
+      "title": "HK이노엔 '케이캡', 미국 시장 진출 근거 강화",
+      "summary": "HK이노엔 미국 파트너가 테고프라잔 비미란성 위식도역류질환 임상 3상(783명) 추가 분석 결과를 공개. 가슴쓰림·역류 개선 근거이며 FDA 신규 승인은 아님.",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=419079",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-12T07:09:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "HK이노엔 '케이캡', 미국 시장 진출 근거 강화",
+          "lead": "HK이노엔 미국 파트너가 테고프라잔 비미란성 위식도역류질환 임상 3상(783명) 추가 분석 결과를 공개. 가슴쓰림·역류 개선 근거이며 FDA 신규 승인은 아님."
+        },
+        "diff": {
+          "title": "케이캡 미국 3상 추가 분석, 허가 근거 얼마나 쌓였나",
+          "direction": "NERD 환자 대상 평가변수·통계수치와 FDA 허가신청 일정을 확인; 이미 승인된 것으로 오해하지 않도록 구분"
+        }
+      },
+      "event_id": "HKINOEN-TEGOPRAZAN-TRIUMPH-NERD-DETAIL-20261011",
+      "event_status": "UPDATE",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "A",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "특허·비만 DDS",
+      "title": "[단독]월1회·최대 3개월 내세웠던 펩트론…특허 속 효능시험은 최대 2주 간격",
+      "summary": "펩트론 장기지속형 제형 관련 특허 내 효능시험 간격과 개발 목표 사이의 차이를 제기한 유료 단독기사. 본문 비공개로 세부 주장 검증 필요. [검증 유의: 유료 원문 및 특허 원문을 아직 확인하지 못함]",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01843366645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T07:00:10+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "[단독]월1회·최대 3개월 내세웠던 펩트론…특허 속 효능시험은 최대 2주 간격",
+          "lead": "펩트론 장기지속형 제형 관련 특허 내 효능시험 간격과 개발 목표 사이의 차이를 제기한 유료 단독기사. 본문 비공개로 세부 주장 검증 필요."
+        },
+        "diff": {
+          "title": "펩트론 DDS 특허 내 시험 간격 논란, 원문 검증이 우선",
+          "direction": "유료기사와 특허문헌 원문을 확보해 시험조건·제품 목표와 직접 비교. 현재 세부 주장 미검증"
+        }
+      },
+      "event_id": "PEPTRON-DDS-PATENT-INTERVAL-ANALYSIS-20261012",
+      "event_status": "NEW",
+      "verification_status": "PAYWALL_CORE_FACT_UNVERIFIED",
+      "review_state": "추가검증"
+    },
+    {
+      "tag": "급여·신속등재",
+      "title": "신속등재 참여신청 14개 약제 중 선정심사 대상 11개로 압축",
+      "summary": "희귀질환 치료제 신속등재 시범사업에 국내외 13개사가 14개 약제를 신청했고 해외 등재 요건 미충족 3개를 제외한 11개가 심사대상에 포함됐다. 최종 선정은 아직 미결정.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47449",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-12T06:10:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "신속등재 참여신청 14개 약제 중 선정심사 대상 11개로 압축",
+          "lead": "희귀질환 치료제 신속등재 시범사업에 국내외 13개사가 14개 약제를 신청했고 해외 등재 요건 미충족 3개를 제외한 11개가 심사대상에 포함됐다. 최종 선정은 아직 미결정."
+        },
+        "diff": {
+          "title": "신속등재 후보 11개, 실제 선정은 몇 개일까",
+          "direction": "참여 14개·심사대상 11개를 구분하고 최종 선정 수·지정 기준 및 제도 실효성 추가 취재"
+        }
+      },
+      "event_id": "KR-RARE-FAST-LISTING-11-CANDIDATES-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "B",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "제약 세제·R&D",
+      "title": "합성의약품도 국가전략기술로?…R&D 세액공제 최대 50% 추진",
+      "summary": "복지부가 합성의약품 연구개발을 국가전략기술에 포함하는 방안을 재정경제부와 논의 중이다. 최대 50%는 해당 요건을 충족한 중소기업의 세액공제 상한 가능치로, 지정이 확정된 것은 아니다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47451",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-12T06:08:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "합성의약품도 국가전략기술로?…R&D 세액공제 최대 50% 추진",
+          "lead": "복지부가 합성의약품 연구개발을 국가전략기술에 포함하는 방안을 재정경제부와 논의 중이다. 최대 50%는 해당 요건을 충족한 중소기업의 세액공제 상한 가능치로, 지정이 확정된 것은 아니다."
+        },
+        "diff": {
+          "title": "합성의약품 R&D도 국가전략기술…제약사 수혜는",
+          "direction": "국가전략기술 지정 여부와 대상 연구 범위 및 중소·대기업별 세액공제 차이를 확인"
+        }
+      },
+      "event_id": "KR-SMALL-MOLECULE-TAX-STRATEGIC-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "B",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "CSO·약사법",
+      "title": "복지부, 제약기업에 CSO 관리감독 권한 부여 실행방안 놓고 '고심'",
+      "summary": "복지부가 CSO 관리감독을 제약사에 부여하는 방안을 업계 워킹그룹과 논의. 전담인력 부담 및 현장조사 절차를 검토하고 약사법 개정 필요성을 언급했다. 입법 확정은 아님.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47469",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-12T06:06:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "복지부, 제약기업에 CSO 관리감독 권한 부여 실행방안 놓고 '고심'",
+          "lead": "복지부가 CSO 관리감독을 제약사에 부여하는 방안을 업계 워킹그룹과 논의. 전담인력 부담 및 현장조사 절차를 검토하고 약사법 개정 필요성을 언급했다. 입법 확정은 아님."
+        },
+        "diff": {
+          "title": "제약사 CSO 관리감독 맡나…권한·책임의 경계",
+          "direction": "입법 필요성, 현장조사 권한과 부담, 리베이트 책임 소재를 회사 및 복지부에 교차 확인"
+        }
+      },
+      "event_id": "KR-CSO-DELEGATED-SUPERVISION-WG-20261012",
+      "event_status": "UPDATE",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "B",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "초고가 신약·급여",
+      "title": "헴제닉스, 과거 신청약가 약 35억원…급여 진입 새 절차 밟는다",
+      "summary": "CSL의 혈우병 B 유전자치료제 헴제닉스의 과거 국내 신청 희망약가가 단회 투여 약 35억원이었다는 보도. 최종 급여가격이 아닌 신청가격이며 신속등재 시범사업에 참여 신청.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47448",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-12T06:02:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "헴제닉스, 과거 신청약가 약 35억원…급여 진입 새 절차 밟는다",
+          "lead": "CSL의 혈우병 B 유전자치료제 헴제닉스의 과거 국내 신청 희망약가가 단회 투여 약 35억원이었다는 보도. 최종 급여가격이 아닌 신청가격이며 신속등재 시범사업에 참여 신청."
+        },
+        "diff": {
+          "title": "헴제닉스 35억원은 신청가…급여 협상 변수",
+          "direction": "과거 신청 희망가격과 실제 최종 급여가격을 구분하고 성과기반 지불·재정 관리 조건 검토"
+        }
+      },
+      "event_id": "HEMGENIX-KR-PAST-ASKING-PRICE-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "B",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "약가제도·급여",
+      "title": "약가개편에 제네릭 등재 절벽...계단식 피해 'ODT' 전략",
+      "summary": "새 약가 산정률 적용 후 10월 산정대상 약제 등재가 월평균보다 크게 감소. 구강붕해정(ODT) 등의 제형 차별화에 주목.",
+      "source": "https://eng.dailypharm.com/user/news/343267",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-12T06:00:54+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "약가개편에 제네릭 등재 절벽...계단식 피해 'ODT' 전략",
+          "lead": "새 약가 산정률 적용 후 10월 산정대상 약제 등재가 월평균보다 크게 감소. 구강붕해정(ODT) 등의 제형 차별화에 주목."
+        },
+        "diff": {
+          "title": "제네릭 등재 급감, 새 약가제도가 만든 첫 변화인가",
+          "direction": "신규 제네릭 신청과 실제 등재 수를 구분해 전년·전월과 비교하고, ODT 전환이 산정률 및 계단식 인하에 주는 효과를 검증"
+        }
+      },
+      "event_id": "KR-PRICING-FIRST-IMPLEMENTATION-OCT26",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "보험급여·비만",
+      "title": "승부수 띄운 '위고비', 청소년·고도 비만 보험급여 도전",
+      "summary": "노보노디스크가 위고비의 요양급여 결정신청서를 심평원에 제출했다는 취재보도. 신청과 급여 인정·등재를 구분해야 함.",
+      "source": "https://m.dailypharm.com/user/news/343265",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-12T06:00:50+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "승부수 띄운 '위고비', 청소년·고도 비만 보험급여 도전",
+          "lead": "노보노디스크가 위고비의 요양급여 결정신청서를 심평원에 제출했다는 취재보도. 신청과 급여 인정·등재를 구분해야 함."
+        },
+        "diff": {
+          "title": "위고비 급여 도전, 청소년·고도비만 적용 범위 쟁점",
+          "direction": "급여 신청 대상과 비용효과성·재정영향을 확인하고 기존 비만치료제의 급여 논의와 비교. 신청을 승인으로 쓰지 않도록 주의"
+        }
+      },
+      "event_id": "WEGOVY-KR-REIMBURSEMENT-APPLICATION-202610",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "M&A·지배구조·자금조달",
+      "title": "신동국, 한미사이언스 추가 지분 매입 위해 차입 확대…이자부담 주목",
+      "summary": "신동국 회장의 138만2832주(약 693억원) 장외매입 계약을 토대로 기존 주식담보대출 4322억원과 추가 차입 시 5000억원대 가능성을 분석. 5000억원과 연 이자 200억원 이상은 가정에 따른 추정치이며 확정 차입액 아님. 기사 최초 유료공개는 10월 11일 17시.",
+      "source": "https://www.etoday.co.kr/news/view/2633862",
+      "source_name": "이투데이",
+      "published_at": "2026-10-11T17:00:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "신동국, 한미사이언스 추가 지분 매입 위해 차입 확대…이자부담 주목",
+          "lead": "신동국 회장의 138만2832주(약 693억원) 장외매입 계약을 토대로 기존 주식담보대출 4322억원과 추가 차입 시 5000억원대 가능성을 분석. 5000억원과 연 이자 200억원 이상은 가정에 따른 추정치이며 확정 차입액 아님. 기사 최초 유료공개는 10월 11일 17시."
+        },
+        "diff": {
+          "title": "신동국 지분 매입 자금 부담, 지배구조 영향은",
+          "direction": "주식매입 확정 조건과 실제 차입 규모·이자율·담보 변동을 공시로 재확인"
+        }
+      },
+      "event_id": "HANMI-SHINDONGGUK-1382832-SHARE-SPA-20261002",
+      "event_status": "UPDATE",
+      "verification_status": "ORIGINAL_CHECKED_ESTIMATES_FLAGGED",
+      "collector_group": "WEB",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "처방실적·시장",
+      "title": "케이캡·로수젯, 엎치락뒤치락 선두 경쟁…K-신약 처방시장 초강세",
+      "summary": "유비스트 기준 케이캡 3분기 외래 처방액 654억원, 로수젯 652억원으로 분기 순위 역전. 다만 3분기 누적에선 로수젯이 앞섬. [검증 유의: 원문 발행시각 미확인]",
+      "source": "https://www.apsk.co.kr/news/articleView.html?idxno=540689",
+      "source_name": "메디팜스투데이",
+      "published_at": "",
+      "timestamp_unverified": true,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "케이캡·로수젯, 엎치락뒤치락 선두 경쟁…K-신약 처방시장 초강세",
+          "lead": "유비스트 기준 케이캡 3분기 외래 처방액 654억원, 로수젯 652억원으로 분기 순위 역전. 다만 3분기 누적에선 로수젯이 앞섬."
+        },
+        "diff": {
+          "title": "케이캡·로수젯 처방 선두 경쟁, 분기와 누적의 차이",
+          "direction": "유비스트 동일 기준 분기·누적 처방액을 재검증하고 발행시각 미확인은 표시"
+        }
+      },
+      "event_id": "UBIST-Q3-2026-KCAB-ROSUZET",
+      "event_status": "NEW",
+      "verification_status": "TIMESTAMP_UNVERIFIED",
+      "review_state": "추가검증"
+    },
+    {
+      "tag": "비만치료제·신약개발",
+      "title": "온코닉테라퓨틱스, GLP-1 병용 신약후보 OCN-501 개발 방향 공개",
+      "summary": "온코닉테라퓨틱스가 OCN-501을 세마글루타이드 병용 시 체중감량 과정의 골격근 보존을 겨냥한 신약 후보로 처음 공개. 구체 연구방법·효과 수치는 11월 학회 발표 예정으로 현재 확인되지 않음.",
+      "source": "https://www.mt.co.kr/thebio/2026/10/12/2026101209295882532",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T09:31:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "온코닉테라퓨틱스, GLP-1 병용 신약후보 OCN-501 개발 방향 공개",
+          "lead": "온코닉테라퓨틱스가 OCN-501을 세마글루타이드 병용 시 체중감량 과정의 골격근 보존을 겨냥한 신약 후보로 처음 공개. 구체 연구방법·효과 수치는 11월 학회 발표 예정으로 현재 확인되지 않음."
+        },
+        "diff": {
+          "title": "온코닉 비만 병용 후보, 근육 보존 근거는",
+          "direction": "OCN-501의 기전·임상개발 단계·11월 학회 자료 공개 전후 확인; 효과 확정 표현 자제"
+        }
+      },
+      "event_id": "ONCONIC-OCN501-OBESITY-ADDON-REVEAL-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "WEB",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "해외 출시·바이오시밀러",
+      "title": "동아ST, 빈혈치료제 바이오시밀러 다베크론 UAE 출시",
+      "summary": "동아ST가 다베포에틴알파 바이오시밀러 다베크론의 아랍에미리트 첫 상업화 출시를 완료했다고 발표. 2024년 줄파와 MENA 18개국 라이선스 계약, 2026년 6월 UAE 허가 이후의 실제 출시 단계.",
+      "source": "https://www.mt.co.kr/thebio/2026/10/12/2026101208493459092",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T09:11:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "동아ST, 빈혈치료제 바이오시밀러 다베크론 UAE 출시",
+          "lead": "동아ST가 다베포에틴알파 바이오시밀러 다베크론의 아랍에미리트 첫 상업화 출시를 완료했다고 발표. 2024년 줄파와 MENA 18개국 라이선스 계약, 2026년 6월 UAE 허가 이후의 실제 출시 단계."
+        },
+        "diff": {
+          "title": "동아ST 중동 바이오시밀러 출시, 지역별 허가 확대는",
+          "direction": "UAE 상업화 이후 MENA 18개국 계약상 실제 허가·출시국과 공급 규모 검증"
+        }
+      },
+      "event_id": "DONGAST-DARBECON-UAE-LAUNCH-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "WEB",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "기술협력·AI 신약개발",
+      "title": "루닛, 미국 디스커버리라이프사이언스와 AI 병리 분석 협업",
+      "summary": "루닛이 미국 디스커버리라이프사이언스와 전략적 협업을 발표. 루닛 스코프를 활용해 제약사 대상 조직·바이오마커 분석을 제공하며 계약금·확정 매출은 공개되지 않음.",
+      "source": "https://www.mt.co.kr/index.php/thebio/2026/10/12/2026101208260289575",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-12T08:26:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "루닛, 미국 디스커버리라이프사이언스와 AI 병리 분석 협업",
+          "lead": "루닛이 미국 디스커버리라이프사이언스와 전략적 협업을 발표. 루닛 스코프를 활용해 제약사 대상 조직·바이오마커 분석을 제공하며 계약금·확정 매출은 공개되지 않음."
+        },
+        "diff": {
+          "title": "루닛 AI 병리 협업, 제약사 분석 매출로 연결되나",
+          "direction": "협업 범위와 확정 계약 수익·서비스 적용 제약사 수의 공개 여부 구분"
+        }
+      },
+      "event_id": "LUNIT-DISCOVERY-LIFE-SCIENCES-PARTNERSHIP-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "WEB",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "AI 신약개발·R&D",
+      "title": "지니너스, AI가 찾은 항암 신약 타깃 실험 검증 돌입…'기술이전 기반 다진다'",
+      "summary": "지니너스가 AI 플랫폼 인텔리빌에서 발굴한 신약 표적의 항체 기반 생물학적 검증을 시작한다는 보도. 기술수출 계약 체결이 아닌 연구 단계 진전.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02040166645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T08:00:05+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "지니너스, AI가 찾은 항암 신약 타깃 실험 검증 돌입…'기술이전 기반 다진다'",
+          "lead": "지니너스가 AI 플랫폼 인텔리빌에서 발굴한 신약 표적의 항체 기반 생물학적 검증을 시작한다는 보도. 기술수출 계약 체결이 아닌 연구 단계 진전."
+        },
+        "diff": {
+          "title": "AI 신약개발·R&D 이슈, 추가 확인해야 할 변수",
+          "direction": "지니너스가 AI 플랫폼 인텔리빌에서 발굴한 신약 표적의 항체 기반 생물학적 검증을 시작한다는 보도. 기술수출 계약 체결이 아닌 연구 단계 진전. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "GENINUS-AI-TARGET-EXPERIMENTAL-VALIDATION-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "D",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "기업재무·개발비",
+      "title": "릴리 후속계약 불발, 공장·임상비는 현실…펩트론의 자금 딜레마",
+      "summary": "펩트론-릴리 플랫폼 기술평가 종료 이후 후속 계약 미체결 상황과 투자·임상비 부담을 분석한 유료기사. 세부 수치 유료 미확인.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01882726645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T07:10:03+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "릴리 후속계약 불발, 공장·임상비는 현실…펩트론의 자금 딜레마",
+          "lead": "펩트론-릴리 플랫폼 기술평가 종료 이후 후속 계약 미체결 상황과 투자·임상비 부담을 분석한 유료기사. 세부 수치 유료 미확인."
+        },
+        "diff": {
+          "title": "팜이데일리 보도 후속 쟁점은",
+          "direction": "펩트론-릴리 플랫폼 기술평가 종료 이후 후속 계약 미체결 상황과 투자·임상비 부담을 분석한 유료기사. 세부 수치 유료 미확인. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "PEPTRON-LILLY-TECH-EVAL-END-20261007",
+      "event_status": "UPDATE",
+      "verification_status": "PAYWALL_DETAILS_UNVERIFIED",
+      "review_state": "추가검증"
+    },
+    {
+      "tag": "기술반환·신약개발",
+      "title": "'에페'는 시작일 뿐… 한미약품 '기술 반환 신약' 재도약 노린다",
+      "summary": "한미약품 권리반환 파이프라인 에페·에피노페그듀타이드·벨바라페닙·포셀티닙의 재개발 현황 분석. 신규 계약 또는 허가 결정은 아님.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79787",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-12T06:06:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "'에페'는 시작일 뿐… 한미약품 '기술 반환 신약' 재도약 노린다",
+          "lead": "한미약품 권리반환 파이프라인 에페·에피노페그듀타이드·벨바라페닙·포셀티닙의 재개발 현황 분석. 신규 계약 또는 허가 결정은 아님."
+        },
+        "diff": {
+          "title": "히트뉴스 보도 후속 쟁점은",
+          "direction": "한미약품 권리반환 파이프라인 에페·에피노페그듀타이드·벨바라페닙·포셀티닙의 재개발 현황 분석. 신규 계약 또는 허가 결정은 아님. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "HANMI-RETURNED-PIPELINE-REVIEW-20261012",
+      "event_status": "UPDATE",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "기술수출",
+      "title": "기술수출 '22조' 역대급 실적인데... 주가 꿈쩍 안한 이유 있었다",
+      "summary": "2026년 3분기까지 공개된 기술이전 계약 총액과 후속 성과를 분석한 기사. 계약 규모 집계의 확인 범위에 주의.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79773",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-12T06:05:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "기술수출 '22조' 역대급 실적인데... 주가 꿈쩍 안한 이유 있었다",
+          "lead": "2026년 3분기까지 공개된 기술이전 계약 총액과 후속 성과를 분석한 기사. 계약 규모 집계의 확인 범위에 주의."
+        },
+        "diff": {
+          "title": "기술수출 이슈, 추가 확인해야 할 변수",
+          "direction": "2026년 3분기까지 공개된 기술이전 계약 총액과 후속 성과를 분석한 기사. 계약 규모 집계의 확인 범위에 주의. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "KR-LICENSE-2026Q3-AGGREGATE",
+      "event_status": "NEW",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "약국 규제·행정조사",
+      "title": "복지부, 창고형 약국 잇단 행정조사...1곳 수사 의뢰키로",
+      "summary": "복지부가 창고형 약국의 불법 개설 여부 조사를 확대하고 9월 조사한 약국 1곳을 수사의뢰하기로 했다고 보도. 수사 의뢰 방침이며 유죄 판결은 아님.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47450",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-12T06:04:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "복지부, 창고형 약국 잇단 행정조사...1곳 수사 의뢰키로",
+          "lead": "복지부가 창고형 약국의 불법 개설 여부 조사를 확대하고 9월 조사한 약국 1곳을 수사의뢰하기로 했다고 보도. 수사 의뢰 방침이며 유죄 판결은 아님."
+        },
+        "diff": {
+          "title": "약국 규제·행정조사 이슈, 추가 확인해야 할 변수",
+          "direction": "복지부가 창고형 약국의 불법 개설 여부 조사를 확대하고 9월 조사한 약국 1곳을 수사의뢰하기로 했다고 보도. 수사 의뢰 방침이며 유죄 판결은 아님. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "KR-WAREHOUSE-PHARMACY-INVESTIGATION-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "B",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "사업개발·인터뷰",
+      "title": "알지노믹스, 기술 설명서 공동개발 논의로… 달라진 빅파마 미팅",
+      "summary": "알지노믹스 홍성우 부사장이 BioJapan 2026에서 글로벌 제약사들과 RNA 치환 플랫폼 적용 질환·표적별 공동개발을 논의했다고 설명.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79788",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-12T06:03:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "알지노믹스, 기술 설명서 공동개발 논의로… 달라진 빅파마 미팅",
+          "lead": "알지노믹스 홍성우 부사장이 BioJapan 2026에서 글로벌 제약사들과 RNA 치환 플랫폼 적용 질환·표적별 공동개발을 논의했다고 설명."
+        },
+        "diff": {
+          "title": "사업개발·인터뷰 이슈, 추가 확인해야 할 변수",
+          "direction": "알지노믹스 홍성우 부사장이 BioJapan 2026에서 글로벌 제약사들과 RNA 치환 플랫폼 적용 질환·표적별 공동개발을 논의했다고 설명. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "ALGENOMICS-BIOJAPAN-BD-20261012",
+      "event_status": "NEW",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "IPO·투자",
+      "title": "넥스아이, 녹십자·대웅 투자 유치…IPO 도전·LO 6건 목표",
+      "summary": "넥스아이 공모 절차와 녹십자·대웅제약 전략 투자 참여, 회사 측 중장기 기술수출 목표를 보도. LO 6건은 실적이 아닌 목표.",
+      "source": "https://new.dailypharm.com/user/news/343242",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-12T06:00:46+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "넥스아이, 녹십자·대웅 투자 유치…IPO 도전·LO 6건 목표",
+          "lead": "넥스아이 공모 절차와 녹십자·대웅제약 전략 투자 참여, 회사 측 중장기 기술수출 목표를 보도. LO 6건은 실적이 아닌 목표."
+        },
+        "diff": {
+          "title": "IPO·투자 이슈, 추가 확인해야 할 변수",
+          "direction": "넥스아이 공모 절차와 녹십자·대웅제약 전략 투자 참여, 회사 측 중장기 기술수출 목표를 보도. LO 6건은 실적이 아닌 목표. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "NEXI-IPO-PROSPECTUS-202610",
+      "event_status": "NEW",
+      "verification_status": "MEDIA_ORIGINAL",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "세포유전자치료제·CDMO",
+      "title": "박상언 이엔셀 CDMO 이사 “日 재생의료 내년 본격화…세포·유전자 CDMO 확장”",
+      "summary": "일본 재생의료시장과 세포·유전자치료제 위탁생산 사업 확대 전망을 다룬 인터뷰. 본문 유료로 세부 수치와 계약 확정 여부는 확인하지 못함.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01649846645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T06:00:09+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "박상언 이엔셀 CDMO 이사 “日 재생의료 내년 본격화…세포·유전자 CDMO 확장”",
+          "lead": "일본 재생의료시장과 세포·유전자치료제 위탁생산 사업 확대 전망을 다룬 인터뷰. 본문 유료로 세부 수치와 계약 확정 여부는 확인하지 못함."
+        },
+        "diff": {
+          "title": "세포유전자치료제·CDMO 이슈, 추가 확인해야 할 변수",
+          "direction": "일본 재생의료시장과 세포·유전자치료제 위탁생산 사업 확대 전망을 다룬 인터뷰. 본문 유료로 세부 수치와 계약 확정 여부는 확인하지 못함. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "ENCELL-JAPAN-CGTCMDO-OUTLOOK-20261012",
+      "event_status": "NEW",
+      "verification_status": "PAYWALL_DETAILS_UNVERIFIED",
+      "collector_group": "D",
+      "review_state": "추가검증"
+    },
+    {
+      "tag": "비만치료제·시장",
+      "title": "'에페' 등장에 국내 비만신약 3파전으로…후발 체인저 나오나",
+      "summary": "한미약품 에페 허가 이후 위고비·마운자로와 국내 비만치료제 시장 경쟁구도 분석.",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=418942",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-12T05:55:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "'에페' 등장에 국내 비만신약 3파전으로…후발 체인저 나오나",
+          "lead": "한미약품 에페 허가 이후 위고비·마운자로와 국내 비만치료제 시장 경쟁구도 분석."
+        },
+        "diff": {
+          "title": "메디파나뉴스 보도 후속 쟁점은",
+          "direction": "한미약품 에페 허가 이후 위고비·마운자로와 국내 비만치료제 시장 경쟁구도 분석. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "EPE-OBESITY-MARKET-ANALYSIS-20261012",
+      "event_status": "UPDATE",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "IPO·재무",
+      "title": "마더스제약, 코스닥 문턱 넘었다…성장성 시험대",
+      "summary": "마더스제약 상장예비심사 승인 이후 실적 및 설비투자 분석.",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=419039",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-12T05:25:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "마더스제약, 코스닥 문턱 넘었다…성장성 시험대",
+          "lead": "마더스제약 상장예비심사 승인 이후 실적 및 설비투자 분석."
+        },
+        "diff": {
+          "title": "메디파나뉴스 보도 후속 쟁점은",
+          "direction": "마더스제약 상장예비심사 승인 이후 실적 및 설비투자 분석. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "MOTHERS-IPO-20261007",
+      "event_status": "UPDATE",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "의약품 유통·정책",
+      "title": "약 배송 대응 놓고 내부 진통… 결의문 채택으로 마무리",
+      "summary": "대한약사회 임시대의원총회에서 약 배송 확대 대응 결의문을 채택하고 별도 비대위 구성안은 부결.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79786",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-11T19:21:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "article_preview": {
+        "quick": {
+          "title": "약 배송 대응 놓고 내부 진통… 결의문 채택으로 마무리",
+          "lead": "대한약사회 임시대의원총회에서 약 배송 확대 대응 결의문을 채택하고 별도 비대위 구성안은 부결."
+        },
+        "diff": {
+          "title": "의약품 유통·정책 이슈, 추가 확인해야 할 변수",
+          "direction": "대한약사회 임시대의원총회에서 약 배송 확대 대응 결의문을 채택하고 별도 비대위 구성안은 부결. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "KPA-DELIVERY-RESOLUTION-20261011",
+      "event_status": "NEW",
+      "review_state": "기사후보"
+    },
+    {
+      "tag": "바이오 제조·기술협력",
+      "title": "김선택 티큐브잇 대표 “T세포 배양 플랫폼 앞세워 日 협업 본격화”",
+      "summary": "티큐브잇이 바이오재팬 2026에서 T세포 제조 플랫폼 T-CAMP 등을 소개하고 일본 협력·투자 유치를 추진한다는 인터뷰. 체결된 계약으로 해석하지 않아야 함.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02053286645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T08:05:04+09:00",
+      "timestamp_unverified": false,
+      "priority": "P3",
+      "article_preview": {
+        "quick": {
+          "title": "김선택 티큐브잇 대표 “T세포 배양 플랫폼 앞세워 日 협업 본격화”",
+          "lead": "티큐브잇이 바이오재팬 2026에서 T세포 제조 플랫폼 T-CAMP 등을 소개하고 일본 협력·투자 유치를 추진한다는 인터뷰. 체결된 계약으로 해석하지 않아야 함."
+        },
+        "diff": {
+          "title": "바이오 제조·기술협력 이슈, 추가 확인해야 할 변수",
+          "direction": "티큐브잇이 바이오재팬 2026에서 T세포 제조 플랫폼 T-CAMP 등을 소개하고 일본 협력·투자 유치를 추진한다는 인터뷰. 체결된 계약으로 해석하지 않아야 함. 관련 원문·공시와 이전 경과를 대조하고 국내 업계 영향 및 신규 마일스톤을 추가 취재한다."
+        }
+      },
+      "event_id": "TCUBEIT-BIOJAPAN-JAPAN-COLLAB-20261012",
+      "event_status": "NEW",
+      "verification_status": "ORIGINAL_CHECKED",
+      "collector_group": "D",
+      "review_state": "기사후보"
+    }
+  ],
+  "global": [
+    {
+      "tag": "글로벌 임상 3상",
+      "title": "BMS 아드밀파란트 폐섬유증 3상, 60mg 성공·120mg 유의성 미확보",
+      "summary": "BMS는 특발성 폐섬유증 ALOFT-IPF 3상(1,255명)에서 아드밀파란트 60mg의 52주 강제폐활량(FVC) 감소 개선이 유의했다고 밝혔다. 120mg은 1차 평가변수를 충족하지 못했다. 용량별 상이한 결과와 안전성을 구분해야 한다.",
+      "source": "https://investors.bms.com/iframes/press-releases/press-release-details/2026/Bristol-Myers-Squibb-Announces-Phase-3-ALOFT-IPF-Trial-Evaluating-Admilparant-in-Adults-with-Idiopathic-Pulmonary-Fibrosis-Met-Primary-Endpoint/default.aspx",
+      "source_name": "Bristol Myers Squibb",
+      "published_at": "",
+      "timestamp_unverified": true,
+      "priority": "P1",
+      "event_id": "BMS-ADMILPARANT-ALOFT-IPF-PHASE3-20261012",
+      "event_status": "NEW",
+      "verification_status": "OFFICIAL_DAY_VERIFIED_EXACT_TIME_NOT_AVAILABLE",
+      "article_preview": {
+        "quick": {
+          "title": "BMS, 폐섬유증 신약 3상 60mg 용량서 성공",
+          "lead": "아드밀파란트 60mg은 FVC 감소 개선에 유의한 효과를 보였지만, 120mg은 주요 평가변수를 충족하지 못했다."
+        },
+        "diff": {
+          "title": "같은 3상인데 60mg만 유의…아드밀파란트 용량 선택의 의미",
+          "direction": "60mg·120mg 군 간 FVC 차이, 안전성 및 후속 허가 용량 전략을 공개 데이터로 비교한다."
+        }
+      }
+    },
+    {
+      "tag": "글로벌 임상 3상",
+      "title": "BMS 방사성의약품 RYZ101, 신경내분비종양 3상 중간분석 성공",
+      "summary": "BMS는 액티늄-225 기반 RYZ101의 ACTION-1 3상 중간분석에서 루테튬-177 치료 후 진행한 GEP-NET 환자 대상 무진행생존기간(PFS) 개선을 확인했다. 구체 생존기간 수치는 추후 공개된다.",
+      "source": "https://investors.bms.com/iframes/press-releases/press-release-details/2026/Bristol-Myers-Squibb-Announces-Positive-Topline-Results-from-the-Interim-Analysis-of-Phase-3-ACTION-1-for-RYZ101-RayzeBios-Radiopharmaceutical-Therapy-in-Patients-with-GEP-NETs/default.aspx",
+      "source_name": "Bristol Myers Squibb",
+      "published_at": "",
+      "timestamp_unverified": true,
+      "priority": "P1",
+      "event_id": "BMS-RYZ101-ACTION1-INTERIM-20261012",
+      "event_status": "NEW",
+      "verification_status": "OFFICIAL_DAY_VERIFIED_EXACT_TIME_NOT_AVAILABLE",
+      "article_preview": {
+        "quick": {
+          "title": "BMS, 액티늄 기반 RYZ101 3상 중간분석 주요 지표 충족",
+          "lead": "기존 방사성의약품 치료 후 진행한 신경내분비종양 환자에서 PFS 개선을 확인했다."
+        },
+        "diff": {
+          "title": "BMS RYZ101, 루테튬 치료 이후 액티늄 시장 열까",
+          "direction": "선행 Lu-177 치료 이후 환자군, 대조요법, 안전성 및 미공개 효과크기의 경쟁상 의미를 비교한다."
+        }
+      }
+    },
+    {
+      "tag": "글로벌 임상 3상",
+      "title": "미럼 리브말리, 희귀 담즙정체성 질환 EXPAND 3상 성공",
+      "summary": "미럼의 마랄릭시바트는 EXPAND 3상에서 심한 소양증 평가변수를 충족했다(p=0.0004). 혈청 담즙산은 위약 대비 상대적으로 69% 감소했다. 회사는 2027년 상반기 미국 보충허가 신청을 계획한다.",
+      "source": "https://markets.ft.markitdigital.com/data/announce/full?dockey=600-202610120800BIZWIRE_USPRX____20261012_BW685221-1",
+      "source_name": "Mirum Pharmaceuticals",
+      "published_at": "2026-10-12T21:00:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "event_id": "MIRUM-LIVMARLI-EXPAND-PHASE3-20261012",
+      "event_status": "NEW",
+      "verification_status": "BUSINESSWIRE_SOURCE_CHECKED",
+      "article_preview": {
+        "quick": {
+          "title": "미럼 리브말리, 희귀 담즙정체 질환 3상 주요 지표 충족",
+          "lead": "EXPAND 3상에서 소양증 감소(p=0.0004)와 혈청 담즙산 감소 효과를 확인했다."
+        },
+        "diff": {
+          "title": "리브말리 적응증 확대, 52명 3상 결과의 임상적 의미",
+          "direction": "소아 및 담도폐쇄증 하위군의 효과크기와 2027년 보충허가 신청 일정을 검토한다."
+        }
+      }
+    },
+    {
+      "tag": "글로벌 임상 1b상",
+      "title": "퍼스트트랙스 ANB033, 셀리악병 1b상 글루텐 부하 시험 긍정적",
+      "summary": "퍼스트트랙스는 CD122 억제 항체 ANB033의 셀리악병 1b상 글루텐 부하 시험에서 장 점막 손상과 증상 관련 지표가 위약 대비 개선됐다고 밝혔다. 32명 규모의 초기 임상이며 2027년 후기 임상 계획을 제시했다.",
+      "source": "https://www.globenewswire.com/news-release/2026/10/12/3378789/0/en/first-tracks-biotherapeutics-announces-positive-top-line-results-for-anb033-in-gluten-challenge-study-in-celiac-disease.html",
+      "source_name": "First Tracks Biotherapeutics",
+      "published_at": "2026-10-12T20:00:00+09:00",
+      "timestamp_unverified": false,
+      "priority": "P2",
+      "event_id": "FIRSTTRACKS-ANB033-PHASE1B-CELIAC-20261012",
+      "event_status": "NEW",
+      "verification_status": "COMPANY_NEWS_RELEASE",
+      "article_preview": {
+        "quick": {
+          "title": "퍼스트트랙스, 셀리악병 ANB033 1b상 긍정적 결과",
+          "lead": "글루텐 부하 조건에서 장 손상과 증상 지표 개선을 확인했다."
+        },
+        "diff": {
+          "title": "셀리악병 CD122 항체, 후기 임상서 무엇을 입증해야 하나",
+          "direction": "32명 대상 글루텐 부하시험과 실제 장기 노출·임상 효과 차이를 구분해 살핀다."
+        }
+      }
+    },
+    {
+      "tag": "글로벌 임상 2상",
+      "title": "카듀리온 토비논트린, 심부전 2상에서 낮은 용량 지표 개선",
+      "summary": "카듀리온은 PDE9 억제제 토비논트린의 Cycle-1 REF 2상에서 낮은 용량군의 NT-proBNP 개선을 발표했다. 더 높은 용량에서 같은 개선이 확인되지 않아 용량별 해석에 주의가 필요하다. 임상적 심혈관 사건 감소는 입증된 바 없다.",
+      "source": "https://cardurion.com/cardurion-pharmaceuticals-presents-phase-2-results-for-tovinontrine-crd-750-a-pde9-inhibitor-as-a-novel-treatment-for-heart-failure/",
+      "source_name": "Cardurion Pharmaceuticals",
+      "published_at": "",
+      "timestamp_unverified": true,
+      "priority": "P2",
+      "event_id": "CARDURION-TOVINONTRINE-CYCLE-PHASE2-20261011",
+      "event_status": "NEW",
+      "verification_status": "COMPANY_DAY_VERIFIED_EXACT_TIME_NOT_AVAILABLE",
+      "article_preview": {
+        "quick": {
+          "title": "카듀리온, PDE9 억제제 심부전 2상 바이오마커 개선",
+          "lead": "토비논트린 저용량군에서 NT-proBNP 감소가 확인됐다."
+        },
+        "diff": {
+          "title": "PDE9 신기전 심부전약, 바이오마커 개선에서 임상성과로",
+          "direction": "용량별 효과와 환자군별 데이터를 비교하고 실제 임상 사건 평가까지 필요한 근거를 정리한다."
+        }
+      }
+    }
+  ],
+  "patent": [
+    {
+      "tag": "특허·약물전달기술",
+      "title": "[단독]월1회·최대 3개월 내세웠던 펩트론…특허 속 효능시험은 최대 2주 간격",
+      "summary": "펩트론 장기지속형 제형 관련 특허 내 효능시험 간격과 개발 목표 사이의 차이를 제기한 유료 단독기사. 본문 비공개로 세부 주장 검증 필요. [검증 유의: 유료 원문 및 특허 원문을 아직 확인하지 못함] [특허 9개 공식 감시 축 확인은 별도로 미완료]",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01843366645612264",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-12T07:00:10+09:00",
+      "timestamp_unverified": false,
+      "priority": "P1",
+      "article_preview": {
+        "quick": {
+          "title": "[단독]월1회·최대 3개월 내세웠던 펩트론…특허 속 효능시험은 최대 2주 간격",
+          "lead": "펩트론 장기지속형 제형 관련 특허 내 효능시험 간격과 개발 목표 사이의 차이를 제기한 유료 단독기사. 본문 비공개로 세부 주장 검증 필요."
+        },
+        "diff": {
+          "title": "펩트론 DDS 특허 내 시험 간격 논란, 원문 검증이 우선",
+          "direction": "유료기사와 특허문헌 원문을 확보해 시험조건·제품 목표와 직접 비교. 현재 세부 주장 미검증"
+        }
+      },
+      "event_id": "PEPTRON-DDS-PATENT-INTERVAL-ANALYSIS-20261012",
+      "event_status": "NEW",
+      "verification_status": "PAYWALL_CORE_FACT_UNVERIFIED",
+      "review_state": "추가검증"
+    }
+  ],
+  "validation_notes": [
+    "전체 자동 검색 PASS 미달인 10/12 브리핑 편집본이며 날짜 화면에 리허설로 표시",
+    "국내 27건 중 일부 유료 기사 원문 세부내용 미검증",
+    "글로벌 미국 발표 3건은 KST 정확한 발행시각 확인 불가라 시간 미확인 표시",
+    "특허 9개 축 공식 확인 미완료. 10/7 키트루다SC 판결은 10/12 신규 사건으로 중복 기재하지 않음",
+    "행사·일정 수집은 API 키 환경 문제로 미완료",
+    "독립 최종 READY 판정 또는 Telegram 발송을 수행하지 않음"
+  ],
+  "publication": {
+    "mode": "DESK_REHEARSAL_ONLY",
+    "telegram": false,
+    "pages": true,
+    "verified_final": false
+  },
+  "publish_allowed": false
+}
