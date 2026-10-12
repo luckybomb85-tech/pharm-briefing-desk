@@ -321,9 +321,12 @@
       "failure_rule": "On failure, step-2 fallback may run once; no third route. Index-only results without original confirmation remain PARTIAL.",
       "zero_rule": "PASS_ZERO permitted only if a trusted native listing effectively checks the specified time window, not merely because search engine returns zero.",
       "runtime_rule": "Do not load every primary plus fallback as routine; stop after success and never rerun PASS source in same execution.",
-      "automation_integration": "NOT_WIRED_YET; next step connects the collector to source_routes while preserving existing checkpoints and no-publication safety."
+      "automation_integration": "WIRED: scripts/collect_with_evidence.py invokes scripts/domestic_route_collector.py for A/B/C/D; --domestic-only isolates these groups. WEB consolidation deferred to step 3.",
+      "fallback_execution": "At most one fallback route per source if primary not PASS/PASS_ZERO; direct list -> Google News site query, site search -> broader domain query.",
+      "test_evidence": "scripts/test_domestic_routes.py (8 deterministic, no-network tests) via .github/workflows/collect-audited.yml",
+      "publish_safety": "Source audit only. Staging records require downstream quality gate; never publish on route scan."
     },
-    "source_routes_version": "1.0-step1",
+    "source_routes_version": "1.0-step2",
     "source_routes_updated_at": "2026-10-12"
   },
   "event_map": {
