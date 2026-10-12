@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 
 from domestic_candidate_pipeline import canon_url, clean_title
+from domestic_coverage_gate import score_operational_coverage
 
 
 def assess(day, collection, stage4, config, reviewed):
@@ -26,6 +27,7 @@ def assess(day, collection, stage4, config, reviewed):
     target = config["readiness_gate"]["domestic"].get("min_source_coverage_ratio", 0.9)
     fixed = [x for x in audited if x["group"] != "WEB"]
     web_sources = [x for x in audited if x["group"] == "WEB"]
+    mixed_coverage=score_operational_coverage(config,collection)
     routes = [z for group in ("A", "B", "C", "D")
               for node in collection.get("domestic_groups", {}).get(group, {}).get("routes", [])
               for z in node.get("routes", [])]
@@ -58,6 +60,7 @@ def assess(day, collection, stage4, config, reviewed):
                    clean_title(x.get("title")) in seen_titles]
     request_stats = {
         "fixed_discovery_route_calls": discovery_attempts,
+        "native_listing_page_requests": sum(r.get("listing_pages_fetched",0) for r in routes),
         "fixed_original_verifier_calls": original_checks,
         "fallback_used_sources": fallback_attempts,
         "web_rss_calls": web_stats.get("rss_requests", 0),
@@ -72,6 +75,7 @@ def assess(day, collection, stage4, config, reviewed):
         "schema_version": "briefing-domestic-step5-evaluation-v1.0",
         "date": day, "scope": "domestic_only",
         "status": "PARTIAL",
+        "search_task_operational_coverage": mixed_coverage,
         "publisher_completion": {
             "verified_sources": completed, "all_sources": total,
             "ratio": round(completed / total, 4) if total else 0,
@@ -115,15 +119,18 @@ def assess(day, collection, stage4, config, reviewed):
         },
         "requests": request_stats,
         "known_structural_limit": (
-            "WEB index RSS cannot independently justify PASS/PASS_ZERO for its nine "
-            "publisher units; this makes a 90% publisher-based quality target "
-            "impossible without extra independent source checks."
+            "20 search tasks can be assessed operationally, while independent article "
+            "recall is unmeasured without separate reference samples. The legacy "
+            "23-publisher metric is diagnostic only, never the 90% denominator."
         ),
         "publish_allowed": False,
         "global_patent_schedule_untouched": True
     }
-    measured["status"] = "PASS" if (measured["publisher_completion"]["target_reached"]
-                                 and measured["collection"]["stage4_core_fact_pending"] == 0) else "PARTIAL"
+    # Never relabel route availability as verified article recall. A 90% route
+    # gate may be met while news coverage is still PARTIAL/UNMEASURED.
+    measured["status"]="PARTIAL"
+    measured["operational_target_met"]=mixed_coverage["target_met"]
+    measured["article_recall_measured"]=False
     return measured
 
 
@@ -150,6 +157,9 @@ def main():
     print("STEP5_RESULT", json.dumps({
         "status": result["status"],
         "publisher_completion": result["publisher_completion"]["verified_sources"],
+        "operational_search_tasks": result["search_task_operational_coverage"]["verified_usable_search_tasks"],
+        "operational_all_tasks": result["search_task_operational_coverage"]["configured_search_tasks"],
+        "operational_target_met":result["operational_target_met"],
         "publisher_total": result["publisher_completion"]["all_sources"],
         "web_axis_status": result["source_query_health"]["web_axis_status_counts"],
         "known_case_recovery": result["known_case_recovery"]["matched_by_exact_url_or_normalized_title"],
