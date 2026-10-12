@@ -8,9 +8,10 @@ from domestic_route_collector import scan_fixed
 KST=ZoneInfo("Asia/Seoul")
 DAY="2026-10-12"
 LIST_URL="https://news.example.com/news/articleList.html"
-HTML_OK=b"""<html><time datetime="2026-10-12T08:00:00+09:00"></time>
-<a href="/news/articleView.html?idxno=101">Test pharmaceutical clinical news number one</a>
-<time datetime="2026-10-11T10:00:00+09:00"></time></html>"""
+HTML_OK=b"""<html><li><a href="/news/articleView.html?idxno=101">Test pharmaceutical clinical news number one</a>
+<time datetime="2026-10-12T08:00:00+09:00"></time></li>
+<li><a href="/news/articleView.html?idxno=102">Previous older pharmaceutical report</a>
+<time datetime="2026-10-11T10:00:00+09:00"></time></li></html>"""
 RSS_OK=b"""<?xml version="1.0"?><rss><channel><item>
 <title>Test pharmaceutical news from RSS</title>
 <link>https://news.google.com/rss/articles/testtoken</link>
@@ -88,9 +89,10 @@ class DomesticRouteTests(unittest.TestCase):
         self.assertEqual(result["source_health"]["A"]["news.example.com"]["status"],"PARTIAL")
 
     def test_trusted_old_native_list_can_pass_zero(self):
-        html_old=b"""<time datetime="2026-10-11T09:00:00+09:00"></time>
-<a href="/news/articleView.html?idxno=12">Older pharmaceutical report</a>
-<time datetime="2026-10-10T18:00:00+09:00"></time>"""
+        html_old=b"""<li><a href="/news/articleView.html?idxno=12">Older pharmaceutical report</a>
+<time datetime="2026-10-11T09:00:00+09:00"></time></li>
+<li><a href="/news/articleView.html?idxno=13">Even older pharmaceutical report</a>
+<time datetime="2026-10-10T18:00:00+09:00"></time></li>"""
         calls=[]
         def loader(url):
             calls.append(url)
