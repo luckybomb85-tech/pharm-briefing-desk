@@ -1,0 +1,61 @@
+name: desk-rehearsal-2026-10-12-once
+
+# Explicit one-off publication of the October 12 editorial rehearsal.
+# Keeps pages.yml automatic deployment disabled and NEVER sends Telegram.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/desk-rehearsal-20261012.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy_oct12_rehearsal:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify single-date rehearsal and fail closed
+        run: |
+          python scripts/validate_briefing.py --path data/2026-10-12.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("data/2026-10-12.json").read_text(encoding="utf-8"))
+          assert d["date"]=="2026-10-12"
+          assert d["schema_version"]=="briefing-final-v1.0"
+          assert d["status"]=="rehearsal-published"
+          assert d["test_run"] is True
+          assert d["completeness_status"]=="partial"
+          assert d["publish_allowed"] is False
+          assert d["publication"]["telegram"] is False
+          assert len(d["domestic"])==27 and len(d["global"])==5 and len(d["patent"])==1
+          print("REHEARSAL_VALIDATED",d["date"],len(d["domestic"]),len(d["global"]),len(d["patent"]))
+          PY
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to briefing desk GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify date-specific public desk content
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python scripts/verify_live_briefing.py
