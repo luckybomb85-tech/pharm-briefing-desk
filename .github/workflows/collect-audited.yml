@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/collect_with_evidence.py'
+      - 'scripts/domestic_route_collector.py'
+      - 'scripts/test_domestic_routes.py'
       - 'scripts/verify_originals.py'
       - 'scripts/test_verify_originals.py'
       - 'scripts/build_event_map.py'
@@ -29,17 +31,24 @@ jobs:
           python-version: '3.12'
       - name: Unit test duplicate and follow-up event map
         run: python -m unittest discover -s scripts -p 'test_event_map.py' -v
+      - name: Unit test domestic routes (no network)
+        run: python -m unittest discover -s scripts -p 'test_domestic_routes.py' -v
+      # Source scan runs only on schedule or manual dispatch, not on code pushes.
+      # This prevents new tests/config changes from causing repeated web searches.
       - name: Scan sources and record honest partial/fail evidence
+        if: github.event_name != 'push'
         env:
           REQUESTED_DATE: ${{ inputs.briefing_date }}
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
           python scripts/collect_with_evidence.py --date "$DAY"
       - name: Build conservative deduplication and event follow-up map
+        if: github.event_name != 'push'
         run: |
           FILE=$(ls status/*-collection-evidence.json | head -1)
           python scripts/build_event_map.py --input "$FILE" --output "$FILE"
       - uses: actions/upload-artifact@v4
+        if: github.event_name != 'push'
         with:
           name: source-evidence
           path: status/*-collection-evidence.json
