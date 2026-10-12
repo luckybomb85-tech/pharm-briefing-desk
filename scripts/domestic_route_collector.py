@@ -391,9 +391,11 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                 # Broaden discovery from an already-fetched publisher listing;
                 # keep general business portals narrow to avoid irrelevant news.
                 source_cap = min(max_candidates, 10) if domain in BUSINESS_GENERAL_SOURCES else max_candidates
+                page_budget=(max_extra_pages if domain in config.get(
+                    "native_pagination",{}).get("enabled_sources",[]) else 0)
                 first = attempt(primary, domain, info, start, end, loader,
                                 verifier, max_original_checks=max_original_checks,
-                                max_candidates=source_cap,max_extra_pages=max_extra_pages)
+                                max_candidates=source_cap,max_extra_pages=page_budget)
                 route_results = [first]
                 # Do not repeat a search when the first page yielded relevant
                 # candidates, even if full publisher-window coverage is PARTIAL.
