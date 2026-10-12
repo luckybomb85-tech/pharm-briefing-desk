@@ -33,6 +33,7 @@ def assess(day, collection, stage4, config, reviewed):
               for z in node.get("routes", [])]
     discovery_attempts = sum(z.get("method") not in ("CONFIG", None) for z in routes)
     original_checks = sum(z.get("original_checks", 0) for z in routes)
+    extra_native_pages=sum(max(0,z.get("listing_pages_fetched",0)-1) for z in routes)
     fallback_attempts = sum(x.get("route_count", 0) > 1
                             for g in ("A", "B", "C", "D")
                             for x in sources.get(g, {}).values())
@@ -61,13 +62,15 @@ def assess(day, collection, stage4, config, reviewed):
     request_stats = {
         "fixed_discovery_route_calls": discovery_attempts,
         "native_listing_page_requests": sum(r.get("listing_pages_fetched",0) for r in routes),
+        "extra_native_page_calls": extra_native_pages,
         "fixed_original_verifier_calls": original_checks,
         "fallback_used_sources": fallback_attempts,
         "web_rss_calls": web_stats.get("rss_requests", 0),
         "stage4_new_original_verifier_calls": step4_stats.get("new_original_verifier_calls", 0),
         "stage4_reused_preverified_originals": step4_stats.get("reused_preverified_originals", 0),
         "logical_calls_total": (
-            discovery_attempts + original_checks + web_stats.get("rss_requests", 0)
+            discovery_attempts + extra_native_pages + original_checks
+            + web_stats.get("rss_requests", 0)
             + step4_stats.get("new_original_verifier_calls", 0)),
         "note": "Logical route/original-verifier calls, not exact HTTP request count. A Google News token resolver may use multiple HTTP requests."
     }
