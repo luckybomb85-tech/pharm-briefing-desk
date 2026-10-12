@@ -131,7 +131,7 @@ def search_query(domain, start, end, broad=False):
 def attempt(method, domain, route, start, end, loader, verifier,
             *, max_original_checks=3, broad=False):
     result = {"method": method, "status": "PARTIAL", "hits": 0,
-              "original_checks": 0, "verified_original_count": 0, "verified_in_window": 0,
+              "original_checks": 0, "verified_original_count": 0, "verified_in_window": 0, "verified_before_window": 0,
               "coverage_proven": False, "candidates": []}
     if method == "DIRECT_LIST":
         url = route.get("primary_url")
@@ -161,6 +161,8 @@ def attempt(method, domain, route, start, end, loader, verifier,
             result["listing_boundary_seen"] = (
                 len(dates) >= 2 and is_descending and dates[0] >= start
                 and dates[-1] < start)
+            result["listing_all_older_than_window"] = (
+                len(dates) >= 2 and is_descending and dates[0] < start)
             items = links
         else:
             items = parse_rss(data)
@@ -179,6 +181,8 @@ def attempt(method, domain, route, start, end, loader, verifier,
             when = publication_time(check.get("published_at_verified"))
             if check.get("verified_original") and when:
                 result["verified_original_count"] += 1
+                if when < start:
+                    result["verified_before_window"] += 1
             if not (check.get("verified_original") and when and start <= when < end):
                 continue
             result["verified_in_window"] += 1
@@ -199,6 +203,13 @@ def attempt(method, domain, route, start, end, loader, verifier,
                 and result["verified_in_window"] > 0
                 and result["verified_original_count"] == result["original_checks"]):
             result["status"] = "PASS"
+            result["coverage_proven"] = True
+        elif (method == "DIRECT_LIST" and result["listing_all_older_than_window"]
+              and result["original_checks"] > 0
+              and result["verified_before_window"] == result["original_checks"]):
+            # A chronological publisher list with its newest dated items already
+            # before the cutoff and matching older originals proves zero new items.
+            result["status"] = "PASS_ZERO"
             result["coverage_proven"] = True
         else:
             result["status"] = "PARTIAL"
@@ -271,7 +282,7 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                          x in ("PASS", "PASS_ZERO") for x in group_statuses)
                         else "FAIL" if group_statuses and all(
                          x == "FAIL" for x in group_statuses) else "PARTIAL")
-        out[group] = {"status": group_status, "routes": group_routes}
+        out[group] = {"status": group_status, "checked_at": current.astimezone(KST).isoformat(timespec="seconds"), "routes": group_routes}
     return {
         "schema_version": "domestic-route-audit-v1.0", "date": day,
         "timezone": "Asia/Seoul", "mode": "DOMESTIC_A_TO_D_ONLY",
