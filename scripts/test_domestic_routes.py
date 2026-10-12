@@ -124,11 +124,11 @@ class DomesticRouteTests(unittest.TestCase):
                             now_kst=datetime(2026,10,12,12,tzinfo=KST))
         source = result["source_health"]["A"]["news.example.com"]
         self.assertEqual(source["route_count"], 1)
-        self.assertEqual(source["discovered_candidate_count"], 12)
+        self.assertEqual(source["discovered_candidate_count"], 20)
         self.assertEqual(source["verified_candidate_count"], 1)
         self.assertEqual(len(verify_calls), 1)
         self.assertEqual(len(called), 1)
-        self.assertEqual(sum(not x["verified_original"] for x in result["candidates"]), 11)
+        self.assertEqual(sum(not x["verified_original"] for x in result["candidates"]), 19)
 
     def test_general_business_page_filters_unrelated_headlines(self):
         cfg = settings()
