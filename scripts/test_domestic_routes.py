@@ -107,6 +107,55 @@ class DomesticRouteTests(unittest.TestCase):
         self.assertEqual(len(calls),1)
         self.assertEqual(result["candidates"],[])
 
+    def test_listing_keeps_breadth_and_skips_unnecessary_fallback(self):
+        links = "".join(
+            '<a href="/news/articleView.html?idxno=%d">제약 임상 급여 소식 %d</a>'
+            % (i, i) for i in range(100, 120)
+        )
+        called = []
+        def load(url):
+            called.append(url)
+            return links.encode("utf-8")
+        verify_calls = []
+        def v(candidate):
+            verify_calls.append(candidate["url"])
+            return fake_verify(candidate)
+        result = scan_fixed(DAY, settings(), loader=load, verifier=v,
+                            now_kst=datetime(2026,10,12,12,tzinfo=KST))
+        source = result["source_health"]["A"]["news.example.com"]
+        self.assertEqual(source["route_count"], 1)
+        self.assertEqual(source["discovered_candidate_count"], 12)
+        self.assertEqual(source["verified_candidate_count"], 1)
+        self.assertEqual(len(verify_calls), 1)
+        self.assertEqual(len(called), 1)
+        self.assertEqual(sum(not x["verified_original"] for x in result["candidates"]), 11)
+
+    def test_general_business_page_filters_unrelated_headlines(self):
+        cfg = settings()
+        cfg["domestic"]["collectors"]["A"] = []
+        cfg["domestic"]["collectors"]["C"] = ["newdaily.co.kr"]
+        cfg["domestic"]["source_routes"]["newdaily.co.kr"] = {
+            "group": "C", "primary_method": "DIRECT_LIST",
+            "primary_url": "https://biz.newdaily.co.kr/"}
+        body = """<a href="/site/data/html/2026/10/12/123.html">청년 일자리 예산 축소</a>
+        <a href="/site/data/html/2026/10/12/124.html">셀트리온 3분기 잠정 실적 공개</a>""".encode("utf-8")
+        result = scan_fixed(DAY, cfg, loader=lambda u:body, verifier=fake_verify,
+                            now_kst=datetime(2026,10,12,12,tzinfo=KST))
+        self.assertEqual(len(result["candidates"]), 1)
+        self.assertIn("셀트리온", result["candidates"][0]["title"])
+
+    def test_empty_relevant_primary_triggers_exactly_one_fallback(self):
+        calls = []
+        def load(url):
+            calls.append(url)
+            if url == LIST_URL:
+                return b"<html><a href='/news/articleView.html?idxno=2'></a></html>"
+            return RSS_OK
+        result = scan_fixed(DAY, settings(), loader=load, verifier=fake_verify,
+                            now_kst=datetime(2026,10,12,12,tzinfo=KST))
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(result["source_health"]["A"]["news.example.com"]["route_count"], 2)
+
     def test_before_six_kst_must_not_search(self):
         calls=[]
         with self.assertRaisesRegex(ValueError,"BEFORE_06"):
