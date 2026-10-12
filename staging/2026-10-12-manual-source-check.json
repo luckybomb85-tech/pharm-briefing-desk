@@ -2,7 +2,7 @@
   "schema_version": "briefing-source-audit-v1.0",
   "date": "2026-10-12",
   "scope": "domestic_only",
-  "mode": "manual_domestic_targeted_completion",
+  "mode": "manual_domestic_90pct_target",
   "search_window_start": "2026-10-11T12:00:00+09:00",
   "latest_verified_publication": "2026-10-12T08:05:04+09:00",
   "collector_status": {
@@ -112,9 +112,10 @@
         "group": "C",
         "representative_route": "DIRECT_LIST→SITE_SEARCH",
         "status": "PARTIAL",
-        "reason": "메인 정상 기사목록 접근 오류. 검색은 포럼·홈 등 일부만 노출해 10/11~12 신규 제약 기사 판단 불가",
+        "reason": "홈페이지는 표시되나 제약바이오 목록 https://dealsite.co.kr/categories/068031 조회 ServerError, 단 1회 site 검색도 구기사 위주. 0건 증빙 없음.",
         "evidence": [
-          "https://dealsite.co.kr/"
+          "https://dealsite.co.kr/",
+          "https://dealsite.co.kr/categories/068031"
         ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
@@ -123,9 +124,9 @@
         "group": "C",
         "representative_route": "DIRECT_LIST→SITE_SEARCH",
         "status": "PARTIAL",
-        "reason": "데스크톱 직접 목록 오류, 모바일은 내용 미노출, 대체 검색도 당일 원문·발행시각 확보 실패",
+        "reason": "일반 홈 403. 모바일 도메인의 당일 개별기사 원문/시각은 검색으로 확인했지만 제약바이오 당일 전체 목록을 확보하지 못함.",
         "evidence": [
-          "https://www.businesspost.co.kr/"
+          "https://m.businesspost.co.kr/BP?command=article_view&num=449017"
         ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
@@ -134,20 +135,23 @@
         "group": "C",
         "representative_route": "DIRECT_LIST→SITE_SEARCH",
         "status": "PARTIAL",
-        "reason": "홈 접근 성공 및 제약바이오 섹션 위치 확인; 전체 당일 섹션 목록을 열지 못하고 검색은 과거기사 편중",
+        "reason": "홈의 제약바이오 섹션 경로 확인, 해당 섹션 목록은 ServerError, 검색은 구기사 편중. 빈 결과를 PASS_ZERO로 처리하지 않음.",
         "evidence": [
-          "https://www.newspim.com/"
+          "https://www.newspim.com/",
+          "https://www.newspim.com/news/lists/?category_cd=106200"
         ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
       },
       "newdaily.co.kr": {
         "group": "C",
-        "representative_route": "DIRECT_LIST→SITE_SEARCH",
-        "status": "PARTIAL",
-        "reason": "경제판 메인·제약의료 영역 접근했지만 해당 시간창의 전체 기사 확인 실패; 발견된 기사들의 날짜가 불명확",
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "경제신문 홈에서 2026-10-12 제약사 주요기사 2건을 발굴, 각각 원문과 발행시각 08:15·09:30 확인. 제약·의료 섹션 목록도 확인하고 이전일 경계 확인.",
         "evidence": [
-          "https://biz.newdaily.co.kr/"
+          "https://biz.newdaily.co.kr/",
+          "https://biz.newdaily.co.kr/site/data/html/2026/10/12/2026101200030.html",
+          "https://biz.newdaily.co.kr/site/data/html/2026/10/12/2026101200072.html"
         ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
@@ -198,37 +202,48 @@
       },
       "머니투데이": {
         "group": "WEB",
-        "representative_route": "WEB_KEYWORD_SEARCH",
-        "status": "PARTIAL",
-        "reason": "대표 검색 반환 결과 과거기사 편중",
-        "evidence": [],
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "the바이오 날짜 내림차순 뉴스 목록에서 10월12일 09:55~07:59 후보 확인; 신약 후보·UAE 출시·AI 기술협력의 원문 발행시각 확인, 셀트리온은 동일 Event라 중복 제외.",
+        "evidence": [
+          "https://www.mt.co.kr/thebio/news",
+          "https://www.mt.co.kr/thebio/2026/10/12/2026101209295882532",
+          "https://www.mt.co.kr/thebio/2026/10/12/2026101208493459092"
+        ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
       },
       "매일경제": {
         "group": "WEB",
-        "representative_route": "WEB_KEYWORD_SEARCH",
+        "representative_route": "DIRECT_LIST",
         "status": "PARTIAL",
-        "reason": "시간창 원문 확인 불가",
-        "evidence": [],
+        "reason": "2026-10-12 온라인 뉴스 및 지면 목록은 접근했으나 제약·바이오 사건을 포괄한 지정 시간창 확인 미완료",
+        "evidence": [
+          "https://www.mk.co.kr/news/",
+          "https://www.mk.co.kr/today-paper?date=20261012"
+        ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
       },
       "아시아경제": {
         "group": "WEB",
-        "representative_route": "WEB_KEYWORD_SEARCH",
+        "representative_route": "DIRECT_LIST",
         "status": "PARTIAL",
-        "reason": "시간창 원문 확인 불가",
-        "evidence": [],
+        "reason": "홈 및 산업·IT 경로는 열렸지만 제약바이오 전용 날짜순 확인 불충분",
+        "evidence": [
+          "https://www.asiae.co.kr/"
+        ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
       },
       "파이낸셜뉴스": {
         "group": "WEB",
-        "representative_route": "WEB_KEYWORD_SEARCH",
+        "representative_route": "DIRECT_LIST",
         "status": "PARTIAL",
-        "reason": "시간창 원문 확인 불가",
-        "evidence": [],
+        "reason": "의학·과학 분야 목록 접근됐으나 표시된 최신기사가 10월11일 08:02로 오래되어 10월12일 최신성 불명",
+        "evidence": [
+          "https://www.fnnews.com/section/002006000"
+        ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
       },
@@ -243,10 +258,14 @@
       },
       "이투데이": {
         "group": "WEB",
-        "representative_route": "WEB_KEYWORD_SEARCH",
-        "status": "PARTIAL",
-        "reason": "시간창 원문 확인 불가",
-        "evidence": [],
+        "representative_route": "DIRECT_LIST",
+        "status": "PASS",
+        "reason": "의료/바이오 및 마켓 날짜순 목록 10월12일~10월11일 경계 확인. 신동국 장외지분 매입 차입부담 기사 원문과 10월11일 17:00 최초 유료게시/12일 05:00 무료게시 시각 확인.",
+        "evidence": [
+          "https://www.etoday.co.kr/industry/healthcare-bio",
+          "https://www.etoday.co.kr/market?page=1",
+          "https://www.etoday.co.kr/news/view/2633862"
+        ],
         "checked_window_start": "2026-10-11T12:00:00+09:00",
         "no_unverified_zero": true
       },
@@ -272,7 +291,19 @@
     "각 고정매체 대표 경로 1개, 실패할 경우 대체 경로 1개 이하",
     "검색 결과 0건을 신뢰 경로의 PASS_ZERO와 혼동하지 않음",
     "C 그룹 및 WEB은 PASS 처리하지 않음",
-    "글로벌·특허·일정은 실행하지 않음"
+    "글로벌·특허·일정은 실행하지 않음",
+    "B 및 D 등 기존 PASS 소스는 같은 실행에서 재검색하지 않음",
+    "중복행동 금지: C/WEB에서 같은 사건의 재보도는 신규 item으로 집계하지 않음",
+    "90%는 실제 검증된 매체 비율 목표이며 PARTIAL은 성공으로 위장하지 않음"
   ],
-  "publish_allowed": false
+  "publish_allowed": false,
+  "target_source_coverage_ratio": 0.9,
+  "source_coverage_method": "A/B/C/D/WEB 총23개 소스 중 정확한 날짜·URL·원문을 확인한 PASS/PASS_ZERO만 인정",
+  "verified_source_coverage": {
+    "total": 23,
+    "passed": 9,
+    "ratio": 0.391304347826087,
+    "target": 0.9,
+    "meets_target": false
+  }
 }
