@@ -57,7 +57,14 @@
     "runtime_reduction_pct": 60.3,
     "logical_calls_reduction_pct": 63.8,
     "fallback_calls_reduction": 14,
-    "known_case_matches_change": 3
+    "known_case_matches_change": 3,
+    "final_runtime_reduction_pct": 53.4,
+    "final_logical_calls_reduction_pct": 63.8,
+    "final_fallback_reduction": 14,
+    "known_sample_matches_first_to_final": {
+      "before": 1,
+      "after": 8
+    }
   },
   "root_causes": [
     "Native publisher listings contained 19-50 article links but omitted machine-readable <time datetime>; native date boundary verification stays PARTIAL.",
@@ -71,11 +78,51 @@
     "100% query-route accessibility does NOT mean 100% article coverage.",
     "Source verification 0/23 is reported strictly; no fake PASS_ZERO.",
     "154 discoveries include many unverified headlines, not finished publish-ready briefing articles.",
-    "Full publishing validation also requires editorial article previews, high-priority fact checks and other sections."
+    "Full publishing validation also requires editorial article previews, high-priority fact checks and other sections.",
+    "Latest run sample recovery 8/26 is a time-sensitive diagnostic, not a full article recall measurement.",
+    "Latest 334 raw candidates are not editorial items; only 12 original-verified, so stage4 queue capped at 40 after test."
   ],
   "publish_allowed": false,
   "global_patent_schedule_untouched": true,
-  "next_required": "Rework time-window coverage of high-volume publisher listings, and define 90% search-completeness measurement from independently checked cases without conflating Google index response with publisher PASS.",
+  "next_required": "Domestic discovery is operationally responding (20/20 route/axis), but 90% verified publisher coverage and editorial article recovery remain unproven. Improve dated pagination / targeted morning-window discovery and independent coverage evidence before moving to global/patent or publishing.",
   "code_sha": "82f23e7341531b6a0bbf0bc4595ccc54b1874c89",
-  "artifact_retention_days": 14
+  "artifact_retention_days": 14,
+  "third_live_run": {
+    "url": "https://github.com/luckybomb85-tech/pharm-briefing-desk/actions/runs/38196168771",
+    "runtime_seconds": 54,
+    "discovered_candidates": 334,
+    "verified_originals": 12,
+    "verified_publisher_coverage": {
+      "completed": 0,
+      "total": 23
+    },
+    "reviewed_case_recovery": {
+      "matched": 8,
+      "reviewed_examples": 26
+    },
+    "route_discovery": {
+      "fixed_sources_with_usable_index": 14,
+      "fixed_total": 14,
+      "web_axes_responding": 6,
+      "web_axes_total": 6
+    },
+    "fallback_source_count": 0,
+    "fixed_discovery_route_calls": 14,
+    "web_rss_calls": 6,
+    "original_verifier_calls": 26,
+    "logical_calls": 46,
+    "stage4_verified_count_before_editorial_cap": 12,
+    "editorial_queue_cap_wired_after_this_run": true
+  },
+  "review_queue": {
+    "max_items": 40,
+    "per_publisher_recommended_max": 6,
+    "raw_candidates_are_preserved_separately": true,
+    "code": "scripts/domestic_candidate_pipeline.py",
+    "offline_test": "scripts/test_domestic_candidate_pipeline.py::test_large_discovery_pool_has_bounded_balanced_review_queue",
+    "ci_url": "https://github.com/luckybomb85-tech/pharm-briefing-desk/actions/runs/38196362891",
+    "offline_ci_pass": true,
+    "qualification": "The 40-item queue cap was implemented and offline-tested after the third live collection; it was not a separate fourth live fetch."
+  },
+  "code_sha_latest": "a579906be926f88cc0120901983fc4c4bed7f632"
 }
