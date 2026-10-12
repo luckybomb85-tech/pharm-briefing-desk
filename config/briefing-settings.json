@@ -595,9 +595,15 @@
         "D",
         "WEB"
       ],
-      "required_status": "PASS",
+      "required_status": "PASS_OR_90PCT_VERIFIED_SOURCE_COVERAGE",
       "final_item_source_url_required": true,
-      "p0_p1_verified_timestamp_required": true
+      "p0_p1_verified_timestamp_required": true,
+      "min_source_coverage_ratio": 0.9,
+      "coverage_denominator": "각 A/B/C/D 고정매체와 WEB의 지정매체·기타전체웹을 각각 1개 단위로 계산. 현재 총 23개이며 config 목록에서 동적 집계",
+      "coverage_numerator": "원문 URL·발행시각을 포함해 지정 시간창 대표 경로를 실질 확인한 PASS 또는 정상 0건 PASS_ZERO만 인정",
+      "coverage_audit_path_pattern": "staging/YYYY-MM-DD-manual-source-check.json (자동화 시 같은 형식의 source-health 가능)",
+      "remaining_10_percent_policy": "미검증 매체를 PASS로 위장하지 않고 PARTIAL/FAIL 그대로 보존. 90% 미만이면 국내 PARTIAL",
+      "publication_safety": "국내 기준만 조정하며 글로벌·특허·일정 검사와 P0/P1 발행시각·핵심 사실, URL 및 중복 검사는 완화하지 않음"
     },
     "global": {
       "required_source_groups": [
@@ -667,7 +673,8 @@
     "domestic": {
       "normal_route": "고정매체별 대표 검색경로 1개를 먼저 실행. 해당 경로에서 시간창 확인과 원문 URL·발행시각 확인이 가능하면 PASS하고 추가 경로는 생략.",
       "fallback_route": "대표 경로 실패/검색결과 이상/원문 확인 불가일 때만 SITE_SEARCH 또는 WEB_SEARCH_RECOVERY를 최대 1개 추가.",
-      "collector_pass_rule": "그룹 내 각 매체가 PASS 또는 실질 검색완료 후 0건이면 collector PASS. 동일 매체를 DIRECT+SITE+WEB로 삼중 확인하지 않는다."
+      "collector_pass_rule": "그룹 내 각 매체가 PASS 또는 실질 검색완료 후 0건이면 collector PASS. 동일 매체를 DIRECT+SITE+WEB로 삼중 확인하지 않는다.",
+      "coverage_target_rule": "PASS/PASS_ZERO 매체 90% 이상이면 국내 검색 커버리지 요건 충족 가능. 미검증 소스는 원상태 그대로 보존. 10건 기사 quota와 무관."
     },
     "global": {
       "rule": "3 source group은 유지하되 동일 사건의 다중매체 확인은 P0/P1 최소검증 때만 수행. 일반 P2/P3는 원문 1개 확보 후 중단.",
