@@ -1,5 +1,5 @@
 name: domestic-step5-one-shot-20261012
-# Second and final comparison pass after candidate-retention/fallback improvements.
+# Third bounded comparison pass: broaden already-fetched links and WEB themes with the same query budget.
 # No recurrence, Pages, Telegram, data promotion or global/patent collection.
 on:
   push:
