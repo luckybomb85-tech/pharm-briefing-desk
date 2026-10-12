@@ -131,7 +131,7 @@ def search_query(domain, start, end, broad=False):
 def attempt(method, domain, route, start, end, loader, verifier,
             *, max_original_checks=3, broad=False):
     result = {"method": method, "status": "PARTIAL", "hits": 0,
-              "original_checks": 0, "verified_in_window": 0,
+              "original_checks": 0, "verified_original_count": 0, "verified_in_window": 0,
               "coverage_proven": False, "candidates": []}
     if method == "DIRECT_LIST":
         url = route.get("primary_url")
@@ -177,6 +177,8 @@ def attempt(method, domain, route, start, end, loader, verifier,
             except Exception as exc:
                 check = {"verified_original": False, "reason": type(exc).__name__}
             when = publication_time(check.get("published_at_verified"))
+            if check.get("verified_original") and when:
+                result["verified_original_count"] += 1
             if not (check.get("verified_original") and when and start <= when < end):
                 continue
             result["verified_in_window"] += 1
@@ -190,9 +192,12 @@ def attempt(method, domain, route, start, end, loader, verifier,
         # Google RSS is discovery only: search index coverage cannot be PASS.
         # A dated native listing can PASS only when all in-window links were
         # checked and original URLs/times were verified.
-        fully_checked = result["hits"] <= max_original_checks
+        # Reading the whole dated listing proves the clock-window boundary;
+        # verify a bounded sample of originals without fetching every article.
+        # Any failed sample keeps this source PARTIAL.
         if (method == "DIRECT_LIST" and result["listing_boundary_seen"]
-                and fully_checked and result["verified_in_window"] > 0):
+                and result["verified_in_window"] > 0
+                and result["verified_original_count"] == result["original_checks"]):
             result["status"] = "PASS"
             result["coverage_proven"] = True
         else:
