@@ -10,6 +10,9 @@ on:
       - 'scripts/test_domestic_window_paging.py'
       - 'scripts/domestic_coverage_gate.py'
       - 'scripts/test_domestic_coverage_gate.py'
+      - 'scripts/test_domestic_ready_validation.py'
+      - 'scripts/validate_briefing.py'
+      - 'scripts/quality_report.py'
       - 'scripts/web_unified_collector.py'
       - 'scripts/test_web_unified.py'
       - 'scripts/test_web_integration.py'
@@ -46,6 +49,7 @@ jobs:
         run: |
           python -m unittest discover -s scripts -p 'test_domestic_window_paging.py' -v
           python -m unittest discover -s scripts -p 'test_domestic_coverage_gate.py' -v
+          python -m unittest discover -s scripts -p 'test_domestic_ready_validation.py' -v
       - name: Unit test unified WEB discovery and integration (no network)
         run: python -m unittest discover -s scripts -p 'test_web*.py' -v
       - name: Unit test domestic event dedup and verification (no network)
