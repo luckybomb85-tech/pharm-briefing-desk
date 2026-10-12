@@ -70,6 +70,8 @@ class NativeTimelineTests(unittest.TestCase):
         source=result["source_health"]["A"]["hitnews.co.kr"]
         self.assertEqual(calls,[PAGE,PAGE2])
         self.assertEqual(source["native_page_requests"],2)
+        self.assertEqual(source["routes"][0]["pagination_new_urls"],5)
+        self.assertTrue(source["routes"][0]["pagination_effective"])
         first=source["routes"][0]
         self.assertTrue(first["listing_boundary_seen"])
         self.assertTrue(any(x["listing_published_at"].endswith("06:10:00+09:00")
@@ -108,6 +110,8 @@ class NativeTimelineTests(unittest.TestCase):
         route=result["source_health"]["A"]["hitnews.co.kr"]["routes"][0]
         self.assertEqual(calls,[PAGE,PAGE2])
         self.assertTrue(route["pagination_page2_failed"])
+        self.assertFalse(route["pagination_effective"])
+        self.assertEqual(route["pagination_new_urls"],0)
         self.assertEqual(route["status"],"PARTIAL")
         self.assertTrue(result["candidates"])
 
