@@ -277,7 +277,7 @@ def attempt(method, domain, route, start, end, loader, verifier,
     return result
 
 def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
-               now_kst=None, max_original_checks=1, max_candidates=12):
+               now_kst=None, max_original_checks=1, max_candidates=36):
     current = now_kst or datetime.now(KST)
     if current.tzinfo is None:
         raise ValueError("now_kst must be timezone-aware")
@@ -303,9 +303,12 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                 route_results = [{"method": "CONFIG", "status": "FAIL",
                                   "reason": "MISSING_OR_INVALID_PRIMARY_ROUTE"}]
             else:
+                # Broaden discovery from an already-fetched publisher listing;
+                # keep general business portals narrow to avoid irrelevant news.
+                source_cap = min(max_candidates, 10) if domain in BUSINESS_GENERAL_SOURCES else max_candidates
                 first = attempt(primary, domain, info, start, end, loader,
                                 verifier, max_original_checks=max_original_checks,
-                                max_candidates=max_candidates)
+                                max_candidates=source_cap)
                 route_results = [first]
                 # Do not repeat a search when the first page yielded relevant
                 # candidates, even if full publisher-window coverage is PARTIAL.
@@ -315,7 +318,7 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                     fallback = "SITE_SEARCH" if primary == "DIRECT_LIST" else "WEB_SEARCH_RECOVERY"
                     second = attempt(fallback, domain, info, start, end, loader,
                                      verifier, max_original_checks=max_original_checks,
-                                     max_candidates=max_candidates, broad=(fallback == "WEB_SEARCH_RECOVERY"))
+                                     max_candidates=source_cap, broad=(fallback == "WEB_SEARCH_RECOVERY"))
                     route_results.append(second)
             # Preserve verified candidates from either path without duplicating.
             seen_urls = set()
