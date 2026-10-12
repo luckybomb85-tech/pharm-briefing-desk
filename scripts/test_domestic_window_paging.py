@@ -13,8 +13,8 @@ def item(i,date):
     return ('<li><a href="/news/articleView.html?idxno=%s">'
             '제약바이오 신약 개발 임상 결과 %s</a>'
             '<span class="date">%s</span></li>'%(i,i,date))
-def fixture(dates,pagination=True):
-    links="".join(item(i,date) for i,date in enumerate(dates,1))
+def fixture(dates,pagination=True,offset=0):
+    links="".join(item(i,date) for i,date in enumerate(dates,1+offset))
     nav='<a href="?page=2">2</a>' if pagination else ""
     return ('<html><script>2026-10-01 11:01</script>'
             '<header>2026-10-12 11:28</header><ul>'+links+
@@ -64,7 +64,7 @@ class NativeTimelineTests(unittest.TestCase):
         calls=[]
         def load(url):
             calls.append(url)
-            return fixture(day1) if url==PAGE else fixture(day2,False)
+            return fixture(day1) if url==PAGE else fixture(day2,False,offset=100)
         result=scan_fixed(DAY,settings(),loader=load,verifier=verifier,
                           now_kst=datetime(2026,10,12,12,tzinfo=KST))
         source=result["source_health"]["A"]["hitnews.co.kr"]
