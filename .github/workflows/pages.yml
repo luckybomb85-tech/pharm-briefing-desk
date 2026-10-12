@@ -1,16 +1,8 @@
 name: Deploy briefing desk to GitHub Pages
 
+# v1.0 distribution paused: configuration changes must not deploy Pages.
+# Manual dispatch remains available for a future explicitly verified release.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'data/*.json'
-      - 'index.html'
-      - 'schedule/**'
-      - 'config/**'
-      - 'scripts/validate_briefing.py'
-      - 'scripts/verify_live_briefing.py'
-      - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
