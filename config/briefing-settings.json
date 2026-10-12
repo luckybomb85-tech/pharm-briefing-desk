@@ -461,10 +461,9 @@
       "enabled_sources": [
         "dailypharm.com",
         "medipana.com",
-        "newsthevoice.com",
         "biotimes.co.kr"
       ],
-      "max_extra_page_requests_per_run": 4,
+      "max_extra_page_requests_per_run": 3,
       "when": "Native page contains >=10 article links, article-associated dates have not reached previous-day 12:00, and a same-origin explicit page=2 link exists.",
       "stop": "If boundary is observed on page 1, do not fetch page 2. If page 2 fails, keep page 1 candidates and mark partial. No third page.",
       "date_formats": [
@@ -474,7 +473,13 @@
         "MM-DD HH:MM"
       ],
       "date_evidence_rule": "Date adjacent to an individual listing headline is discovery evidence, not an original article timestamp. Only independently checked publisher original populates published_at.",
-      "candidate_balancing": "Reserve slots for 06:00-08:59, 09:00-11:59, and prior-day afternoon/evening from already fetched pages; no extra news searches."
+      "candidate_balancing": "Reserve slots for 06:00-08:59, 09:00-11:59, and prior-day afternoon/evening from already fetched pages; no extra news searches.",
+      "observed_oct12_probe": {
+        "medipana.com": "2 pages read, 39 distinct links total, 21 article timestamps, oldest date 09:58; no full time-window boundary.",
+        "hitnews.co.kr": "1 page, 39 distinct links, 20 linked timestamps and dated older articles; page2 not requested.",
+        "newsthevoice.com": "page2 attempted, total still 20 distinct links; disable second-page route until genuine pagination verified."
+      },
+      "future_probing": "Do not repeat ineffective second page unless a verified alternative article listing URL is established. No third page and no false PASS_ZERO."
     }
   },
   "event_map": {
