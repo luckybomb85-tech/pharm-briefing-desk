@@ -284,26 +284,54 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
                                "source": candidate_url(other),
                                "reason": "SAME_URL_TITLE_OR_EVENT_MILESTONE",
                                "kept_title": rep["title"]})
+    # Keep the complete discovery pool in the collection audit, not in the
+    # editorial review queue. A bounded diverse queue prevents 300+ headlines
+    # becoming a manual-review burden; none are silently called verified.
+    review_limit = int(conf.get("max_editorial_candidates", 40))
+    source_limit = int(conf.get("max_editorial_candidates_per_source", 6))
+    if not 1 <= review_limit <= 100 or not 1 <= source_limit <= review_limit:
+        raise ValueError("INVALID_REVIEW_QUEUE_BUDGET")
+    ordering = sorted(results, key=lambda x: (
+        LEVELS.index(x["priority"]),
+        0 if x["verified_original"] else 1
+    ))
+    source_counts = defaultdict(int)
+    review_queue, overflow = [], []
+    for candidate in ordering:
+        source = candidate.get("source_name") or "UNKNOWN"
+        if (len(review_queue) < review_limit
+                and (source_counts[source] < source_limit
+                     or candidate["priority"] in ("P0", "P1"))):
+            review_queue.append(candidate)
+            source_counts[source] += 1
+        else:
+            overflow.append(candidate)
+    # Backfill any unused slots from the overflow without pretending there
+    # were fewer raw candidates than the source scan actually discovered.
+    while overflow and len(review_queue) < review_limit:
+        review_queue.append(overflow.pop(0))
     # Do not conflate a title-confirmed publisher page with verification of
     # the underlying claimed clinical, financial or legal fact.
     stats = {
         "input_domestic_candidates": total, "preverification_clusters": len(prepared),
-        "duplicates_suppressed": len(duplicates), "events_output": len(results),
+        "duplicates_suppressed": len(duplicates), "events_output": len(review_queue),
+        "eligible_candidates_before_review_cap": len(results),
+        "not_in_review_queue_preserved_in_raw_audit": len(results)-len(review_queue),
         "reused_preverified_originals": prior_reused,
         "new_original_verifier_calls": original_calls,
         "new_original_verification_budget": budget,
         "deferred_for_budget": deferred, "original_time_in_window": confirmed,
         "original_unverified": invalid, "out_of_window_removed": len(out_of_window),
         "p0_p1_core_fact_checks_pending": sum(
-            x["core_fact_check_required"] for x in results),
+            x["core_fact_check_required"] for x in review_queue),
     }
     return {"schema_version": "briefing-domestic-stage4-v1.0",
             "date": day, "timezone": "Asia/Seoul", "status": "PARTIAL",
             "mode": "DOMESTIC_DEDUP_AND_BOUNDED_VERIFY",
-            "domestic": results, "duplicate_candidates": duplicates,
+            "domestic": review_queue, "duplicate_candidates": duplicates,
             "excluded_outside_window": out_of_window, "statistics": stats,
             "publish_allowed": False,
-            "note": "Discovery and headline dedup are provisional; high-priority core facts are not marked verified merely because the source article opened."}
+            "note": "Only a balanced, bounded editorial queue is shown. Full discovery remains in collection audit; neither excluded nor unverified items are promoted. High-priority core facts require independent editorial confirmation."}
 
 
 def main():
