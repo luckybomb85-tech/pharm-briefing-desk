@@ -1,0 +1,65 @@
+name: domestic-datewindow-mini-probe-20261012
+# One-time smoke probe of only three publisher lists; no WEB/global/patent.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/domestic-datewindow-mini-probe.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe dated publisher listings only (no publication)
+        env:
+          PYTHONPATH: scripts
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          from domestic_route_collector import scan_fixed
+          conf=json.load(open("config/briefing-settings.json",encoding="utf-8"))
+          all_sources=conf["domestic"]["collectors"]
+          conf["domestic"]["collectors"]={
+            "A":["medipana.com","hitnews.co.kr"],
+            "B":["newsthevoice.com"],"C":[],"D":[],
+            "WEB":all_sources["WEB"]
+          }
+          result=scan_fixed("2026-10-12",conf,
+            now_kst=datetime.now(ZoneInfo("Asia/Seoul")),
+            max_original_checks=1,max_candidates=36)
+          results=[]
+          for group,sources in result["source_health"].items():
+            for name,source in sources.items():
+              r=source["routes"][0]
+              result_row={
+                "source":name,"status":source["status"],
+                "pages":r.get("listing_pages_fetched",0),
+                "page2_attempted":r.get("pagination_page2_attempted",False),
+                "page2_failed":r.get("pagination_page2_failed",False),
+                "article_links":r.get("hits",0),
+                "article_dates":r.get("listing_time_count",0),
+                "earliest":r.get("listing_earliest_at"),
+                "latest":r.get("listing_latest_at"),
+                "boundary":r.get("listing_boundary_seen",False),
+                "discovered_candidates":source["discovered_candidate_count"],
+                "verified_originals":source["verified_candidate_count"]
+              }
+              results.append(result_row)
+          print("MINI_PROBE",json.dumps(results,ensure_ascii=False))
+          print("MINI_PROBE_TOTAL",
+                "pages",sum(x["pages"] for x in results),
+                "extra",sum(x["pages"]-1 for x in results if x["pages"]),
+                "dated",sum(x["article_dates"] for x in results),
+                "candidates",len(result["candidates"]))
+          assert len(results)==3
+          assert sum(x["pages"] for x in results)<=6
+          assert result["publish_allowed"] is False
+          PY
