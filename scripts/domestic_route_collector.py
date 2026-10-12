@@ -28,6 +28,39 @@ DATE_TEXT = re.compile(r"\b(20\d{2})[./-](\d{1,2})[./-](\d{1,2})"
                        r"(?:\s*(?:T|\s)\s*(\d{1,2}):(\d{2})(?::(\d{2}))?)?")
 USER_AGENT = "Mozilla/5.0 (compatible; PharmaBriefing/1.0; source-audit)"
 
+# Broad business pages mix pharmaceuticals with unrelated politics or finance.
+# Specialized pharma lists can be consumed directly; general pages need topic signals.
+BUSINESS_GENERAL_SOURCES = {"dealsite.co.kr", "businesspost.co.kr", "newdaily.co.kr"}
+PHARMA_TOPIC = re.compile(
+    r"(제약|바이오|의약|신약|임상|치료|약가|급여|제네릭|의료|건강보험|"
+    r"한미약품|한미사이언스|셀트리온|삼성바이오|유한양행|대웅|종근당|"
+    r"녹십자|보령|동아ST|동아에스티|일동제약|HK이노엔|루닛|레고켐|"
+    r"특허|백신|항암|FDA|CDMO|CRO|GLP-1|"
+    r"pharma|clinical|biotech|therap|drug)", re.I)
+NEWS_PRIORITY = re.compile(
+    r"(단독|임상\s*[123]상|3상|계약해지|기술수출|허가|fda|급여|약가|"
+    r"특허|소송|판결|실적|최대주주|합병|증여|상장|지분|거래정지|"
+    r"의약품|신약|임상|마운자로|위고비|로수젯|케이캡)", re.I)
+
+
+def choose_relevant(items, domain, max_candidates):
+    """Keep useful headlines from the list, not only its three newest posts."""
+    pairs = [(i, x) for i, x in enumerate(items)
+             if domain not in BUSINESS_GENERAL_SOURCES or
+             PHARMA_TOPIC.search(x["title"])]
+    ranked = sorted(pairs,
+                    key=lambda pair: (-int(bool(NEWS_PRIORITY.search(pair[1]["title"]))),
+                                      pair[0]))
+    # Spread a small portion over the later page to catch early-morning stories.
+    selected = ranked[:max_candidates]
+    if len(pairs) > max_candidates and max_candidates >= 4:
+        tail = pairs[len(pairs)*2//3:]
+        candidate = tail[-1]
+        if candidate[0] not in {i for i, _ in selected}:
+            selected[-1] = candidate
+    return [x for _, x in sorted(selected, key=lambda item: item[0])]
+
+
 def window(day):
     d = datetime.strptime(day, "%Y-%m-%d").date()
     return (datetime.combine(d - timedelta(days=1), time(12), KST),
@@ -129,7 +162,7 @@ def search_query(domain, start, end, broad=False):
     return f"{base} (제약 OR 바이오 OR 신약 OR 임상 OR 특허)"
 
 def attempt(method, domain, route, start, end, loader, verifier,
-            *, max_original_checks=3, broad=False):
+            *, max_original_checks=3, max_candidates=12, broad=False):
     result = {"method": method, "status": "PARTIAL", "hits": 0,
               "original_checks": 0, "verified_original_count": 0, "verified_in_window": 0, "verified_before_window": 0,
               "coverage_proven": False, "candidates": []}
@@ -168,29 +201,51 @@ def attempt(method, domain, route, start, end, loader, verifier,
             items = parse_rss(data)
             result["listing_boundary_seen"] = False
         result["hits"] = len(items)
-        if not items:
+        # Index dates only filter clearly stale hits; they are never copied
+        # into original published_at or treated as verified timestamps.
+        eligible = [x for x in items if not x.get("index_published_at")
+                    or not publication_time(x.get("index_published_at"))
+                    or start <= publication_time(x["index_published_at"]) < end]
+        selected = choose_relevant(eligible, domain, max_candidates)
+        result["relevant_hits"] = len(selected)
+        if not selected:
             result["status"] = "PARTIAL"
-            result["reason"] = "NO_CONFIRMED_WINDOW_COVERAGE"
+            result["reason"] = "NO_RELEVANT_CANDIDATES"
             return result
-        for candidate in items[:max_original_checks]:
-            result["original_checks"] += 1
-            try:
-                check = verifier(candidate)
-            except Exception as exc:
-                check = {"verified_original": False, "reason": type(exc).__name__}
-            when = publication_time(check.get("published_at_verified"))
-            if check.get("verified_original") and when:
-                result["verified_original_count"] += 1
-                if when < start:
-                    result["verified_before_window"] += 1
-            if not (check.get("verified_original") and when and start <= when < end):
-                continue
-            result["verified_in_window"] += 1
+        for index, candidate in enumerate(selected):
+            # One small sampled original check per publisher in production;
+            # remaining list links are retained for one-stage verification.
+            if index < max_original_checks:
+                result["original_checks"] += 1
+                try:
+                    check = verifier(candidate)
+                except Exception as exc:
+                    check = {"verified_original": False, "reason": type(exc).__name__}
+                when = publication_time(check.get("published_at_verified"))
+                if check.get("verified_original") and when:
+                    result["verified_original_count"] += 1
+                    if when < start:
+                        result["verified_before_window"] += 1
+                if check.get("verified_original") and when and start <= when < end:
+                    result["verified_in_window"] += 1
+                    result["candidates"].append({
+                        "title": check.get("original_title") or candidate["title"],
+                        "url": check.get("resolved_url") or candidate["url"],
+                        "published_at": when.isoformat(timespec="seconds"),
+                        "source_domain": domain, "verified_original": True,
+                        "timestamp_unverified": False,
+                        "route_method": method
+                    })
+                    continue
+                # An article explicitly verified outside the search window
+                # must not silently reappear as an unverified candidate.
+                if check.get("verified_original") and when:
+                    continue
             result["candidates"].append({
-                "title": check.get("original_title") or candidate["title"],
-                "url": check.get("resolved_url") or candidate["url"],
-                "published_at": when.isoformat(timespec="seconds"),
-                "source_domain": domain, "verified_original": True,
+                "title": candidate["title"], "url": candidate["url"],
+                "published_at": "", "timestamp_unverified": True,
+                "source_domain": domain, "verified_original": False,
+                "index_published_at": candidate.get("index_published_at", ""),
                 "route_method": method
             })
         # Google RSS is discovery only: search index coverage cannot be PASS.
@@ -222,7 +277,7 @@ def attempt(method, domain, route, start, end, loader, verifier,
     return result
 
 def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
-               now_kst=None, max_original_checks=3):
+               now_kst=None, max_original_checks=1, max_candidates=12):
     current = now_kst or datetime.now(KST)
     if current.tzinfo is None:
         raise ValueError("now_kst must be timezone-aware")
@@ -249,14 +304,18 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                                   "reason": "MISSING_OR_INVALID_PRIMARY_ROUTE"}]
             else:
                 first = attempt(primary, domain, info, start, end, loader,
-                                verifier, max_original_checks=max_original_checks)
+                                verifier, max_original_checks=max_original_checks,
+                                max_candidates=max_candidates)
                 route_results = [first]
-                # Stop on PASS or certified zero; retry once only on non-PASS.
-                if first["status"] not in ("PASS", "PASS_ZERO") and max_fallback:
+                # Do not repeat a search when the first page yielded relevant
+                # candidates, even if full publisher-window coverage is PARTIAL.
+                # Retry only failed/empty discovery, capped at one fallback.
+                if (first["status"] not in ("PASS", "PASS_ZERO")
+                        and not first.get("candidates") and max_fallback):
                     fallback = "SITE_SEARCH" if primary == "DIRECT_LIST" else "WEB_SEARCH_RECOVERY"
                     second = attempt(fallback, domain, info, start, end, loader,
                                      verifier, max_original_checks=max_original_checks,
-                                     broad=(fallback == "WEB_SEARCH_RECOVERY"))
+                                     max_candidates=max_candidates, broad=(fallback == "WEB_SEARCH_RECOVERY"))
                     route_results.append(second)
             # Preserve verified candidates from either path without duplicating.
             seen_urls = set()
@@ -273,7 +332,8 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                       "PARTIAL" if "PARTIAL" in statuses else "FAIL")
             source_health[group][domain] = {
                 "status": status, "route_count": len(route_results),
-                "verified_candidate_count": len(verified),
+                "verified_candidate_count": sum(bool(x.get("verified_original")) for x in verified),
+                "discovered_candidate_count": len(verified),
                 "primary_method": primary, "routes": route_results
             }
             group_routes.append({"source": domain, **source_health[group][domain]})
