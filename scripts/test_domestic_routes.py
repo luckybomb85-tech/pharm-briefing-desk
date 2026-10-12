@@ -87,6 +87,26 @@ class DomesticRouteTests(unittest.TestCase):
         self.assertEqual(len(calls),2)
         self.assertEqual(result["source_health"]["A"]["news.example.com"]["status"],"PARTIAL")
 
+    def test_trusted_old_native_list_can_pass_zero(self):
+        html_old=b"""<time datetime="2026-10-11T09:00:00+09:00"></time>
+<a href="/news/articleView.html?idxno=12">Older pharmaceutical report</a>
+<time datetime="2026-10-10T18:00:00+09:00"></time>"""
+        calls=[]
+        def loader(url):
+            calls.append(url)
+            return html_old
+        def old_verify(item):
+            r=fake_verify(item)
+            r["published_at_verified"]="2026-10-11T09:00:00+09:00"
+            return r
+        result=scan_fixed(DAY,settings(),loader=loader,verifier=old_verify,
+                          now_kst=datetime(2026,10,12,10,tzinfo=KST))
+        source=result["source_health"]["A"]["news.example.com"]
+        self.assertEqual(source["status"],"PASS_ZERO")
+        self.assertEqual(source["route_count"],1)
+        self.assertEqual(len(calls),1)
+        self.assertEqual(result["candidates"],[])
+
     def test_before_six_kst_must_not_search(self):
         calls=[]
         with self.assertRaisesRegex(ValueError,"BEFORE_06"):
