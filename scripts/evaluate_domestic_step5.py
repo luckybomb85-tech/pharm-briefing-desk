@@ -35,6 +35,15 @@ def assess(day, collection, stage4, config, reviewed):
                             for g in ("A", "B", "C", "D")
                             for x in sources.get(g, {}).values())
     web_stats = collection.get("web_unified_statistics", {})
+    # Access and candidate discovery are operational metrics, NOT source
+    # completeness and must never change publisher PASS status.
+    fixed_access = sum(bool(node.get("routes")) and any(
+        r.get("status") != "FAIL" and r.get("hits", 0) > 0
+        for r in node.get("routes", []))
+        for group in ("A", "B", "C", "D")
+        for node in collection.get("domestic_groups", {}).get(group, {}).get("routes", []))
+    web_axis_access = sum(r.get("status") == "PARTIAL" for r in
+                          collection.get("domestic_groups", {}).get("WEB", {}).get("routes", []))
     step4_stats = stage4.get("statistics", {})
     source_items = reviewed.get("domestic", [])
     observed = collection.get("candidates", [])
@@ -73,6 +82,14 @@ def assess(day, collection, stage4, config, reviewed):
             "web_sources": {"completed": sum(x["status"] in ("PASS", "PASS_ZERO") for x in web_sources),
                             "all": len(web_sources)},
             "unverified_sources": [x for x in audited if x["status"] not in ("PASS", "PASS_ZERO")],
+        },
+        "route_discovery_access": {
+            "fixed_sources_with_usable_index": fixed_access,
+            "fixed_source_count": len(fixed),
+            "web_axes_with_successful_index_query": web_axis_access,
+            "web_axis_count": 6,
+            "combined_ratio": round((fixed_access + web_axis_access) / (len(fixed) + 6), 4),
+            "NOT_PUBLISHER_COMPLETENESS": True
         },
         "source_query_health": {
             "fixed_route_status_counts": dict(Counter(x.get("status", "MISSING") for x in routes)),
@@ -138,6 +155,7 @@ def main():
         "known_case_recovery": result["known_case_recovery"]["matched_by_exact_url_or_normalized_title"],
         "known_cases": result["known_case_recovery"]["reviewed_known_examples"],
         "observed_candidates": result["collection"]["pre_stage4_discovered_candidates"],
+        "route_discovery_access": result["route_discovery_access"],
         "verified_originals": result["collection"]["stage4_verified_originals"],
         "requests": result["requests"]
     }, ensure_ascii=False))
