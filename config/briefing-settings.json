@@ -184,7 +184,147 @@
           "site:pharm.edaily.co.kr 임상 OR FDA OR 지분 OR 기술수출"
         ]
       }
-    }
+    },
+    "source_routes": {
+      "dailypharm.com": {
+        "group": "A",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.dailypharm.com/user/news?group=%EC%A0%9C%EC%95%BD%C2%B7%EB%B0%94%EC%9D%B4%EC%98%A4",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "제약·바이오 뉴스 목록에서 기사와 최신 게시 확인",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "medipana.com": {
+        "group": "A",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.medipana.com/news/articleList.html?view_type=sm",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "메디파나 전체기사 시간순 목록",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "hitnews.co.kr": {
+        "group": "A",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.hitnews.co.kr/news/articleList.html",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "전체기사 날짜·시간 확인",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "thebionews.net": {
+        "group": "A",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.thebionews.net/news/articleList.html",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "전체목록 열림. 최근 기사 시각으로 게시 공백 판단; 개별 원문은 별도 실패 가능",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "newsthevoice.com": {
+        "group": "B",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.newsthevoice.com/news/articleList.html",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "홈페이지 리다이렉트 회피; 전체기사 날짜순 열림",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "apsk.co.kr": {
+        "group": "B",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.apsk.co.kr/",
+        "route_probe_status": "DEGRADED_HOME_ONLY",
+        "probed_on": "2026-10-12",
+        "notes": "최신 제목 접근 가능하지만 전체기사 목록 403/timeout 및 원문 시각 결손",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "biospectator.com": {
+        "group": "B",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.biospectator.com/section/section_list?MID=10000",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "전체기사 날짜순 목록 열림",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "biotimes.co.kr": {
+        "group": "B",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.biotimes.co.kr/news/articleList.html",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "전체기사 제목·날짜·시간 확인",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "dealsite.co.kr": {
+        "group": "C",
+        "primary_method": "SITE_SEARCH",
+        "primary_query_template": "site:dealsite.co.kr 제약 OR 바이오 after:{start_date} before:{end_date_exclusive}",
+        "primary_provider": "GOOGLE_NEWS_RSS",
+        "route_probe_status": "INDEX_ONLY",
+        "probed_on": "2026-10-12",
+        "notes": "직접 카테고리는 기사목록 미노출; 검색색인에서 원문 후보 회수 후 원문 시각 확인 필수",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "businesspost.co.kr": {
+        "group": "C",
+        "primary_method": "SITE_SEARCH",
+        "primary_query_template": "site:businesspost.co.kr 제약 OR 바이오 after:{start_date} before:{end_date_exclusive}",
+        "primary_provider": "GOOGLE_NEWS_RSS",
+        "route_probe_status": "INDEX_ONLY",
+        "probed_on": "2026-10-12",
+        "notes": "일반/모바일 기사목록 연결 불안정; 인덱스 검색 후 원문 검증 필요",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "newspim.com": {
+        "group": "C",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.newspim.com/news/lists/?category_cd=106200",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "제약·바이오 섹션 목록 및 시간 확인",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "newdaily.co.kr": {
+        "group": "C",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://biz.newdaily.co.kr/",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "경제판 최신목록 및 원문 확인",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "hankyung.com/bioinsight": {
+        "group": "D",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://www.hankyung.com/bioinsight",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "바이오인사이트 최신 기사 시간·날짜 확인",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      },
+      "pharm.edaily.co.kr": {
+        "group": "D",
+        "primary_method": "DIRECT_LIST",
+        "primary_url": "https://pharm.edaily.co.kr/News/List_All?cd=PE",
+        "route_probe_status": "VERIFIED_LIST",
+        "probed_on": "2026-10-12",
+        "notes": "팜이데일리 전체기사 목록, 유료기사는 제목·시각 확인 수준",
+        "execution_status": "NOT_EXECUTED_BY_CONFIG_UPDATE"
+      }
+    },
+    "source_routes_policy": {
+      "scope": "A/B/C/D fixed sources only; WEB consolidation in step 3",
+      "selection_rule": "Exactly one primary source route per domain; source-domain coverage PASS requires actual target-window checks, source URL, and original timestamp verification; route probe never equals a successful daily run.",
+      "failure_rule": "On failure, step-2 fallback may run once; no third route. Index-only results without original confirmation remain PARTIAL.",
+      "zero_rule": "PASS_ZERO permitted only if a trusted native listing effectively checks the specified time window, not merely because search engine returns zero.",
+      "runtime_rule": "Do not load every primary plus fallback as routine; stop after success and never rerun PASS source in same execution.",
+      "automation_integration": "NOT_WIRED_YET; next step connects the collector to source_routes while preserving existing checkpoints and no-publication safety."
+    },
+    "source_routes_version": "1.0-step1",
+    "source_routes_updated_at": "2026-10-12"
   },
   "event_map": {
     "dedupe_unit": "event",
