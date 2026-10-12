@@ -156,7 +156,9 @@ class UnifiedWebTests(unittest.TestCase):
 
     def test_requires_six_authorized_axes(self):
         cfg = config()
-        cfg["domestic"]["web_keyword_axes"]["policy"] = ["허가"]
+        cfg["domestic"]["web_keyword_axes"] = {
+            **cfg["domestic"]["web_keyword_axes"], "policy": ["허가"]
+        }  # Break shared fixture reference; authoritative terms now differ.
         with self.assertRaises(ValueError):
             scan_web(DAY, cfg, loader=lambda _: b"", now_kst=NOW)
 
