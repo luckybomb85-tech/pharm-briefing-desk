@@ -4,44 +4,17 @@
   "timezone": "Asia/Seoul",
   "scope": "domestic_only",
   "status": "PARTIAL",
-  "candidate_count": 21,
+  "candidate_count": 26,
   "priorities": {
     "P0": 0,
-    "P1": 9,
-    "P2": 11,
+    "P1": 11,
+    "P2": 14,
     "P3": 1
   },
   "event_status": {
-    "NEW": 15,
-    "UPDATE": 6,
+    "NEW": 19,
+    "UPDATE": 7,
     "DUPLICATE": 0
-  },
-  "source_groups": {
-    "A": {
-      "PASS": 3,
-      "PARTIAL": 1,
-      "FAIL": 0
-    },
-    "B": {
-      "PASS": 2,
-      "PARTIAL": 2,
-      "FAIL": 0
-    },
-    "C": {
-      "PASS": 0,
-      "PARTIAL": 4,
-      "FAIL": 0
-    },
-    "D": {
-      "PASS": 1,
-      "PARTIAL": 1,
-      "FAIL": 0
-    },
-    "WEB": {
-      "PASS": 0,
-      "PARTIAL": 9,
-      "FAIL": 0
-    }
   },
   "collector_status": {
     "A": "PARTIAL",
@@ -50,52 +23,161 @@
     "D": "PARTIAL",
     "WEB": "PARTIAL"
   },
+  "verified_source_coverage": {
+    "verified_sources": 9,
+    "total_sources": 23,
+    "ratio": 0.391304347826087,
+    "target_ratio": 0.9,
+    "minimum_pass_count": 21,
+    "target_met": false,
+    "groups": {
+      "A": {
+        "PASS": 3,
+        "PASS_ZERO": 0,
+        "PARTIAL": 1,
+        "FAIL": 0,
+        "MISSING": 0
+      },
+      "B": {
+        "PASS": 2,
+        "PASS_ZERO": 0,
+        "PARTIAL": 2,
+        "FAIL": 0,
+        "MISSING": 0
+      },
+      "C": {
+        "PASS": 1,
+        "PASS_ZERO": 0,
+        "PARTIAL": 3,
+        "FAIL": 0,
+        "MISSING": 0
+      },
+      "D": {
+        "PASS": 1,
+        "PASS_ZERO": 0,
+        "PARTIAL": 1,
+        "FAIL": 0,
+        "MISSING": 0
+      },
+      "WEB": {
+        "PASS": 2,
+        "PASS_ZERO": 0,
+        "PARTIAL": 7,
+        "FAIL": 0,
+        "MISSING": 0
+      }
+    },
+    "unverified_sources": [
+      {
+        "group": "A",
+        "name": "thebionews.net",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "B",
+        "name": "apsk.co.kr",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "B",
+        "name": "biotimes.co.kr",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "C",
+        "name": "dealsite.co.kr",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "C",
+        "name": "businesspost.co.kr",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "C",
+        "name": "newspim.com",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "D",
+        "name": "hankyung.com/bioinsight",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "조선비즈",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "서울경제",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "매일경제",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "아시아경제",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "파이낸셜뉴스",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "헤럴드경제",
+        "status": "PARTIAL"
+      },
+      {
+        "group": "WEB",
+        "name": "기타 전체 웹",
+        "status": "PARTIAL"
+      }
+    ]
+  },
   "checks": {
-    "required_item_fields": {
+    "required_fields": {
       "pass": true,
-      "fail_items": []
+      "invalid": []
     },
     "url_format": {
       "pass": true,
-      "fail_items": []
+      "invalid": []
     },
-    "within_search_window": {
+    "search_window": {
       "pass": true,
-      "fail_items": []
+      "invalid": []
     },
-    "url_uniqueness": {
+    "url_duplicates": {
       "pass": true,
-      "fail_items": []
+      "invalid": []
     },
-    "event_uniqueness": {
+    "event_duplicates": {
       "pass": true,
-      "fail_items": []
+      "invalid": []
     },
-    "p0_p1_timestamp_and_core_fact": {
+    "p0_p1_timestamp_and_core_facts": {
       "pass": false,
-      "fail_items": [
+      "invalid": [
         "케이캡·로수젯, 엎치락뒤치락 선두 경쟁…K-신약 처방시장 초강세",
         "[단독]월1회·최대 3개월 내세웠던 펩트론…특허 속 효능시험은 최대 2주 간격"
       ]
-    },
-    "all_fixed_sources": {
-      "pass": false
     }
   },
-  "fixes_applied": [
-    "pharmstoday.com → apsk.co.kr in config domestic B list",
-    "site:pharmstoday.com → site:apsk.co.kr in 3 fallback queries"
-  ],
-  "blockers": [
-    "더바이오, 메디팜스투데이 시각, 바이오타임즈 등 개별 원문/시간창 검증 불충분",
-    "딜사이트·비즈니스포스트·뉴스핌·뉴데일리 시간창 완전성 불충분",
-    "WEB 지정매체와 키워드 축의 시간창 완전성 불충분",
-    "P1 케이캡·로수젯 처방 분석 원문 발행시각 미표시",
-    "유료 단독기사 펩트론 특허 핵심 주장 원문 확인 불가"
+  "blocking": [
+    "verified_source_coverage_below_90pct",
+    "p0_p1_verification_unfinished"
   ],
   "publish_allowed": false,
   "notes": [
-    "글로벌·특허·일정 수집 또는 재검증 진행하지 않음",
-    "전체 quality/final은 추후 통합 단계에서 동기화해야 함"
+    "고정매체 14 + WEB 9 = 23개. 확인할 수 있는 기간별 원문 URL/발행시각 기준 PASS/PASS_ZERO만 90% 분자에 포함.",
+    "접근 실패/검색결과 최신성 불명확은 PARTIAL로 유지.",
+    "글로벌·특허·일정 및 전체 final/quality는 변경하지 않음.",
+    "출력은 부분 국내 수집만, 운영 배포 금지"
   ]
 }
