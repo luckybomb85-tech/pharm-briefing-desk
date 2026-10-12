@@ -173,9 +173,14 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
             "priority": LEVELS[rank], "event_status": event_state
         })
     # Resolve most newsworthy unverified candidates first; no quota chasing.
-    prepared.sort(key=lambda x: (LEVELS.index(x["priority"]),
-                                 0 if authentic(x["representative"], start, end) else 1,
-                                 clean_title(x["representative"]["title"])))
+    prepared.sort(key=lambda x: (
+        LEVELS.index(x["priority"]),
+        0 if authentic(x["representative"], start, end) else 1,
+        # Publisher-original URLs are cheaper/more reliable than Google token
+        # decoding, so try them first at equal editorial priority.
+        1 if (urllib.parse.urlsplit(candidate_url(x["representative"])).hostname or "")
+             in ("news.google.com", "news.google.co.kr") else 0,
+        clean_title(x["representative"]["title"])))
     verification_cache = {}
     results = []
     duplicates = []
