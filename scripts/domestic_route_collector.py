@@ -290,6 +290,22 @@ def attempt(method, domain, route, start, end, loader, verifier,
                     choose_relevant(eligible,domain,max_candidates))
         result["relevant_hits"] = len(selected)
         if not selected:
+            # A fully dated, descending native listing whose NEWEST entry is
+            # already older than the cutoff may certify true zero. Verify one
+            # publisher original before PASS_ZERO, never an RSS index.
+            if method=="DIRECT_LIST" and result.get("listing_all_older_than_window") and items:
+                result["original_checks"]+=1
+                try:
+                    check=verifier(items[0])
+                except Exception:
+                    check={}
+                when=publication_time(check.get("published_at_verified"))
+                if check.get("verified_original") and when and when<start:
+                    result["verified_original_count"]+=1
+                    result["verified_before_window"]+=1
+                    result["coverage_proven"]=True
+                    result["status"]="PASS_ZERO"
+                    return result
             result["status"] = "PARTIAL"
             result["reason"] = "NO_RELEVANT_CANDIDATES"
             return result
