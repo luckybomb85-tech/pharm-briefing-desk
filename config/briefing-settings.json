@@ -324,7 +324,7 @@
       "failure_rule": "On failure, step-2 fallback may run once; no third route. Index-only results without original confirmation remain PARTIAL.",
       "zero_rule": "PASS_ZERO permitted only if a trusted native listing effectively checks the specified time window, not merely because search engine returns zero.",
       "runtime_rule": "Do not load every primary plus fallback as routine; stop after success and never rerun PASS source in same execution.",
-      "automation_integration": "A/B/C/D use domestic_route_collector; WEB discovery uses web_unified_collector via collect_with_evidence. Both stages save evidence without publication.",
+      "automation_integration": "Native dated-listing parser + at most one selected-source second page (step5 fix); A/B/C/D bounded original checks; WEB six shared thematic index queries. Independent article verification remains separate.",
       "fallback_execution": "At most one fallback route per source if primary not PASS/PASS_ZERO; direct list -> Google News site query, site search -> broader domain query.",
       "test_evidence": "scripts/test_domestic_routes.py (8 deterministic, no-network tests) via .github/workflows/collect-audited.yml",
       "publish_safety": "Source audit only. Staging records require downstream quality gate; never publish on route scan."
@@ -454,6 +454,27 @@
       "max_editorial_candidates_per_source": 6,
       "overflow_rule": "Keep all raw candidate links and reasons in the private collection evidence; stage4 editorial queue max 40, balanced across publishers, never claim unreviewed overflow is fully verified.",
       "target_note": "Step5 live test found 334 discovery links, 8/26 known examples, verified source coverage 0/23. 90% substantive news completeness not established."
+    },
+    "native_pagination": {
+      "version": "1.0-datewindow",
+      "max_extra_pages_per_source": 1,
+      "enabled_sources": [
+        "dailypharm.com",
+        "medipana.com",
+        "newsthevoice.com",
+        "biotimes.co.kr"
+      ],
+      "max_extra_page_requests_per_run": 4,
+      "when": "Native page contains >=10 article links, article-associated dates have not reached previous-day 12:00, and a same-origin explicit page=2 link exists.",
+      "stop": "If boundary is observed on page 1, do not fetch page 2. If page 2 fails, keep page 1 candidates and mark partial. No third page.",
+      "date_formats": [
+        "YYYY-MM-DD HH:MM",
+        "YYYY.MM.DD HH:MM",
+        "MM.DD HH:MM",
+        "MM-DD HH:MM"
+      ],
+      "date_evidence_rule": "Date adjacent to an individual listing headline is discovery evidence, not an original article timestamp. Only independently checked publisher original populates published_at.",
+      "candidate_balancing": "Reserve slots for 06:00-08:59, 09:00-11:59, and prior-day afternoon/evening from already fetched pages; no extra news searches."
     }
   },
   "event_map": {
@@ -865,15 +886,36 @@
         "D",
         "WEB"
       ],
-      "required_status": "PASS_OR_90PCT_VERIFIED_SOURCE_COVERAGE",
+      "required_status": "90PCT_AUDITED_SEARCH_EXECUTION_WITH_INDEPENDENT_ARTICLE_FACT_VALIDATION",
       "final_item_source_url_required": true,
       "p0_p1_verified_timestamp_required": true,
       "min_source_coverage_ratio": 0.9,
-      "coverage_denominator": "각 A/B/C/D 고정매체와 WEB의 지정매체·기타전체웹을 각각 1개 단위로 계산. 현재 총 23개이며 config 목록에서 동적 집계",
-      "coverage_numerator": "원문 URL·발행시각을 포함해 지정 시간창 대표 경로를 실질 확인한 PASS 또는 정상 0건 PASS_ZERO만 인정",
-      "coverage_audit_path_pattern": "staging/YYYY-MM-DD-manual-source-check.json (자동화 시 같은 형식의 source-health 가능)",
+      "coverage_denominator": "14 fixed publisher routes + 6 WEB keyword axes = 20 configured search tasks, dynamically counted; prior 23-individual-media calculation replaced for operational monitoring.",
+      "coverage_numerator": "Successful parsable route results for fixed media and six WEB axes; may be PARTIAL for article completeness. Do not promote to publisher PASS.",
+      "coverage_audit_path_pattern": "staging/YYYY-MM-DD-domestic-route-audit.json or status/YYYY-MM-DD-collection-evidence.json; no per-publisher WEB PASS fabrication",
       "remaining_10_percent_policy": "미검증 매체를 PASS로 위장하지 않고 PARTIAL/FAIL 그대로 보존. 90% 미만이면 국내 PARTIAL",
-      "publication_safety": "국내 기준만 조정하며 글로벌·특허·일정 검사와 P0/P1 발행시각·핵심 사실, URL 및 중복 검사는 완화하지 않음"
+      "publication_safety": "국내 기준만 조정하며 글로벌·특허·일정 검사와 P0/P1 발행시각·핵심 사실, URL 및 중복 검사는 완화하지 않음",
+      "operational_coverage": {
+        "version": "1.0-mixed-route-coverage",
+        "goal": 0.9,
+        "denominator_definition": "14 fixed publisher collection routes (A/B/C/D), plus 6 thematic WEB queries, dynamically derived from configured collectors and web axes.",
+        "numerator_definition": "For fixed: a configured primary or fallback route returned and parsed an article listing or RSS result without error; for WEB: the thematic RSS request parsed successfully, including a genuine empty response.",
+        "current_units": {
+          "fixed_publishers": 14,
+          "web_topic_axes": 6,
+          "total": 20,
+          "minimum_success": 18
+        },
+        "claim_scope": "Search operation coverage, NOT fraction of all published articles recovered.",
+        "publication_caveat": "Passing 18/20 is necessary for domestic search operation status only; original timestamps, P0/P1 core facts, independent critical-event checks and other sections retain strict gates."
+      },
+      "independent_article_recovery": {
+        "mode": "DIAGNOSTIC_NOT_INFERRED_FROM_SEARCH_INDEX",
+        "rule": "Known article reference comparisons are reported as separate matched/total samples, never blended into the 20 route denominator or misrepresented as a measured global recall.",
+        "minimum_future_recovery_target": 0.9,
+        "sampling_note": "To estimate true article recall, compare with independently timestamp-matched reviewed stories. Without such samples report UNMEASURED rather than PASS.",
+        "first_phase_behavior": "The 90% route gate can be assessed now. End-to-end editorial readiness still requires independent original URL and key-fact verification; article-level 90% recall must not be claimed without a reference sample."
+      }
     },
     "global": {
       "required_source_groups": [
@@ -944,7 +986,7 @@
       "normal_route": "고정매체별 대표 검색경로 1개를 먼저 실행. 해당 경로에서 시간창 확인과 원문 URL·발행시각 확인이 가능하면 PASS하고 추가 경로는 생략.",
       "fallback_route": "대표 경로 실패/검색결과 이상/원문 확인 불가일 때만 SITE_SEARCH 또는 WEB_SEARCH_RECOVERY를 최대 1개 추가.",
       "collector_pass_rule": "그룹 내 각 매체가 PASS 또는 실질 검색완료 후 0건이면 collector PASS. 동일 매체를 DIRECT+SITE+WEB로 삼중 확인하지 않는다.",
-      "coverage_target_rule": "PASS/PASS_ZERO 매체 90% 이상이면 국내 검색 커버리지 요건 충족 가능. 미검증 소스는 원상태 그대로 보존. 10건 기사 quota와 무관."
+      "coverage_target_rule": "Operational search success >=90% of fixed source routes plus six shared WEB axes (normally >=18/20). This is NOT 90% news recall. Source completeness, missing dates and P0/P1 factual checks are reported separately."
     },
     "global": {
       "rule": "3 source group은 유지하되 동일 사건의 다중매체 확인은 P0/P1 최소검증 때만 수행. 일반 P2/P3는 원문 1개 확보 후 중단.",
