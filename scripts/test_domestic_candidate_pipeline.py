@@ -208,6 +208,29 @@ class Stage4Tests(unittest.TestCase):
         self.assertEqual({x["milestone"] for x in result["domestic"]},
                          {"approval","reimbursement"})
 
+    def test_large_discovery_pool_has_bounded_balanced_review_queue(self):
+        cfg=config(0)
+        cfg["domestic"]["event_validation"]["max_editorial_candidates"]=40
+        cfg["domestic"]["event_validation"]["max_editorial_candidates_per_source"]=6
+        rows=[]
+        for src in range(10):
+            for index in range(15):
+                item=unverified(
+                    "제약 임상 개발 소식 %d %d" % (src,index),
+                    "https://example%d.kr/news/%d" % (src,index),
+                    priority="P2")
+                item["source_name"]="source%d" % src
+                rows.append(item)
+        result=build_domestic_stage4(DAY,rows,cfg,verifier=lambda _:self.fail("no verification budget"))
+        self.assertEqual(result["statistics"]["input_domestic_candidates"],150)
+        self.assertEqual(result["statistics"]["events_output"],40)
+        self.assertEqual(len(result["domestic"]),40)
+        self.assertEqual(result["statistics"]["not_in_review_queue_preserved_in_raw_audit"],110)
+        from collections import Counter
+        counts=Counter(x["source_name"] for x in result["domestic"])
+        self.assertLessEqual(max(counts.values()),6)
+        self.assertFalse(result["publish_allowed"])
+
     def test_invalid_config_fails_closed(self):
         cfg=config()
         cfg["domestic"]["event_validation"]["publish_allowed"]=True
