@@ -9,6 +9,8 @@ on:
       - 'scripts/web_unified_collector.py'
       - 'scripts/test_web_unified.py'
       - 'scripts/test_web_integration.py'
+      - 'scripts/domestic_candidate_pipeline.py'
+      - 'scripts/test_domestic_candidate_pipeline.py'
       - 'scripts/verify_originals.py'
       - 'scripts/test_verify_originals.py'
       - 'scripts/build_event_map.py'
@@ -38,6 +40,8 @@ jobs:
         run: python -m unittest discover -s scripts -p 'test_domestic_routes.py' -v
       - name: Unit test unified WEB discovery and integration (no network)
         run: python -m unittest discover -s scripts -p 'test_web*.py' -v
+      - name: Unit test domestic event dedup and verification (no network)
+        run: python -m unittest discover -s scripts -p 'test_domestic_candidate_pipeline.py' -v
       # Source scan runs only on schedule or manual dispatch, not on code pushes.
       # This prevents new tests/config changes from causing repeated web searches.
       - name: Scan sources and record honest partial/fail evidence
@@ -56,5 +60,8 @@ jobs:
         if: github.event_name != 'push'
         with:
           name: source-evidence
-          path: status/*-collection-evidence.json
+          path: |
+            status/*-collection-evidence.json
+            staging/*-domestic-stage4.json
+            staging/*-source-health.json
           retention-days: 14
