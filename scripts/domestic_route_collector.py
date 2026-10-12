@@ -17,6 +17,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from verify_originals import verify
+from domestic_window_paging import parse_publisher_page
 
 KST = ZoneInfo("Asia/Seoul")
 FIXED_GROUPS = ("A", "B", "C", "D")
@@ -60,6 +61,49 @@ def choose_relevant(items, domain, max_candidates):
             selected[-1] = candidate
     return [x for _, x in sorted(selected, key=lambda item: item[0])]
 
+
+def choose_time_balanced(items, domain, max_candidates, start):
+    """Reserve candidate slots for 06–09, 09–12, previous-day afternoon.
+    No extra HTTP requests; this only redistributes already fetched links.
+    """
+    if not any(x.get("listing_published_at") for x in items):
+        return choose_relevant(items,domain,max_candidates)
+    eligible=[x for x in items if (
+        domain not in BUSINESS_GENERAL_SOURCES or PHARMA_TOPIC.search(x["title"]))]
+    now_date=(start+timedelta(hours=12)).date()
+    groups={"early":[],"morning":[],"previous":[],"later":[],"unknown":[]}
+    for x in eligible:
+        dt=publication_time(x.get("listing_published_at"))
+        if not dt:
+            category="unknown"
+        elif dt.date()==now_date and 6<=dt.hour<9:
+            category="early"
+        elif dt.date()==now_date and 9<=dt.hour<12:
+            category="morning"
+        elif dt.date()<now_date:
+            category="previous"
+        else:
+            category="later"
+        groups[category].append(x)
+    def rank(seq):
+        return sorted(seq,key=lambda x:-int(bool(NEWS_PRIORITY.search(x["title"]))))
+    # These reserves are maxima, not invented quotas: unused slots return to
+    # the rest of the dated listing. IMPORTANT: the original page is not refetched.
+    reserves={"early":max(1,max_candidates//3),
+              "morning":max(1,max_candidates//4),
+              "previous":max(1,max_candidates//5)}
+    selected=[]
+    seen=set()
+    def add(x):
+        if x["url"] not in seen and len(selected)<max_candidates:
+            selected.append(x);seen.add(x["url"])
+    for category in ("early","morning","previous"):
+        for x in rank(groups[category])[:reserves[category]]:
+            add(x)
+    for category in ("early","morning","previous","later","unknown"):
+        for x in rank(groups[category]):
+            add(x)
+    return selected
 
 def window(day):
     d = datetime.strptime(day, "%Y-%m-%d").date()
@@ -162,7 +206,8 @@ def search_query(domain, start, end, broad=False):
     return f"{base} (제약 OR 바이오 OR 신약 OR 임상 OR 특허)"
 
 def attempt(method, domain, route, start, end, loader, verifier,
-            *, max_original_checks=3, max_candidates=12, broad=False):
+            *, max_original_checks=3, max_candidates=12, broad=False,
+            max_extra_pages=0):
     result = {"method": method, "status": "PARTIAL", "hits": 0,
               "original_checks": 0, "verified_original_count": 0, "verified_in_window": 0, "verified_before_window": 0,
               "coverage_proven": False, "candidates": []}
@@ -184,29 +229,65 @@ def attempt(method, domain, route, start, end, loader, verifier,
     try:
         data = loader(request_url)
         if method == "DIRECT_LIST":
-            links, times = parse_listing(data, request_url)
-            # Covering the lower boundary requires an observed in-window date
-            # AND an older list item, in descending order. Timestamp tags alone
-            # do not prove originals were checked.
-            dates = times
-            is_descending = all(a >= b for a, b in zip(dates, dates[1:]))
-            result["listing_time_count"] = len(dates)
-            result["listing_boundary_seen"] = (
-                len(dates) >= 2 and is_descending and dates[0] >= start
-                and dates[-1] < start)
-            result["listing_all_older_than_window"] = (
-                len(dates) >= 2 and is_descending and dates[0] < start)
-            items = links
+            day=(end-timedelta(days=1)).date().isoformat()
+            first=parse_publisher_page(data,request_url,day)
+            items=list(first["links"])
+            result["listing_pages_fetched"]=1
+            result["pagination_page2_found"]=bool(first["page2_url"])
+            result["pagination_page2_attempted"]=False
+            result["pagination_page2_failed"]=False
+            initial_dates=first["dates"]
+            early_reached=bool(initial_dates and min(initial_dates)<start)
+            should_page=(max_extra_pages>0 and bool(first["page2_url"])
+                         and len(items)>=10 and not early_reached)
+            if should_page:
+                result["pagination_page2_attempted"]=True
+                try:
+                    second=parse_publisher_page(loader(first["page2_url"]),
+                                                first["page2_url"],day)
+                    result["listing_pages_fetched"]+=1
+                    items.extend(second["links"])
+                except Exception as exc:
+                    result["pagination_page2_failed"]=True
+                    result["pagination_page2_error"]=type(exc).__name__
+            dedup={}
+            for item in items:
+                if item["url"] not in dedup or (
+                        not dedup[item["url"]].get("listing_published_at")
+                        and item.get("listing_published_at")):
+                    dedup[item["url"]]=item
+            items=list(dedup.values())
+            dates=[publication_time(x.get("listing_published_at")) for x in items]
+            dates=[x for x in dates if x is not None]
+            is_descending=all(a>=b for a,b in zip(dates,dates[1:]))
+            # Only explicit per-article local listing dates count. Never infer
+            # coverage from page heading dates or from RSS index timestamps.
+            result["listing_time_count"]=len(dates)
+            result["listing_dated_fraction"]=round(len(dates)/len(items),3) if items else 0
+            result["listing_order_descending"]=is_descending
+            result["listing_boundary_seen"]=(
+                len(dates)>=2 and is_descending and len(dates)==len(items)
+                and dates[0]>=start and dates[-1]<start)
+            result["listing_all_older_than_window"]=(
+                len(dates)>=2 and is_descending and len(dates)==len(items)
+                and dates[0]<start)
+            result["listing_earliest_at"]=min(dates).isoformat() if dates else None
+            result["listing_latest_at"]=max(dates).isoformat() if dates else None
         else:
-            items = parse_rss(data)
-            result["listing_boundary_seen"] = False
+            items=parse_rss(data)
+            result["listing_boundary_seen"]=False
+            result["listing_pages_fetched"]=0
         result["hits"] = len(items)
         # Index dates only filter clearly stale hits; they are never copied
         # into original published_at or treated as verified timestamps.
-        eligible = [x for x in items if not x.get("index_published_at")
-                    or not publication_time(x.get("index_published_at"))
-                    or start <= publication_time(x["index_published_at"]) < end]
-        selected = choose_relevant(eligible, domain, max_candidates)
+        eligible = [x for x in items
+                    if not (x.get("index_published_at") or x.get("listing_published_at"))
+                    or not publication_time(x.get("index_published_at") or x.get("listing_published_at"))
+                    or start <= publication_time(
+                        x.get("index_published_at") or x.get("listing_published_at")) < end]
+        selected = (choose_time_balanced(eligible,domain,max_candidates,start)
+                    if method=="DIRECT_LIST" else
+                    choose_relevant(eligible,domain,max_candidates))
         result["relevant_hits"] = len(selected)
         if not selected:
             result["status"] = "PARTIAL"
@@ -246,6 +327,9 @@ def attempt(method, domain, route, start, end, loader, verifier,
                 "published_at": "", "timestamp_unverified": True,
                 "source_domain": domain, "verified_original": False,
                 "index_published_at": candidate.get("index_published_at", ""),
+                "listing_published_at": candidate.get("listing_published_at", ""),
+                "listing_date_evidence": candidate.get("listing_date_evidence", False),
+                "source_page": candidate.get("source_page", request_url),
                 "route_method": method
             })
         # Google RSS is discovery only: search index coverage cannot be PASS.
@@ -291,6 +375,7 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
     config = settings["domestic"]
     routes = config.get("source_routes", {})
     out, candidates, source_health = {}, [], {}
+    max_extra_pages=min(1,int(config.get("native_pagination",{}).get("max_extra_pages_per_source",0)))
     max_fallback = min(1, int(settings.get("runtime_safety", {})
                           .get("retry_budget", {}).get("domestic_source_max_retry", 1)))
     for group in FIXED_GROUPS:
@@ -308,7 +393,7 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                 source_cap = min(max_candidates, 10) if domain in BUSINESS_GENERAL_SOURCES else max_candidates
                 first = attempt(primary, domain, info, start, end, loader,
                                 verifier, max_original_checks=max_original_checks,
-                                max_candidates=source_cap)
+                                max_candidates=source_cap,max_extra_pages=max_extra_pages)
                 route_results = [first]
                 # Do not repeat a search when the first page yielded relevant
                 # candidates, even if full publisher-window coverage is PARTIAL.
@@ -318,7 +403,7 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                     fallback = "SITE_SEARCH" if primary == "DIRECT_LIST" else "WEB_SEARCH_RECOVERY"
                     second = attempt(fallback, domain, info, start, end, loader,
                                      verifier, max_original_checks=max_original_checks,
-                                     max_candidates=source_cap, broad=(fallback == "WEB_SEARCH_RECOVERY"))
+                                     max_candidates=source_cap,max_extra_pages=0, broad=(fallback == "WEB_SEARCH_RECOVERY"))
                     route_results.append(second)
             # Preserve verified candidates from either path without duplicating.
             seen_urls = set()
@@ -337,7 +422,9 @@ def scan_fixed(day, settings, *, loader=fetch_bytes, verifier=verify,
                 "status": status, "route_count": len(route_results),
                 "verified_candidate_count": sum(bool(x.get("verified_original")) for x in verified),
                 "discovered_candidate_count": len(verified),
-                "primary_method": primary, "routes": route_results
+                "primary_method": primary,
+                "native_page_requests": sum(r.get("listing_pages_fetched",0) for r in route_results),
+                "routes": route_results
             }
             group_routes.append({"source": domain, **source_health[group][domain]})
         group_statuses = [x["status"] for x in group_routes]
