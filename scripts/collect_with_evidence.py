@@ -64,6 +64,28 @@ def scan(day,settings,domestic_only=False):
         if any(k in x["title"].lower() for k in ("에페글레나타이드","에페오토","epheglena")):
             p0.append({"event_id":"HANMI-EPHE-APPROVAL","title":x["title"],"url":x["url"],"verified_original":bool(x.get("verified_original",False))})
     return {"date":day,"generated_at":now(),"source_health":source_health,"domestic_groups":groups,"web_gap_scan":web_gap,"web_unified_statistics":web["statistics"],"p0_followups":[{"event_id":"HANMI-EPHE-APPROVAL","checked_at":now(),"status":"PARTIAL","candidates":p0}],"global":global_audit,"patent":patent_audit,"candidates":candidates,"errors":errors,"note":"WEB는 6개 공유 RSS 검색만 수행하고 원문 검증은 후속 단계로 이관. 인덱스 검색만으로 PASS/PASS_ZERO 불가. 글로벌·특허는 기존 분리 상태이며 추가 검증 전 PASS 불가."}
+def source_health_checkpoint(day, out):
+    """Preserve WEB shared-query evidence without pretending independent visits."""
+    checks = {}
+    for group, sources in out.get("source_health", {}).items():
+        checks[group] = {}
+        for domain, state in sources.items():
+            checks[group][domain] = {
+                "status": state.get("status", "FAIL"),
+                "route_count": state.get("route_count", 0),
+                "verified_candidate_count": state.get("verified_candidate_count", 0),
+                "selected_candidates": state.get("selected_candidates", 0),
+                "shared_query_count": state.get("shared_query_count", 0),
+                "coverage_proven": state.get("coverage_proven", False),
+                "routes": state.get("routes", [])
+            }
+    return {"schema_version": "briefing-domestic-source-health-v1.0",
+            "date": day, "source_checks": checks,
+            "collector_status": {g: out["domestic_groups"][g]["status"]
+                                 for g in ("A","B","C","D","WEB")},
+            "web_unified_statistics": out.get("web_unified_statistics", {}),
+            "publish_allowed": False}
+
 if __name__=="__main__":
     ap=argparse.ArgumentParser()
     ap.add_argument("--date",required=True)
@@ -72,17 +94,7 @@ if __name__=="__main__":
     settings=json.loads(Path("config/briefing-settings.json").read_text(encoding="utf-8"))
     out=scan(a.date,settings,domestic_only=a.domestic_only)
     # Audit is a checkpoint, NOT a publication or a claim of readiness.
-    source_checks={group:{domain:{"status":state["status"],
-                                   "route_count":state["route_count"],
-                                   "verified_candidate_count":state["verified_candidate_count"],
-                                   "routes":state["routes"]}
-                          for domain,state in sources.items()}
-                   for group,sources in out.get("source_health",{}).items()}
-    health={"schema_version":"briefing-domestic-source-health-v1.0",
-            "date":a.date,"source_checks":source_checks,
-            "collector_status":{g:out["domestic_groups"][g]["status"]
-                                for g in ("A","B","C","D","WEB")},
-            "publish_allowed":False}
+    health=source_health_checkpoint(a.date,out)
     health_path=Path("staging")/f"{a.date}-source-health.json"
     health_path.parent.mkdir(exist_ok=True)
     health_path.write_text(json.dumps(health,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
