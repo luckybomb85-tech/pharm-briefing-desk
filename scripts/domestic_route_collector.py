@@ -240,12 +240,18 @@ def attempt(method, domain, route, start, end, loader, verifier,
             early_reached=bool(initial_dates and min(initial_dates)<start)
             should_page=(max_extra_pages>0 and bool(first["page2_url"])
                          and len(items)>=10 and not early_reached)
+            result["pagination_new_urls"]=0
+            result["pagination_effective"]=False
             if should_page:
                 result["pagination_page2_attempted"]=True
                 try:
                     second=parse_publisher_page(loader(first["page2_url"]),
                                                 first["page2_url"],day)
                     result["listing_pages_fetched"]+=1
+                    already={x["url"] for x in items}
+                    result["pagination_new_urls"]=sum(
+                        x["url"] not in already for x in second["links"])
+                    result["pagination_effective"]=(result["pagination_new_urls"]>0)
                     items.extend(second["links"])
                 except Exception as exc:
                     result["pagination_page2_failed"]=True
