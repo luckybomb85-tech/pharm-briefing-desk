@@ -449,7 +449,11 @@
       ],
       "beyond_budget": "DEFERRED_NOT_VERIFIED",
       "staging_path_pattern": "staging/YYYY-MM-DD-domestic-stage4.json",
-      "publish_allowed": false
+      "publish_allowed": false,
+      "max_editorial_candidates": 40,
+      "max_editorial_candidates_per_source": 6,
+      "overflow_rule": "Keep all raw candidate links and reasons in the private collection evidence; stage4 editorial queue max 40, balanced across publishers, never claim unreviewed overflow is fully verified.",
+      "target_note": "Step5 live test found 334 discovery links, 8/26 known examples, verified source coverage 0/23. 90% substantive news completeness not established."
     }
   },
   "event_map": {
