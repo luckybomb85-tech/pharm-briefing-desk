@@ -1,5 +1,5 @@
 name: domestic-step5-one-shot-20261012
-# Runs only when this one-shot workflow file is first committed/changed.
+# Second and final comparison pass after candidate-retention/fallback improvements.
 # No recurrence, Pages, Telegram, data promotion or global/patent collection.
 on:
   push:
