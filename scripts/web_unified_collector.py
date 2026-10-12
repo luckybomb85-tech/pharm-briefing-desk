@@ -221,7 +221,9 @@ def scan_web(day, settings, *, loader=fetch_bytes, now_kst=None):
             "selected_candidates": selected_counts[name],
             "coverage_proven": False, "reason": "INDEX_ONLY_NO_COMPLETENESS_PROOF"
             if successes else "ALL_INDEX_QUERIES_FAILED",
-            "shared_query_count": attempted, "independent_site_queries": 0
+            "shared_query_count": attempted, "independent_site_queries": 0,
+            "route_count": 0, "verified_candidate_count": 0,
+            "routes": []  # Actual shared routes are recorded once at WEB group level.
         }
     return {
         "schema_version": "web-unified-discovery-v1.0", "date": day,
