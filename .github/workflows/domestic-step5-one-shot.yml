@@ -1,0 +1,48 @@
+name: domestic-step5-one-shot-20261012
+# Runs only when this one-shot workflow file is first committed/changed.
+# No recurrence, Pages, Telegram, data promotion or global/patent collection.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/domestic-step5-one-shot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  domestic_live_check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect live domestic A B C D and WEB only
+        run: |
+          echo "STAGE5_DOMESTIC_ONLY_START=2026-10-12"
+          BEGIN=$(date +%s)
+          python scripts/collect_with_evidence.py --date 2026-10-12 --domestic-only
+          END=$(date +%s)
+          echo "STAGE5_COLLECTION_SECONDS=$((END-BEGIN))"
+      - name: Evaluate source coverage and reviewed cases
+        run: |
+          python scripts/evaluate_domestic_step5.py \
+            --date 2026-10-12 \
+            --collection staging/2026-10-12-domestic-route-audit.json \
+            --stage4 staging/2026-10-12-domestic-stage4.json \
+            --reviewed staging/2026-10-12-domestic.json
+      - name: Save private test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: domestic-step5-2026-10-12-evidence
+          path: |
+            staging/2026-10-12-domestic-route-audit.json
+            staging/2026-10-12-domestic-stage4.json
+            staging/2026-10-12-source-health.json
+            staging/2026-10-12-domestic-step5-evaluation.json
+          if-no-files-found: warn
+          retention-days: 14
