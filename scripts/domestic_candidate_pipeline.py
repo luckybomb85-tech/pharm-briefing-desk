@@ -45,7 +45,7 @@ def clean_title(title):
     s = unicodedata.normalize("NFKC", str(title or ""))
     s = re.sub(r"^\s*\[(?:단독|exclusive)\]\s*", "", s, flags=re.I)
     # Remove only explicit outlet suffixes, never an arbitrary topic after a dash.
-    s = re.sub(r"\\s+[-|]\\s+(?:데일리팜|메디파나뉴스|히트뉴스|뉴스더보이스|메디팜스투데이|바이오스펙테이터|바이오타임즈|딜사이트|비즈니스포스트|뉴스핌|뉴데일리|한국경제|이데일리|팜이데일리|조선비즈|서울경제|머니투데이|매일경제|아시아경제|파이낸셜뉴스|헤럴드경제|이투데이)$", "", s, flags=re.I)
+    s = re.sub(r"\s+[-|]\s+(?:데일리팜|메디파나뉴스|히트뉴스|뉴스더보이스|메디팜스투데이|바이오스펙테이터|바이오타임즈|딜사이트|비즈니스포스트|뉴스핌|뉴데일리|한국경제|이데일리|팜이데일리|조선비즈|서울경제|머니투데이|매일경제|아시아경제|파이낸셜뉴스|헤럴드경제|이투데이)$", "", s, flags=re.I)
     s = re.sub(r"[^\w가-힣]+", " ", s.lower(), flags=re.UNICODE)
     return " ".join(s.split())
 
