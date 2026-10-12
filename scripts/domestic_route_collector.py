@@ -331,7 +331,10 @@ def attempt(method, domain, route, start, end, loader, verifier,
                         "published_at": when.isoformat(timespec="seconds"),
                         "source_domain": domain, "verified_original": True,
                         "timestamp_unverified": False,
-                        "route_method": method
+                        "route_method": method,
+                        "listing_published_at": candidate.get("listing_published_at", ""),
+                        "listing_date_evidence": candidate.get("listing_date_evidence", False),
+                        "source_page": candidate.get("source_page", request_url)
                     })
                     continue
                 # An article explicitly verified outside the search window
