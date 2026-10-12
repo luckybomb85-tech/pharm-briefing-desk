@@ -402,6 +402,47 @@
       "status_policy": "Index search alone never proves per-publisher completeness; no PASS or PASS_ZERO. Keep status PARTIAL for successful searches even when zero results, FAIL only when all six index queries fail.",
       "verification_policy": "Step 3 produces unverified discovery candidates only. Step 4 verifies originals/clock once, and only real source time-window evidence can become PASS or PASS_ZERO.",
       "publish_allowed": false
+    },
+    "event_validation": {
+      "version": "1.0-step4",
+      "scope": "domestic_only",
+      "dedupe_before_original_verification": true,
+      "merge_keys": [
+        "normalized_original_url_without_tracking",
+        "exact_normalized_headline",
+        "explicit_event_id_with_milestone"
+      ],
+      "ambiguous_event_handling": "Preserve candidate and flag potential duplicate; do not infer same event from company name alone.",
+      "avoid_duplicate_original_fetch": true,
+      "max_new_original_verifications": 12,
+      "priority_order": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "fixed_source_verified_reuse": true,
+      "p2_p3_rule": "At most one original verification per distinct article; no secondary cross-check.",
+      "p0_p1_rule": "Verify publisher original/time once and separately flag core fact requiring primary evidence or editorial confirmation; never mark ready merely from headline.",
+      "preliminary_statuses": [
+        "NEW",
+        "UPDATE",
+        "DUPLICATE"
+      ],
+      "event_stage_separation": [
+        "approval",
+        "reimbursement",
+        "clinical",
+        "litigation",
+        "deal",
+        "launch",
+        "governance",
+        "financial",
+        "general"
+      ],
+      "beyond_budget": "DEFERRED_NOT_VERIFIED",
+      "staging_path_pattern": "staging/YYYY-MM-DD-domestic-stage4.json",
+      "publish_allowed": false
     }
   },
   "event_map": {
