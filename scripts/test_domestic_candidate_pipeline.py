@@ -184,6 +184,30 @@ class Stage4Tests(unittest.TestCase):
         result=build_domestic_stage4(DAY,[row],config())
         self.assertEqual(result["domestic"][0]["event_status"],"UPDATE")
 
+    def test_outlet_suffix_only_dedup(self):
+        rows=[
+            original("한미 에페글레나타이드 허가 - 메디파나뉴스",
+                     "https://a.example.kr/1",priority="P1"),
+            unverified("한미 에페글레나타이드 허가",
+                       "https://news.google.com/rss/articles/77",priority="P1")
+        ]
+        result=build_domestic_stage4(DAY,rows,config(),verifier=lambda c:
+                                     self.fail("no repeated original"))
+        self.assertEqual(len(result["domestic"]),1)
+
+    def test_significant_dash_clauses_not_stripped_or_merged(self):
+        rows=[
+            original("한미 에페글레나타이드 - 허가",
+                     "https://a.example.kr/1",priority="P1"),
+            original("한미 에페글레나타이드 - 급여",
+                     "https://a.example.kr/2",priority="P1")
+        ]
+        result=build_domestic_stage4(DAY,rows,config(),verifier=lambda c:
+                                     self.fail("no repeated original"))
+        self.assertEqual(len(result["domestic"]),2)
+        self.assertEqual({x["milestone"] for x in result["domestic"]},
+                         {"approval","reimbursement"})
+
     def test_invalid_config_fails_closed(self):
         cfg=config()
         cfg["domestic"]["event_validation"]["publish_allowed"]=True
