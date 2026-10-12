@@ -15,14 +15,48 @@ def main(path):
     for sec in ("domestic","global","patent"):
         items=d.get(sec,[]) if isinstance(d.get(sec),list) else []
         bad_url=[x.get("title","") for x in items if not url_ok(x.get("source"))]
-        bad_p01=[x.get("title","") for x in items if x.get("priority") in ("P0","P1") and (not x.get("published_at") or x.get("timestamp_unverified"))]
+        bad_p01=[x.get("title","") for x in items if x.get("priority") in ("P0","P1") and (not x.get("published_at") or x.get("timestamp_unverified") or x.get("verification_status") in ("PAYWALL_CORE_FACT_UNVERIFIED","CORE_FACT_UNVERIFIED"))]
         dup=len(items)-len({" ".join(str(x.get("title","")).lower().split()) for x in items})
         st="PASS" if not bad_url and not bad_p01 and dup==0 else "PARTIAL"
         report["sections"][sec]={"status":st,"count":len(items),"valid_source_urls":len(items)-len(bad_url),"invalid_source_titles":bad_url,"unverified_p0_p1_titles":bad_p01,"duplicate_titles":dup}
         if st!="PASS": report["overall"]="PARTIAL"; report["blocking"].append(sec)
     cs=d.get("collector_status",{})
     report["domestic_collectors"]={k:cs.get(k,"MISSING") for k in ("A","B","C","D","WEB")}
-    if any(report["domestic_collectors"][k]!="PASS" for k in report["domestic_collectors"]):
+    # 90% target applies only to audited domestic sources, not article count.
+    # Missing audit or settings must fail closed rather than produce fake PASS_ZERO.
+    settings_path=Path("config/briefing-settings.json")
+    settings=json.loads(settings_path.read_text(encoding="utf-8")) if settings_path.exists() else {}
+    cfg_dom=settings.get("domestic",{}).get("collectors",{})
+    target=float(settings.get("readiness_gate",{}).get("domestic",{}).get("min_source_coverage_ratio",1.0))
+    audit={}
+    for audit_path in (Path("staging")/f"{day}-source-health.json",Path("staging")/f"{day}-manual-source-check.json"):
+        if audit_path.exists():
+            try:
+                audit=json.loads(audit_path.read_text(encoding="utf-8")); break
+            except (ValueError,OSError):
+                continue
+    source_checks=audit.get("source_checks",{})
+    counts={"PASS":0,"PASS_ZERO":0,"PARTIAL":0,"FAIL":0,"MISSING":0}
+    missing_sources=[]
+    for group in ("A","B","C","D","WEB"):
+        for source in cfg_dom.get(group,[]):
+            info=source_checks.get(group,{}).get(source,{})
+            st=info.get("status","MISSING") if isinstance(info,dict) else "MISSING"
+            if st not in counts: st="MISSING"
+            counts[st]+=1
+            if st=="MISSING": missing_sources.append(f"{group}/{source}")
+    denominator=sum(counts.values())
+    passed=counts["PASS"]+counts["PASS_ZERO"]
+    coverage=passed/denominator if denominator else 0
+    source_gate=(bool(settings) and bool(audit) and denominator>0 and 0<target<=1
+                 and coverage+1e-12>=target
+                 and all(v in ("PASS","PARTIAL") for v in report["domestic_collectors"].values()))
+    report["domestic_source_coverage"]={"verified_sources":passed,"total_sources":denominator,
+        "ratio":round(coverage,4),"target_ratio":target,"status_counts":counts,
+        "missing_sources":missing_sources,"pass":source_gate}
+    report["sections"]["domestic"]["source_coverage_pass"]=source_gate
+    if not source_gate:
+        report["sections"]["domestic"]["status"]="PARTIAL"
         report["overall"]="PARTIAL"; report["blocking"].append("domestic_collectors")
     sh=Path("status/schedule-health.json")
     sched=json.loads(sh.read_text(encoding="utf-8")) if sh.exists() else {}
