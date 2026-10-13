@@ -6,6 +6,8 @@ on:
       - '.github/workflows/global-source-smoke-once.yml'
       - 'scripts/global_source_collector.py'
       - 'scripts/global_candidate_ranker.py'
+      - 'scripts/global_top_verifier.py'
+      - 'scripts/test_global_top_verifier.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,6 +22,8 @@ jobs:
           python-version: '3.12'
       - name: Test global source collector offline
         run: python -m unittest discover -s scripts -p 'test_global_source_collector.py' -v
+      - name: Test capped original verification offline
+        run: python -m unittest discover -s scripts -p 'test_global_top_verifier.py' -v
       - name: Collect global source evidence only
         run: |
           mkdir -p status
@@ -30,10 +34,11 @@ jobs:
           from pathlib import Path
           from scripts.global_source_collector import scan_global_sources
           from scripts.global_candidate_ranker import select
+          from scripts.global_top_verifier import verify_shortlist
           now=lambda:datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
           day=datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
           out=scan_global_sources(day,{},now)
-          shortlist=select(out["candidates"],limit=30)
+          shortlist=verify_shortlist(select(out["candidates"],limit=30),limit=10)
           Path("status/global-shortlist-latest.json").write_text(json.dumps(shortlist,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
           Path("status/global-source-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
           for route in out["routes"]:
