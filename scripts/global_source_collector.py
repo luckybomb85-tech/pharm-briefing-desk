@@ -50,6 +50,6 @@ def scan_global_sources(day,settings,now,news_fetch=None,feed_fetch=None):
     pooled={"Global gap recovery":"pharmaceutical biotech clinical results drug approval acquisition"}
     for name,query in pooled.items():collect(name,"WHOLE_WEB_RECOVERY","SHARED_GOOGLE_NEWS_DISCOVERY",f"{query} after:{start.date()} before:{end.date()+timedelta(days=1)}",news_fetch)
     groups={}
-    for group in ("PRIMARY_REGULATORY_AND_COMPANY","TRADE_AND_WIRE","WHOLE_WEB_RECOVERY"):
+    for group in ("PRIMARY_REGULATORY","TRADE_AND_WIRE","WHOLE_WEB_RECOVERY"):
         subset=[r for r in routes if r["group"]==group];groups[group]="PARTIAL" if any(r["status"]=="PARTIAL" for r in subset) else "FAIL"
     return {"checked_at":now(),"status":"PARTIAL" if "PARTIAL" in groups.values() else "FAIL","source_groups":groups,"routes":routes,"candidates":candidates,"request_budget":{"official_feeds":4,"publisher_queries":13,"pooled_queries":1,"total_max":18},"note":"Index discovery only; source coverage and original publication times are not verified."}
