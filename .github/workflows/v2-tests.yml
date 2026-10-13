@@ -1,0 +1,19 @@
+name: v2 collector tests
+on:
+  push:
+    paths:
+      - 'v2/domestic/**'
+      - '.github/workflows/v2-tests.yml'
+  workflow_dispatch:
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline regression tests
+        run: python -m unittest discover -s v2/domestic -p 'test_*.py' -v
