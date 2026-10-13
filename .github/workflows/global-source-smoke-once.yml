@@ -8,6 +8,7 @@ on:
       - 'scripts/global_candidate_ranker.py'
       - 'scripts/global_top_verifier.py'
       - 'scripts/test_global_top_verifier.py'
+      - 'scripts/verify_originals.py'
   workflow_dispatch:
 permissions:
   contents: write
