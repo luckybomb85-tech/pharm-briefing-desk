@@ -35,6 +35,7 @@ def select(candidates,limit=30):
         title=normalize(item.get("title",""))
         lead=re.search(r"\\b(?:bms|bristol myers squibb|astrazeneca|pfizer|novartis|roche|merck|sanofi|gsk|eli lilly|abbvie|amgen)\\b",title)
         company=lead.group(0) if lead else ""
+        if company in ("bms","bristol myers squibb"):company="bms"
         if company and company_counts[company]>=2:continue
         if company:company_counts[company]+=1
         diversified.append(item)
