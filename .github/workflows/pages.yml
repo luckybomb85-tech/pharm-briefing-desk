@@ -3,6 +3,14 @@ name: Deploy briefing desk to GitHub Pages
 # v1.0 distribution paused: configuration changes must not deploy Pages.
 # Manual dispatch remains available for a future explicitly verified release.
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'global/**'
+      - 'domestic/**'
+      - 'live/**'
+      - 'data/**'
+      - 'index.html'
   workflow_dispatch:
 
 permissions:
