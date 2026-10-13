@@ -6,25 +6,41 @@
       "title": "중견·중소 제약, 허가용 생산하고도 못 판다… 폐기비용 327억",
       "source": "https://slv.hitnews.co.kr/news/articleView.html?idxno=79818",
       "source_name": "히트뉴스",
-      "discovery_only": true
+      "discovery_only": true,
+      "summary": "상위 50개 제약사 중 42개사의 허가 전 생산분을 분석한 결과, 최초 등재가 기준 추산 시장가치가 약 327억6000만원으로 집계됐다. 품목당 30만개 생산을 가정한 수치로, 실제 제조원가나 확정된 폐기 손실액은 아니다.",
+      "tag": "제조·규제",
+      "published_at": "2026-10-13T06:05:00+09:00",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "경구 비만약 릴리 파운데요와 AZ 엘레코글리프론, 국내 임상 확대",
       "source": "https://slv.hitnews.co.kr/news/articleView.html?idxno=79819",
       "source_name": "히트뉴스",
-      "discovery_only": true
+      "discovery_only": true,
+      "summary": "릴리의 경구용 GLP-1 치료제 파운데요(오르포글리프론)와 아스트라제네카의 엘레코글리프론이 국내 임상시험계획 승인을 받았다. 릴리는 소아 환자 대상 트루리시티 비교 3상을, AZ는 별도 개발 임상을 추진하면서 경구 비만·당뇨약 경쟁이 확대되고 있다.",
+      "tag": "비만·임상",
+      "published_at": "2026-10-13T06:03:00+09:00",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "판매전문회사 보령파마솔루션, 품목 도입약 시장 '큰손' 되나",
       "source": "https://www.hitnews.co.kr/news/articleViewAmp.html?idxno=79821",
       "source_name": "히트뉴스",
-      "discovery_only": true
+      "discovery_only": true,
+      "summary": "보령은 2027년 1월 영업·마케팅 전문회사 보령파마솔루션 출범을 앞두고 외부 의약품 도입 협상을 진행하는 것으로 알려졌다. 여러 품목을 확보해 신설 회사의 영업 포트폴리오와 초기 사업 기반을 넓히려는 전략으로 분석된다.",
+      "tag": "사업전략",
+      "published_at": "2026-10-13T06:04:00+09:00",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "엘리시젠, 미국안과학회서 ‘NG101’ 임상 1/2a상 고용량군 결과 발표",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=28959",
       "source_name": "더바이오",
-      "discovery_only": true
+      "discovery_only": true,
+      "summary": "엘리시젠이 습성 황반변성 유전자치료제 NG101의 1/2a상 고용량군 24주 데이터를 공개했다. 회사 발표에 따르면 투여 후 평균 추가 항-VEGF 주사는 0.5회였고 시력은 ETDRS 평균 약 8글자 개선됐다. 미국 FDA와 후속 임상 논의를 마쳤으며 2027년 상반기 2b상 승인을 목표로 한다.",
+      "tag": "유전자치료·임상",
+      "published_at": "2026-10-13T09:55:00+09:00",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "동아에스티 '슈가논' 기반 3제 병용요법 3상 성공…당화혈색소 최대 0.77%p 추가 감소",
@@ -35,7 +51,8 @@
       "priority": "P0",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+      "summary": "동아에스티가 자체 개발한 당뇨병 신약 슈가논 성분 에보글립틴에 엠파글리플로진·메트포르민을 더한 3제 병용요법의 3상 결과를 공개했다. 제2형 당뇨병 환자 174명에서 24주차 당화혈색소가 위약 대비 0.62~0.77%포인트 더 감소했다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "오페브 후발 신약 '자스케이드', 식약처 최종 승인 임박",
@@ -46,18 +63,20 @@
       "priority": "P1",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+      "summary": "베링거인겔하임의 폐섬유증 치료 신약 자스케이드(네란도밀라스트)가 10월 중 국내 허가를 받을 것으로 예상된다. 선택적 PDE4B 억제제로, 특발성폐섬유증 환자 1177명 대상 FIBRONEER-IPF 3상에서 52주간 폐기능 감소를 위약보다 늦춘 결과를 근거로 한다. 아직 국내 최종 허가 확정 보도는 아니다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "CSO 계약서 98만건 쌓였는데…리베이트 감시망은 왜 작동 못하나",
       "source": "https://www.apsk.co.kr/news/articleView.html?idxno=540708",
       "source_name": "메디팜스투데이",
       "published_at": "2026-10-13T06:00:00+09:00",
-      "tag": "규제·시장",
+      "tag": "리베이트·규제",
       "priority": "P1",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+      "summary": "2024년 신고제 도입 후 의약품 판촉영업자(CSO) 위탁계약서 약 98만건이 확보됐지만 양식이 제각각이어서 분석에 한계가 있다는 지적이다. 첫 실태조사 대상 2만14곳 중 응답은 396곳(2%)에 그쳤다. 계약 표준화와 재위탁·판촉수수료 흐름 추적이 과제로 제시됐다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "삼진제약, 하이드라섹 산 연령 상한 삭제…포 단위 용량 신설",
@@ -68,18 +87,20 @@
       "priority": "P2",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+      "summary": "삼진제약의 소아용 지사제 하이드라섹 산은 식약처 허가사항 변경으로 기존 '생후 3개월 이상~만 12세 미만'에서 만 12세 미만 연령 상한이 삭제됐다. 체중별 10mg·30mg 포 단위 용법·용량도 신설돼 처방·복용 기준이 간소화됐다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "코어라인소프트, 日 닥터넷과 심혈관 영상 AI 공급 계약",
       "source": "https://www.newspim.com/news/view/20261013000213",
       "source_name": "뉴스핌",
       "published_at": "2026-10-13T10:13:00+09:00",
-      "tag": "사업계약",
+      "tag": "의료AI·사업계약",
       "priority": "P2",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+      "summary": "코어라인소프트가 일본 원격영상진단 업체 닥터넷에 관상동맥석회화 분석 AI 소프트웨어 'AVIEW CAC'를 공급한다. 흉부 CT에서 심혈관 위험과 관련된 석회화 정도를 자동 분석해 닥터넷의 원격판독 보고 과정에 연결하는 방식이다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "“임상 자산만 찾는다더니…” 빅파마가 ‘초기 기술’ 찜하는 이유",
@@ -90,7 +111,8 @@
       "priority": "P2",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+      "summary": "글로벌 제약사들이 임상 단계 후보물질 외에 AI 단백질 설계·신규 표적 발굴 등 초기 기술에도 선별적으로 협력하고 있다는 분석이다. 갤럭스와 베링거인겔하임, 에즈큐리스와 아스트라제네카 사례를 다루며 실험 재현성과 생산·개발 연결 역량이 후속 계약의 관건이라고 짚었다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "잘 키워도 산 넘어 산…잘 나가던 K-신약, 약가인하에 찬물",
@@ -101,7 +123,8 @@
       "priority": "P1",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+      "summary": "국내 신약의 처방 실적이 약가 인하로 줄어드는 사례를 분석했다. 유한양행 렉라자의 3분기 외래 처방액은 136억원으로 전년 대비 37.4% 감소했는데, 위험분담제 재계약에 따른 가격 조정 영향을 고려해야 한다. 펠루비와 카나브의 약가 변수도 함께 다뤘다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "제약사, 약가 인하 파고에 '화장품' 힘준다 … 사업 확장 넘어 사명 변경까지",
@@ -112,7 +135,8 @@
       "priority": "P1",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+      "summary": "제약사들이 약가 인하에 따른 수익성 불확실성 속에 화장품 사업을 확대하는 추세를 조명했다. 동국제약은 'DK센텔리안'으로 사명 변경을 추진하며, 올해 상반기 화장품 등을 포함한 헬스케어 매출 2029억원을 기록했다. 대웅제약 이지듀와 동아제약 파티온 사례도 소개했다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "큐리언트, 론자와 손잡고 ‘이중 페이로드 ADC’ 사업화",
@@ -123,7 +147,8 @@
       "priority": "P1",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+      "summary": "큐리언트가 글로벌 CDMO 론자와 이중 페이로드 ADC 플랫폼 공동사업화 계약을 체결했다. 큐리언트의 고선택성 CDK7 저해제와 론자의 TOP1 저해제·링커 기술을 결합한 'SYN-duo CC'를 개발사에 제공한다는 구상이다. 실제 고객사 채택과 후속 계약이 사업화 성과의 변수다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     },
     {
       "title": "\"신약 팔고 무엇이 남나\"…바이오 기술수출 전략의 변화",
@@ -134,8 +159,9 @@
       "priority": "P2",
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
-      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+      "summary": "신약 기술수출 방식이 일괄 라이선스아웃에서 초기 투자·옵션계약, 공동개발, 뉴코(NewCo) 설립 등으로 다변화되고 있다는 분석이다. 계약 총액 외에도 기존 회사에 남는 개발권·지분·현금과 데이터 실사, 기술의 재현성을 함께 따져야 한다고 지적한다.",
+      "summary_origin": "publisher_or_corroborating_public_report"
     }
   ],
-  "note": "13일자 주요 국내 취재 후보 14건. 원문 주소·발행시각이 확인된 수집 후보와 초기 선정 기사를 포함하며 핵심 사실은 별도 검증 필요."
+  "note": "2026-10-13 국내 브리핑 14건. 공개 원문 또는 확인 가능한 교차 출처에서 핵심을 추린 간략 요약을 제공하며, 취재 후보의 추가 핵심 사실 검증은 별도."
 }
