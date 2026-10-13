@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 from domestic_route_collector import scan_fixed
 from web_unified_collector import scan_web
 from domestic_candidate_pipeline import build_domestic_stage4
+from global_source_collector import scan_global_sources
 
 TZ=ZoneInfo("Asia/Seoul")
 def now(): return datetime.now(TZ).isoformat(timespec="seconds")
@@ -58,7 +59,8 @@ def scan(day,settings,domestic_only=False):
                 "web_unified_statistics": web["statistics"],
                 "candidates": candidates, "errors": errors,
                 "publish_allowed": False}
-    global_audit=scan_extra(["site:fda.gov/news-events/press-announcements drug approval when:2d","site:ema.europa.eu/en/news medicines CHMP when:2d","site:clinicaltrials.gov study results phase 3 when:2d","site:sec.gov/Archives/edgar/data biotechnology 8-K when:2d","pharma biotech phase 3 trial topline company press release when:2d","pharmaceutical licensing acquisition Reuters Fierce Biotech when:2d"],"GLOBAL",candidates)
+    global_audit=scan_global_sources(day,settings,now)
+    candidates.extend(global_audit["candidates"])
     patent_audit=scan_extra(["제약 특허심판원 심결 특허법원 판결 when:3d","제약 우선판매품목허가 통지의약품 when:3d","의약품 특허만료 제네릭 출시 when:3d","pharma patent litigation biosimilar when:3d"],"PATENT",candidates)
     p0=[]
     for x in candidates:
