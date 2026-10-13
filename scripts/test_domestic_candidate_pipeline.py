@@ -244,5 +244,34 @@ class Stage4Tests(unittest.TestCase):
         self.assertEqual(canon_url("https://www.example.kr/news?a=1&utm_source=hi&fbclid=aa"),
                          "https://example.kr/news?a=1")
 
+class EditorialGateTests(unittest.TestCase):
+    def test_unrelated_web_and_sports_promo_removed_before_verification(self):
+        rows=[
+            unverified("단독 부동산 중개사고, 보상까지 600일", "https://news.google.com/rss/articles/OFFTOPIC", priority="P1"),
+            original("셀메드 후원 유현조, 시즌 2승 달성", "https://publisher.example.kr/sports", priority="P1"),
+            original("동아에스티 신약 임상 3상 성공", "https://publisher.example.kr/trial", priority="P0")
+        ]
+        result=build_domestic_stage4(DAY,rows,config(0),verifier=lambda _:self.fail("budget zero"))
+        self.assertEqual(result["statistics"]["off_topic_web_excluded_before_verification"],1)
+        self.assertEqual(result["statistics"]["non_editorial_excluded_before_verification"],1)
+        self.assertEqual(len(result["domestic"]),1)
+        self.assertIn("동아에스티",result["domestic"][0]["title"])
+
+    def test_high_priority_web_checked_before_lower_priority_publisher(self):
+        rows=[
+            unverified("제약 사업전략 해설", "https://publisher.example.kr/low",group="A",priority="P2"),
+            unverified("임상 3상 실패 제약 바이오", "https://news.google.com/rss/articles/HIGH",priority="P0")
+        ]
+        calls=[]
+        def verify(c):
+            calls.append(c["title"])
+            return {"verified_original":True,"resolved_url":"https://publisher.example.kr/high",
+                    "published_at_verified":IN_WINDOW}
+        result=build_domestic_stage4(DAY,rows,config(1),verifier=verify)
+        self.assertEqual(calls,["임상 3상 실패 제약 바이오"])
+        self.assertEqual(result["statistics"]["new_original_verifier_calls"],1)
+        self.assertEqual(result["statistics"]["deferred_for_budget"],1)
+
+
 if __name__=="__main__":
     unittest.main()
