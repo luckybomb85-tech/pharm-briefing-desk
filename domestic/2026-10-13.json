@@ -91,7 +91,51 @@
       "discovery_only": true,
       "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
       "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+    },
+    {
+      "title": "잘 키워도 산 넘어 산…잘 나가던 K-신약, 약가인하에 찬물",
+      "source": "https://www.apsk.co.kr/news/articleView.html?idxno=540713",
+      "source_name": "메디팜스투데이",
+      "published_at": "2026-10-13T10:58:46+09:00",
+      "tag": "약가·정책",
+      "priority": "P1",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+    },
+    {
+      "title": "제약사, 약가 인하 파고에 '화장품' 힘준다 … 사업 확장 넘어 사명 변경까지",
+      "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/13/2026101300130.html",
+      "source_name": "뉴데일리",
+      "published_at": "2026-10-13T11:00:38+09:00",
+      "tag": "사업전략",
+      "priority": "P1",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+    },
+    {
+      "title": "큐리언트, 론자와 손잡고 ‘이중 페이로드 ADC’ 사업화",
+      "source": "https://www.hankyung.com/article/202610137682i",
+      "source_name": "한국경제",
+      "published_at": "2026-10-13T08:33:08+09:00",
+      "tag": "기술·사업계약",
+      "priority": "P1",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
+    },
+    {
+      "title": "\"신약 팔고 무엇이 남나\"…바이오 기술수출 전략의 변화",
+      "source": "https://www.dailypharm.com/user/news/343316",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-13T12:00:02+09:00",
+      "tag": "분석·기술수출",
+      "priority": "P2",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 확인이 필요합니다."
     }
   ],
-  "note": "2026-10-13 취재 후보 10건. 추가된 6건은 국내 수집 실행의 원문·발행시각 검증 결과를 활용했으며, 본문 핵심 사실을 독립 검증한 것은 아님."
+  "note": "13일자 주요 국내 취재 후보 14건. 원문 주소·발행시각이 확인된 수집 후보와 초기 선정 기사를 포함하며 핵심 사실은 별도 검증 필요."
 }
