@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-13T10:59:15+09:00",
+  "checked_at": "2026-10-13T11:03:04+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -20,7 +20,7 @@
     {
       "source": "FDA Drugs",
       "status": "PARTIAL",
-      "hits": 1,
+      "hits": 0,
       "in_window_index_hits": 0,
       "error": null
     },
