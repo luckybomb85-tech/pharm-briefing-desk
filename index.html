@@ -10,7 +10,7 @@ function normalized(raw){
 }
 function article(x){
  const url=validURL(x.url||x.source),title=escapeHTML(x.title||'제목 없음'),summary=String(x.summary||'').trim();
- return '<article class="article"><div class="meta">'+escapeHTML(x.source_name||'출처 미확인')+' · '+escapeHTML(x.published_at||'발행시각 미확인')+'</div><h3>'+title+'</h3><p class="summary">'+escapeHTML(summary||'원문 기반 요약이 아직 준비되지 않았습니다.')+'</p>'+(url?'<a target="_blank" rel="noopener noreferrer" href="'+escapeHTML(url)+'">원문 보기 ↗</a>':'<span class="meta">원문 링크 미확인</span>')+'</article>';
+ return '<article class="article"><div class="meta">'+escapeHTML(x.source_name||'출처 미확인')+' · '+escapeHTML(x.published_at||'발행시각 미확인')+'</div><h3>'+title+'</h3><p class="summary">'+escapeHTML(summary||'기사 요약은 아직 준비되지 않았습니다.')+'</p>'+(url?'<a target="_blank" rel="noopener noreferrer" href="'+escapeHTML(url)+'">원문 보기 ↗</a>':'<span class="meta">원문 링크 미확인</span>')+'</article>';
 }
 async function render(){
  const token=++generation;
@@ -18,9 +18,9 @@ async function render(){
  document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
  cards.innerHTML='<div class="empty">브리핑 데이터를 확인하고 있습니다.</div>';
  try{
-  const res=await fetch('./v2/data/'+date+'.json',{cache:'no-store'});
+  const res=await fetch('https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/briefing-feed-v2?date='+encodeURIComponent(date),{cache:'no-store'});
   if(token!==generation)return;
-  if(res.status===404){showEmpty('해당 날짜의 검증된 브리핑이 아직 없습니다.');return}
+  if(res.status===404){showEmpty('해당 날짜의 브리핑 후보가 아직 없습니다.');return}
   if(!res.ok)throw Error('HTTP '+res.status);
   const data=normalized(await res.json());if(token!==generation)return;
   document.querySelectorAll('[data-tab]').forEach(b=>b.querySelector('.count').textContent=data[b.dataset.tab].length);
