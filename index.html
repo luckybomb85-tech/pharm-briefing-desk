@@ -84,8 +84,9 @@ function todayKst(){
   const o=Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
   return o.year+'-'+o.month+'-'+o.day;
 }
-let globalDiscovery=null,domesticDiscovery=null;
-function visibleItems(section=tab){const base=(section==='domestic'&&domesticDiscovery?.date===current?domesticDiscovery.items:section==='global'&&globalDiscovery?.date===current?globalDiscovery.items:(D?.[section]||[])),extra=L?.[section]?.items||[];return [...extra].reverse().concat(base)}
+let globalDiscovery=null,domesticDiscovery=null,dbBriefing={domestic:[],global:[],patent:[]};
+async function loadDbBriefing(date){dbBriefing={domestic:[],global:[],patent:[]};if(!db)return;try{const q=await db.from('briefing_articles').select('briefing_date,section,title,summary,source_url,source_name,published_at,tag,article_preview,discovery_only,payload').eq('briefing_date',date).order('published_at',{ascending:false});if(q.error)throw q.error;for(const x of q.data||[]){if(!dbBriefing[x.section])continue;dbBriefing[x.section].push({...x.payload,...x,title:x.title,summary:x.summary,source:x.source_url,source_name:x.source_name})}}catch(e){console.warn('Database briefing unavailable; using archived files',e)}}
+function visibleItems(section=tab){const stored=dbBriefing[section]||[];if(stored.length)return [...(L?.[section]?.items||[])].reverse().concat(stored);const base=(section==='domestic'&&domesticDiscovery?.date===current?domesticDiscovery.items:section==='global'&&globalDiscovery?.date===current?globalDiscovery.items:(D?.[section]||[])),extra=L?.[section]?.items||[];return [...extra].reverse().concat(base)}
 async function loadDomesticDiscovery(date){domesticDiscovery=null;try{const r=await fetch('./domestic/'+date+'.json',{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(v.date===date&&Array.isArray(v.items))domesticDiscovery=v}catch(e){console.warn('Domestic discovery unavailable',e)}}
 async function loadGlobalDiscovery(date){globalDiscovery=null;try{const r=await fetch('./global/'+date+'.json',{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(v.date===date&&Array.isArray(v.items))globalDiscovery=v}catch(e){console.warn('Global discovery unavailable',e)}}
 async function loadLiveSection(section,date=current){if(!['domestic','global','patent'].includes(section))return null;try{const r=await fetch('./live/'+date+'-'+section+'.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error();L[section]=await r.json()}catch{L[section]=null}return L[section]}
@@ -97,7 +98,7 @@ async function load(date=current){
   current=date;$('#datePicker').value=date;
   // Rendering published news must NOT wait for optional authentication or schedule APIs.
   const dataPromise=(async()=>{try{const r=await fetch('./data/'+date+'.json',{cache:'no-store'});if(!r.ok)throw Error();return await r.json()}catch{return null}})();
-  const [data]=await Promise.all([dataPromise,loadGlobalDiscovery(date),loadDomesticDiscovery(date)]);
+  const [data]=await Promise.all([dataPromise,loadGlobalDiscovery(date),loadDomesticDiscovery(date),loadDbBriefing(date)]);
   if(current!==date)return;
   D=data;L={domestic:null,global:null,patent:null};
   renderDateLabel();render();
