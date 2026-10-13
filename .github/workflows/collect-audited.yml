@@ -97,8 +97,12 @@ jobs:
           from pathlib import Path
           day=sys.argv[1]
           shortlist=json.loads(Path(f"staging/{day}-global-shortlist.json").read_text(encoding="utf-8"))
+          if not shortlist.get("shortlist"):
+              raise SystemExit("GLOBAL_NO_CANDIDATES: preserve prior desk data; do not publish empty result")
           items=[{"title":x["title"],"source":x["url"],"source_name":x.get("source",""),"published_at":x.get("published_at",""),"tag":", ".join(x.get("signals",[])) or "글로벌","summary":"검색 색인에서 발견한 취재 후보입니다. 원문 사실관계는 확인되지 않았습니다.","discovery_only":True} for x in shortlist.get("shortlist",[])[:10]]
-          Path(f"global/{day}.json").write_text(json.dumps({"date":day,"status":"discovery-only","items":items},ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+          payload={"date":day,"status":"discovery-only","items":items}
+          assert payload["items"] and all(x["title"] and x["source"].startswith("https://") for x in items)
+          Path(f"global/{day}.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
