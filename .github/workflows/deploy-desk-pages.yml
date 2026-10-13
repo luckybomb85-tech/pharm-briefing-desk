@@ -22,26 +22,26 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.event != 'push')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate latest global desk data
+      - name: Validate global and domestic desk data
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           files=sorted(Path("global").glob("????-??-??.json"))+sorted(Path("domestic").glob("????-??-??.json"))
           if not files:
-              raise SystemExit("No global briefing data available")
+              raise SystemExit("No briefing data available")
           for p in files:
               d=json.loads(p.read_text(encoding="utf-8"))
               assert d["date"]==p.stem and isinstance(d["items"],list),p
               assert all(x.get("title") and x.get("source","").startswith("https://") for x in d["items"]),p
-          print(f"Validated {len(files)} global briefing dates")
+          print(f"Validated {len(files)} briefing dates")
           PY
       - name: Prepare public site only
         run: |
