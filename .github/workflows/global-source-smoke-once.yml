@@ -6,6 +6,7 @@ on:
       - '.github/workflows/global-source-smoke-once.yml'
       - 'scripts/global_source_collector.py'
       - 'scripts/global_candidate_ranker.py'
+      - 'scripts/render_global_briefing.py'
       - 'scripts/global_top_verifier.py'
       - 'scripts/test_global_top_verifier.py'
       - 'scripts/verify_originals.py'
@@ -46,6 +47,10 @@ jobs:
           print("Total candidates:",len(out["candidates"]))
           print("Originals verified: 0; no publication permitted")
           PY
+      - name: Render top ten global briefing without new requests
+        run: |
+          DAY=$(TZ=Asia/Seoul date +%F)
+          python scripts/render_global_briefing.py --date "$DAY" --input status/global-shortlist-latest.json --output status/global-briefing-latest.md
       - name: Commit compact source health report
         if: success()
         run: |
@@ -58,7 +63,7 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add status/global-source-health-latest.json status/global-shortlist-latest.json
+          git add status/global-source-health-latest.json status/global-shortlist-latest.json status/global-briefing-latest.md
           git diff --cached --quiet || (git commit -m "Record global source smoke evidence [skip ci]" && git push)
       - uses: actions/upload-artifact@v4
         if: always()
@@ -67,4 +72,5 @@ jobs:
           path: |
             status/global-source-smoke.json
             status/global-shortlist-latest.json
+            status/global-briefing-latest.md
           retention-days: 14
