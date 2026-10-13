@@ -25,6 +25,6 @@ def select(candidates,limit=30):
         score=sum(score for pattern,score,tag in SIGNALS if re.search(pattern,key))
         if re.search(LOW,key):score-=5
         if not tags or score<=0:continue
-        selected.append({**item,"score":score,"signals":tags,"verified_original":False,"editorial_status":"CANDIDATE_ONLY","original_url_verified":False})
+        selected.append({**item,"score":score,"signals":tags,"verified_original":False,"editorial_status":"DISCOVERY_READY","original_url_verified":False})
     selected.sort(key=lambda x:(-x["score"],x.get("title","")))
-    return {"total_input":len(candidates),"ranked_count":len(selected),"shortlist":selected[:limit],"note":"Keyword ranking only; manual or separate original-source verification required."}
+    return {"total_input":len(candidates),"ranked_count":len(selected),"shortlist":selected[:limit],"note":"Discovery-ready shortlist for editorial review. Source link and headline are index evidence only; original verification required before factual reporting."}
