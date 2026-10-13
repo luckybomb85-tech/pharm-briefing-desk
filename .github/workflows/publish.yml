@@ -1,18 +1,8 @@
-name: publish-briefing
-
-# Distribution is intentionally paused while briefing search/selection quality is being tuned.
-# Re-enable schedule/manual publishing only after editorial review.
+name: legacy-publishing-disabled
 on:
   workflow_dispatch:
-
-permissions:
-  contents: read
-
 jobs:
-  paused:
+  disabled:
     runs-on: ubuntu-latest
     steps:
-      - name: Distribution paused
-        run: |
-          echo "Briefing distribution is paused."
-          echo "No Telegram send, Pages deploy, or data promotion will run."
+      - run: echo 'Legacy publishing has been retired.'
