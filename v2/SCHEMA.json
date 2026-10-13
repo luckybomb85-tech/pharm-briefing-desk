@@ -1,0 +1,17 @@
+{
+  "schema_version": "briefing-v2",
+  "date": "YYYY-MM-DD",
+  "timezone": "Asia/Seoul",
+  "status": "ready | partial | failed",
+  "domestic": [],
+  "global": [],
+  "patent": [],
+  "item_fields": {
+    "title": "string",
+    "summary": "원문 확인을 거친 요약. 미확인 시 빈 문자열",
+    "source_name": "string",
+    "url": "https://...",
+    "published_at": "ISO-8601 with timezone",
+    "priority": "P0 | P1 | P2 | P3"
+  }
+}
