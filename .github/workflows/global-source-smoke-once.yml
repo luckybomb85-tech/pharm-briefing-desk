@@ -49,6 +49,10 @@ jobs:
           print("Total candidates:",len(out["candidates"]))
           print("Originals verified: 0; no publication permitted")
           PY
+      - name: Translate global headlines into Korean
+        run: |
+          DAY=$(TZ=Asia/Seoul date +%F)
+          python scripts/translate_global_desk.py "global/$DAY.json"
       - name: Render top ten global briefing without new requests
         run: |
           DAY=$(TZ=Asia/Seoul date +%F)
