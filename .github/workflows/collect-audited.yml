@@ -6,6 +6,7 @@ on:
       - 'scripts/collect_with_evidence.py'
       - 'scripts/global_source_collector.py'
       - 'scripts/global_candidate_ranker.py'
+      - 'scripts/test_global_candidate_ranker.py'
       - 'scripts/test_global_source_collector.py'
       - 'scripts/domestic_route_collector.py'
       - 'scripts/test_domestic_routes.py'
@@ -48,6 +49,8 @@ jobs:
         run: python -m unittest discover -s scripts -p 'test_event_map.py' -v
       - name: Unit test global source collection (no network)
         run: python -m unittest discover -s scripts -p 'test_global_source_collector.py' -v
+      - name: Unit test global ranking (no network)
+        run: python -m unittest discover -s scripts -p 'test_global_candidate_ranker.py' -v
       - name: Unit test domestic routes (no network)
         run: python -m unittest discover -s scripts -p 'test_domestic_routes.py' -v
       - name: Unit test native page/window and 14+6 operational coverage (no network)
