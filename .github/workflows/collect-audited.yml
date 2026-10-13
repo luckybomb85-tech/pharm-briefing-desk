@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/collect_with_evidence.py'
       - 'scripts/global_source_collector.py'
+      - 'scripts/global_candidate_ranker.py'
       - 'scripts/test_global_source_collector.py'
       - 'scripts/domestic_route_collector.py'
       - 'scripts/test_domestic_routes.py'
@@ -80,4 +81,5 @@ jobs:
             status/*-collection-evidence.json
             staging/*-domestic-stage4.json
             staging/*-source-health.json
+            staging/*-global-shortlist.json
           retention-days: 14
