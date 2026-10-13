@@ -1,0 +1,116 @@
+{
+  "schema_version": "domestic-collector-v2",
+  "timezone": "Asia/Seoul",
+  "window": {
+    "start": "previous_day_12:00_KST",
+    "end": "collection_time_KST"
+  },
+  "discovery": {
+    "strategy": "priority_site_search",
+    "provider": "google_news_rss",
+    "max_per_site": 12,
+    "timeout_seconds": 12
+  },
+  "priority_sites": [
+    [
+      "히트뉴스",
+      "hitnews.co.kr"
+    ],
+    [
+      "헬스코리아뉴스",
+      "hkn24.com"
+    ],
+    [
+      "더바이오",
+      "thebionews.net"
+    ],
+    [
+      "딜사이트",
+      "dealsite.co.kr"
+    ],
+    [
+      "비즈니스포스트",
+      "businesspost.co.kr"
+    ],
+    [
+      "뉴스핌",
+      "newspim.com"
+    ],
+    [
+      "뉴스더보이스",
+      "newsthevoice.com"
+    ],
+    [
+      "뉴데일리",
+      "newdaily.co.kr"
+    ],
+    [
+      "메디팜스투데이",
+      "pharmstoday.com"
+    ],
+    [
+      "이데일리",
+      "edaily.co.kr"
+    ],
+    [
+      "머니투데이",
+      "mt.co.kr"
+    ],
+    [
+      "한국경제",
+      "hankyung.com"
+    ],
+    [
+      "매일경제",
+      "mk.co.kr"
+    ],
+    [
+      "서울경제",
+      "sedaily.com"
+    ],
+    [
+      "전자신문",
+      "etnews.com"
+    ],
+    [
+      "아시아경제",
+      "asiae.co.kr"
+    ],
+    [
+      "파이낸셜뉴스",
+      "fnnews.com"
+    ],
+    [
+      "조선비즈",
+      "biz.chosun.com"
+    ],
+    [
+      "이투데이",
+      "etoday.co.kr"
+    ],
+    [
+      "EBN",
+      "ebn.co.kr"
+    ]
+  ],
+  "excluded_sites": [
+    "의협신문",
+    "메디게이트",
+    "팜뉴스",
+    "약업신문",
+    "약사공론",
+    "메디칼타임즈"
+  ],
+  "search_terms": [
+    "제약 바이오 신약 임상 허가",
+    "약가 급여 제네릭 제약",
+    "제약사 특허 소송 기술수출"
+  ],
+  "policy": {
+    "no_quota_padding": true,
+    "require_publisher_match": true,
+    "require_valid_timestamp": true,
+    "require_original_article_url": true,
+    "allow_unverified_as_published": false
+  }
+}
