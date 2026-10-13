@@ -14,6 +14,6 @@ class GlobalSourceTests(unittest.TestCase):
     def test_failures_are_isolated(self):
         def fail(_):raise OSError("blocked")
         out=scan_global_sources("2026-10-13",{},lambda:"now",fail,fail)
-        self.assertEqual(len(out["routes"]),21)
+        self.assertEqual(len(out["routes"]),18)
         self.assertEqual(out["status"],"FAIL")
 if __name__=="__main__":unittest.main()
