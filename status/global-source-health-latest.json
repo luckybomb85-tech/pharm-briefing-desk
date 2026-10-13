@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-13T11:32:21+09:00",
+  "checked_at": "2026-10-13T11:35:54+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -8,7 +8,7 @@
     "pooled_queries": 1,
     "total_max": 18
   },
-  "candidate_count": 339,
+  "candidate_count": 336,
   "routes": [
     {
       "source": "FDA Press Releases",
@@ -20,7 +20,7 @@
     {
       "source": "FDA Drugs",
       "status": "PARTIAL",
-      "hits": 1,
+      "hits": 0,
       "in_window_index_hits": 0,
       "error": null
     },
@@ -90,8 +90,8 @@
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 65,
-      "in_window_index_hits": 63,
+      "hits": 61,
+      "in_window_index_hits": 60,
       "error": null
     },
     {

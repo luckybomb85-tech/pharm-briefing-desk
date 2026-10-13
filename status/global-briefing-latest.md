@@ -62,6 +62,6 @@
 - 발견 링크: https://news.google.com/rss/articles/CBMikgFBVV95cUxPN3pId0twd2k0SkVCQXdRRTBwQ3VDN00zY19QZWgzWDI0RmpXODNUdEpBRlBVbmhYbG5LLWlhVjBucWJZMzhHUVZWSDNVeTRlaVo3ZUhJYWNBLXVhNmZXNDljT0dyZUVOQkdfRzBxQjRJV2lfQ3B2aWszMENUMnlNczd5RXRyVzhBeU93QXJzQW5kQQ?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-선별 대상 339건 중 중요도 기준 통과 50건. 상위 10건 표시.
+선별 대상 336건 중 중요도 기준 통과 50건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
