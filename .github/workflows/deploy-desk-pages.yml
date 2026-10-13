@@ -5,6 +5,7 @@ on:
     paths:
       - 'index.html'
       - 'global/**'
+      - 'domestic/**'
       - '.github/workflows/deploy-desk-pages.yml'
   workflow_run:
     workflows:
@@ -33,7 +34,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          files=sorted(Path("global").glob("????-??-??.json"))
+          files=sorted(Path("global").glob("????-??-??.json"))+sorted(Path("domestic").glob("????-??-??.json"))
           if not files:
               raise SystemExit("No global briefing data available")
           for p in files:
@@ -46,7 +47,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/index.html
-          for dir in global data live schedule; do
+          for dir in global domestic data live schedule; do
             if [ -d "$dir" ]; then cp -R "$dir" "_site/$dir"; fi
           done
       - uses: actions/configure-pages@v5
