@@ -104,6 +104,7 @@ jobs:
           assert payload["items"] and all(x["title"] and x["source"].startswith("https://") for x in items)
           Path(f"global/{day}.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           PY
+          python scripts/translate_global_desk.py "global/$DAY.json"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "global/$DAY.json"
