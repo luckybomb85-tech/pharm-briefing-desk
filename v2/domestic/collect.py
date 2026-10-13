@@ -63,13 +63,8 @@ def parse_time(raw):
         return None
 
 def collect(now, config, transport=fetch):
-    start = (now - dt.timedelta(days=1)).replace(hour=12, minute=0, second=0, microsecond=0)
-    if now.hour < 12:
-        start -= dt.timedelta(days=1)
-    # The requested window is always previous calendar day 12:00 KST.
-    start = (now.date() - dt.timedelta(days=1))
-    start = dt.datetime.combine(start, dt.time(12), tzinfo=KST)
-    accepted, seen, diagnostics = [], set(), []
+    start = dt.datetime.combine(now.date() - dt.timedelta(days=1), dt.time(12), tzinfo=KST)
+    accepted, unresolved, seen, diagnostics = [], [], set(), []
     for name, domain in config["priority_sites"]:
         counts = {"site": name, "domain": domain, "status": "PASS_ZERO", "found": 0, "accepted": 0, "rejected": 0, "errors": []}
         for term in config["search_terms"]:
@@ -84,7 +79,7 @@ def collect(now, config, transport=fetch):
                 link = canonical_url(item["url"])
                 publisher_link = item["publisher_url"]
                 # Google News links are not source URLs. Never mislabel them as verified originals.
-                if not published or not start <= published <= now or not link or not host_matches(link, domain):
+                if not published or not start <= published <= now:
                     counts["rejected"] += 1
                     continue
                 if publisher_link and not host_matches(publisher_link, domain):
@@ -93,21 +88,27 @@ def collect(now, config, transport=fetch):
                 if not any(k in item["title"] for k in KEYWORDS):
                     counts["rejected"] += 1
                     continue
-                key = hashlib.sha256(link.encode()).hexdigest()
+                key = hashlib.sha256((link or item["url"]).encode()).hexdigest()
                 if key in seen:
                     continue
                 seen.add(key)
-                accepted.append({"title": item["title"], "url": link, "source_name": name,
+                record = {"title": item["title"], "url": link or item["url"], "source_name": name,
                                  "published_at": published.isoformat(), "summary": "",
                                  "verification_status": "discovery_only", "priority": "unreviewed",
-                                 "source_id": key[:20]})
-                counts["accepted"] += 1
+                                 "source_id": key[:20]}
+                if link and host_matches(link, domain):
+                    accepted.append(record)
+                    counts["accepted"] += 1
+                else:
+                    record["verification_status"] = "original_url_unresolved"
+                    unresolved.append(record)
         counts["status"] = ("PARTIAL" if counts["errors"] else "PASS") if counts["accepted"] else ("FAIL" if len(counts["errors"]) == len(config["search_terms"]) else ("PARTIAL" if counts["errors"] else "PASS_ZERO"))
         diagnostics.append(counts)
     accepted.sort(key=lambda x: x["published_at"], reverse=True)
+    unresolved.sort(key=lambda x: x["published_at"], reverse=True)
     return {"schema_version": "domestic-discovery-v2", "date": now.date().isoformat(),
             "timezone": "Asia/Seoul", "window_start": start.isoformat(),
-            "window_end": now.isoformat(), "items": accepted, "source_status": diagnostics,
+            "window_end": now.isoformat(), "items": accepted, "unresolved": unresolved, "source_status": diagnostics,
             "status": "FAIL" if all(s["status"] == "FAIL" for s in diagnostics) else
                       "PARTIAL" if any(s["status"] in ("PARTIAL", "FAIL") for s in diagnostics) else "PASS"}
 
