@@ -11,6 +11,8 @@ on:
       - 'scripts/test_global_top_verifier.py'
       - 'scripts/verify_originals.py'
   workflow_dispatch:
+  schedule:
+    - cron: '5 20 * * 0-4' # 05:05 KST Monday-Friday
 permissions:
   contents: write
 jobs:
