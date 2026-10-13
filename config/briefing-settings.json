@@ -751,7 +751,16 @@
       "Labiotech",
       "GEN"
     ],
-    "priority_rule": "회사 공식 발표와 FDA/EMA/SEC/ClinicalTrials.gov를 우선 확인하고 주요 임상 결과·허가·안전성·대형 기술거래·M&A를 선별한다. 한국 기업 직접 이슈는 domestic으로 분류한다."
+    "priority_rule": "13개 지정 전문매체와 FDA/EMA 공식 RSS를 정기 수집한다. SEC/ClinicalTrials.gov/기업 뉴스룸은 중요한 사건의 원문 검증에만 활용하며 정기 감시하지 않는다. 한국 기업 직접 이슈는 domestic으로 분류한다.",
+    "collection_mode": {
+      "routine_publisher_count": 13,
+      "routine_official_feed_count": 4,
+      "shared_gap_search_count": 1,
+      "max_requests": 18,
+      "company_newsrooms": "verification_only",
+      "sec_clinicaltrials": "verification_only",
+      "completion_policy": "Search execution is not original publication verification; PARTIAL until evidence confirms coverage."
+    }
   },
   "patent": {
     "tab_definition": "국내 제약바이오 산업의 특허·독점권 변화를 추적하는 별도 브리핑 탭",
