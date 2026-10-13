@@ -122,6 +122,29 @@ $('#authLogin').onclick=async()=>{const email=$('#authEmail').value.trim().toLow
 async function loadMembers(){const box=$('#memberAdminBox');if(!box)return;box.style.display='block';const {data,error}=await db.from('team_members').select('*').order('created_at');if(error){box.innerHTML='<p>회원 목록을 불러오지 못했습니다.</p>';return}$('#memberList').innerHTML=(data||[]).map(m=>'<div class="memberRow"><span><b>'+esc(m.display_name||'이름 미입력')+'</b><br>'+esc(m.email)+'</span><select id="mr-'+m.user_id+'"><option value="reporter" '+(m.role==='reporter'?'selected':'')+'>기자</option><option value="admin" '+(m.role==='admin'?'selected':'')+'>관리자</option></select><label><input id="ma-'+m.user_id+'" type="checkbox" '+(m.active?'checked':'')+'> 승인</label><button onclick="saveMember(\''+m.user_id+'\')">저장</button></div>').join('')||'<p>가입 요청이 없습니다.</p>'}
 window.saveMember=async id=>{const role=$('#mr-'+id).value,active=$('#ma-'+id).checked;const {error}=await db.from('team_members').update({role,active}).eq('user_id',id);if(error){toast('회원 저장 실패: '+error.message);return}await loadMembers();toast('회원 권한을 저장했습니다')};
 
+async function hasBriefingForDate(date){
+  for(const section of ['domestic','global','data']){
+    try{
+      const r=await fetch('./'+section+'/'+date+'.json',{cache:'no-store'});
+      if(!r.ok)continue;
+      const d=await r.json();
+      if(d.date!==date)continue;
+      if(section==='data'){
+        if(['domestic','global','patent'].some(k=>Array.isArray(d[k])&&d[k].length))return true;
+      }else if(Array.isArray(d.items)&&d.items.length)return true;
+    }catch(e){console.warn('Briefing availability check failed',section,date,e)}
+  }
+  return false;
+}
+async function loadLatestAvailableBriefing(){
+  const today=todayKst();
+  // At midnight, keep the most recent published briefing rather than showing an empty new day.
+  for(let offset=0;offset>=-7;offset--){
+    const date=datePlus(today,offset);
+    if(await hasBriefingForDate(date)){await load(date);return}
+  }
+  await load(today);
+}
 function shift(n){const d=new Date(current+'T12:00:00');d.setDate(d.getDate()+n);load(d.toISOString().slice(0,10))}$('#prev').onclick=()=>shift(-1);$('#next').onclick=()=>shift(1);$('#dateLabel').onclick=()=>$('#datePicker').showPicker?.();$('#datePicker').onchange=e=>load(e.target.value);
 function isAdmin(){return Boolean(session&&membership?.active&&membership.role==='admin')}
 async function openSettings(){await refreshAuth();if(!session){openAuth();toast('설정은 관리자 로그인 후 사용할 수 있습니다');return}if(!isAdmin()){toast('관리자만 설정을 변경할 수 있습니다');return}await loadSettings();$('#settings').classList.add('open')}
@@ -136,5 +159,5 @@ async function loadSettings(){let cfg=null;try{const q=await db.from('app_settin
 async function loadPublicSettings(){try{const q=await db.from('app_settings').select('value').eq('key','main').single();if(!q.error&&Array.isArray(q.data?.value?.tabs)){managedTabs=q.data.value.tabs;bindMainTabs()}}catch{}}
 function renderFeedback(){const rows=feedbackRows||[],likes=rows.filter(r=>r.signal==='like').length,dislikes=rows.filter(r=>r.signal==='dislike').length,writes=rows.filter(r=>r.signal==='article_quick'||r.signal==='article_deep').length;$('#feedbackStats').innerHTML='<div class="stat"><b>'+likes+'</b><span>선정 적절</span></div><div class="stat"><b>'+dislikes+'</b><span>선정 아쉬움</span></div><div class="stat"><b>'+writes+'</b><span>기사작성</span></div>';const score={};rows.forEach(r=>{const k=r.tag||'기타';score[k]=(score[k]||0)+Number(r.weight||0)});const ranked=Object.entries(score).filter(x=>x[1]!==0).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,5);const learned=ranked.length?ranked.map(([k,v])=>'<span class="eventBadge">'+esc(k)+' '+(v>0?'↑':'↓')+'</span>').join(' '):'<span style="color:#687789">아직 학습할 평가가 없습니다.</span>';$('#feedbackRules').innerHTML='<div style="font-size:12px;line-height:1.7;margin-top:6px"><b>최근 30일 학습</b><div style="margin-top:6px">'+learned+'</div><p style="margin:8px 0 0">👍·👎는 기사 선정 가중치를 보정하고, 실제 <b>기사 작성</b> 클릭은 더 강한 유용성 신호로 반영합니다. FDA·식약처 허가, 주요 임상, 약가·정책, 대형 거래, 중요 판결·안전성 이슈는 피드백과 무관하게 우선 검토합니다.</p></div>'}
 $('#saveSettings').onclick=async()=>{if(!isAdmin()){toast('관리자만 저장할 수 있습니다');return}const next={...serverSettings,target_counts:{domestic:Number($('#nDomestic').value)||10,global:Number($('#nGlobal').value)||10,patent:Number($('#nPatent').value)||5},priority_sources:{domestic:$('#sDomestic').value.split(/\n+/).map(x=>x.trim()).filter(Boolean),global:$('#sGlobal').value.split(/\n+/).map(x=>x.trim()).filter(Boolean),patent:$('#sPatent').value.split(/\n+/).map(x=>x.trim()).filter(Boolean)},briefing_principles:$('#briefPrinciples').value.trim(),writing:{common:$('#wCommon').value.trim(),quick:$('#wQuick').value.trim(),deep:$('#wDiff').value.trim()},tabs:managedTabs.map(({ruleOpen,...x})=>x),schedule:{categories:Array.from(document.querySelectorAll('.scheduleCat:checked')).map(x=>x.value),priority_sources:$('#scheduleSources').value.split(/\n+/).map(x=>x.trim()).filter(Boolean),rules:$('#scheduleRules').value.trim()},feedback_policy:{window_days:30,weights:{like:1,dislike:-1,article_quick:3,article_deep:3},role:'selection_adjustment',critical_news_override:true}};const q=await db.from('app_settings').update({value:next,updated_at:new Date().toISOString(),updated_by:session.user.id}).eq('key','main').select('key').single();if(q.error){toast('저장 실패: '+q.error.message);return}serverSettings=next;managedTabs=next.tabs;bindMainTabs();render();$('#settingsSaveState').textContent='저장됨 · '+new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'});toast('운영 설정을 저장했습니다')};
-drawTabs();$('#restoreInfo').onclick=()=>toast('이전 버전 복원은 기존 화면을 확인한 뒤 새 버전으로 복원합니다');loadPublicSettings();renderFeedback();db.auth.onAuthStateChange(()=>{setTimeout(async()=>{await loadEvents();await loadFeedback();render();renderFeedback()},0)});db.channel('schedule-live').on('postgres_changes',{event:'*',schema:'public',table:'schedule_events'},async()=>{await loadEvents();if(tab==='schedule')renderSchedule()}).on('postgres_changes',{event:'*',schema:'public',table:'tracked_cases'},async()=>{await loadEvents();if(tab==='schedule')renderSchedule()}).subscribe();load();
+drawTabs();$('#restoreInfo').onclick=()=>toast('이전 버전 복원은 기존 화면을 확인한 뒤 새 버전으로 복원합니다');loadPublicSettings();renderFeedback();db.auth.onAuthStateChange(()=>{setTimeout(async()=>{await loadEvents();await loadFeedback();render();renderFeedback()},0)});db.channel('schedule-live').on('postgres_changes',{event:'*',schema:'public',table:'schedule_events'},async()=>{await loadEvents();if(tab==='schedule')renderSchedule()}).on('postgres_changes',{event:'*',schema:'public',table:'tracked_cases'},async()=>{await loadEvents();if(tab==='schedule')renderSchedule()}).subscribe();loadLatestAvailableBriefing();
 </script></body></html>
