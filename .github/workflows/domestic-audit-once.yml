@@ -1,0 +1,68 @@
+name: domestic-one-shot-coverage-audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/domestic-audit-once.yml'
+  workflow_dispatch:
+    inputs:
+      briefing_date:
+        description: "KST date YYYY-MM-DD"
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan fourteen fixed publishers and six shared WEB topics once
+        env:
+          REQUESTED_DATE: ${{ inputs.briefing_date }}
+        run: |
+          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
+          echo "AUDIT_DATE=$DAY" >> "$GITHUB_ENV"
+          python scripts/collect_with_evidence.py --date "$DAY" --domestic-only
+      - name: Score actual route coverage and preview safe publisher articles
+        run: |
+          python - <<'PY'
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0,"scripts")
+          from domestic_coverage_gate import score_operational_coverage
+          from publish_domestic_desk import curate
+          day=__import__("os").environ["AUDIT_DATE"]
+          settings=json.loads(Path("config/briefing-settings.json").read_text(encoding="utf-8"))
+          audit=json.loads(Path(f"status/{day}-domestic-route-audit.json").read_text(encoding="utf-8"))
+          stage=json.loads(Path(f"staging/{day}-domestic-stage4.json").read_text(encoding="utf-8"))
+          result=score_operational_coverage(settings,audit)
+          items,stats=curate(day,stage["domestic"])
+          report={"date":day,"operational":result,"stage4":stage["statistics"],
+                  "safe_preview_statistics":stats,
+                  "safe_preview_items":[{"title":x["title"],"source":x["source"],
+                                         "published_at":x["published_at"]} for x in items],
+                  "publisher_completeness":{name:x["status"] for group in "ABCD"
+                      for name,x in audit["source_health"][group].items()}}
+          output=Path(f"status/{day}-domestic-one-shot-diagnostic.json")
+          output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+          print("ACTUAL_OPERATIONAL",result["verified_usable_search_tasks"],
+                "/",result["configured_search_tasks"],"goal_met",result["target_met"])
+          print("PUBLISHER_COMPLETENESS",
+                {k:v for k,v in report["publisher_completeness"].items()})
+          print("SAFE_PUBLISH_PREVIEW",stats)
+          for x in items[:25]:print("SAFE_CANDIDATE",x["title"],x["source"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: domestic-audit-once
+          path: |
+            status/*-domestic-route-audit.json
+            status/*-domestic-one-shot-diagnostic.json
+            staging/*-domestic-stage4.json
+            staging/*-source-health.json
+          retention-days: 10
