@@ -6,7 +6,7 @@ on:
       - '.github/workflows/global-source-smoke-once.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   smoke:
     runs-on: ubuntu-latest
@@ -36,6 +36,20 @@ jobs:
           print("Total candidates:",len(out["candidates"]))
           print("Originals verified: 0; no publication permitted")
           PY
+      - name: Commit compact source health report
+        if: success()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path("status/global-source-smoke.json").read_text())
+          report={"checked_at":data["checked_at"],"status":data["status"],"request_budget":data["request_budget"],"candidate_count":len(data["candidates"]),"routes":[{"source":r["source"],"status":r["status"],"hits":r["hits"],"in_window_index_hits":r["in_window_index_hits"],"error":r.get("error")} for r in data["routes"]],"originals_verified":0,"publish_allowed":False}
+          Path("status/global-source-health-latest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add status/global-source-health-latest.json
+          git diff --cached --quiet || (git commit -m "Record global source smoke evidence [skip ci]" && git push)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
