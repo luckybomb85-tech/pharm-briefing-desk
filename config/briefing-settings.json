@@ -421,7 +421,7 @@
       ],
       "ambiguous_event_handling": "Preserve candidate and flag potential duplicate; do not infer same event from company name alone.",
       "avoid_duplicate_original_fetch": true,
-      "max_new_original_verifications": 12,
+      "max_new_original_verifications": 0,
       "priority_order": [
         "P0",
         "P1",
