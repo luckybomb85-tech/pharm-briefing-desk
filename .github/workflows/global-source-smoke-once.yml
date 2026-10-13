@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/global-source-smoke-once.yml'
       - 'scripts/global_source_collector.py'
+      - 'scripts/global_candidate_ranker.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -28,9 +29,12 @@ jobs:
           from zoneinfo import ZoneInfo
           from pathlib import Path
           from scripts.global_source_collector import scan_global_sources
+          from scripts.global_candidate_ranker import select
           now=lambda:datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
           day=datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
           out=scan_global_sources(day,{},now)
+          shortlist=select(out["candidates"],limit=30)
+          Path("status/global-shortlist-latest.json").write_text(json.dumps(shortlist,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
           Path("status/global-source-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
           for route in out["routes"]:
               print(f'{route["source"]}: {route["status"]} hits={route["hits"]} in_window={route["in_window_index_hits"]} error={route.get("error","")}')
@@ -49,11 +53,13 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add status/global-source-health-latest.json
+          git add status/global-source-health-latest.json status/global-shortlist-latest.json
           git diff --cached --quiet || (git commit -m "Record global source smoke evidence [skip ci]" && git push)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: global-source-smoke-evidence
-          path: status/global-source-smoke.json
+          path: |
+            status/global-source-smoke.json
+            status/global-shortlist-latest.json
           retention-days: 14
