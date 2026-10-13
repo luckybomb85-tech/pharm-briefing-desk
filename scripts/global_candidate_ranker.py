@@ -1,5 +1,6 @@
 """Conservative ranking of global discovery candidates; never claims original verification."""
 import re
+from collections import Counter
 from urllib.parse import urlsplit,parse_qs
 from difflib import SequenceMatcher
 SIGNALS=[
@@ -27,4 +28,15 @@ def select(candidates,limit=30):
         if not tags or score<=0:continue
         selected.append({**item,"score":score,"signals":tags,"verified_original":False,"editorial_status":"DISCOVERY_READY","original_url_verified":False})
     selected.sort(key=lambda x:(-x["score"],x.get("title","")))
+    # Keep coverage diverse; syndication and near-identical trial milestones
+    # must not crowd out unrelated events in the reader-facing briefing.
+    diversified=[];company_counts=Counter()
+    for item in selected:
+        title=normalize(item.get("title",""))
+        lead=re.search(r"\\b(?:bms|bristol myers squibb|astrazeneca|pfizer|novartis|roche|merck|sanofi|gsk|eli lilly|abbvie|amgen)\\b",title)
+        company=lead.group(0) if lead else ""
+        if company and company_counts[company]>=2:continue
+        if company:company_counts[company]+=1
+        diversified.append(item)
+    selected=diversified
     return {"total_input":len(candidates),"ranked_count":len(selected),"shortlist":selected[:limit],"note":"Discovery-ready shortlist for editorial review. Source link and headline are index evidence only; original verification required before factual reporting."}
