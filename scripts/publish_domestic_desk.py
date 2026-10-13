@@ -30,19 +30,19 @@ OUTLETS = {
     "pharm.edaily.co.kr": "이데일리",
 }
 OUTLET_SUFFIX = re.compile(
-    r"\\s+[-|]\\s+(?:데일리팜|메디파나뉴스|히트뉴스|뉴스더보이스|"
+    r"\s+[-|]\s+(?:데일리팜|메디파나뉴스|히트뉴스|뉴스더보이스|"
     r"메디팜스투데이|바이오스펙테이터|바이오타임즈|딜사이트|"
     r"비즈니스포스트|뉴스핌|뉴데일리|한국경제|이데일리)$"
 )
 NON_EDITORIAL = re.compile(
-    r"(?:KLPGA|프로골프|(?:후원|협찬).{0,35}(?:선수|프로|우승|시즌\\s*\\d+승)|"
-    r"광고[·\\s&/]*PR.{0,25}(?:대상|공모)|"
+    r"(?:KLPGA|프로골프|(?:후원|협찬).{0,35}(?:선수|프로|우승|시즌\s*\d+승)|"
+    r"광고[·\s&/]*PR.{0,25}(?:대상|공모)|"
     r"봉사활동|체육대회|임직원 워크숍|사내 행사|"
     r"창립기념식|기부금 전달|(?:통합 )?IR데이)"
 )
 MATERIAL = re.compile(
-    r"(?:임상\\s*[123]상|[123]상\\s*(?:결과|성공|실패)|"
-    r"FDA\\s*(?:허가|승인)|"
+    r"(?:임상\s*[123]상|[123]상\s*(?:결과|성공|실패)|"
+    r"FDA\s*(?:허가|승인)|"
     r"기술수출|기술이전|지분변동|최대주주 변경|"
     r"경영권|약가|급여|특허|판결|소송|실적 발표)"
 )
@@ -50,9 +50,9 @@ MATERIAL = re.compile(
 
 def headline(raw):
     value = str(raw or "").strip()
-    value = re.sub(r"^\\s*\\[데일리팜\\]\\s*", "", value)
+    value = re.sub(r"^\s*\[데일리팜\]\s*", "", value)
     # Some publisher native-list extractors concatenate the article body.
-    value = re.split(r"\\s*\\[데일리팜\\s*[=·]\\s*[^\\]]*기자\\]", value, maxsplit=1)[0]
+    value = re.split(r"\s*\[데일리팜\s*[=·]\s*[^\]]*기자\]", value, maxsplit=1)[0]
     value = OUTLET_SUFFIX.sub("", value)
     return " ".join(value.split())
 
@@ -128,7 +128,7 @@ def publish(day):
     payload = {"date":day,"status":"discovery-only","items":items,
                "statistics":counts,
                "note":"발행일·원문 주소 확인 후 선별된 국내 기사. 기사의 핵심 사실은 독립 검증 전."}
-    target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Domestic desk export: {counts} -> {target}")
 
 
