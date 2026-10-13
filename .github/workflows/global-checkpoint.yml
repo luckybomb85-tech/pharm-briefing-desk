@@ -1,0 +1,35 @@
+name: global-checkpoint-diagnostic
+on:
+  schedule:
+    - cron: '45 20 * * *' # 05:45 Asia/Seoul (UTC+9)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: global-checkpoint-diagnostic
+  cancel-in-progress: false
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record global collection handoff status
+        env:
+          TZ: Asia/Seoul
+        run: |
+          DATE=$(TZ=Asia/Seoul date +%F)
+          if [ -f "staging/${DATE}-global.json" ]; then
+            echo "Existing global staging found; preserving it."
+          else
+            python3 scripts/global_checkpoint.py --date "$DATE"
+          fi
+      - name: Commit diagnostic checkpoint
+        run: |
+          DATE=$(TZ=Asia/Seoul date +%F)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "staging/${DATE}-global.json" "status/${DATE}-global-health.json" || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Record global handoff diagnostic ${DATE} [skip ci]"
+            git push
+          fi
