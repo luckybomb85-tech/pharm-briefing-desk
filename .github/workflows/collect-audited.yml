@@ -77,6 +77,39 @@ jobs:
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
           python scripts/collect_with_evidence.py --date "$DAY" --domestic-only
+      - name: Record honest domestic route coverage and editorial readiness
+        if: github.event_name != 'push'
+        env:
+          REQUESTED_DATE: ${{ inputs.briefing_date }}
+        run: |
+          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
+          python - "$DAY" <<'PY'
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0,"scripts")
+          from domestic_coverage_gate import score_operational_coverage
+          day=sys.argv[1]
+          settings=json.loads(Path("config/briefing-settings.json").read_text(encoding="utf-8"))
+          audit=json.loads(Path(f"staging/{day}-domestic-route-audit.json").read_text(encoding="utf-8"))
+          stage=json.loads(Path(f"staging/{day}-domestic-stage4.json").read_text(encoding="utf-8"))
+          coverage=score_operational_coverage(settings,audit)
+          sources=[x for group in "ABCD" for x in audit["source_health"][group].values()]
+          report={"date":day,"operational":coverage,"fixed_publisher_status": {
+                  "complete":sum(x["status"] in ("PASS","PASS_ZERO") for x in sources),
+                  "partial":sum(x["status"]=="PARTIAL" for x in sources),
+                  "fail":sum(x["status"]=="FAIL" for x in sources)},
+                  "stage4":stage["statistics"],"article_recall_status":"UNMEASURED"}
+          out=Path(f"staging/{day}-domestic-operational-summary.json")
+          out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+          print("DOMESTIC_14_PLUS_6",coverage["verified_usable_search_tasks"],
+                "/",coverage["configured_search_tasks"],
+                "target_met",coverage["target_met"],
+                "publisher",report["fixed_publisher_status"],
+                "original_in_window",stage["statistics"]["original_time_in_window"],
+                "article_recall",report["article_recall_status"])
+          if not coverage["target_met"]:
+              print("::warning::Domestic operational route execution below 90%; candidate publication remains discovery-only.")
+          PY
       - name: Export domestic candidates to desk and commit
         if: github.event_name != 'push'
         env:
@@ -89,11 +122,13 @@ jobs:
           git add "domestic/$DAY.json"
           git diff --cached --quiet || (git commit -m "Update domestic discovery $DAY [skip ci]" && git pull --rebase && git push)
       - uses: actions/upload-artifact@v4
-        if: github.event_name != 'push'
+        if: always() && github.event_name != 'push'
         with:
           name: source-evidence
           path: |
             status/*-collection-evidence.json
             staging/*-domestic-stage4.json
+            staging/*-domestic-route-audit.json
+            staging/*-domestic-operational-summary.json
             staging/*-source-health.json
           retention-days: 14
