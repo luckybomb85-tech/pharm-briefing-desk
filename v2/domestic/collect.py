@@ -65,7 +65,7 @@ def parse_time(raw):
 
 def collect(now, config, transport=fetch, resolver=resolve):
     start = dt.datetime.combine(now.date() - dt.timedelta(days=1), dt.time(12), tzinfo=KST)
-    accepted, unresolved, seen, diagnostics = [], [], set(), []
+    accepted, unresolved, seen, seen_original, diagnostics = [], [], set(), set(), []
     for name, domain in config["priority_sites"]:
         resolution_attempts = 0
         counts = {"site": name, "domain": domain, "status": "PASS_ZERO", "found": 0, "accepted": 0, "rejected": 0, "errors": []}
@@ -105,13 +105,18 @@ def collect(now, config, transport=fetch, resolver=resolve):
                         record["url"] = original
                         link = original
                 if link and host_matches(link, domain):
+                    if record["url"] in seen_original:
+                        continue
+                    seen_original.add(record["url"])
                     record["verification_status"] = "original_url_resolved"
                     accepted.append(record)
                     counts["accepted"] += 1
                 else:
                     record["verification_status"] = "original_url_unresolved"
                     unresolved.append(record)
-        counts["status"] = ("PARTIAL" if counts["errors"] else "PASS") if counts["accepted"] else ("FAIL" if len(counts["errors"]) == len(config["search_terms"]) else ("PARTIAL" if counts["errors"] else "PASS_ZERO"))
+        counts["status"] = ("FAIL" if len(counts["errors"]) == len(config["search_terms"]) else
+                            "PARTIAL" if counts["errors"] or (counts["found"] and not counts["accepted"]) else
+                            "PASS" if counts["accepted"] else "PASS_ZERO")
         diagnostics.append(counts)
     accepted.sort(key=lambda x: x["published_at"], reverse=True)
     unresolved.sort(key=lambda x: x["published_at"], reverse=True)
