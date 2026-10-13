@@ -1,0 +1,44 @@
+name: deploy-briefing-desk-pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'global/**'
+      - '.github/workflows/deploy-desk-pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: briefing-desk-pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate latest global desk data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          files=sorted(Path("global").glob("????-??-??.json"))
+          if not files:
+              raise SystemExit("No global briefing data available")
+          for p in files:
+              d=json.loads(p.read_text(encoding="utf-8"))
+              assert d["date"]==p.stem and isinstance(d["items"],list),p
+              assert all(x.get("title") and x.get("source","").startswith("https://") for x in d["items"]),p
+          print(f"Validated {len(files)} global briefing dates")
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
