@@ -284,6 +284,13 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
                                "source": candidate_url(other),
                                "reason": "SAME_URL_TITLE_OR_EVENT_MILESTONE",
                                "kept_title": rep["title"]})
+    # Filter obvious non-editorial PR without removing material company events.
+    # A headline with a material event signal stays eligible even when it also
+    # mentions a conference or product.
+    noise = re.compile(r"(봉사활동|사회공헌|기부금 전달|사내 행사|창립기념|체육대회|임직원 워크숍|수상 소식|업무협약 체결|제품 홍보)", re.I)
+    material = re.compile(r"(임상|허가|승인|판결|소송|특허|약가|급여|기술수출|기술이전|인수|합병|매각|지분|실적|매출|영업이익|상장|FDA|계약해지|중단|3상|2상|1상)", re.I)
+    noise_removed = [x for x in results if noise.search(x["title"]) and not material.search(x["title"])]
+    results = [x for x in results if not (noise.search(x["title"]) and not material.search(x["title"]))]
     # Keep the complete discovery pool in the collection audit, not in the
     # editorial review queue. A bounded diverse queue prevents 300+ headlines
     # becoming a manual-review burden; none are silently called verified.
@@ -314,7 +321,7 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
     # the underlying claimed clinical, financial or legal fact.
     stats = {
         "input_domestic_candidates": total, "preverification_clusters": len(prepared),
-        "duplicates_suppressed": len(duplicates), "events_output": len(review_queue),
+        "duplicates_suppressed": len(duplicates), "noise_candidates_excluded": len(noise_removed), "events_output": len(review_queue),
         "eligible_candidates_before_review_cap": len(results),
         "not_in_review_queue_preserved_in_raw_audit": len(results)-len(review_queue),
         "reused_preverified_originals": prior_reused,
