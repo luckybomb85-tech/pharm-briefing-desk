@@ -421,7 +421,7 @@
       ],
       "ambiguous_event_handling": "Preserve candidate and flag potential duplicate; do not infer same event from company name alone.",
       "avoid_duplicate_original_fetch": true,
-      "max_new_original_verifications": 0,
+      "max_new_original_verifications": 4,
       "priority_order": [
         "P0",
         "P1",
@@ -453,7 +453,8 @@
       "max_editorial_candidates": 40,
       "max_editorial_candidates_per_source": 6,
       "overflow_rule": "Keep all raw candidate links and reasons in the private collection evidence; stage4 editorial queue max 40, balanced across publishers, never claim unreviewed overflow is fully verified.",
-      "target_note": "Step5 live test found 334 discovery links, 8/26 known examples, verified source coverage 0/23. 90% substantive news completeness not established."
+      "target_note": "Step5 live test found 334 discovery links, 8/26 known examples, verified source coverage 0/23. 90% substantive news completeness not established.",
+      "verification_budget_note": "High-priority publisher originals and WEB exclusives, at most 4 additional original checks per morning; search-index links remain unpublished unless verified."
     },
     "native_pagination": {
       "version": "1.0-datewindow",
