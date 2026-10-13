@@ -63,7 +63,7 @@ main{padding:18px 28px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);ma
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL="https://mqkhtnryxyntrrfrfing.supabase.co",SUPABASE_KEY="sb_publishable_GLp72jjAPgHWqUEpqtnw5Q_rY3lfcB8";const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);let session=null,membership=null,editingEventId=null;
-let D=null,L={domestic:null,global:null,patent:null},refreshWaiting={},E={events:[],tracked_cases:[]},tab='domestic',scheduleView='today',feedbackRows=[];let current=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+let D=null,L={domestic:null,global:null,patent:null},refreshWaiting={},E={events:[],tracked_cases:[]},tab='domestic',scheduleView='today',feedbackRows=[];let current=todayKst();
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function host(u){try{return new URL(u).hostname.replace(/^www\./,'')}catch{return '원문'}}
 function sourceLabel(x){const raw=(x.source_name||'').trim(),h=host(x.source||'').toLowerCase();const aliases={'데일리팜':'데일리팜','AstraZeneca':'아스트라제네카','BeyondSpring':'비욘드스프링','NewAmsterdam Pharma':'뉴암스테르담파마','Tectonic Therapeutic':'텍토닉 테라퓨틱'};if(raw&&!/[.]com$|[.]co[.]kr$|[.]org$|[.]gov$|[.]net$/i.test(raw))return aliases[raw]||raw;const map=[['dailypharm.com','데일리팜'],['yna.co.kr','연합뉴스'],['digitaltoday.co.kr','디지털투데이'],['celltrion.com','셀트리온'],['dartbrief.com','다트브리프'],['awakeplus.co.kr','어웨이크플러스'],['lilly.com','일라이릴리'],['novonordisk.com','노보노디스크'],['sec.gov','미국 SEC'],['uniqure.com','유니큐어'],['globenewswire.com','GlobeNewswire'],['cision.com','Cision'],['reuters.com','로이터'],['fda.gov','미국 FDA'],['ema.europa.eu','EMA'],['clinicaltrials.gov','ClinicalTrials.gov'],['mohw.go.kr','보건복지부'],['mfds.go.kr','식품의약품안전처'],['hira.or.kr','건강보험심사평가원'],['scourt.go.kr','대한민국 법원'],['kipris.or.kr','KIPRIS']];for(const [d,n] of map)if(h===d||h.endsWith('.'+d))return n;return raw||h.replace(/^m\./,'')||'출처 미확인'}
@@ -78,7 +78,12 @@ function feedbackKey(x){return String(x.source||x.title||'').trim()}
 function feedbackFor(x,signal){const k=feedbackKey(x);return feedbackRows.find(r=>r.briefing_date===current&&r.section===tab&&r.item_key===k&&r.signal===signal)}
 async function loadFeedback(){feedbackRows=[];if(!session||!membership?.active)return;try{const since=datePlus(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul'}).format(new Date()),-30);const q=await db.from('briefing_feedback').select('*').gte('briefing_date',since).order('created_at',{ascending:false});if(!q.error)feedbackRows=q.data||[]}catch{}}
 async function saveFeedbackSignal(x,signal,weight){if(!session||!membership?.active){openAuth();toast('운영자 로그인 후 수집 학습에 반영됩니다');return false}const row={user_id:session.user.id,briefing_date:current,section:tab,item_key:feedbackKey(x),title:x.title||'',tag:x.tag||'',source_name:sourceLabel(x),source_url:x.source||'',summary:x.summary||'',signal,weight,updated_at:new Date().toISOString()};const q=await db.from('briefing_feedback').upsert(row,{onConflict:'user_id,briefing_date,section,item_key,signal'});if(q.error){toast('피드백 저장 실패: '+q.error.message);return false}await loadFeedback();return true}
-function todayKst(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
+function todayKst(){
+  // Build YYYY-MM-DD from parts: Intl en-CA output varies among browsers.
+  const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const o=Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+  return o.year+'-'+o.month+'-'+o.day;
+}
 let globalDiscovery=null,domesticDiscovery=null;
 function visibleItems(section=tab){const base=(section==='domestic'&&domesticDiscovery?.date===current?domesticDiscovery.items:section==='global'&&globalDiscovery?.date===current?globalDiscovery.items:(D?.[section]||[])),extra=L?.[section]?.items||[];return [...extra].reverse().concat(base)}
 async function loadDomesticDiscovery(date){domesticDiscovery=null;try{const r=await fetch('./domestic/'+date+'.json',{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(v.date===date&&Array.isArray(v.items))domesticDiscovery=v}catch(e){console.warn('Domestic discovery unavailable',e)}}
@@ -88,7 +93,18 @@ async function loadLive(date=current){L={domestic:null,global:null,patent:null};
 function addedTime(v){if(!v)return '';try{return new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(v))}catch{return ''}}
 function renderLiveTools(){const e=$('#liveTools');if(!e)return;if(!['domestic','global','patent'].includes(tab)){e.innerHTML='';return}const live=L?.[tab],n=live?.items?.length||0,morning=visibleItems(tab).length-n,isToday=current===todayKst(),last=live?.updated_at?addedTime(live.updated_at):'',waiting=Boolean(refreshWaiting[tab]);const summary=n?'<b>아침판 '+morning+'</b> + 업데이트 '+n+(last?' · 마지막 확인 '+esc(last):''):'<b>아침판 '+morning+'</b> · 추가 업데이트 없음'+(last?' · 마지막 확인 '+esc(last):'');const btn=isToday?'<button class="refreshSection" '+(waiting?'disabled':'')+' onclick="requestSectionRefresh()">'+(waiting?'업데이트 확인 중…':'↻ '+({domestic:'국내',global:'글로벌',patent:'특허'}[tab])+' 업데이트')+'</button>':'';e.innerHTML='<div class="liveTools"><div class="liveSummary">'+summary+'</div>'+btn+'</div>'}
 window.requestSectionRefresh=async()=>{if(!['domestic','global','patent'].includes(tab)||current!==todayKst())return;await refreshAuth();if(!session||!membership?.active){openAuth();toast('승인된 기자 계정으로 로그인 후 업데이트할 수 있습니다');return}const section=tab;refreshWaiting[section]=true;renderLiveTools();const q=await db.from('briefing_refresh_requests').insert({briefing_date:current,section,requested_by:session.user.id}).select('id,requested_at').single();if(q.error){refreshWaiting[section]=false;renderLiveTools();toast('업데이트 요청 실패: '+q.error.message);return}const requestedAt=q.data.requested_at;toast('업데이트 요청됨 · 보통 5~10분 이내 반영됩니다');let tries=0;const poll=async()=>{tries++;await loadLiveSection(section,current);const done=L?.[section]?.last_request_at&&L[section].last_request_at>=requestedAt;if(done){refreshWaiting[section]=false;bindMainTabs();render();const b=(L[section].batches||[]).find(x=>x.request_id===q.data.id);toast((b?.added_count||0)>0?'중요기사 '+b.added_count+'건을 추가했습니다':'새로 추가할 중요기사가 없습니다');return}if(tries>=40){refreshWaiting[section]=false;renderLiveTools();toast('요청은 접수됐습니다. 잠시 뒤 다시 열면 결과가 반영됩니다');return}setTimeout(poll,15000)};setTimeout(poll,15000)};
-async function load(date=current){current=date;$('#datePicker').value=date;await loadEvents();await loadFeedback();try{const r=await fetch('./data/'+date+'.json',{cache:'no-store'});if(!r.ok)throw Error();D=await r.json()}catch{D=null}await Promise.all([loadGlobalDiscovery(date),loadDomesticDiscovery(date)]);renderDateLabel();await loadLive(date);render()}
+async function load(date=current){
+  current=date;$('#datePicker').value=date;
+  // Rendering published news must NOT wait for optional authentication or schedule APIs.
+  const dataPromise=(async()=>{try{const r=await fetch('./data/'+date+'.json',{cache:'no-store'});if(!r.ok)throw Error();return await r.json()}catch{return null}})();
+  const [data]=await Promise.all([dataPromise,loadGlobalDiscovery(date),loadDomesticDiscovery(date)]);
+  if(current!==date)return;
+  D=data;L={domestic:null,global:null,patent:null};
+  renderDateLabel();render();
+  Promise.allSettled([loadEvents(),loadFeedback(),loadLive(date)]).then(()=>{
+    if(current===date){renderDateLabel();render()}
+  });
+}
 function render(){bindMainTabs();renderLiveTools();if(tab==='schedule'){renderSchedule();return}const a=visibleItems();const liveCount=L?.[tab]?.items?.length||0;const managed=managedTabs.find(t=>t.id===tab);const body=a.length?a.map((x,i)=>card(x,i)).join(''):(managed&&managed.id.startsWith('custom-')?'<div class="empty">'+esc(managed.name)+' 탭이 추가됐습니다.<br>설정의 탭 관리에서 수집 규칙을 연결하면 자동 브리핑에 포함됩니다.</div>':current==='2026-09-29'?'<div class="empty">9월 29일은 기존 v3.7 아카이브에 보존돼 있습니다.<br><br><a href="https://pharm-briefing-desk.luckybomb85.chatgpt.site" style="display:inline-block;padding:11px 16px;border:1px solid #ccd8e1;border-radius:12px;color:#173f65;text-decoration:none;font-weight:800">9월 29일 데스크 열기 ↗</a></div>':'<div class="empty">'+fmtDate(current)+' 브리핑이 아직 없습니다.</div>');$('#cards').innerHTML=(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body}
 function datePlus(s,n){const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
 function allEvents(){const local=JSON.parse(localStorage.getItem('localScheduleEvents')||'[]');return [...(E.events||[]),...local].filter((x,i,a)=>a.findIndex(y=>(y.id&&y.id===x.id)||(!y.id&&y.date===x.date&&y.title===x.title&&y.time===x.time))===i)}
@@ -136,7 +152,13 @@ async function hasBriefingForDate(date){
   }
   return false;
 }
+function requestedBriefingDate(){
+  const date=new URLSearchParams(window.location.search).get('date')||'';
+  return /^20\\d{2}-\\d{2}-\\d{2}$/.test(date)&&!Number.isNaN(Date.parse(date+'T12:00:00Z'))?date:null;
+}
 async function loadLatestAvailableBriefing(){
+  const requested=requestedBriefingDate();
+  if(requested){await load(requested);return}
   const today=todayKst();
   // At midnight, keep the most recent published briefing rather than showing an empty new day.
   for(let offset=0;offset>=-7;offset--){
@@ -145,7 +167,16 @@ async function loadLatestAvailableBriefing(){
   }
   await load(today);
 }
-function shift(n){const d=new Date(current+'T12:00:00');d.setDate(d.getDate()+n);load(d.toISOString().slice(0,10))}$('#prev').onclick=()=>shift(-1);$('#next').onclick=()=>shift(1);$('#dateLabel').onclick=()=>$('#datePicker').showPicker?.();$('#datePicker').onchange=e=>load(e.target.value);
+function openBriefingDate(date){
+  const u=new URL(window.location.href);
+  u.searchParams.set('date',date);
+  window.history.replaceState(null,'',u.pathname+u.search+u.hash);
+  load(date);
+}
+function shift(n){openBriefingDate(datePlus(current,n))}
+$('#prev').onclick=()=>shift(-1);$('#next').onclick=()=>shift(1);
+$('#dateLabel').onclick=()=>$('#datePicker').showPicker?.();
+$('#datePicker').onchange=e=>openBriefingDate(e.target.value);
 function isAdmin(){return Boolean(session&&membership?.active&&membership.role==='admin')}
 async function openSettings(){await refreshAuth();if(!session){openAuth();toast('설정은 관리자 로그인 후 사용할 수 있습니다');return}if(!isAdmin()){toast('관리자만 설정을 변경할 수 있습니다');return}await loadSettings();$('#settings').classList.add('open')}
 $('#gear').onclick=openSettings;$('#closeSettings').onclick=()=>$('#settings').classList.remove('open');
