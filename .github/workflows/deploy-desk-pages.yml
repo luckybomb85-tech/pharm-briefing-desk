@@ -36,9 +36,16 @@ jobs:
               assert all(x.get("title") and x.get("source","").startswith("https://") for x in d["items"]),p
           print(f"Validated {len(files)} global briefing dates")
           PY
+      - name: Prepare public site only
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          for dir in global data live schedule; do
+            if [ -d "$dir" ]; then cp -R "$dir" "_site/$dir"; fi
+          done
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
       - id: deployment
         uses: actions/deploy-pages@v4
