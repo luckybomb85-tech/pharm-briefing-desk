@@ -25,7 +25,73 @@
       "source": "https://www.thebionews.net/news/articleView.html?idxno=28959",
       "source_name": "더바이오",
       "discovery_only": true
+    },
+    {
+      "title": "동아에스티 '슈가논' 기반 3제 병용요법 3상 성공…당화혈색소 최대 0.77%p 추가 감소",
+      "source": "https://www.apsk.co.kr/news/articleView.html?idxno=540707",
+      "source_name": "메디팜스투데이",
+      "published_at": "2026-10-12T15:15:50+09:00",
+      "tag": "임상 3상",
+      "priority": "P0",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+    },
+    {
+      "title": "오페브 후발 신약 '자스케이드', 식약처 최종 승인 임박",
+      "source": "https://www.dailypharm.com/user/news/343309",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-13T06:00:48+09:00",
+      "tag": "허가",
+      "priority": "P1",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+    },
+    {
+      "title": "CSO 계약서 98만건 쌓였는데…리베이트 감시망은 왜 작동 못하나",
+      "source": "https://www.apsk.co.kr/news/articleView.html?idxno=540708",
+      "source_name": "메디팜스투데이",
+      "published_at": "2026-10-13T06:00:00+09:00",
+      "tag": "규제·시장",
+      "priority": "P1",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+    },
+    {
+      "title": "삼진제약, 하이드라섹 산 연령 상한 삭제…포 단위 용량 신설",
+      "source": "https://www.dailypharm.com/user/news/343345",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-13T10:30:08+09:00",
+      "tag": "허가·제품",
+      "priority": "P2",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+    },
+    {
+      "title": "코어라인소프트, 日 닥터넷과 심혈관 영상 AI 공급 계약",
+      "source": "https://www.newspim.com/news/view/20261013000213",
+      "source_name": "뉴스핌",
+      "published_at": "2026-10-13T10:13:00+09:00",
+      "tag": "사업계약",
+      "priority": "P2",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
+    },
+    {
+      "title": "“임상 자산만 찾는다더니…” 빅파마가 ‘초기 기술’ 찜하는 이유",
+      "source": "https://www.biotimes.co.kr/news/articleView.html?idxno=35156",
+      "source_name": "바이오타임즈",
+      "published_at": "2026-10-13T10:28:23+09:00",
+      "tag": "R&D·기술이전",
+      "priority": "P2",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED",
+      "summary": "매체 원문 주소와 발행시각을 확인한 취재 후보입니다. 기사 핵심 사실은 별도 취재·검증이 필요합니다."
     }
   ],
-  "note": "2026-10-13 매체 원문 확인 4건을 초기 목록으로 게시. 자동 수집 전체 검증은 별도."
+  "note": "2026-10-13 취재 후보 10건. 추가된 6건은 국내 수집 실행의 원문·발행시각 검증 결과를 활용했으며, 본문 핵심 사실을 독립 검증한 것은 아님."
 }
