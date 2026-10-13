@@ -1,0 +1,44 @@
+name: global-source-smoke-once
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/global-source-smoke-once.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test global source collector offline
+        run: python -m unittest discover -s scripts -p 'test_global_source_collector.py' -v
+      - name: Collect global source evidence only
+        run: |
+          mkdir -p status
+          TZ=Asia/Seoul python - <<'PY'
+          import json
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          from pathlib import Path
+          from scripts.global_source_collector import scan_global_sources
+          now=lambda:datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
+          day=datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
+          out=scan_global_sources(day,{},now)
+          Path("status/global-source-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
+          for route in out["routes"]:
+              print(f'{route["source"]}: {route["status"]} hits={route["hits"]} in_window={route["in_window_index_hits"]} error={route.get("error","")}')
+          print("Total candidates:",len(out["candidates"]))
+          print("Originals verified: 0; no publication permitted")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: global-source-smoke-evidence
+          path: status/global-source-smoke.json
+          retention-days: 14
