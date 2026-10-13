@@ -53,6 +53,7 @@ def scan(day,settings,domestic_only=False):
     errors.extend("WEB/"+r["axis"] for r in web["routes"] if r["status"] == "FAIL")
     web_gap = {"checked_at": web["checked_at"], "status": web["status"],
                "routes": web["routes"], "reuses_unified_web_scan": True}
+    domestic_candidates=list(candidates)
     if domestic_only:
         return {"date": day, "generated_at": now(),
                 "mode": "domestic_only_step3", "domestic_groups": groups,
@@ -68,7 +69,7 @@ def scan(day,settings,domestic_only=False):
     for x in candidates:
         if any(k in x["title"].lower() for k in ("에페글레나타이드","에페오토","epheglena")):
             p0.append({"event_id":"HANMI-EPHE-APPROVAL","title":x["title"],"url":x["url"],"verified_original":bool(x.get("verified_original",False))})
-    return {"date":day,"generated_at":now(),"source_health":source_health,"domestic_groups":groups,"web_gap_scan":web_gap,"web_unified_statistics":web["statistics"],"p0_followups":[{"event_id":"HANMI-EPHE-APPROVAL","checked_at":now(),"status":"PARTIAL","candidates":p0}],"global":global_audit,"global_shortlist":global_shortlist,"patent":patent_audit,"candidates":candidates,"errors":errors,"note":"WEB는 6개 공유 RSS 검색만 수행하고 원문 검증은 후속 단계로 이관. 인덱스 검색만으로 PASS/PASS_ZERO 불가. 글로벌·특허는 기존 분리 상태이며 추가 검증 전 PASS 불가."}
+    return {"date":day,"generated_at":now(),"source_health":source_health,"domestic_groups":groups,"web_gap_scan":web_gap,"web_unified_statistics":web["statistics"],"p0_followups":[{"event_id":"HANMI-EPHE-APPROVAL","checked_at":now(),"status":"PARTIAL","candidates":p0}],"domestic_candidates":domestic_candidates,"global":global_audit,"global_shortlist":global_shortlist,"patent":patent_audit,"candidates":candidates,"errors":errors,"note":"WEB는 6개 공유 RSS 검색만 수행하고 원문 검증은 후속 단계로 이관. 인덱스 검색만으로 PASS/PASS_ZERO 불가. 글로벌·특허는 기존 분리 상태이며 추가 검증 전 PASS 불가."}
 def source_health_checkpoint(day, out):
     """Preserve WEB shared-query evidence without pretending independent visits."""
     checks = {}
@@ -100,7 +101,7 @@ if __name__=="__main__":
     out=scan(a.date,settings,domestic_only=a.domestic_only)
     # Merge A/B/C/D/WEB first, then verify only previously unverified
     # distinct candidates. Never re-open an already-confirmed original.
-    stage4=build_domestic_stage4(a.date,[x for x in out.get("candidates",[]) if x.get("group") in ("A","B","C","D","WEB") or str(x.get("group","")).startswith("DOMESTIC")],settings)
+    stage4=build_domestic_stage4(a.date,out.get("domestic_candidates",out.get("candidates",[])),settings)
     stage4_path=Path("staging")/f"{a.date}-domestic-stage4.json"
     stage4_path.parent.mkdir(exist_ok=True)
     stage4_path.write_text(json.dumps(stage4,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
