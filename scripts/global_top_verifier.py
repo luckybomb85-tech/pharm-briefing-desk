@@ -1,8 +1,11 @@
 """Verify at most ten ranked global articles without rerunning source discovery."""
 from urllib.parse import urlsplit
-from verify_originals import verify
-from global_candidate_ranker import select
-from global_source_collector import PUBLISHERS
+try:
+    from .verify_originals import verify
+    from .global_source_collector import PUBLISHERS
+except ImportError:
+    from verify_originals import verify
+    from global_source_collector import PUBLISHERS
 ALLOWED=set(PUBLISHERS.values())|{"fda.gov","ema.europa.eu"}
 def allowed(url):
     p=urlsplit(url)
