@@ -191,14 +191,20 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
         rep["title"] = title
         editorial.append(cluster)
     prepared = editorial
-    # Spend scarce new checks on publisher article URLs before opaque Google
-    # News tokens; preserve P0-before-P1 within each URL class.
-    prepared.sort(key=lambda x: (
-        0 if authentic(x["representative"], start, end) else 1,
-        1 if (urllib.parse.urlsplit(candidate_url(x["representative"])).hostname or "")
-             in ("news.google.com", "news.google.co.kr") else 0,
-        LEVELS.index(x["priority"]),
-        clean_title(x["representative"]["title"])))
+    # Existing confirmed publisher articles never consume the new-check budget.
+    # P0/P1 publisher links first; then P0/P1 WEB discovery that may be exclusive;
+    # lower-priority articles can use the remaining bounded checks.
+    def check_order(cluster):
+        rep = cluster["representative"]
+        top = LEVELS.index(cluster["priority"]) <= 1
+        aggregator = (urllib.parse.urlsplit(candidate_url(rep)).hostname or "") in (
+            "news.google.com", "news.google.co.kr")
+        bucket = (0 if top and not aggregator else
+                  1 if top else
+                  2 if not aggregator else 3)
+        return (0 if authentic(rep, start, end) else 1, bucket,
+                LEVELS.index(cluster["priority"]), clean_title(rep["title"]))
+    prepared.sort(key=check_order)
     verification_cache = {}
     results = []
     duplicates = []
