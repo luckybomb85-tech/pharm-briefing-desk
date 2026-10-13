@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-14",
+  "status": "discovery-only",
+  "items": [
+    {
+      "title": "사망자 41명 '살인 진드기' 공포…현대바이오, 임상 2상 출사표 [현장+]",
+      "source": "https://www.hankyung.com/article/202610138781H",
+      "source_name": "한국경제",
+      "published_at": "2026-10-13T15:18:48+09:00",
+      "tag": "clinical",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P1",
+      "event_status": "NEW"
+    },
+    {
+      "title": "\"임상 2상서 통한 약효, 3상서 무너져... 신약 허가율 단 7.9%\"",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79848",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14T06:03:00+09:00",
+      "tag": "approval",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P1",
+      "event_status": "NEW"
+    },
+    {
+      "title": "[시가총액 모니터] 제약바이오 상장기업 ‘톱 100’(10월 13일)",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=28996",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T05:30:00+09:00",
+      "tag": "general",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P2",
+      "event_status": "NEW"
+    },
+    {
+      "title": "시지바이오, CaHA 필러 ‘페이스템’ 대만 허가…3년간 매출 50억 원 목표",
+      "source": "https://www.biotimes.co.kr/news/articleView.html?idxno=35172",
+      "source_name": "바이오타임즈",
+      "published_at": "2026-10-13T13:28:15+09:00",
+      "tag": "approval",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P2",
+      "event_status": "NEW"
+    },
+    {
+      "title": "GC녹십자, 헌터라제 특이 IgE 항체 분석법 개발",
+      "source": "https://www.newspim.com/news/view/20261013000838",
+      "source_name": "뉴스핌",
+      "published_at": "2026-10-13T15:23:00+09:00",
+      "tag": "general",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P3",
+      "event_status": "NEW"
+    },
+    {
+      "title": "비만약·마약류·필수약 관리 허점…식약처 기준·조치 실효성 쟁점",
+      "source": "https://www.medipana.com/news/articleView.html?idxno=419236",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-14T06:04:00+09:00",
+      "tag": "general",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P3",
+      "event_status": "NEW"
+    },
+    {
+      "title": "연구·해외는 외부, 영업·생산은 내부…동화약품 윤인호의 선택",
+      "source": "https://www.dailypharm.com/user/news/343364",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-14T06:00:56+09:00",
+      "tag": "general",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P3",
+      "event_status": "NEW"
+    },
+    {
+      "title": "의약품 효과 확인에 평균 5.2년…검증 기다리는 사이 처방은 계속",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47559",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14T06:08:00+09:00",
+      "tag": "general",
+      "summary": "",
+      "discovery_only": true,
+      "verification_status": "PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
+      "priority": "P3",
+      "event_status": "NEW"
+    }
+  ],
+  "statistics": {
+    "input": 40,
+    "skipped_unverified": 32,
+    "skipped_non_editorial": 0,
+    "skipped_duplicate": 0,
+    "selected": 8
+  },
+  "note": "발행일·원문 주소 확인 후 선별된 국내 기사. 기사의 핵심 사실은 독립 검증 전."
+}
