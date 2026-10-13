@@ -39,7 +39,7 @@ jobs:
           day=datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
           out=scan_global_sources(day,{},now)
           shortlist=verify_shortlist(select(out["candidates"],limit=30),limit=10)
-          Path("status/global-shortlist-latest.json").write_text(json.dumps(shortlist,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+          Path("status/global-shortlist-latest.json").write_text(json.dumps(shortlist,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           Path("status/global-source-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
           for route in out["routes"]:
               print(f'{route["source"]}: {route["status"]} hits={route["hits"]} in_window={route["in_window_index_hits"]} error={route.get("error","")}')
@@ -54,7 +54,7 @@ jobs:
           from pathlib import Path
           data=json.loads(Path("status/global-source-smoke.json").read_text())
           report={"checked_at":data["checked_at"],"status":data["status"],"request_budget":data["request_budget"],"candidate_count":len(data["candidates"]),"routes":[{"source":r["source"],"status":r["status"],"hits":r["hits"],"in_window_index_hits":r["in_window_index_hits"],"error":r.get("error")} for r in data["routes"]],"originals_verified":0,"publish_allowed":False}
-          Path("status/global-source-health-latest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n")
+          Path("status/global-source-health-latest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
