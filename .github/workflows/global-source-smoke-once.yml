@@ -41,7 +41,7 @@ jobs:
           out=scan_global_sources(day,{},now)
           shortlist=select(out["candidates"],limit=30)
           items=[{"title":x["title"],"source":x["url"],"source_name":x.get("source",""),"published_at":x.get("published_at",""),"tag":", ".join(x.get("signals",[])) or "글로벌","summary":"검색 색인에서 발견한 취재 후보입니다. 원문 사실관계는 확인되지 않았습니다.","discovery_only":True} for x in shortlist["shortlist"][:10]]
-          Path(f"global/{day}.json").write_text(json.dumps({"date":day,"status":"discovery-only","items":items},ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+          Path(f"global/{day}.json").write_text(json.dumps({"date":day,"status":"discovery-only","items":items},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           Path("status/global-shortlist-latest.json").write_text(json.dumps(shortlist,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           Path("status/global-source-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
           for route in out["routes"]:
