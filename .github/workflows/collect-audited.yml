@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/collect_with_evidence.py'
+      - 'scripts/render_discovery_briefing.py'
+      - 'config/briefing-settings.json'
       - 'scripts/global_source_collector.py'
       - 'scripts/global_candidate_ranker.py'
       - 'scripts/test_global_candidate_ranker.py'
@@ -71,6 +73,13 @@ jobs:
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
           python scripts/collect_with_evidence.py --date "$DAY"
+      - name: Render discovery briefing without original verification gate
+        if: github.event_name != 'push'
+        env:
+          REQUESTED_DATE: ${{ inputs.briefing_date }}
+        run: |
+          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
+          python scripts/render_discovery_briefing.py --date "$DAY" --domestic "staging/$DAY-domestic-stage4.json" --global-shortlist "staging/$DAY-global-shortlist.json" --output "staging/$DAY-discovery-briefing.md"
       - name: Build conservative deduplication and event follow-up map
         if: github.event_name != 'push'
         run: |
@@ -85,4 +94,5 @@ jobs:
             staging/*-domestic-stage4.json
             staging/*-source-health.json
             staging/*-global-shortlist.json
+            staging/*-discovery-briefing.md
           retention-days: 14
