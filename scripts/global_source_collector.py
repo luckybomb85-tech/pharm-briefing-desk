@@ -31,7 +31,7 @@ def in_window(value,start,end):
 def scan_global_sources(day,settings,now,news_fetch=None,feed_fetch=None):
     news_fetch=news_fetch or news;feed_fetch=feed_fetch or rss
     start=datetime.fromisoformat(day+"T00:00:00+09:00")-timedelta(hours=12)
-    end=datetime.fromisoformat(day+"T23:59:59+09:00")
+    end=min(datetime.fromisoformat(day+"T23:59:59+09:00"),datetime.now(KST))
     routes=[];candidates=[];seen=set()
     def collect(source,group,method,target,fn):
         state={"source":source,"group":group,"method":method,"target":target,"checked_at":now(),"status":"FAIL","hits":0,"in_window_index_hits":0,"original_verified":False,"coverage_proven":False}
@@ -45,11 +45,15 @@ def scan_global_sources(day,settings,now,news_fetch=None,feed_fetch=None):
                 seen.add(url);candidates.append({**hit,"source":source,"group":"GLOBAL","verified_original":False,"timestamp_origin":"feed_or_index"})
         except Exception as exc:state["error"]=str(exc)[:240]
         routes.append(state)
-    for name,url in FEEDS.items():collect(name,"PRIMARY_REGULATORY","OFFICIAL_RSS",url,feed_fetch)
+    for name,url in FEEDS.items():
+        if name.startswith("FDA "):
+            collect(name,"PRIMARY_REGULATORY","GOOGLE_NEWS_SITE_DISCOVERY_FALLBACK",f"site:fda.gov {'press announcement' if name == 'FDA Press Releases' else 'drug approval'} after:{start.date()} before:{end.date()+timedelta(days=1)}",news_fetch)
+        else:
+            collect(name,"PRIMARY_REGULATORY","OFFICIAL_RSS",url,feed_fetch)
     for name,domain in PUBLISHERS.items():collect(name,"TRADE_AND_WIRE","GOOGLE_NEWS_SITE_DISCOVERY",f"site:{domain} after:{start.date()} before:{end.date()+timedelta(days=1)}",news_fetch)
     pooled={"Global gap recovery":"pharmaceutical biotech clinical results drug approval acquisition"}
     for name,query in pooled.items():collect(name,"WHOLE_WEB_RECOVERY","SHARED_GOOGLE_NEWS_DISCOVERY",f"{query} after:{start.date()} before:{end.date()+timedelta(days=1)}",news_fetch)
     groups={}
     for group in ("PRIMARY_REGULATORY","TRADE_AND_WIRE","WHOLE_WEB_RECOVERY"):
         subset=[r for r in routes if r["group"]==group];groups[group]="PARTIAL" if any(r["status"]=="PARTIAL" for r in subset) else "FAIL"
-    return {"checked_at":now(),"status":"PARTIAL" if "PARTIAL" in groups.values() else "FAIL","source_groups":groups,"routes":routes,"candidates":candidates,"request_budget":{"official_feeds":4,"publisher_queries":13,"pooled_queries":1,"total_max":18},"note":"Index discovery only; source coverage and original publication times are not verified."}
+    return {"checked_at":now(),"status":"PARTIAL" if "PARTIAL" in groups.values() else "FAIL","source_groups":groups,"routes":routes,"candidates":candidates,"request_budget":{"official_feeds":2,"fda_fallback_queries":2,"publisher_queries":13,"pooled_queries":1,"total_max":18},"note":"Index discovery only; source coverage and original publication times are not verified."}
