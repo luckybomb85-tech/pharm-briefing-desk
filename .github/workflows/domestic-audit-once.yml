@@ -38,7 +38,7 @@ jobs:
           from publish_domestic_desk import curate
           day=__import__("os").environ["AUDIT_DATE"]
           settings=json.loads(Path("config/briefing-settings.json").read_text(encoding="utf-8"))
-          audit=json.loads(Path(f"status/{day}-domestic-route-audit.json").read_text(encoding="utf-8"))
+          audit=json.loads(Path(f"staging/{day}-domestic-route-audit.json").read_text(encoding="utf-8"))
           stage=json.loads(Path(f"staging/{day}-domestic-stage4.json").read_text(encoding="utf-8"))
           result=score_operational_coverage(settings,audit)
           items,stats=curate(day,stage["domestic"])
@@ -58,10 +58,11 @@ jobs:
           for x in items[:25]:print("SAFE_CANDIDATE",x["title"],x["source"])
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: domestic-audit-once
           path: |
-            status/*-domestic-route-audit.json
+            staging/*-domestic-route-audit.json
             status/*-domestic-one-shot-diagnostic.json
             staging/*-domestic-stage4.json
             staging/*-source-health.json
