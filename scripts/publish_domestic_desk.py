@@ -105,7 +105,12 @@ def curate(day, rows):
         items.append({
             "title":title, "source":url,"source_name":display_source,
             "published_at":row["published_at"], "tag":row.get("tag") or row.get("priority") or "국내",
-            "summary":"국내 매체의 원문 주소와 발행시각이 확인된 취재 후보입니다. 본문 핵심 사실은 별도 검증이 필요합니다.",
+            # Preserve an editorially sourced summary when present; never present
+            # a verification disclaimer as if it were the article's content.
+            "summary":str(row.get("summary") or "").strip()
+                      if not str(row.get("summary") or "").startswith(
+                          ("국내 매체의 원문 주소", "매체 원문 주소와 발행시각"))
+                      else "",
             "discovery_only":True,
             "verification_status":"PUBLISHER_ORIGINAL_TIME_CHECKED_CORE_FACT_PENDING",
             "priority":row.get("priority","P3"),
