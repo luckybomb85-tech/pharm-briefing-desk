@@ -50,7 +50,7 @@ jobs:
           for dir in global domestic data live schedule; do
             if [ -d "$dir" ]; then cp -R "$dir" "_site/$dir"; fi
           done
-      - name: Verify Oct 13 domestic desk is present in published site
+      - name: Verify Oct 13 domestic regression baseline is packaged
         run: |
           python - <<'PY'
           import json
@@ -60,12 +60,12 @@ jobs:
           if not src.is_file():
               raise SystemExit("OCT13_DOMESTIC_MISSING_FROM_SITE")
           data=json.loads(src.read_text(encoding="utf-8"))
-          if data.get("date")!=day or len(data.get("items",[]))<4:
+          if data.get("date")!=day or len(data.get("items",[]))<10:
               raise SystemExit("OCT13_DOMESTIC_INCOMPLETE")
           html=Path("_site/index.html").read_text(encoding="utf-8")
           if "./domestic/" not in html or "loadDomesticDiscovery(date)" not in html:
               raise SystemExit("DOMESTIC_LOADER_MISSING")
-          print("OCT13_SITE_ASSET_OK: 4+ domestic candidates and loader included")
+          print("OCT13_SITE_ASSET_OK: 10 domestic candidates and loader included")
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
@@ -73,13 +73,17 @@ jobs:
           path: '_site'
       - id: deployment
         uses: actions/deploy-pages@v4
-      - name: Check public Pages URL returns Oct 13 domestic items
+      - name: Check public Pages URL returns latest domestic briefing
         env:
           PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
+          DAY="$(find domestic -maxdepth 1 -type f -name '????-??-??.json' -printf '%f\n' | sort | tail -n1 | sed 's/\.json$//')"
+          if [ -z "$DAY" ]; then echo "NO_DOMESTIC_FILES"; exit 1; fi
+          MINIMUM=1
+          if [ "$DAY" = "2026-10-13" ]; then MINIMUM=10; fi
           python scripts/verify_deployed_desk.py \
             --base-url "$PUBLISHED_URL" \
-            --date 2026-10-13 \
-            --minimum 4 \
+            --date "$DAY" \
+            --minimum "$MINIMUM" \
             --attempts 8 \
             --delay 12
