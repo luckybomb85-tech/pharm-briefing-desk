@@ -38,7 +38,7 @@ on:
   schedule:
     - cron: '5 21 * * 0-4' # 06:05 Asia/Seoul; domestic scans prohibited before 06:00
 permissions:
-  contents: read
+  contents: write
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -85,6 +85,25 @@ jobs:
         run: |
           FILE=$(ls status/*-collection-evidence.json | head -1)
           python scripts/build_event_map.py --input "$FILE" --output "$FILE"
+      - name: Publish global discovery into existing briefing desk
+        if: github.event_name != 'push'
+        env:
+          REQUESTED_DATE: ${{ inputs.briefing_date }}
+        run: |
+          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
+          mkdir -p global
+          python - "$DAY" <<'PY'
+          import json,sys
+          from pathlib import Path
+          day=sys.argv[1]
+          shortlist=json.loads(Path(f"staging/{day}-global-shortlist.json").read_text(encoding="utf-8"))
+          items=[{"title":x["title"],"source":x["url"],"source_name":x.get("source",""),"published_at":x.get("published_at",""),"tag":", ".join(x.get("signals",[])) or "글로벌","summary":"검색 색인에서 발견한 취재 후보입니다. 원문 사실관계는 확인되지 않았습니다.","discovery_only":True} for x in shortlist.get("shortlist",[])[:10]]
+          Path(f"global/{day}.json").write_text(json.dumps({"date":day,"status":"discovery-only","items":items},ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "global/$DAY.json"
+          git diff --cached --quiet || (git commit -m "Update global briefing desk discovery $DAY [skip ci]" && git push)
       - uses: actions/upload-artifact@v4
         if: github.event_name != 'push'
         with:
