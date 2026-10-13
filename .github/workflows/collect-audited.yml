@@ -100,7 +100,7 @@ jobs:
                   "fail":sum(x["status"]=="FAIL" for x in sources)},
                   "stage4":stage["statistics"],"article_recall_status":"UNMEASURED"}
           out=Path(f"staging/{day}-domestic-operational-summary.json")
-          out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+          out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           print("DOMESTIC_14_PLUS_6",coverage["verified_usable_search_tasks"],
                 "/",coverage["configured_search_tasks"],
                 "target_met",coverage["target_met"],
