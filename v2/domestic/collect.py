@@ -12,6 +12,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from resolve import resolve
 
 ROOT = Path(__file__).resolve().parents[1]
 KST = ZoneInfo("Asia/Seoul")
@@ -62,10 +63,11 @@ def parse_time(raw):
     except (TypeError, ValueError, IndexError):
         return None
 
-def collect(now, config, transport=fetch):
+def collect(now, config, transport=fetch, resolver=resolve):
     start = dt.datetime.combine(now.date() - dt.timedelta(days=1), dt.time(12), tzinfo=KST)
     accepted, unresolved, seen, diagnostics = [], [], set(), []
     for name, domain in config["priority_sites"]:
+        resolution_attempts = 0
         counts = {"site": name, "domain": domain, "status": "PASS_ZERO", "found": 0, "accepted": 0, "rejected": 0, "errors": []}
         for term in config["search_terms"]:
             try:
@@ -96,7 +98,14 @@ def collect(now, config, transport=fetch):
                                  "published_at": published.isoformat(), "summary": "",
                                  "verification_status": "discovery_only", "priority": "unreviewed",
                                  "source_id": key[:20]}
+                if not (link and host_matches(link, domain)) and resolution_attempts < config["discovery"].get("max_resolutions_per_site", 5):
+                    resolution_attempts += 1
+                    original = resolver(item["url"], domain)
+                    if original:
+                        record["url"] = original
+                        link = original
                 if link and host_matches(link, domain):
+                    record["verification_status"] = "original_url_resolved"
                     accepted.append(record)
                     counts["accepted"] += 1
                 else:
