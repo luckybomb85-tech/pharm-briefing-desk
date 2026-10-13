@@ -18,7 +18,7 @@ def verify_shortlist(shortlist,limit=10,verifier=None):
         attempts+=1
         try:
             r=verifier(row)
-            if r.get("status")=="VERIFIED" and r.get("verified_original") and allowed(r.get("resolved_url","")):
+            if r.get("status")=="VERIFIED" and r.get("verified_original") and r.get("published_at_verified") and allowed(r.get("resolved_url","")):
                 row["original_verification"]=r
                 row["verified_original"]=True
                 row["editorial_status"]="ORIGINAL_METADATA_VERIFIED"
