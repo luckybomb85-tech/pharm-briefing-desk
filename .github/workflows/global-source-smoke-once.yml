@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/global-source-smoke-once.yml'
+      - 'scripts/global_source_collector.py'
   workflow_dispatch:
 permissions:
   contents: write
