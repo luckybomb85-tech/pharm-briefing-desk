@@ -72,43 +72,18 @@ jobs:
           REQUESTED_DATE: ${{ inputs.briefing_date }}
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
-          python scripts/collect_with_evidence.py --date "$DAY"
-      - name: Render discovery briefing without original verification gate
+          python scripts/collect_with_evidence.py --date "$DAY" --domestic-only
+      - name: Export domestic candidates to desk and commit
         if: github.event_name != 'push'
         env:
           REQUESTED_DATE: ${{ inputs.briefing_date }}
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
-          python scripts/render_discovery_briefing.py --date "$DAY" --domestic "staging/$DAY-domestic-stage4.json" --global-shortlist "staging/$DAY-global-shortlist.json" --output "staging/$DAY-discovery-briefing.md"
-      - name: Build conservative deduplication and event follow-up map
-        if: github.event_name != 'push'
-        run: |
-          FILE=$(ls status/*-collection-evidence.json | head -1)
-          python scripts/build_event_map.py --input "$FILE" --output "$FILE"
-      - name: Publish global discovery into existing briefing desk
-        if: github.event_name != 'push'
-        env:
-          REQUESTED_DATE: ${{ inputs.briefing_date }}
-        run: |
-          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
-          mkdir -p global
-          python - "$DAY" <<'PY'
-          import json,sys
-          from pathlib import Path
-          day=sys.argv[1]
-          shortlist=json.loads(Path(f"staging/{day}-global-shortlist.json").read_text(encoding="utf-8"))
-          if not shortlist.get("shortlist"):
-              raise SystemExit("GLOBAL_NO_CANDIDATES: preserve prior desk data; do not publish empty result")
-          items=[{"title":x["title"],"source":x["url"],"source_name":x.get("source",""),"published_at":x.get("published_at",""),"tag":", ".join(x.get("signals",[])) or "글로벌","summary":"검색 색인에서 발견한 취재 후보입니다. 원문 사실관계는 확인되지 않았습니다.","discovery_only":True} for x in shortlist.get("shortlist",[])[:10]]
-          payload={"date":day,"status":"discovery-only","items":items}
-          assert payload["items"] and all(x["title"] and x["source"].startswith("https://") for x in items)
-          Path(f"global/{day}.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-          PY
-          python scripts/translate_global_desk.py "global/$DAY.json"
+          python scripts/publish_domestic_desk.py "$DAY"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "global/$DAY.json"
-          git diff --cached --quiet || (git commit -m "Update global briefing desk discovery $DAY [skip ci]" && git push)
+          git add "domestic/$DAY.json"
+          git diff --cached --quiet || (git commit -m "Update domestic discovery $DAY [skip ci]" && git pull --rebase && git push)
       - uses: actions/upload-artifact@v4
         if: github.event_name != 'push'
         with:
@@ -117,6 +92,4 @@ jobs:
             status/*-collection-evidence.json
             staging/*-domestic-stage4.json
             staging/*-source-health.json
-            staging/*-global-shortlist.json
-            staging/*-discovery-briefing.md
           retention-days: 14
