@@ -12,7 +12,8 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from domestic_route_collector import KST, publication_time, window
+from domestic_route_collector import KST, PHARMA_TOPIC, publication_time, window
+from publish_domestic_desk import MATERIAL, NON_EDITORIAL, headline
 from verify_originals import verify
 
 GROUPS = ("A", "B", "C", "D", "WEB")
@@ -172,14 +173,31 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
             "representative": chosen, "members": members,
             "priority": LEVELS[rank], "event_status": event_state
         })
-    # Resolve most newsworthy unverified candidates first; no quota chasing.
+    # Keep off-topic WEB RSS matches and obvious promotional headlines in the
+    # raw audit, but do not waste limited original verification calls on them.
+    editorial = []
+    non_editorial_excluded = 0
+    off_topic_web_excluded = 0
+    for cluster in prepared:
+        rep = cluster["representative"]
+        title = headline(rep["title"])
+        if (rep.get("group") == "WEB" and not PHARMA_TOPIC.search(title)
+                and not re.search(r"(비만약|위고비|마운자로|렉라자|CSO|RPT|ADC|GLP-1|BMS|MSD|의료기기)", title, re.I)):
+            off_topic_web_excluded += 1
+            continue
+        if NON_EDITORIAL.search(title) and not MATERIAL.search(title):
+            non_editorial_excluded += 1
+            continue
+        rep["title"] = title
+        editorial.append(cluster)
+    prepared = editorial
+    # Spend scarce new checks on publisher article URLs before opaque Google
+    # News tokens; preserve P0-before-P1 within each URL class.
     prepared.sort(key=lambda x: (
-        LEVELS.index(x["priority"]),
         0 if authentic(x["representative"], start, end) else 1,
-        # Publisher-original URLs are cheaper/more reliable than Google token
-        # decoding, so try them first at equal editorial priority.
         1 if (urllib.parse.urlsplit(candidate_url(x["representative"])).hostname or "")
              in ("news.google.com", "news.google.co.kr") else 0,
+        LEVELS.index(x["priority"]),
         clean_title(x["representative"]["title"])))
     verification_cache = {}
     results = []
@@ -299,8 +317,8 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
     if not 1 <= review_limit <= 100 or not 1 <= source_limit <= review_limit:
         raise ValueError("INVALID_REVIEW_QUEUE_BUDGET")
     ordering = sorted(results, key=lambda x: (
-        LEVELS.index(x["priority"]),
-        0 if x["verified_original"] else 1
+        0 if x["verified_original"] else 1,
+        LEVELS.index(x["priority"])
     ))
     source_counts = defaultdict(int)
     review_queue, overflow = [], []
@@ -320,7 +338,9 @@ def build_domestic_stage4(day, candidates, settings, *, verifier=verify):
     # Do not conflate a title-confirmed publisher page with verification of
     # the underlying claimed clinical, financial or legal fact.
     stats = {
-        "input_domestic_candidates": total, "preverification_clusters": len(prepared),
+        "input_domestic_candidates": total, "preverification_clusters": len(grouped),
+        "off_topic_web_excluded_before_verification": off_topic_web_excluded,
+        "non_editorial_excluded_before_verification": non_editorial_excluded,
         "duplicates_suppressed": len(duplicates), "noise_candidates_excluded": len(noise_removed), "events_output": len(review_queue),
         "eligible_candidates_before_review_cap": len(results),
         "not_in_review_queue_preserved_in_raw_audit": len(results)-len(review_queue),
