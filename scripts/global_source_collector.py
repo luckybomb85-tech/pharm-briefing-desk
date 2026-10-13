@@ -8,7 +8,6 @@ from zoneinfo import ZoneInfo
 KST=ZoneInfo("Asia/Seoul")
 FEEDS={"FDA Press Releases":"https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml","FDA Drugs":"https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml","EMA News":"https://www.ema.europa.eu/en/news.xml","EMA New Human Medicines":"https://www.ema.europa.eu/en/new-human-medicine-new.xml"}
 PUBLISHERS={"Reuters":"reuters.com","STAT":"statnews.com","Endpoints News":"endpts.com","BioPharma Dive":"biopharmadive.com","Fierce Pharma":"fiercepharma.com","Fierce Biotech":"fiercebiotech.com","BioSpace":"biospace.com","FirstWord Pharma":"firstwordpharma.com","Scrip/Pink Sheet":"citeline.com","Evaluate":"evaluate.com","Pharmaceutical Technology":"pharmaceutical-technology.com","Labiotech":"labiotech.eu","GEN":"genengnews.com"}
-COMPANIES=["Pfizer","Eli Lilly","Roche","Novartis","Merck","Johnson & Johnson","AstraZeneca","GSK","Sanofi","AbbVie","Bristol Myers Squibb","Amgen","Novo Nordisk","Bayer","Boehringer Ingelheim","Takeda","Gilead","Regeneron","Biogen","Vertex"]
 def rss(url):
     req=Request(url,headers={"User-Agent":"Mozilla/5.0 (BriefingAudit/1.0)"})
     with urlopen(req,timeout=12) as res: root=ET.fromstring(res.read(2000000))
@@ -46,12 +45,11 @@ def scan_global_sources(day,settings,now,news_fetch=None,feed_fetch=None):
                 seen.add(url);candidates.append({**hit,"source":source,"group":"GLOBAL","verified_original":False,"timestamp_origin":"feed_or_index"})
         except Exception as exc:state["error"]=str(exc)[:240]
         routes.append(state)
-    for name,url in FEEDS.items():collect(name,"PRIMARY_REGULATORY_AND_COMPANY","OFFICIAL_RSS",url,feed_fetch)
+    for name,url in FEEDS.items():collect(name,"PRIMARY_REGULATORY","OFFICIAL_RSS",url,feed_fetch)
     for name,domain in PUBLISHERS.items():collect(name,"TRADE_AND_WIRE","GOOGLE_NEWS_SITE_DISCOVERY",f"site:{domain} after:{start.date()} before:{end.date()+timedelta(days=1)}",news_fetch)
-    pooled={"Company newsrooms":"pharma biotech company press release phase 3 FDA licensing","SEC filings":"site:sec.gov biotech 8-K licensing acquisition","ClinicalTrials.gov":"site:clinicaltrials.gov clinical trial results phase 3","Global gap recovery":"pharmaceutical biotech clinical results drug approval acquisition"}
+    pooled={"Global gap recovery":"pharmaceutical biotech clinical results drug approval acquisition"}
     for name,query in pooled.items():collect(name,"WHOLE_WEB_RECOVERY","SHARED_GOOGLE_NEWS_DISCOVERY",f"{query} after:{start.date()} before:{end.date()+timedelta(days=1)}",news_fetch)
-    company_checks=[{"company":name,"method":"POOLED_DISCOVERY_MATCH_ONLY","official_newsroom_checked":False,"matched_candidates":sum(name.lower() in c["title"].lower() for c in candidates),"status":"PARTIAL"} for name in COMPANIES]
     groups={}
     for group in ("PRIMARY_REGULATORY_AND_COMPANY","TRADE_AND_WIRE","WHOLE_WEB_RECOVERY"):
         subset=[r for r in routes if r["group"]==group];groups[group]="PARTIAL" if any(r["status"]=="PARTIAL" for r in subset) else "FAIL"
-    return {"checked_at":now(),"status":"PARTIAL" if "PARTIAL" in groups.values() else "FAIL","source_groups":groups,"routes":routes,"company_checks":company_checks,"candidates":candidates,"request_budget":{"official_feeds":4,"publisher_queries":13,"pooled_queries":4,"total_max":21},"note":"Index discovery only; source coverage and original publication times are not verified."}
+    return {"checked_at":now(),"status":"PARTIAL" if "PARTIAL" in groups.values() else "FAIL","source_groups":groups,"routes":routes,"candidates":candidates,"request_budget":{"official_feeds":4,"publisher_queries":13,"pooled_queries":1,"total_max":18},"note":"Index discovery only; source coverage and original publication times are not verified."}
