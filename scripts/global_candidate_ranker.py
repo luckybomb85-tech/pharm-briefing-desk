@@ -8,7 +8,7 @@ SIGNALS=[
  (r"licens|acqui|merger|buyout|deal worth|billion|partnership",3,"DEAL"),
  (r"patent|biosimilar|generic|exclusivity|lawsuit|litigation",3,"IP"),
  (r"safety|recall|adverse event|warning",3,"SAFETY")]
-LOW=r"webinar|conference attendance|investor presentation|sponsored|job opening|stock price|shares rise|analyst rating"
+LOW=r"webinar|conference attendance|investor presentation|sponsored|job opening|stock price|shares rise|analyst rating|pipeline (?:20\\d\\d)|market research|market forecast|market report|delveinsight"
 def normalize(title):
     title=re.sub(r"\s+[-|]\s+[^-|]{2,60}$","",title or "")
     return re.sub(r"[^a-z0-9가-힣]+"," ",title.lower()).strip()
