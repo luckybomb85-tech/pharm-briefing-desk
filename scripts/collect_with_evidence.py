@@ -7,6 +7,7 @@ from domestic_route_collector import scan_fixed
 from web_unified_collector import scan_web
 from domestic_candidate_pipeline import build_domestic_stage4
 from global_source_collector import scan_global_sources
+from global_candidate_ranker import select as rank_global_candidates
 
 TZ=ZoneInfo("Asia/Seoul")
 def now(): return datetime.now(TZ).isoformat(timespec="seconds")
@@ -61,12 +62,13 @@ def scan(day,settings,domestic_only=False):
                 "publish_allowed": False}
     global_audit=scan_global_sources(day,settings,now)
     candidates.extend(global_audit["candidates"])
+    global_shortlist=rank_global_candidates(global_audit["candidates"],limit=30)
     patent_audit=scan_extra(["제약 특허심판원 심결 특허법원 판결 when:3d","제약 우선판매품목허가 통지의약품 when:3d","의약품 특허만료 제네릭 출시 when:3d","pharma patent litigation biosimilar when:3d"],"PATENT",candidates)
     p0=[]
     for x in candidates:
         if any(k in x["title"].lower() for k in ("에페글레나타이드","에페오토","epheglena")):
             p0.append({"event_id":"HANMI-EPHE-APPROVAL","title":x["title"],"url":x["url"],"verified_original":bool(x.get("verified_original",False))})
-    return {"date":day,"generated_at":now(),"source_health":source_health,"domestic_groups":groups,"web_gap_scan":web_gap,"web_unified_statistics":web["statistics"],"p0_followups":[{"event_id":"HANMI-EPHE-APPROVAL","checked_at":now(),"status":"PARTIAL","candidates":p0}],"global":global_audit,"patent":patent_audit,"candidates":candidates,"errors":errors,"note":"WEB는 6개 공유 RSS 검색만 수행하고 원문 검증은 후속 단계로 이관. 인덱스 검색만으로 PASS/PASS_ZERO 불가. 글로벌·특허는 기존 분리 상태이며 추가 검증 전 PASS 불가."}
+    return {"date":day,"generated_at":now(),"source_health":source_health,"domestic_groups":groups,"web_gap_scan":web_gap,"web_unified_statistics":web["statistics"],"p0_followups":[{"event_id":"HANMI-EPHE-APPROVAL","checked_at":now(),"status":"PARTIAL","candidates":p0}],"global":global_audit,"global_shortlist":global_shortlist,"patent":patent_audit,"candidates":candidates,"errors":errors,"note":"WEB는 6개 공유 RSS 검색만 수행하고 원문 검증은 후속 단계로 이관. 인덱스 검색만으로 PASS/PASS_ZERO 불가. 글로벌·특허는 기존 분리 상태이며 추가 검증 전 PASS 불가."}
 def source_health_checkpoint(day, out):
     """Preserve WEB shared-query evidence without pretending independent visits."""
     checks = {}
@@ -105,6 +107,9 @@ if __name__=="__main__":
     out["domestic_stage4_path"]=str(stage4_path)
     out["domestic_stage4_statistics"]=stage4["statistics"]
     out["publish_allowed"]=False
+    if not a.domestic_only:
+        shortlist_path=Path("staging")/f"{a.date}-global-shortlist.json"
+        shortlist_path.write_text(json.dumps(out.get("global_shortlist",{}),ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     # Audit is a checkpoint, NOT a publication or a claim of readiness.
     health=source_health_checkpoint(a.date,out)
     health_path=Path("staging")/f"{a.date}-source-health.json"
