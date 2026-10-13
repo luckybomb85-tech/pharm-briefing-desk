@@ -35,11 +35,10 @@ jobs:
           from pathlib import Path
           from scripts.global_source_collector import scan_global_sources
           from scripts.global_candidate_ranker import select
-          from scripts.global_top_verifier import verify_shortlist
           now=lambda:datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
           day=datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
           out=scan_global_sources(day,{},now)
-          shortlist=verify_shortlist(select(out["candidates"],limit=30),limit=10)
+          shortlist=select(out["candidates"],limit=30)
           Path("status/global-shortlist-latest.json").write_text(json.dumps(shortlist,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
           Path("status/global-source-smoke.json").write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding="utf-8")
           for route in out["routes"]:
