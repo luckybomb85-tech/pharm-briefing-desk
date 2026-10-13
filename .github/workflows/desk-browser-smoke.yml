@@ -41,3 +41,25 @@ jobs:
               raise SystemExit('PUBLIC_BROWSER_BRIEFING_RENDER_FAILED')
           print('PUBLIC_BROWSER_OK: 2026-10-13, rendered domestic cards >=14, CDN unavailable')
           PY
+          # Verify the default URL selects yesterday before a new day's data exists.
+          if [[ "$(TZ=Asia/Seoul date +%F)" == "2026-10-14" && \
+                ! -f domestic/2026-10-14.json && ! -f global/2026-10-14.json && ! -f data/2026-10-14.json ]]; then
+            timeout 55 "$CHROME" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
+              --disable-background-networking --virtual-time-budget=15000 \
+              --host-resolver-rules="MAP cdn.jsdelivr.net ~NOTFOUND" \
+              --dump-dom 'https://luckybomb85-tech.github.io/pharm-briefing-desk/' \
+              > /tmp/default-dom.html 2> /tmp/default-chrome-stderr.log || {
+                echo "DEFAULT_BROWSER_DUMP_FAILED"; tail -n 40 /tmp/default-chrome-stderr.log; exit 1;
+              }
+            python - <<'PY2'
+          import re
+          from pathlib import Path
+          html=Path('/tmp/default-dom.html').read_text(encoding='utf-8')
+          n=len(re.findall(r'<article class="card"',html))
+          date_ok='2026년 10월 13일' in html
+          print('MIDNIGHT_DEFAULT_BROWSER: card_count=',n,'date_label_oct13=',date_ok)
+          if not date_ok or n<14:
+              raise SystemExit('MIDNIGHT_DEFAULT_FALLBACK_FAILED')
+          print('MIDNIGHT_DEFAULT_OK: no query parameter shows last published date')
+          PY2
+          fi
