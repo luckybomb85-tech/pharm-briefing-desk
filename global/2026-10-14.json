@@ -1,7 +1,16 @@
 {
   "date": "2026-10-14",
-  "status": "discovery-only",
+  "status": "partial-published",
   "items": [
+    {
+      "title": "로슈, 중국 로나와 최대 11.6억달러 ALK7 비만치료제 기술도입",
+      "source": "https://www.fiercebiotech.com/biotech/roche-inks-116b-rona-deal-enter-emerging-obesity-race",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-13T07:45:00-04:00",
+      "tag": "BD, OBESITY",
+      "summary": "로슈가 중국 로나테라퓨틱스의 ALK7 표적 RNAi 비만치료제 독점 라이선스를 확보했다. 선급금·단기 마일스톤 최대 1억달러, 장기 마일스톤 최대 10억6000만달러와 별도 로열티 조건이다.",
+      "discovery_only": false
+    },
     {
       "title": "Calluna Pharma, 특발성 폐섬유증에 대한 CAL101의 2상 AURORA 연구에서 투여를 완료하고 최종 독립 안전성 검토 완료 보고 - BioSpace",
       "source": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQSEtNMXZuU1lNNDEwWk5DMWJ6ZHhDTk5yS2Y3STdrZGJrNUZOLUZjaDZpV2loMHVGbnpsUzBiMk44ckp3WUllSmFRWjNNa3I5MnRpUVRCQ296M3dCV3RodUFoLVlaMTk0aW5SUk5WZ0dIU3pRdmV0QloxOFQ1aUxtd1Y4Wm83OGpMSGtlQ0tNNjZfUEQ3dVpmZ2lTZ20wV3ItSlJOODZqRnhmYmJGRmNlVmZkc2NXUmlIZ2VORXQtandpcV9ZRlVuVzVOMDJsT0M4b1BkZlpNbDJGOURnaW1IakxINzNHaXY3VDBfc2hMU2RFbFlFeFRELUpNRzNsRlFFeGpWZ3ExZzc2Tkd3bHd4ZS0zajAzdUdDUDVpa2hNQWM0UQ?oc=5",
@@ -63,13 +72,13 @@
       "original_title": "Aulos Bioscience to Present Phase 2 Data for Imneskibart With Avelumab in Adenocarcinoma Non-Small Cell Lung Cancer at ESMO Congress 2026 - BioSpace"
     },
     {
-      "title": "BioNTech의 mRNA 암 백신, 3상 테스트 실패해 분석가들의 신뢰도 크게 하락 - Fierce Biotech",
-      "source": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOaVZuRk1zMFhhQmhFQmZVak0zXzV5NjFfTGtWVGFaYnVJVk1EbG42eGFpaHp1eVNRam4zaHE0aDZ6eHhtcU5MRlBqVXRPc2dWdHdYS3pMOUlaUlBvRXhOcmZrNDExRllBWjZ3Nm1pRTRud3NETzFHOWlmWWc3NTM4YmhoMGcwTkJBYXB2MHNmR0poWWEyRklkWXdONDdZbXhTYXEzalJfRER1TmJ5d1I3M3BUdy02aTMxVWlPbS1PTW9haVpTWGFZ?oc=5",
+      "title": "바이오엔테크 mRNA 암백신 BNT113, 두경부암 3상 PFS 목표 미달",
+      "source": "https://www.fiercebiotech.com/biotech/biontechs-mrna-cancer-vaccine-fails-phase-3-test-significantly-denting-analysts-confidence",
       "source_name": "Fierce Biotech",
       "published_at": "Tue, 13 Oct 2026 12:48:17 GMT",
       "tag": "CLINICAL",
-      "summary": "해외 기사 제목을 자동 번역한 취재 후보입니다. 원문 내용과 핵심 사실은 검증되지 않았습니다.",
-      "discovery_only": true,
+      "summary": "바이오엔테크의 HPV16 양성 두경부암 대상 BNT113·키트루다 병용 임상에서 무진행생존기간(PFS) 개선이 통계적으로 유의하지 않았다. 전체생존기간(OS)은 아직 평가 중이며, 독립 모니터링위원회는 시험 지속을 권고했다.",
+      "discovery_only": false,
       "original_title": "BioNTech’s mRNA cancer vaccine fails phase 3 test, significantly denting analysts’ confidence - Fierce Biotech"
     },
     {
@@ -103,5 +112,7 @@
       "original_title": "Entera Presents Markedly Enhanced Anabolic Effects of EB613 in Postmenopausal Women with Osteoporosis at High Risk of Fracture and Showcases Phase 3 Design at ASBMR 2026 Annual Meeting - FirstWord Pharma"
     }
   ],
-  "translation_status": "complete"
+  "translation_status": "complete",
+  "verified_items": 2,
+  "note": "기존 자동수집 후보 9건 보존, 원문 확인 2건 표시. 전체 원문 검증 완료 아님."
 }
