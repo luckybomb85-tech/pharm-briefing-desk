@@ -36,18 +36,9 @@ def resolve_google_news(url,opener=None):
     if not token or not re.fullmatch(r"[A-Za-z0-9_-]+",token):
         return None
     open_fn=opener or urllib.request.urlopen
-    # Google News RSS article IDs often embed the publisher URL in a
-    # length-prefixed protobuf payload. Decode that before network requests.
-    try:
-        import base64
-        raw=base64.urlsafe_b64decode(token+"="*(-len(token)%4))
-        for match in re.finditer(rb"https?://[^\\x00-\\x20\\x7f]+",raw):
-            candidate=match.group(0).decode("utf-8","ignore").rstrip('\\x00')
-            host=urllib.parse.urlparse(candidate).hostname or ""
-            if host and "google." not in host:
-                return candidate
-    except Exception:
-        pass
+    # Do not extract raw http substrings from opaque protobuf tokens.
+    # Those bytes can contain truncated URLs (e.g. https://www.).
+    # Resolve through the aggregator response instead.
     try:
         req=urllib.request.Request("https://news.google.com/rss/articles/"+token,headers={"User-Agent":"Mozilla/5.0"})
         with open_fn(req,timeout=12) as resp:
