@@ -1,0 +1,43 @@
+name: desk-browser-smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/desk-browser-smoke.yml'
+      - 'index.html'
+permissions:
+  contents: read
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm 13 Oct briefing renders in a real browser without optional CDN
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME" || { echo "CHROME_NOT_AVAILABLE"; exit 1; }
+          "$CHROME" --version
+          # Block the optional Supabase CDN to ensure published articles do not depend on login SDK.
+          timeout 55 "$CHROME" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
+            --disable-background-networking --virtual-time-budget=15000 \
+            --host-resolver-rules="MAP cdn.jsdelivr.net ~NOTFOUND" \
+            --dump-dom 'https://luckybomb85-tech.github.io/pharm-briefing-desk/?date=2026-10-13' \
+            > /tmp/desk-dom.html 2> /tmp/chrome-stderr.log || {
+              echo "BROWSER_DUMP_FAILED"; tail -n 40 /tmp/chrome-stderr.log; exit 1;
+            }
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          html=Path('/tmp/desk-dom.html').read_text(encoding='utf-8')
+          rendered=len(re.findall(r'<article class="card"',html))
+          has_date='2026년 10월 13일' in html
+          print('BROWSER_13_OCT: card_count=',rendered,'date_label=',has_date)
+          if not has_date or rendered<14:
+              marker=html.find('id="cards"')
+              print('cards_excerpt=',html[max(0,marker-200):marker+1200] if marker>=0 else 'CARD_CONTAINER_MISSING')
+              raise SystemExit('PUBLIC_BROWSER_BRIEFING_RENDER_FAILED')
+          print('PUBLIC_BROWSER_OK: 2026-10-13, rendered domestic cards >=14, CDN unavailable')
+          PY
