@@ -50,6 +50,23 @@ jobs:
           for dir in global domestic data live schedule; do
             if [ -d "$dir" ]; then cp -R "$dir" "_site/$dir"; fi
           done
+      - name: Verify Oct 13 domestic desk is present in published site
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          day="2026-10-13"
+          src=Path("_site/domestic") / (day+".json")
+          if not src.is_file():
+              raise SystemExit("OCT13_DOMESTIC_MISSING_FROM_SITE")
+          data=json.loads(src.read_text(encoding="utf-8"))
+          if data.get("date")!=day or len(data.get("items",[]))<4:
+              raise SystemExit("OCT13_DOMESTIC_INCOMPLETE")
+          html=Path("_site/index.html").read_text(encoding="utf-8")
+          if "./domestic/" not in html or "loadDomesticDiscovery(date)" not in html:
+              raise SystemExit("DOMESTIC_LOADER_MISSING")
+          print("OCT13_SITE_ASSET_OK: 4+ domestic candidates and loader included")
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
