@@ -30,13 +30,17 @@ def select(candidates,limit=30):
     selected.sort(key=lambda x:(-x["score"],x.get("title","")))
     # Keep coverage diverse; syndication and near-identical trial milestones
     # must not crowd out unrelated events in the reader-facing briefing.
-    diversified=[];company_counts=Counter()
+    diversified=[];company_counts=Counter();seen_events=set()
     for item in selected:
         title=normalize(item.get("title",""))
         lead=re.search(r"\\b(?:bms|bristol myers squibb|astrazeneca|pfizer|novartis|roche|merck|sanofi|gsk|eli lilly|abbvie|amgen)\\b",title)
         company=lead.group(0) if lead else ""
         if company in ("bms","bristol myers squibb"):company="bms"
+        event=""
+        if "admilparant" in title or "aloft ipf" in title: event="bms-admilparant-ipf-phase3"
+        if event and event in seen_events:continue
         if company and company_counts[company]>=2:continue
+        if event:seen_events.add(event)
         if company:company_counts[company]+=1
         diversified.append(item)
     selected=diversified
