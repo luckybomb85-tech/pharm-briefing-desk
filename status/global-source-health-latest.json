@@ -1,8 +1,9 @@
 {
-  "checked_at": "2026-10-13T10:49:33+09:00",
+  "checked_at": "2026-10-13T10:52:02+09:00",
   "status": "PARTIAL",
   "request_budget": {
-    "official_feeds": 4,
+    "official_feeds": 2,
+    "fda_fallback_queries": 2,
     "publisher_queries": 13,
     "pooled_queries": 1,
     "total_max": 18
@@ -11,17 +12,17 @@
   "routes": [
     {
       "source": "FDA Press Releases",
-      "status": "FAIL",
+      "status": "PARTIAL",
       "hits": 0,
       "in_window_index_hits": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": null
     },
     {
       "source": "FDA Drugs",
-      "status": "FAIL",
+      "status": "PARTIAL",
       "hits": 0,
       "in_window_index_hits": 0,
-      "error": "HTTP Error 404: Not Found"
+      "error": null
     },
     {
       "source": "EMA News",
@@ -89,7 +90,7 @@
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 65,
+      "hits": 64,
       "in_window_index_hits": 63,
       "error": null
     },
