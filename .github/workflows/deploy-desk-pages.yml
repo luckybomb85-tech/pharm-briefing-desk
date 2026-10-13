@@ -73,3 +73,13 @@ jobs:
           path: '_site'
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Check public Pages URL returns Oct 13 domestic items
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python scripts/verify_deployed_desk.py \
+            --base-url "$PUBLISHED_URL" \
+            --date 2026-10-13 \
+            --minimum 4 \
+            --attempts 8 \
+            --delay 12
