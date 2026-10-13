@@ -6,6 +6,11 @@ on:
       - 'index.html'
       - 'global/**'
       - '.github/workflows/deploy-desk-pages.yml'
+  workflow_run:
+    workflows:
+      - auditable-briefing-collection
+      - global-source-smoke-once
+    types: [completed]
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,6 +21,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
