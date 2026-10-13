@@ -1,6 +1,6 @@
 {
   "total_input": 339,
-  "ranked_count": 56,
+  "ranked_count": 50,
   "shortlist": [
     {
       "title": "BMS doubles up with pivotal wins in lung disease, solid tumor that offer hope for post-patent cliff growth - Fierce Biotech",
@@ -79,84 +79,9 @@
       "original_url_verified": false
     },
     {
-      "title": "BMS’ $4.1B RayzeBio bet delivers Phase 3 radiopharma win - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOGZxWjRxZEJMZFdsOVY4RkRBRkItMGRrN2dwV3h0TzF2Q2w1RmE5OE1sX2Z5UkJ6T2xqWWl6WHVEakloQmFlZFJ4Vk0ybFNzU0dWdFhwemE5WHJOY3ZPZE85QWcxRUU3YzgyU1cwTkU3RWZ4TnBqUTVETVdZNnh5VmM3em5OR1YyTWszWEV2N3dFZXZTY2FPdmJ1RW0?oc=5",
-      "published_at": "Mon, 12 Oct 2026 13:28:08 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "BMS’ Admilparant Partially Succeeds In Phase III IPF Trial But Leaves Questions - Scrip",
-      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNWXE5XzhDLXN0Mks1OEVwdTFEa1pCeEpWd0FKTHB2MmVwTUdEa3pBaUZpVzNjVWNHT1laUDdVbEJOYTFhT2dqZDBhYldLcVVNdlNvV2dzODZ5M2ZtdDM5MjdGZExXSFViQXZ3Mkw2eWlkQUVDYlJ3U1hlaElqZG1hTEFwS2FSVGIzN2F5VE5kdTJ6VmRzRXdYMF9jbVVRWGVMa0lxSjdrQWdqMElhSnBMRy03ZEdGTkl0VlYzUHpScVlZVklWenRLUU5QbEVFc2hNSDZ2UGZ3UEFheFZtZnh1Y3V6T19BcHpGaHlJSXFhdU85bm9EZ3hZN1NsaGQtYjNTcDdOWlRB?oc=5",
-      "published_at": "Mon, 12 Oct 2026 21:35:17 GMT",
-      "source": "Scrip/Pink Sheet",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "BMS’ Phase 3 win for lung drug clouded by high-dose miss - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNSXZFMUE1X2pLMUYyUF9RdExQYWR1WTVVOV9vV2oyelRoei03LWJoQTZKWkJTMUVKYW1LRWFxeVFYNFV6UlNIWlpjQl9UQVcxU3psV1QxM0N3bG5DRU1wN052bWJERXB1RWpROGx0X1I5WGZ2bVJPQzl4U2hFLW1BRUUyc25QbU80akN6ZndpdFZ5ZHJfbG8wUXY0aFROUQ?oc=5",
-      "published_at": "Mon, 12 Oct 2026 15:13:08 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
       "title": "Beacon Therapeutics Presents Data from Pivotal VISTA Trial of Laru-zova at AAO 2026 - BioSpace",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVzZ2a2JPOVlRRGJndWN5SmtqX245OExRWlA3RWdyTGF0TU8tczhsTnJFMVYxQzd2ZFFkZjNFdjMxdkhaTW9BVVh2NkdFTlBJdG00UHRWN3RJTzNBRXIwZ0dvN1BfakZYMExqaFFYekhNajNOZEt2YlFkc1poX05pVHVmbFBUWFRhVEN1dHMwVFFtd1hxSi1VdFNyanloV1l5b2xkYmJ5bVBfcWJfS1RGQWxsUXFnVTB6VS1ZWWd2X2Q?oc=5",
       "published_at": "Mon, 12 Oct 2026 13:13:49 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Bristol Myers Squibb Announces Phase 3 ALOFT-IPF Trial Evaluating Admilparant in Adults with Idiopathic Pulmonary Fibrosis Met Primary Endpoint - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNTlJLN1JTT2YyQ053aWxJYXpkdEFzbWhScWEyaEg4YWZHNEhKdHE0dlE3ME9EdlgtVTh5cUZuQWVwU2VsaTdiLWRnajRyTzhWWVVOTkU1SE5mWlFYV0hlZ2xMNjF3V1B1S1Q0bklvb1BvVHhJOFJSMlNIMm93bnpZQllBUEJBbWF1NmpIdnJYSnVYNWo0a3JKOENFU1V3ajhaY19NcG1BekpnYloxU0RXRjh2VVdiNENsOGd1aFhGdDJvbGp5ZExxa2dWVUFoUnp4SHFaR2t4WEhsVVh2aW00cFBmN1FCa3NJN3RDSDVjb253aUlqYm5qcGxxeklKR21TUHZ2M3Y0TmltWThWeng4Ng?oc=5",
-      "published_at": "Mon, 12 Oct 2026 12:02:58 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Bristol Myers Squibb Announces Positive Topline Results from the Interim Analysis of Phase 3 ACTION-1 for RYZ101, RayzeBio’s Radiopharmaceutical Therapy, in Patients with GEP-NETs - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxOX3RCTWlDX2h1TXN3Q3NQaTBEb0x3MndqcTNPaFVrWkI5MDlncW1Dbk9pblBmN1p1XzloWGJBRmJYSlNSRjFlWWxvR3JGWGNUWFRLTV9RYm9fLVYyXzBid0ZuWnlzUzNQblhxZjlJelBxRHE4U1pkOGdaYURQOU9veHJHaklvclptZjJ4alJjcDBQYzl2WGFuelNIMmRMWXRfcnd2OElVZFk2TnVfakdkTXAwOFZsdkVzNG5GNTQ2UmVpclhQUlBqM3Q4bDMzNmFYSVEzb1dVV0l5b1JVOFQzOVhIaGZUbXNqLU45alhVREV1WW9sT2c5ejhzNk0zRDNOTm55enRfd3l4VWJ1dDdJY0YwV0NBNEcwOEk3QzNtZ1FpbkJZZnZPZjgwNFpXSnZYekN1WThyMGFKOVRE?oc=5",
-      "published_at": "Mon, 12 Oct 2026 12:02:58 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -439,10 +364,85 @@
       "original_url_verified": false
     },
     {
-      "title": "Radiopharmaceutical from BMS hits main goal of Phase III study in neuroendocrine tumours - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB1WGVEU2gzTnFoMWNEc0RVM3hpOXJydXJ0OTg2c004M2t4VFJCMUhya2lkb09vaVZHYVpMX2UyWmhfY1pPUXkwbHRlTFlsU2dnR2d3?oc=5",
-      "published_at": "Mon, 12 Oct 2026 18:30:45 GMT",
+      "title": "Raynovent’s Global-First Biweekly GLP-1/GIP Looking Solid In Topline Obesity Readout - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNaHJ6MW1yMVJBN0JxS21Ub0tqRGNJc1A1RS1oaWdGUlZBeEREZ2RRV0xVb3dVVEczTU5SS0I5SXh0ektwdzM3bjdlMzhSQUhrNW45Z3pZZjJ5MGFkZEt5RW1GLTZUMXVuTFlkUDFQbmxvT1EzQkVkU3ZzZ1hwbXJHTGI0YkNVY01FbnJGeXZFaHlibFZSLXJlQlZDWWVBWVlDbzkwRTlaVWZ4WjIxUXNHd3JVMFEtZHdRQ0lwdThDcTBOeFRaRWdqU1VfWF9FdHpqUE5RT3BwRkVaVS02UzY5V0JDNUg5VlFtM3JiNXZLSDZDcURrS3pYSHFqTWlHM0ZKVUpMcjVQV3hDd0hCQmozNjk2LW1hemlKUWxwU3VMYjFJdw?oc=5",
+      "published_at": "Mon, 12 Oct 2026 09:26:05 GMT",
+      "source": "Scrip/Pink Sheet",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Roche sets sights on FDA approval decision of July 2027 with updated eye drug data - Fierce Biotech",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTHF5YU5mUzZaY3ZrUVZXZW84R0wtTVVXTjl2VURUd1YzVzJ4aTcteGVyc0dCM0xmV1ZZRThPRzlMcWhYVUROLThFTjZDdXdBcHlnZGl6V2FMUlFybHhtVE1jN2VIT3p6ZWFlRGl2VlgySTRZSVY5VVlHMFIzbmllVDFkSVI1M3hyeFBERXpPWDNxeWo0eDlPVA?oc=5",
+      "published_at": "Mon, 12 Oct 2026 13:42:07 GMT",
+      "source": "Fierce Biotech",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "REGULATORY"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Savara to Present New Analysis from the IMPALA Clinical Trial and Deliver Encore Presentation of Long-Term Data on Molgramostim in Autoimmune Pulmonary Alveolar Proteinosis (aPAP) at CHEST 2026 - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5ZQkg1dEszVUJYWkF4Q2ZlMVNDQUtmRjBZbUFzdXFnVXFUbUp3T25kREVNRmo2Ym8wdmp4WXZDRVVMdlV3ajg3eDUyN3pkTE5qeHpr?oc=5",
+      "published_at": "Mon, 12 Oct 2026 22:16:59 GMT",
       "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Sling Therapeutics Presents Data from Phase 2b/3 LIDS Clinical Trial Demonstrating Durability of Linsitinib in Thyroid Eye Disease at ASOPRS 57th Annual Fall Scientific Symposium - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxPVUhHc2Vwa2hwWnhCZ0Mwb3NaeWgzLXhJZnlodHFycU5XN0RwSTJvZWg5VXM4aUg5cW5wc0ZWN2VHQWxzVkhpS1lyU1lSNFFOX001aGYwZF91anNKVHFTS1pSOVdEZVFDM2hROUpaRUVBSXhzazhGSmloWmI1QWZUY0R0MEtsYWFWX1UtbEJGYkRxMFFQcVo2N1laTkdORzJCMmNqZWx5MXNUZGs1X0duVHIwenlYU2QwQlNreUwxTWFabVh1UTNETnh0UmJicGlyYWpieFdOWmptLTJpaWF2VDhJQTFHbE5RaGlKU0pETXR5YnRnSmpUN3ZHeDlNU0k1bzlsUWFDR2xKTm5udlhKZFN6VFh1WVJwdWhvS1JKZU44c1NtbEhMb2xEUWNzRWJhc2V4bmN6ZGpObHZwWUZZ?oc=5",
+      "published_at": "Mon, 12 Oct 2026 07:44:44 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "T-MAXIMUM's B7-H3-Targeted Allogeneic CAR-T MT027 Receives FDA Clearance for Phase 2 Study in Brain Metastases from Lung and Breast Cancer - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQTno2SHk1UFZUNExoeGRiNmYxWlVTRGRkNVZ2OFMzT2RDMy11R3RSV2ZaMGltampMRzB4ZFFaUkNmMHNmZnVjUFdzTC1ZU3JxX3B2TUJPT2ExYWoxWDczdFhoMG5yb1YxRjFnS1dCNTRBOWY2SVl1dldqWjhhX25ad0pMblhsRzJkeV9JcU1RMWIwVW5DZ08tSlZaVjEtWGFEWENJa1NXSUwzQmpCVEY4QW9aTzFvdVhtWHB2dFlnRTB0MXM1ancwNVl5WEdxVDRQQk1mZTd0UklfN0I3VHZRRlRtWTQ0N0IzSFJjc2lYUmhGZGFHUDV3Q1BHYUoyZ3JweVlhTmFOM0Y?oc=5",
+      "published_at": "Mon, 12 Oct 2026 13:13:50 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Tortugas Neuroscience Announces Positive Phase 2b Results for Obuprazine (TRTL-107) in Schizophrenia Demonstrating Broad Symptom Improvement and Rapid Onset - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPMjl2YXVJdTFBLURITUIzOXQ0dTdpRWU3SjdROGJ3Z1hnT3dpYTBueUpmVEJuS3N6VDY1NHZPOXlpVmFObUh2R1RRVEFLdi1xdG1RVVY3ckdYaGFLanNKUFhIWU1LejF6SXhoX2FGRGhDNlFvWURBR3pzUFhDQUtjSUlsMnEwX1JFallXRDA4bEN6WW44YWdxTHMzellnd2t0R0FLQkNtdklEZFVuSHhlVER5X1B6T3VRVVZUWmFSdWpKZHBnVHVnbW5qT1czZTcxcFpnQzZCa2RqMmVEY2NBZlkxbkFRSzNXalpuRllKX0Y2Y05uUGVTWDRzM0lpakJfZkFFMjdTRVdSVkZQdm9XRUhIcVVEUXJuSzV1a3k3NA?oc=5",
+      "published_at": "Mon, 12 Oct 2026 13:15:52 GMT",
+      "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",

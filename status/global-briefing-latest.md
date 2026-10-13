@@ -32,36 +32,36 @@
 - 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5jX08yQ1p2ekhWSnc3YWd6U1pjVG9LMUMyaHo2c0lrOEpWcFhfZU5zc09DTWwxSjBmSVNFR0wxOE02dXo1cXkwTVZBMXpZS0oyaFdV?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 6. BMS’ $4.1B RayzeBio bet delivers Phase 3 radiopharma win - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMinAFBVV95cUxOOGZxWjRxZEJMZFdsOVY4RkRBRkItMGRrN2dwV3h0TzF2Q2w1RmE5OE1sX2Z5UkJ6T2xqWWl6WHVEakloQmFlZFJ4Vk0ybFNzU0dWdFhwemE5WHJOY3ZPZE85QWcxRUU3YzgyU1cwTkU3RWZ4TnBqUTVETVdZNnh5VmM3em5OR1YyTWszWEV2N3dFZXZTY2FPdmJ1RW0?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 7. BMS’ Admilparant Partially Succeeds In Phase III IPF Trial But Leaves Questions - Scrip
-- 매체: Scrip/Pink Sheet | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMihgJBVV95cUxNWXE5XzhDLXN0Mks1OEVwdTFEa1pCeEpWd0FKTHB2MmVwTUdEa3pBaUZpVzNjVWNHT1laUDdVbEJOYTFhT2dqZDBhYldLcVVNdlNvV2dzODZ5M2ZtdDM5MjdGZExXSFViQXZ3Mkw2eWlkQUVDYlJ3U1hlaElqZG1hTEFwS2FSVGIzN2F5VE5kdTJ6VmRzRXdYMF9jbVVRWGVMa0lxSjdrQWdqMElhSnBMRy03ZEdGTkl0VlYzUHpScVlZVklWenRLUU5QbEVFc2hNSDZ2UGZ3UEFheFZtZnh1Y3V6T19BcHpGaHlJSXFhdU85bm9EZ3hZN1NsaGQtYjNTcDdOWlRB?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 8. BMS’ Phase 3 win for lung drug clouded by high-dose miss - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMingFBVV95cUxNSXZFMUE1X2pLMUYyUF9RdExQYWR1WTVVOV9vV2oyelRoei03LWJoQTZKWkJTMUVKYW1LRWFxeVFYNFV6UlNIWlpjQl9UQVcxU3psV1QxM0N3bG5DRU1wN052bWJERXB1RWpROGx0X1I5WGZ2bVJPQzl4U2hFLW1BRUUyc25QbU80akN6ZndpdFZ5ZHJfbG8wUXY0aFROUQ?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 9. Beacon Therapeutics Presents Data from Pivotal VISTA Trial of Laru-zova at AAO 2026 - BioSpace
+### 6. Beacon Therapeutics Presents Data from Pivotal VISTA Trial of Laru-zova at AAO 2026 - BioSpace
 - 매체: BioSpace | 중요도 점수: 4
 - 분류: CLINICAL
 - 발견 링크: https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVzZ2a2JPOVlRRGJndWN5SmtqX245OExRWlA3RWdyTGF0TU8tczhsTnJFMVYxQzd2ZFFkZjNFdjMxdkhaTW9BVVh2NkdFTlBJdG00UHRWN3RJTzNBRXIwZ0dvN1BfakZYMExqaFFYekhNajNOZEt2YlFkc1poX05pVHVmbFBUWFRhVEN1dHMwVFFtd1hxSi1VdFNyanloV1l5b2xkYmJ5bVBfcWJfS1RGQWxsUXFnVTB6VS1ZWWd2X2Q?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 10. Bristol Myers Squibb Announces Phase 3 ALOFT-IPF Trial Evaluating Admilparant in Adults with Idiopathic Pulmonary Fibrosis Met Primary Endpoint - BioSpace
+### 7. Cardurion Pharmaceuticals Presents Phase 2 Results for Tovinontrine (CRD-750), a PDE9 Inhibitor, as a Novel Treatment for Heart Failure - BioSpace
 - 매체: BioSpace | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMikAJBVV95cUxNTlJLN1JTT2YyQ053aWxJYXpkdEFzbWhScWEyaEg4YWZHNEhKdHE0dlE3ME9EdlgtVTh5cUZuQWVwU2VsaTdiLWRnajRyTzhWWVVOTkU1SE5mWlFYV0hlZ2xMNjF3V1B1S1Q0bklvb1BvVHhJOFJSMlNIMm93bnpZQllBUEJBbWF1NmpIdnJYSnVYNWo0a3JKOENFU1V3ajhaY19NcG1BekpnYloxU0RXRjh2VVdiNENsOGd1aFhGdDJvbGp5ZExxa2dWVUFoUnp4SHFaR2t4WEhsVVh2aW00cFBmN1FCa3NJN3RDSDVjb253aUlqYm5qcGxxeklKR21TUHZ2M3Y0TmltWThWeng4Ng?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMigAJBVV95cUxNVlFzMFp3bHRkU0N1by1NYURfcm5ndEFkX2Q3OGVZbHY3TWlvRi02WjAzRHFFU00ycms4eFVpMmFCWW1oM1FkdGE0NVJRTFhjYk0yTlpZWFppYjB2dXZtbzRmSlk2aS03cDFCTnlCSXZLMThmcHN0bmIybmxVWjN4aHAyeWN2akZPekh2eGRrdkE5b2Z5N01BZDdfR3JGd1FhYThJRDB4SENrUWVsM0pNWU5YcnVoOHFsVldwWUJDUXpLSWxHb2xRaEVFeWV4Y1pOQUpQdUpYSS1WMnFZV2x5bUVfcDhVQkpaNE9GY1lJUmtITHVYMGd1SWpSNEt3YVVv?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-선별 대상 339건 중 중요도 기준 통과 56건. 상위 10건 표시.
+### 8. CervoMed Presents Initial Results of Phase 2a Trial of Neflamapimod in Nonfluent Variant Primary Progressive Aphasia (nfvPPA) Showing Positive Effects on a Key Neurodegeneration Biomarker in Late-Breaking Oral Session at ISFTD 2026 - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5SOVNzX08tZ0JORWp6WVVYdTBqT0h2ZUNzcm9CRWgxWk82UldJaWJDbGVHaTk5OGNLWml6NEt4Y1ZkU2hIODNXVW5rU3Fob2t6MU04?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 9. Efzimfotase Alfa Still Tapped As Strensiq Successor Despite Mixed Phase III Results - insights.citeline.com
+- 매체: Scrip/Pink Sheet | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMigAJBVV95cUxOaG1uekc4MXF2c2F1STFIVmpCejY0cGhqY3FZZmp6dU5nWjBLWEkxWmRKV0VYVDQ3aE14bEpnYlg2bGVNbUhTTWZxQTVUUEVld0RHUV9aczRZcS1RNjdINEhvZG9wdUVGSGNBMkZITHUxbGpEUVZ5NXBWZ3Z6ckNaX1FUZVJtSFpSY3JMaC0tWGxlMjZVSndGYlpBWm9LXzlTd3QwdHZlOW1EQmZqSUZDamw4ZHYyU0NvVlVHSGRsSGQtRklHdWJ5U3ROSnQ4LU5UOERjZXpXRVpPeFhuV25mb0l1UXVMV1Vfc2NsRmo5VzNBdVN4TWc1RlZmeXFDWFVa?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 10. FDA approves Asahi Kasei’s Hovilpri for refractory HSV - Pharmaceutical Technology
+- 매체: Pharmaceutical Technology | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMikgFBVV95cUxPN3pId0twd2k0SkVCQXdRRTBwQ3VDN00zY19QZWgzWDI0RmpXODNUdEpBRlBVbmhYbG5LLWlhVjBucWJZMzhHUVZWSDNVeTRlaVo3ZUhJYWNBLXVhNmZXNDljT0dyZUVOQkdfRzBxQjRJV2lfQ3B2aWszMENUMnlNczd5RXRyVzhBeU93QXJzQW5kQQ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+선별 대상 339건 중 중요도 기준 통과 50건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
