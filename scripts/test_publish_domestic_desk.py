@@ -44,6 +44,15 @@ class DomesticPublishTests(unittest.TestCase):
         self.assertTrue(data["items"][0]["discovery_only"])
         self.assertIn("CORE_FACT_PENDING",data["items"][0]["verification_status"])
 
+    def test_real_summary_survives_publish_and_disclaimer_is_not_summary(self):
+        story=confirmed(summary="원문에서 확인한 임상 결과는 24주차 HbA1c 감소입니다.")
+        generic=confirmed(
+            source="https://example.com/news/2",
+            summary="국내 매체의 원문 주소와 발행시각이 확인된 취재 후보입니다. 본문 핵심 사실은 별도 검증이 필요합니다.")
+        items,_=curate(DAY,[story,generic])
+        self.assertEqual(items[0]["summary"],story["summary"])
+        self.assertEqual(items[1]["summary"],"")
+
     def test_empty_or_unverified_does_not_overwrite_prior_desk(self):
         target=Path(f"domestic/{DAY}.json")
         target.write_text('{"old":true}', encoding="utf-8")
