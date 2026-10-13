@@ -105,7 +105,22 @@ async function load(date=current){
     if(current===date){renderDateLabel();render()}
   });
 }
-function render(){bindMainTabs();renderLiveTools();if(tab==='schedule'){renderSchedule();return}const a=visibleItems();const liveCount=L?.[tab]?.items?.length||0;const managed=managedTabs.find(t=>t.id===tab);const body=a.length?a.map((x,i)=>card(x,i)).join(''):(managed&&managed.id.startsWith('custom-')?'<div class="empty">'+esc(managed.name)+' 탭이 추가됐습니다.<br>설정의 탭 관리에서 수집 규칙을 연결하면 자동 브리핑에 포함됩니다.</div>':current==='2026-09-29'?'<div class="empty">9월 29일은 기존 v3.7 아카이브에 보존돼 있습니다.<br><br><a href="https://pharm-briefing-desk.luckybomb85.chatgpt.site" style="display:inline-block;padding:11px 16px;border:1px solid #ccd8e1;border-radius:12px;color:#173f65;text-decoration:none;font-weight:800">9월 29일 데스크 열기 ↗</a></div>':'<div class="empty">'+fmtDate(current)+' 브리핑이 아직 없습니다.</div>');$('#cards').innerHTML=(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body}
+let lastCardRenderKey='';
+function render(){
+ const key=current+':'+tab,same=lastCardRenderKey===key;
+ const expanded=same?[...document.querySelectorAll('.detail.open')].map(el=>el.id):[];
+ const openedWriter=same?document.querySelector('.writer.open'):null;
+ const writerState=openedWriter?{id:openedWriter.id,mode:openedWriter.dataset.mode,titleIndex:openedWriter.dataset.titleIndex}:null;
+ bindMainTabs();renderLiveTools();
+ if(tab==='schedule'){lastCardRenderKey=key;renderSchedule();return}
+ const a=visibleItems();const liveCount=L?.[tab]?.items?.length||0;const managed=managedTabs.find(t=>t.id===tab);const body=a.length?a.map((x,i)=>card(x,i)).join(''):(managed&&managed.id.startsWith('custom-')?'<div class="empty">'+esc(managed.name)+' 탭이 추가됐습니다.<br>설정의 탭 관리에서 수집 규칙을 연결하면 자동 브리핑에 포함됩니다.</div>':current==='2026-09-29'?'<div class="empty">9월 29일은 기존 v3.7 아카이브에 보존돼 있습니다.<br><br><a href="https://pharm-briefing-desk.luckybomb85.chatgpt.site" style="display:inline-block;padding:11px 16px;border:1px solid #ccd8e1;border-radius:12px;color:#173f65;text-decoration:none;font-weight:800">9월 29일 데스크 열기 ↗</a></div>':'<div class="empty">'+fmtDate(current)+' 브리핑이 아직 없습니다.</div>');$('#cards').innerHTML=(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body;
+ lastCardRenderKey=key;
+ expanded.forEach(id=>{const m=id.match(/^detail-(\d+)$/);if(m&&a[Number(m[1])])toggleDetail(Number(m[1]))});
+ if(writerState){const m=writerState.id.match(/^writer-(\d+)$/);if(m){
+   const i=Number(m[1]),w=$('#writer-'+i);
+   if(w&&a[i]){w.dataset.mode=writerState.mode;w.dataset.titleIndex=writerState.titleIndex||'0';renderPreview(i,writerState.mode);w.classList.add('open')}
+ }}
+}
 function datePlus(s,n){const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
 function allEvents(){const local=JSON.parse(localStorage.getItem('localScheduleEvents')||'[]');return [...(E.events||[]),...local].filter((x,i,a)=>a.findIndex(y=>(y.id&&y.id===x.id)||(!y.id&&y.date===x.date&&y.title===x.title&&y.time===x.time))===i)}
 function renderSchedule(){const tools='<div class="scheduleTools"><button class="'+(scheduleView==='today'?'on':'')+'" onclick="setScheduleView(\'today\')">오늘</button><button class="'+(scheduleView==='week'?'on':'')+'" onclick="setScheduleView(\'week\')">이번 주</button><button class="'+(scheduleView==='upcoming'?'on':'')+'" onclick="setScheduleView(\'upcoming\')">예정</button><button class="'+(scheduleView==='cases'?'on':'')+'" onclick="setScheduleView(\'cases\')">관심소송</button><button class="scheduleAdd" onclick="'+(scheduleView==='cases'?'openCasePrompt()':'openEventForm()')+'">'+(scheduleView==='cases'?'＋ 소송 등록':'＋ 일정 입력')+'</button></div>';if(scheduleView==='cases'){const c=E.tracked_cases||[];const rows=c.length?c.map(x=>'<article class="eventCard"><div class="eventTop"><span class="eventBadge">관심소송</span><span class="eventBadge">'+esc(x.status||'추적중')+'</span></div><div class="eventTitle">'+esc(x.court||'법원 미정')+' '+esc(x.case_number||'사건번호 미정')+'</div><div class="eventInfo">'+esc(x.party||'당사자 미정')+(x.note?'<br>'+esc(x.note):'')+'</div>'+(membership?.active?'<div class="eventEdit"><button onclick="deleteCase(\''+x.id+'\')">삭제</button></div>':'')+'</article>').join(''):'<div class="empty">등록된 관심소송이 없습니다.</div>';$('#cards').innerHTML=tools+rows;return}const start=current,end=scheduleView==='today'?current:scheduleView==='week'?datePlus(current,6):datePlus(current,180);let a=allEvents().filter(x=>x.date>=start&&x.date<=end).sort((a,b)=>(a.date+(a.time||'99:99')).localeCompare(b.date+(b.time||'99:99')));const rows=a.map(eventCard).join('');$('#cards').innerHTML=tools+(rows||'<div class="empty">이 기간에 등록된 일정이 없습니다.</div>')}
