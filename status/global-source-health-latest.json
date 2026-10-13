@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-13T10:52:02+09:00",
+  "checked_at": "2026-10-13T10:59:15+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -20,7 +20,7 @@
     {
       "source": "FDA Drugs",
       "status": "PARTIAL",
-      "hits": 0,
+      "hits": 1,
       "in_window_index_hits": 0,
       "error": null
     },
@@ -90,7 +90,7 @@
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 64,
+      "hits": 65,
       "in_window_index_hits": 63,
       "error": null
     },
@@ -139,4 +139,4 @@
   ],
   "originals_verified": 0,
   "publish_allowed": false
-}\n
+}
