@@ -33,7 +33,7 @@ def select(candidates,limit=30):
     diversified=[];company_counts=Counter();seen_events=set()
     for item in selected:
         title=normalize(item.get("title",""))
-        lead=re.search(r"\\b(?:bms|bristol myers squibb|astrazeneca|pfizer|novartis|roche|merck|sanofi|gsk|eli lilly|abbvie|amgen)\\b",title)
+        lead=re.search(r"\b(?:bms|bristol myers squibb|astrazeneca|pfizer|novartis|roche|merck|sanofi|gsk|eli lilly|abbvie|amgen)\b",title)
         company=lead.group(0) if lead else ""
         if company in ("bms","bristol myers squibb"):company="bms"
         event=""
