@@ -79,7 +79,7 @@ function displayTime(v){if(!v)return '시간 미확인';const t=String(v).trim()
     }
   }let m=t.match(/(\d{1,2})\.\s*(\d{1,2})\.\s*(오전|오후)\s*(\d{1,2}):(\d{2})/);if(m){let h=Number(m[4]);if(m[3]==='오후'&&h<12)h+=12;if(m[3]==='오전'&&h===12)h=0;return String(Number(m[1])).padStart(2,'0')+'.'+String(Number(m[2])).padStart(2,'0')+' '+String(h).padStart(2,'0')+':'+m[5]}m=t.match(/(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/);if(m)return m[2]+'.'+m[3]+' '+m[4]+':'+m[5];return t}
 function fmtDate(s){const [y,m,d]=s.split('-');const wd=['일','월','화','수','목','금','토'][new Date(s+'T12:00:00').getDay()];return y+'년 '+Number(m)+'월 '+Number(d)+'일 ('+wd+')'}
-function dateStatusLabel(){if(D?.status==='editorial-empty')return ' · 선별 완료(중요기사 없음)';if(D?.status==='editorial-selected')return ' · 기사 선별·요약본';if(v2Feed.date===current&&v2Feed.status==='editorial-selected')return ' · 기사 선별·요약본';if(D?.status==='rehearsal-published'||D?.test_run)return ' · 리허설';if(v2Feed?.date===current&&v2Feed.items.length)return ' · 수집 후보(선별 전)';if(domesticDiscovery?.date===current&&domesticDiscovery.status==='candidate-only')return ' · 보관된 수집 후보(선별 전)';if(domesticDiscovery?.date===current)return ' · 국내 후보 공개';if(globalDiscovery?.date===current)return ' · 글로벌 후보 공개';return D?'':' · 미배포'}
+function dateStatusLabel(){return ''}
 function renderDateLabel(){const el=$('#dateLabel');if(!el)return;el.textContent=fmtDate(current)+dateStatusLabel();el.classList.toggle('unpublished',!D);el.classList.toggle('rehearsal',!!D&&(D.status==='rehearsal-published'||D.test_run))}
 function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(window._tt);window._tt=setTimeout(()=>e.style.display='none',1500)}
 async function refreshAuth(){const {data}=await db.auth.getSession();session=data.session||null;membership=null;if(session){const {data:m}=await db.from('team_members').select('*').eq('user_id',session.user.id).maybeSingle();membership=m||null}renderAuthState()}
@@ -107,35 +107,36 @@ async function loadV2Feed(date){
     v2Feed={date,status:data.status||'',globalStatus:data.global_status||'',items:data.domestic.filter(x=>x&&x.title&&/^https?:\/\//i.test(x.url||'')).map(x=>({
       id:x.id,title:x.title,source_name:x.source_name||'출처 미확인',source:x.url,
       published_at:x.published_at||'',tag:x.selection_status==='selected'?'선별 기사': '수집 후보 · 미검증',
-      summary:x.summary||'수집된 기사 후보입니다. 원문 검증과 편집 선별은 아직 완료되지 않았습니다.',
+      summary:x.summary||'수집된 기사 후보입니다. 원문 검증과 편집 선별은 아직 완료되지 않았습니다.',article_preview:x.article_preview||null,
       ai_draft:x.ai_draft||null,verification_status:x.verification_status||'candidate',
       is_v2_candidate:true
     })),globalItems:(data.global||[]).filter(x=>x&&x.title&&/^https?:\/\//i.test(x.url||'')).map(x=>({
       title:x.title,original_title:x.original_title,source_name:x.source_name||'해외 언론',source:x.url,
-      published_at:x.published_at||'',tag:x.tag||'글로벌',summary:x.summary||'',
+      published_at:x.published_at||'',tag:x.tag||'글로벌',summary:x.summary||'',article_preview:x.article_preview||null,
       verification_status:x.verification_status||'headline_only',selection_status:x.selection_status||'selected',is_v2_global:true
     })),error:null};
   }catch(e){v2Feed={date:null,items:[],globalItems:[],status:'',globalStatus:'',error:String(e)};console.warn('v2 feed unavailable; archived data preserved',e);}
 }
 async function loadDbBriefing(date){dbBriefing={domestic:[],global:[],patent:[]};if(!db)return;try{const q=await db.from('briefing_articles').select('briefing_date,section,title,summary,source_url,source_name,published_at,tag,article_preview,discovery_only,payload').eq('briefing_date',date).order('published_at',{ascending:false});if(q.error)throw q.error;for(const x of q.data||[]){if(!dbBriefing[x.section])continue;dbBriefing[x.section].push({...x.payload,...x,title:x.title,summary:x.summary,source:x.source_url,source_name:x.source_name})}}catch(e){console.warn('Database briefing unavailable; using archived files',e)}}
 function visibleItems(section=tab){
-  if(D?.status==='editorial-empty'||(v2Feed.date===current&&((section==='domestic'&&v2Feed.status==='editorial-empty')||(section==='global'&&v2Feed.globalStatus==='editorial-empty'))))return [];
-  const published=Array.isArray(D?.[section])?D[section]:[];
-  const archive=(section==='domestic'&&domesticDiscovery?.date===current?domesticDiscovery.items:section==='global'&&globalDiscovery?.date===current?globalDiscovery.items:[]);
-  const stored=dbBriefing[section]||[], live=[...(L?.[section]?.items||[])].reverse();
-  const candidates=section==='domestic'&&v2Feed.date===current?v2Feed.items:[];
-  const globalSelected=section==='global'&&v2Feed.date===current?v2Feed.globalItems:[];
-  // Keep curated editions separate from unreviewed discovery and English raw titles.
-  const curated=section==='domestic'&&((D?.status==='editorial-selected'&&published.length>0)||(v2Feed.date===current&&v2Feed.status==='editorial-selected'&&candidates.length>0));
-  const sources=section==='global'&&globalSelected.length?[...globalSelected]:
-    curated?(published.length?[...live,...published]:[...candidates]):[...live,...published,...stored,...archive,...candidates];
-  const seen=new Set();
-  return sources.filter(x=>{
-    if(!x||!x.title)return false;
-    const key=String(x.source||x.title).trim().toLowerCase();
-    if(seen.has(key))return false;
-    seen.add(key);return true;
-  });
+ const published=Array.isArray(D?.[section])?D[section]:[];
+ const archive=section==='domestic'&&domesticDiscovery?.date===current?domesticDiscovery.items:section==='global'&&globalDiscovery?.date===current?globalDiscovery.items:[];
+ const stored=dbBriefing[section]||[],live=[...(L?.[section]?.items||[])].reverse();
+ const candidates=section==='domestic'&&v2Feed.date===current?v2Feed.items:[];
+ const globalSelected=section==='global'&&v2Feed.date===current?v2Feed.globalItems:[];
+ const curated=section==='domestic'&&((D?.status==='editorial-selected'&&published.length>0)||(v2Feed.date===current&&v2Feed.status==='editorial-selected'));
+ let sources=section==='global'&&globalSelected.length?[...globalSelected]:
+    curated?(v2Feed.date===current&&v2Feed.status==='editorial-selected'?[...candidates]:[...published]):
+    [...live,...published,...stored,...archive,...candidates];
+ if(section==='domestic'&&current>='2026-10-15'){
+  const from=Date.parse(current+'T06:00:00+09:00'),back=from-18*3600000;
+  const valid=sources.filter(x=>{const p=Date.parse(x.published_at||'');return Number.isFinite(p)&&p>=back;});
+  const primary=valid.filter(x=>Date.parse(x.published_at)>=from);
+  const older=valid.filter(x=>Date.parse(x.published_at)<from);
+  sources=[...primary,...(primary.length<4?older.slice(0,Math.min(3,4-primary.length)):[])];
+ }
+ const seen=new Set();
+ return sources.filter(x=>{if(!x?.title)return false;const k=String(x.source||x.title).trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true});
 }
 async function loadDomesticDiscovery(date){domesticDiscovery=null;try{const r=await fetch('./domestic/'+date+'.json',{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(v.date===date&&Array.isArray(v.items))domesticDiscovery=v}catch(e){console.warn('Domestic discovery unavailable',e)}}
 async function loadGlobalDiscovery(date){globalDiscovery=null;try{const r=await fetch('./global/'+date+'.json',{cache:'no-store'});if(!r.ok)return;const v=await r.json();if(v.date===date&&Array.isArray(v.items))globalDiscovery={...v,items:v.items.filter(x=>/[가-힣]/.test(x.title||'')&&!/애플.*특허|반도체.*특허/.test(x.title||''))}}catch(e){console.warn('Global discovery unavailable',e)}}
@@ -166,10 +167,8 @@ function render(){
  if(tab==='schedule'){lastCardRenderKey=key;renderSchedule();return}
  const a=visibleItems();const liveCount=L?.[tab]?.items?.length||0;const managed=managedTabs.find(t=>t.id===tab);const body=a.length?a.map((x,i)=>card(x,i)).join(''):(managed&&managed.id.startsWith('custom-')?'<div class="empty">'+esc(managed.name)+' 탭이 추가됐습니다.<br>설정의 탭 관리에서 수집 규칙을 연결하면 자동 브리핑에 포함됩니다.</div>':current==='2026-09-29'?'<div class="empty">9월 29일은 기존 v3.7 아카이브에 보존돼 있습니다.<br><br><a href="https://pharm-briefing-desk.luckybomb85.chatgpt.site" style="display:inline-block;padding:11px 16px;border:1px solid #ccd8e1;border-radius:12px;color:#173f65;text-decoration:none;font-weight:800">9월 29일 데스크 열기 ↗</a></div>':(D?.status==='editorial-empty'||(v2Feed.date===current&&((tab==='domestic'&&v2Feed.status==='editorial-empty')||(tab==='global'&&v2Feed.globalStatus==='editorial-empty')))?'<div class="empty">'+fmtDate(current)+' 주요 기사 선별을 마쳤습니다. 오늘은 우선 보도할 기사가 없습니다.</div>':'<div class="empty">'+fmtDate(current)+' 브리핑이 아직 없습니다.</div>'));const curated=tab==='domestic'&&((D?.status==='editorial-selected')||(v2Feed.date===current&&v2Feed.status==='editorial-selected'));
  const curatedGlobal=tab==='global'&&v2Feed.date===current&&v2Feed.globalItems.length>0;
- const candidateCount=!curated&&tab==='domestic'?(v2Feed.date===current?v2Feed.items.length:(domesticDiscovery?.status==='candidate-only'&&domesticDiscovery.date===current?domesticDiscovery.items.length:0)):0;
- const candidateNotice=candidateCount?'<div class="candidateNotice"><b>수집 후보 '+candidateCount+'건</b> · 원문 검증·편집 선별을 마치지 않은 기사입니다. 확정 아침 브리핑과 구분해 확인해 주세요.</div>':'';
- const editorialNotice=(curated||curatedGlobal)?'<div class="editorialNotice"><b>'+ (curatedGlobal?'글로벌 한국어 선별·요약 ':'편집 선별·요약 ')+a.length+'건</b> · '+esc(D?.editorial_scope||'기사 가치 기준에 따른 선별본')+' · 원문 미검증 표기가 있는 기사는 제목 정보만 기준으로 정리했습니다.</div>':'';
- $('#cards').innerHTML=editorialNotice+candidateNotice+(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body;
+
+ $('#cards').innerHTML=(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body;
  lastCardRenderKey=key;
  expanded.forEach(id=>{const m=id.match(/^detail-(\d+)$/);if(m&&a[Number(m[1])])toggleDetail(Number(m[1]))});
  if(writerState){const m=writerState.id.match(/^writer-(\d+)$/);if(m){
