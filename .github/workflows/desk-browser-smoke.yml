@@ -75,47 +75,39 @@ jobs:
           PY2
           fi
 
-      - name: Verify Oct 15 and Oct 16 curated editions in headless Chrome
+      - name: Verify date cutoff and compact curated UI in Chrome
         shell: bash
         run: |
           set -euo pipefail
           CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
-          test -n "$CHROME" || { echo "CHROME_NOT_AVAILABLE"; exit 1; }
-          for pair in 2026-10-15:11 2026-10-16:10; do
-            DAY="${pair%%:*}"
-            COUNT="${pair##*:}"
-            test -f "data/$DAY.json"
-            DAY="$DAY" COUNT="$COUNT" python - <<'PY'
-          import json, os
-          from pathlib import Path
-          date=os.environ["DAY"]; expected=int(os.environ["COUNT"])
-          obj=json.loads(Path("data/"+date+".json").read_text(encoding="utf-8"))
-          assert obj["status"]=="editorial-selected" and len(obj["domestic"])==expected
-          assert all(len(x["summary"])>65 and x["source"].startswith("https://") for x in obj["domestic"])
-          print("CURATED_STATIC_OK", date, expected)
-          PY
+          test -n "$CHROME"
+          for DAY in 2026-10-15 2026-10-16; do
             timeout 60 "$CHROME" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
-              --disable-background-networking --virtual-time-budget=19000 \
+              --disable-background-networking --virtual-time-budget=16000 \
               --host-resolver-rules="MAP cdn.jsdelivr.net ~NOTFOUND" \
               --dump-dom "https://luckybomb85-tech.github.io/pharm-briefing-desk/?date=$DAY" \
-              > "/tmp/curated-$DAY.html" 2> "/tmp/curated-$DAY-error.log" || {
-                tail -n 30 "/tmp/curated-$DAY-error.log"
-                exit 1
+              > "/tmp/edition-$DAY.html" 2> "/tmp/edition-error-$DAY.log" || {
+                tail -n 25 "/tmp/edition-error-$DAY.log";exit 1;
               }
-            DAY="$DAY" COUNT="$COUNT" python - <<'PY'
-          import os,re
+            DAY="$DAY" python - <<'PY'
+          import json,re,urllib.request,os
+          from datetime import datetime,timedelta,timezone
           from pathlib import Path
-          day=os.environ["DAY"]; expected=int(os.environ["COUNT"])
-          html=Path("/tmp/curated-"+day+".html").read_text(encoding="utf-8")
-          # Chrome's DOM dump also contains the JS source template with '<article class="card">'.
-          # Count only actual rendered cards within the #cards section.
-          assert '<section id="cards">' in html,(day,"CARDS_SECTION_MISSING")
-          content=html.split('<section id="cards">',1)[1].split('</section>',1)[0]
-          count=len(re.findall(r'<article class="card"',content))
-          assert count==expected,(day,expected,count)
-          assert "편집 선별·요약" in html,(day,"NO_CURATED_BANNER")
-          assert "수집 후보 88건" not in html,(day,"CANDIDATE_OVERFLOW")
-          print("CURATED_BROWSER_OK",day,count)
+          d=os.environ['DAY']; html=Path('/tmp/edition-'+d+'.html').read_text(encoding='utf-8')
+          with urllib.request.urlopen('https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/briefing-feed-v2?date='+d,timeout=20) as f: feed=json.load(f)
+          assert '<section id="cards">' in html, 'missing cards section'
+          cards=html.split('<section id="cards">',1)[1].split('</section>',1)[0]
+          count=len(re.findall(r'<article class="card"',cards))
+          assert count==len(feed['domestic']),(d,count,len(feed['domestic']))
+          start=datetime.fromisoformat(d+'T06:00:00+09:00')
+          back=start-timedelta(hours=18);midnight=datetime.fromisoformat(d+'T00:00:00+09:00')
+          for x in feed['domestic']:
+              dt=datetime.fromisoformat(x['published_at'].replace('Z','+00:00'))
+              assert dt>=start or back<=dt<midnight,(d,x['title'],dt)
+          assert 'editorialNotice' not in cards and '수집 후보 '+str(len(feed['domestic']))+'건' not in cards
+          assert '기사 선별·요약본' not in html.split('id="dateLabel"',1)[1].split('</div>',1)[0]
+          assert '원문 링크와 검증 요청을 포함해 ChatGPT를 엽니다' not in cards
+          print('DATE_CUTOFF_UI_OK',d,count)
           PY
           done
 
