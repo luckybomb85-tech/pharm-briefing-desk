@@ -12,7 +12,7 @@ on:
       - 'scripts/verify_originals.py'
   workflow_dispatch:
   schedule:
-    - cron: '5 20 * * 0-4' # 05:05 KST Monday-Friday
+    - cron: '5 20 * * *' # 05:05 KST every day
 permissions:
   contents: write
 jobs:
