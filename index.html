@@ -217,8 +217,9 @@ function previewVariants(x,mode){
  // If a source has only one summary sentence, each refresh still needs a
  // genuinely different lead, without inventing numbers or events.
  if(sentences.length<2){
-  leads[1]='이번 소식의 핵심은 '+first.replace(/[.。]$/,'')+'는 점이다.';
-  leads[2]=first.replace(/[.。]$/,'')+'. 후속 파급효과는 추가 확인이 필요하다.';
+  const strippedHeadline=headline.replace(/\\s+-\\s+[^-]+$/,'').replace(/…/g,', ');
+  leads[1]=strippedHeadline+'. '+first;
+  leads[2]=first+' 후속 파급효과는 추가 확인이 필요하다.';
  }
  if(legacy.title&&legacy.title!==headline)quickTitles[0]=legacy.title;
  const titles=mode==='quick'?quickTitles:deepTitles;
