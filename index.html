@@ -22,6 +22,7 @@ main{padding:18px 28px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);ma
 .eventHeading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px}.eventHeading h2{margin:0}.eventHeading .voiceBtn{width:30px;height:30px;border-radius:8px}.eventHeading .voiceBtn svg{width:16px;height:16px}.voiceTop{display:none}.eventTitleGrid{display:grid;grid-template-columns:minmax(0,1fr) 132px;gap:8px;align-items:end}.eventTitleGrid label{min-width:0}.eventTitleGrid select{min-width:0}
 .previewBody{display:flex;align-items:flex-end;gap:8px}.previewBody p{display:block!important;flex:1;min-width:0}.draftBtn{flex:none;margin-left:auto!important}
 @media(max-width:640px){.settingsContent{padding:12px!important}.sPane h2{margin-bottom:9px}.sPane h3{margin:12px 0 5px}.sPane label{margin-top:6px}.sPane textarea{min-height:52px}.stats{margin:8px 0;gap:6px}.stat{padding:8px 10px;min-width:0;flex:1}.stat b{font-size:17px}.tabRow.simple{grid-template-columns:minmax(78px,1fr) auto auto;gap:5px}.tabRow.simple .tabRuleBtn{display:none}.tabRow.simple input[type=text]{font-size:12px;padding:7px;max-width:none}.categoryChecks{gap:4px 10px}.eventTitleGrid{grid-template-columns:minmax(0,1fr) 118px}.eventHeading .voiceBtn{width:28px;height:28px}.settingsFoot{padding-left:12px;padding-right:12px}}.candidateNotice{margin:14px 0 8px;padding:12px 14px;background:#fff9ef;border:1px solid #ebd7ac;border-radius:10px;color:#765223;font-size:12px;line-height:1.65}
+.editorialNotice{margin:14px 0 8px;padding:12px 14px;background:#f5f8fc;border:1px solid #d8e3ef;border-radius:10px;color:#344c65;font-size:12px;line-height:1.65}
 @media(max-width:650px){.candidateNotice{margin:12px 0;padding:12px;font-size:12px}}
 </style></head><body><div class="shell">
 <header><div class="brandrow"><div class="brandMark" aria-hidden="true">DP</div><div class="brand">데일리팜 제약바이오 브리핑 데스크</div><span class="version">BETA</span></div>
@@ -78,7 +79,7 @@ function displayTime(v){if(!v)return '시간 미확인';const t=String(v).trim()
     }
   }let m=t.match(/(\d{1,2})\.\s*(\d{1,2})\.\s*(오전|오후)\s*(\d{1,2}):(\d{2})/);if(m){let h=Number(m[4]);if(m[3]==='오후'&&h<12)h+=12;if(m[3]==='오전'&&h===12)h=0;return String(Number(m[1])).padStart(2,'0')+'.'+String(Number(m[2])).padStart(2,'0')+' '+String(h).padStart(2,'0')+':'+m[5]}m=t.match(/(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/);if(m)return m[2]+'.'+m[3]+' '+m[4]+':'+m[5];return t}
 function fmtDate(s){const [y,m,d]=s.split('-');const wd=['일','월','화','수','목','금','토'][new Date(s+'T12:00:00').getDay()];return y+'년 '+Number(m)+'월 '+Number(d)+'일 ('+wd+')'}
-function dateStatusLabel(){if(D?.status==='rehearsal-published'||D?.test_run)return ' · 리허설';if(v2Feed?.date===current&&v2Feed.items.length)return ' · 수집 후보(선별 전)';if(domesticDiscovery?.date===current&&domesticDiscovery.status==='candidate-only')return ' · 보관된 수집 후보(선별 전)';if(domesticDiscovery?.date===current)return ' · 국내 후보 공개';if(globalDiscovery?.date===current)return ' · 글로벌 후보 공개';return D?'':' · 미배포'}
+function dateStatusLabel(){if(D?.status==='editorial-selected')return ' · 기사 선별·요약본';if(D?.status==='rehearsal-published'||D?.test_run)return ' · 리허설';if(v2Feed?.date===current&&v2Feed.items.length)return ' · 수집 후보(선별 전)';if(domesticDiscovery?.date===current&&domesticDiscovery.status==='candidate-only')return ' · 보관된 수집 후보(선별 전)';if(domesticDiscovery?.date===current)return ' · 국내 후보 공개';if(globalDiscovery?.date===current)return ' · 글로벌 후보 공개';return D?'':' · 미배포'}
 function renderDateLabel(){const el=$('#dateLabel');if(!el)return;el.textContent=fmtDate(current)+dateStatusLabel();el.classList.toggle('unpublished',!D);el.classList.toggle('rehearsal',!!D&&(D.status==='rehearsal-published'||D.test_run))}
 function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(window._tt);window._tt=setTimeout(()=>e.style.display='none',1500)}
 async function refreshAuth(){const {data}=await db.auth.getSession();session=data.session||null;membership=null;if(session){const {data:m}=await db.from('team_members').select('*').eq('user_id',session.user.id).maybeSingle();membership=m||null}renderAuthState()}
@@ -118,9 +119,11 @@ function visibleItems(section=tab){
   const archive=(section==='domestic'&&domesticDiscovery?.date===current?domesticDiscovery.items:section==='global'&&globalDiscovery?.date===current?globalDiscovery.items:[]);
   const stored=dbBriefing[section]||[], live=[...(L?.[section]?.items||[])].reverse();
   const candidates=section==='domestic'&&v2Feed.date===current?v2Feed.items:[];
-  // Published material first. Never overwrite archived articles with raw v2 candidates.
+  // Hand-curated editions must exclude all unreviewed discovery data.
+  const curated=D?.status==='editorial-selected'&&section==='domestic'&&published.length>0;
+  const sources=curated?[...live,...published]:[...live,...published,...stored,...archive,...candidates];
   const seen=new Set();
-  return [...live,...published,...stored,...archive,...candidates].filter(x=>{
+  return sources.filter(x=>{
     if(!x||!x.title)return false;
     const key=String(x.source||x.title).trim().toLowerCase();
     if(seen.has(key))return false;
@@ -154,9 +157,11 @@ function render(){
  const writerState=openedWriter?{id:openedWriter.id,mode:openedWriter.dataset.mode,titleIndex:openedWriter.dataset.titleIndex}:null;
  bindMainTabs();renderLiveTools();
  if(tab==='schedule'){lastCardRenderKey=key;renderSchedule();return}
- const a=visibleItems();const liveCount=L?.[tab]?.items?.length||0;const managed=managedTabs.find(t=>t.id===tab);const body=a.length?a.map((x,i)=>card(x,i)).join(''):(managed&&managed.id.startsWith('custom-')?'<div class="empty">'+esc(managed.name)+' 탭이 추가됐습니다.<br>설정의 탭 관리에서 수집 규칙을 연결하면 자동 브리핑에 포함됩니다.</div>':current==='2026-09-29'?'<div class="empty">9월 29일은 기존 v3.7 아카이브에 보존돼 있습니다.<br><br><a href="https://pharm-briefing-desk.luckybomb85.chatgpt.site" style="display:inline-block;padding:11px 16px;border:1px solid #ccd8e1;border-radius:12px;color:#173f65;text-decoration:none;font-weight:800">9월 29일 데스크 열기 ↗</a></div>':'<div class="empty">'+fmtDate(current)+' 브리핑이 아직 없습니다.</div>');const candidateCount=tab==='domestic'?(v2Feed.date===current?v2Feed.items.length:(domesticDiscovery?.status==='candidate-only'&&domesticDiscovery.date===current?domesticDiscovery.items.length:0)):0;
+ const a=visibleItems();const liveCount=L?.[tab]?.items?.length||0;const managed=managedTabs.find(t=>t.id===tab);const body=a.length?a.map((x,i)=>card(x,i)).join(''):(managed&&managed.id.startsWith('custom-')?'<div class="empty">'+esc(managed.name)+' 탭이 추가됐습니다.<br>설정의 탭 관리에서 수집 규칙을 연결하면 자동 브리핑에 포함됩니다.</div>':current==='2026-09-29'?'<div class="empty">9월 29일은 기존 v3.7 아카이브에 보존돼 있습니다.<br><br><a href="https://pharm-briefing-desk.luckybomb85.chatgpt.site" style="display:inline-block;padding:11px 16px;border:1px solid #ccd8e1;border-radius:12px;color:#173f65;text-decoration:none;font-weight:800">9월 29일 데스크 열기 ↗</a></div>':'<div class="empty">'+fmtDate(current)+' 브리핑이 아직 없습니다.</div>');const curated=tab==='domestic'&&D?.status==='editorial-selected';
+ const candidateCount=!curated&&tab==='domestic'?(v2Feed.date===current?v2Feed.items.length:(domesticDiscovery?.status==='candidate-only'&&domesticDiscovery.date===current?domesticDiscovery.items.length:0)):0;
  const candidateNotice=candidateCount?'<div class="candidateNotice"><b>수집 후보 '+candidateCount+'건</b> · 원문 검증·편집 선별을 마치지 않은 기사입니다. 확정 아침 브리핑과 구분해 확인해 주세요.</div>':'';
- $('#cards').innerHTML=candidateNotice+(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body;
+ const editorialNotice=curated?'<div class="editorialNotice"><b>편집 선별·요약 '+a.length+'건</b> · '+esc(D.editorial_scope||'주요 기사 선별')+' · 원문 확인이 미완료된 내용은 추가 검증이 필요합니다.</div>':'';
+ $('#cards').innerHTML=editorialNotice+candidateNotice+(liveCount?'<div class="liveDivider">07:20 이후 업데이트 · '+liveCount+'건</div>':'')+body;
  lastCardRenderKey=key;
  expanded.forEach(id=>{const m=id.match(/^detail-(\d+)$/);if(m&&a[Number(m[1])])toggleDetail(Number(m[1]))});
  if(writerState){const m=writerState.id.match(/^writer-(\d+)$/);if(m){
