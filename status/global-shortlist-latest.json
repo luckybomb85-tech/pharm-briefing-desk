@@ -1,6 +1,6 @@
 {
-  "total_input": 325,
-  "ranked_count": 40,
+  "total_input": 333,
+  "ranked_count": 42,
   "shortlist": [
     {
       "title": "AtomVie Global Radiopharma Announces Strategic Partnership with Jubilant Radiopharma to Strengthen Clinical Trial Logistics and Distribution - FirstWord Pharma",
@@ -14,21 +14,6 @@
       "signals": [
         "CLINICAL",
         "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "A drug developer who helped secure FDA approvals is Helus Pharma’s board pick, pending Cboe Canada approval. - Stock Titan",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObUVzclY4VS1TUFpQZjRwZDI4S2hxMGZNQ2FNSlJ4azVNRmJSbjQtRmh1LTM5SDBfcEhqeWNZVkk0V1ZHQTNyVV9zTmtLaG5sdzVlZDM3V2FxZWZ2TTZ2QXd3dDBTWkZOZENxZ2tyaEtSTGVzMXhtNmQ3NHY5RFhQU2ZaOXNVZzV3aUlMbUZlS2JhZ2Q3Qy1ZXzRtMy1WV185Y1I3VWNqSkE?oc=5",
-      "published_at": "Thu, 15 Oct 2026 11:30:00 GMT",
-      "source": "Global gap recovery",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "REGULATORY"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
@@ -154,6 +139,21 @@
       "original_url_verified": false
     },
     {
+      "title": "Home Resources Optimizing Recruitment for Breast Cancer Clinical Trials - citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbDZ1SGo3bWxIOTRmWjd6dWhLSkt2UnFUT2ZzYlJ3dzRRMUpwZU5xTFdXcFdvZUJqT1JlMGZCQ0RJcS1NeHdncDR4dzNGNXZGQWZQTDRVSEJQR2FIaXB6MjU3Y0RRSnFLempBa25zci1zamNHYlV0cDFXY0dXUU5LaGVPZFpPblRIVmozMENR?oc=5",
+      "published_at": "Thu, 15 Oct 2026 20:17:58 GMT",
+      "source": "Scrip/Pink Sheet",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
       "title": "Insmed Features the Global Phase 3 PALM Clinical Development Program Evaluating Treprostinil Palmitil Inhalation Powder (TPIP) at CHEST 2026 - FirstWord Pharma",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9UWmlTLUNna1FXdGk5NFpoRFRzNndYQzJtYUdxMnBRU25fN1JoaloyWjdMSF8yeV9KcWlTeTkyYzJraHlPYVM2Ynk5Mk93RFlkU2Uw?oc=5",
       "published_at": "Thu, 15 Oct 2026 14:43:18 GMT",
@@ -186,7 +186,7 @@
     {
       "title": "KOL Views Preview: Is Wnt's stock up or down after Merck & Co.'s Phase IIb/III 'success' in DME? - FirstWord Pharma",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9qbHNScDdwakZ5Vm9meGdCM0hscEg2MjlPajZ1TG9kY1dJbzJ5UFFFekl5eGN5ODBRSFB5LTczY1gtVUlXc3BMVE4wclVYWlJzRDYw?oc=5",
-      "published_at": "Thu, 15 Oct 2026 19:54:08 GMT",
+      "published_at": "Thu, 15 Oct 2026 20:13:18 GMT",
       "source": "FirstWord Pharma",
       "group": "GLOBAL",
       "verified_original": false,
@@ -334,6 +334,21 @@
       "original_url_verified": false
     },
     {
+      "title": "Anthropic grants outside evaluator METR employee-level access in AI safety push - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbERjb3RFVUdmYXZ6ZktrZ0tiVUlEck5vRGtxd2dXTnA4UGFoSF9QNEU5Y3FfVUxZOHp1cEt3UktQUXZicnI5UDByaW5hTDdhanhtb2JsVTZsRkxYSjRsd2VZZUx2Yy1lZzNhWGdJSWxOalZoZGJNU0g1NGFkUEFkZHNob2RXaVVqb3BxTkZGVFJaUHg4cVNTTXJMcnFtSGZTZDZ1TVVBOWxSSGhjZ0Z6SFpB?oc=5",
+      "published_at": "Thu, 15 Oct 2026 19:51:22 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "SAFETY"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
       "title": "AstraZeneca bulks up MASH, cardio work in up to $1.5B AI partnership with insitro - BioSpace",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNXzQ5bmtOWlJkRkR6RjB4ZktsM3JIdjN0VXAwMFBrV1pnZzJGbG9FNjhGQXBEeWtaN2RqU3dKQlJiWWdnWXlIZElZdWlWN0FLLWExWktuRVZlRmRNd1RodUtvVWhYcVZLNlh3RXctS2tESG1zTTJEeWZFcXVMS2R6U2laSVFHdmdEcXBjSVFXbFFQZGFqMlNUdlFjVjlpUzRRY2F6VDJrTFg5VE9BMlNTbmJ6MA?oc=5",
       "published_at": "Thu, 15 Oct 2026 14:44:36 GMT",
@@ -349,24 +364,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Beyond The Base Case: Why Biosimilar Companies Need Two Forecasting Engines, Not One - insights.citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQY1poNWFWYnE3UjBpdU4zTGRVWnEzbENzdmw0X0Y5V21FbDEwbFI3M0RYVVhBNXhLY1JYVmJEZlBCTk1tVWdjXzVUbGM0Vmg4WTN1bXhuYnFKSmsydXFoWmc4VUQ5OXhjZTUxWmRDRl9tUDFYb1kxRkJoM3BuTjlIZFRPN1k3cUFjc3Y1aWt1TkJyeHlfNU9qcDNQSkMzTGlRM1A4bjFYNW1peXdNVFYwZFFobWNiWkF0ckN2NXE0ZXBOSWZDNE5rSXVZSW5yc0JYSU41ZlNGWlZVeGx4YkdsV3JUbkRmUGFqYU91cUZ6QVFINDB1Z1Vrdmtn?oc=5",
-      "published_at": "Thu, 15 Oct 2026 07:10:34 GMT",
-      "source": "Scrip/Pink Sheet",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "IP"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
       "title": "CCC Intelligent Solutions agrees to $6.1 billion take-private deal with GTCR, Elliott - Reuters",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQUdNcjdZbmllaVAyMXh0ejFIWWl0NEE4WTlUVWxPT1l6ckw2T01aT0VZLUZfMHJHV0E1cF9jandEV1p4djJWa0t6cHJaVnhqUGNHRTNvZE1kQk9vZ2xWaG4tZDZOaVMxOXlkLWxxU3dhZDViTmltNXp2UldwdF9sX3U0NFNDR3pIMDd5M3RUc05OVk1VRnY0MlJ0bXVBNUZQMDZkWGR5bURMOTZkaDNocHZTdHk?oc=5",
-      "published_at": "Thu, 15 Oct 2026 14:08:20 GMT",
+      "published_at": "Thu, 15 Oct 2026 21:50:23 GMT",
       "source": "Reuters",
       "group": "GLOBAL",
       "verified_original": false,
@@ -394,16 +394,17 @@
       "original_url_verified": false
     },
     {
-      "title": "Fintech startup Ramp hits $60 billion valuation after $1.85 billion funding round - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeXdicGhYM2VPQ0ZaNGVMR3gtQ1dsbWdqVHk2TlBEX2FGdjVwWGQzalljVWQ3YjR3T0ktbEUzMGlJbnlycVhaRV9kSXNFWXMxLWU4OFAwRlM5WGZvY2NrTjBGTU9Pcl9GdEFPOHVRQjlNVDU4UGF2NXZZMmt4bHlLQWlRODhkRnlpYTdmeHkzYkZzVDRsWF82dkJvRUpVQVVzYkstNUVzMA?oc=5",
-      "published_at": "Thu, 15 Oct 2026 12:09:24 GMT",
-      "source": "Reuters",
+      "title": "Friedreich’s Ataxia Pipeline 2026: FDA Approvals and Clinical Trials Landscape with MOA and ROA Highlights by DelveInsight | AbbVie, Minoryx Therapeutics, Takeda, Reata Pharma, Design Therapeutics - StreetInsider",
+      "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxQR3FJajJfWW9pdzFJQnJHVVRTR0xTZWhSV0xwN3duMGxJV0ItdlpxR3dTMERRbDY3UXZES3Zhdnc4SDFSZ0JuWGNWcTJIdVMzZnFaNTNxOEVtWmFpb2l0djdmcGZZUW04dmRGNER0RHlnclJfQi12MWNjd0RENnB5Yk9fSkFqcWZjcWQ2X0RFbzIwMURubHZWNll3Wk0zTURsNHZTOHlrdDBFd3V4NHcxNzdLbTN5UjEtZnR6MnBOb01ia3F4UkJRVnZsQi1oeGdVUVUxeE9UbFNPUS13VEVIX1Awc0FCYmloOGtodnh4X0pGa1RUZkYzZmRnUGhCY1p4RXJRMkFCV0ozamlGSDZ4WFBwNWNib0d1UWttbEtsMFMwYktSUExWSEJ6ZWtyNUxtbWxMSzlONk9aa29KRUtIRW9NRW9vMWQzTDIxWDd2U1JTY3Bic2FDVGp1SThHeHdDZHJVTlhBSzFWU1U3WEZEUGl4MGFZOVB2MjBMS0VtUnpMUQ?oc=5",
+      "published_at": "Thu, 15 Oct 2026 21:36:23 GMT",
+      "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
       "score": 3,
       "signals": [
-        "DEAL"
+        "CLINICAL",
+        "REGULATORY"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
@@ -424,24 +425,25 @@
       "original_url_verified": false
     },
     {
-      "title": "India's August balance of payments surplus swings to $45.4 billion - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZThqa3otQktseEJLd3h0T090SFZXVmZmQkNvZ2VNRXJlWm5CTFIteno0ZnEtQ1V1eGg2UVVfaURNR0RLMk52UVZmSnJLd1VHb25sMEJLdThPbFVqd0RHTk9DdVlfZG96ZEowV2lFN29iblN6VEZZZWJhUlh0MF9qd0tvbk5YemtsNWhKMkZ0UjllV1NjSTh3c3dEWGhqVnN5OUJFTzBVRnA?oc=5",
-      "published_at": "Thu, 15 Oct 2026 13:23:45 GMT",
-      "source": "Reuters",
+      "title": "IgA Nephropathy Pipeline 2026: MOA, ROA, FDA-Approved Drugs, and Clinical Trial Progress Assessment by DelveInsight | Visterra, Chinook Therapeutics, Novartis, IgA proteases Selecta Biosciences - StreetInsider",
+      "url": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxORWxMbmc3SlNwdTVTZ3N6RWNoVzVqZjJObWM3Q1hJcFUtYTF5T0Zjcm1hMjB4THpFVndFWHYyUjJmckZfcWxIajRUaHhkbk0yMVVmeERPLWhHMXNiSVA5TWRlZUVGU0RYSEF3bUhBR1cxZEU2d1IySzNJN29EcEg3cUtFd0pWMHZiMmU4TmpFY1o1el9kVk9MZXdCT0JJWEFBNE9LNnQyaWctS2Z6R1ZEX3lzYjBCYzk4OU5VYzByNUNfcEVzUjdoQlZFQTBDQ1RDY3U1MjF1OVVvMFc3UUhJNmFVWGJVUnlRaEZiWlN6RjJuc1Z3UE53Z25tbW5ZR1hHN3NYRDV4aHZOaWVUS1JEU3lEOFVfdHdCS0RFUVBFUUFBQjZNUWlCSXhDVnVfbVhMdGgydlhVNkpidUEyRndUZzA4Q21CVzhtZnhoWUpDN0VabFpGU3ZMSU1SWjlzc0JGZzBBVXl1aF9pRzhIdERpb0ZuU3ByMFRQ?oc=5",
+      "published_at": "Thu, 15 Oct 2026 21:41:01 GMT",
+      "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
       "score": 3,
       "signals": [
-        "DEAL"
+        "CLINICAL",
+        "REGULATORY"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "India's RBI has spent half of $140 billion FX capital haul in rupee defence, bankers estimate - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONU5ZY25UM0c0a0FPX0ZNVl8zWGFJRVZ6YzFmNlVuR2JLb3VxMS02bmE0TDY1eW5Ra2swVzlCcnN5b2htdnZhRGNPaTVmN1hkeFE3Nm10RHNndDhORDFtRlpEbDllT2c4Ymp4VGJlY08tOTE4aXM4RTVpZXhFTmFUbHNVT05SSWV4SXlhRXB1dkFWenZJZ0RkelIxU3V3UHoyOXctd1FVMHdjLVZUc3FieXM0bUlXcXVma0lMRkhJeGw?oc=5",
-      "published_at": "Thu, 15 Oct 2026 08:39:43 GMT",
+      "title": "India's August balance of payments surplus swings to $45.4 billion - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZThqa3otQktseEJLd3h0T090SFZXVmZmQkNvZ2VNRXJlWm5CTFIteno0ZnEtQ1V1eGg2UVVfaURNR0RLMk52UVZmSnJLd1VHb25sMEJLdThPbFVqd0RHTk9DdVlfZG96ZEowV2lFN29iblN6VEZZZWJhUlh0MF9qd0tvbk5YemtsNWhKMkZ0UjllV1NjSTh3c3dEWGhqVnN5OUJFTzBVRnA?oc=5",
+      "published_at": "Thu, 15 Oct 2026 13:23:45 GMT",
       "source": "Reuters",
       "group": "GLOBAL",
       "verified_original": false,

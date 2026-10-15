@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T05:30:46+09:00",
+  "checked_at": "2026-10-16T07:22:36+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -8,7 +8,7 @@
     "pooled_queries": 1,
     "total_max": 18
   },
-  "candidate_count": 325,
+  "candidate_count": 333,
   "routes": [
     {
       "source": "FDA Press Releases",
@@ -48,8 +48,8 @@
     {
       "source": "STAT",
       "status": "PARTIAL",
-      "hits": 13,
-      "in_window_index_hits": 13,
+      "hits": 14,
+      "in_window_index_hits": 14,
       "error": null
     },
     {
@@ -76,7 +76,7 @@
     {
       "source": "Fierce Biotech",
       "status": "PARTIAL",
-      "hits": 5,
+      "hits": 6,
       "in_window_index_hits": 5,
       "error": null
     },
@@ -84,21 +84,21 @@
       "source": "BioSpace",
       "status": "PARTIAL",
       "hits": 100,
-      "in_window_index_hits": 96,
+      "in_window_index_hits": 95,
       "error": null
     },
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 76,
-      "in_window_index_hits": 76,
+      "hits": 78,
+      "in_window_index_hits": 78,
       "error": null
     },
     {
       "source": "Scrip/Pink Sheet",
       "status": "PARTIAL",
-      "hits": 12,
-      "in_window_index_hits": 11,
+      "hits": 17,
+      "in_window_index_hits": 14,
       "error": null
     },
     {
@@ -132,8 +132,8 @@
     {
       "source": "Global gap recovery",
       "status": "PARTIAL",
-      "hits": 4,
-      "in_window_index_hits": 4,
+      "hits": 7,
+      "in_window_index_hits": 7,
       "error": null
     }
   ],
