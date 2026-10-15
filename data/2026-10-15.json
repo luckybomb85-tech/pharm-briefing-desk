@@ -1,150 +1,135 @@
 {
   "schema_version": "briefing-editorial-v1",
   "date": "2026-10-15",
-  "timezone": "Asia/Seoul",
   "status": "editorial-selected",
-  "editorial_scope": "누락분 복구 편집본: 일부 전일 오전 주요 보도 포함",
-  "verification_note": "원문 또는 교차 자료 확인 가능 항목을 일부 검증했습니다. 미확인 표시는 추가 원문 검증이 필요함을 의미합니다.",
-  "search_window": {
-    "note": "복구 편집본; 날짜 범위 예외 포함"
-  },
+  "timezone": "Asia/Seoul",
+  "editorial_scope": "국내 당일 오전 6시 이후 우선, 전날 오후 보충 최대 3건; 글로벌 최근 24시간",
+  "generated_by": "cutoff-recovery-2026-10-16",
   "domestic": [
     {
-      "title": "식약처 비공개 임상자료 2672건, 챗GPT로 접근 가능",
-      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79867",
-      "source_name": "히트뉴스",
-      "published_at": "2026-10-13T12:50:31+09:00",
-      "tag": "P0 · 규제·보안",
-      "summary": "식약처가 비공개로 관리하는 임상 관련 문서 2672건에 외부 접근이 가능했다는 의혹이 국정감사에서 제기됐다. 제넨셀 자료의 국회 제출 거부와 대비되며 규제기관의 자료 접근통제와 실제 노출 범위 확인이 핵심 취재 포인트다.",
-      "verification_status": "verified",
-      "selection_status": "selected",
-      "priority": 1,
-      "source_id": 397
-    },
-    {
-      "title": "삼성바이오로직스, 폴리펩타이드 공개매수 87.88%…인수 조건 충족",
-      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79854",
-      "source_name": "히트뉴스",
-      "published_at": "2026-10-13T08:58:52+09:00",
-      "tag": "P0 · M&A",
-      "summary": "삼성바이오로직스의 폴리펩타이드그룹 공개매수 응모율이 87.88%로 거래 최소 조건 66.7%를 넘었다. 약 2조4000억원 규모의 펩타이드 CDMO 인수가 성사되기 위한 첫 관문을 통과했지만 추가 응모·규제 승인은 남아 있다.",
-      "verification_status": "verified",
-      "selection_status": "selected",
-      "priority": 2,
-      "source_id": 401
+      "title": "릴리, 美 프렐류드와 ‘KAT6A 분해제’ 유방암 병용 임상 협력…버제니오 공급",
+      "summary": "일라이릴리가 미국 프렐류드의 KAT6A 분해제 개발과 관련해 유방암 병용 임상에 버제니오를 공급하는 협력을 추진한다. 신기전 후보물질과 기존 CDK4/6 억제제 병용전략의 경쟁구도를 살펴볼 수 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29035",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 14:50:00+00",
+      "article_preview": null,
+      "verification_status": "candidate",
+      "tag": "전날 오후 주요 기사"
     },
     {
       "title": "독일 포미콘, ‘키트루다 바이오시밀러’ 美 FDA 첫 허가심사 진입…3상 생략",
+      "summary": "독일 포미콘의 키트루다 바이오시밀러 FYB206이 미국 FDA 허가 심사에 진입했다. 비교 유효성 3상을 조기 종료한 전략이 주목되며 삼성바이오에피스·셀트리온의 개발 및 미국 진입 일정과 비교할 가치가 있다. 허가 승인은 아직 아니다.",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=29010",
       "source_name": "더바이오",
-      "published_at": "2026-10-14T00:07:22+09:00",
-      "tag": "P0 · FDA·바이오시밀러",
-      "summary": "독일 포미콘의 키트루다 바이오시밀러 FYB206이 미국 FDA 허가 심사에 진입했다. 비교 유효성 3상을 조기 종료한 전략이 주목되며 삼성바이오에피스·셀트리온의 개발 및 미국 진입 일정과 비교할 가치가 있다. 허가 승인은 아직 아니다.",
+      "published_at": "2026-10-14 09:07:22+00",
+      "article_preview": null,
       "verification_status": "verified",
-      "selection_status": "selected",
-      "priority": 3,
-      "source_id": 437
+      "tag": "전날 오후 주요 기사"
     },
     {
       "title": "원료약 국산화하라면서… 약가개편에 설 자리 좁아진 원료기업",
+      "summary": "원료의약품 국산화 지원 기조와 제네릭 약가인하 정책 사이의 충돌 문제가 제기됐다. 완제 제약사의 가격 압박이 국산 원료 업체의 채산성·공급 안정성으로 전이되는지 확인할 만한 산업정책 아이템이다.",
       "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79790",
       "source_name": "히트뉴스",
-      "published_at": "2026-10-13T21:07:00+09:00",
-      "tag": "P1 · 약가·원료의약품",
-      "summary": "원료의약품 국산화 지원 기조와 제네릭 약가인하 정책 사이의 충돌 문제가 제기됐다. 완제 제약사의 가격 압박이 국산 원료 업체의 채산성·공급 안정성으로 전이되는지 확인할 만한 산업정책 아이템이다.",
+      "published_at": "2026-10-14 06:07:00+00",
+      "article_preview": null,
       "verification_status": "candidate",
-      "selection_status": "selected",
-      "priority": 4,
-      "source_id": 392
-    },
-    {
-      "title": "\"임상 재평가 연장 폐지해야…실패 약제 공고일부터 환수\"",
-      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79851",
-      "source_name": "히트뉴스",
-      "published_at": "2026-10-13T07:33:51+09:00",
-      "tag": "P1 · 국정감사·약제재평가",
-      "summary": "국정감사에서 임상 재평가 결과가 나온 17건 중 11건이 효과 입증에 실패하고 결과 확인까지 평균 5.2년이 걸렸다는 지적이 나왔다. 자료 제출 기한 연장 폐지와 급여비 환수 기준을 재평가 공고일로 앞당기자는 요구가 제기됐지만 제도 개정이 확정된 것은 아니다.",
-      "verification_status": "verified",
-      "selection_status": "selected",
-      "priority": 5,
-      "source_id": 403
-    },
-    {
-      "title": "\"인사돌·마데카솔도 제조기준 위반…소송 걸면 2년 넘게 판매\"",
-      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47538",
-      "source_name": "뉴스더보이스",
-      "published_at": "2026-10-13T06:46:50+09:00",
-      "tag": "P1 · GMP·행정소송",
-      "summary": "국정감사에서 인사돌·마데카솔 등 제조기준 위반 사례와 행정처분 이후 집행정지 소송을 통한 판매 지속 문제가 지적됐다. GMP 제재의 실효성, 과징금 제도, 제형 단위 처분에 관한 최근 법원 결정과 연결해볼 수 있다.",
-      "verification_status": "verified",
-      "selection_status": "selected",
-      "priority": 6,
-      "source_id": 462
-    },
-    {
-      "title": "식약처, 의사 자가 처방·투약 금지 의료용 마약류 범위 대폭 '확대'",
-      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47544",
-      "source_name": "뉴스더보이스",
-      "published_at": "2026-10-13T21:02:00+09:00",
-      "tag": "P1 · 의료용마약류",
-      "summary": "식약처가 의사의 자가 처방·투약을 금지하는 의료용 마약류 범위를 확대하는 정책을 제시했다. 추가 대상 성분과 시행 시점, 진료현장에 미칠 영향을 확인할 필요가 있다.",
-      "verification_status": "candidate",
-      "selection_status": "selected",
-      "priority": 7,
-      "source_id": 451
-    },
-    {
-      "title": "보령, 저용량 ‘카나브’ 2상 종료 … 제네릭 공세 맞서 ‘용량 다변화’ 속도",
-      "source": "https://www.hkn24.com/news/articleView.html?idxno=351314",
-      "source_name": "헬스코리아뉴스",
-      "published_at": "2026-10-13T15:01:00+09:00",
-      "tag": "P1 · 임상·제품전략",
-      "summary": "보령의 저용량 카나브 관련 2상 임상 종료가 보도됐다. 특허 만료 이후 제네릭 경쟁을 앞둔 상황에서 저용량 제품을 포함한 용량 다변화가 시장 방어 전략으로 활용될 가능성을 살펴볼 만하다.",
-      "verification_status": "candidate",
-      "selection_status": "selected",
-      "priority": 8,
-      "source_id": 411
-    },
-    {
-      "title": "엘앤씨바이오, 리투오 UAE 수입허가 확보…중동 시장 진출 본격화",
-      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727826",
-      "source_name": "EBN",
-      "published_at": "2026-10-14T06:29:26+09:00",
-      "tag": "P1 · 해외허가",
-      "summary": "엘앤씨바이오의 피부 ECM 제품 리투오가 아랍에미리트 의약품청의 수입허가를 받았다. 태국·페루에 이은 해외 진출 기반 확보이며, 현지 유통망 구축과 실매출 발생 시점은 별도 확인이 필요하다.",
-      "verification_status": "verified",
-      "selection_status": "selected",
-      "priority": 9,
-      "source_id": 473
-    },
-    {
-      "title": "“글로벌 임상 첫 환자 등록 때 韓 기관 가동률 20%…개시 절차 개선 필요”",
-      "source": "https://www.thebionews.net/news/articleView.html?idxno=29039",
-      "source_name": "더바이오",
-      "published_at": "2026-10-14T07:41:13+09:00",
-      "tag": "P1 · 임상 인프라",
-      "summary": "글로벌 임상 첫 환자 등록 시점에 한국 참여기관 가동률이 약 20%에 그친다는 업계 발언이 소개됐다. 국내 임상 개시 지연의 원인이 기관 계약·심사·행정절차 중 어디에 있는지 구체적 비교 취재 가치가 있다.",
-      "verification_status": "candidate",
-      "selection_status": "selected",
-      "priority": 10,
-      "source_id": 422
-    },
-    {
-      "title": "릴리, 美 프렐류드와 ‘KAT6A 분해제’ 유방암 병용 임상 협력…버제니오 공급",
-      "source": "https://www.thebionews.net/news/articleView.html?idxno=29035",
-      "source_name": "더바이오",
-      "published_at": "2026-10-14T05:50:00+09:00",
-      "tag": "P1 · 글로벌 공동개발",
-      "summary": "일라이릴리가 미국 프렐류드의 KAT6A 분해제 개발과 관련해 유방암 병용 임상에 버제니오를 공급하는 협력을 추진한다. 신기전 후보물질과 기존 CDK4/6 억제제 병용전략의 경쟁구도를 살펴볼 수 있다.",
-      "verification_status": "candidate",
-      "selection_status": "selected",
-      "priority": 11,
-      "source_id": 427
+      "tag": "전날 오후 주요 기사"
     }
   ],
-  "global": [],
+  "global": [
+    {
+      "title": "바이오콘, 제넨텍과 특허 합의…퍼투주맙 바이오시밀러 출시일 확보",
+      "original_title": "Biocon Secures Earliest Licensed Launch Dates for Pebrilzo (bPertuzumab) Following Global Patent Settlement with Genentech - FirstWord Pharma",
+      "summary": "(제목 기준·원문 미검증) 바이오콘이 제넨텍과 글로벌 특허 합의를 통해 퍼투주맙 바이오시밀러 페브릴조의 계약상 출시 가능 시점을 확보했다고 발표했다. 국가별 출시일과 합의 조건은 추가 확인이 필요하다.",
+      "source_name": "FirstWord Pharma",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1Hd1FYUU5CRVYwZkFlb2ZURFBvTWtkM1VEME5rSnZONGg3MUIyMDFqWExjRWlzX1BKbll3WWFCTlJXTU96dDlqblh0Q1lJYktMMVl3?oc=5",
+      "published_at": "2026-10-14 07:04:20+00",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "바이오콘이 제넨텍과 특허 분쟁을 해결해 퍼투주맙 바이오시밀러 진출 길을 열었다. 경쟁사의 개발 현황과 시장 규모 분석을 중심으로 바이오시밀러 시장 구도를 재조명한다.",
+            "title": "퍼투주맙 시장 경쟁력 강화 전략은?",
+            "direction": "경쟁약물 현황 및 시장 규모 분석, 확인 필요"
+          },
+          {
+            "lead": "바이오콘과 제넨텍의 특허 합의 사례를 통해 바이오시밀러 시장에서 특허 갈등이 가지는 의미를 검토한다. 규제 환경 및 법적 분쟁이 산업 전반에 미치는 파급 효과를 집중 취재한다.",
+            "title": "글로벌 특허 분쟁이 바이오시밀러 시장에 미치는 영향",
+            "direction": "특허법 및 규제 상황과 산업 영향 분석"
+          },
+          {
+            "lead": "퍼투주맙 바이오시밀러 출시를 위한 바이오콘과 제넨텍 간 특허 조정 사례가 업계 내 새로운 협력 모델로 주목받고 있다. 타 사례와 비교해 법적 분쟁 해결 방식의 변화 가능성을 탐색한다.",
+            "title": "바이오콘 특허 합의, 업계 협력 모범 사례 될까?",
+            "direction": "업계 내 특허 분쟁 해결 및 협력 사례 비교, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "바이오콘이 제넨텍과의 글로벌 특허 분쟁을 합의하며 퍼투주맙 바이오시밀러 '페브릴조'의 출시 시점을 확정했다. 이번 합의로 계약상의 출시 장애물이 해소돼 시장 진입이 가능해졌다.",
+            "title": "바이오콘, 퍼투주맙 바이오시밀러 출시길 열다"
+          },
+          {
+            "lead": "바이오콘은 퍼투주맙 바이오시밀러 관련 특허 문제로부터 자유로워지며 제품 출시 일정을 확보했다. 글로벌 특허 분쟁 합의를 통해 합의 조건과 출시일에 대한 불확실성이 줄었다.",
+            "title": "제넨텍과 합의한 바이오콘, 신약 출시 가능해져"
+          },
+          {
+            "lead": "바이오콘이 제넨텍과의 특허 합의를 마치며 '페브릴조' 출시가 가능해졌다. 다만 각국 출시일과 구체 조건은 추가 검증이 필요하다.",
+            "title": "퍼투주맙 바이오시밀러, 바이오콘 출시 문턱 넘다"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:09.754Z"
+      },
+      "verification_status": "headline_only",
+      "tag": "P0"
+    },
+    {
+      "title": "파밍, 유전성 PID 환자 대상 레니올리시브 2상 주요 결과 발표",
+      "original_title": "Pharming presents positive Phase II topline data for leniolisib in genetic PIDs with immune dysregulation at ESID 2026 - BioSpace",
+      "summary": "(제목 기준·원문 미검증) 파밍이 면역조절 장애 동반 유전성 PID(면역결핍증) 환자들을 위한 레니올리시브(leniolisib)의 2상 임상 주요 데이터를 ESID 2026에서 발표했다. 임상 2상 성공과 관련된 의미 있는 소식이다.",
+      "source_name": "BioSpace",
+      "source": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOWk5zUk95eXFJMmZxTWZwZ0VzSVZXamE2RUlLdEg0WWNXYUNsRTlOa3hPVjYwSTRBdnR1MGg3aWFFYnNEUjh5RkVZM3JDVXRuU0lpLTcwVU5kNUJGN1hBME5RN0VxUy1NYVhPWHZid2hTQ0ZNNm9JcTJVRmh5NGVGcmlRckctelRvX2s1QXJLR0EzV3lvYVdNU2xoN3BDbkxLdm1LRDVmblpkdER1VjJ6S1JQRlpnQnJlR0ZtYnl1R3ZKWnFEZm1ISC03aFpNSGVSc3BZMjhhM0lyd2M2SFdzVWtfOFFHbm9pcGtmUko0OA?oc=5",
+      "published_at": "2026-10-14 09:56:09+00",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "파밍의 레니올리시브는 현재 유전성 면역결핍증 치료제 시장에서 어떤 차별점을 가질지 주목받고 있다. 이번 리포트는 경쟁 약물과 임상 데이터를 비교 분석한다.",
+            "title": "레니올리시브, 경쟁 치료제 대비 강점은?",
+            "direction": "경쟁 약물 대비 효과 및 안전성 차별성, 시장 내 포지셔닝 현황, 확인 필요"
+          },
+          {
+            "lead": "유전성 PID 치료제 개발에서 파밍의 레니올리시브 임상 2상 성공은 시장 확장 가능성을 제시한다. 이번 결과가 제약업계와 환자에게 미칠 영향을 집중 조명한다.",
+            "title": "레니올리시브 2상 성공이 면역결핍증 치료 판도 바꿀까",
+            "direction": "시장 규모 분석, 제약업계 및 환자 커뮤니티 반응, 향후 개발 계획, 확인 필요"
+          },
+          {
+            "lead": "파밍은 ESID 2026에서 레니올리시브의 임상 2상 주요 결과를 발표하며 치료제 개발의 진전을 알렸다. 과거 임상 경과와 규제 이슈를 함께 살펴본다.",
+            "title": "ESID 2026 발표: 레니올리시브 임상 개발 경과와 전망",
+            "direction": "이전 임상 데이터 및 규제 동향, 개발 과정 중 문제점과 극복 전략, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "파밍은 면역조절 이상을 가진 유전성 면역결핍 환자 대상으로 진행한 레니올리시브 2상 임상시험의 주요 결과를 발표했다. 이번 데이터 공개는 신약 개발에 중요한 전진을 의미한다.",
+            "title": "파밍, 레니올리시브 2상 데이터 긍정적 공개"
+          },
+          {
+            "lead": "파밍이 발표한 레니올리시브 2상 시험 결과는 유전성 면역조절 장애 환자 치료에 희망을 준다. 이 결과는 약물의 효능과 안전성을 뒷받침하는 중요한 근거가 된다.",
+            "title": "유전성 면역결핍 치료제 임상 2상 성공 신호"
+          },
+          {
+            "lead": "파밍이 ESID 2026 학회에서 유전성 면역 결핍 환자 대상 레니올리시브 2상 임상 데이터를 공개했다. 이는 약물 개발 과정에서 긍정적인 신호로 평가된다.",
+            "title": "면역결핍증 치료제 후보 레니올리시브 주요 성과 공개"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:14.569Z"
+      },
+      "verification_status": "headline_only",
+      "tag": "P0"
+    }
+  ],
   "patent": [],
-  "publish_allowed": false,
   "telegram": false,
-  "selected_count": 11
+  "publish_allowed": false
 }
