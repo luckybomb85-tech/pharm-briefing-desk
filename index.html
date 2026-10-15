@@ -146,8 +146,9 @@ function visibleItems(section=tab){
   const from=Date.parse(current+'T06:00:00+09:00'),midnight=Date.parse(current+'T00:00:00+09:00'),back=from-18*3600000;
   const valid=sources.filter(x=>{const p=Date.parse(x.published_at||'');return Number.isFinite(p)&&(p>=from||(p>=back&&p<midnight));});
   const primary=valid.filter(x=>Date.parse(x.published_at)>=from);
-  const older=valid.filter(x=>Date.parse(x.published_at)<from);
-  sources=[...primary,...(primary.length<4?older.slice(0,Math.min(3,4-primary.length)):[])];
+  const older=valid.filter(x=>Date.parse(x.published_at)<midnight);
+  // Quality selection happens upstream; never truncate selected previous-afternoon news to three items.
+  sources=[...primary,...older];
  }
  const seen=new Set();
  return sources.filter(x=>{if(!x?.title)return false;const k=String(x.source||x.title).trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true});
