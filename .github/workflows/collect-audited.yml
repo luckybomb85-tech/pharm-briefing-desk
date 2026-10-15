@@ -43,6 +43,26 @@ jobs:
               assert len(d['global'])>=1
               print('CURATED_FEED_OK',date)
           PY
+      - name: Test zero-news weekend produces valid empty edition
+        run: |
+          python - <<'PY'
+          import importlib.util,json,os,tempfile
+          from pathlib import Path
+          spec=importlib.util.spec_from_file_location('snapshot','scripts/publish_v3_editorial_snapshot.py')
+          module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+          module.get_feed=lambda d:{'date':d,'schema_version':'briefing-v2','status':'editorial-empty','domestic':[],'global':[]}
+          original=Path.cwd()
+          with tempfile.TemporaryDirectory() as tmp:
+              os.chdir(tmp)
+              try:
+                  module.run('2026-10-17')
+                  d=json.loads(Path('data/2026-10-17.json').read_text())
+                  assert d['status']=='editorial-empty'
+                  assert d['domestic']==[] and d['global']==[]
+                  assert d['selected_count']=={'domestic':0,'global':0}
+                  print('WEEKEND_ZERO_STORY_OK')
+              finally: os.chdir(original)
+          PY
       - name: Preserve chosen daily news (no minimum and no Telegram)
         env:
           REQUESTED_DATE: ${{ inputs.briefing_date }}
