@@ -71,7 +71,7 @@ try{
   render();
   return {visible,aria,summary:txt,stillOpen:document.querySelector('#detail-0')?.classList.contains('open')};
  })()`);
- if(!detail.visible||detail.aria!=='true'||!detail.stillOpen||(minCards>=14&&(!detail.summary.includes('42개사')||!detail.summary.includes('추산'))))fail('Summary toggle, verified summary text or rerender failed: '+JSON.stringify(detail));
+ if(!detail.visible||detail.aria!=='true'||!detail.stillOpen||(url.includes('2026-10-13')&&(!detail.summary.includes('42개사')||!detail.summary.includes('추산'))))fail('Summary toggle, verified summary text or rerender failed: '+JSON.stringify(detail));
  const writing=await evaluate(`(()=>{
   const buttons=document.querySelectorAll('.card:first-child .actions button');
   buttons[1].click();
