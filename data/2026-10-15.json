@@ -1,0 +1,150 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-15",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "editorial_scope": "누락분 복구 편집본: 일부 전일 오전 주요 보도 포함",
+  "verification_note": "원문 또는 교차 자료 확인 가능 항목을 일부 검증했습니다. 미확인 표시는 추가 원문 검증이 필요함을 의미합니다.",
+  "search_window": {
+    "note": "복구 편집본; 날짜 범위 예외 포함"
+  },
+  "domestic": [
+    {
+      "title": "식약처 비공개 임상자료 2672건, 챗GPT로 접근 가능",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79867",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13T12:50:31+09:00",
+      "tag": "P0 · 규제·보안",
+      "summary": "식약처가 비공개로 관리하는 임상 관련 문서 2672건에 외부 접근이 가능했다는 의혹이 국정감사에서 제기됐다. 제넨셀 자료의 국회 제출 거부와 대비되며 규제기관의 자료 접근통제와 실제 노출 범위 확인이 핵심 취재 포인트다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 1,
+      "source_id": 397
+    },
+    {
+      "title": "삼성바이오로직스, 폴리펩타이드 공개매수 87.88%…인수 조건 충족",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79854",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13T08:58:52+09:00",
+      "tag": "P0 · M&A",
+      "summary": "삼성바이오로직스의 폴리펩타이드그룹 공개매수 응모율이 87.88%로 거래 최소 조건 66.7%를 넘었다. 약 2조4000억원 규모의 펩타이드 CDMO 인수가 성사되기 위한 첫 관문을 통과했지만 추가 응모·규제 승인은 남아 있다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 2,
+      "source_id": 401
+    },
+    {
+      "title": "독일 포미콘, ‘키트루다 바이오시밀러’ 美 FDA 첫 허가심사 진입…3상 생략",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29010",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T00:07:22+09:00",
+      "tag": "P0 · FDA·바이오시밀러",
+      "summary": "독일 포미콘의 키트루다 바이오시밀러 FYB206이 미국 FDA 허가 심사에 진입했다. 비교 유효성 3상을 조기 종료한 전략이 주목되며 삼성바이오에피스·셀트리온의 개발 및 미국 진입 일정과 비교할 가치가 있다. 허가 승인은 아직 아니다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 3,
+      "source_id": 437
+    },
+    {
+      "title": "원료약 국산화하라면서… 약가개편에 설 자리 좁아진 원료기업",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79790",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13T21:07:00+09:00",
+      "tag": "P1 · 약가·원료의약품",
+      "summary": "원료의약품 국산화 지원 기조와 제네릭 약가인하 정책 사이의 충돌 문제가 제기됐다. 완제 제약사의 가격 압박이 국산 원료 업체의 채산성·공급 안정성으로 전이되는지 확인할 만한 산업정책 아이템이다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 4,
+      "source_id": 392
+    },
+    {
+      "title": "\"임상 재평가 연장 폐지해야…실패 약제 공고일부터 환수\"",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79851",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13T07:33:51+09:00",
+      "tag": "P1 · 국정감사·약제재평가",
+      "summary": "국정감사에서 임상 재평가 결과가 나온 17건 중 11건이 효과 입증에 실패하고 결과 확인까지 평균 5.2년이 걸렸다는 지적이 나왔다. 자료 제출 기한 연장 폐지와 급여비 환수 기준을 재평가 공고일로 앞당기자는 요구가 제기됐지만 제도 개정이 확정된 것은 아니다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 5,
+      "source_id": 403
+    },
+    {
+      "title": "\"인사돌·마데카솔도 제조기준 위반…소송 걸면 2년 넘게 판매\"",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47538",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13T06:46:50+09:00",
+      "tag": "P1 · GMP·행정소송",
+      "summary": "국정감사에서 인사돌·마데카솔 등 제조기준 위반 사례와 행정처분 이후 집행정지 소송을 통한 판매 지속 문제가 지적됐다. GMP 제재의 실효성, 과징금 제도, 제형 단위 처분에 관한 최근 법원 결정과 연결해볼 수 있다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 6,
+      "source_id": 462
+    },
+    {
+      "title": "식약처, 의사 자가 처방·투약 금지 의료용 마약류 범위 대폭 '확대'",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47544",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13T21:02:00+09:00",
+      "tag": "P1 · 의료용마약류",
+      "summary": "식약처가 의사의 자가 처방·투약을 금지하는 의료용 마약류 범위를 확대하는 정책을 제시했다. 추가 대상 성분과 시행 시점, 진료현장에 미칠 영향을 확인할 필요가 있다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 7,
+      "source_id": 451
+    },
+    {
+      "title": "보령, 저용량 ‘카나브’ 2상 종료 … 제네릭 공세 맞서 ‘용량 다변화’ 속도",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351314",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-13T15:01:00+09:00",
+      "tag": "P1 · 임상·제품전략",
+      "summary": "보령의 저용량 카나브 관련 2상 임상 종료가 보도됐다. 특허 만료 이후 제네릭 경쟁을 앞둔 상황에서 저용량 제품을 포함한 용량 다변화가 시장 방어 전략으로 활용될 가능성을 살펴볼 만하다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 8,
+      "source_id": 411
+    },
+    {
+      "title": "엘앤씨바이오, 리투오 UAE 수입허가 확보…중동 시장 진출 본격화",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727826",
+      "source_name": "EBN",
+      "published_at": "2026-10-14T06:29:26+09:00",
+      "tag": "P1 · 해외허가",
+      "summary": "엘앤씨바이오의 피부 ECM 제품 리투오가 아랍에미리트 의약품청의 수입허가를 받았다. 태국·페루에 이은 해외 진출 기반 확보이며, 현지 유통망 구축과 실매출 발생 시점은 별도 확인이 필요하다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 9,
+      "source_id": 473
+    },
+    {
+      "title": "“글로벌 임상 첫 환자 등록 때 韓 기관 가동률 20%…개시 절차 개선 필요”",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29039",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T07:41:13+09:00",
+      "tag": "P1 · 임상 인프라",
+      "summary": "글로벌 임상 첫 환자 등록 시점에 한국 참여기관 가동률이 약 20%에 그친다는 업계 발언이 소개됐다. 국내 임상 개시 지연의 원인이 기관 계약·심사·행정절차 중 어디에 있는지 구체적 비교 취재 가치가 있다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 10,
+      "source_id": 422
+    },
+    {
+      "title": "릴리, 美 프렐류드와 ‘KAT6A 분해제’ 유방암 병용 임상 협력…버제니오 공급",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29035",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T05:50:00+09:00",
+      "tag": "P1 · 글로벌 공동개발",
+      "summary": "일라이릴리가 미국 프렐류드의 KAT6A 분해제 개발과 관련해 유방암 병용 임상에 버제니오를 공급하는 협력을 추진한다. 신기전 후보물질과 기존 CDK4/6 억제제 병용전략의 경쟁구도를 살펴볼 수 있다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 11,
+      "source_id": 427
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "publish_allowed": false,
+  "telegram": false,
+  "selected_count": 11
+}
