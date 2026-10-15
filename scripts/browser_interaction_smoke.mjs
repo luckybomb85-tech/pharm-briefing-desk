@@ -7,6 +7,7 @@ import path from 'node:path';
 
 const url = process.argv[2] || 'https://luckybomb85-tech.github.io/pharm-briefing-desk/?date=2026-10-13';
 const chrome=process.env.CHROME_BIN||'/usr/bin/google-chrome';
+const minCards=Number(process.argv[3]||14),section=process.argv[4]||'domestic';
 const profile=await mkdtemp(path.join(os.tmpdir(),'desk-ui-'));
 const port=19000+Math.floor(Math.random()*10000);
 const proc=spawn(chrome,[
@@ -47,9 +48,10 @@ try{
   const p=pending.get(j.id);if(!p)return;pending.delete(j.id);
   if(j.error)p.reject(new Error(JSON.stringify(j.error)));else p.resolve(j.result);
  });
+ if(section==='global')await evaluate("document.querySelector('[data-tab=global]').click()");
  let n=0;
- for(let i=0;i<45;i++){n=await evaluate("document.querySelectorAll('.card').length");if(n>=14)break;await sleep(350)}
- if(n<14)fail('Expected at least 14 published cards; found '+n);
+ for(let i=0;i<50;i++){n=await evaluate("document.querySelectorAll('.card').length");if(n>=minCards)break;await sleep(350)}
+ if(n<minCards)fail('Expected at least '+minCards+' published cards; found '+n);
  const detail=await evaluate(`(()=>{
   const button=document.querySelector('.card .summaryToggle');
   if(!button)return {error:'No summary button'};
@@ -61,12 +63,18 @@ try{
   render();
   return {visible,aria,summary:txt,stillOpen:document.querySelector('#detail-0')?.classList.contains('open')};
  })()`);
- if(!detail.visible||detail.aria!=='true'||!detail.stillOpen||!detail.summary.includes('42개사')||!detail.summary.includes('추산'))fail('Summary toggle, verified summary text or rerender failed: '+JSON.stringify(detail));
+ if(!detail.visible||detail.aria!=='true'||!detail.stillOpen||(minCards>=14&&(!detail.summary.includes('42개사')||!detail.summary.includes('추산'))))fail('Summary toggle, verified summary text or rerender failed: '+JSON.stringify(detail));
  const writing=await evaluate(`(()=>{
   const buttons=document.querySelectorAll('.card:first-child .actions button');
   buttons[1].click();
   const w=document.querySelector('#writer-0');
   const preview=w?.textContent||'';
+  const initialTitle=w?.querySelector('.previewTitleRow strong')?.textContent||'';
+  const initialLead=w?.querySelector('.previewBody p')?.textContent||'';
+  w?.querySelector('.refreshTitle')?.click();
+  const refreshedTitle=w?.querySelector('.previewTitleRow strong')?.textContent||'';
+  const refreshedLead=w?.querySelector('.previewBody p')?.textContent||'';
+  const quickRefreshChanged=initialTitle!==refreshedTitle&&initialLead!==refreshedLead;
   const active=w?.classList.contains('open');
   window.__writerOpenCalls=[];
   window.open=(target,name)=>{window.__writerOpenCalls.push({target,name});return {opener:null}};
@@ -74,16 +82,22 @@ try{
   const quick=window.__writerOpenCalls[0]?.target||'';
   buttons[2].click();
   const deepPreview=document.querySelector('#writer-0')?.textContent||'';
+  const deepInitialTitle=w?.querySelector('.previewTitleRow strong')?.textContent||'';
+  const deepInitialLead=w?.querySelector('.previewBody p')?.textContent||'';
+  w?.querySelector('.refreshTitle')?.click();
+  const deepTitle=w?.querySelector('.previewTitleRow strong')?.textContent||'';
+  const deepLead=w?.querySelector('.previewBody p')?.textContent||'';
+  const deepRefreshChanged=deepInitialTitle!==deepTitle&&deepInitialLead!==deepLead;
   document.querySelector('#writer-0 .draftBtn')?.click();
   const deep=window.__writerOpenCalls[1]?.target||'';
   const q=new URL(quick).searchParams.get('q')||'';
   const d=new URL(deep).searchParams.get('q')||'';
-  return {active,preview,deepPreview,quickOpened:quick.startsWith('https://chatgpt.com/?q='),deepOpened:deep.startsWith('https://chatgpt.com/?q='),quickPrompt:q.includes('[바로 기사화]'),deepPrompt:d.includes('[심층 기사화]'),sourceIncluded:q.includes('https://')};
+  return {active,preview,deepPreview,quickRefreshChanged,deepRefreshChanged,titleDistinct:initialTitle!==document.querySelector('.card:first-child .title')?.textContent?.replace('⌄','').trim(),quickOpened:quick.startsWith('https://chatgpt.com/?q='),deepOpened:deep.startsWith('https://chatgpt.com/?q='),quickPrompt:q.includes('[바로 기사화]'),deepPrompt:d.includes('[심층 기사화]'),sourceIncluded:q.includes('https://')};
  })()`);
- if(!writing.active||!writing.quickOpened||!writing.deepOpened||!writing.quickPrompt||!writing.deepPrompt||!writing.sourceIncluded)fail('Article actions failed: '+JSON.stringify(writing));
+ if(!writing.active||!writing.quickRefreshChanged||!writing.deepRefreshChanged||!writing.titleDistinct||!writing.quickOpened||!writing.deepOpened||!writing.quickPrompt||!writing.deepPrompt||!writing.sourceIncluded)fail('Article actions failed: '+JSON.stringify(writing));
  console.log('INTERACTION_BROWSER_OK:',JSON.stringify({cards:n,summary:detail,writing:{
   active:writing.active,quickOpened:writing.quickOpened,deepOpened:writing.deepOpened,
-  quickPrompt:writing.quickPrompt,deepPrompt:writing.deepPrompt,sourceIncluded:writing.sourceIncluded
+  quickPrompt:writing.quickPrompt,deepPrompt:writing.deepPrompt,sourceIncluded:writing.sourceIncluded,quickRefreshChanged:writing.quickRefreshChanged,deepRefreshChanged:writing.deepRefreshChanged
  }}));
 }finally{
  try{ws?.close()}catch{}
