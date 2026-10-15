@@ -74,3 +74,43 @@ jobs:
           print('MIDNIGHT_DEFAULT_OK: no query parameter shows last published date')
           PY2
           fi
+
+      - name: Verify Oct 15 and Oct 16 curated editions in headless Chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME" || { echo "CHROME_NOT_AVAILABLE"; exit 1; }
+          for pair in 2026-10-15:11 2026-10-16:10; do
+            DAY="${pair%%:*}"
+            COUNT="${pair##*:}"
+            test -f "data/$DAY.json"
+            DAY="$DAY" COUNT="$COUNT" python - <<'PY'
+          import json, os
+          from pathlib import Path
+          date=os.environ["DAY"]; expected=int(os.environ["COUNT"])
+          obj=json.loads(Path("data/"+date+".json").read_text(encoding="utf-8"))
+          assert obj["status"]=="editorial-selected" and len(obj["domestic"])==expected
+          assert all(len(x["summary"])>65 and x["source"].startswith("https://") for x in obj["domestic"])
+          print("CURATED_STATIC_OK", date, expected)
+          PY
+            timeout 60 "$CHROME" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
+              --disable-background-networking --virtual-time-budget=19000 \
+              --host-resolver-rules="MAP cdn.jsdelivr.net ~NOTFOUND" \
+              --dump-dom "https://luckybomb85-tech.github.io/pharm-briefing-desk/?date=$DAY" \
+              > "/tmp/curated-$DAY.html" 2> "/tmp/curated-$DAY-error.log" || {
+                tail -n 30 "/tmp/curated-$DAY-error.log"
+                exit 1
+              }
+            DAY="$DAY" COUNT="$COUNT" python - <<'PY'
+          import os,re
+          from pathlib import Path
+          day=os.environ["DAY"]; expected=int(os.environ["COUNT"])
+          html=Path("/tmp/curated-"+day+".html").read_text(encoding="utf-8")
+          count=len(re.findall(r'<article class="card"',html))
+          assert count==expected,(day,expected,count)
+          assert "편집 선별·요약" in html,(day,"NO_CURATED_BANNER")
+          assert "수집 후보 88건" not in html,(day,"CANDIDATE_OVERFLOW")
+          print("CURATED_BROWSER_OK",day,count)
+          PY
+          done
