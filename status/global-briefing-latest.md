@@ -1,67 +1,67 @@
-# 글로벌 제약바이오 브리핑 | 2026-10-15
+# 글로벌 제약바이오 브리핑 | 2026-10-16
 
 > 자동 발견·선별된 취재 후보입니다. 원문 및 핵심 사실은 기사 작성 전 확인해야 합니다.
 
-### 1. IQVIA, Veeva expand on existing partnership for speedier clinical trials - Fierce Biotech
-- 매체: Fierce Biotech | 중요도 점수: 7
+### 1. AtomVie Global Radiopharma Announces Strategic Partnership with Jubilant Radiopharma to Strengthen Clinical Trial Logistics and Distribution - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 7
 - 분류: CLINICAL, DEAL
-- 발견 링크: https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEh2dzBwR1EyMk92N0xtRXNyM3FOcGIzUVFaYnhNLWthZnE0dUMwLWtlam9GRmxyWUxMVlM4ekNtZTRtVWxtc1VUR0ltdEdEb2JQMmJrWEY1cDZNRmQza3J4dHdxb0t2am9jWG9wWDBEWm05OGtCeGs1NTFFZFZwc1NVTDV6ZC1yQ24wZFU2OVc?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5JWE1TTS1uaGc1VDZESWpidUVTY0Uwenp6N1ZGckdXZ01lSm9pNzR6NXZtUDV2eDR0d2hfVVZVcG41d2R6OXV1aHpPNktDeEVsVmhr?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 2. Apple asks US court to overturn jury's landmark $5.7 billion patent verdict - Reuters
-- 매체: Reuters | 중요도 점수: 6
-- 분류: DEAL, IP
-- 발견 링크: https://news.google.com/rss/articles/CBMitwFBVV95cUxQQzZYX0tnTFJnRGN5VjlLT1lVWVM4TDQ1Nzl1aU4tcFd2eTdPTVA5bWlZUHowYnBFcEJnOWVSRDVyR2RMMElDdGlaOWg4THhmYVlTUDdjbnR5SGEzNVhycTNpYkRNeWlPZlE4eFdHWnhDY09wYWEyOGFRU0l2VFJPeC12cHRhYllBcDVNZzJfN3M1Z0drNkNUT1UyekZHRzRDZUVmTnFESnpYVnU4aWdLN0NGS3hWQTA?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 3. Biocon Secures Earliest Licensed Launch Dates for Pebrilzo (bPertuzumab) Following Global Patent Settlement with Genentech - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 6
-- 분류: DEAL, IP
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1Hd1FYUU5CRVYwZkFlb2ZURFBvTWtkM1VEME5rSnZONGg3MUIyMDFqWExjRWlzX1BKbll3WWFCTlJXTU96dDlqblh0Q1lJYktMMVl3?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 4. Coya to Initiate Open-Label Extension of Phase 2/3 ALSTARS Trial of COYA 302 in ALS - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRXdVTUJMRmNfZ3pDcDB1MkZoOUFFeWFXUllrN1Z0cWpmSHE5UW4zOFNVZVh4Wnc4X25ycnQyRDZja1pOVGE5MGhQa3VCTVJYVnpFVmJqVTVuNzhWWmN0SG9UdGZHZEUxT2p3QkU2OXZ3VGpfNFlxTXJLRlF1OWE3TUYzMVEtVTlKZmxvb3lGSUJkbFZDNmlxX0pkZnV1ckxBaG0yLUlJMFRTV1haUGd2dll2eEdNSUQ3NnVfSWp0Q2g?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 5. FDA APPROVES GORE® VIABAHN® VBX BALLOON EXPANDABLE ENDOPROSTHESIS FOR EXPANDED USE IN FEVAR AND BEVAR - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
+### 2. A drug developer who helped secure FDA approvals is Helus Pharma’s board pick, pending Cboe Canada approval. - Stock Titan
+- 매체: Global gap recovery | 중요도 점수: 4
 - 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMi1gFBVV95cUxQeG1zbkp6ZWhqaXBhZGN0dlE4RmZZelAzUFNvQTlPZVRhdjFfME9ndTdwYmxmclVJRWtfMDk2VENBbVBYZVNkOFFJQ0RzdG9RU1lYdW4wdEIxWTZaaWhVMEkteEpwcFRRS2s2bGlLQlMxU05ua2NfektZcThOOGFSOVlNNnV4MFhfbFRhYl82bnJHSzBHZU9oZEVUNXItZnd2TDc3RnBaSVJIWWxUYTNSSHJnaDAwMlJ4UnVHdk5aaVFXUldRYTIwc1ZPUXZXWlZGQUFzSGt3?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiqAFBVV95cUxObUVzclY4VS1TUFpQZjRwZDI4S2hxMGZNQ2FNSlJ4azVNRmJSbjQtRmh1LTM5SDBfcEhqeWNZVkk0V1ZHQTNyVV9zTmtLaG5sdzVlZDM3V2FxZWZ2TTZ2QXd3dDBTWkZOZENxZ2tyaEtSTGVzMXhtNmQ3NHY5RFhQU2ZaOXNVZzV3aUlMbUZlS2JhZ2Q3Qy1ZXzRtMy1WV185Y1I3VWNqSkE?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 6. Invivyd and the SPEAR Study Group Announce Initiation of “FLINTLOCK” Phase 2 Study of VYD2311, a Monoclonal Antibody for the Potential Treatment of Long COVID or Post-Vaccination Syndrome - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMixwJBVV95cUxOeWpISFJLZVdmczhBeHJsa0s1elNhOE1uVGdhUkN4RF9XeVBXUW5GaTVhdGJzZkl5dEdCUnpMNjRyT0hfVlYzU3dWV3p4LWVxeFRycXNscHRQUFNOOUpKTUJmNkw5SW8xZVQwdDN1SjJOakVUSmxHNXczVEY1MDNjVTc3QUtMS2Q1eFFLQlFUYVN3NC1rdks2blZKdFNNTS1KQUxIR2xtOFphMjloRDNVdkZST3FqeDlMU0hJTzJMTVIwcFRRNGlKWEdaaXlQTzBQWmR6VmhYQ2ZRN3FvMFFyMDItOEpPVmdxNkRiMFFudGF4WFhBbk50ZVAxd1dSS0tMV3BMbEJEZHl0ZDluaWFuNWl4cjZNM3pXOWZOelhKaHVQT0pnQ1g0X1JEVE0wemZWSmZDamhfc1dpeFVuclZxLWcxcElEV3M?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 7. Pelage Pharmaceuticals Announces First Patient Dosed in Phase 2/3 AWAKEN Trial of PP405 for Androgenetic Alopecia, the Most Common Form of Hair Loss - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMilgJBVV95cUxNWGFNbXBkNnV3TTNQVnA5SkZjWHY4eVNpMTZWOU9BRXBZUmNkeTZaenFwUEYzNmQ1eVRiVWxyVVpZRlF5Zks5dHNaWFlVY2dnaUtFZlNicDFqR3kza2pIcTVSM2hfSldaYXBKeWQxYkJLYWFKYks5MHN6cGVrWW42OF80dUd2a3UyakRKNEZtVG5UcHd2UDNLMzhtU0hpRlRIN0xUVVY1UHk3VkNidlBESlpLakdidjQ1Tl85ZVFQUktXazU0ZHNDXzliRkRWaXR1ZVozc3dOQm45ZVhjWEpWQXhWd1BkREtNRlRCZHpOWFRTenBzTWNSQzc4NVJ3MkQtelVaZ1dNSmN4aGhPTTg1TzY2WUlWZw?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 8. Pharming presents positive Phase II topline data for leniolisib in genetic PIDs with immune dysregulation at ESID 2026 - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi7wFBVV95cUxOWk5zUk95eXFJMmZxTWZwZ0VzSVZXamE2RUlLdEg0WWNXYUNsRTlOa3hPVjYwSTRBdnR1MGg3aWFFYnNEUjh5RkVZM3JDVXRuU0lpLTcwVU5kNUJGN1hBME5RN0VxUy1NYVhPWHZid2hTQ0ZNNm9JcTJVRmh5NGVGcmlRckctelRvX2s1QXJLR0EzV3lvYVdNU2xoN3BDbkxLdm1LRDVmblpkdER1VjJ6S1JQRlpnQnJlR0ZtYnl1R3ZKWnFEZm1ISC03aFpNSGVSc3BZMjhhM0lyd2M2SFdzVWtfOFFHbm9pcGtmUko0OA?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 9. Pilatus Biosciences Announces First Patient Dosed in Hong Kong Clinical Trial of PLT012 for Liver Cancer Expansion - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi6gFBVV95cUxQbVZCczQ0Nkx1TnBXMTBkRDVBOEViMF9fNWJKaXU1WXRoN1JVUlRuRHd6NEJEYTIyWUdmcmhuQXE3YkxkOFBMcl9URVcxZ2dxR2tJN0Q0ZXk2RHE2dmduMTNIcm0wY3AtLVdTbjNmQ0puNmw1ZmVHc1pCV3BETWZBTU9IY21lQ2hVV0RDRnFsUi01NjA1TU9DTDJCbjF5a19lVkEwSFJkc0NEaU1vSGhxay0tZ1VMcVFObG03SVo5MENaZkJXa1I4ajgxbHJOVDVRMk9fTldQeDFGSG4wV0EwNjY1eWNzS0RTZ1E?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 10. Spinogenix Announces Phase 2b Trial for Autism Using Novel Brain-Wave Screening to Target Treatment - FirstWord Pharma
+### 3. Bold Therapeutics Reaches Enrollment Midpoint in Randomized Phase 2 Trial of BOLD-100 in Second-Line Metastatic Colorectal Cancer - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBHbmN6VlBBMzZDdTFxYjdOZHk1Tk1FS1RQTDBYZGQ2R3ZnQU5OX2pmX3Z5YU5qbmpTZXI5emRJeVZObkpFTW04SjYtSk1pTklUcUFF?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5GV2Q2QUROZ0EwQkN3MVVJUkRyOE4teExzOW1YeDREVU1TakdGWFNCWmtGWDVxRVZuaEdrX0JTcWo0U0Nhekp3aWNDSFBhT3RCLUNR?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-선별 대상 305건 중 중요도 기준 통과 46건. 상위 10건 표시.
+### 4. Cellectar Biosciences Presents Compelling Efficacy Data from Phase 2b CLOVER WaM Subset Analysis of Iopofosine I 131 in Patients Relapsed/Refractory to BTK Inhibitor Therapy at the International Workshop for Waldenström Macroglobulinemia - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMijgNBVV95cUxQcW1HWl9MNFZGLVQzVzlYc1ZrNkZGZ3RTQ1RTal9YS0dXWmNYLWROTGZuSS10bkNGMlFDRnRsNmlGbjMwcm10VWUwSW1xODVobXpPQTh6c2ZmR3RyRnVHT1ZOQ2VYbkxXX1BSS0xBVWR1YzZQSHR2T3ZVbTl4a3B4VXRuNGxZMG1ENnVadF9LZ2t2b2dXVUsxVHRpczd6RFJka2tPUmFfQkxJM3JlbWRHazNiWVRuRVJfdlRJVjVYcUVoMEp0bjRaTGNkWWkyTkVZYldfd0ttYXJXWEJTT2JWV01rcmFiZjB1ZUZtME5LczZWV0hkS0h1SVh1dkJOQmJFNnc1dWhYZU9OUlZSQnlIZVpILWZvRHBfbWN6cnlBY2JHMVBrZ2ZVZ1liemtZZURWd2NiMG9jcHl3WUdvVDZKUjlFTUNlWEZ5T2dzU3hmSjF5TGpjWmFqajk1LVR2RV9WU21vaGtDSGdNaFVyMkVrZnE3Q1c3VTJiTmpEdVVPVnNEUURidkJtR3owZzM3UQ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 5. Dermata Therapeutics Announces Positive Topline Results from Cosmetic Study Evaluating Its Tome Foundational Treatment - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi7wFBVV95cUxQaHdzdi0xTkxMM1pTQzJ5WDlVQWVWd0JDNkdNYzNOQnE4Y0VtcmRZLWtJSVdtR2xYUDhKNmVRTWhidDNGR3k0elN5NklFcEFTU0NweTJQYkRTTGpzUktJS3Q0T0l6Wnlub0Y4eVZ5ZlF6OGZTalpkZ05ydDZRUmxzVXc5bE1LVklPMEdHT3hqRE1Qc0lBc0pCTlYweU1MaVdOcUpPUy1rdzdYQUdTLUZzOGltaGNYUlJ6MlVwOFM2TVJMRERXQ1RpX2MxRUxQX0JjdmNqdHhOcnJZM1QxUHFSV2hKeHJvMVNRdzRnQzJ2SQ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 6. EMA recommends authorisation of Rasonque for metastatic pancreatic cancer
+- 매체: EMA News | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://www.ema.europa.eu/en/news/ema-recommends-authorisation-rasonque-metastatic-pancreatic-cancer
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 7. Eclipse Life Sciences Announces Positive Topline Results from Phase 2 BETTIS-1 Study Evaluating EC-104 for Diabetic Macular Edema (DME) - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE4tME5KSnlNSUdfR1JobnA0OWhrQ2RScWRNSVpWZWVuV0pSWko3NzF3T21NVURMaThldGN1NjJiX1c3Y3RkU0pSX2ZBcTRDNlBTcmZZ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 8. Edesa Biotech Announces FDA IND Clearance for Phase 2 Vitiligo Study - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMirAFBVV95cUxQTDI4WlVWNmFoX3czcFZSaFdFTlRXWVJKbkYzbHh0YnFQa0xrd3JmT0VlSkNmdDFOTFZLLUdfRDlxTC1OUGsyQk1iaUFGVXJWdV9qY0xMamw3SWVZNmtJRVVuN2psUHBidFlNVExRMUpueGVlRXBROEpuU2w4NFYxRDdobjEwQWJBRmkyWF9tWW1aSTNaS0NSYXFjX3FxVFhrbG14OWRrZDQtbXQ2?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 9. Enliven Therapeutics Appoints Kristine Ball to Board of Directors Ahead of Planned Phase 3 Trial Initiation this Year - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi7gFBVV95cUxOb2N4ams5b0M2Y28yM1ZRUlFQRTNsTnl5Q3FDTzd4UUNfa25TR3VkckIteUJ4cjRNSmhrUFNrdEl1WnY1b2IzbHZydE03M1k0MHo4bmVrRkluUGFOZ2JuUzhOeFcxTF9WRmxJd090aWxpTzdsOVFVcHRLa3VCU0ZldGl1SUxvSlJUWml1TXp4VzRTcjlWeTVuU2xXV1kyWEZES3c0TjY3enFUS0ItaGdQa3RKWHBEdkVwVjdmUE0zb2tFSWYyTTZpUDBNQ3lTZnlmaE5zazIwVDkxM2hRbzdVYi1lT3lHNUtlcTh5eEtR?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 10. Genfleet/Verastem Eye World-First Phase III Trials For KRAS G12D Inhibitor In CRC - insights.citeline.com
+- 매체: Scrip/Pink Sheet | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVFZzOU1sSExHbTk0S1JQRW9zbFRIVk9OajY3cmpqU0RSMzdCY2ttMzZmLVNmdjFwME12S2QxaHFEZVY3c1RhLW5yTFlRZjExUVpFTXFvWnY4SHZ1VFhES1FWN1RZUmlFVmZVREFEalZMUjJJczF3aFl2SlBTVDAyUkw4ZHJJRnhvMEdaU3lkXzEzSmhCX29RUlJhWUxqWlA3Nnp2Zm01eW9OdGNaY0RfdjZGaF9sbEdCVk54S1pOdnhraW8zekhHWERhZ2NyZjc4LVN2ZnVCU0RTcDhsRGRGMjZsY0Z1bG9vQ1Y4bTVpb3ZVWTJjdl9jcXhoWU0?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+선별 대상 325건 중 중요도 기준 통과 40건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
