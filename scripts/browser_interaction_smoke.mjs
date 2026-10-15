@@ -48,7 +48,15 @@ try{
   const p=pending.get(j.id);if(!p)return;pending.delete(j.id);
   if(j.error)p.reject(new Error(JSON.stringify(j.error)));else p.resolve(j.result);
  });
- if(section==='global')await evaluate("document.querySelector('[data-tab=global]').click()");
+ if(section==='global'){
+  let ready=false;
+  for(let attempt=0;attempt<45;attempt++){
+   const state=await evaluate("(()=>{const tab=document.querySelector('[data-tab=global]');if(!tab)return 'waiting';tab.click();return 'ready'})()");
+   if(state==='ready'){ready=true;break}
+   await sleep(350);
+  }
+  if(!ready)fail('Global tab not mounted in the browser');
+ }
  let n=0;
  for(let i=0;i<50;i++){n=await evaluate("document.querySelectorAll('.card').length");if(n>=minCards)break;await sleep(350)}
  if(n<minCards)fail('Expected at least '+minCards+' published cards; found '+n);
