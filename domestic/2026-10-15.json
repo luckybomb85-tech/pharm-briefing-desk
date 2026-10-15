@@ -1,0 +1,889 @@
+{
+  "date": "2026-10-15",
+  "status": "candidate-only",
+  "source": "Supabase v2 deduplicated snapshot",
+  "generated_on": "2026-10-16",
+  "notice": "수집 후보이며 원문 검증·편집 선별이 완료되지 않았습니다.",
+  "items": [
+    {
+      "title": "“글로벌 임상 첫 환자 등록 때 韓 기관 가동률 20%…개시 절차 개선 필요”",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29039",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 16:41:13+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[국감 '26] 곰팡이·플라스틱 반복 검출에도 해썹 인증 유지...식약처 관리 부실 논란",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727838",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 16:05:56+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "한미약품, 신약개발 AI 플랫폼 ‘HARP’ 고도화…신약 설계부터 임상까지 확장",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29043",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 16:05:26+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "인벤티지랩, 12개월 지속 초장기 동물용 의약품 미국 특허 등록",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79895",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 16:01:50+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "한국비엔씨, '덱시부프로펜' 액상 주사제 중국 특허 등록",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79889",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 15:38:32+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "엘앤씨바이오, 리투오 UAE 수입허가 확보…중동 시장 진출 본격화",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727826",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 15:29:26+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "릴리, 美 프렐류드와 ‘KAT6A 분해제’ 유방암 병용 임상 협력…버제니오 공급",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29035",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 14:50:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "인벤티지랩, 12개월 지속 초장기 동물용 의약품 美 특허 등록 결정",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29033",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 12:51:57+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "입셀, ‘범용 iPSC’ 국내 특허 등록 결정…세포치료제 플랫폼 사업 기반 강화",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29028",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 12:02:58+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "EMA 종양학 자문위원 “항암신약 성공 기준, 통계적 유의성 넘어 환자 가치”",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29004",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 11:55:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "산업부·식약처, 바이오 AI 기술개발부터 수출까지 맞손",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79883",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 11:06:28+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "산업부·식약처, 바이오 AI 전환 맞손…기술개발·수출 협력",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29029",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 10:56:56+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "엘앤씨바이오, 피부 ECM '리투오' 아랍에미리트 수입허가 획득",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79879",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 10:13:38+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "독일 포미콘, ‘키트루다 바이오시밀러’ 美 FDA 첫 허가심사 진입…3상 생략",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29010",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 09:07:22+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "대웅제약, ‘마이크로니들 무균 제조소’ 구축…내년 상반기 GMP 승인 추진",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29008",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 08:48:09+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "대웅제약, 마이크로니들 무균 제조소 구축…내년 GMP 승인 추진",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79872",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 08:46:12+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "국가임상시험지원재단, 한국로슈·지역 병원과 임상시험 협력",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79871",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 08:38:38+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "英, 저위험 임상1상 심사 30→14일…연말까지 단계적 단축",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29002",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 08:28:21+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "오토텔릭바이오, 고혈압·당뇨 복합신약 중동 공급계약 체결",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79868",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 08:03:39+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "백규석 큐리에이터 대표 “동물 약효 데이터 없이 항암제 병용 임상 근거 확보”",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=28992",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 06:20:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "항암제 초기 임상, 어디까지 허용되나…“식약처, 임상 참여 기준 후속 정비”",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=28989",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 06:10:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "원료약 국산화하라면서… 약가개편에 설 자리 좁아진 원료기업",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79790",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 06:07:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "국가가 지정하고 허가했지만…환자에게 닿지 못한 치료",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47557",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 06:06:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "'제넨셀' 치고받던 식약처 국감… 정회 후엔 '규제 사각지대' 점검",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79865",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 06:06:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "&quot;임상 2상서 통한 약효, 3상서 무너져... 신약 허가율 단 7.9%&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79848",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 06:03:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "식약처, 의사 자가 처방·투약 금지 의료용 마약류 범위 대폭 '확대'",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47544",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 06:02:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "식약처 비공개 임상자료 2672건, 챗GPT로 접근 가능",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79867",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 21:50:31+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "&quot;디지털융합의약품 허가 0건…제도 안착 지원 필요&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79863",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 21:34:20+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "&quot;국가필수의약품 품절 반복에도 식약처는 조치 불필요 남발&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79866",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 21:17:50+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "비급여 면역주사도 “효과 입증 못하면 약값 돌려줘야”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47553",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 20:28:36+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "제넨셀 조작 보고서 못 걸러낸 임상 심사…“보완 요구는 받아쓰기 수준”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47551",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 18:44:30+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "“식약처 거대해진 규제기관, 복지부 산하 청으로 개편해야”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47550",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 18:36:40+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "“임신중지 의약품 도입 전 법 정비해야”…허가 절차 신중론",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47549",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 18:10:03+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "오유경 식약처장 &quot;임신중지의약품 허가 지연 송구&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79857",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 18:02:32+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "“임신중지 의약품 도입 절차 신속히”…허가 진행 상황 보고 요구",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47548",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 17:56:06+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[주식] 올릭스, 뉴질렌드 임상 신청 반려만으로 주가 14% '급락'",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79853",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 16:50:23+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "미프진 허가 신중론…“미국 이상사례 분석도 살펴야”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47542",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 16:42:04+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "&quot;임상 재평가 연장 폐지해야…실패 약제 공고일부터 환수&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79851",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 16:33:51+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "&quot;치료목적 사용승인 항암제, 식약처 관리 미흡&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79849",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 16:04:48+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "임신중지 의약품 허가 지연에 “송구”…완료 시점은 제시 안 해",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47539",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 16:03:54+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "&quot;인사돌·마데카솔도 제조기준 위반…소송 걸면 2년 넘게 판매&quot;",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47538",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 15:46:50+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "신약 사용 승인받아도 첫 투약까지 석 달…암환자 기다림 길어진다",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47537",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 15:40:24+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "내수 영업 경쟁에 묶인 제네릭…규모·전문성 키워 해외로",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47576",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 19:11:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "복지부, 제네릭 기업 R&amp;D·수출 역량 강화…제도 개선 논의",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727836",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 15:51:36+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "제네릭 내수 경쟁 넘어 수출로…정부, 규모화·전문화 논의",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79888",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 15:31:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "보령, 저용량 ‘카나브’ 2상 종료 … 제네릭 공세 맞서 ‘용량 다변화’ 속도",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351314",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-14 00:01:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "삼성바이오로직스, 폴리펩타이드 공개매수 87.88%…인수 조건 충족",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79854",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-13 17:58:52+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "대원제약 대원헬스, '마그네슘킹' 출시 한 달 만 5만병 판매 돌파",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727861",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 18:40:51+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "반도체·바이오에 최대 16년 투자…8800억 국민성장펀드 운용사 7곳 낙점",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727859",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 18:36:22+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "피노바이오, 스위스 알렌티스와 클라우딘-1 표적 차세대 ADC 공동 개발",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29046",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 17:48:36+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "동구바이오, 잇단 투자 성과 주목…큐리언트·디앤디파마텍·노바셀 사업 진전",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29041",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 16:18:18+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "막오른 40조 '키트루다' 복제약 전쟁…獨 선공 속 K바이오 맹추격",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727839",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 16:11:19+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "제약바이오협회·코트라, 해외 진출 지원 맞손…규제 대응 강화",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1727842",
+      "source_name": "EBN",
+      "published_at": "2026-10-14 16:10:01+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[주식] 한미사이언스·한미약품 '에페' 출시 임박...주가 10%대 하락",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79896",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 16:08:05+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "지투지바이오, ‘PODD 2026’서 초고농축 항체 SC 플랫폼 글로벌 첫선",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29040",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 16:03:25+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "지투지바이오, 'PODD 2026'서 초고농축 항체 SC 플랫폼 선봬",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79894",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 16:01:19+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "獨 바이오엔테크 ‘mRNA 암백신’ BNT113, 두경부암 2·3상 PFS 개선 실패",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29036",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 15:30:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "파로스아이바이오 '라스모티닙', 동물모델서 생존기간 58일 연장",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79891",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 14:50:33+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "제약바이오협, 코트라와 K-의약품 지원창구 협력 협약",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79890",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 14:32:21+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "진료비 비싼 미국 병원 43%가 적자…의약품 비용 3년간 29% 증가",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351322",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-14 13:09:39+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[Pharma Report] 대웅제약, 한림제약, 동아ST, 동국제약, 한국비엔씨, 셀트리온, 동아제약, 동화약품, 일동제약, 대원제약 등",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351318",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-14 12:28:57+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "한림제약-성균관약대, 산학협력 업무협약 체결",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79887",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 12:03:52+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "일동제약, 새로운 비타민제 브랜드 ‘슈퍼라민’ 론칭",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29027",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 11:28:28+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "‘슈가논’, 다음 라인업은 ‘엠파글리플로진’…동아ST, 2·3제 복합제 출시 예고",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351319",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-14 11:06:34+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[대원제약] ‘마그네슘킹’, 출시 한 달 만에 5만 병 돌파",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47567",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 11:01:44+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[한림제약] 성균관대와 손잡고 제약 현장 이끌 인재 함께 키운다",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47566",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 10:58:52+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "동아제약, 근육이완제 ‘스카풀라’ 대용량 20정 출시",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29021",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 10:58:35+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[대웅제약] 붙이는 비만·당뇨 치료제 생산 기반 마련",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47564",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 10:49:34+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "삼천당제약, 반려동물 구강보조제 ‘덴탈바이오’ 유통 채널 확대",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29016",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 10:46:22+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "아로나민 이어 엑세라민 그 다음은? 일동제약 '슈퍼라민'",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79881",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 10:44:39+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "삼천당제약, 반려동물 구강보조제 '덴탈바이오' 수의사 채널 확대",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79880",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 10:39:22+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[동아제약] 근육이완제 ‘스카풀라’ 20정 출시",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47187",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 10:20:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "BIX 2026, 28일 개막…우주 바이오제약·기업 성장 전략 조명",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29022",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 09:51:22+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "뉴로핏, ‘바이오스펙트럼 아시아 엑셀런스 어워즈 2026’ 2개 부문 수상",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29012",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 09:28:54+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "뉴로핏 &quot;바이오스펙트럼 아시아 어워즈 2개 부문 수상&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79875",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 09:19:20+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "오가노이드사이언스, 베트남 HUS와 바이오 연구·인재양성 협력",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79869",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 08:12:37+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "루닛, SITC 2026서 AI 기반 바이오마커 분석 연구 2편 발표",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29000",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14 08:07:14+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "의약품 효과 확인에 평균 5.2년…검증 기다리는 사이 처방은 계속",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47559",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 06:08:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "비만치료제 처방 급증하는데…병용 경고도, 영유아 사후점검 기준도 공백",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47558",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14 06:04:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "파트너링 넘치는데… &quot;K바이오 협력 방식 고민할 때 아닌가&quot;",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79844",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 06:02:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "[경력채용] 유한양행, 대웅제약, 한국바이오켐제약, 풍림무약",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79843",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14 06:01:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "강원 3대 성장엔진에 5000억 실탄 투입 … &#39;바이오·반도체·청정자원&#39; 집중 투자 ",
+      "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/14/2026101400261.html",
+      "source_name": "뉴데일리",
+      "published_at": "2026-10-14 05:57:57+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "동국제약, 애경산업에 ‘마데카’ 상표권 분쟁 연승 … 2심도 “무단 사용 침해 맞다”",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351317",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-14 00:55:46+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "국가필수의약품 공급 차질 2.8배…보고받고도 “조치 불필요”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47556",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 20:47:55+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "10대 의약품 중독 진료 34.5% 증가…지난해 20대 넘어섰다",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47552",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 18:47:42+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "필수의약품 지정했지만 공급 차질…“기업 수익성에만 맡길 일 아니다”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47540",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 16:15:28+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "효과 검증 늦어지는 의약품…“재평가 기한 연장 폐지해야”",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47536",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-13 15:35:12+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    },
+    {
+      "title": "임시완&middot;설인아 '나의 유죄인간', \"월요병 치료제처럼 쉴 수 있는 작품\"",
+      "source": "https://www.newspim.com/news/view/20261014001038",
+      "source_name": "뉴스핌",
+      "published_at": "2026-10-13 15:00:00+00",
+      "tag": "수집 후보 · 미검증",
+      "summary": "수집 후보입니다. 원문 확인 및 기사 가치 판단이 필요합니다.",
+      "verification_status": "candidate",
+      "selection_status": "unreviewed"
+    }
+  ]
+}
