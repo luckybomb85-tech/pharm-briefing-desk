@@ -95,6 +95,28 @@ try{
   return {active,preview,deepPreview,quickRefreshChanged,deepRefreshChanged,titleDistinct:initialTitle!==document.querySelector('.card:first-child .title')?.textContent?.replace('⌄','').trim(),quickOpened:quick.startsWith('https://chatgpt.com/?q='),deepOpened:deep.startsWith('https://chatgpt.com/?q='),quickPrompt:q.includes('[바로 기사화]'),deepPrompt:d.includes('[심층 기사화]'),sourceIncluded:q.includes('https://')};
  })()`);
  if(!writing.active||!writing.quickRefreshChanged||!writing.deepRefreshChanged||!writing.titleDistinct||!writing.quickOpened||!writing.deepOpened||!writing.quickPrompt||!writing.deepPrompt||!writing.sourceIncluded)fail('Article actions failed: '+JSON.stringify(writing));
+ await cdp('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+ const mobile=await evaluate(`(()=>{
+   const w=document.querySelector('#writer-0'),box=w?.querySelector('.previewBox');
+   const header=w?.querySelector('.previewHead'),tools=w?.querySelector('.previewControls');
+   const deep=w?.querySelector('.previewAngle');
+   const title=w?.querySelector('.previewTitleRow strong');
+   const lead=w?.querySelector('.previewLead');
+   const btn=w?.querySelector('.draftBtn');
+   const bounds=box?.getBoundingClientRect();
+   const actions=tools?.getBoundingClientRect();
+   return {width:window.innerWidth,boxWidth:bounds?.width||0,
+     noCardOverflow:!!bounds&&bounds.right<=window.innerWidth+2,
+     horizontalHeader:getComputedStyle(header).display==='flex',
+     buttonInHeader:!!btn&&header.contains(btn),
+     buttonsFit:!!actions&&actions.right<=bounds.right+1,
+     titleWrap:getComputedStyle(title).overflowWrap,
+     leadClamp:getComputedStyle(lead).webkitLineClamp,
+     deepAngle:!!deep,deepDirection:!!deep?.querySelector('.previewDirection')
+   };
+ })()`);
+ if(!mobile.noCardOverflow||!mobile.horizontalHeader||!mobile.buttonInHeader||!mobile.buttonsFit||!mobile.deepAngle||!mobile.deepDirection)fail('Compact mobile article-writing layout failed: '+JSON.stringify(mobile));
+ console.log('MOBILE_COMPACT_ARTICLE_CARD_OK',JSON.stringify(mobile));
  console.log('INTERACTION_BROWSER_OK:',JSON.stringify({cards:n,summary:detail,writing:{
   active:writing.active,quickOpened:writing.quickOpened,deepOpened:writing.deepOpened,
   quickPrompt:writing.quickPrompt,deepPrompt:writing.deepPrompt,sourceIncluded:writing.sourceIncluded,quickRefreshChanged:writing.quickRefreshChanged,deepRefreshChanged:writing.deepRefreshChanged
