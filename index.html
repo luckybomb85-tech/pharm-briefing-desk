@@ -125,7 +125,7 @@ async function loadV2Feed(date){
       ai_draft:x.ai_draft||null,verification_status:x.verification_status||'candidate',
       is_v2_candidate:true
     })),globalItems:(data.global||[]).filter(x=>x&&x.title&&/^https?:\/\//i.test(x.url||'')).map(x=>({
-      title:x.title,original_title:x.original_title,source_name:x.source_name||'해외 언론',source:x.url,
+      title:String(x.title).replace(/^\(제목 기준·원문 미검증\)\s*/,''),original_title:x.original_title,source_name:x.source_name||'해외 언론',source:x.url,
       published_at:x.published_at||'',tag:x.tag||'글로벌',summary:x.summary||'',article_preview:x.article_preview||null,
       verification_status:x.verification_status||'headline_only',selection_status:x.selection_status||'selected',is_v2_global:true
     })),error:null};
@@ -229,9 +229,10 @@ function previewVariants(x,mode){
 function previewTitles(x,mode){return previewVariants(x,mode).map(v=>v.title)}
 
 function summaryText(x){
- const s=String(x.summary||'').trim();
+ const s=(tab==='global'?String(x.summary||'').replace(/^\(제목 기준·원문 미검증\)\s*/,''):String(x.summary||'')).trim();
  const placeholder=!s||/^(해외 기사 제목을 자동 번역한 취재 후보|매체 원문 주소와 발행시각을 확인한 취재 후보|검증된 본문 요약이 아직 없)/.test(s);
  if(!placeholder)return s;
+ if(tab==='global')return '추가 확인할 해외 의약품 소식입니다.';
  const headline=String(x.original_title||x.title||'').replace(/\s+-\s+[^-]+$/,'').trim();
  const source=sourceLabel(x);
  return '제목 기준 개요(원문 미검증): '+headline+' / 출처: '+source+'. 임상 수치와 주요 사실은 원문 확인이 필요합니다.';
