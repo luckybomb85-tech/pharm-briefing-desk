@@ -8,114 +8,641 @@
   "test_run": false,
   "domestic": [
     {
+      "title": "리가켐바이오 CLDN18.2 ADC, 글로벌 1/2상 첫 환자 투여 - 한국경제",
+      "summary": "(제목 기준·원문 미검증) 리가켐바이오는 CLDN18.2를 표적하는 항체-약물접합체(ADC) 신약의 글로벌 임상 1/2상 시험에서 첫 환자 투여를 시작했다.",
+      "source": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8xV3dkX2d3LWJjdUJiemNZWk54T0oyb0t6MDUxbFRUenhteVZiTFpGS1l4SFZQQjN2N3NYZjl6dk9GQjhwWlRGX3dCTllRNTJidVR0UEh1WC1Bdw?oc=5",
+      "source_name": "한국경제",
+      "published_at": "2026-10-15T23:23:33.000Z",
+      "tag": "additional",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "유한양행, 폐암 신약 로열티 '쑥'…알레르기 치료제 기술이전 주목 - 마켓인",
+      "summary": "(제목 기준·원문 미검증) 유한양행은 폐암 신약 관련 로열티 수익이 증가하는 가운데 알레르기 치료제 기술이전에 대한 관심이 커지고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8tWmNxTTlpaVNDNGdPaEk5amhnTF8xVXV3cVU1aW9wV3pnRmtuTFFJc2NEUlQ3OHpFYjFXWEVzcHkyQ1VIdG9CVFk0TFlsS3h6QVh4SjdNek9VTU45T2Y1NDQyNmJxVVlBSjRTcHVJOElrcTQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-15T23:00:25.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
       "title": "첫 ACL 억제제 ‘넥스레톨’ 국내 허가…스타틴 치료 한계 보완",
       "summary": "한국다이이찌산쿄의 경구용 ACL 억제제 넥스레톨(벰페도익산)이 10월 14일 국내 허가를 받았다. 스타틴 불내성 또는 LDL-C 조절이 충분하지 않은 환자에게 새 선택지가 생겼으며, CLEAR Outcomes 연구에서는 주요 심혈관사건 위험이 위약 대비 13% 낮았다. 국내 출시는 2027년 상반기 예정이다.",
       "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47600",
       "source_name": "뉴스더보이스",
-      "published_at": "2026-10-15T22:56:04+00:00",
+      "published_at": "2026-10-15T22:56:04.000Z",
       "tag": "major",
       "verification_status": "verified",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "ACL 억제제 넥스레톨이 국내 허가를 받으며 스타틴 및 기타 지질저하제와 경쟁을 본격화할 전망이다. 향후 시장 점유율과 환자 반응을 집중 분석할 예정이다.",
+            "title": "ACL 억제제 넥스레톨과 기존 지질저하제 시장 경쟁 구도",
+            "direction": "국내외 경쟁 약물과 시장 동향, 점유율 변화 분석; 확인 필요"
+          },
+          {
+            "lead": "국내 첫 ACL 억제제 허가로 고지혈증 치료 전략에 새로운 장이 열렸다. 특히 스타틴 불내성 환자 치료에 미치는 영향과 의학계 반응을 심층 취재한다.",
+            "title": "넥스레톨 허가 후 국내 지질저하 치료 패러다임 변화 가능성",
+            "direction": "스타틴 한계, 환자 치료 행태 변화 및 의료계 반응 취재"
+          },
+          {
+            "lead": "넥스레톨이 국내 허가된 것은 심혈관질환 관련 규제와 허가 정책 변화를 시사한다. 유사 신약에 대한 규제 절차 및 향후 국내 허가 전략에 대해 분석한다.",
+            "title": "ACL 억제제 허가로 본 국내 심혈관질환 규제 현황과 전망",
+            "direction": "규제 정책 변화 및 허가 프로세스 심층 분석, 업계 영향 평가"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "한국다이이찌산쿄의 경구용 ACL 억제제 넥스레톨이 10월 14일 국내 허가를 받았다. 스타틴 치료에 한계가 있거나 LDL-C 수치가 부족한 환자들에게 새로운 치료 대안으로 기대된다.",
+            "title": "한국다이이찌산쿄 넥스레톨 국산 허가 획득"
+          },
+          {
+            "lead": "벰페도익산 성분의 경구용 ACL 억제제 넥스레톨이 국내 허가 승인을 받으며 새로운 지질저하 치료제가 등장했다. 주요 심혈관사건 위험을 기존 치료 대비 낮춘 CLEAR Outcomes 임상 결과도 주목된다.",
+            "title": "넥스레톨, 국내서 첫 ACL 억제제 허가 완료"
+          },
+          {
+            "lead": "국내에서 첫 ACL 억제제로 넥스레톨이 공식 허가되어 스타틴 불내성 환자 등에게 희소식이 전해졌다. 임상시험 결과 주요 심혈관사건 위험 감소 가능성이 확인돼 치료 선택의 폭이 넓어졌다.",
+            "title": "스타틴 한계 극복할 ‘넥스레톨’ 국내 출시 전망"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:21.030Z"
+      }
     },
     {
-      "title": "기등재 약가 재평가 자료제출 임박… 제약사들 '차수 조정' 채비",
-      "summary": "기등재 의약품 상한금액 재평가 자료 제출기한이 10월 말로 다가왔다. 과거 약가가 크게 인하된 동일제제는 신청을 통해 1차에서 2차 재평가로 이동할 여지가 있으며, 약 16% 기준은 설명회 구두 언급으로 확정된 공고 기준은 아니다. 1차 약가 조정은 2027년 4월부터 예정돼 있다.",
-      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79900",
+      "title": "제약사 비주력 제조업 정리…수익성 중심 사업재편",
+      "summary": "국내 제약사들이 수익성이 낮은 비주력 제조사업을 정리하는 흐름을 다룬 보도다. 실제 정리 대상 사업과 대상 기업, 투자 및 생산 전략 변화는 원문 확인이 필요하다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1uU0dTQ0FrVnNXMjF2b1Ezb2hvNFRSVGk3WW43MnZvejlORE4wa3dnb0t0V0N1LVZycDZ6RDI0dVpUb1k0QV9aTFNjZVVjRy13SEHSAVNBVV95cUxQalcxRE1wTTBDUE92Y3liQVpMNkkyNTlQRjcyWWJ0WE1pRVhGT3JVQjJwcnFXMzEzMjNGQXhpckZHU1ZkSEU2LU45NHNiSjdySFRfVQ?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-10-15T22:00:03.000Z",
+      "tag": "additional",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "차바이오텍 지분 전량 담보…차원태 승계 핵심축 주목",
+      "summary": "팜이데일리가 차원태 승계 구도의 주요 법인인 KH그린이 보유한 차바이오텍 지분 전량의 담보 설정 문제를 분석했다. 지배구조와 담보 계약의 구체적 영향은 유료 원문 및 공시를 통한 추가 확인이 필요하다.",
+      "source": "https://pharm.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02309126645613576",
+      "source_name": "이데일리",
+      "published_at": "2026-10-15T21:30:03.000Z",
+      "tag": "additional",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "큐리언트, 론자 ADC 플랫폼에 모카시클립 공급",
+      "summary": "큐리언트가 글로벌 CDMO 론자와 CDK7 저해제 모카시클립(Q901)을 이중 페이로드 ADC 플랫폼에 활용하는 독점 라이선스 계약을 맺었다. 모카시클립을 적용한 ADC의 추가 고객사 확보와 임상 개발, 계약 수익 실현 시점이 관건이다.",
+      "source": "https://biz.chosun.com/science-chosun/bio/2026/10/16/ITB3TXHN4BD25LZ5TPWPVU54BQ/",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-15T21:00:00.000Z",
+      "tag": "additional",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "중증 2형당뇨병 관리기기 \"판정 기준 개선·요양급여 전환 필요\"",
+      "summary": "12월부터 중증 2형당뇨병 환자 대상 연속혈당측정기(CGM)와 인슐린자동주입기 지원 확대가 예정된 가운데, 환자의 실제 중증도를 반영한 판정 기준 개선과 요양급여 전환의 필요성이 제기됐다. 전문가들은 C-펩타이드 수치와 인슐린 사용 여부, 혈당 목표 범위(TIR), 저혈당 이력 등을 종합 반영하는 평가체계 도입 및 사용 교육·재택 모니터링 수가 신설을 제안했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79912",
       "source_name": "히트뉴스",
-      "published_at": "2026-10-15T06:03:00+00:00",
+      "published_at": "2026-10-15T14:32:27.000Z",
       "tag": "major",
       "verification_status": "verified",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": null
+    },
+    {
+      "title": "국민바이오-한국비엔씨, 근감소증 포스트바이오틱스 신약물질 공동개발",
+      "summary": "한국비엔씨와 국민바이오는 포스트바이오틱스 기반 근감소증 후보물질 'KL-001'과 근감소성 비만 후보물질 'KMBR-001'의 공동 연구개발 및 상업화 계약을 체결했다. KL-001은 운동과 함께 근력 개선 효과가 인체 연구를 통해 확인됐으며, 두 회사는 치료효과와 안전성을 검증하고 체지방 감소 및 근육 보존 가능성을 연구할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79918",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-15T12:55:31.000Z",
+      "tag": "major",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "한국다이이찌산쿄, 최초 ACL 억제제 ‘넥스레톨’ 식품의약품안전처 허가 획득",
+      "summary": "한국다이이찌산쿄의 이상지질혈증 치료제 ‘넥스레톨(성분 벰페도익산)’이 식품의약품안전처로부터 품목허가를 받았다. 넥스레톨은 ACL 억제제로 LDL-콜레스테롤 수치를 낮추는 최초의 경구용 지질강하제로서 4건의 임상3상과 CLEAR Outcomes 연구 결과를 기반으로 허가됐다. 특히 스타틴 불내성 환자 및 고위험 심혈관질환 환자에게 새로운 치료 옵션으로 기대된다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29075",
+      "source_name": "더바이오",
+      "published_at": "2026-10-15T12:36:10.000Z",
+      "tag": "major",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "식약처, 항섬유화·항염증 신약 ‘자스케이드’ 국내 도입 승인 - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 식품의약품안전처는 특발성 폐섬유증 치료제인 항섬유화·항염증 신약 ‘자스케이드’의 국내 도입을 승인했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5uUTBCVEZSaDF1V29zSXFIMlVFRDgwYzB2ZHpvSGhXQ0F0Sjh6cEtGbGl0THl5eElIdENIRFdHLU5qOXBKX3RaSXZDMjF6Yjctc3dN0gFTQVVfeXFMTm5RMEJURlJoMXVXb3NJcUgyVUVEODBjMHZkem9IaFdDQXRKOHpwS0ZsaXRMeXl4SUh0Q0hEV0ctTmo5cEpfdFpJdkMyMXpiNy1zd00?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-10-15T10:04:13.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
     },
     {
       "title": "지씨셀 美 관계사 아티바, 미국류마티스학회서 ‘AB-101’ 임상 데이터 발표",
       "summary": "(제목 기준·원문 미검증) 지씨셀 미국 관계사 아티바가 미국류마티스학회에서 AB-101의 임상 데이터를 발표한다는 소식이다. 구체적인 시험 대상과 효능·안전성 결과에 따라 치료제 개발의 의미를 평가할 수 있다.",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=29055",
       "source_name": "더바이오",
-      "published_at": "2026-10-15T09:39:26+00:00",
+      "published_at": "2026-10-15T09:39:26.000Z",
       "tag": "major",
       "verification_status": "candidate",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "미국류마티스학회에서 공개될 AB-101 임상 데이터는 류마티스 치료제 시장 내 경쟁 상황과 개발의 발전 단계를 가늠하는 중요한 자료가 될 것이다. 이번 발표가 기존 치료제 대비 AB-101의 차별점과 유망성을 어떻게 드러낼지 주목된다.",
+            "title": "류마티스 치료제 경쟁 속 AB-101 개발 현황 조명",
+            "direction": "AB-101 외 경쟁약물 및 시장 점유율 현황 분석, 개발 이력 및 임상 결과 비교 확인 필요"
+          },
+          {
+            "lead": "지씨셀 관계사 아티바의 AB-101 임상 결과 공개가 글로벌 류마티스 치료제 시장과 국내 바이오 산업에 미치는 영향을 심층 분석한다. 특히 임상 성공 시 기술 이전과 협력 가능성에 대해 업계 반응을 조사한다.",
+            "title": "아티바 임상 발표가 미칠 제약 업계 파장 분석",
+            "direction": "기술 이전 계약 현황, 시장 반응 및 바이오 산업 영향 심층 취재 필요"
+          },
+          {
+            "lead": "AB-101의 임상 데이터 발표는 향후 규제 승인 절차와 상업화 전략에 중요한 시사점을 제공할 것으로 보인다. 관련 법규 및 승인 과정의 쟁점과 예상 일정을 중심으로 심도 있는 검토가 필요하다.",
+            "title": "AB-101 임상 결과에 따른 규제 전략과 향후 전망",
+            "direction": "승인 절차, 규제 기관 대응 전략 및 예상 일정에 대한 추가 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "지씨셀 미국 자회사 아티바가 미국류마티스학회에서 AB-101의 임상 데이터를 발표한다. 이번 발표로 임상 효능과 안전성에 대한 구체적 평가가 이뤄질 전망이다.",
+            "title": "지씨셀 美 자회사 아티바, AB-101 임상결과 공개"
+          },
+          {
+            "lead": "지씨셀의 미국 관계사 아티바가 AB-101 임상시험 결과를 미국류마티스학회에서 공개한다. 해당 발표가 치료제 개발 진전에 중요한 분기점이 될 것으로 기대된다.",
+            "title": "美류마티스학회서 AB-101 임상 데이터 첫 공개"
+          },
+          {
+            "lead": "미국 자회사 아티바가 AB-101 임상 데이터를 미국류마티스학회에서 공개한다. 이번 임상 결과가 앞으로 치료제 개발 방향에 결정적 영향을 미칠 것으로 보인다.",
+            "title": "지씨셀 아티바, 美서 AB-101 임상 성과 발표 예정"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:10.387Z"
+      }
+    },
+    {
+      "title": "[단독]노동부 “삼성바이오 주주라는 이유로 삼성전자와 교섭 못해” - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 노동부는 삼성바이오 주주 신분으로 인해 삼성전자와 교섭이 불가능하다는 입장을 공식적으로 밝혔다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1kR05HVkE0Vng5WnF6N1VYN3N2cmlaelk1OE82TklmaU05Y1k3RzVHQl9QeHdpaTNWZFVhSlVlZ0ZqTXZBOWxwWmFCal8wdFlpaGfSAVNBVV95cUxPSWdmR29YRjRncjg3dkRJZHNacWhQZlJwemo0dkJ4aWxVdTNkVVYxUWVwOVoyaExxU3dicmxPTmxoUUhxdVl4cUd3aTVTTVhJYjM4QQ?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-10-15T09:25:28.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
     },
     {
       "title": "의약품 허가서류, 한 번 내면 재사용…전자 제출 기능 개선",
       "summary": "식약처가 의약품 허가 신청에 쓰는 최신 전자공통기술문서 eCTD v4.0 서비스를 개시했다. 제출자료 재사용 등 절차 효율화가 핵심으로, 제약사 RA 실무의 제출 부담과 시스템 전환 준비를 확인할 필요가 있다.",
       "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47580",
       "source_name": "뉴스더보이스",
-      "published_at": "2026-10-15T09:03:53+00:00",
+      "published_at": "2026-10-15T09:03:53.000Z",
       "tag": "major",
       "verification_status": "verified",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "식약처의 전자공통기술문서 eCTD v4.0 도입으로 제약사의 RA(규제 대응) 업무가 어떻게 변할지 업계의 관심이 집중되고 있다. 제도 변화에 따른 실무 준비 상황과 과제, 향후 규제 환경 변화를 심층 취재한다.",
+            "title": "eCTD 도입이 제약사 RA 업무에 미칠 영향 분석",
+            "direction": "제약사 내부 실무 부담 및 대응 전략 취재, RA팀 관계자 인터뷰 중심, 향후 제도 확장방안 확인 필요"
+          },
+          {
+            "lead": "의약품 허가서류의 전자 제출 시스템 eCTD v4.0 도입이 국내 시장에 미칠 경제적 파급 효과가 주목된다. 제출 절차 효율화가 허가 기간 단축과 신약 출시 가속에 미치는 영향과 시장 성장 가능성을 분석한다.",
+            "title": "전자 제출 시스템과 국내 의약품 허가 시장 규모 전망",
+            "direction": "허가 소요 시간 데이터, 시장 규모 통계 수집 및 경제 전문가 의견 취재, 관련 법규 최신 동향 파악 필요"
+          },
+          {
+            "lead": "세계 주요 의약품 허가국에서 전자공통기술문서(eCTD) 제출이 표준화되고 있는 가운데 국내 도입이 제약사의 글로벌 경쟁력 제고에 미치는 영향을 진단한다. 국내외 허가 규제 비교와 경쟁약물 개발 동향이 주요 이슈다.",
+            "title": "국내 eCTD 도입, 글로벌 의약품 허가 경쟁력 강화를 위한 발판?",
+            "direction": "글로벌 eCTD 채택 현황 및 국제 비교, 경쟁 약물 관련 승인 사례 조사, 업계 의견 수렴 및 향후 정책 방향 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "식약처가 신형 전자공통기술문서 eCTD v4.0 서비스를 도입해 의약품 허가 서류 제출방식을 개선했다. 이로 인해 한 번 낸 허가 자료를 재활용할 수 있어 제약사 실무 부담이 줄어들 전망이다.",
+            "title": "식약처, 의약품 전자허가 서류 제출 절차 간소화"
+          },
+          {
+            "lead": "최근 식약처는 eCTD v4.0 전자 제출 시스템을 시작하며 의약품 허가서류 제출 프로세스를 혁신했다. 제출자료를 재사용하는 기능이 추가되어 제약업계의 개발·허가 절차가 간편해진다.",
+            "title": "의약품 허가 신청, 전자서류로 효율성↑"
+          },
+          {
+            "lead": "식약처가 전자공통기술문서 버전 4.0을 도입해 허가 신청서 제출을 전자화했다. 이를 통해 제약사의 허가 관련 서류 재사용이 가능해져 행정 효율성을 대폭 개선했다.",
+            "title": "식약처, 의약품 제출서류 전자화로 업무 간소화"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:31.023Z"
+      }
     },
     {
       "title": "압타바이오, 아이수지낙시브 글로벌 임상 2상 안전성 확인",
       "summary": "압타바이오가 조영제 유발 급성신손상 치료 후보 아이수지낙시브의 한미 글로벌 2상에서 1차 안전성 지표를 충족했다고 밝혔다. 핵심 유효성 결과는 10월 23일 발표 예정으로, 이번 안전성 결과만으로 치료효과가 입증됐다고 볼 수 없다.",
       "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79909",
       "source_name": "히트뉴스",
-      "published_at": "2026-10-15T09:00:26+00:00",
+      "published_at": "2026-10-15T09:00:26.000Z",
       "tag": "major",
       "verification_status": "verified",
       "selection_status": "selected",
-      "original_title": null
-    },
-    {
-      "title": "지놈앤컴퍼니 “‘GEN-001’ 종양 축소 관찰…위암 병용임상 가능성↑”",
-      "summary": "지놈앤컴퍼니가 마이크로바이옴 후보 GEN-001의 위암 병용 임상에서 종양 축소 사례를 관찰했다고 발표했다. 반응 환자 수, 평가 기준, 비교군과 추적기간 등 근거 확인 전에는 유효성 확정 표현을 피해야 한다.",
-      "source": "https://www.thebionews.net/news/articleView.html?idxno=29048",
-      "source_name": "더바이오",
-      "published_at": "2026-10-15T05:50:00+00:00",
-      "tag": "major",
-      "verification_status": "candidate",
-      "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "압타바이오의 아이수지낙시브가 글로벌 임상 2상 안전성 데이터를 확보하며 급성신손상 치료제 시장에서의 입지를 다지고 있다. 이 후보물질이 기존 치료제와 비교해 어떤 차별점을 가질지 업계의 이목이 집중된다.",
+            "title": "아이수지낙시브, 급성신손상 치료 혁신성 전망과 시장 영향",
+            "direction": "경쟁약물과 기존 치료법 대비 우월성 및 전략적 시장 진출 방향 확인 필요"
+          },
+          {
+            "lead": "조영제 유발 급성신손상 치료 후보 아이수지낙시브가 글로벌 임상 2상에서 안전성 기준을 충족하면서 신약 승인 절차에 한 걸음 다가섰다. 향후 규제 당국 심사와 임상 3상 계획 등 개발 로드맵이 집중 검토되고 있다.",
+            "title": "임상 2상 안전성 확인, 아이수지낙시브 개발 현황과 규제 절차",
+            "direction": "향후 임상 개발 단계 및 국내외 규제 환경 변화와 관련해 확인 필요"
+          },
+          {
+            "lead": "글로벌 임상 2상에서 안전성 지표를 충족한 아이수지낙시브가 신약 개발 경쟁 속에서 관심을 모으고 있다. 투자자 및 경쟁사의 시각과 이번 결과에 따른 파장은 업계 전반에 중요한 영향을 줄 전망이다.",
+            "title": "압타바이오 아이수지낙시브, 임상 안전성 확보 후 업계 반응은?",
+            "direction": "업계 반응과 경쟁사 동향 및 임상 결과에 따른 투자자의 평가 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "압타바이오는 조영제 유발 급성신손상 치료제 아이수지낙시브가 글로벌 임상 2상에서 1차 안전성 지표를 충족했다고 발표했다. 다만 핵심 유효성 결과는 오는 10월 23일에 공개될 예정이다.",
+            "title": "압타바이오, 글로벌 2상서 아이수지낙시브 안전성 확보"
+          },
+          {
+            "lead": "압타바이오가 개발 중인 조영제 급성신손상 치료제 아이수지낙시브가 글로벌 2상 시험에서 1차 안전성 평가 기준을 만족했다. 치료 효과 여부는 아직 판단하기 어려우며 유효성 데이터는 곧 발표된다.",
+            "title": "아이수지낙시브, 2상 임상서 안전성 확인 완료"
+          },
+          {
+            "lead": "조영제 관련 급성신손상 치료 후보물질 아이수지낙시브가 한미 글로벌 임상 2상에서 안전성 평가를 통과했다. 치료 효과에 대한 핵심 결과는 10월 말 발표될 계획이다.",
+            "title": "압타바이오, 임상 2상서 아이수지낙시브 안전성 입증"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:26.293Z"
+      }
     },
     {
       "title": "대웅제약 이상지질혈증 복합제 3종 맞대결…어떤 약이 오래 버틸까",
       "summary": "(제목 기준·원문 미검증) 대웅제약의 이상지질혈증 복합제 3종을 비교하며 경쟁 구도와 시장 지속 가능성을 분석한 기사다. 각 제품의 성분 구성과 차별화 요소, 약가 및 판매 전략에 후속 분석 가치가 있다.",
       "source": "https://www.hkn24.com/news/articleView.html?idxno=351331",
       "source_name": "헬스코리아뉴스",
-      "published_at": "2026-10-15T08:38:53+00:00",
+      "published_at": "2026-10-15T08:38:53.000Z",
       "tag": "additional",
       "verification_status": "candidate",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "대웅제약 이상지질혈증 복합제 3종이 선점한 시장에 타사 경쟁약물이 잇따라 출시되며 변화가 예상된다. 전체 이상지질혈증 치료제 시장과 경쟁제품 동향을 집중 분석한다.",
+            "title": "이상지질혈증 복합제, 경쟁약물 등장과 시장 영향은",
+            "direction": "경쟁약물 현황 및 시장 영향력 변화, 시장 점유율 데이터 확인 필요"
+          },
+          {
+            "lead": "국내 출시된 대웅제약 이상지질혈증 복합제들이 글로벌 시장에서 갖는 성장 잠재력과 시장 규모가 점차 부각되고 있다. 국제 규제 환경과 해외 진출 사례를 상세히 살펴본다.",
+            "title": "대웅제약 이상지질혈증제, 글로벌 시장 규모와 전망",
+            "direction": "글로벌 시장 현황 및 수출 현황, 국제 규제 움직임 확인 필요"
+          },
+          {
+            "lead": "대웅제약의 이상지질혈증 복합제가 약가, 허가 규제와 맞닿아 관련 법적·산업적 파장이 커지고 있다. 정책 변화가 제약사 전략에 미친 영향을 집중 취재한다.",
+            "title": "대웅제약 복합제 경쟁, 규제 및 제약업계 파장 분석",
+            "direction": "규제 기관 반응, 약가 정책 변화 영향 등 관련 자료 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "대웅제약이 출시한 이상지질혈증 복합제 3종의 특징과 시장 경쟁력이 주목받고 있다. 각 제품별 성분과 판매 전략을 면밀히 비교하며 향후 시장 지속 가능성을 점검했다.",
+            "title": "대웅제약 이상지질혈증 복합제 3종 경쟁 분석"
+          },
+          {
+            "lead": "대웅제약의 이상지질혈증 치료용 복합제 3종에 대해 주요 성분과 차별점이 분석되었다. 해당 제품들의 시장 경쟁력과 가격 정책에도 관심이 모아진다.",
+            "title": "이상지질혈증 복합제, 대웅제약 3제품 비교"
+          },
+          {
+            "lead": "대웅제약의 3가지 이상지질혈증 복합제가 서로 다른 구성으로 시장에 도전장을 내민다. 각 제품의 특색과 영업 전략 분석을 통한 경쟁력 평가가 이어지고 있다.",
+            "title": "대웅제약 이상지질혈증 복합제 시장 경쟁 구도 진단"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:11.113Z"
+      }
+    },
+    {
+      "title": "식약처, 의약품 허가자료 제출 위한 ‘eCTD v4.0’ 서비스 개시",
+      "summary": "식품의약품안전처가 의약품 품목허가 신청 자료 전자 제출에 최신 국제 표준인 전자공통기술문서(eCTD) v4.0 서비스를 15일부터 운영하기 시작했다. v4.0은 문서 재사용 기능 도입으로 중복 제출을 줄이고 행정 부담을 완화하며, 문서 교체 및 목차 변경 기능이 향상돼 심사 효율성을 높인다. 단계적으로 기존 버전과 병행 운영하며 전환할 예정이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29054",
+      "source_name": "더바이오",
+      "published_at": "2026-10-15T08:21:07.000Z",
+      "tag": "major",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "식약처, 의약품 전자허가 문서 eCTD v4.0 도입",
+      "summary": "식약처가 최신 국제 표준을 적용한 의약품 허가 신청 전자문서 시스템 eCTD v4.0을 도입해 문서와 데이터 관리 효율성을 높였다. 산업계 편의성을 고려한 문서 재사용 기능과 개선된 교체 기능, CTD 목차 변경 기능 등도 포함됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79907",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-15T08:19:24.000Z",
+      "tag": "major",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "“이번엔 정말 기대해도 좋다”…HLB, 간암 신약 4번째 도전 자신하는 이유 - 조선비즈 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) HLB는 간암 신약 후보물질에 대해 미국 FDA 승인 기대감 속에 네 번째 도전에 나서며 미국 상업화 본격화를 추진하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQVlZGMXctaElDek9HZDFzRmI3SXFzTXRURnc5WnRodEJ2bnFzY2R0cVpfSGd1WnFNZUN5dS1mcTVzZV9IMFZzRFRYY2JTZlctalJJeXRmUVpUeWJYU0VDc0ZESGQyMHNBM2prTEJfel9YeFdhcGdEc1pWUjg1TUlwWUZ5aEdqclnSAZsBQVVfeXFMTUQ4Z3BYbXdXOXlrLUFqZUJfNEp0UHdQU05aZk1xekJ3XzNHV1BhMlBkbnBQMWdtNm4yUkdlQ2R6S29YdzhmVzU0ajRBOWZ4T1N3WEQ0NmhtUkNOb1VHS1BGNHJRSHkzZUJPd2NtSzNmVXFiaGlLS3A3a1lDanpoQmtMUFB3Ri0wS2tPNTFFbWVMdERZaktZUktDQlE?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-15T08:05:00.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "현대해상, 꾸준히 안전운전하면 5% 추가 할인…핵심 기술 특허 취득 - 뉴스핌",
+      "summary": "(제목 기준·원문 미검증) 현대해상이 운전자 안전운전 점수를 기반으로 한 보험료 할인 시스템 관련 핵심 기술 특허를 취득했다.",
+      "source": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4yN2xKWFU4MFIzTWRyT2dnRUxEcElvRk45NXl5T0RrSkNObjVYU2dDMXhqVFlSS1BiYVBOdnpZOHZKWnR4cWgyU0JnQmRkLVhvV0NRRXdSeGEwcmZt?oc=5",
+      "source_name": "뉴스핌",
+      "published_at": "2026-10-15T07:52:00.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
     },
     {
       "title": "한의원·치과 비만치료제 처방 도마 … 의협 \"면허 범위 명확히 해야\"",
       "summary": "(제목 기준·원문 미검증) 한의원·치과의 비만치료제 처방 문제를 두고 의사단체가 면허 범위를 명확히 해야 한다고 주장했다는 보도다. 직역별 처방 권한과 의약품 안전관리 기준을 둘러싼 논의로 이어질 가능성이 있다.",
       "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/15/2026101500312.html",
       "source_name": "뉴데일리",
-      "published_at": "2026-10-15T07:43:58+00:00",
+      "published_at": "2026-10-15T07:43:58.000Z",
       "tag": "additional",
       "verification_status": "candidate",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "한의원과 치과의 비만치료제 처방 문제는 면허 범위를 넘어 의약품 안전관리에 대한 전반적 검토 필요성을 드러냈다. 관련 법규와 지침 체계의 강화 여부가 향후 업계 영향을 미칠 것으로 보인다.",
+            "title": "비만치료제 처방권 분쟁과 약품 안전관리 현황",
+            "direction": "비만치료제 관련 규제동향과 안전관리 체계 현황에 대한 심층 취재, 법적 대응 사례 확인 필요"
+          },
+          {
+            "lead": "비만치료제 처방을 둘러싼 한의원과 치과의 권한 논쟁은 시장 확대와 의약품 안전이라는 두 축에서 업계에 중대한 파장을 예고한다. 경쟁약물 현황과 처방 주체별 시장 점유율 변화를 함께 분석하는 것이 중요해졌다.",
+            "title": "비만치료제 시장서 한의원·치과 처방 허용 논란 확산",
+            "direction": "국내외 경쟁약물 및 시장 규모 비교, 처방 주체별 점유율 자료 수집 필요"
+          },
+          {
+            "lead": "의사단체가 한의원과 치과 비만치료제 처방에 면허 범위 명확화를 촉구하며 관련 법적 분쟁 가능성이 커지고 있다. 앞으로 법원 판례 및 규제 당국 대응이 업계 방향에 큰 영향을 미칠 전망이다.",
+            "title": "의협 면허 범위 요구와 비만치료제 처방 관련 법적 쟁점",
+            "direction": "관련 법원 판례 및 규제 기관 입장, 유사 분쟁 사례 취재 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "의사협회가 한의원과 치과의 비만치료제 처방 권한에 대해 면허 범위 명확화가 필요하다고 강조했다. 처방 권한 혼란이 의약품 안전 문제로 이어질 수 있다는 우려를 나타냈다.",
+            "title": "의사단체, 한의원·치과 비만약 처방 한계 요구"
+          },
+          {
+            "lead": "한의사와 치과의 비만치료제 처방 문제로 의협이 면허 경계를 분명히 할 것을 촉구하고 있다. 처방 권한과 안전관리 기준에 대한 사회적 논의가 예상된다.",
+            "title": "비만치료제 처방, 한의원·치과 권한 논란 재점화"
+          },
+          {
+            "lead": "한의원과 치과에서 비만치료제를 처방하는 상황에 대해 의사협회가 면허 범위 명확화 주장을 내놓았다. 처방 권한이 불명확해 의약품 안전에 문제를 초래할 수 있다는 지적이다.",
+            "title": "비만약 처방 범위 두고 의협-한의원·치과 충돌 조짐"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:16.206Z"
+      }
     },
     {
-      "title": "&quot;국내 계약이 글로벌 딜 막을 수도&quot;… 숨겨진 바이오텍 L/O 맹점",
+      "title": "예스티, 특허소송 불확실성 벗나...수익성장 시그널도[들쭉날쭉 상장事記] - 머니투데이 - 머니투데이",
+      "summary": "(제목 기준·원문 미검증) 예스티가 특허소송과 관련한 불확실성을 벗어나면서 수익성장 가능성이 높아지고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAtVkJVR2hLVmRGbUg5eVBCeGttblR5T3dJY3ZnOHNSbGxVOFgtSk1zcjFTNGhTU2hVMnpDdmRJbWI3RW5CVDQ4X09qZWduUXIwSkZtZ01zNHhfamZQZEFWbXAyVWRTbGVo0gFuQVVfeXFMT1FURVBkQ21WWE85RkVFZ1lLUlBkQTRLZTFMMVU3RU1Ba2swRmZzcUJqMlNDOEw4X0tISHRlV2Z5RWNjalQ5N2wwTjVoVDdWaVdIRTNKaTdtZW9vampKOU9WVXl3WE1VVWptcDZUdXc?oc=5",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-15T07:39:56.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "셀트리온, 유럽소화기학회서 램시마SC 임상 근거 소개 - 뉴스핌",
+      "summary": "(제목 기준·원문 미검증) 셀트리온은 유럽소화기학회에서 자가면역질환 치료제 램시마SC의 임상 근거를 소개하며 염증성 장질환(IBD) 치료제 시장 공략을 강화했다.",
+      "source": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1vM2hUeDJZUHdEeUk4aVZ2ZDlnM1dFbEVJX0I0eEFySnVtRkd6aGxiUEJENDNmX3dtYWxtcW9SMkNMV1JYb3NPTmR5WFJjbm1EcVAtRnFOWEZ2WE53?oc=5",
+      "source_name": "뉴스핌",
+      "published_at": "2026-10-15T06:33:00.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "\"국내 계약이 글로벌 딜 막을 수도\"… 숨겨진 바이오텍 L/O 맹점",
       "summary": "바이오텍이 국내 제약사와 공동개발·독점계약을 맺을 때 권리 범위와 지식재산권 배분이 후속 글로벌 기술수출에 제약이 될 수 있다는 전문가 경고가 나왔다. 계약금보다 지역·적응증별 권리 설정과 글로벌 협상 여지를 점검하는 기획 아이템으로 의미가 있다.",
       "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79903",
       "source_name": "히트뉴스",
-      "published_at": "2026-10-15T06:04:00+00:00",
+      "published_at": "2026-10-15T06:04:00.000Z",
       "tag": "additional",
       "verification_status": "verified",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "국내 독점 계약이 바이오텍 제품의 글로벌 경쟁력에 미치는 영향을 다각도로 분석할 필요가 있다. 국내 계약 조건이 해외 진출을 제한하는 요소로 작용하는 사례를 집중 취재한다.",
+            "title": "바이오텍 L/O 계약, 글로벌 시장 경쟁력과의 상관관계",
+            "direction": "국내 계약과 글로벌 협상 간의 상호 작용 및 경쟁약물과 비교, 사례 확인 필요"
+          },
+          {
+            "lead": "바이오텍과 국내 제약사의 공동개발 계약이 글로벌 기술수출 시장에서 차지하는 영향력을 조명한다. 지식재산권 배분 방식이 해외 투자 및 M&A에 끼치는 파급력을 심층 분석한다.",
+            "title": "국내 L/O 계약이 글로벌 기술수출 확장성에 미치는 영향",
+            "direction": "지식재산권 및 권리 범위 계약이 글로벌 딜 크기 및 전략에 미치는 영향 확인 필요"
+          },
+          {
+            "lead": "국내 제약사와의 공동개발 계약에서 발생하는 법률·규제 문제가 글로벌 L/O 계약에 어떤 제약 요소로 작용하는지 탐구한다. 국내외 법률 환경 변화가 바이오텍의 글로벌 성장 전략에 주는 영향에 주목한다.",
+            "title": "바이오텍 기술수출 계약, 국내법·규제가 미치는 제약",
+            "direction": "국내외 법적·규제 환경과 협상 구조 분석, 계약 관련 분쟁 사례 취재 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "바이오텍과 국내 제약사 간 독점계약이 이후 글로벌 기술 이전에 제약 요인으로 지적되고 있다. 권리 범위와 지식재산권 배분이 향후 협상 장애가 될 수 있다는 전문가 의견이 주목받는다.",
+            "title": "국내 공동개발 계약이 글로벌 수출 걸림돌 될까"
+          },
+          {
+            "lead": "바이오기업이 국내 제약사와 맺는 독점 공동개발 계약이 글로벌 기술수출을 제약할 가능성이 제기됐다. 계약 시 권리 범위 설정과 지식재산권 배분이 중요한 변수로 떠오르고 있다.",
+            "title": "국내 바이오 L/O 계약, 글로벌 딜에 영향 미친다"
+          },
+          {
+            "lead": "바이오텍과 제약사 간 계약이 향후 해외 기술이전에서 걸림돌 역할을 할 수 있다는 경고가 나왔다. 특히 권리 설정과 글로벌 협상의 여지를 꼼꼼히 점검해야 한다는 지적이다.",
+            "title": "국내 제약사 계약이 바이오텍 글로벌 딜 막을 수 있다"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:25.716Z"
+      }
+    },
+    {
+      "title": "기등재 약가 재평가 자료제출 임박… 제약사들 '차수 조정' 채비",
+      "summary": "기등재 의약품 상한금액 재평가 자료 제출기한이 10월 말로 다가왔다. 과거 약가가 크게 인하된 동일제제는 신청을 통해 1차에서 2차 재평가로 이동할 여지가 있으며, 약 16% 기준은 설명회 구두 언급으로 확정된 공고 기준은 아니다. 1차 약가 조정은 2027년 4월부터 예정돼 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79900",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-15T06:03:00.000Z",
+      "tag": "major",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "기등재 의약품의 약가 재평가가 다가오며 경쟁약물과의 가격 차별성이 평가에 미칠 영향에 관심이 쏠린다. 재평가 결과가 시장 내 경쟁구도에 어떠한 영향을 미칠지 집중 취재할 예정이다.",
+            "title": "약가 재평가, 경쟁약물 비교 영향은?",
+            "direction": "경쟁약물과 재평가 영향 분석, 확인 필요"
+          },
+          {
+            "lead": "기등재 의약품의 약가 재평가가 진행되면서 제약시장 전반에 미치는 영향과 향후 시장 규모 변화 전망에 주목한다. 재평가 결과에 따른 제약사들의 대응 전략 및 시장 변화를 심층 분석할 계획이다.",
+            "title": "기등재 약가 재평가와 향후 시장 규모 전망",
+            "direction": "시장규모 변화와 제약사 대응 전략 분석, 확인 필요"
+          },
+          {
+            "lead": "약가 재평가 과정에서 제시된 기준들이 공식화되지 않아 제약사들 사이에 법적 쟁점이 예상된다. 공고 기준 미확정 상태에서 발생할 수 있는 문제점을 법률적 시각으로 조명한다.",
+            "title": "약가 재평가 기준 논란과 법적 쟁점 점검",
+            "direction": "규제 기준 미확정에 따른 법적 쟁점과 업계 영향, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "기등재 의약품의 약가 재평가 자료 제출 마감이 10월 말로 다가오면서 제약사들이 재평가 차수 변경을 검토 중이다. 약가 조정은 내년 4월부터 시행될 예정이다.",
+            "title": "기등재 의약품 약가 재평가 제출 임박"
+          },
+          {
+            "lead": "10월 말 기등재 의약품의 약가 재평가 자료 제출 기한이 다가오며 제약사들은 1차에서 2차 재평가로 이동할 가능성을 타진하고 있다. 재평가는 2027년 4월부터 순차적으로 진행된다.",
+            "title": "재평가 자료 제출 마감, 제약사 차수 조정 주목"
+          },
+          {
+            "lead": "기등재 의약품에 대한 약가 재평가 자료 제출이 한 달여 앞으로 다가오며 제약사들 사이에서 차수 조정 준비가 활발하다. 공식 약가 조정 시행은 2027년 4월부터 시작될 예정이다.",
+            "title": "약가 재평가 자료 제출 임박…차수 변경 검토 활발"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:19.209Z"
+      }
     },
     {
       "title": "바이오엔테크·온코C4 ‘고티스토바트’, 폐암 3상서 OS 개선…18.5개월",
       "summary": "(제목 기준·원문 미검증) 바이오엔테크와 온코C4가 공동개발하는 고티스토바트가 폐암 3상에서 전체생존기간(OS) 개선 결과를 발표했다는 보도다. 기사에 제시된 18.5개월 수치의 대상군과 대조군 차이는 원문에서 확인해야 한다.",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=29050",
       "source_name": "더바이오",
-      "published_at": "2026-10-15T06:00:00+00:00",
+      "published_at": "2026-10-15T06:00:00.000Z",
       "tag": "additional",
       "verification_status": "candidate",
       "selection_status": "selected",
-      "original_title": null
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "바이오엔테크와 온코C4의 고티스토바트가 폐암 치료제 시장에서 3상 임상시험을 통해 전체 생존기간 개선 가능성을 제시했다. 국내외 주요 경쟁약물과 비교했을 때 이번 결과가 미칠 시장 영향과 향후 승인 전망을 중점 취재한다.",
+            "title": "폐암 치료 시장 선점 경쟁과 고티스토바트 임상 3상 평가",
+            "direction": "경쟁약물 및 시장 규모 현황과 비교, 승인 절차와 전망 등 자료 취합 필요"
+          },
+          {
+            "lead": "새 폐암 치료제 고티스토바트가 3상 임상에서 생존기간 연장 개선 결과를 발표한 가운데, 국내외 규제·승인 환경에 따른 상용화 시기와 전략을 심층 조명한다. 규제 동향과 법적 이슈가 치료제 시장 진입에 미치는 영향을 검토할 예정이다.",
+            "title": "고티스토바트 3상 결과와 폐암 치료 규제 환경 분석",
+            "direction": "국내외 규제기관 입장과 관련 법원 판례 등 심층 취재 필요"
+          },
+          {
+            "lead": "바이오엔테크·온코C4가 폐암 치료제로 개발 중인 고티스토바트가 임상 3상 결과로 전체 생존기간을 개선하며 혁신신약 후보로 떠올랐다. 업계 내 동일 적응증 치료제와 비교해 차별화 포인트와 향후 개발 전략을 분석한다.",
+            "title": "고티스토바트 폐암 적응증 승인 경쟁과 혁신 신약 기대",
+            "direction": "경쟁 후보약물 특성 및 임상 데이터 확인, 차별화 전략 취재 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "바이오엔테크와 온코C4가 공동개발한 폐암 치료제 고티스토바트가 3상 임상시험에서 전체생존기간 개선 효과를 확인했다. 발표에 따르면 두 그룹 간 생존기간 차이가 18.5개월에 이르는 것으로 나타났다.",
+            "title": "고티스토바트, 폐암 3상서 생존기간 개선 가시화"
+          },
+          {
+            "lead": "바이오엔테크와 온코C4의 고티스토바트가 폐암에 대한 임상 3상 시험에서 전체 생존 기간 증가를 보여 눈길을 끌었다. 임상 결과, 치료군과 비교군 간 평균 생존기간 차이는 18.5개월로 보고됐다.",
+            "title": "폐암 신약 고티스토바트, 3상 시험서 OS 향상 포착"
+          },
+          {
+            "lead": "바이오엔테크·온코C4가 공동개발한 폐암 치료제 고티스토바트가 3상 임상에서 대조군 대비 전체 생존기간에서 유의미한 개선을 달성했다. 치료군이 18.5개월 더 길게 생존한 것으로 나타나 긍정적 신호로 평가받는다.",
+            "title": "고티스토바트, 폐암 3상서 생존기간 18.5개월 늘려"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:11.589Z"
+      }
+    },
+    {
+      "title": "현대해상, '월별 안전운전점수 할인 특약' 특허 취득 - 머니투데이 - 머니투데이",
+      "summary": "(제목 기준·원문 미검증) 현대해상은 월별 안전운전 점수에 따른 보험료 할인 적용 특약에 대해 특허를 취득하여 핵심 기술의 독점권을 확보했다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBEODkzMjlHeGk0UHVOeklKUVBaX1RqaTZPV19rZWNNcWczcFlOZ2dIU2xOV2RwWE52T1kwZFBqRjdlSVI0VWxoWlU5YzFqMXc2cDRKdGJBcFhLQ3l6WXhfMi1WTWY2U05nUzJz0gFwQVVfeXFMT01TZVpENU1XeVptZFdjYTBFd2ptX1ZXSngtWE9Va0JUSlpaMV9MaG9iMTAtM013LU80dWFud1hNemNBbDlsOXhXN0JCbDRzLThael9oTUk1dU43OEZPYkw2bVNXcTI4U3Nnc2RZakxPVw?oc=5",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-15T05:52:25.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "지놈앤컴퍼니 “‘GEN-001’ 종양 축소 관찰…위암 병용임상 가능성↑”",
+      "summary": "지놈앤컴퍼니가 마이크로바이옴 후보 GEN-001의 위암 병용 임상에서 종양 축소 사례를 관찰했다고 발표했다. 반응 환자 수, 평가 기준, 비교군과 추적기간 등 근거 확인 전에는 유효성 확정 표현을 피해야 한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29048",
+      "source_name": "더바이오",
+      "published_at": "2026-10-15T05:50:00.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "마이크로바이옴을 이용한 위암 치료제 개발 경쟁이 치열해지고 있다. 지놈앤컴퍼니 GEN-001의 초기 임상 결과를 토대로 국내외 신약 개발 동향과 시장 규모를 검토한다.",
+            "title": "마이크로바이옴 신약 개발 경쟁 현황과 위암 시장 전망",
+            "direction": "경쟁약물 및 시장 규모 중심, 동종 치료제 및 해외 진출 현황 확인 필요"
+          },
+          {
+            "lead": "GEN-001의 위암 병용 임상에서 종양 축소가 관찰됐으나, 유효성 입증을 위한 평가 기준과 추적 기간 등이 중요한 변수로 떠오르고 있다. 임상 평가 방법론과 규제 당국의 승인 기준을 분석한다.",
+            "title": "위암 병용 임상에서 마이크로바이옴 치료제 효과 입증의 관건은?",
+            "direction": "임상평가 및 규제 기준 심층 취재, 비교 임상 설계 확인 필요"
+          },
+          {
+            "lead": "마이크로바이옴 기반 GEN-001의 위암 임상에서 종양 축소 사례가 공개되자 제약바이오 업계 내 기대감과 함께 신중한 관측도 나오고 있다. 관련 업계의 평가와 향후 개발 전략에 미치는 영향을 탐구한다.",
+            "title": "지놈앤컴퍼니 GEN-001 임상 결과, 제약업계 반응은?",
+            "direction": "업계 반응 및 기업 전략 변화 집중 취재, 경쟁사 동향과 비교 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "지놈앤컴퍼니는 마이크로바이옴 치료제 GEN-001의 위암 병용 임상에서 일부 환자 종양 축소 사례를 보고했다. 다만, 반응 환자 수와 평가 기준 등 구체적 근거가 추가 확인돼야 유효성을 확정할 수 있다.",
+            "title": "지놈앤컴퍼니, GEN-001 위암 병용 임상 종양 축소 확인"
+          },
+          {
+            "lead": "지놈앤컴퍼니가 항암제 병용 임상 중인 GEN-001에서 종양 크기 감소를 관찰했다고 발표했다. 하지만 명확한 효과 판단을 위해선 비교군 및 추적 기간 등 세부 데이터가 필요하다.",
+            "title": "GEN-001, 위암 병용 임상서 종양 감소 신호 포착"
+          },
+          {
+            "lead": "마이크로바이옴 신약 후보 GEN-001이 위암 병용 치료 임상에서 종양 축소 사례를 보이며 기대감을 높였다. 그러나 현재까지는 반응자 수 등 핵심 평가 기준 미비로 신중한 해석이 요구된다.",
+            "title": "지놈앤컴퍼니 “위암서 GEN-001 병용 임상 가능성 확인”"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:31.169Z"
+      }
     }
   ],
   "global": [
@@ -201,7 +728,7 @@
   "telegram": false,
   "publish_allowed": false,
   "selected_count": {
-    "domestic": 10,
+    "domestic": 27,
     "global": 7
   },
   "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
