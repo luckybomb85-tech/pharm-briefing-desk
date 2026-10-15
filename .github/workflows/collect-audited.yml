@@ -1,134 +1,64 @@
-name: auditable-briefing-collection
+name: daily-briefing-editorial-archive
+# Old auditable v1 domestic collector depended on deleted config/briefing-settings.json.
+# Supabase v2 collects news every day; editorial v3 chooses and summarizes; this job
+# preserves the curated output as a static historical archive without Telegram sends.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/collect_with_evidence.py'
-      - 'scripts/render_discovery_briefing.py'
-      - 'config/briefing-settings.json'
-      - 'scripts/global_source_collector.py'
-      - 'scripts/global_candidate_ranker.py'
-      - 'scripts/test_global_candidate_ranker.py'
-      - 'scripts/test_global_source_collector.py'
-      - 'scripts/domestic_route_collector.py'
-      - 'scripts/test_domestic_routes.py'
-      - 'scripts/domestic_window_paging.py'
-      - 'scripts/test_domestic_window_paging.py'
-      - 'scripts/domestic_coverage_gate.py'
-      - 'scripts/test_domestic_coverage_gate.py'
-      - 'scripts/test_domestic_ready_validation.py'
-      - 'scripts/validate_briefing.py'
-      - 'scripts/quality_report.py'
-      - 'scripts/web_unified_collector.py'
-      - 'scripts/test_web_unified.py'
-      - 'scripts/test_web_integration.py'
-      - 'scripts/domestic_candidate_pipeline.py'
-      - 'scripts/publish_domestic_desk.py'
-      - 'scripts/test_publish_domestic_desk.py'
-      - 'scripts/test_domestic_candidate_pipeline.py'
-      - 'scripts/verify_originals.py'
-      - 'scripts/test_verify_originals.py'
-      - 'scripts/build_event_map.py'
-      - 'scripts/test_event_map.py'
-      - '.github/workflows/collect-audited.yml'
+  schedule:
+    - cron: '5 23 * * *' # 08:05 KST, every day including Sat/Sun
   workflow_dispatch:
     inputs:
       briefing_date:
-        description: "KST date YYYY-MM-DD (empty for today)"
+        description: 'KST date YYYY-MM-DD (blank = today)'
         required: false
         type: string
-  schedule:
-    - cron: '5 21 * * *' # 06:05 Asia/Seoul; domestic scans prohibited before 06:00
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-audited.yml'
+      - 'scripts/publish_v3_editorial_snapshot.py'
 permissions:
   contents: write
+concurrency:
+  group: daily-editorial-archive
+  cancel-in-progress: false
 jobs:
-  collect:
+  archive:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Unit test duplicate and follow-up event map
-        run: python -m unittest discover -s scripts -p 'test_event_map.py' -v
-      - name: Unit test global source collection (no network)
-        run: python -m unittest discover -s scripts -p 'test_global_source_collector.py' -v
-      - name: Unit test global ranking (no network)
-        run: python -m unittest discover -s scripts -p 'test_global_candidate_ranker.py' -v
-      - name: Unit test domestic routes (no network)
-        run: python -m unittest discover -s scripts -p 'test_domestic_routes.py' -v
-      - name: Unit test native page/window and 14+6 operational coverage (no network)
+      - name: Check Python and secure curated feed
         run: |
-          python -m unittest discover -s scripts -p 'test_domestic_window_paging.py' -v
-          python -m unittest discover -s scripts -p 'test_domestic_coverage_gate.py' -v
-          python -m unittest discover -s scripts -p 'test_domestic_ready_validation.py' -v
-      - name: Unit test unified WEB discovery and integration (no network)
-        run: python -m unittest discover -s scripts -p 'test_web*.py' -v
-      - name: Unit test domestic event dedup and verification (no network)
-        run: python -m unittest discover -s scripts -p 'test_domestic_candidate_pipeline.py' -v
-      - name: Unit test domestic desk export and preservation (no network)
-        run: python -m unittest discover -s scripts -p 'test_publish_domestic_desk.py' -v
-      # Source scan runs only on schedule or manual dispatch, not on code pushes.
-      # This prevents new tests/config changes from causing repeated web searches.
-      - name: Scan sources and record honest partial/fail evidence
-        if: github.event_name != 'push'
-        env:
-          REQUESTED_DATE: ${{ inputs.briefing_date }}
-        run: |
-          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
-          python scripts/collect_with_evidence.py --date "$DAY" --domestic-only
-      - name: Record honest domestic route coverage and editorial readiness
-        if: github.event_name != 'push'
-        env:
-          REQUESTED_DATE: ${{ inputs.briefing_date }}
-        run: |
-          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
-          python - "$DAY" <<'PY'
-          import json,sys
-          from pathlib import Path
-          sys.path.insert(0,"scripts")
-          from domestic_coverage_gate import score_operational_coverage
-          day=sys.argv[1]
-          settings=json.loads(Path("config/briefing-settings.json").read_text(encoding="utf-8"))
-          audit=json.loads(Path(f"staging/{day}-domestic-route-audit.json").read_text(encoding="utf-8"))
-          stage=json.loads(Path(f"staging/{day}-domestic-stage4.json").read_text(encoding="utf-8"))
-          coverage=score_operational_coverage(settings,audit)
-          sources=[x for group in "ABCD" for x in audit["source_health"][group].values()]
-          report={"date":day,"operational":coverage,"fixed_publisher_status": {
-                  "complete":sum(x["status"] in ("PASS","PASS_ZERO") for x in sources),
-                  "partial":sum(x["status"]=="PARTIAL" for x in sources),
-                  "fail":sum(x["status"]=="FAIL" for x in sources)},
-                  "stage4":stage["statistics"],"article_recall_status":"UNMEASURED"}
-          out=Path(f"staging/{day}-domestic-operational-summary.json")
-          out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-          print("DOMESTIC_14_PLUS_6",coverage["verified_usable_search_tasks"],
-                "/",coverage["configured_search_tasks"],
-                "target_met",coverage["target_met"],
-                "publisher",report["fixed_publisher_status"],
-                "original_in_window",stage["statistics"]["original_time_in_window"],
-                "article_recall",report["article_recall_status"])
-          if not coverage["target_met"]:
-              print("::warning::Domestic operational route execution below 90%; candidate publication remains discovery-only.")
+          python -m py_compile scripts/publish_v3_editorial_snapshot.py
+          python - <<'PY'
+          import json,urllib.request
+          base='https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/briefing-feed-v2?date='
+          for date in ('2026-10-15','2026-10-16'):
+              with urllib.request.urlopen(base+date,timeout=20) as resp: d=json.load(resp)
+              assert d['schema_version']=='briefing-v2' and d['date']==date
+              assert len([a for a in d['domestic'] if a.get('selection_status')=='selected'])>=1
+              assert len(d['global'])>=1
+              print('CURATED_FEED_OK',date)
           PY
-      - name: Export domestic candidates to desk and commit
-        if: github.event_name != 'push'
+      - name: Preserve chosen daily news (no minimum and no Telegram)
         env:
           REQUESTED_DATE: ${{ inputs.briefing_date }}
         run: |
           DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
-          python scripts/publish_domestic_desk.py "$DAY"
+          python scripts/publish_v3_editorial_snapshot.py "$DAY"
+      - name: Commit dated editorial backup if changed
+        env:
+          REQUESTED_DATE: ${{ inputs.briefing_date }}
+        run: |
+          DAY="${REQUESTED_DATE:-$(TZ=Asia/Seoul date +%F)}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "domestic/$DAY.json"
-          git diff --cached --quiet || (git commit -m "Update domestic discovery $DAY [skip ci]" && git pull --rebase && git push)
-      - uses: actions/upload-artifact@v4
-        if: always() && github.event_name != 'push'
-        with:
-          name: source-evidence
-          path: |
-            status/*-collection-evidence.json
-            staging/*-domestic-stage4.json
-            staging/*-domestic-route-audit.json
-            staging/*-domestic-operational-summary.json
-            staging/*-source-health.json
-          retention-days: 14
+          if ! test -f "data/$DAY.json"; then echo "NO_COMPLETED_EDITION_TO_ARCHIVE"; exit 0; fi
+          git add "data/$DAY.json"
+          if git diff --cached --quiet; then echo "NO_EDITION_CHANGES"; exit 0; fi
+          git commit -m "Archive curated briefing $DAY [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
