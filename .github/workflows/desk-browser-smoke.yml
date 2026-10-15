@@ -118,3 +118,20 @@ jobs:
           print("CURATED_BROWSER_OK",day,count)
           PY
           done
+
+      - name: Verify Korean global curated feed and weekend-ready schedule
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json,re,urllib.request
+          base='https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/briefing-feed-v2?date='
+          for date in ('2026-10-15','2026-10-16'):
+              with urllib.request.urlopen(base+date,timeout=18) as resp:
+                  data=json.load(resp)
+              items=data.get('global',[])
+              assert items,(date,'NO_SELECTED_GLOBAL')
+              assert all(re.search('[가-힣]',x['title']) for x in items),(date,'ENGLISH_GLOBAL_TITLE')
+              assert all(x.get('summary','').strip() for x in items),(date,'GLOBAL_SUMMARY_MISSING')
+              assert not any('애플' in x['title'] or 'VIABAHN' in x['title'] for x in items)
+              print('GLOBAL_KOREAN_FEED_OK',date,len(items))
+          PY
