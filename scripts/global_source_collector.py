@@ -30,8 +30,11 @@ def in_window(value,start,end):
     return dt.tzinfo is not None and start<=dt.astimezone(KST)<=end
 def scan_global_sources(day,settings,now,news_fetch=None,feed_fetch=None):
     news_fetch=news_fetch or news;feed_fetch=feed_fetch or rss
-    start=datetime.fromisoformat(day+"T00:00:00+09:00")-timedelta(hours=12)
-    end=min(datetime.fromisoformat(day+"T23:59:59+09:00"),datetime.now(KST))
+    # Rolling 24 hours ending at scan time, not midnight-to-06:00 KST.
+    current=datetime.now(KST)
+    is_current_day=day==current.date().isoformat()
+    end=current if is_current_day else datetime.fromisoformat(day+"T05:05:00+09:00")
+    start=end-timedelta(hours=24)
     routes=[];candidates=[];seen=set()
     def collect(source,group,method,target,fn):
         state={"source":source,"group":group,"method":method,"target":target,"checked_at":now(),"status":"FAIL","hits":0,"in_window_index_hits":0,"original_verified":False,"coverage_proven":False}
