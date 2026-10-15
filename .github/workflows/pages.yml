@@ -1,0 +1,56 @@
+name: Deploy briefing desk (restored)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'data/**'
+      - 'domestic/**'
+      - 'global/**'
+      - 'live/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify restored desk and preserved archive
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          page = Path('index.html').read_text(encoding='utf-8')
+          assert 'async function loadV2Feed' in page
+          assert "fetch('./data/'" in page
+          assert 'function renderSchedule' in page
+          assert Path('data/2026-10-12.json').exists(), 'Existing historical archive missing'
+          archived = json.loads(Path('data/2026-10-12.json').read_text(encoding='utf-8'))
+          assert archived['date'] == '2026-10-12'
+          assert all(k in archived for k in ('domestic','global','patent'))
+          print('Restored UI and archived briefing verified')
+          PY
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
