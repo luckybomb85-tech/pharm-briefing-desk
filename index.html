@@ -130,8 +130,8 @@ function visibleItems(section=tab){
     curated?(v2Feed.date===current&&v2Feed.status==='editorial-selected'?[...candidates]:[...published]):
     [...live,...published,...stored,...archive,...candidates];
  if(section==='domestic'&&current>='2026-10-15'){
-  const from=Date.parse(current+'T06:00:00+09:00'),back=from-18*3600000;
-  const valid=sources.filter(x=>{const p=Date.parse(x.published_at||'');return Number.isFinite(p)&&p>=back;});
+  const from=Date.parse(current+'T06:00:00+09:00'),midnight=Date.parse(current+'T00:00:00+09:00'),back=from-18*3600000;
+  const valid=sources.filter(x=>{const p=Date.parse(x.published_at||'');return Number.isFinite(p)&&(p>=from||(p>=back&&p<midnight));});
   const primary=valid.filter(x=>Date.parse(x.published_at)>=from);
   const older=valid.filter(x=>Date.parse(x.published_at)<from);
   sources=[...primary,...(primary.length<4?older.slice(0,Math.min(3,4-primary.length)):[])];
