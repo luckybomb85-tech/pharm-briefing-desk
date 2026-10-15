@@ -6,6 +6,7 @@ on:
       - 'index.html'
       - 'global/**'
       - 'domestic/**'
+      - 'data/**'
       - '.github/workflows/deploy-desk-pages.yml'
   workflow_run:
     workflows:
