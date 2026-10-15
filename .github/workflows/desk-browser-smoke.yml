@@ -24,6 +24,7 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/desk-http.log 2>&1 &
           node scripts/browser_interaction_smoke.mjs 'http://127.0.0.1:8765/?date=2026-10-13'
           node scripts/browser_interaction_smoke.mjs 'https://luckybomb85-tech.github.io/pharm-briefing-desk/?date=2026-10-13'
+          node scripts/browser_interaction_smoke.mjs 'https://luckybomb85-tech.github.io/pharm-briefing-desk/?date=2026-10-16' 1 global
       - name: Confirm 13 Oct briefing renders in a real browser without optional CDN
         shell: bash
         run: |
