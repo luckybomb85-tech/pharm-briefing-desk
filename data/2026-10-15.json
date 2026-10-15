@@ -1,95 +1,510 @@
 {
   "schema_version": "briefing-editorial-v1",
   "date": "2026-10-15",
-  "status": "editorial-selected",
   "timezone": "Asia/Seoul",
-  "editorial_scope": "국내 당일 오전 6시 이후 우선, 전날 오후 보충 최대 3건; 글로벌 최근 24시간",
-  "generated_by": "cutoff-recovery-2026-10-16",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "당일 06시 이후 발행 우선·전날 정오~자정 주요 기사 보충 / 글로벌 최근 24시간",
+  "selected_count": {
+    "domestic": 12,
+    "global": 6
+  },
   "domestic": [
     {
       "title": "릴리, 美 프렐류드와 ‘KAT6A 분해제’ 유방암 병용 임상 협력…버제니오 공급",
       "summary": "일라이릴리가 미국 프렐류드의 KAT6A 분해제 개발과 관련해 유방암 병용 임상에 버제니오를 공급하는 협력을 추진한다. 신기전 후보물질과 기존 CDK4/6 억제제 병용전략의 경쟁구도를 살펴볼 수 있다.",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=29035",
       "source_name": "더바이오",
-      "published_at": "2026-10-14 14:50:00+00",
-      "article_preview": null,
+      "published_at": "2026-10-14T14:50:00.000Z",
+      "tag": "major",
       "verification_status": "candidate",
-      "tag": "전날 오후 주요 기사"
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "프렐류드가 개발하는 KAT6A 분해제는 기존 CDK4/6 억제제 대비 어떤 장단점이 있을지 조명된다. 임상 협력의 성공 가능성과 시장 내 경쟁 구도 변화를 분석한다.",
+            "title": "KAT6A 분해제, 유방암 치료 대안 될까?",
+            "direction": "KAT6A 분해제와 CDK4/6 억제제 경쟁 현황과 임상 결과 예측, 확인 필요"
+          },
+          {
+            "lead": "릴리와 프렐류드 간 협력으로 유방암 병용 치료가 가속화되며 글로벌 치료제 시장 판도 변화를 전망한다. 이 과정에서 국내외 시장 규모와 점유율 변동도 점검한다.",
+            "title": "릴리-프렐류드 임상 협력, 제약시장 영향은?",
+            "direction": "글로벌 CDK4/6 억제제 시장 규모와 신기전 치료제 도입 효과 분석, 확인 필요"
+          },
+          {
+            "lead": "유방암 병용 임상에서 새 기전 신약과 기존 약물의 안전성·효과성 검증과 규제기관 수용 여부가 초점이다. 업계 내부의 기대와 우려가 교차하는 상황을 심층 취재한다.",
+            "title": "신약 병용 임상, 규제 리스크와 업계 반응은?",
+            "direction": "임상 규제 현황과 업계 의견, 정책 변화 관련 취재, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "일라이릴리가 미국 프렐류드와 손잡고 KAT6A 분해제를 활용한 유방암 신약 병용 임상을 추진한다. 이번 협력에서는 릴리의 CDK4/6 억제제 버제니오가 공급된다.",
+            "title": "릴리, 미국社와 유방암 신약 병용임상 협력"
+          },
+          {
+            "lead": "미국 프렐류드가 개발 중인 KAT6A 분해제와 릴리의 버제니오가 유방암 병용 임상 시험에서 결합된다. 신기전 후보물질과 기존 치료제 간 경쟁 구도가 주목된다.",
+            "title": "유방암 새 치료법 개발 위해 릴리-프렐류드 협력"
+          },
+          {
+            "lead": "일라이릴리가 미국 프렐류드의 KAT6A 분해제와 유방암 병용 임상을 추진하며 자사 버제니오를 공급한다. 신약 개발에 새로운 병용 전략이 도입되는 사례다.",
+            "title": "릴리, 프렐류드와 손잡고 유방암 병용 임상 진행"
+          }
+        ],
+        "generated_at": "2026-10-15T22:54:08.809Z"
+      }
+    },
+    {
+      "title": "입셀, ‘범용 iPSC’ 국내 특허 등록 결정…세포치료제 플랫폼 사업 기반 강화",
+      "summary": "(제목 기준·원문 미검증) 입셀의 범용 유도만능줄기세포(iPSC) 기술에 대한 국내 특허 등록 결정 소식이다. 세포치료제 플랫폼의 권리 확보라는 점에서 관련 사업화와 후속 특허 범위를 살펴볼 사안이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29028",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T12:02:58.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "입셀이 등록한 범용 iPSC 특허는 국내 세포치료제 개발 경쟁 구도에 변화를 줄 수 있다. 경쟁사 동향과 시장 수요, 규제 환경과의 연계성을 집중 분석할 예정이다.",
+            "title": "범용 iPSC 특허, 국내 세포치료 시장 판도에 미칠 영향",
+            "direction": "국내 세포치료 시장 내 경쟁 약물과 기술 동향, 규제 영향 확인 필요"
+          },
+          {
+            "lead": "입셀의 국내 범용 iPSC 특허 등록은 글로벌 세포치료 플랫폼 경쟁력 제고에 중요한 전환점이 될 가능성이 높다. 해외 시장 진출 전략과 특허권 확보 현황을 함께 조명한다.",
+            "title": "입셀 iPSC 특허 확보, 글로벌 플랫폼 경쟁력 의미는?",
+            "direction": "글로벌 경쟁사 및 해외 특허 상황과 비교 분석, 확인 필요"
+          },
+          {
+            "lead": "입셀의 iPSC 관련 국내 특허 등록 결정은 회사 혁신 전략의 핵심축이다. 후속 특허 확보와 사업화 계획에 따른 업계 파급 효과를 비판적 시각으로 조명한다.",
+            "title": "국내 iPSC 특허 강화를 통한 입셀의 혁신 전략과 기대효과",
+            "direction": "입셀 혁신 전략과 특허 전략 내실화 과정, 업계 반응 및 비판적 시각 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "입셀이 국내에서 범용 유도만능줄기세포(iPSC) 기술에 대한 특허 등록을 확정받았다. 이번 특허 확보로 세포치료제 플랫폼 사업 역량이 한층 높아질 전망이다.",
+            "title": "입셀, 범용 iPSC 국내 특허 확보로 사업 강화"
+          },
+          {
+            "lead": "입셀은 국내에서 범용 iPSC 관련 특허 등록이 결정되어 세포치료제 기술 기반을 공고히 했다. 이로써 사업화 및 후속 특허 확대 가능성이 열렸다.",
+            "title": "국내서 입셀 범용 iPSC 특허권 인정받아"
+          },
+          {
+            "lead": "입셀의 범용 유도만능줄기세포 기술이 국내 특허로 인정받으며 세포치료제 플랫폼 강화에 힘을 실었다. 관련 사업 및 추가 특허 확보에 귀추가 주목된다.",
+            "title": "입셀, 세포치료 플랫폼 키우는 범용 iPSC 특허 등록"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:10.713Z"
+      }
+    },
+    {
+      "title": "‘슈가논’, 다음 라인업은 ‘엠파글리플로진’…동아ST, 2·3제 복합제 출시 예고",
+      "summary": "(제목 기준·원문 미검증) 동아에스티가 당뇨병 치료제 슈가논의 후속 라인업으로 엠파글리플로진을 결합한 2제·3제 복합제 출시를 예고했다. 복합제 경쟁 확대와 기존 제품군의 판매 전략에 주목할 만하다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351319",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-14T11:06:34.000Z",
+      "tag": "additional",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "동아ST가 슈가논 이후 엠파글리플로진 복합제로 라인업을 확장하며 당뇨병 치료 복합제 시장의 경쟁 구도가 변하고 있다. 이번 출시가 기존 치료제와 어떤 차별점과 시장 점유율 변화를 가져올지 살펴본다.",
+            "title": "복합제 경쟁 격화 속 동아ST 전략 점검",
+            "direction": "경쟁약물 현황과 시장 점유율 변화 확인 필요"
+          },
+          {
+            "lead": "엠파글리플로진을 포함한 복합제 개발이 전 세계적으로 활발해지는 가운데, 동아ST의 신제품 출시는 국내 시장에서 어떠한 파장을 일으킬지 주목된다. 글로벌 개발사들의 전략과 국내 제품 출시 일정 및 시장 반응을 비교 분석한다.",
+            "title": "글로벌 엠파글리플로진 복합제 개발 동향과 국내 영향",
+            "direction": "글로벌 개발 현황 및 출시 일정 비교 확인 필요"
+          },
+          {
+            "lead": "엠파글리플로진 복합제 출시를 앞둔 동아ST가 국내외 규제와 특허 문제에서 어떤 대응 전략을 마련했는지 집중 조명한다. 신약 및 복합제 시장의 발전 방향과 법률적 쟁점도 함께 검토한다.",
+            "title": "동아ST 엠파글리플로진 복합제 출시, 법률·규제 대응은?",
+            "direction": "규제 및 특허 현황과 대응 전략 심층 취재"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "동아에스티가 슈가논 후속으로 엠파글리플로진 기반 2·3제 복합제를 출시할 계획이다. 당뇨병 치료제 시장에서 복합제 포트폴리오를 강화하며 경쟁력을 높인다는 전략이다.",
+            "title": "동아ST, 슈가논 이어 엠파글리플로진 복합제 선봬"
+          },
+          {
+            "lead": "동아에스티가 슈가논 다음 단계로 엠파글리플로진을 포함한 복합제를 곧 출시한다. 이는 당뇨병 환자 맞춤형 치료 옵션 확대로 시장 영향력을 확대하려는 움직임이다.",
+            "title": "동아ST, 당뇨 치료 혁신…엠파글리플로진 복합제 출시 임박"
+          },
+          {
+            "lead": "동아에스티가 슈가논 후속 제품으로 엠파글리플로진 복합제를 내놓을 예정이다. 복합제 시장에서 기존 제품과 차별화된 전략으로 판매 확대에 나선다.",
+            "title": "슈가논 잇는 ‘엠파글리플로진’ 복합제, 동아ST 곧 출시"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:10.814Z"
+      }
+    },
+    {
+      "title": "엘앤씨바이오, 피부 ECM '리투오' 아랍에미리트 수입허가 획득",
+      "summary": "(제목 기준·원문 미검증) 엘앤씨바이오가 피부 ECM 제품 리투오의 아랍에미리트 수입허가를 확보했다. 중동 진출 확대의 기반이 마련됐다는 소식으로 실제 공급 및 매출 실현 여부를 살필 필요가 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79879",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14T10:13:38.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
     },
     {
       "title": "독일 포미콘, ‘키트루다 바이오시밀러’ 美 FDA 첫 허가심사 진입…3상 생략",
       "summary": "독일 포미콘의 키트루다 바이오시밀러 FYB206이 미국 FDA 허가 심사에 진입했다. 비교 유효성 3상을 조기 종료한 전략이 주목되며 삼성바이오에피스·셀트리온의 개발 및 미국 진입 일정과 비교할 가치가 있다. 허가 승인은 아직 아니다.",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=29010",
       "source_name": "더바이오",
-      "published_at": "2026-10-14 09:07:22+00",
-      "article_preview": null,
+      "published_at": "2026-10-14T09:07:22.000Z",
+      "tag": "major",
       "verification_status": "verified",
-      "tag": "전날 오후 주요 기사"
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "포미콘의 FYB206 FDA 심사 진입은 키트루다 바이오시밀러 시장 내 경쟁 심화를 예고한다. 삼성바이오에피스, 셀트리온과의 경쟁 구도 및 향후 시장 점유율 변화가 주요 관전 포인트다.",
+            "title": "키트루다 바이오시밀러 경쟁 심화와 시장 전망",
+            "direction": "경쟁약물 현황과 시장 규모 분석, 경쟁 구도에 대한 심층 취재 및 확인 필요"
+          },
+          {
+            "lead": "포미콘이 비교 유효성 3상 없이 조기 종료한 FYB206 허가 신청은 FDA 허가 절차 간소화 전략이 주목받고 있다. 이런 전략이 바이오시밀러 개발의 패러다임 변화를 의미하는지 검증이 필요하다.",
+            "title": "FDA 바이오시밀러 허가 심사 간소화 전략 분석",
+            "direction": "개발 경과와 규제 전략에 대한 법적·산업적 영향 분석, 확인 필요"
+          },
+          {
+            "lead": "포미콘의 키트루다 바이오시밀러 FYB206 FDA 허가 심사 진입은 글로벌 제약업계에 새로운 변수로 작용할 전망이다. 삼성바이오에피스 및 셀트리온의 미국 시장 전략에도 영향을 줄 수 있다.",
+            "title": "키트루다 바이오시밀러 미국 시장 진입과 업계 파장",
+            "direction": "업계 영향 및 경쟁사 대응 전략, 시장 반응 파악, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "독일 제약사 포미콘이 키트루다 바이오시밀러 FYB206의 미국 FDA 허가 심사 단계에 진입했다. 이번 심사는 비교 유효성 3상 없이 조기 종료한 전략이 주요 관심사다.",
+            "title": "포미콘, 美 FDA에 키트루다 바이오 첫 심사 신청"
+          },
+          {
+            "lead": "포미콘의 키트루다 바이오시밀러 FYB206이 미국 FDA에 허가 신청 후 심사 절차에 들어갔다. 삼성바이오에피스와 셀트리온의 미국 진출 일정과 대조된다.",
+            "title": "키트루다 바이오시밀러, 포미콘 FDA 심사 돌입"
+          },
+          {
+            "lead": "독일 포미콘이 키트루다의 바이오시밀러 FYB206에 대해 미국 FDA의 허가 심사 단계에 진입했다. 이는 임상 3상 조기 종료라는 독특한 전략으로 주목받고 있다.",
+            "title": "포미콘 FYB206, 美서 키트루다 바이오시밀러 첫 심사 개시"
+          }
+        ],
+        "generated_at": "2026-10-15T22:53:53.041Z"
+      }
+    },
+    {
+      "title": "英, 저위험 임상1상 심사 30→14일…연말까지 단계적 단축",
+      "summary": "(제목 기준·원문 미검증) 영국이 저위험 임상 1상 시험의 심사기간을 기존 30일에서 14일로 단축하는 제도 변화를 추진한다. 연말까지 단계적으로 시행할 방침으로 알려져 국내 임상 심사 제도와 비교할 수 있는 사례다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29002",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T08:28:21.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "영국이 저위험 임상 1상 심사 기간을 14일로 줄이면서 글로벌 임상시험 심사 경쟁에 새로운 기준을 제시하고 있다. 국내외 신약 개발 속도에 미칠 장기적 영향과 글로벌 규제 동향을 비교 분석한다.",
+            "title": "글로벌 임상심사 기간 단축 경쟁과 영향 분석",
+            "direction": "각국 임상 심사 기간 현황 비교 및 영향 평가, 경쟁국 상황 확인 필요"
+          },
+          {
+            "lead": "영국이 30일에서 14일로 임상 1상 심사 기간을 단계적으로 단축함에 따라 국내 임상시험 제도의 효율성 개선 필요성이 부상하고 있다. 국내 도입 가능성 및 예상 효과를 심층 고찰한다.",
+            "title": "임상 1상 심사 단축, 국내 제도 개선 가능성은?",
+            "direction": "국내 임상 심사 절차 현황과 개선 방안 심층 취재"
+          },
+          {
+            "lead": "영국의 저위험 임상 1상 심사 기간 단축 조치는 제약산업의 연구개발 속도를 가속화할 중요한 계기가 될 전망이다. 산업 전반의 혁신 촉진과 경쟁력 강화를 위한 다양한 시각을 검토한다.",
+            "title": "임상심사 기간 단축, 제약산업 혁신에 미칠 파장",
+            "direction": "산업계 의견 수렴 및 혁신 효과 관련 전문가 인터뷰 진행"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "영국 정부가 저위험 임상 1상 시험에 대한 심사기간을 기존 30일에서 14일로 줄이는 방안을 추진하고 있다. 이 변화는 연말까지 단계적으로 시행돼 국내 심사 제도와 비교 가능한 사례가 될 전망이다.",
+            "title": "영국, 임상 1상 심사기간 절반으로 단축 추진"
+          },
+          {
+            "lead": "영국은 저위험 임상 1상 시험 심사 기간을 30일에서 14일로 단축하기 위한 제도 개편을 연말까지 완료할 계획이다. 이는 임상시험 승인 절차의 효율성을 크게 개선하는 조치로 평가받고 있다.",
+            "title": "영국, 저위험 임상 1상 심사 기간 14일로 짧아진다"
+          },
+          {
+            "lead": "영국이 저위험 임상 1상 시험에 대해 심사기간을 종전 30일에서 14일로 줄이는 정책을 추진 중이다. 이 제도는 연말까지 단계적으로 도입돼 국내 임상 심사와 비교 자료로 주목받는다.",
+            "title": "영국 임상 1상 심사 2주로 단축, 연내 시행 목표"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:15.198Z"
+      }
+    },
+    {
+      "title": "오토텔릭바이오, 고혈압·당뇨 복합신약 중동 공급계약 체결",
+      "summary": "(제목 기준·원문 미검증) 오토텔릭바이오가 고혈압·당뇨병 복합신약의 중동 공급계약을 체결했다는 보도다. 실제 계약 상대방과 규모, 허가 및 공급 일정은 원문 확인이 필요하다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79868",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14T08:03:39.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "고혈압·당뇨병 복합신약 분야에서 오토텔릭바이오가 중동 공급 계약을 체결하며 현지 시장 진입에 속도를 내고 있다. 국내외 경쟁약물 현황과 시장 규모를 분석해 향후 전망을 진단한다.",
+            "title": "복합신약 경쟁 심화, 중동 진출 전략은?",
+            "direction": "중동 지역 고혈압·당뇨 복합신약 시장 규모 및 경쟁약물 현황 확인 필요."
+          },
+          {
+            "lead": "오토텔릭바이오의 고혈압·당뇨 복합신약 중동 공급계약은 글로벌 진출의 신호탄이다. 중동 내 규제 환경과 수입 절차, 향후 공급 일정에 미칠 영향을 다각도로 점검한다.",
+            "title": "중동 의료시장서 신약 공급 확대 의미와 과제",
+            "direction": "중동 허가 절차와 규제 환경 관련 추가 취재 필요."
+          },
+          {
+            "lead": "고혈압·당뇨 복합신약의 중동 공급 계약 체결은 오토텔릭바이오의 해외 진출 전략에서 중요한 분기점이다. 과거 계약 사례와 업계 영향, 향후 확장 가능성을 심층 분석한다.",
+            "title": "오토텔릭바이오 복합신약 해외사업 확대 현황과 전망",
+            "direction": "회사 이전 해외 계약 사례 및 규모 관련 확인 필요."
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "오토텔릭바이오가 고혈압과 당뇨 치료용 복합신약을 중동 지역에 공급하는 계약을 맺었다. 이번 계약은 중동 시장 진출을 위한 전략적 움직임으로 평가된다.",
+            "title": "오토텔릭바이오, 중동 복합신약 공급 계약 체결"
+          },
+          {
+            "lead": "고혈압·당뇨 복합신약을 보유한 오토텔릭바이오가 중동 지역 공급 계약을 성사시켰다. 이로써 회사는 해외 확장에 발판을 마련했다.",
+            "title": "중동 시장 진출 가속, 오토텔릭바이오 공급계약 확보"
+          },
+          {
+            "lead": "오토텔릭바이오가 고혈압과 당뇨 복합신약의 중동 공급 계약을 체결하며 해외시장 확대에 나섰다. 계약 상대나 규모 등 구체 조건은 현 단계에서 공개되지 않았다.",
+            "title": "오토텔릭바이오, 중동에 복합신약 공급 시작"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:10.383Z"
+      }
+    },
+    {
+      "title": "의약품 효과 확인에 평균 5.2년…검증 기다리는 사이 처방은 계속",
+      "summary": "(제목 기준·원문 미검증) 의약품의 효과를 확인하는 데 평균 5.2년이 걸린다는 분석과 함께 효과 검증 전 처방이 지속되는 문제를 짚은 보도다. 재평가 제도의 속도와 환자 보호 측면에서 후속 분석 가치가 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47559",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14T06:08:00.000Z",
+      "tag": "additional",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
     },
     {
       "title": "원료약 국산화하라면서… 약가개편에 설 자리 좁아진 원료기업",
       "summary": "원료의약품 국산화 지원 기조와 제네릭 약가인하 정책 사이의 충돌 문제가 제기됐다. 완제 제약사의 가격 압박이 국산 원료 업체의 채산성·공급 안정성으로 전이되는지 확인할 만한 산업정책 아이템이다.",
       "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79790",
       "source_name": "히트뉴스",
-      "published_at": "2026-10-14 06:07:00+00",
-      "article_preview": null,
+      "published_at": "2026-10-14T06:07:00.000Z",
+      "tag": "major",
       "verification_status": "candidate",
-      "tag": "전날 오후 주요 기사"
-    }
-  ],
-  "global": [
-    {
-      "title": "바이오콘, 제넨텍과 특허 합의…퍼투주맙 바이오시밀러 출시일 확보",
-      "original_title": "Biocon Secures Earliest Licensed Launch Dates for Pebrilzo (bPertuzumab) Following Global Patent Settlement with Genentech - FirstWord Pharma",
-      "summary": "(제목 기준·원문 미검증) 바이오콘이 제넨텍과 글로벌 특허 합의를 통해 퍼투주맙 바이오시밀러 페브릴조의 계약상 출시 가능 시점을 확보했다고 발표했다. 국가별 출시일과 합의 조건은 추가 확인이 필요하다.",
-      "source_name": "FirstWord Pharma",
-      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1Hd1FYUU5CRVYwZkFlb2ZURFBvTWtkM1VEME5rSnZONGg3MUIyMDFqWExjRWlzX1BKbll3WWFCTlJXTU96dDlqblh0Q1lJYktMMVl3?oc=5",
-      "published_at": "2026-10-14 07:04:20+00",
+      "selection_status": "selected",
       "article_preview": {
         "diff": [
           {
-            "lead": "바이오콘이 제넨텍과 특허 분쟁을 해결해 퍼투주맙 바이오시밀러 진출 길을 열었다. 경쟁사의 개발 현황과 시장 규모 분석을 중심으로 바이오시밀러 시장 구도를 재조명한다.",
-            "title": "퍼투주맙 시장 경쟁력 강화 전략은?",
-            "direction": "경쟁약물 현황 및 시장 규모 분석, 확인 필요"
+            "lead": "국내 원료의약품 국산화 정책이 글로벌 원료 공급망 변화와 어떻게 맞물리고 있는지가 중요해졌다. 해외 의존도를 줄이면서 국제 경쟁력을 확보하기 위한 전략 방향을 심층 분석한다.",
+            "title": "원료약 국산화 정책과 글로벌 시장 동향 분석",
+            "direction": "국내외 원료 시장 규모와 경쟁 구도, 글로벌 공급망 변화 현황 취재 필요"
           },
           {
-            "lead": "바이오콘과 제넨텍의 특허 합의 사례를 통해 바이오시밀러 시장에서 특허 갈등이 가지는 의미를 검토한다. 규제 환경 및 법적 분쟁이 산업 전반에 미치는 파급 효과를 집중 취재한다.",
-            "title": "글로벌 특허 분쟁이 바이오시밀러 시장에 미치는 영향",
-            "direction": "특허법 및 규제 상황과 산업 영향 분석"
+            "lead": "최근 제네릭 약가 인하 정책이 국산 원료업체의 수익성과 생산 안정성에 미치는 영향을 검토한다. 정책 변화와 연계된 법적 분쟁 및 업계 반응을 종합적으로 분석한다.",
+            "title": "약가 제도 개편이 국내 원료의약품 산업에 미친 영향",
+            "direction": "약가 개편 이후 원료기업 경영 현황, 법적 쟁점과 업계 대응 확인 필요"
           },
           {
-            "lead": "퍼투주맙 바이오시밀러 출시를 위한 바이오콘과 제넨텍 간 특허 조정 사례가 업계 내 새로운 협력 모델로 주목받고 있다. 타 사례와 비교해 법적 분쟁 해결 방식의 변화 가능성을 탐색한다.",
-            "title": "바이오콘 특허 합의, 업계 협력 모범 사례 될까?",
-            "direction": "업계 내 특허 분쟁 해결 및 협력 사례 비교, 확인 필요"
+            "lead": "국산화 정책에도 불구하고 원료기업의 채산성 악화 문제와 함께 산업 전반의 구조적 한계가 부각되고 있다. 공급 안정성 확보와 함께 중장기 산업 경쟁력 강화 방안을 모색한다.",
+            "title": "원료 의약품 국산화 과제와 산업 구조적 한계 탐구",
+            "direction": "원료 산업의 경제적 구조, 공급망 안정성 및 정책 한계점 심층 취재 필요"
           }
         ],
         "model": "gpt-4.1-mini",
         "quick": [
           {
-            "lead": "바이오콘이 제넨텍과의 글로벌 특허 분쟁을 합의하며 퍼투주맙 바이오시밀러 '페브릴조'의 출시 시점을 확정했다. 이번 합의로 계약상의 출시 장애물이 해소돼 시장 진입이 가능해졌다.",
-            "title": "바이오콘, 퍼투주맙 바이오시밀러 출시길 열다"
+            "lead": "국산 원료의약품 지원 정책과 제네릭 약가 인하는 서로 상충하면서 원료기업의 어려움을 키우고 있다. 이로 인해 원료 업체의 수익성과 공급 안정성에 부정적 영향이 우려된다.",
+            "title": "원료약 국산화 지원, 약가인하와 갈등 불가피"
           },
           {
-            "lead": "바이오콘은 퍼투주맙 바이오시밀러 관련 특허 문제로부터 자유로워지며 제품 출시 일정을 확보했다. 글로벌 특허 분쟁 합의를 통해 합의 조건과 출시일에 대한 불확실성이 줄었다.",
-            "title": "제넨텍과 합의한 바이오콘, 신약 출시 가능해져"
+            "lead": "국산 원료의약품 강화 정책에도 불구하고 완제 제약사들의 약가 인하 압박이 원료기업의 수익성을 저해하고 있다. 국산화 정책이 실효성을 발휘하려면 약가 개편과 연계된 재검토가 필요하다.",
+            "title": "제네릭 약가 압박에 흔들리는 국산 원료 산업"
           },
           {
-            "lead": "바이오콘이 제넨텍과의 특허 합의를 마치며 '페브릴조' 출시가 가능해졌다. 다만 각국 출시일과 구체 조건은 추가 검증이 필요하다.",
-            "title": "퍼투주맙 바이오시밀러, 바이오콘 출시 문턱 넘다"
+            "lead": "원료약 국산화 확대 기조와 제네릭 약가 인하는 상충되며 국내 원료기업의 존립 기반을 위협하고 있다. 산업 정책 차원에서 공급 안정성 확보와 채산성 보장이 동시에 모색되어야 한다.",
+            "title": "원료약 국산화와 약가 인하, 동상이몽 정책 충돌"
           }
         ],
-        "generated_at": "2026-10-15T22:48:09.754Z"
-      },
-      "verification_status": "headline_only",
-      "tag": "P0"
+        "generated_at": "2026-10-15T22:53:58.804Z"
+      }
     },
     {
-      "title": "파밍, 유전성 PID 환자 대상 레니올리시브 2상 주요 결과 발표",
-      "original_title": "Pharming presents positive Phase II topline data for leniolisib in genetic PIDs with immune dysregulation at ESID 2026 - BioSpace",
-      "summary": "(제목 기준·원문 미검증) 파밍이 면역조절 장애 동반 유전성 PID(면역결핍증) 환자들을 위한 레니올리시브(leniolisib)의 2상 임상 주요 데이터를 ESID 2026에서 발표했다. 임상 2상 성공과 관련된 의미 있는 소식이다.",
+      "title": "'제넨셀' 치고받던 식약처 국감… 정회 후엔 '규제 사각지대' 점검",
+      "summary": "(제목 기준·원문 미검증) 국정감사에서 제넨셀 관련 식약처 대응을 놓고 공방이 이어졌고, 정회 이후 규제 사각지대 점검으로 논의가 확장됐다는 보도다. 국정감사 쟁점과 기존 제도상 허점을 확인할 가치가 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79865",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14T06:06:00.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": null
+    },
+    {
+      "title": "비만치료제 처방 급증하는데…병용 경고도, 영유아 사후점검 기준도 공백",
+      "summary": "(제목 기준·원문 미검증) 비만치료제 처방이 늘고 있지만 병용 처방 경고 및 영유아 관련 사후점검 기준의 공백이 지적됐다. 처방·안전관리 체계에 대한 추가 검토가 필요한 규제 이슈다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47558",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14T06:04:00.000Z",
+      "tag": "additional",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "급증하는 비만치료제 처방 속에서 병용 처방 경고 및 영유아 사후점검 기준 부재가 드러나 안전관리 체계 개선이 시급하다. 시장 규모 확대와 함께 보완이 필요한 법·규제 현황을 심층 취재한다.",
+            "title": "비만치료제 안전관리 미비와 시장 성장 분석",
+            "direction": "국내 비만치료제 시장 규모, 안전규제 현황 및 법적 쟁점 심층 취재, 관련 경쟁 약물과 비교, 확인 필요"
+          },
+          {
+            "lead": "비만치료제 사용률이 빠르게 증가하는 반면, 처방 중 병용 경고 및 영유아 대상 후속 안전점검 기준은 마련되지 않았다. 이에 따른 제약·의료계 파장과 정책 대응 상황을 분석한다.",
+            "title": "비만치료제 처방 증가와 안전관리 규제 공백점",
+            "direction": "비만치료제 관련 국내외 안전지침 비교 및 정책 변화 동향 확인, 규제당국 및 제약사 인터뷰 예정"
+          },
+          {
+            "lead": "비만치료제 처방 급증과 함께 안전관리 공백이 부각되면서 병용처방 위험과 영유아 관리 기준 미비에 대한 비판 여론이 형성 중이다. 이러한 상황이 의료 현장과 제약업계에 미치는 영향을 고찰한다.",
+            "title": "증가하는 비만치료제, 안전 관리체계 비판적 점검",
+            "direction": "비만치료제 안전 사고 사례, 의료현장 의견 수집 및 제약업계 대응 전략 분석, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "비만치료제의 처방이 빠르게 늘고 있으나, 병용 처방에 대한 경고와 영유아 사후점검 기준이 부재해 안전관리에 한계가 지적된다. 현행 규제 체계의 보완이 요구되는 상황이다.",
+            "title": "비만치료제 처방 급증 속 안전관리 허점 우려"
+          },
+          {
+            "lead": "최근 비만 치료제 사용이 많아지면서도 병용 처방 위험 경고 및 영유아 대상 사후 점검 기준이 마련되지 않아 주의가 필요하다. 규제 당국의 추가 검토가 시급한 실정이다.",
+            "title": "비만약 증가에도 영유아 안전기준 부재 문제"
+          },
+          {
+            "lead": "비만 치료제 처방이 늘고 있지만 병용 처방에 관한 적절한 경고와 영유아 안전 점검 기준이 부재해 안전 문제가 대두된다. 이를 위한 규제 보완책이 절실하다.",
+            "title": "비만치료제 처방 증가…안전관리 체계 공백 지적"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:15.797Z"
+      }
+    },
+    {
+      "title": "식약처, 의사 자가 처방·투약 금지 의료용 마약류 범위 대폭 '확대'",
+      "summary": "식약처가 의사의 자가 처방·투약을 금지하는 의료용 마약류 범위를 확대하는 정책을 제시했다. 추가 대상 성분과 시행 시점, 진료현장에 미칠 영향을 확인할 필요가 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47544",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-14T06:02:00.000Z",
+      "tag": "major",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "식약처가 의료용 마약류 자가 처방·투약 금지 범위를 확대한 가운데, 관련 시장의 변화와 업계 반응에 대한 분석이 필요하다. 해당 정책이 제약 바이오 산업에 미치는 영향과 향후 전망을 짚는다.",
+            "title": "확대된 의료용 마약류 규제, 국내 시장 영향은?",
+            "direction": "확대된 규제가 제약사와 의료기관에 미치는 영향을 집중 취재, 시장 규모 변동 및 규제 대응 전략 확인 필요"
+          },
+          {
+            "lead": "의사의 자가 처방과 투약을 금지하는 의료용 마약류 종류가 늘어나면서 법적 해석과 분쟁 소지도 높아지고 있다. 관련 규제 강화 배경과 법원 대응 사례를 다각도로 검토한다.",
+            "title": "의료용 마약류 자가 투약 금지 확대, 법적 쟁점은",
+            "direction": "법적 분쟁 가능성 및 규제 적용 범위에 대한 법률 전문가 의견과 사례 확보 필요"
+          },
+          {
+            "lead": "최근 식약처의 자가 투약 금지 의료용 마약류 확대 조치와 관련, 국내외 경쟁 약물 관리 현황 및 규제 기준을 비교 분석한다. 각국 규제 차이에 따른 국내 제약사 대응 전략을 모색한다.",
+            "title": "의료용 마약류 경쟁약물 관리 현황과 전망",
+            "direction": "국내외 경쟁약물과 규제 차이 분석, 제약사 개발 전략 및 정책 대응 방향 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "의사가 직접 자가 처방 및 투약할 수 없는 의료용 마약류 범위가 식약처에 의해 크게 확장됐다. 이번 조치는 진료 현장에서 관리와 규제 강화의 변화를 예고한다.",
+            "title": "식약처, 의료용 마약류 자가 투약 대상 늘렸다"
+          },
+          {
+            "lead": "식약처가 의료용 마약류 중 의사가 자가 처방 및 투약을 할 수 없는 대상을 대폭 늘렸다. 추가 성분과 시행 시기, 의료 현장 영향에 관심이 모아진다.",
+            "title": "자가 처방 금지 의료용 마약류 종류 확대 발표"
+          },
+          {
+            "lead": "의사의 자가 처방과 투약이 불가능한 의료용 마약류 범위가 식약처 정책으로 확대됐다. 이 조치가 의료진과 환자 관리에 미칠 파장에 주목된다.",
+            "title": "의사 자가 투약 제한 의료용 마약류 대폭 늘어난다"
+          }
+        ],
+        "generated_at": "2026-10-15T22:54:03.318Z"
+      }
+    }
+  ],
+  "global": [
+    {
+      "title": "인비비드, 장기 코로나 또는 백신 후 증후군 치료를 위한 단클론항체 VYD2311 ‘FLINTLOCK’ 2상 시험 개시",
+      "summary": "(제목 기준·원문 미검증) 인비비드와 SPEAR 연구팀이 장기 코로나 또는 백신 후 증후군 치료 후보인 VYD2311의 임상 2상을 시작했다.",
+      "source": "https://news.google.com/rss/articles/CBMixwJBVV95cUxOeWpISFJLZVdmczhBeHJsa0s1elNhOE1uVGdhUkN4RF9XeVBXUW5GaTVhdGJzZkl5dEdCUnpMNjRyT0hfVlYzU3dWV3p4LWVxeFRycXNscHRQUFNOOUpKTUJmNkw5SW8xZVQwdDN1SjJOakVUSmxHNXczVEY1MDNjVTc3QUtMS2Q1eFFLQlFUYVN3NC1rdks2blZKdFNNTS1KQUxIR2xtOFphMjloRDNVdkZST3FqeDlMU0hJTzJMTVIwcFRRNGlKWEdaaXlQTzBQWmR6VmhYQ2ZRN3FvMFFyMDItOEpPVmdxNkRiMFFudGF4WFhBbk50ZVAxd1dSS0tMV3BMbEJEZHl0ZDluaWFuNWl4cjZNM3pXOWZOelhKaHVQT0pnQ1g0X1JEVE0wemZWSmZDamhfc1dpeFVuclZxLWcxcElEV3M?oc=5",
       "source_name": "BioSpace",
+      "published_at": "2026-10-14T12:59:55.000Z",
+      "tag": "P0",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "VYD2311의 2상 임상 시험 개시는 늘어나는 장기 코로나 환자군에 대응할 치료제 경쟁 구도에서 중요한 이정표로 평가된다. 이번 임상의 결과가 경쟁 단클론항체 치료제 대비 우위 확보에 미칠 영향을 집중 조명한다.",
+            "title": "장기 코로나 치료 경쟁 속 VYD2311의 임상 진전",
+            "direction": "장기 코로나 치료제 경쟁 약물 현황 및 시장규모 비교, 효과 차별화 전략 확인 필요"
+          },
+          {
+            "lead": "인비비드가 SPEAR 연구팀과 함께 진행하는 VYD2311 임상 2상 시험은 장기 코로나와 백신 후 증후군 치료제 개발에서 안전성과 효과성을 입증하는 중대 기술적 도전이다. 개발 과정과 규제 환경을 분석해 향후 시장 진출 가능성을 평가한다.",
+            "title": "단클론항체 VYD2311, 장기 코로나 치료 개발 전략 고찰",
+            "direction": "임상 개발 경과 및 주요 규제 당국의 승인 절차, 법적 이슈 등 심층 취재 필요"
+          },
+          {
+            "lead": "VYD2311의 임상 2상 시험 시작으로 장기 코로나 치료제 개발 레이스가 가속화되면서 제약바이오 업계 내 파장과 투자 방향에도 변화가 예상된다. 임상 결과를 토대로 후속 계약 및 협력 가능성을 전망한다.",
+            "title": "장기 코로나 치료제 시장 영향력 시험대 오른 VYD2311",
+            "direction": "업계 영향과 투자 유치 동향, 제휴 및 계약 현황에 대한 심층 분석과 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "인비비드와 SPEAR 연구팀이 장기 코로나 및 백신 후 증후군 치료를 목표로 단클론항체 VYD2311의 2상 임상을 공식 개시했다. 이번 시험은 해당 치료제의 효능과 안전성을 검증하는 중요한 단계다.",
+            "title": "인비비드, 장기 코로나 치료제 임상 2상 출발"
+          },
+          {
+            "lead": "인비비드가 장기 코로나 및 백신 후 증후군에 대응하기 위한 단클론항체 VYD2311의 임상 2상 시험을 시작하며 개발 속도를 높였다. SPEAR 연구팀과 협력해 치료제의 치료 효과를 본격 평가한다.",
+            "title": "VYD2311, 장기 코로나 치료제 2상 시험 돌입"
+          },
+          {
+            "lead": "단클론항체 VYD2311의 임상 2상 시험이 인비비드와 SPEAR 연구팀에 의해 시작되면서 장기 코로나 및 백신 후 증후군 치료제를 위한 임상적 검증이 강화됐다. 치료제의 임상적 가능성에 주목된다.",
+            "title": "장기 코로나 치료용 VYD2311, 임상 2상 개시"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:40.040Z"
+      },
+      "original_title": "Invivyd and the SPEAR Study Group Announce Initiation of “FLINTLOCK” Phase 2 Study of VYD2311, a Monoclonal Antibody for the Potential Treatment of Long COVID or Post-Vaccination Syndrome - BioSpace"
+    },
+    {
+      "title": "파밍, ESID 2026서 면역 이상 동반 유전면역결핍증에 렌이올리시브(leniolisib) 2상 긍정적 탑라인 결과 발표",
+      "summary": "(제목 기준·원문 미검증) 파밍이 유전적 면역결핍증 환자 대상 렌이올리시브의 임상 2상 탑라인 데이터에서 안전성 및 유효성을 입증했다고 발표했다.",
       "source": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOWk5zUk95eXFJMmZxTWZwZ0VzSVZXamE2RUlLdEg0WWNXYUNsRTlOa3hPVjYwSTRBdnR1MGg3aWFFYnNEUjh5RkVZM3JDVXRuU0lpLTcwVU5kNUJGN1hBME5RN0VxUy1NYVhPWHZid2hTQ0ZNNm9JcTJVRmh5NGVGcmlRckctelRvX2s1QXJLR0EzV3lvYVdNU2xoN3BDbkxLdm1LRDVmblpkdER1VjJ6S1JQRlpnQnJlR0ZtYnl1R3ZKWnFEZm1ISC03aFpNSGVSc3BZMjhhM0lyd2M2SFdzVWtfOFFHbm9pcGtmUko0OA?oc=5",
-      "published_at": "2026-10-14 09:56:09+00",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-14T09:56:09.000Z",
+      "tag": "P0",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
       "article_preview": {
         "diff": [
           {
@@ -125,11 +540,195 @@
         ],
         "generated_at": "2026-10-15T22:48:14.569Z"
       },
+      "original_title": "Pharming presents positive Phase II topline data for leniolisib in genetic PIDs with immune dysregulation at ESID 2026 - BioSpace"
+    },
+    {
+      "title": "바이오콘, 젠테크와 글로벌 특허 분쟁 종결 후 페브릴조(Pebrilzo, bPertuzumab) 최조 출시일 확보",
+      "summary": "(제목 기준·원문 미검증) 바이오콘이 젠테크와의 글로벌 특허 합의를 통해 단독으로 페브릴조(바이퍼투주맙)의 조기 허가 및 시장 출시 일정을 확보했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1Hd1FYUU5CRVYwZkFlb2ZURFBvTWtkM1VEME5rSnZONGg3MUIyMDFqWExjRWlzX1BKbll3WWFCTlJXTU96dDlqblh0Q1lJYktMMVl3?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-14T07:04:20.000Z",
+      "tag": "P0",
       "verification_status": "headline_only",
-      "tag": "P0"
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "바이오콘이 제넨텍과 특허 분쟁을 해결해 퍼투주맙 바이오시밀러 진출 길을 열었다. 경쟁사의 개발 현황과 시장 규모 분석을 중심으로 바이오시밀러 시장 구도를 재조명한다.",
+            "title": "퍼투주맙 시장 경쟁력 강화 전략은?",
+            "direction": "경쟁약물 현황 및 시장 규모 분석, 확인 필요"
+          },
+          {
+            "lead": "바이오콘과 제넨텍의 특허 합의 사례를 통해 바이오시밀러 시장에서 특허 갈등이 가지는 의미를 검토한다. 규제 환경 및 법적 분쟁이 산업 전반에 미치는 파급 효과를 집중 취재한다.",
+            "title": "글로벌 특허 분쟁이 바이오시밀러 시장에 미치는 영향",
+            "direction": "특허법 및 규제 상황과 산업 영향 분석"
+          },
+          {
+            "lead": "퍼투주맙 바이오시밀러 출시를 위한 바이오콘과 제넨텍 간 특허 조정 사례가 업계 내 새로운 협력 모델로 주목받고 있다. 타 사례와 비교해 법적 분쟁 해결 방식의 변화 가능성을 탐색한다.",
+            "title": "바이오콘 특허 합의, 업계 협력 모범 사례 될까?",
+            "direction": "업계 내 특허 분쟁 해결 및 협력 사례 비교, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "바이오콘이 제넨텍과의 글로벌 특허 분쟁을 합의하며 퍼투주맙 바이오시밀러 '페브릴조'의 출시 시점을 확정했다. 이번 합의로 계약상의 출시 장애물이 해소돼 시장 진입이 가능해졌다.",
+            "title": "바이오콘, 퍼투주맙 바이오시밀러 출시길 열다"
+          },
+          {
+            "lead": "바이오콘은 퍼투주맙 바이오시밀러 관련 특허 문제로부터 자유로워지며 제품 출시 일정을 확보했다. 글로벌 특허 분쟁 합의를 통해 합의 조건과 출시일에 대한 불확실성이 줄었다.",
+            "title": "제넨텍과 합의한 바이오콘, 신약 출시 가능해져"
+          },
+          {
+            "lead": "바이오콘이 제넨텍과의 특허 합의를 마치며 '페브릴조' 출시가 가능해졌다. 다만 각국 출시일과 구체 조건은 추가 검증이 필요하다.",
+            "title": "퍼투주맙 바이오시밀러, 바이오콘 출시 문턱 넘다"
+          }
+        ],
+        "generated_at": "2026-10-15T22:48:09.754Z"
+      },
+      "original_title": "Biocon Secures Earliest Licensed Launch Dates for Pebrilzo (bPertuzumab) Following Global Patent Settlement with Genentech - FirstWord Pharma"
+    },
+    {
+      "title": "스피노제닉스, 뇌파 스크리닝 활용 자폐증 치료제 2b상 시험 발표",
+      "summary": "(제목 기준·원문 미검증) 스피노제닉스가 독자적인 뇌파 기반 스크리닝으로 환자 맞춤형 자폐증 치료제를 개발하기 위한 임상 2b상 시험을 시작했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBHbmN6VlBBMzZDdTFxYjdOZHk1Tk1FS1RQTDBYZGQ2R3ZnQU5OX2pmX3Z5YU5qbmpTZXI5emRJeVZObkpFTW04SjYtSk1pTklUcUFF?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-14T15:02:43.000Z",
+      "tag": "P1",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "스피노제닉스의 뇌파 기반 맞춤형 자폐증 치료제 임상 2b상 시작을 계기로 뇌파 기술을 활용한 신약 개발 경쟁이 치열해지고 있다. 각사의 접근법과 임상 진척 상황을 비교 분석한다.",
+            "title": "자폐증 치료 신약, 뇌파 스크리닝 경쟁 현황",
+            "direction": "스피노제닉스 외 경쟁사 뇌파 스크리닝 기술 현황 및 비교, 확인 필요"
+          },
+          {
+            "lead": "스피노제닉스가 뇌파 스크리닝 기반으로 자폐증 신약 개발을 본격화하는 가운데 글로벌 자폐증 치료제 시장과 향후 성장 가능성을 조명한다. 이번 임상 2b상의 의미를 시장 관점에서 분석한다.",
+            "title": "자폐증 치료제 임상 2b상, 시장 규모와 전망",
+            "direction": "글로벌 자폐증 치료 시장 규모 및 성장성 취재, 확인 필요"
+          },
+          {
+            "lead": "스피노제닉스가 자폐증 치료제 임상 2b상에 돌입하며 뇌파 기술 적용 신약 개발의 규제 환경과 업계 영향을 짚어본다. 혁신 기술 도입에 따른 법적 쟁점도 함께 살핀다.",
+            "title": "뇌파 스크리닝 자폐증 치료제 개발의 법규 및 업계 파장",
+            "direction": "뇌파 스크리닝 기반 치료제 개발 관련 규제 및 업계 반응 취재, 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "스피노제닉스가 뇌파 스크리닝 기술을 활용해 자폐증 치료 신약 임상 2b상을 개시했다. 환자 맞춤형 접근으로 효과 극대화를 노리는 시험이다.",
+            "title": "스피노제닉스, 맞춤형 자폐증 치료제 2b상 돌입"
+          },
+          {
+            "lead": "스피노제닉스가 자사 독자 뇌파 분석법을 바탕으로 자폐증 치료제 임상 2b상 시험을 발표했다. 환자 개별 특성 반영을 목표로 한다.",
+            "title": "뇌파 활용 자폐증 치료 임상 2b상 시작한 스피노제닉스"
+          },
+          {
+            "lead": "뇌파 스크리닝으로 자폐증 환자 맞춤형 치료제를 개발하는 스피노제닉스가 2b상 시험에 돌입했다. 혁신적인 스크리닝법이 핵심이다.",
+            "title": "스피노제닉스, 뇌파 기반 자폐증 신약 임상 확대"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:45.564Z"
+      },
+      "original_title": "Spinogenix Announces Phase 2b Trial for Autism Using Novel Brain-Wave Screening to Target Treatment - FirstWord Pharma"
+    },
+    {
+      "title": "코야, ALS 치료제 COYA 302 대상 2/3상 ALSTARS 시험 오픈라벨 연장 시험 개시",
+      "summary": "(제목 기준·원문 미검증) 코야가 ALS 환자 치료제로 개발 중인 COYA 302의 임상 2/3상 시험(ALSTARS)의 공개확장 단계에 착수했다.",
+      "source": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRXdVTUJMRmNfZ3pDcDB1MkZoOUFFeWFXUllrN1Z0cWpmSHE5UW4zOFNVZVh4Wnc4X25ycnQyRDZja1pOVGE5MGhQa3VCTVJYVnpFVmJqVTVuNzhWWmN0SG9UdGZHZEUxT2p3QkU2OXZ3VGpfNFlxTXJLRlF1OWE3TUYzMVEtVTlKZmxvb3lGSUJkbFZDNmlxX0pkZnV1ckxBaG0yLUlJMFRTV1haUGd2dll2eEdNSUQ3NnVfSWp0Q2g?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-14T13:55:00.000Z",
+      "tag": "P1",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "코야의 COYA 302가 2/3상 임상시험을 확장하며 ALS 치료 시장에서 입지를 다지고 있다. 국내외 경쟁 약물과 비교해 임상 진전 속도를 집중 분석한다.",
+            "title": "ALS 치료제 임상 확장, 글로벌 경쟁 상황은?",
+            "direction": "주요 경쟁 약물 개발 현황 및 시장 규모 현황 파악, 글로벌 임상 시험과의 비교, 확인 필요"
+          },
+          {
+            "lead": "코야가 ALS 치료제 COYA 302의 임상 2/3상 오픈라벨 확장 시험을 시작하며 허가 절차 준비에도 속도를 내고 있다. 국내외 규제 기관의 심사 기준과 승인 가능성을 검토한다.",
+            "title": "ALS 치료제 COYA 302와 규제 승인 전망 분석",
+            "direction": "국내외 규제 동향 및 과거 유사 사례 허가 상황 집중 취재, 승인 전망과 위험 요인 확인 필요"
+          },
+          {
+            "lead": "COYA 302의 2/3상 임상시험 오픈라벨 연장이 ALS 환자 커뮤니티와 제약 업계에 미치는 영향이 주목받고 있다. 환자들의 기대감과 업계 내 전략 변화를 다각도로 조명한다.",
+            "title": "코야 COYA 302 임상 확장, 환자·업계 반응과 파급 효과",
+            "direction": "환자 단체 인터뷰 및 업계 전문가 의견 수집, 임상 확대에 따른 시장 반응 및 전략 변화 확인 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "코야는 ALS 치료제 COYA 302의 2/3상 임상시험(ALSTARS)을 오픈라벨 확장 시험 단계로 본격 개시했다. 이번 단계는 환자 모집과 장기 효능 평가에 중점을 둔다.",
+            "title": "코야, ALS 치료 임상 2/3상 확장 단계 돌입"
+          },
+          {
+            "lead": "코야가 개발 중인 ALS 치료제 COYA 302가 2/3상 ALSTARS 시험의 오픈라벨 연장 시험에 들어갔다. 이는 치료제의 안전성과 효과를 장기 확인하는 절차다.",
+            "title": "ALS 신약 COYA 302, 코야 2/3상 확장 시험 시작"
+          },
+          {
+            "lead": "ALS 환자를 위한 코야의 신약 COYA 302가 2/3상 ALSTARS 시험의 공개확장 단계에 진입했다. 임상팀은 추가 환자 데이터를 확보하고 있다.",
+            "title": "코야 COYA 302, ALS 대상 임상 확장 돌입"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:40.076Z"
+      },
+      "original_title": "Coya to Initiate Open-Label Extension of Phase 2/3 ALSTARS Trial of COYA 302 in ALS - BioSpace"
+    },
+    {
+      "title": "펠라지, 탈모 치료제 PP405 2/3상 AWAKEN 임상 첫 환자 투여 개시",
+      "summary": "(제목 기준·원문 미검증) 펠라지 파마슈티컬스가 남성형 탈모 치료 신약 PP405의 임상 2/3상 AWAKEN 시험에서 첫 환자 투여를 완료했다.",
+      "source": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNWGFNbXBkNnV3TTNQVnA5SkZjWHY4eVNpMTZWOU9BRXBZUmNkeTZaenFwUEYzNmQ1eVRiVWxyVVpZRlF5Zks5dHNaWFlVY2dnaUtFZlNicDFqR3kza2pIcTVSM2hfSldaYXBKeWQxYkJLYWFKYks5MHN6cGVrWW42OF80dUd2a3UyakRKNEZtVG5UcHd2UDNLMzhtU0hpRlRIN0xUVVY1UHk3VkNidlBESlpLakdidjQ1Tl85ZVFQUktXazU0ZHNDXzliRkRWaXR1ZVozc3dOQm45ZVhjWEpWQXhWd1BkREtNRlRCZHpOWFRTenBzTWNSQzc4NVJ3MkQtelVaZ1dNSmN4aGhPTTg1TzY2WUlWZw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-14T13:55:00.000Z",
+      "tag": "P1",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "article_preview": {
+        "diff": [
+          {
+            "lead": "국내외 탈모 치료제 시장에서 여러 신약들이 개발 중인 가운데, 펠라지의 PP405가 2/3상 임상에서 첫 환자 투여를 완료해 주목받고 있다. 해당 신약의 향후 경쟁력과 시장 진입 가능성을 집중 조명한다.",
+            "title": "탈모 치료제 시장 경쟁 가열 속 PP405 임상 주목",
+            "direction": "국내외 탈모 치료 신약들과 PP405의 비교 및 시장 잠재력 분석, 경쟁 상황 확인 필요"
+          },
+          {
+            "lead": "PP405 임상 2/3상이 본격적으로 진행되면서 국내외 규제 당국의 승인 추세와 과거 임상 결과가 재조명되고 있다. 이번 임상 성공 여부에 따른 향후 승인 가능성과 시장 진입 전략을 모색한다.",
+            "title": "펠라지 탈모 신약 개발, 규제 및 임상 진행 현황 점검",
+            "direction": "규제 현황 및 임상 이력 세부 조사, 경쟁 약물과의 차별점 및 승인 전망 확인 필요"
+          },
+          {
+            "lead": "펠라지의 남성형 탈모 치료제 PP405가 임상 2/3상에서 첫 환자 투여를 진행하며 성공 가능성에 관심이 쏠린다. 신약 출시 시 기존 탈모 치료제 시장에 미칠 영향과 업계 반응을 분석한다.",
+            "title": "펠라지 PP405 성공 시 시장 영향 및 업계 파장 전망",
+            "direction": "시장 규모 평가 및 기존 치료제와의 경쟁 구도, 업계 반응과 예상 파장에 대한 심층 취재 필요"
+          }
+        ],
+        "model": "gpt-4.1-mini",
+        "quick": [
+          {
+            "lead": "펠라지 파마슈티컬스가 남성형 탈모 치료제 PP405의 AWAKEN 임상 2/3상 시험에서 첫 환자 투여를 마쳤다. 이번 단계는 신약 개발에 중요한 이정표로 평가된다.",
+            "title": "펠라지, 탈모 신약 임상 2/3상 첫 환자 투여 완료"
+          },
+          {
+            "lead": "남성형 탈모 치료 신약 PP405가 펠라지에 의해 임상 2/3상 시험에 진입하며 첫 환자 투여를 시작했다. 임상 시험이 성공적으로 진행되면 치료 옵션 확대가 기대된다.",
+            "title": "PP405 임상 2/3상 돌입, 펠라지 첫 환자 투여 시작"
+          },
+          {
+            "lead": "펠라지가 PP405의 임상 2/3상 시험에서 첫 환자 투여를 수행하며 남성형 탈모 치료제 개발에 박차를 가한다. 이 과정은 신약의 안전성과 효능 평가에 중요한 단계다.",
+            "title": "펠라지, 남성 탈모 치료 신약 AWAKEN 임상 진행"
+          }
+        ],
+        "generated_at": "2026-10-15T23:19:40.529Z"
+      },
+      "original_title": "Pelage Pharmaceuticals Announces First Patient Dosed in Phase 2/3 AWAKEN Trial of PP405 for Androgenetic Alopecia, the Most Common Form of Hair Loss - BioSpace"
     }
   ],
   "patent": [],
   "telegram": false,
-  "publish_allowed": false
+  "publish_allowed": false,
+  "note": "기사 선정은 뉴스 가치에 따른 것이며 원문을 확인하지 못한 경우 해당 사실을 요약에 명시한다."
 }
