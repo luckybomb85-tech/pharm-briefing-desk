@@ -1,0 +1,138 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-16",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "editorial_scope": "전일 주요 기사 중심 선별본",
+  "verification_note": "원문 또는 교차 자료 확인 가능 항목을 일부 검증했습니다. 미확인 표시는 추가 원문 검증이 필요함을 의미합니다.",
+  "search_window": {
+    "note": "지난 15일 주요 뉴스 및 16일 새벽 보도"
+  },
+  "domestic": [
+    {
+      "title": "기등재 약가 재평가 자료제출 임박… 제약사들 '차수 조정' 채비",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79900",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14T21:03:00+09:00",
+      "tag": "P0 · 약가개편",
+      "summary": "기등재 의약품 상한금액 재평가 자료 제출기한이 10월 말로 다가왔다. 과거 약가가 크게 인하된 동일제제는 신청을 통해 1차에서 2차 재평가로 이동할 여지가 있으며, 약 16% 기준은 설명회 구두 언급으로 확정된 공고 기준은 아니다. 1차 약가 조정은 2027년 4월부터 예정돼 있다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 1,
+      "source_id": 504
+    },
+    {
+      "title": "첫 ACL 억제제 ‘넥스레톨’ 국내 허가…스타틴 치료 한계 보완",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47600",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-15T13:56:04+09:00",
+      "tag": "P0 · 국내 신약 허가",
+      "summary": "한국다이이찌산쿄의 경구용 ACL 억제제 넥스레톨(벰페도익산)이 10월 14일 국내 허가를 받았다. 스타틴 불내성 또는 LDL-C 조절이 충분하지 않은 환자에게 새 선택지가 생겼으며, CLEAR Outcomes 연구에서는 주요 심혈관사건 위험이 위약 대비 13% 낮았다. 국내 출시는 2027년 상반기 예정이다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 2,
+      "source_id": 552
+    },
+    {
+      "title": "베링거인겔하임, 특발성 폐섬유증 치료제 ‘자스케이드정’ 韓 품목허가 획득",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29098",
+      "source_name": "더바이오",
+      "published_at": "2026-10-15T10:15:00+09:00",
+      "tag": "P0 · 희귀질환 허가",
+      "summary": "식약처가 베링거인겔하임의 특발성 폐섬유증 치료제 자스케이드정(네란도밀라스트)을 10월 15일 허가했다. 선택적 PDE4 억제제로 기존 치료제와 다른 작용기전이며 GIFT 제16호 신속심사 대상이었다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 3,
+      "source_id": 531
+    },
+    {
+      "title": "알보텍, ‘아일리아 8㎎’ 바이오시밀러 유럽 허가 신청…‘고용량’ 시장 공략",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29077",
+      "source_name": "더바이오",
+      "published_at": "2026-10-15T06:18:46+09:00",
+      "tag": "P1 · 바이오시밀러",
+      "summary": "알보텍과 어드밴즈파마가 아일리아 고용량 8mg 제형의 바이오시밀러 유럽 품목허가를 신청했다. 기존 2mg 중심의 경쟁이 투여 간격을 늘린 고용량 시장으로 확장되는 움직임으로, 신청과 최종 승인 여부는 구분해야 한다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 4,
+      "source_id": 536
+    },
+    {
+      "title": "압타바이오, 아이수지낙시브 글로벌 임상 2상 안전성 확인",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79909",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-15T00:00:26+09:00",
+      "tag": "P1 · 임상 2상",
+      "summary": "압타바이오가 조영제 유발 급성신손상 치료 후보 아이수지낙시브의 한미 글로벌 2상에서 1차 안전성 지표를 충족했다고 밝혔다. 핵심 유효성 결과는 10월 23일 발표 예정으로, 이번 안전성 결과만으로 치료효과가 입증됐다고 볼 수 없다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 5,
+      "source_id": 496
+    },
+    {
+      "title": "\"국내 계약이 글로벌 딜 막을 수도\"… 숨겨진 바이오텍 L/O 맹점",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79903",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-14T21:04:00+09:00",
+      "tag": "P1 · 기술수출 계약전략",
+      "summary": "바이오텍이 국내 제약사와 공동개발·독점계약을 맺을 때 권리 범위와 지식재산권 배분이 후속 글로벌 기술수출에 제약이 될 수 있다는 전문가 경고가 나왔다. 계약금보다 지역·적응증별 권리 설정과 글로벌 협상 여지를 점검하는 기획 아이템으로 의미가 있다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 6,
+      "source_id": 503
+    },
+    {
+      "title": "의약품 허가서류, 한 번 내면 재사용…전자 제출 기능 개선",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47580",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-15T00:03:53+09:00",
+      "tag": "P1 · 허가·규제",
+      "summary": "식약처가 의약품 허가 신청에 쓰는 최신 전자공통기술문서 eCTD v4.0 서비스를 개시했다. 제출자료 재사용 등 절차 효율화가 핵심으로, 제약사 RA 실무의 제출 부담과 시스템 전환 준비를 확인할 필요가 있다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 7,
+      "source_id": 558
+    },
+    {
+      "title": "안국약품, 과천 업무시설 1630억원에 취득…총자산 52.4%",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29096",
+      "source_name": "더바이오",
+      "published_at": "2026-10-15T08:50:00+09:00",
+      "tag": "P1 · 기업투자",
+      "summary": "안국약품이 과천 업무시설을 약 1630억원에 취득한다는 보도가 나왔다. 거래 규모가 총자산의 52.4%에 해당한다는 점에서 투자재원, 차입 부담, 자산 활용 계획을 검토할 가치가 있다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 8,
+      "source_id": 532
+    },
+    {
+      "title": "지놈앤컴퍼니 “‘GEN-001’ 종양 축소 관찰…위암 병용임상 가능성↑”",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29048",
+      "source_name": "더바이오",
+      "published_at": "2026-10-14T20:50:00+09:00",
+      "tag": "P1 · 항암 임상",
+      "summary": "지놈앤컴퍼니가 마이크로바이옴 후보 GEN-001의 위암 병용 임상에서 종양 축소 사례를 관찰했다고 발표했다. 반응 환자 수, 평가 기준, 비교군과 추적기간 등 근거 확인 전에는 유효성 확정 표현을 피해야 한다.",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "priority": 9,
+      "source_id": 551
+    },
+    {
+      "title": "K-MELLODDY, 연합학습 기반 신약개발 1단계 성과 공개",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1728000",
+      "source_name": "EBN",
+      "published_at": "2026-10-15T06:30:31+09:00",
+      "tag": "P2 · 신약개발 AI",
+      "summary": "정부 지원 연합학습 신약개발 프로젝트 K-MELLODDY가 1단계 성과를 공유한다. 기관의 비임상·독성·약동학 데이터를 외부로 옮기지 않고 공동 활용하는 체계와 ADMET 예측 모델 개발이 핵심이며, 실제 예측 성능과 참여기관 확장성이 후속 확인 사항이다.",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "priority": 10,
+      "source_id": 571
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "publish_allowed": false,
+  "telegram": false,
+  "selected_count": 10
+}
