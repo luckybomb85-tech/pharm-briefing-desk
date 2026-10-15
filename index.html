@@ -147,8 +147,8 @@ function visibleItems(section=tab){
   const valid=sources.filter(x=>{const p=Date.parse(x.published_at||'');return Number.isFinite(p)&&(p>=from||(p>=back&&p<midnight));});
   const primary=valid.filter(x=>Date.parse(x.published_at)>=from);
   const older=valid.filter(x=>Date.parse(x.published_at)<midnight);
-  // Quality selection happens upstream; never truncate selected previous-afternoon news to three items.
-  sources=[...primary,...older];
+  // If enough same-day news is present, do not dilute the edition with yesterday's stories.
+  sources=[...primary,...(primary.length>=5?[]:older.slice(0,Math.max(0,5-primary.length)))];
  }
  const seen=new Set();
  return sources.filter(x=>{if(!x?.title)return false;const k=String(x.source||x.title).trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true});
