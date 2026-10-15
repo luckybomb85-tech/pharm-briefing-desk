@@ -1,6 +1,6 @@
 {
-  "total_input": 333,
-  "ranked_count": 42,
+  "total_input": 337,
+  "ranked_count": 44,
   "shortlist": [
     {
       "title": "AtomVie Global Radiopharma Announces Strategic Partnership with Jubilant Radiopharma to Strengthen Clinical Trial Logistics and Distribution - FirstWord Pharma",
@@ -14,6 +14,21 @@
       "signals": [
         "CLINICAL",
         "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "A drug developer who helped secure FDA approvals is Helus Pharma’s board pick, pending Cboe Canada approval. - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObUVzclY4VS1TUFpQZjRwZDI4S2hxMGZNQ2FNSlJ4azVNRmJSbjQtRmh1LTM5SDBfcEhqeWNZVkk0V1ZHQTNyVV9zTmtLaG5sdzVlZDM3V2FxZWZ2TTZ2QXd3dDBTWkZOZENxZ2tyaEtSTGVzMXhtNmQ3NHY5RFhQU2ZaOXNVZzV3aUlMbUZlS2JhZ2Q3Qy1ZXzRtMy1WV185Y1I3VWNqSkE?oc=5",
+      "published_at": "Thu, 15 Oct 2026 11:30:00 GMT",
+      "source": "Global gap recovery",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "REGULATORY"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
@@ -127,21 +142,6 @@
       "title": "Genfleet/Verastem Eye World-First Phase III Trials For KRAS G12D Inhibitor In CRC - insights.citeline.com",
       "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVFZzOU1sSExHbTk0S1JQRW9zbFRIVk9OajY3cmpqU0RSMzdCY2ttMzZmLVNmdjFwME12S2QxaHFEZVY3c1RhLW5yTFlRZjExUVpFTXFvWnY4SHZ1VFhES1FWN1RZUmlFVmZVREFEalZMUjJJczF3aFl2SlBTVDAyUkw4ZHJJRnhvMEdaU3lkXzEzSmhCX29RUlJhWUxqWlA3Nnp2Zm01eW9OdGNaY0RfdjZGaF9sbEdCVk54S1pOdnhraW8zekhHWERhZ2NyZjc4LVN2ZnVCU0RTcDhsRGRGMjZsY0Z1bG9vQ1Y4bTVpb3ZVWTJjdl9jcXhoWU0?oc=5",
       "published_at": "Thu, 15 Oct 2026 08:56:07 GMT",
-      "source": "Scrip/Pink Sheet",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Home Resources Optimizing Recruitment for Breast Cancer Clinical Trials - citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbDZ1SGo3bWxIOTRmWjd6dWhLSkt2UnFUT2ZzYlJ3dzRRMUpwZU5xTFdXcFdvZUJqT1JlMGZCQ0RJcS1NeHdncDR4dzNGNXZGQWZQTDRVSEJQR2FIaXB6MjU3Y0RRSnFLempBa25zci1zamNHYlV0cDFXY0dXUU5LaGVPZFpPblRIVmozMENR?oc=5",
-      "published_at": "Thu, 15 Oct 2026 20:17:58 GMT",
       "source": "Scrip/Pink Sheet",
       "group": "GLOBAL",
       "verified_original": false,
@@ -319,6 +319,21 @@
       "original_url_verified": false
     },
     {
+      "title": "VeraMorph Completes Positive Pre-IND Meeting on Oral Fulvestrant Product, Receives NIH SBIR Phase II Grant, and Names New CEO - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9zWUxBbGJ0ZG1leEtOXzRxUnk4dDY2Sllkd3RMN1BhbS03Y1hHUFBYc1A4THlCQnppa3Z2VExIZFJCZjdGbjVSZktkOUNuX19XZnlB?oc=5",
+      "published_at": "Thu, 15 Oct 2026 19:48:12 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
       "title": "Vividion Therapeutics Expands Clinical Development of WRN Inhibitor VVD-214 with Phase 2 Combination Study in First-Line Patients with Advanced Colorectal Cancer - BioSpace",
       "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxPVXVMS2c3U0E5SkpaYVhjNTVMLVN5TEZhVkYtSGpmSGx6OTczR19BY3BPYUNBXzI1Rl9vYlZrV0RwN01TRWo0QkgwTGNRVHlzczdZNlFibmNSa2Iwc0RieFdFUl9nYV9lR1Q4dUFWR0F1X196LUZYeFUzWERUdktCS1V4ZlNYWUl4SEg0elYycHViVVBTMDhoa19sOU5GU2FvYkNBeUhIS3hHX3VRdk9jUlN0UThEdjMxd2JIUU1QUnFQSU41enJoelAybld1RUNBazBtbFg2eW9HclRKYlZxN1NQU0xET1pTODdhNUtoWHp4NnNzNFlXM2lmeU54NGRjSVRENUU3aUEwdWhtcTc1cmg3Y0JDdVBxVmZXYXZaWVJ3WVFOUFVrbQ?oc=5",
       "published_at": "Thu, 15 Oct 2026 07:40:31 GMT",
@@ -359,6 +374,21 @@
       "score": 3,
       "signals": [
         "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Beyond The Base Case: Why Biosimilar Companies Need Two Forecasting Engines, Not One - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQY1poNWFWYnE3UjBpdU4zTGRVWnEzbENzdmw0X0Y5V21FbDEwbFI3M0RYVVhBNXhLY1JYVmJEZlBCTk1tVWdjXzVUbGM0Vmg4WTN1bXhuYnFKSmsydXFoWmc4VUQ5OXhjZTUxWmRDRl9tUDFYb1kxRkJoM3BuTjlIZFRPN1k3cUFjc3Y1aWt1TkJyeHlfNU9qcDNQSkMzTGlRM1A4bjFYNW1peXdNVFYwZFFobWNiWkF0ckN2NXE0ZXBOSWZDNE5rSXVZSW5yc0JYSU41ZlNGWlZVeGx4YkdsV3JUbkRmUGFqYU91cUZ6QVFINDB1Z1Vrdmtn?oc=5",
+      "published_at": "Thu, 15 Oct 2026 07:10:34 GMT",
+      "source": "Scrip/Pink Sheet",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "IP"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
@@ -420,37 +450,6 @@
       "score": 3,
       "signals": [
         "SAFETY"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "IgA Nephropathy Pipeline 2026: MOA, ROA, FDA-Approved Drugs, and Clinical Trial Progress Assessment by DelveInsight | Visterra, Chinook Therapeutics, Novartis, IgA proteases Selecta Biosciences - StreetInsider",
-      "url": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxORWxMbmc3SlNwdTVTZ3N6RWNoVzVqZjJObWM3Q1hJcFUtYTF5T0Zjcm1hMjB4THpFVndFWHYyUjJmckZfcWxIajRUaHhkbk0yMVVmeERPLWhHMXNiSVA5TWRlZUVGU0RYSEF3bUhBR1cxZEU2d1IySzNJN29EcEg3cUtFd0pWMHZiMmU4TmpFY1o1el9kVk9MZXdCT0JJWEFBNE9LNnQyaWctS2Z6R1ZEX3lzYjBCYzk4OU5VYzByNUNfcEVzUjdoQlZFQTBDQ1RDY3U1MjF1OVVvMFc3UUhJNmFVWGJVUnlRaEZiWlN6RjJuc1Z3UE53Z25tbW5ZR1hHN3NYRDV4aHZOaWVUS1JEU3lEOFVfdHdCS0RFUVBFUUFBQjZNUWlCSXhDVnVfbVhMdGgydlhVNkpidUEyRndUZzA4Q21CVzhtZnhoWUpDN0VabFpGU3ZMSU1SWjlzc0JGZzBBVXl1aF9pRzhIdERpb0ZuU3ByMFRQ?oc=5",
-      "published_at": "Thu, 15 Oct 2026 21:41:01 GMT",
-      "source": "Global gap recovery",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "CLINICAL",
-        "REGULATORY"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "India's August balance of payments surplus swings to $45.4 billion - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZThqa3otQktseEJLd3h0T090SFZXVmZmQkNvZ2VNRXJlWm5CTFIteno0ZnEtQ1V1eGg2UVVfaURNR0RLMk52UVZmSnJLd1VHb25sMEJLdThPbFVqd0RHTk9DdVlfZG96ZEowV2lFN29iblN6VEZZZWJhUlh0MF9qd0tvbk5YemtsNWhKMkZ0UjllV1NjSTh3c3dEWGhqVnN5OUJFTzBVRnA?oc=5",
-      "published_at": "Thu, 15 Oct 2026 13:23:45 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
