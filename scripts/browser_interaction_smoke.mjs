@@ -60,6 +60,16 @@ try{
  let n=0;
  for(let i=0;i<50;i++){n=await evaluate("document.querySelectorAll('.card').length");if(n>=minCards)break;await sleep(350)}
  if(n<minCards)fail('Expected at least '+minCards+' published cards; found '+n);
+ if(url.includes('2026-10-16')&&section==='domestic'){
+   const textCheck=await evaluate(`(()=>{
+     const titles=[...document.querySelectorAll('.card .title')].map(x=>x.textContent||'');
+     const article=titles.find(x=>x.includes('업체간 M'))||'';
+     const broken=titles.filter(x=>/&(?:amp|quot|apos|#39);/.test(x));
+     return {found:!!article,correct:article.includes('"업체간 M&A 가능한가"'),broken,example:article};
+   })()`);
+   if(!textCheck.found||!textCheck.correct||textCheck.broken.length)fail('HTML entity render regression: '+JSON.stringify(textCheck));
+   console.log('HTML_ENTITY_RENDER_OK',JSON.stringify(textCheck));
+ }
  const detail=await evaluate(`(()=>{
   const button=document.querySelector('.card .summaryToggle');
   if(!button)return {error:'No summary button'};
