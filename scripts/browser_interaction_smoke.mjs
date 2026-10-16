@@ -70,6 +70,15 @@ try{
    if(!textCheck.found||!textCheck.correct||textCheck.broken.length)fail('HTML entity render regression: '+JSON.stringify(textCheck));
    console.log('HTML_ENTITY_RENDER_OK',JSON.stringify(textCheck));
  }
+ if(url.includes('2026-10-16')){
+   const topics=await evaluate(`(()=>{
+     const labels=[...document.querySelectorAll('.card .pill')].map(e=>e.textContent.trim());
+     const allowed=['약가·급여','특허·소송','허가·규제','신약·임상','기술수출·계약','기업·경영','산업·정책','의약품·시장'];
+     return {labels,invalid:labels.filter(x=>!allowed.includes(x)),distinct:[...new Set(labels)]};
+   })()`);
+   if(topics.invalid.length||topics.distinct.length<2||topics.labels.length<minCards)fail('Article categories are not meaningful: '+JSON.stringify(topics));
+   console.log('EDITORIAL_CATEGORY_BADGES_OK',JSON.stringify({section,count:topics.labels.length,distinct:topics.distinct,invalid:topics.invalid.length}));
+ }
  const detail=await evaluate(`(()=>{
   const button=document.querySelector('.card .summaryToggle');
   if(!button)return {error:'No summary button'};
