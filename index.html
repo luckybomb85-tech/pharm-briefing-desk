@@ -130,13 +130,13 @@ async function loadV2Feed(date){
     if(data?.schema_version!=='briefing-v2'||data.date!==date||!Array.isArray(data.domestic))throw Error('Invalid v2 feed');
     v2Feed={date,status:data.status||'',globalStatus:data.global_status||'',items:data.domestic.filter(x=>x&&x.title&&/^https?:\/\//i.test(x.url||'')).map(x=>({
       id:x.id,title:x.title,source_name:x.source_name||'출처 미확인',source:x.url,
-      published_at:x.published_at||'',tag:x.selection_status==='selected'?'선별 기사': '수집 후보 · 미검증',
+      published_at:x.published_at||'',tag:x.category||x.tag||'의약품·시장',
       summary:x.summary||'수집된 기사 후보입니다. 원문 검증과 편집 선별은 아직 완료되지 않았습니다.',article_preview:x.article_preview||null,
       ai_draft:x.ai_draft||null,verification_status:x.verification_status||'candidate',
       is_v2_candidate:true
     })),globalItems:(data.global||[]).filter(x=>x&&x.title&&/^https?:\/\//i.test(x.url||'')).map(x=>({
       title:String(x.title).replace(/^\(제목 기준·원문 미검증\)\s*/,''),original_title:x.original_title,source_name:x.source_name||'해외 언론',source:x.url,
-      published_at:x.published_at||'',tag:x.tag||'글로벌',summary:x.summary||'',article_preview:x.article_preview||null,
+      published_at:x.published_at||'',tag:x.category||x.tag||'의약품·시장',summary:x.summary||'',article_preview:x.article_preview||null,
       verification_status:x.verification_status||'headline_only',selection_status:x.selection_status||'selected',is_v2_global:true
     })),error:null};
   }catch(e){v2Feed={date:null,items:[],globalItems:[],status:'',globalStatus:'',error:String(e)};console.warn('v2 feed unavailable; archived data preserved',e);}
