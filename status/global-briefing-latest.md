@@ -1,67 +1,67 @@
-# 글로벌 제약바이오 브리핑 | 2026-10-16
+# 글로벌 제약바이오 브리핑 | 2026-10-17
 
 > 자동 발견·선별된 취재 후보입니다. 원문 및 핵심 사실은 기사 작성 전 확인해야 합니다.
 
-### 1. AtomVie Global Radiopharma Announces Strategic Partnership with Jubilant Radiopharma to Strengthen Clinical Trial Logistics and Distribution - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 7
-- 분류: CLINICAL, DEAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5JWE1TTS1uaGc1VDZESWpidUVTY0Uwenp6N1ZGckdXZ01lSm9pNzR6NXZtUDV2eDR0d2hfVVZVcG41d2R6OXV1aHpPNktDeEVsVmhr?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 2. Bold Therapeutics Reaches Enrollment Midpoint in Randomized Phase 2 Trial of BOLD-100 in Second-Line Metastatic Colorectal Cancer - FirstWord Pharma
+### 1. Bristol-Myers Squibb's Pulmonary Fibrosis Treatment Still Viable Despite Recent Mixed Phase 3 Results, UBS Says - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5GV2Q2QUROZ0EwQkN3MVVJUkRyOE4teExzOW1YeDREVU1TakdGWFNCWmtGWDVxRVZuaEdrX0JTcWo0U0Nhekp3aWNDSFBhT3RCLUNR?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBoWExjV2d5WEdEU1NLRGx3TzdiMmlnQ0tiTG43MmxqbXJ0eEUwWlU0MGRvSGJ3MEtwMUlOVG0xeGdJUTFQMXhlY0J4MGJuNFoxREtN?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 3. Cellectar Biosciences Presents Compelling Efficacy Data from Phase 2b CLOVER WaM Subset Analysis of Iopofosine I 131 in Patients Relapsed/Refractory to BTK Inhibitor Therapy at the International Workshop for Waldenström Macroglobulinemia - BioSpace
+### 2. CHMP recommends approval of Johnson & Johnson’s TALVEY®▼ (talquetamab) plus daratumumab in earlier line treatment of relapsed/refractory multiple myeloma - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMilAJBVV95cUxQckVBdnFlbGEyRDdXbjJDSVFoOFlTSUgyUDE3c0p0eUdjc19GY29iUHM4WUpBdzRETjFNU1RtaVNHSTNDZFFTZlpHblE3dk5WVHdDeXZITGc1UzFxOHNtaTVpcEVjOS1TS2ZEQW9CQzlCd0s2R3JNMjUtRm9vTUtXZWdURXFzZXpEdTRmR0hMTVFYUGl2RUdzbEJqLTVNRDMxcTBmSDZpN185YnRlRGVJLXVXZXVNa1pFSUdibTNFaWdtUGszdDZ3YU8zVm1JQzFxMUIteWFTUm1GVFRNbG8tNUxUX0d5MG54OWI2QUNyUXRVYXBDMGJPTXBWVmwtXy1ROC1yZUE1YTByV0xna0tPMmZ2R1E?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 3. Cyrano Therapeutics Announces Presentation of Positive Phase 2 FLAVOR Data Demonstrating Statistically Significant Improvement in Smell Function with CYR-064 in Patients with Post-Viral Smell Loss - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBRZ2ZaUVdLTmo3cXlGWFpJZ3VreERUWkZtVHZ6ZXFCcnh5VXJCVmVIdHpIc1BQdVQyb1VfODhqWnFKMXEtVTM1VHgtVllwMUU2N3hR?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 4. FDA Approves New Nonprescription Eye Drop for Relief of Eye Redness - U.S. Food and Drug Administration (.gov)
+- 매체: FDA Press Releases | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMiswFBVV95cUxPTDg4MVB4ZHpBWGJsVUFIREM3d3RvdXVrVG0tRmZuZG9wNHVibTllZmNYRGNhajA5ajluWmtwQlB5QTlqUG4xNFZUQjk3VFlabzNlT2I2U25yTUUta0ZGTlhMNGs4bGZ4S3hHVklRMC1aZ3dFd2YxaWpQWXVMRDhrZVBPWXM3UjNtVXoycTJ5SV9wUFozbVNPZzVLVGxPV0thSzBkTFdqQUFkZWZ4X1VmQ0JOMA?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 5. FDA approves Roche’s Enspryng, a first-in-class IL-6R inhibitor, as the first and only at-home subcutaneous treatment option for thyroid eye disease (TED) - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMimAJBVV95cUxPSVY2WjVUT0VvOUM0cXZ4ajJCb2J0WTZJV1RSQ2ppUVFTMWp4WHMxOTNTSjF5SXM0Z01ySE1nWGVvaG8wT0RSam83c3ZLZkdsRzh1RHliSURWdS1uLXdveGRsLTdvQzJpZ1RwNDZWd2s2ckpuckVyS0FUVFlOdkNRUjgyeFoxY1B3VVBiamsxMjB6NVZKNUM3cVdtRkJ1RDBtU0ZkRGt6T2dEbmhoZERCV25BYWoxdTJjVjhZZThwRnZOa1h2ZGJyd052aTBRcEZpb3RaZ1p6YmdSbzF6LWVZMWxZQlMzbkxRLTdNT2RiLXg3X2hVTE9wT1FGYXcyYmN4WTd3N0pORVdyMk4zRmVYV0RqcUFVMGhR?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 6. Fractyl Health's Revita Meets Six-Month Co-Primary Endpoint in Ongoing REMAIN-1 Pivotal Study, With Highly Statistically Significant Reduction in Weight Regain After GLP-1 Discontinuation - BioSpace
 - 매체: BioSpace | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMijgNBVV95cUxQcW1HWl9MNFZGLVQzVzlYc1ZrNkZGZ3RTQ1RTal9YS0dXWmNYLWROTGZuSS10bkNGMlFDRnRsNmlGbjMwcm10VWUwSW1xODVobXpPQTh6c2ZmR3RyRnVHT1ZOQ2VYbkxXX1BSS0xBVWR1YzZQSHR2T3ZVbTl4a3B4VXRuNGxZMG1ENnVadF9LZ2t2b2dXVUsxVHRpczd6RFJka2tPUmFfQkxJM3JlbWRHazNiWVRuRVJfdlRJVjVYcUVoMEp0bjRaTGNkWWkyTkVZYldfd0ttYXJXWEJTT2JWV01rcmFiZjB1ZUZtME5LczZWV0hkS0h1SVh1dkJOQmJFNnc1dWhYZU9OUlZSQnlIZVpILWZvRHBfbWN6cnlBY2JHMVBrZ2ZVZ1liemtZZURWd2NiMG9jcHl3WUdvVDZKUjlFTUNlWEZ5T2dzU3hmSjF5TGpjWmFqajk1LVR2RV9WU21vaGtDSGdNaFVyMkVrZnE3Q1c3VTJiTmpEdVVPVnNEUURidkJtR3owZzM3UQ?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiyAJBVV95cUxQWTlqZzRrRWJBcjZWS1RRX0hETk8yRjhnVTVYcDBqcTVQNEsxc0lYTkpsWkZnZWo3V3ZkTm91dGNTYnFoM2t0SXk1QzljdUNoS3VBczM0dWJLLWF4SlBKV1pEN19uMGRJc3ZVWE5VS3N3S2tNeWRzOEtuOVZiUFNOZGFhVTdMa0NwemtEbmJtVXBZV1NUYzRYYzlHSWE0ZHBIYUJHUFhLdFctWTVIdVpKb21nV3FjRnE2UFRvRzlucHlfZ3Jwc3g0VnRORjNnM1JTVmVaeHJpNDZIT1UtQTN0ZV9fam1xcGRUQThYWXNfZlJaUXItYXVNZ01fUzFkSGpsdGplMzA4MlUzV3pfcGNLSWdINTF5UDkwek1xWDh6TkhBYkR3UmlUUms3UldCemtUMkJwSjZjbmhHRHdlamliTE9POS1oQ1Br?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 4. Dermata Therapeutics Announces Positive Topline Results from Cosmetic Study Evaluating Its Tome Foundational Treatment - BioSpace
+### 7. From Taiwan to the World: PharmaEssentia Expands Global Reach With New Drug Approvals, Overseas Investments - BioSpace
 - 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi7wFBVV95cUxQaHdzdi0xTkxMM1pTQzJ5WDlVQWVWd0JDNkdNYzNOQnE4Y0VtcmRZLWtJSVdtR2xYUDhKNmVRTWhidDNGR3k0elN5NklFcEFTU0NweTJQYkRTTGpzUktJS3Q0T0l6Wnlub0Y4eVZ5ZlF6OGZTalpkZ05ydDZRUmxzVXc5bE1LVklPMEdHT3hqRE1Qc0lBc0pCTlYweU1MaVdOcUpPUy1rdzdYQUdTLUZzOGltaGNYUlJ6MlVwOFM2TVJMRERXQ1RpX2MxRUxQX0JjdmNqdHhOcnJZM1QxUHFSV2hKeHJvMVNRdzRnQzJ2SQ?oc=5
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMi3gFBVV95cUxQVTB3TjRwdjRRdTNReWFEcTRaYlJDeThia3pUNnRiZTZvSmowQUVJaXBpUVltcnhjN0VfREN2WE9udHlGRDhxNjBMY3B2TUJGUmVtVzhLN3ppaVY5OHI1WTlvdHA3SmpZRXo1UnRMNkJTYlBxX3V6ZWZIWnZuRkplTzhLeVlZNnVlSGFidTlCcS1jRkJISTY2aWFfTUNFdElBTUtCUk90NGNjbVM4dmZHZDVvNHY0REVvWnVrOUN5c2RUS1p2a3ZLYkJOYU14bkRVUDFyaVVEeGwyZy1PeVE?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 5. EMA recommends authorisation of Rasonque for metastatic pancreatic cancer
+### 8. Libtayo® (cemiplimab) Recommended for EU Approval by the CHMP for Updated Dosing Regimen Across All Approved Cancer Types - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMi7wFBVV95cUxORnl3aHBHcVlRNC1vYnMxbVhqanNFQnJDaGpHbkFmcWhJUkFkUkFoWGZUR3ZSMDdYYmFsemdYREJzajcxUm1DUGVBME1BQW1ZdnVZanFYOUJKdmx1ZS1jZ0ZveGRxMG5SdWRCdEI1b25TNW9XSjNoSmNKU1E3MHBZZ1RZNTVBcU13eHVXTGY4NEZGaVR1R0M5eVhncHBRU0VOT1QyMnRwNnV0UVFwMTFvWVowdC1sN1Rkc3BUdlVOclFZRjI5ZVhweW0yRVRudk9CX1kzUnM0aXIyM2ZJSnBzNGEydjVFMURpRk1CUjJyMA?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 9. Lilly's obesity pill, RevMed's pancreatic cancer breakthrough among slew of CHMP endorsements in Europe - Fierce Pharma
+- 매체: Fierce Pharma | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMiwAFBVV95cUxPXzBLOWFETy1ZRXdyNE9LUjJEOWp3WWVKQWZJMVhacjZ0cE9OT0x6cmEwck9mVDh4bXg3cEhHcjU1VEpIYUVNTkU4Z3Z4clpOamM4V09oUUdLV1Nhcks3clFNRnZoRFdJcjhSUGhKaXoxNjNoZWk5ejJsaUtpQmRUVV9NZFduZGwzNzlSblVnUHBfcGo1X3lxNk1lRTliZnRYSkI5RnJtS1V6RHpObERsMkpkd210VF80dTBzcFp5S1A?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 10. Meeting highlights from the Committee for Medicinal Products for Human Use (CHMP) 12-15 October 2026
 - 매체: EMA News | 중요도 점수: 4
 - 분류: REGULATORY
-- 발견 링크: https://www.ema.europa.eu/en/news/ema-recommends-authorisation-rasonque-metastatic-pancreatic-cancer
+- 발견 링크: https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 6. Eclipse Life Sciences Announces Positive Topline Results from Phase 2 BETTIS-1 Study Evaluating EC-104 for Diabetic Macular Edema (DME) - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE4tME5KSnlNSUdfR1JobnA0OWhrQ2RScWRNSVpWZWVuV0pSWko3NzF3T21NVURMaThldGN1NjJiX1c3Y3RkU0pSX2ZBcTRDNlBTcmZZ?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 7. Edesa Biotech Announces FDA IND Clearance for Phase 2 Vitiligo Study - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMirAFBVV95cUxQTDI4WlVWNmFoX3czcFZSaFdFTlRXWVJKbkYzbHh0YnFQa0xrd3JmT0VlSkNmdDFOTFZLLUdfRDlxTC1OUGsyQk1iaUFGVXJWdV9qY0xMamw3SWVZNmtJRVVuN2psUHBidFlNVExRMUpueGVlRXBROEpuU2w4NFYxRDdobjEwQWJBRmkyWF9tWW1aSTNaS0NSYXFjX3FxVFhrbG14OWRrZDQtbXQ2?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 8. Enliven Therapeutics Appoints Kristine Ball to Board of Directors Ahead of Planned Phase 3 Trial Initiation this Year - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi7gFBVV95cUxOb2N4ams5b0M2Y28yM1ZRUlFQRTNsTnl5Q3FDTzd4UUNfa25TR3VkckIteUJ4cjRNSmhrUFNrdEl1WnY1b2IzbHZydE03M1k0MHo4bmVrRkluUGFOZ2JuUzhOeFcxTF9WRmxJd090aWxpTzdsOVFVcHRLa3VCU0ZldGl1SUxvSlJUWml1TXp4VzRTcjlWeTVuU2xXV1kyWEZES3c0TjY3enFUS0ItaGdQa3RKWHBEdkVwVjdmUE0zb2tFSWYyTTZpUDBNQ3lTZnlmaE5zazIwVDkxM2hRbzdVYi1lT3lHNUtlcTh5eEtR?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 9. Genfleet/Verastem Eye World-First Phase III Trials For KRAS G12D Inhibitor In CRC - insights.citeline.com
-- 매체: Scrip/Pink Sheet | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVFZzOU1sSExHbTk0S1JQRW9zbFRIVk9OajY3cmpqU0RSMzdCY2ttMzZmLVNmdjFwME12S2QxaHFEZVY3c1RhLW5yTFlRZjExUVpFTXFvWnY4SHZ1VFhES1FWN1RZUmlFVmZVREFEalZMUjJJczF3aFl2SlBTVDAyUkw4ZHJJRnhvMEdaU3lkXzEzSmhCX29RUlJhWUxqWlA3Nnp2Zm01eW9OdGNaY0RfdjZGaF9sbEdCVk54S1pOdnhraW8zekhHWERhZ2NyZjc4LVN2ZnVCU0RTcDhsRGRGMjZsY0Z1bG9vQ1Y4bTVpb3ZVWTJjdl9jcXhoWU0?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 10. Home Resources Optimizing Recruitment for Breast Cancer Clinical Trials - citeline.com
-- 매체: Scrip/Pink Sheet | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMijgFBVV95cUxNbDZ1SGo3bWxIOTRmWjd6dWhLSkt2UnFUT2ZzYlJ3dzRRMUpwZU5xTFdXcFdvZUJqT1JlMGZCQ0RJcS1NeHdncDR4dzNGNXZGQWZQTDRVSEJQR2FIaXB6MjU3Y0RRSnFLempBa25zci1zamNHYlV0cDFXY0dXUU5LaGVPZFpPblRIVmozMENR?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-선별 대상 336건 중 중요도 기준 통과 43건. 상위 10건 표시.
+선별 대상 232건 중 중요도 기준 통과 32건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
