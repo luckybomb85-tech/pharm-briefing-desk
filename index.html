@@ -81,7 +81,17 @@ main{padding:18px 28px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);ma
 <script>
 const SUPABASE_URL="https://mqkhtnryxyntrrfrfing.supabase.co",SUPABASE_KEY="sb_publishable_GLp72jjAPgHWqUEpqtnw5Q_rY3lfcB8";const db=window.supabase?.createClient ? window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY) : null;let session=null,membership=null,editingEventId=null;
 let D=null,L={domestic:null,global:null,patent:null},refreshWaiting={},E={events:[],tracked_cases:[]},tab='domestic',scheduleView='today',feedbackRows=[];let current=todayKst();
-const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const entityNames={amp:'&',quot:'"',apos:"'",lt:'<',gt:'>',nbsp:' ',ndash:'–',mdash:'—',hellip:'…',lsquo:'‘',rsquo:'’',ldquo:'“',rdquo:'”',middot:'·',trade:'™',reg:'®'};
+function decodeTextEntities(s){
+ let v=String(s??'');
+ for(let i=0;i<2;i++)v=v.replace(/&(#(?:x[0-9a-f]{1,6}|[0-9]{1,7})|[a-z][a-z0-9]{1,18});/gi,(full,name)=>{
+   if(name[0]!=='#')return Object.prototype.hasOwnProperty.call(entityNames,name.toLowerCase())?entityNames[name.toLowerCase()]:full;
+   const hex=name[1]?.toLowerCase()==='x',n=parseInt(name.slice(hex?2:1),hex?16:10);
+   return n>0&&n<=0x10ffff&&!(n>=0xd800&&n<=0xdfff)?String.fromCodePoint(n):full;
+ });
+ return v;
+}
+const $=s=>document.querySelector(s), esc=s=>decodeTextEntities(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function host(u){try{return new URL(u).hostname.replace(/^www\./,'')}catch{return '원문'}}
 function sourceLabel(x){const raw=(x.source_name||'').trim(),h=host(x.source||'').toLowerCase();const aliases={'데일리팜':'데일리팜','AstraZeneca':'아스트라제네카','BeyondSpring':'비욘드스프링','NewAmsterdam Pharma':'뉴암스테르담파마','Tectonic Therapeutic':'텍토닉 테라퓨틱'};if(raw&&!/[.]com$|[.]co[.]kr$|[.]org$|[.]gov$|[.]net$/i.test(raw))return aliases[raw]||raw;const map=[['dailypharm.com','데일리팜'],['yna.co.kr','연합뉴스'],['digitaltoday.co.kr','디지털투데이'],['celltrion.com','셀트리온'],['dartbrief.com','다트브리프'],['awakeplus.co.kr','어웨이크플러스'],['lilly.com','일라이릴리'],['novonordisk.com','노보노디스크'],['sec.gov','미국 SEC'],['uniqure.com','유니큐어'],['globenewswire.com','GlobeNewswire'],['cision.com','Cision'],['reuters.com','로이터'],['fda.gov','미국 FDA'],['ema.europa.eu','EMA'],['clinicaltrials.gov','ClinicalTrials.gov'],['mohw.go.kr','보건복지부'],['mfds.go.kr','식품의약품안전처'],['hira.or.kr','건강보험심사평가원'],['scourt.go.kr','대한민국 법원'],['kipris.or.kr','KIPRIS']];for(const [d,n] of map)if(h===d||h.endsWith('.'+d))return n;return raw||h.replace(/^m\./,'')||'출처 미확인'}
 function displayTime(v){if(!v)return '시간 미확인';const t=String(v).trim();if(/^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}(?::?\d{2})?)$/.test(t)){
