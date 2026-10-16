@@ -5,6 +5,7 @@ Runs every day (including weekends), never sends Telegram, never publishes
 raw/unverified candidate pools as final editorial selections.
 """
 import json
+from html import unescape
 import os
 import re
 import sys
@@ -25,8 +26,8 @@ def get_feed(day):
     return obj
 
 def normalize(item, section):
-    title = (item.get("title") or "").strip()
-    summary = (item.get("summary") or "").strip()
+    title = unescape((item.get("title") or "").strip())
+    summary = unescape((item.get("summary") or "").strip())
     source = (item.get("url") or "").replace("&amp;", "&")
     if not title or not summary or not source.startswith("https://"):
         return None
@@ -38,7 +39,12 @@ def normalize(item, section):
         "source": source,
         "source_name": item.get("source_name") or "",
         "published_at": item.get("published_at") or "",
-        "tag": item.get("tag") or item.get("news_tier") or "브리핑",
+        # Source priority (P0/P1/major) and editorial status are not article topics.
+        "tag": (item.get("category") or item.get("tag"))
+               if (item.get("category") or item.get("tag")) in {
+                   "약가·급여", "특허·소송", "허가·규제", "신약·임상",
+                   "기술수출·계약", "기업·경영", "산업·정책", "의약품·시장"
+               } else "의약품·시장",
         "verification_status": item.get("verification_status") or "candidate",
         "selection_status": "selected",
         "original_title": item.get("original_title") or None
