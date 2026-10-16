@@ -1,0 +1,175 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-17",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "약가·급여부터 건보재정 누수까지… 기관장 업무파악 부족 도마",
+      "summary": "16일 국회 국정감사에서 국민건강보험공단과 심평원을 대상으로 약가·급여 제도, 신약 경제성평가, 비급여 관리, 재정 누수 문제 등이 집중 거론됐다. 특히 희귀질환 치료제 급여 확대, 원료 직접 생산 의약품 약가 우대제도 개선, 대학병원 간납도매 구조 실태조사 및 건보재정 누수 방지 대책 마련 요구가 이어졌다. 두 기관장의 업무 파악 미흡 지적과 기관 운영 문제도 도마에 올랐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79987",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-16T21:05:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만약 급여부터 허가·재평가까지… 국감서 짚은 제약 현안",
+      "summary": "국감에서 비만치료제 위고비가 10월 7일 건강보험 급여 등재 신청을 한 사실이 확인됐으며, 급여기준 설정 과정에서 치료 접근성과 오남용 방지 방안 마련이 요구됐다. 또한 미프진의 국내 도입과 관련해 식약처는 인종별 이상반응 확인 없이 가교시험 불필요 입장을 재확인했다. 조인트스템 허가 판결을 계기로 식약처의 의약품 허가 기준 재정립 필요성도 제기됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79974",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-16T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "유한양행, 폐암신약 로열티 30% 급증 전망[인베스트 바이오] - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 유한양행이 개발한 폐암신약의 로열티 수익이 30% 가량 급증할 전망이다. 이는 해당 신약의 글로벌 임상 및 상업적 성과가 반영된 결과로 투자자 및 시장의 관심을 모으고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9na3djbzZpVlp2MFp1ZFpNS3ZNbEpBRjJTdlBaemxNam9wREpVUGRBeGRSTTVtS2s5UUM2NXpKM010X0xGTmg1NUV4R3VRWDMwbnNJazQ2cHQ1SjdpXzdtQS1lWlE5UC1ra3lTTW53?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-16T21:00:14+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "EMA CHMP, 신약 6종 유럽 승인 권고…중증 췌장암·비만·왜소증 등 적응증 포함",
+      "summary": "유럽 의약품청(EMA) 인체의약품위원회가 이번 10월 회의에서 췌장암 치료제 Rasonque, 경구용 GLP-1 작용제 Foundayo(비만 및 2형 당뇨), 어린이 왜소증 치료제 Yuviwel 등 6종 신약의 마케팅 승인 권고를 발표했다. 또한, 래니비주맙, 필그라스팀 바이오시밀러 승인 및 성인·소아 뇌종양 치료제 키즈피조 확장 허가 등 다양한 치료영역에서 의미 있는 진전이 있었다.",
+      "source": "https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026",
+      "source_name": "EMA News",
+      "published_at": "2026-10-16T10:00:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "original_checked",
+      "selection_status": "selected",
+      "original_title": "Meeting highlights from the Committee for Medicinal Products for Human Use (CHMP) 12-15 October 2026"
+    },
+    {
+      "title": "오메로스, TA-TMA 치료제 나르소플리맙 유럽 허가 재심사 후 CHMP 부정적 의견 받아",
+      "summary": "오메로스(Omeros Corporation)가 급성 이식편대숙주질환 관련 혈전미세혈관병증(TA-TMA) 치료제로 신청한 나르소플리맙의 유럽 마케팅 허가에 대해 CHMP가 재심사 후 부정적 의견을 전달했다. 향후 허가 추진에 제약이 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQUG9sWlk0bG9iVjN5MVN3NXZPUkd3UVhkc1pDSHNMbXRRcmlpZzVKcEZGWWNFcHZJTHctaWlpM1U0UUV0ZFVHU2pnbDM1RHotcU1YOG51eVU3d25kcGNWNVRvMlUxa2gzQTZWcWcyUF9tVTFsWTFib3VDTUpESmNPYjBXdXhxWWJWbGxITUZMTXBCQm8tYlJsNW1QSElkekQyOHJOOVMxZWc4T3cybFUtYUxBSzJEWmRnN0IyRVZkbWFZR0dmWEJzSWcxQWpvcUlwcDdNa2lUbmFPYlFvcVBWTk0wckF1V1hUb25XUy1KVUpzcGtFNEUxLVNaNEltMGZGTmgwWlRZcXl6U2VhLTc3aGw0Rzd0OVU?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T11:31:22+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Omeros Corporation Receives CHMP Negative Opinion Following Re-Examination of European Marketing Authorization Application for Narsoplimab in TA-TMA - BioSpace"
+    },
+    {
+      "title": "UCB, 중증 전신성 중증 근무력증 치료제 ZILBRYSQ®(질루코플란) FDA 자가주사기 허가 획득",
+      "summary": "UCB가 개발한 질루코플란(ZILBRYSQ®)이 미 FDA로부터 성인 중증 전신성 중증 근무력증 환자를 위한 자가주사기 사용을 승인받았다. 환자 편의성을 향상시키고 치료 접근성을 높일 것으로 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQTHB6a1Jqay11bUpDNDRwSjB4RUxpc0I3N3h6Si1XLTYzUG4zV3NsQjR6TUVFb1EtR1I3SHVXcDh1cU4yZWQ5ZmpPTHpXSnNfNmdhTXZnS2RGREFDdHlydnN0bkxtQnl4b3ljNHIzX1VaWmpYTmo3NWxxRkRpSTFEcWk2RTJRTWYtZFhNd2JWOV8teFNLVWRxWHJEOE9BT0JkZEFvN2VvcVZnR29jZFFKVV91V2ZUekREWDQ1dXRjZXhWeGJJdGV3cEFwU05oNmY3VXRIWEJrYUNZTktwUDdKaENkaVVxVHZJQUZ1eHJxS2xSaW9xNGxxYlVmbnlNV3F3UzlvNHRHSGJMSWJz?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T13:13:46+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "UCB announces U.S. FDA approval for ZILBRYSQ® (zilucoplan) autoinjector self-administration for adults living with generalized myasthenia gravis - BioSpace"
+    },
+    {
+      "title": "Sobi, 심한 고중성지방혈증 치료제 TRYNGOLZA(olezarsen) CHMP 긍정 의견 획득",
+      "summary": "스웨덴 제약기업 Sobi가 개발한 심한 고중성지방혈증(sHTG) 치료제 TRYNGOLZA(olezarsen)가 유럽 의약품청 CHMP로부터 긍정적인 승인 권고를 받았다. 이는 희귀질환 분야 치료제 확대에 기여할 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE10LVlpYmppTTNXWnExenhrYW5HeF9ycW9GaklScjIxN1BXbUctX2Rlc3A0TlNXOG5Eb0tBSkt2TU9GWlNWMV91dmdmM3V2ZV9fa3VJ?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-16T18:34:32+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Sobi receives positive CHMP opinion for TRYNGOLZA (olezarsen) for the treatment of severe hypertriglyceridemia (sHTG) - FirstWord Pharma"
+    },
+    {
+      "title": "CHMP, 어린이 왜소증 치료제 TransCon® CNP(나베페그리타이드) 긍정적 승인 권고",
+      "summary": "유럽 EMA 인체의약품위원회가 어린이 왜소증 치료를 위한 주 1회 투여 TransCon® CNP(나베페그리타이드)에 대해 긍정적 의견을 내놓았다. 이는 미래 주요 성장기 성장장애 치료제로 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOYWZEY3lsOUlZdlJiLWI1cUJMNG5mNmdpNlVmMDk5S2NXYVVxZnBodEowNzJNdUlzR3huRjZlWlJBNnhxbXk0U3RjZnZXblIxOFktcmcwUkZkbGFPalk4MWQ0T0pwNnJKTGlzS2NDNFppTXFKdWdYU1ZzcUxROGVGdFBKeXl2NDhfV2lpbWd3bHF3N2hPcUFxSDI0OVdrN1ZiVF9TaVltZUdTLWlYYnFxY3dNaGhpbE8taWoteE1jQzBjekJYZmlDVnBnRzRNejBEMHFPVENSMU41QndERHlHdlpDOXJCTzlIVllUalF3?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T13:29:53+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Once-Weekly TransCon® CNP (Navepegritide) Receives Positive CHMP Opinion for the Treatment of Achondroplasia in Children - BioSpace"
+    },
+    {
+      "title": "TRYNGOLZA®(olezarsen), 심한 고중성지방혈증 EU 승인 권고 받아",
+      "summary": "CHMP가 Sobi의 TRYNGOLZA®(olezarsen)를 심한 고중성지방혈증 치료제로 유럽 연합 내 판매 승인을 권고했다. 이는 중대 만성 질환에 대한 치료 옵션 확대를 의미한다.",
+      "source": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOVU5JZEIyUmdYeFM1VEg5bWtsTDg2QWFycUoxYlg1TmRQRktzc0M0YzRabm9PRnVpRVNBWGkwNWl0ay1WNWlMY2dTVzBrd1VsX05fQ3lJcjFaZnV3SlpLdUFQa1dOX0EtZVdRSFlncDl1TE15YXRWaXk4eEJ5RkpmZ2I4YUFpcGpzemNiOHkxaVAzcU5nMzlWTUJCYW52ZnQwY3dVTDlYcXZNa0lTeVZjNXZOdy02ZWM4eE1zOER2dGpyREpMT0ZIRjVUWmphdzRiVm12dWZB?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T13:29:53+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "TRYNGOLZA® (olezarsen) recommended for approval in the EU by CHMP for severe hypertriglyceridemia (sHTG) - BioSpace"
+    },
+    {
+      "title": "CHMP, 재발·불응성 다발성 골수종 조기 치료에 존슨앤존슨 TALVEY®(talquetamab) 및 다라투무맙 조합 승인 권고",
+      "summary": "유럽 의약품청(EMA) 인체의약품위원회(CHMP)가 재발 또는 불응성 다발성 골수종에 대한 TALVEY®(talquetamab)와 다라투무맙 병용 요법의 조기 치료제로 승인을 권고했다. 이는 치료 선택의 폭을 넓힐 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQckVBdnFlbGEyRDdXbjJDSVFoOFlTSUgyUDE3c0p0eUdjc19GY29iUHM4WUpBdzRETjFNU1RtaVNHSTNDZFFTZlpHblE3dk5WVHdDeXZITGc1UzFxOHNtaTVpcEVjOS1TS2ZEQW9CQzlCd0s2R3JNMjUtRm9vTUtXZWdURXFzZXpEdTRmR0hMTVFYUGl2RUdzbEJqLTVNRDMxcTBmSDZpN185YnRlRGVJLXVXZXVNa1pFSUdibTNFaWdtUGszdDZ3YU8zVm1JQzFxMUIteWFTUm1GVFRNbG8tNUxUX0d5MG54OWI2QUNyUXRVYXBDMGJPTXBWVmwtXy1ROC1yZUE1YTByV0xna0tPMmZ2R1E?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T13:13:46+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "CHMP recommends approval of Johnson & Johnson’s TALVEY®▼ (talquetamab) plus daratumumab in earlier line treatment of relapsed/refractory multiple myeloma - BioSpace"
+    },
+    {
+      "title": "FDA, 로슈 ENSPRYNG IL-6R 억제제 갑상선 안병증 최초 가정용 피하주사제로 승인",
+      "summary": "미국 FDA가 로슈의 ENSPRYNG(IL-6R 억제제)를 갑상선 안병증(TED) 치료에 대해 최초이자 유일한 가정용 피하주사제로 승인했다. 환자의 치료 편의성이 크게 향상될 것으로 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPSVY2WjVUT0VvOUM0cXZ4ajJCb2J0WTZJV1RSQ2ppUVFTMWp4WHMxOTNTSjF5SXM0Z01ySE1nWGVvaG8wT0RSam83c3ZLZkdsRzh1RHliSURWdS1uLXdveGRsLTdvQzJpZ1RwNDZWd2s2ckpuckVyS0FUVFlOdkNRUjgyeFoxY1B3VVBiamsxMjB6NVZKNUM3cVdtRkJ1RDBtU0ZkRGt6T2dEbmhoZERCV25BYWoxdTJjVjhZZThwRnZOa1h2ZGJyd052aTBRcEZpb3RaZ1p6YmdSbzF6LWVZMWxZQlMzbkxRLTdNT2RiLXg3X2hVTE9wT1FGYXcyYmN4WTd3N0pORVdyMk4zRmVYV0RqcUFVMGhR?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T10:48:19+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA approves Roche’s Enspryng, a first-in-class IL-6R inhibitor, as the first and only at-home subcutaneous treatment option for thyroid eye disease (TED) - BioSpace"
+    },
+    {
+      "title": "Organon, 6년 사용 hormone-free 자궁내장치 MIUDELLA® 3상 중간 결과 긍정적 발표",
+      "summary": "Organon이 호르몬 비사용 자궁내장치(IUD) MIUDELLA®의 6년간 안전성 및 유효성에 관한 3상 임상 중간결과를 공개했다. 해당 결과는 2026년 가족계획학회 연례회의에서 발표될 예정이다.",
+      "source": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxOSkg0ejczTVBXcVJkUDdhMTFrVm9aNmgxX19ibmF2TGE2dWFKWjhjdXJGWlMzZ2xoS0RKVDhxYXAyT3k3dTdybDF3ZjFoUFlxZTFpZ09ia2xuY1dOVTdKOGc4M0NPVURGVWwyQVJIeWVZY3J4RXBSUno2Sk1tcV8wS0gwTG1ab1B6ZWNIWkVuYmhjLWVkUXo2NWsyUEl3QzAxMXVDb0tHZzRobERYWVh6WE9MRDlGUk0ta1VtazdhRFR1aHl3dER6TkM3aHdkMXo3N1g4Vnp1Q2FHdWhUZ3ZfX3ZIYUk4a1V6RVdsUjRpdVFJZFNjQzEwSkQ1eUwweXlEb1poVmZBdFJyTmNpX2VLajN1aEJHelNEMU9hSTgxZmpQemlpVVNKNWZsa3JLYUFsVHNPazVxT3Jvek1qSXJ6eXZwM01MeEFlTVFGM09RdnJ4WUhpcXM5d0RrWDU4dw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T13:29:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Organon Announces Positive Interim Phase 3 Study Results for MIUDELLA®, a Hormone-Free, Intrauterine Device (IUD), Through 6 Years of Use to Be Presented at the 2026 Society of Family Planning Annual Meeting - BioSpace"
+    },
+    {
+      "title": "Palleon Pharmaceuticals, 막증후성 신염 대상 HLX79/E-602 2상 중간 데이터 공개 예정",
+      "summary": "Palleon Pharmaceuticals가 2026년 미국류마티스학회(ACR) 연례회의에서 막증후성 신염 치료용 HLX79/E-602의 2상 임상시험 중간 결과를 구두 발표할 계획이다. 이 연구는 차별화된 치료제 개발 연장선에 있다.",
+      "source": "https://news.google.com/rss/articles/CBMixwJBVV95cUxPdUluVGgzckY3aXh2NEltNjdtVWYtdG8zSHFiakxINzFsbkozTlJYdVdYcURWVFRSSHJCa0ZXMFJ2MlBYWXN0ZU1lOE1HeWtULWgwdDN2VE1majZDb19iQzN6SFJsNVQtcEIwR3VaZ29IM0twMXd1akVZTmlUdjRZa1lVZ2NHSmVRbkhmSVRQNWdjRVU3dTZQNGJ0YWs5dmUtN2dHRDg4WEVkdTZhdmNsQ3NOTlJpNWJ4bmtCZzJUcDlSR1ZGT0V2Zmo5MmlxNF9kRnJ1UDNKSERkSE1iWmhWSUZycmV2MGVKSTVTSjlJaXhTNTU0QmdUeUJFR0ppMEFXQ3d1NTI4RG5ndVBlWklBbWl3em9Wbk9yNGpJd3ZFLVJSdVBhSWFGQ1RjcEpQMWdYYkpzUDhpbHB1NHpoWkFJMzhTejBxczQ?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-16T13:29:53+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Palleon Pharmaceuticals Announces Oral Presentation of Interim Phase 2 trial data for HLX79/E-602 in Membranous Nephropathy at the 2026 American College of Rheumatology (ACR) Convergence - BioSpace"
+    },
+    {
+      "title": "ProKidney, 세포 치료제 3상 결과로 시장 진출 위한 자금 조달 시도",
+      "summary": "ProKidney가 진행 중인 세포 치료제의 3상 임상시험 결과 발표를 통해 상업적 개발 및 시장 진입 자금 확보를 추진 중이다. 임상 데이터가 결과에 따른 사업성의 분수령이 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPa1BJcHBvdm56MEtnaUlqbUxVci1VUllUTWlaVWlkMUpHMmlLSHMxV2w5SnZWQVZzcXJMTWdUOThEcHlPazk1blkxcVBZRXl0cWk1MVhLbnpGeks3MWJEYnlEOGxsUHgwbGVwVnVFRFdfTUZYOTdEVHIxZldoWHFSd0pVYUlfNE1fRWV0bmdXaFYwSElWbzN4V2JzTUVtVjdRQko2ZURZaXl3eEN0WVNBMXBhbDE2U0k3NTJqbXpCN0dlUUxWbnRSUk5ES1VZdGg1Y3RfWEhCZ1Q0dnRkbFZiMlcyMTZfRmxsMVQ3aFdCNDJLNllDa1J3?oc=5",
+      "source_name": "Scrip/Pink Sheet",
+      "published_at": "2026-10-16T08:07:08+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "ProKidney Is Betting A Cell Therapy Phase III Readout Can Fund Its Way To Market - insights.citeline.com"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 3,
+    "global": 11
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
