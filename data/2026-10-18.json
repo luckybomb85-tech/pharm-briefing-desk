@@ -1,0 +1,64 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-18",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "[임상 업데이트] 압타바이오, 아이수지낙시브 2상 1차 지표 달성 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 압타바이오가 개발 중인 HIV 노출 전 예방요법(PrEP) 주사제 아이수지낙시브가 2상 임상시험에서 1차 평가 지표를 성공적으로 달성했다. 이는 HIV 예방에 중요한 성과로 평가돼 개발 진행에 긍정적 신호로 작용할 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE52TzIzTXRkSXFfSi1mRUVEbnY1cmJyLW9ZTFB2Ry1reWRncl9qcVBPaGloRlktcUxZa2lvUmZqUmR2S2hYWktXdmt5N190SVdLa2VuTzhDdXA4T0IzR2hXVjBUSFZiLUpLSXRTZGt3?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-17T22:00:06+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'완벽에 가까운' 예즈투고, 의약품 접근권 논쟁으로 번진 까닭",
+      "summary": "6개월에 한 번 투여하는 HIV 예방 주사제 예즈투고(레나카파비르)는 높은 예방 효과와 편리한 투여 방식으로 주목받았다. 그러나 임상시험에 참여한 라틴아메리카 주요 국가들이 길리어드의 제네릭 공급 대상에서 제외되면서, 이들 국가의 HIV 감염인이 신약에 접근할 수 없는 문제로 크게 논란이 일었다. 브라질 보건부와 국경없는의사회 등이 길리어드의 공급 정책과 가격 설정을 공개 비판하며 국제에이즈회의에서 항의가 발생했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79504",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-17T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "유럽, 다발골수종 치료제 ‘탈베이’ 2차 치료 확대 권고…질병 진행·사망 위험 최대 72% 감소",
+      "summary": "유럽의약품청 자문위원회가 존슨앤드존슨의 다발골수종 치료제 탈베이(Talvey)와 다잘렉스(Darzalex)의 병용요법 적응증 확대를 권고했다. 재발성·불응성 및 1차 치료 후 재발 환자에게 사용 가능하며, 3제 병용요법이 암 진행 및 사망 위험을 최대 72% 줄였다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351367",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-17T09:52:08+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만치료제 처방 급증에도 규제 제동…‘오남용 우려’ 지정 논란",
+      "summary": "국내 GLP-1 계열 비만치료제 유통량이 급증하는 가운데, 식약처가 오남용 우려 의약품 지정을 추진하지만 규제합리화위원회가 필요성 및 실효성 문제로 검토를 보류했다. 신규 국산 비만신약 허가로 규제 적용 범위와 관리체계에 관심이 집중된다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1728203",
+      "source_name": "EBN",
+      "published_at": "2026-10-17T08:44:41+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 4,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
