@@ -1,0 +1,285 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-20",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "박현숙 세포바이오 대표 “국내 2상 넘어 日 임상 준비…파트너와 공동개발 논의”[바이오재팬 2026] - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 세포바이오는 국내 임상 2상을 마치고 일본 임상을 준비하고 있으며, 파트너사와 신약 공동개발을 협의 중이라고 박현숙 대표가 밝혔다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTHE1OV84SVFZX1NJUWdoYUhzWHdVTW5RY3hTbGJkSDhXV2phYnR6UklrQm5SV1BkWmxHNFo1M0ZKVTN3NFJ1YkxVTXVzdkpiRXMybFhTRVoycVU5czBRbU5BUlI1YzZlYmpqdzk4UVkweDZIb0tWSURmTEhndWxEOA?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-19T22:06:02+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[프레스티지바이오 딜레마] 파마, IDC에 쏟아부은 2000억…신약 성과는 '걸음마' - 딜사이트",
+      "summary": "(제목 기준·원문 미검증) 프레스티지바이오는 IDC에 대규모 투자를 집행했으나 신약 개발 성과는 아직 초기 단계에 머무르고 있다고 분석됐다.",
+      "source": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA5R0E0MURsclplX2xWZDhiMFlBVm5yUjNmSEU4NEpFT1c2SVVpS1hWYzlxcTg0MGNISE92ekRLUmZXSjdORkIxc2doWUZnU3c?oc=5",
+      "source_name": "딜사이트",
+      "published_at": "2026-10-19T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "동물대체 넘어 신약개발 도구로…NAMs, '검증의 시간' 왔다",
+      "summary": "국내 NAMs(동물대체시험) 기술은 오가노이드, 인간 유래 세포모델, 장기칩 등 다양한 분야에서 연구 수준은 글로벌과 견줄 만하지만 산업화와 표준화, 재현성 확보 등 과제가 여전하다. FDA와 EMA 등 글로벌 규제기관은 NAMs의 규제 활용을 위한 조건과 가이드라인을 강화하며, 제약사들이 NAMs를 신약개발 초기 단계에 단계적으로 도입하는 전략이 현실적 경로로 제시된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79642",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-19T21:15:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약품비 환수·환급 적용대상 소송 4건...첫 확정 약제 파슬로덱스",
+      "summary": "건강보험공단은 약가 인하 지연으로 인한 손실 정산을 위한 약품비 환수·환급제 적용대상 소송 4건 중 최초로 아스트라제네카의 ‘파슬로덱스’ 소송이 종결돼 손실상당액 4억원을 징수하기로 확정했으며, 나머지 3건은 2심 진행 중이다. 환수·환급 제도는 2023년 도입된 건강보험 재정 건전성 확보를 위한 제도다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47667",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-19T21:10:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "직장암 수술 피한 환자 71%…면역항암제 ‘젬퍼리’ 美 FDA 승인",
+      "summary": "FDA가 특정 유전자 변이를 가진 2기·3기 국소진행성 직장암 성인 환자에게 GSK의 면역항암제 젬퍼리를 수술·화학요법·방사선치료 대신 단독 투여하는 치료제로 가속 승인했다. 2상 임상 'AZUR-1' 결과 154명 중 71%가 추가 치료 없이 질병 진행 없이 경과를 유지했다. 이는 기존 직장암 치료 순서의 변화를 시사한다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351387",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-10-19T21:07:02+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "조기 위암 내시경 절제술 요양급여 인정…ESD·치료재료 청구 '수용'",
+      "summary": "건강보험심사평가원 진료심사평가위원회는 림프절 전이 위험이 낮은 2cm 이하 조기 림프기질성 위암종 환자에 시행한 ESD에 대해 의학적 타당성을 인정하여 요양급여로 승인했다. 기존 급여기준에 미포함된 특수 조직학적 아형에 대한 급여 적용 사례로, 치료 효과와 안전성을 평가해 본인부담 인정 결정을 내렸다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47670",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-19T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약바이오 파고든 AI…신약개발부터 생산까지 '무한 확장'",
+      "summary": "국내 제약·바이오 기업들이 신약 후보물질 발굴, 임상개발부터 생산 및 품질관리까지 AI를 적극 도입하며 연구개발과 제조 경쟁력을 강화하고 있다. SK바이오팜, GC녹십자, LG화학 등은 대규모 AI 연산 인프라 구축과 AI 기반 스마트팩토리, 통합 AI 플랫폼 ‘메디엑스’ 등을 통해 혁신 신약개발과 생산 공정 최적화를 추진 중이다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1728288",
+      "source_name": "EBN",
+      "published_at": "2026-10-19T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "K바이오, 셀트리온 선두 경쟁 속 3Q 주목…알테오젠 매출 1000억 돌파 전망",
+      "summary": "셀트리온이 3분기 연결기준 매출 1조5000억원, 영업이익 5100억원으로 사상 최대 분기 실적을 기록할 전망이다. 삼성바이오로직스는 인적분할 기저 영향에도 사업 확장을 지속 중이며, 알테오젠은 피하주사제형 상업화로 분기 매출 1000억원 돌파가 예상된다. 바이오시밀러 사업 확대와 신약 개발 투자도 활발하다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29203",
+      "source_name": "더바이오",
+      "published_at": "2026-10-19T21:35:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "중증·희귀질환 치료제 공공기금, 심평원장 지시로 정책지원 추진",
+      "summary": "건강보험심사평가원이 중증·희귀질환 치료제 공공기금 관련 정책지원 근거를 마련하기 위해 국내외 급여·청구 현황과 공공기금 사례 분석을 진행 중이다. 이는 희귀질환 환자의 치료 접근성 향상과 재정 부담 완화를 위한 별도재원 활용 방안을 입법과 정책 논의에 반영하기 위한 준비 작업이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47668",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-19T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] 한미약품, EZH1·EZH2 이중저해제 ‘HM97662’ 1상서 부분관해 확인",
+      "summary": "한미약품의 EZH1·EZH2 이중저해제 HM97662가 임상1상 용량탐색시험에서 200mg, 300mg 투여군 각각에서 진행성 고형암 환자 일부에서 부분관해를 확인했다. 추가 분석에서 객관적 반응률은 10.7%이며, 안전성은 관리 가능한 수준으로 평가됐다. HM97662는 PRC2 관련 단백질을 동시에 억제해 기존 치료 한계를 극복하는 신약 후보물질이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29205",
+      "source_name": "더바이오",
+      "published_at": "2026-10-19T21:50:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만 'GLP-1' 효능 경쟁? \"리얼월드선 달라..3가지 간과\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 비만 치료 분야에서 GLP-1 계열 약물 효능 관련 실제 임상 현장 데이터와 기존 연구 간 차이가 있으며, 중요하게 간과된 3가지 점이 있다고 바이오스펙테이터가 지적했다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBHZ21IS2ZiLWlCa1NvemNSTGRpWFdMVWdGSDd4N3dsbGRZYnlrcEZ1bmlsQWhIeXdnODNiMWk4LWo1UE04UGd3Y2RScjVDbkEtbFQwU3ZhMA?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-19T21:20:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'가격은 거들 뿐' GLP-1 후발 주자 에페의 '한끗'은?",
+      "summary": "한미약품의 국산 45번째 신약 GLP-1 비만치료제 '에페'가 출시 초입에 접어들며 가격뿐 아니라 사용 편의성에 중점을 둔 ‘편리미엄’ 전략으로 의료진과 환자에게 접근하고 있다. 버튼 없는 간편한 투여 방식과 빠른 증량 속도 등 임상 설계가 특징이며, 초기 부담을 낮춰 비만 치료 진입 장벽을 낮추는 효과가 기대된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=79991",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-19T21:17:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "알테오젠 다음은 누구…K바이오 '후속 주자' 키울 조건",
+      "summary": "국내 신약개발 산업에서 알테오젠 등 일부 기업의 플랫폼 기술수출 성공이 산업 전체 경쟁력으로 확산되기 위해선 AI 기반 신약개발 역량 강화, 공공 연구 인프라 개방, 정부 R&D와 민간 투자 연계 등 성장 사다리 구축이 필요하다. 다양한 치료기술 발달로 신규 플랫폼 진입 기회는 확대되고 있으나 이를 사업화로 연결하는 지원책과 인프라 확충이 과제로 지목된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80029",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-19T21:08:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀질환 치료제 신속등재 발표, 9월→10월→11월로 또 연기",
+      "summary": "보건복지부가 희귀질환 치료제 신속등재 시범사업 대상 의약품 선정 결과 발표를 기존 9월과 10월에서 11월로 또 다시 연기했다. 13개 제약사 14개 품목 중 11개가 후보에 올랐으며, 최대 5개 이상 선정 가능성도 거론되나 확정되지 않았다. 환자 보호 장치 마련과 평가·관리체계도 논의 중이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47669",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-19T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "바이오젠, ASN Kidney Week서 만성 신장질환 신약 EMPAVELI 주요 장기 3상 결과 발표",
+      "summary": "바이오젠은 미국신장학회(ASN)에서 페그셋타클로판(EMPAVELI)의 만성 신장 질환 관련 장기 임상 3상 결과를 공개했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5CRVdQb2RwbDlPQWtHRHdNaFNkQUdBUHQtZTBHS3FLbm92cGRVNWVjT2hVVTM5aFZTZFd3X245ckdqU1ZJbXJlQ1plUWJldm9mcWhR?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-19T17:03:39+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Biogen to Present New Data Across Nephrology Portfolio, Including Long-term EMPAVELI (pegcetacoplan) Phase 3 Results, at American Society of Nephrology (ASN) Kidney Week - FirstWord Pharma"
+    },
+    {
+      "title": "GSK Jemperli, FDA 직장암 적응증 승인…높은 완전반응률 근거",
+      "summary": "GSK의 직장암 치료제 Jemperli가 FDA 승인을 받아, 고완전반응률을 기반으로 치료제로서 경쟁력이 강화됐다.",
+      "source": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQemktSi15XzNDRmNKcmVyOTU2VVhCSHZPOWR1TllkUkRFV2VvU0pmYXFUU1M2aktPMTRNMFcyY0dBU0hvRGNnOEFKN3Q3X3JQT19BMlk4dHNuR25SN2xhTWRWMXBEcHhPLU5WYXUxbFF2M1VXTnZzYnhfX2JOendwRXhSRlpsMGFyZkE5SUZqNGRJRUhocnpDdjd0Ykc5SDg5NXZ0SHFxWnV6Z0JvTTJLZVBzb2ZxTXkx?oc=5",
+      "source_name": "Fierce Pharma",
+      "published_at": "2026-10-19T17:24:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "GSK’s Jemperli scores FDA approval in rectal cancer, backed by high complete response rate - Fierce Pharma"
+    },
+    {
+      "title": "아이포인트, 습성 황반변성 신약 DURAVYU 2차 임상 실패로 임상 조기 종료·인력 감축",
+      "summary": "아이포인트는 습성 황반변성 치료제 DURAVYU의 2차 주요 임상 실패 선언 후, 임상을 조기 종료하고 전사 인력 절반 감축 계획을 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVG1mYm56WTZ6MWxGTFFzbFROclNNT05tVEpNenFxZmdqenVIZ09scUt2allEYmRab0tUTGNGRU9KSGJ3SXlZUXROVnRzcHVlcDdYRUU5S3R3OUNJYXo3S1UyU0sxMFA0andkYkJRQ2tWU0I5aUJGWTc0VUFSZ1oxclJ1bE9QWENxc1hSa09kdzdlQUNuNTJjaGZPVlYycEdxalE2VGkzeV9hVG95ZjdFXzRycEhTbS0yWWlmMw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-19T16:51:17+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "EyePoint will halve workforce, end pivotal wet AMD trials early following second fail - BioSpace"
+    },
+    {
+      "title": "FDA, Viatris 성인 노안 치료제 Ryzumvi 승인",
+      "summary": "미국 FDA가 Viatris의 성인 노안 치료제 Ryzumvi를 공식 승인해 국내외 시장에서 치료 옵션 확대가 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPLU0tY2ZpOWlnbHhTbWJ1ZXBSdW5OSGtoT01Qb3dpeUlKSzAxbjd2VVJGTEZ5ME1MNXVIVTBMZE1aTEREcHdER1ROaTkxN09NOGVyYmc5M1FoWGV3LWtSY3lqYVlqVnpBc3hfNnl2enNxakdmNVg3TlpnejhBZVRmc0pWVXNaUE91Um96Vw?oc=5",
+      "source_name": "Pharmaceutical Technology",
+      "published_at": "2026-10-19T13:58:38+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA approves Viatris’ Ryzumvi for adult presbyopia - Pharmaceutical Technology"
+    },
+    {
+      "title": "Akeso, 선제적 신세포암 1차 치료제 ‘이보네스시맙’ 글로벌 2상 개시 및 카도닐리맙과 병용 임상 진행",
+      "summary": "Akeso가 이보네스시맙의 신세포암 1차 치료제로서 전세계 2상 연구 개시 및 면역관문억제제 카도닐리맙과의 병용 임상 계획을 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNYm9vLVYyY0xtMHV3ZWRnTXpySUJrem13V053VzlXMERtaTRJU1pHUVlMSEpnYkRJMnpSb3VuQU9STE1rd210bGdBZHRtaU9PYVZhRklMdHZneGtDQjNCR013RG1Kc1JueG5lTmNJM1MwLUV3blZyQ1NZdFdmd29YYkdxekxKYnBUNWdMajFUVkdZcThrdThjSWJuTmp3ekZBNldJU3pqelpQZHlVX193UXpzT2ZqYWt4MDgtczBwc2FhQy1LbThEUXNOTDlrUDJSVHl0ZjZOUHlXdmNGNUVfdTJtaFd0Z3Jfb1Z0RThwNzFMUjVMTzFXeHZNVGZNb3l2Vk5HdkZVVVdfZVpHN01LbjZ6OWd5UjQ?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-19T13:57:49+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Akeso Announces Opening of Global Phase II Study of Ivonescimab in First-Line Clear Cell Renal Cell Carcinoma, Including Combination with Cadonilimab - BioSpace"
+    },
+    {
+      "title": "중국서 가정용 먼지 진드기 알레르기 치료제 ACARIZAX® 3상서 안전성·효능 입증",
+      "summary": "ACARIZAX®가 중국에서 진행된 3상 임상시험을 통해 가정용 먼지 진드기 알레르기 환자 대상 안전성과 유효성을 확인했다.",
+      "source": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQM3c3Sl9NNHZhQW5fY2U5UHpfckpILVV6Vk1heDEtTVNyMUFDVkhyWUxsVjZVWEpqVXdDbVF4VmQzTUc4d1V5LVpVWTJZT1RBYklXWjN1NU1sS0d6YTgyMHEtaFVVcFZyWWtfd2N2RzFjclllZkYtSzBkXzAyaGJXcXlpanp4bmxfZ0h6cEN3MVFQUGdXNkdGNDB4V3BsM0RTQ2w5a1EydjdpV1ZuM3BGeENYbnBEQ0ktd3pmWGQtWnMwUGNBbE9sZVViV3FwaUQyOFNaVlRCOUNqQm9MN2FHbXF5RktVTTBnU0E?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-19T13:57:48+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Phase 3 trial in China successfully confirms ACARIZAX® safety and efficacy in patients with house dust mite allergy - BioSpace"
+    },
+    {
+      "title": "머크KGaA, siRNA 혈액암 치료 후보물질 성공 13억 달러 규모 Silence 인수",
+      "summary": "머크KGaA가 혈액암 치료제 siRNA 후보의 2상 성공에 힘입어 13억 달러 규모의 Silence 제약사를 인수하며 파이프라인 강화에 나섰다.",
+      "source": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPS0thWVhNT25kSnpmLW9LTVhVYmR0Szdfek53QUJkVjZJeW1sU0dnSVZ4cnVfeGdjeHNnY0dCSkpudHlIMEpCb0E4WDJ6Z2RYaHBRZmtocmZuUkUxWnpJQ2E5Zjljc2FnZ3FZeVh0eWJyblFDTzJfSjZDZ0JnSWxKYWhnMHFRVHFIbHBQaGxFVUFYOWUtTDNxdHJiNklKWWsyMDlTbjln?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-19T12:57:24+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Merck KGaA buys Silence in $1.3B deal after siRNA drug's phase 2 blood cancer win - Fierce Biotech"
+    },
+    {
+      "title": "Disc, FDA 거절 딛고 희귀질환 신약 비토퍼틴 3상서 긍정적 데이터 확보",
+      "summary": "Disc는 FDA의 거절 이후 진행한 희귀 질환 치료제 비토퍼틴의 임상 3상에서 압도적으로 긍정적인 결과를 발표해 재검토 가능성을 열었다.",
+      "source": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ1pCZk91RjBOSmtLdEtHQVFMX0hfRFpiWUNiMlYyelpOQk13UUZrbVd2UWN3LVRKdkVHYjZjMFNGYjQwdG9WTDJtSkVVMlYzbnVFR0E5ODNfMUNmVjI2MlcyRWF3NkI3eEdSNkRFeTA0WFFYdXZuLWl2ODljNmF5cGdpbk1PY3dETHVKdGJwUTNtTEJDckxPamhxOEpZamVrOGw4Uzk5RQ?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-19T12:00:33+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Disc spins past FDA rejection with ‘overwhelmingly positive’ phase 3 data for rare disease drug - Fierce Biotech"
+    },
+    {
+      "title": "릴리 ‘Omvoh’, 소아 궤양성 대장염 3상서 1년 임상 완주 및 확증적 유효성 확보",
+      "summary": "릴리의 면역조절제 Omvoh(미리키주맙-mrkz)가 소아 궤양성 대장염 환자 대상 3상에서 주 평가변수를 충족하고 1년 임상 데이터를 확보했다.",
+      "source": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNTjl0Ym5IRTdiWk5XeWNaQjRGOEhfel9rcWJaUTFMRFZGdkVZd1pmcFJXbmJET2RYd1VQb1hWZnFQdTNXVnNZLVdxZE9iUDRwMEtUYWZEbW9ycnhnNjJFWHBSaG91aXFlU1FxelZUaDdkSzMzM1luZlNJT2YzV1RHRndMY1NHZw?oc=5",
+      "source_name": "Fierce Pharma",
+      "published_at": "2026-10-19T12:57:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Eli Lilly's Omvoh takes phase 3 win in pediatric UC, fueling expansion ambitions - Fierce Pharma"
+    },
+    {
+      "title": "애브비, 차세대 크론병 복합제 2상서 스카이리지 대비 우수 효과 확인",
+      "summary": "애브비는 최근 발표한 크론병 치료제 차세대 복합제의 2상 임상에서 경쟁약 스카이리지를 능가하는 치료 효능을 입증했다.",
+      "source": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNLVhXd3hYZ3JON05ENHJzdFpKdlI2V1dMUmhpU3lKTnhiMXBZYng2LS1MVWtMVzFRbTBwU1dYS1dfLWNYczhVRFJ4blhkcFRTMFg3bWZnczM1dWI3VlphVHRINWxzbE55T2lFM0tDaVhQYml3MWpJUnM0amI3MTlIdTlaWk8wUGtWdHl5WG5ublFPVGI3UnJnMG1pbWlHYTRsZ09z?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-19T09:15:54+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "AbbVie’s next-gen Crohn’s disease combo beats Skyrizi in phase 2 trial - Fierce Biotech"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 14,
+    "global": 10
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
