@@ -1,0 +1,373 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-21",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "오픈AI, 제약 AI 에이전트 인수...신약 개발 가속 [마켓핫] - 이투데이",
+      "summary": "(제목 기준·원문 미검증) 오픈AI가 제약 분야 AI 에이전트를 인수하며 신약 개발 속도와 효율성을 높이는 전략을 추진하고 있다. 이 인수로 제약 바이오 산업 내 AI 활용이 가속화될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5WaDB4TkU2SEVpTkFRaWtFYmJYdFpSWVVBLUNaWUI0RXBBd2t0LW9nUnVhakJ2NHRkZGVZeVRCSmVlMGY0ajZsMnUydmVRT3Vad1owU25FS29FSG95U1FHQXdUNWlsYmN5cF9Ic3J3?oc=5",
+      "source_name": "이투데이",
+      "published_at": "2026-10-20T22:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "루닛·뉴로핏, 신약 개발 현장서 ‘존재감’…임상 근거 쌓아 ‘매출 확대’ 노린다",
+      "summary": "국내 의료 AI기업 루닛과 뉴로핏이 신약 개발 현장에서 임상 근거와 연구 경험을 바탕으로 제약사 협업을 확대하며 매출 증가를 추진하고 있다. 루닛은 HER2 초저발현 유방암 AI 판독 연구 결과를 유럽종양학회(ESMO 2026)에서 공개하고, 미국 바이오기업 디스커버리와 조직 분석 협업을 강화한다. 뉴로핏은 아리바이오 알츠하이머 치료제 AR1001 글로벌 임상3상 영상 분석을 수행하며 후속 수주 기반을 다지고 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29250",
+      "source_name": "더바이오",
+      "published_at": "2026-10-20T21:45:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] 글로벌 항암신약 무대 오른 K바이오…암백신·ADC 3상에 쏠린 눈",
+      "summary": "유럽종양학회(ESMO 2026)에서 국내 에이비엘바이오, HLB, 한미약품 등 제약바이오 기업들이 담도암, 위암, 폐암 등 신약 후보 항암제의 임상2~3상 연구 결과를 공개한다. 에이비엘바이오는 이중항체 토베시미그 임상2·3상 결과를, HLB는 표적항암제 리보세라닙 임상2상 결과를 발표할 예정이다. 또한 에임드바이오와 리가켐바이오사이언스는 ADC 후보물질 임상 결과와 비임상 데이터를 소개한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29251",
+      "source_name": "더바이오",
+      "published_at": "2026-10-20T22:15:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'넴루비오' 약가협상 시작… IL-31 억제제 연내 급여 청신호",
+      "summary": "갈더마코리아의 아토피피부염 치료제 '넴루비오'가 허가 후 5개월 만에 국민건강보험공단에서 약가협상에 들어갔다. IL-31을 표적으로 하는 유일한 생물학적 제제로, 빠른 급여 진입이 가능할 전망이다. 3년 장기 임상 데이터에서 뛰어난 효능을 입증했으며, 급여 등재 시 아토피 치료 시장에서 새로운 옵션으로 주목받을 것으로 기대된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80049",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-20T21:10:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[교육]모델링부터 계약 실무까지…신약 기술가치평가·딜 메이킹 마스터과정",
+      "summary": "국내 신약개발 기업의 경제적 가치 평가와 성공적 기술이전 계약 체결을 위한 실무 교육 프로그램이 12월 2~3일 서울에서 열린다. 신약개발 가치평가, 계약 가치 산정, 글로벌 파트너 선정, 라이선스 계약 구조 설계, 법률 실무 등을 다룬다. 업계 및 학계 전문가들이 강사로 참여해 국내외 제약·바이오기업 실무자들의 계약 역량 강화에 집중한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80058",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-20T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아스텔라스, 투톱 항암제 급여 진입···넥스트 스텝은 아이저베이 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 아스텔라스제약이 최근 두 개의 항암제가 건강보험 급여권에 진입하면서 국내 항암제 시장에서 입지를 강화했다. 앞으로는 차세대 항암제로 개발 중인 '아이저베이'의 임상 및 시장 진입 전략이 회사의 중요한 과제로 부상하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE45MEVvYlpGS3JlZ0xKRmQ5RkZycHRtZnJUOTkxUlZlaXI4Y2U4c3czSF9VUWQ3ODNoODJJTWdPbjYwR1dwblJCeTRyeW4xUzgtWnpNTy00X0Nwa3pISWhkYW9mV3NHN0pFcXBn?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-20T21:03:48+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "FDA, 희귀질환 의약품 심사 ‘목적적합’ 체계로 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) FDA가 희귀질환 의약품에 대해 목적 적합성을 중심으로 한 심사 체계를 도입하여 심사 효율성과 맞춤형 승인 가능성을 높이고 있다. 이는 희귀질환 치료제 개발과 시장 진입에 긍정적 영향을 미칠 것으로 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9pLVVieDdTMkRVSmk4VmNPQkNmcWZPRW5LVUhoYkRGemFLS1JBMXE4UjVISnhqVGFDNTZELWoxeHptLTNDZlJ3UHlyNlhWT1JyVS16YUFjLVlrenJBNGhQVEg0ZmJrMzl5S0hz?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-20T21:01:18+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "빅파마 ‘루푸스 신약’ 개발 잇단 제동…후발주자, 안전성 확보 관건 - 조선비즈 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 루푸스 신약 개발을 추진하는 대형 제약사들이 임상 및 개발 단계에서 여러 차례 어려움을 겪으며 개발에 제동이 걸리고 있다. 후발주자들은 신약의 안전성과 유효성 확보를 통해 시장 진입 기회를 노리고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQVVc5ZEYzcHZ2U1FWX1hOQ2NneEtITW1LUDRHMmNxUXVIeDhuaFdKTGRTdzRwakc1RExLdkJpVG1qYW5NRENZS0xQX0toOHBFbk84Wlk2OUxIOUptY2EwYVBhaWhlMktPcFBWVUVlNXZaVkdKZWlZLXFRMWtTcVdHR0VaMUVvTFnSAZsBQVVfeXFMTlpTZ3BDdGoxY0t3MlRWaTVUcldpQU5YTFU5V0Y3YmxfY0R0SHRWWU1NQ1otVGUwNEpWOC1aTk82S0xYZWZyVTNDOURfbHdDTG9zaU1fa09ycHZSZElhVWRHUDJPWWZWY2NGNkZMOEFGbUdIQWUyeE9TNkpqUUhCbVdXLUNnRllPcjhnLVpzaWRhN1dCSlQ4Y2NaNFk?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-20T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "오세문 에스지바이오사이언스 대표 “신제품으로 매출 2000억 시대 열 것” - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 에스지바이오사이언스가 신제품 출시에 힘입어 매출 2000억원 달성 시대를 열 계획임을 밝히며 성장 전략을 강조했다. 이는 회사의 신제품 개발과 상업화 성공 기대를 반영하는 발언이다.",
+      "source": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbm5KRFFyYi1ESjFfVmNKZDFsZ2lTTlk2WU5pMFpscVhCWEl1M05jWThwYzduZTJrXy1CdFRrVENVOFlrRTBjZzM5bVZvVldWMTg0MURiZk5aWUtZMkRDenEtVE0xWG5UdlY2LUEwcExPRGNXbXFhSjhZOWVCRk5LalcyRjQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-20T21:30:03+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "브라질에 희귀질환치료제…삼성에피스 ‘10년 공급 계약’ 따냈다 - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 삼성에피스가 브라질 시장과 희귀질환 치료제 공급에 관한 10년간의 장기 계약을 따내며 글로벌 아웃라이선스 및 공급 확대에 성공했다. 이번 계약은 회사의 해외 사업 강화 전략에 중요한 성과다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1maDNMY3pITnVMMDZLQU5jWmx5dnk2UnZCWWp5M0VMb3BMVHhMaENleWlYUFR3eDFTZHdPeC1Ddi1GbXdPZzd0ZXptdE51cUd0Tnc?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-10-20T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "GSK, 'PD-1' 직장암 1차 \"첫 수술대체 면역항암 승인\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) GSK가 개발한 PD-1 면역항암제가 직장암 1차 치료제로 승인받으며 최초로 수술 대체 치료 옵션으로 자리 잡았다. 이는 면역항암제 분야에서 의미 있는 진전으로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBCYzlBbWI1X2lUMDhSV0E5cjZ1cERtSU8zWDJWaVUwUjRCLThSYnNTNFNwQUVFaGhTenI5cExBdTBpYzlqSUltU3lTUlMySXJ3NlFRYzU4bw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-20T21:39:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "국내 바이오 IPO, 상반기 부진 딛고 하반기 ‘기지개’…7곳 예심 통과",
+      "summary": "올해 하반기 국내 제약·바이오헬스케어 기업공개(IPO) 시장이 활기를 되찾았다. 7월 이후 엠에스바이오, 넥스아이, 바로팜, 아델, 이노보테라퓨틱스 등 7곳이 코스닥 상장예비심사를 통과했다. 신약 개발기업들이 다수 포함됐으며, 아델은 사노피에 알츠하이머 신약 후보물질을 기술이전하는 등 의미 있는 기술수출 성과를 보인다. 넥스아이는 면역항암제 임상 진입, 이노보테라퓨틱스는 대웅제약과 총 6625억원 규모 기술이전 계약을 체결했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29248",
+      "source_name": "더바이오",
+      "published_at": "2026-10-20T21:25:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오텍 돈줄 된 제약사…동구·유한·대웅, 투자 셈법은 달랐다",
+      "summary": "동구바이오제약, 유한양행, 대웅제약 등 국내 주요 제약사들이 바이오텍 지분투자를 통해 신약 파이프라인 확보와 사업 영역 확장을 시도하고 있다. 동구바이오제약은 노바셀테크놀로지의 아토피 치료 후보물질 기술도입, 유한양행은 프로젠과 제이인츠바이오 등에 대규모 투자와 기술도입을 진행하며 차세대 후보물질 확보에 주력하고 있다. 대웅제약은 AI 및 디지털헬스 분야에 투자하며 신약 개발 외의 전략적 영역 확장을 모색 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80054",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-20T21:16:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "의약품 e-라벨 '멈춤'…오리지널은 e-라벨 vs 시밀러는 종이",
+      "summary": "식약처의 의약품 전자 첨부문서(e-라벨) 제도가 시범사업 이후 연구용역 단계로 전환되며 신규 참여 및 신제품 출시 계획에 혼선이 발생하고 있다. 특히 오리지널 의약품은 이미 e-라벨 적용 중이나 후속 바이오시밀러는 종이 첨부문서를 사용해야 하는 형평성 문제가 부각되고 있다. 업계는 시범사업 확대와 연구용역 병행을 통한 제도 안정화를 요구하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80055",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-20T21:15:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "혁신형 인증·R&D 예산·의료 AI 보상…복지부 산하기관에 쏟아진 주문",
+      "summary": "국회 보건복지위원회 국정감사에서 혁신형 제약기업 인증취소 기준의 합리적 개선과 보건 R&D 예산 감액 문제, 의료 인공지능(AI) 보상체계 마련 필요성이 제기됐다. 한국보건산업진흥원과 보건의료연구원은 관련 개선 및 연구 협력 의사를 밝혔으며, 한약제제 건강보험 제도 개선도 요구됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80057",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-20T21:13:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "위험분담제 제약사 환급액, 지난해 8674억원…올 상반기 5422억원",
+      "summary": "국민건강보험공단 발표에 따르면 위험분담 계약에 따른 제약사 환급액이 2025년 8,674억원으로 3년 전보다 약 2.6배 증가했다. 2026년 상반기에도 5,422억원이 결정·고지됐다. 환급형이 대부분을 차지하며, 총액제한형 계약의 금액도 증가 추세다. 현재 109개 의약품 계약 중 87개가 유지 중이며, 환자 본인부담 차액 지급액도 꾸준히 늘고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47697",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-20T21:10:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오벤처부터 의과학자까지…다국적 제약사, 국내 혁신 기반 키운다",
+      "summary": "BMS, 바이엘, 애브비, 릴리 등 다국적 제약사들이 국내 바이오벤처 발굴과 공동 연구, 글로벌 전문가 멘토링, 투자·금융 연계 등을 통해 한국 혁신 기반을 강화하고 있다. 릴리는 인천 송도에 연구 거점 설립을 추진하며, MSD와 애브비 등은 디지털헬스, AI 분야도 지원하고 있다. 한국BMS는 82개 기업 중 우승기업 선정과 멘토링을 진행하고, 바이엘은 유전자치료제 개발 등 미래 의약 분야에 집중하고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47696",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-20T21:08:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임신중지 의약품 반대 청원 5만명 넘어…국회 심사 요건 충족",
+      "summary": "임신중지 의약품 도입을 반대하는 국민동의청원이 5만 명 이상의 동의를 얻어 국회 심사 요건을 충족했다. 청원은 안전성과 태아 생명 보호를 이유로 임신중지 의약품 도입 철회와 태아 보호 입법을 요구하고 있다. 정부는 내년 상반기 도입을 목표로 하고 있으나, 국감에서는 여당과 국민의힘 간 도입 여부를 둘러싼 갈등이 지속되고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47698",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-20T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "편의점 의약품 확대에 제동 건 약사회…“편의만 묻고 안전은 빠졌다”",
+      "summary": "대한약사회는 정부가 추진하는 안전상비의약품 편의점 판매 확대에 대해 안전성 및 판매 관리 문제가 해결되지 않았다고 비판했다. 의약품 오남용 우려와 상담 체계 미비 등을 문제로 지적하며, 야간·휴일 공공심야약국 확충 등 안전한 의약품 접근성 강화가 필요하다고 강조했다. 국민 인식 조사 결과가 판매 확대 근거로 사용돼서는 안 된다고 주장했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47694",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-20T21:02:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "B형간염 치료 문턱 낮추고 간암 생존율 높인다···간질환 진료 변화 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 간질환 환자 치료 패러다임의 변화가 예고되며 B형간염 치료 진입 장벽을 낮추고 간암 환자의 생존율 향상을 위한 임상 및 진료 가이드라인이 개편되고 있다. 이러한 변화는 환자 맞춤형 치료에 도움을 줄 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA2MENJQU5NYlo0WkFEQ29TM2pNVE5ySmk3MmIxc3NoSG00UDF6bm1LbjI5dU5kVHBKWWJ1THZzUjV4XzJ1dXk4ZmpwU0YzaGRHZGRVSjN3bEZ2a2gxWFo5NnZjaWpUamdoN0Q0?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-20T21:00:35+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "‘롤러코스피’서 엇갈린 회복력…반도체 부진 속 바이오·배터리 선방 - 이투데이",
+      "summary": "(제목 기준·원문 미검증) 최근 코스피가 반도체 업종 부진에도 불구하고 바이오 및 배터리 관련 종목의 선전에 힘입어 전체적인 회복세를 나타내고 있다. 바이오 분야의 강세는 제약 바이오 산업에 대한 투자 관심과 기대를 반영한다.",
+      "source": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5UbDVBX2ZtRHpCSHU0WTNrN1pDclpnMDlXbV9pNmtVSDlGajFNbnRxU1pMTDAySFZkY29lUWxNNHVjR08wTWlHbDFqV0dVOW5WSkcwQQ?oc=5",
+      "source_name": "이투데이",
+      "published_at": "2026-10-20T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비소세포폐암 치료제 ‘리브리반트주’, 위험분담 환자 환급 절차 착수",
+      "summary": "비소세포폐암 치료제 리브리반트주(아미반타맙)가 위험분담계약에 등재되면서 제약사 환급 절차가 시작됐다. 환급 대상은 2차 이상 치료를 받은 EGFR 엑손20 삽입 변이 양성 환자이며, 환자는 전액 본인부담 처방 시 제약사에 환급을 요청할 수 있다. 환급 기간은 2026년 10월부터 2031년 9월말까지이다. 린파자정 환급 계약도 연장됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47700",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-20T21:00:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "GSK, FDA로부터 직장암 치료제 승인 획득",
+      "summary": "GSK가 직장암 치료제에 대해 FDA 승인을 받으면서 신약 시장 진입에 성공했다.",
+      "source": "https://news.google.com/rss/articles/CBMib0FVX3lxTE43LTItczFYbmNmbjllVkNGYnVDSHVVT1BlY2xOcUN3TGEydkZpQy16dnZGcVo0dVpYX2tiZXhHT0RvTzcwd3BULXpmdV8tcG1paGYwZmhmOGxwWVNJSWttMHJDUXdPbThLa0pkeFBJUQ?oc=5",
+      "source_name": "Global gap recovery",
+      "published_at": "2026-10-20T10:24:58+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "GSK wins FDA approval for rectal cancer drug - MedWatch"
+    },
+    {
+      "title": "Amgen과 AZ, 천식 치료제 Tezspire의 위식도염 제3상 성공 임상 결과 발표",
+      "summary": "Amgen과 AstraZeneca가 이소성 식도염(EoE) 환자 대상 제3상 임상에서 Tezspire가 Dupixent를 도전하는 성과를 발표하며 희귀 혈액질환 치료제 개발에 긍정적 신호를 밝혔다.",
+      "source": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcWJUcW9lRElickIyZWJDbld0dUFZWmRXNGRhMWRPbnhoYTNDV19JTjRTQ0dpVS1TMUpsVWhxRkF4amlDWDBVcFIxZDJRbGF2WHhVdkFkRU5pUmdIcEdwYzRSQlFEZFFFUnBtRTZnRmlTWDZ0TlM0VzJ2TFBGTXFMTE5xMExoai1nRW9yLWZHLW9BOHdRQUIzRkRkaXJYNi1FcjE3LWtlTEk?oc=5",
+      "source_name": "Fierce Pharma",
+      "published_at": "2026-10-20T13:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Amgen, AZ dive deep into Tezspire's Dupixent-challenging victory in EoE phase 3 - Fierce Pharma"
+    },
+    {
+      "title": "Cosette, 눈 건선 치료제 EVOXAC®(세비멜린 HCl) 경구용액 FDA 승인 획득",
+      "summary": "Cosette Pharmaceuticals가 Sjögren 증후군 치료용 경구용 EVOXAC®(세비멜린 HCl) 액상제의 FDA 승인을 받으며 첫 신규 의약품 허가를 획득했다.",
+      "source": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNdU1OQzFsbk5FeHF0RVcwUlNaWnNiaFpCQVIxcG9sek5UdUxCZHZEY24yU1Bzek5GVHdFdElHT3N2UWJHemJnbFdkVzNCWDQ3a0VkYTBHQ2tVcmUwV2U3ZGFuUmtsZ1JTY3NMaXlWQjc2NVdpRktQTEpBdnpLc2czRU0zT1dIM2haTFdxRUNxWlhsbzdFbDF4MVlqMDA3WXN6Rk5udGQ5bW9meTJPcy1RU2MtYmdUV2N3cDdMZ3V1bGFtWFJQSlRYZ1JUUVBrRVZ4WHR4NUNSS0VQbGFhbHcweWV2V0tHMXFodmwzZXRYekgxY1Zqek9DcFFqSzY2dEd4c0dFaG1aUy1faGZvWG1r?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-20T14:19:16+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Cosette Pharmaceuticals Announces FDA Approval of EVOXAC® (cevimeline HCl) Oral Solution, Marking Cosette’s First New Drug Application (NDA) Approval - BioSpace"
+    },
+    {
+      "title": "화이자, 자가면역질환 신약 2상 임상 조기 종료 결정",
+      "summary": "화이자가 자가면역질환 치료제 후보의 2상 임상을 미래 불확실성으로 인해 조기 종료하는 비즈니스 결정을 내렸다.",
+      "source": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUnFwa0dodDhXYzNPWmpQOURyS2VVY0FETlFVV3BYMjd5MG90MExvcENJZ0psVXRjMDJGZGxVMDEzcFFoWGpHSGRfdktQZ1d4SmNZMEE5eU51cl9JX2RuRDJFM1dsZkJ2VHpicjEyVW8zcUxKLVlPSWpiT0k2YWJDWGVuUVhoWnNiTWdPT05ITm1nTTk3cE0zUFc3TmVWSTVQVXlISEtEWkZiMU9QemJTY012UXVEd01XMC1iQlV0VXA0QQ?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-20T12:11:42+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Pfizer makes ‘business decision’ to end phase 2 trial of autoimmune drug as program’s future uncertain - Fierce Biotech"
+    },
+    {
+      "title": "Alvotech, SIMLANDI® 제조 공정에 대해 FDA 승인 받아 배치당 생산량 2배 이상 증가",
+      "summary": "Alvotech가 SIMLANDI® 바이오시밀러의 새로운 제조 공정에 대해 FDA 승인을 획득하며 생산 효율성을 크게 향상시켰다.",
+      "source": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNeUpyWmo4NUN1YkE4cEoybjhpQnVyRXN1MXN2Q0IwVU1CemlOak1qWkhndVRHV3dTZmNZQUU3MmZQaDk5dWRoWlZEa2dZZmpXd3JtVVhsdXQ4ZDQ2WUFmenpSMnNUT21KZkVPdUIyeVV4STlIcEoybVRIRnJLZy1xaWw5SjVLak9Jd0RLWjM3ZngxckxvRkxDcnl4Z1l5M3RJQTExS3FJejl1QVNoQXR5TzM2QmRxZHczZ1o2TWVFVHRVa0Y0YllvVE1IeTByWXZJTHBXZ0lrMXRQa3NaUHNydmpSZw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-20T10:28:48+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Alvotech receives FDA approval for new SIMLANDI® manufacturing process that more than doubles output per batch - BioSpace"
+    },
+    {
+      "title": "FDA, 반려견 특정 피부 감염 치료용 세포베신(Cefovecin) 주사제 즉시 사용 승인",
+      "summary": "FDA가 반려견의 특정 피부 감염 치료에 쓰이는 세포베신 주사제의 즉시 사용을 승인하며 동물용 의약품 시장에 신규 약제를 추가했다.",
+      "source": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPUTdRTEdaVDlyRmZtYWhKQW5SNEpsamJiY3ZTcFUtVXNsNlFlRG5MbElOQ0JpQUxtSnEwb0JpZU45cF92TUFmTmRlSTB6R2RZTWtjUGtpcDZNeExzVnJidUxyNllBRkxOanpqZV92bXVtR1g2cWpVeTFXc1NLc01uTE82M1NIZy1HNWdocmNyQUJEUkRhUXEwMUhtTHplWGdEUG9jWWpnTXdIUnZ2dkdMTFRmRG96Q1JvRk9jYzhJUDBUdjhOZTJPbzhWdEM?oc=5",
+      "source_name": "FDA Press Releases",
+      "published_at": "2026-10-20T14:47:07+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA Approves Ready-to-Use Cefovecin Injectable for Treatment of Certain Skin Infections in Dogs - U.S. Food and Drug Administration (.gov)"
+    },
+    {
+      "title": "Optimi Health, MDMA 대량 생산 마쳐… 캐나다 3상 PTSD, 이스라엘 MAPS 시험, 호주 상업 공급 준비 완료",
+      "summary": "Optimi Health가 MDMA를 3상 임상시험과 상업 공급용으로 대량 생산 완료하며 임상 및 상업화 단계에 진입했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9GSkZFeGJxcW95VUdXNzlHaXZ6Uk50aHNxS3hXRTY3emNkR182clVabDRWejFjSlp0TGk4amFiYnoyRkxObGt0YXM0WFhDMVcwMjlR?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-20T14:44:45+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Optimi Health Completes MDMA Production for Phase 3 PTSD Trial in Canada, MAPS Trial in Israel and Commercial Supply in Australia - FirstWord Pharma"
+    },
+    {
+      "title": "Leads Biolabs, PD-L1/4-1BB 이중특이항체 Opamtistomig의 2상 위암 치료 연구 확장 단계 진입 발표",
+      "summary": "Leads Biolabs가 위암 일차 치료용 PD-L1/4-1BB 이중특이항체 Opamtistomig 임상 2상을 확장 단계에 진입시키며 항암 신약 개발에 진전을 보였다.",
+      "source": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNOEdFTFQxMHoyVVF5MUtjaWJLdGR2WmQyRmdHYWUxX3N1blJVdDFlbUtJY0pMME44UHA1UUZFYi0yYnllT2lIUkVkN2xHMVhteDJLV2VxU2QtV0VWdWhUTVUwRGJDR1k0RkZ3OU5SSlA4ZGY4RVVXWVltRWl0dF9PU0VnamhtUnZLS2M5eUJRQVRSN2Q0eHFQM3h0bTNhbFY0Y1NNQWt1c3FXVTlic3dFdm9LNzlDalBadFhFY3NLd2Z5aEtIcUh6T1dyOGNrZVQ1Q19wZ0xlTGhESWMtdWFKZXFlTVFFaEFTbktTc3lxbTFTWHZxLVhFMzltSUdhWTA?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-20T12:26:45+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Leads Biolabs' Opamtistomig (PD-L1/4-1BB Bispecific Antibody) Advances to Expansion Stage in Phase II First-Line Gastric Cancer Study - BioSpace"
+    },
+    {
+      "title": "Nano24, 급성호흡곤란증후군(ARDS) 대상 흡입형 EXO-CD24 2b상 긍정적 결과 발표",
+      "summary": "Nano24가 CHEST 연례 학회에서 급성호흡곤란증후군 환자 대상 흡입형 EXO-CD24 임상 2b상에서 긍정적인 임상 결과를 공개했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9OM1NfdFprWUtmaFE1bHlYY2pRY3Vxa0hENkt4SlFkVW1ib0V4Rml4RnY1aTFCX19hWnhRY0xselFJclFqMnhDRXJqUlNOZ2Uxa29F?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-20T15:58:41+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Nano24 Reports Positive Phase 2b Results for Inhaled EXO-CD24 in Acute Respiratory Distress Syndrome (ARDS) at the CHEST Annual Meeting 2026 - FirstWord Pharma"
+    },
+    {
+      "title": "이스라엘 바이오텍, 흡입형 엑소좀 치료제 임상 2상서 호흡부전 개선 효과 보고",
+      "summary": "이스라엘 바이오기업이 폐 손상으로 인한 호흡부전 환자들을 대상으로 한 흡입형 엑소좀 치료제 임상 2상에서 유효성을 입증했다.",
+      "source": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPX1RockZzVXN1V293TjNUSHR4X2J3QUFsVmFHa0Z0UWgtZDlTbFhVU0J4aWNWUlZLXzNOZDdwUUMwbm8weU5EQnRRNEJVT3ZDX3VZN0Jid0E4MVZ0bTdBcjVlaHRmX040Y3d5djVzXzVsVUczTThRdXZsX0VLcGhlQnB3dk1PTkIzYWZkejB3Sy1NRGNjd0J3bzJmOHIxMDVOOVNmT3haZ0NjQ2ZFdG1YWHNlS0JzWUpQb2FEeA?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-20T11:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Israeli biotech’s inhaled exosome therapy reduces respiratory failure in phase 2 study - Fierce Biotech"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 22,
+    "global": 10
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
