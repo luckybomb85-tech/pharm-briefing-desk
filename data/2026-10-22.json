@@ -1,0 +1,329 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-22",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "식약처, 안전성 RWE 지침 준비…임상 재평가 문호도 열릴까 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 식약처가 의약품 안전성 평가에 RWE(Real World Evidence)를 활용하기 위한 지침을 준비 중이다. 이는 임상 재평가 등의 문호를 넓히는 계기가 될 수 있어 주목된다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBURnUwN2xzc2R4ck45ZFJZUGpaYlpPZGtIUTg2MDJVRldvT2NRMDBkLS0xaGFrZFVsTHFMM1FWQ0RURG5xRWtUTkpaUWFaTUdpN3I5X1dB?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-21T22:30:19+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임상 속도 높이고, 환자 혜택 따지고… 빅파마 AI 전략 '4사 4색'",
+      "summary": "암젠, 노보노디스크, 한국로슈, 한국베링거인겔하임 등 글로벌 제약사가 AI를 활용한 신약개발과 임상시험 최적화 사례를 2026 세계 바이오 서밋에서 발표했다. 암젠은 AI 기반 임상시험 기관 선정과 후보물질 발굴의 효율성을, 노보노디스크는 임상데이터 분석 자동화, 로슈는 신약-진단-데이터 통합 AI, 베링거인겔하임은 환자 치료 성과 검증에 중점을 뒀다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80095",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-21T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“언제 보험 되나요”…민원에 드러난 신약 대기와 치료 지속의 문턱",
+      "summary": "올해 1~8월 건강보험심사평가원에 접수된 민원 중 27%가 의약품 관련으로 신약 등재 이후 실제 치료 적용 시점과 기존 환자의 급여 인정 문제 등 구체적인 쟁점이 드러났다. 심의 이후 비용효과성 검토와 자료 보완 등 절차가 길어 실제 환자 체감과 괴리가 있으며 적응증별 임상 근거 차이로 같은 성분 의약품도 질환별 급여 범위가 달라 민원이 반복되고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47720",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-21T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "AI 연합신약개발 K-MELLODDY... 관건은 3년 성과 '어떻게 지키느냐'",
+      "summary": "국가사업 K-MELLODDY가 데이터 기관 간 연합학습을 통해 신약개발 AI 모델의 예측 성능을 개선하는 가능성을 확인했다. 초기 15개 과업 중 11개에서 성능 향상이 나타났으며, 데이터가 적은 기관은 모델 확보, 많은 기관은 개인화 효과가 두드러졌다. 앞으로는 기여도 보상과 데이터 보안, 사업화 및 지속 운영 방안 마련이 과제로 남았다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80096",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-21T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "급여평가 일정 제약사에 사전 통보…12월부터 안내시스템 구축 추진",
+      "summary": "건강보험심사평가원이 12월부터 의약품 급여평가 검토 진행 상황에 대한 사전 통보와 일정 안내시스템을 구축해 투명성과 예측 가능성을 높일 예정이다. 신청 제약사에 위원회 일정 문자 통보를 실시 중이며, 위원 역량 강화 교육도 병행해 합리적 의사결정 지원에 나선다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47716",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-21T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "식약처, 공동생동 폐지엔 '신중론'… 비만약·미프진 관리는 강화",
+      "summary": "식약처가 제네릭 공동생동(1+3) 제도의 폐지에 대해 신중한 입장을 유지하며 업계와 충분한 논의와 사회적 합의가 선행돼야 한다고 밝혔다. 또한 비만 치료제 위고비와 마운자에 대해 오남용우려의약품 지정 심사를 이달 30일 본심사 단계에 올려 규제를 강화할 예정이다. 임신중지약 미프진 안전성은 FDA 재검토 결과를 참고해 허가 이후 특별감시가 추진된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80092",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-21T21:03:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "FDA, 희귀질환 심사체계 재설계…항암제 치료 범위도 확대",
+      "summary": "FDA가 희귀질환의 특성을 반영한 맞춤형 의약품 개발·심사체계를 도입하고 승인 불가 사유와 임상·제조 시설 실사 관련 투명성을 강화한다. 또한 유방암 유지요법과 결장암 보조요법 항암제의 치료 범위를 확대했고, 단순포진바이러스 치료제 등 면역저하 환자용 신약을 승인했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47719",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-21T21:02:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임상 반려에 기술 이전 감감무소식…올릭스, 펩트론 쇼크에 롤러코스터 타는 바이오株 - 조선비즈 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 올릭스가 임상시험 반려와 그에 따른 기술이전 소식 부재로 주가 부진을 겪는 가운데, 펩트론 관련 이슈가 바이오 주식 시장에 충격을 주며 변동성이 확대되고 있다. 이번 상황은 바이오기업들의 임상 및 기술이전 성과가 주가에 미치는 영향을 단적으로 보여준다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUkluLTVKZUc4Wkk1SHhXWjJoNERON2F5TW1MSEtkblo5OXZSTGRhTElzdzVud0RiWFZqVnRnMk5WY09ucGNsR0RtMHdEY0lwZVJ4T1gzVjVQdlVPcW9MU2ZJd0FiZzJlU0U2eWJWWmFvQlVSemZJWGt1eC02MkNsVTlDdk1qRzDSAZsBQVVfeXFMT1dvSjFEZnUwWGpFSGVaRGFCc2lrMnlVZ2NNUTl4Qm93dzQycllLcV9SWVVCYUViaXlRZEZqaUsxa1ZwbVVlSVp6SW04SnptVEp4eS1uMlVBaXhuWk9TLUItbWZrSWtKUng2ZFVSVEhqQ1FSdzBGYmtDa0d4NU5yQm0xWHdzaFYwcHZEV3NFdjUyU2h0RHlPRmwwZTQ?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-21T21:01:56+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제네릭에 흔들린 오리지널 항응고제들… '릭시아나'도 시험대",
+      "summary": "오리지널 직접작용 경구용 항응고제들이 제네릭 진입 이후 원외처방액이 감소하는 가운데, ‘릭시아나’는 내달 제네릭 대거 진입을 앞두고 성장세 유지에 도전 받는다. 새 제네릭 약가 산정제도 시행으로 후발약 가격 간 차등화가 예상되며, 제네릭 진입과 오리지널 약가인하가 맞물린 경쟁 구도가 시장 판도에 영향을 미칠 전망이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80080",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-21T21:09:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "이승주 오름 대표 “대전 바이오 성공 뒤에는 자율 리더십·수평적 연구문화”",
+      "summary": "오름테라퓨틱의 이승주 대표는 대전지역 바이오 성공 뒤에는 자율 중심 리더십과 수평적 연구문화가 자리잡고 있다고 밝혔다. 대전 LG생명과학 연구소 출신들이 다수 창업해 국내 바이오기업 시가총액의 상당 부분을 차지하고 있으나, 창업 초기 자금 부족 등 어려움도 크다고 설명했다. 바이오벤처 특성상 신약개발에 수년과 대규모 비용이 요구되어 스타트업과 차별화되는 점도 지적했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29291",
+      "source_name": "더바이오",
+      "published_at": "2026-10-21T21:30:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "에임드바이오 \"베링거 이전 ADC 곧 첫 투여…AMB-302 병용, 진전\"",
+      "summary": "에임드바이오가 베링거인겔하임에 기술이전한 ADC 후보물질 ODS-025가 임상 1상 첫 환자 투여를 앞두고 있고, 바이오헤이븐에 기술이전한 AMB-302는 PD-1 억제제 병용 임상과정에서 초기 반응을 보이고 있다. 이들 물질은 총 20억 달러 규모 기술이전 계약에 기반해 임상개발 역량 축적과 글로벌 제약사 협력 전략을 병행하며 경쟁력 확보에 나선다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80094",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-21T21:07:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신속등재 대상 의약품 11월초 선정...\"제약 대면발표와 심의 하루에 진행\"",
+      "summary": "보건복지부가 희귀질환 치료제 신속등재 시범사업 대상 약품 선정 심사를 11월초 진행할 계획이다. 제약사 대면 발표와 심사위원 심의를 하루에 완료하고 전문학회 및 환자단체 자문 의견을 수렴하며, 경제성평가·약가협상을 생략해 산정특례 적용으로 환자 부담을 줄이는 방안을 추진 중이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47718",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-21T21:06:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[경력채용] 동아제약, 마더스제약, 비씨월드헬스케어, 동방에프티엘",
+      "summary": "동아제약, 마더스제약, 비씨월드헬스케어 등 여러 제약바이오 기업들이 RA, 바이오약리, QC, QA 등 산업별 경력직 채용 공고를 발표했다. 특정 분야에서 경력과 자격을 갖춘 인재를 모집 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80093",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-21T21:01:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "MSD ‘키트루다·파드셉’, 요로상피암 수술 전후 치료제 EU 승인…사망 위험 47%↓",
+      "summary": "MSD의 면역항암제 키트루다와 화이자·아스텔라스파마의 ADC 파드셉 병용요법이 유럽연합에서 근육침윤성 요로상피암의 수술 전 선행요법과 수술 후 보조요법으로 승인받았다. 임상3상 결과 이 병용요법은 표준 화학요법 대비 무사건생존기간을 47% 증가시키고 전체생존기간도 35% 개선했다. 안전성 프로파일은 일관됐으나 3등급 이상 이상반응 발생률은 다소 높았다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29292",
+      "source_name": "더바이오",
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "수능 코앞…제약사들도 수험생·학부모 선점 '마케팅 열공'",
+      "summary": "대웅제약, 동국제약, 광동제약 등 주요 제약업체들이 2027학년도 대학수학능력시험을 앞두고 수험생과 학부모 대상 관련 건강기능식품과 의약품 마케팅을 본격화했다. 카페인 과다 섭취 부작용 우려 속 피로 해소와 면역 관리 제품을 중심으로 캠페인을 진행 중이다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1728596",
+      "source_name": "EBN",
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[시가총액 모니터] 제약바이오 상장기업 ‘톱 100’(10월 21일)",
+      "summary": "(제목 기준·원문 미검증) 국내 제약바이오 상장기업 중 시가총액 상위 100개 기업 현황이 공개됐다. 특히 대전 소재 신약개발 바이오기업 7곳이 합산 시가총액으로 국내 전체 59%를 차지하며 높은 비중을 나타냈다. 이는 지역 바이오기업들의 시장 평가 상승과 성장 잠재력을 반영한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29293",
+      "source_name": "더바이오",
+      "published_at": "2026-10-21T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "닥터폴크와 렌렉시온, 위마비 치료용 Naronapride 3상 프로그램에 대해 FDA·EMA와 합의 도출",
+      "summary": "닥터폴크 파마와 렌렉시온이 위마비 치료제 Naronapride의 임상 3상 계획과 관련해 미국 FDA와 유럽 EMA 간 조율에 성공했다.",
+      "source": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNZGVmSEZYeUxLd1AyaTR5amZVcURGM2llaFhzb1VJSDZveU5uNVVKXzBDY21zVEExc3VmWlZpclpsckk3cEFQMGdDVVB2WUZ4ZE00QV9fYTJjcHh2VmFvWElLMkpZZWVmbHVjeVQ0aXpwXzVsWjZNVDJKUWhTenRHT2lKS3owUzQ5XzBxS3czWGRXbUNqVmc4cWEtbjZhbU9UUXlwalpVSmNOLXF5T3FyblMwSTExLXpaV0dER2RYaUdhN0RwQ19LUG4tUlEyY05PSlRiclNKcDk1Q0h6S2VtcXNhRFgydVN1?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T14:43:40+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Dr. Falk Pharma and Renexxion Reach Alignment with FDA and EMA on Phase 3 Program for Naronapride in Gastroparesis - BioSpace"
+    },
+    {
+      "title": "FDA, Lynch Regenerative Medicine의 rhPDGF-BB 주사제 임상 2b상 IND 승인",
+      "summary": "FDA가 Lynch Regenerative Medicine의 안면의 함몰 개선용 인간 재조합 단백질(rhPDGF-BB) 주사제 임상 2b상 시험 계획(IND)을 승인했다.",
+      "source": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOdmQtREh1TTgxX0k4QzZ2a1Bnc2VDWVRvb3hZaWhTUy1YTmFERnQwZzZYVVNFdWw0V1k4ZWFiRUgyN0I4T0lxY2pfbktaR195bXM5UzJFSmI3d0pKTFJ1eFgwaTQzajc1X0pEZm5INGZpS1FkYXY2bDQyelotUjg2NFZSaFRNbWVtN3JtdlBZMlg1ci1JTnZDakFrT09zYkI2bkp2SWNfVi1CYVVfOTlwVnhfQ3QyV1hLZE12aDZuemZfQ25UQUh6eTJDQkp6clYxY1VwbURSclJRYVFodGx5aGFGd1A4MmM1YnN6ay1XRGZvdzJtVlM4WWVWUlhKU2JNRVU3RGxFa0gzZjl0MTc3Sk10NA?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T15:01:08+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA Authorizes Lynch Regenerative Medicine's IND for a Phase IIb Clinical Trial for Injection of rhPDGF-BB for Treatment of Infraorbital Hollowing - BioSpace"
+    },
+    {
+      "title": "프라이오반트, Lisraya 핵심 포도막염 임상 성공으로 추가 적응증 개발 기대",
+      "summary": "프라이오반트는 난치성 포도막염 치료제 Lisraya의 주요 임상에서 성공을 거두며 향후 적응증 확장 가능성을 열었다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9EMHFVOFFBclVwV2dMY1VVNDg3S2c0cG1YdmtJMVg2M3pvYzU5NjdBbnRPenV5THpZSXdwTDEwc3FXcGVDQTVyVGxBMlRwV1g0Z3VJ?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-21T17:48:45+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Priovant's Lisraya succeeds in pivotal uveitis studies, setting up next indication - FirstWord Pharma"
+    },
+    {
+      "title": "Geneos Therapeutics, 암 맞춤형 신항원 DNA 면역치료 NeoTARget-IMPACT31 2상 임상 착수",
+      "summary": "Geneos Therapeutics가 Neoantigen-Targeted Personalized DNA Immunotherapy인 IMPACT31 임상 2상 시험을 시작하며 면역항암제 개발에 박차를 가한다.",
+      "source": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPay1iLUk0QzgwUGxlX3JmMVRqWjFjX29LQUZNMEhTcEptQWw5QzVNV3JBUmRvUHZBa0pPYXpYU3lDNVNud0VUb01jbVN2NlVIWE8wUzZGclJkUDZRaW1IaXljUWVULTU4bXhTbVZ0MHJfRUdqQ2pPUlVsT092blQ2NWdYako4WFFKQnEyaWNZR1M5bHdGcVZLbko0eGFqanJRM1RHd1VvblpzZTNvdXBHNm9wTHBSVVlINkpJWnBWVTJ6dzF1NGJ4aUlMQmwzT25uOWg5OUpLNFlSNjVTSl9td1FXUmlqUmdWc19FMW9sU0ZEVE5SVUdsNFkzYWYzYnc2WUo1NUg2R0Q5a0h3MDBuUXZwVQ?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T15:01:07+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Geneos Therapeutics Initiates IMPACT31 Phase 2 Randomized Clinical Trial Evaluating Neoantigen-Targeted Personalized DNA Immunotherapy for Cancer - BioSpace"
+    },
+    {
+      "title": "GSK, 세계 최초 기능적 B형 간염 완치제 Hibsago FDA 승인 획득",
+      "summary": "글락소스미스클라인(GSK)이 B형 간염에 대한 기능적 완치를 목표로 하는 치료제 Hibsago를 FDA 승인을 받아 상용화 단계에 진입했다.",
+      "source": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSDBHeDlFSWdWN1lRaDZyai1TcWN6M0t0TDlkbUJLRmpPaHZ1bWNtTGk3eURNTWkxdzVBYUtXdmUybkVmbFYzVl90OG5md3AxQTRmNHBZS3dHMHN4UTlyQnVUWUFKeTlxSkFXS25vUXFOZ0tPTS1nenBVOXl0Z2hfMWdvOFRjZHJGWUNqZkM2OVJsQjg4M1VoWm9sNjlRdFhTdTlWMlVaeFFtblctS0RzT0V1ekY?oc=5",
+      "source_name": "Pharmaceutical Technology",
+      "published_at": "2026-10-21T14:45:09+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA approves GSK’s Hibsago as first functional cure for hepatitis B - Pharmaceutical Technology"
+    },
+    {
+      "title": "알콘, 신경과학 기업 뉴로텍 및 FDA 승인 마켈 타입 2 치료제 ENCELTO 인수",
+      "summary": "알콘이 FDA의 승인을 받은 마켈리어혈성혈관변성(MacTel) 타입 2 치료제인 ENCELTO와 신경과학 기업 뉴로텍을 인수했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZVEdMd3ZNOGdVUGJlYkc1dVJQQkxrS0daeFI4cVV2UC1YeWxnZmRxR29LVkpLWTZKT3dUWktpenZmMlNVZzA5d2dneGEwcVRhTV9j?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-21T14:41:52+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Alcon Acquires Neurotech and ENCELTO, the Only FDA-Approved Treatment for MacTel Type 2 - FirstWord Pharma"
+    },
+    {
+      "title": "바이오크리스트, FDA서 HAE 치료제 ORLADEYO® 150mg 경구 펠릿 형태 승인 획득",
+      "summary": "바이오크리스트는 성인 및 청소년을 위한 유전성 혈관부종(HAE) 치료제 ORLADEYO® 150mg 경구 펠릿에 대해 미국 FDA 승인을 받았다.",
+      "source": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOWjk2WTlXVnpIWVdlWnhkWHF2V0NBeFh1bWJxc0x1cjZaVlR2NmlnYU80ZGFSRHZsb1RGZlhSc2ZDVFpzOXNoUExQUjhaMnlESmJFRXQ2UXI2bm5lekY5UFkwVk9wcEZxOXppZXZXOVdKZENvUzdLSmZEWG1JUk9tX3pyWFItZXp1TjBGSDRWTmJOWFdHWkIzNm9OX0pzSEN2MnNac0dKbXV0TTdndEFKMHc0UWZqWkxKSVhVOHpud3FpV3VWdFJxakI1cG5nRURORDdtV09xc3VwZXM?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T14:00:44+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "BioCryst Announces U.S. FDA Approval of ORLADEYO® 150 mg Oral Pellets for Adults and Adolescents with HAE - BioSpace"
+    },
+    {
+      "title": "루멘 바이오, 클로스트리듐 디피실리 감염증 치료제 LMN-201 RePreve 임상 2상서 긍정적 결과 보고",
+      "summary": "루멘 바이오는 C. difficile 감염 치료 후보물질 LMN-201의 RePreve 임상 2상에서 유효성 및 안전성 모두 긍정적 결과를 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBFZlZyZXpiclFrYjZIdzEtYy1DSVJuM1E4emhsVXJJOEVvczc0YXBWeUJaRHktaUlGVHJJb0o2VkIzb2lJWU9CMkh6R2IxY3FVWkZZ?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-21T13:28:44+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Lumen Bio Reports Positive Phase 2 Results from the RePreve Clinical Trial (LMN-201 for C. difficile Infection) - FirstWord Pharma"
+    },
+    {
+      "title": "Roivant와 Priovant, 비감염성 포도막염 치료제 Brepocitinib 3상 CLARITY-1, CLARITY-2서 긍정적 결과 발표",
+      "summary": "Roivant와 Priovant가 비감염성 포도막염 치료를 위한 Brepocitinib의 3상 임상 CLARITY-1 및 CLARITY-2에서 긍정적인 효능 및 안전성 데이터를 공개했다.",
+      "source": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQMkdrTGxLSnB6enduQlBLdUVKUDhLWXJmSjVCVmxSMUpUMkhKaVhqQ0FyUmRtcmIwOWxKcDFwbGoxczdYOHg5T0xJWlVZSnprTVp1ekI1Z0tPYUJyRko5ZzkwRC1oSEFoN0hWQnVQWDFQTThuT214ZWpwOEIwanl5U20tVU9saHdBUS1DdF92Y3A2SjdRODgzQ3UxV3FhQkFFLTE1bmF3ckJCeXdCeGlwclA1MGdEMkFVcFVIUDhISDNSV0hpV19ucW94c1VnSjJlUHVVbmZXc2RFbllmNHJzQktVdHdvNHR1RXZXTHdTbklGam81YmI1Ym5Bb0F6NkdpVkpQMTF3?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T14:00:46+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Roivant and Priovant Announce Positive Results in CLARITY-1 and CLARITY-2 Phase 3 Trials for Brepocitinib in Non-Infectious Uveitis (NIU) - BioSpace"
+    },
+    {
+      "title": "FDA, 코셋의 쇼그렌 증후군 치료제 Evoxac 경구용 액상제 승인",
+      "summary": "FDA가 코셋(Cosette)의 쇼그렌 증후군 치료를 위한 경구용 용액제 Evoxac의 신속 승인 절차를 완료했다.",
+      "source": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOWF85MTdIblFLeUY1OTlBSy00X2x4bm16bXFqcDA3NHN3dFJpYUM3Q294UEhERmdpVWs2RG9mSk1Ydm8wdVNKTERJd3VkUnA3ZkZZNEI1cWM3NUY1LVZfcDZuME1iSkR5X0pyWlVtbV83eDdTc1BJNmFManN0WjR0YU8yYXczWk1FRF9XTg?oc=5",
+      "source_name": "Pharmaceutical Technology",
+      "published_at": "2026-10-21T09:46:18+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA approves Cosette’s Evoxac oral solution for Sjögren’s disease - Pharmaceutical Technology"
+    },
+    {
+      "title": "F2G와 시오노기, 침습성 아스페르길루스증 치료 위한 Olorofim 글로벌 3상 OASIS 연구 데이터 발표",
+      "summary": "F2G와 일본 시오노기가 침습성 아스페르길루스증 치료를 평가하는 글로벌 3상 OASIS 연구에서 경구용 Olorofim과 기존 치료제 AmBisome®의 비교 데이터 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMi-gJBVV95cUxOMU1pRHl3VVdzb0FvNE1iUW5OOEJaa1R4OHFhd2JhNWM1MXpXTE1rb3g3QzllQjBtMkF3T3Z1Q3djcHQ1UERGWFktSktrc3ZoajJvTDg0dnRJenZmcmdVbzNjNDZOVnNwR001UXU0RVpmRUxSNWROWnlYNWR4cE8xdUlQNWRyWVd6Z3BxeDVMTEF2M1FERzJrTndTV29seElqbkNzNGFPVGxKRzdqNUlpVTJDeGZXaWJ1RVdScG03SFNVZkVYZkRuaGJ3OGxqVVlNTWNtV3VXU2FZWU9aUm1NMHYxcFQ0TEhtWlJWZUw0b3FDcjJLZVZ1cFktYnJ6V0c0VmxranlPSnJEc1RaRk02eW5RQm5IbFREVkMzeGZMMEVEUjdncUM1Tzk2b0d3OF9waEFpNExsOG5aSS1LTlhsc1Q2NkZBcFZkakJYMmRWQ3pYejFfbjFPSnBfOGhGekk1YTZzT21SOGlhR0pDanpsU0FjNVNvYWN1ZlE?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T10:43:41+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "F2G and Shionogi Report Data from Global Phase 3 OASIS Study Evaluating Investigational Oral Olorofim Versus AmBisome® Followed by Standard of Care in Invasive Aspergillosis in Late-Breaking Oral Presentation at IDWeek 2026 - BioSpace"
+    },
+    {
+      "title": "Bioxodes, 출혈뇌내출혈 환자 대상 BIOX-101 2a상서 혈종 주변 부종 성장 유의미 감소 데이터 발표",
+      "summary": "Bioxodes의 BIOX-101 임상 2a상 결과에서 출혈성 뇌내출혈 환자의 혈종 주변 부종 성장이 통계적으로 유의하게 감소한 것으로 나타났다.",
+      "source": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNSUJoazM5aW5DNWxDbFBmZ3NvTTAzTFEzZmdwQ3N0d2hsYzBoNFdwR1k1djFRUjhkcE1peFlvYnJ2R0htNGVSeUJxcV9wUEhfdmFnTDhZWHBTd2lXaWhZN2hrTy1OSnRQc0xncDZudlppUVROS0V4ek1mX21QLW81N1pjM1p2OWMyZWp5WnJ6ZWNfN2RiNmNpeHlKM1dWazdkN0lEcjAzZm9UcFBPZlRLckVHYUR5T2ZCejl2eEpBTmhERWJRNThCenpnNWFKNTMwc1Z5NUMzcXNfV1dQSlJMamtBSVJjNVc1Y0xjZlRvOVc1X3BZcHpldVlfUlZYNkE?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-21T11:01:34+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Bioxodes BIOX-101 Phase 2a data show statistically significant reduction in perihematomal edema growth in intracerebral hemorrhage - BioSpace"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 16,
+    "global": 12
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
