@@ -162,6 +162,28 @@
       "original_title": null
     },
     {
+      "title": "\"암환자 어쩌나\"…대체약 없는 항암제도 공급부족 - 머니투데이 - 머니투데이",
+      "summary": "(제목 기준·원문 미검증) 항암제 공급 부족 현상이 심화되면서 대체 약제가 없는 일부 항암제의 공급에도 차질이 발생하고 있다. 이로 인해 암 환자 치료에 큰 위기가 우려되고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5mdlJMRDM5bFB4ZmtkeURoNDFFd0xFa1pYNF85M2QtYmRSWUtGUnduQWNnMnBHWlhjcUtpNGdLOTFhT0M0QjVzU3hQQlQwbVFtc3laZzBvTEpfZ2lfak45ZnU2RzZDUE5rQWfSAW9BVV95cUxOdF9FMmxJdDRnSGdVRlFDSnJsUDVqUE84X2U3S2U0M2xGS0JsUmg0Ty1peFdZallEV3pubTNaVWp0OTBEMU1NWENuMmx6aHAxOXBFSW1DT25rOWhYUGczTldadldVd2NtS19vX1lHdEE?oc=5",
+      "source_name": "머니투데이",
+      "published_at": "2026-10-22T22:25:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[thebell interview] 이뮨온시아 \"3개 암종 데이터 확보…기술이전 협상 속도\" - 더벨",
+      "summary": "(제목 기준·원문 미검증) 이뮨온시아는 3개 암종에 대한 임상 데이터를 확보하며 기술이전 협상을 빠르게 진행하고 있다. 해당 데이터는 회사 신약개발 및 상업화 추진에 중요한 이정표가 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdU9sdTNLSzhIaGlWZUxXODNhU2hQaXlzY2FPM1VMSUVMLVN6TjRJRzR2ZjlwNjFDSVRyMjYxdnhfNTNhMkxWSEt6SlpzSWVSaGJId1A3cDdOb195TEVxOC04YVBZTGgzRTNneGhQQ25ycE02M3U2UFFnZ3lMdUgzQ0F0VDJlWUlLS3NV?oc=5",
+      "source_name": "더벨",
+      "published_at": "2026-10-22T22:24:55+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
       "title": "로이반트, 'TYK2/JAK1 저해제' 안구염 3상 2건 \"성공\" - 바이오스펙테이터",
       "summary": "(제목 기준·원문 미검증) 로이반트가 진행한 TYK2/JAK1 저해제의 안구염 대상 3상 임상 2건에서 성공적인 결과를 보고했다. 이는 해당 치료제의 유효성 및 안전성을 입증하는 중요한 임상 성과다.",
       "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5VVXlySGxkZmtmRnlYWGVxLVhNMWFid0taRG1fZHc3cGRHbUFoMnBKZXlVdWVjMG5DOGo4a240R19rM0hQZWJqRHlEelV0MU1LM0VNMFFrdw?oc=5",
@@ -311,7 +333,7 @@
   "telegram": false,
   "publish_allowed": false,
   "selected_count": {
-    "domestic": 15,
+    "domestic": 17,
     "global": 12
   },
   "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
