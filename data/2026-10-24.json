@@ -1,0 +1,219 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-24",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "[HIT 포커스] 허가 전 생산 의약품 판매 허용, 발매까지 앞당겨",
+      "summary": "식품의약품안전처가 허가 전 생산 의약품의 판매를 일정 조건하에 허용하는 규제 합리화 방안을 발표했다. 이 조치로 금속불순물 평가용 생산분도 판매 가능해져 연간 수십억 원대 폐기 비용 부담이 줄어들고, 허가 후 생산 및 공정 밸리데이션(PV) 시간 단축으로 급여 등재 및 비급여 의약품 발매 시기도 앞당겨질 전망이다. 업계는 폐기 비용 절감뿐 아니라 연구개발과 생산 설비 투자 여력 확대에 긍정적 효과를 기대하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80159",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-23T21:06:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "중증근무력증 치료제 질브리스큐와 비브가트 나란히 약가 협상",
+      "summary": "한국유씨비제약의 보체 C5 억제제 질브리스큐와 한독의 FcRn 억제제 비브가트가 중증근무력증 치료제로 나란히 약가 협상에 들어갔다. 두 약제는 기존 치료법 보완을 목표로 급여 적정성을 인정받았으며 서로 다른 작용 기전을 지녀 국내 중증근무력증 치료 옵션 다양화와 처방 경쟁 심화가 기대된다. 한국유씨비제약은 FcRn 억제제 리스티고와의 시너지 효과도 기대하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80156",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-23T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 한올바이오 '바토클리맙', 기술이전 9년 만에 중국 품목허가",
+      "summary": "한올바이오파마가 기술이전한 신약 바토클리맙이 중국 국가약품감독관리국(NMPA)으로부터 전신 중증근무력증 항아세틸콜린 수용체 항체 양성 성인 환자 적응증으로 품목허가를 받았다. 이는 9년 만에 중국에서 거둔 첫 허가 성과로, 임상 3상에서 유의한 일상생활 수행능력 개선과 양호한 내약성을 입증했다. 앞으로 하버바이오메드와 CSPC 그룹 자회사 NBP파마가 중화권 마케팅과 판매를 담당하며 한올바이오파마는 마일스톤과 로열티를 받을 예정이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80152",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-23T21:02:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한미약품, 비만 '삼중작용제' 일반명 \"잔트루타이드 확정\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 한미약품이 개발 중인 비만 치료제 삼중작용제의 국제일반명(INN)이 ‘잔트루타이드’로 확정됐다. 이는 비만 치료 신약 개발에서 중요한 이정표로, 향후 임상 및 허가 과정에 긍정적인 영향을 미칠 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5MSlNBc3pfZmF4cmhMcnZaRXdLN3diZkFBRDM4elZFNzBsZnFxVEpIeVNlREhsMEVnWDYzZXRiLXdVWnpPVWlSWllDZVlPUHdzRXFSejBnZw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-23T21:52:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오파운드리 산업화의 조건…\"데이터 품질·경제성·공동활용\"",
+      "summary": "한국생명공학연합회 심포지엄에서 바이오파운드리 산업화 확대를 위해 고품질 데이터 확보, 경제성 고려, 민간 자동화 설비 공동 활용 체계 구축 등 세 가지 조건이 핵심으로 제시됐다. AI 학습용 정확한 데이터 생산 및 산·학·연 공동 활용을 통해 신약개발 효율성 향상과 산업적 가치 창출이 중요하다는 분석이 나왔다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80161",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-23T21:07:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "몸푸는 보신티, 움찔한 CSO, 뛰는 GLP-1, 바통 넘겨 받은 바이오",
+      "summary": "GLP-1 계열 비만치료제가 국내 비만 및 만성질환 치료 시장에서 대체 불가한 위치를 확보하며 경쟁이 심화되고 있다. 특히 한미약품의 첫 국산 GLP-1 비만치료제 ‘에페’가 시장에 본격 등장하며 릴리 ‘마운자로’, 노보 노디스크 ‘위고비’와의 경쟁 구도가 주목받고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80147",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-23T21:05:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "SCL사이언스, 간암·난소암 백신 도전…내년 IND 신청 목표[인베스트 바이오] - 이데일리",
+      "summary": "(제목 기준·원문 미검증) SCL사이언스가 간암 및 난소암 대상 백신 신약 개발에 도전하며 내년 임상시험계획(IND) 신청을 목표로 연구개발에 박차를 가하고 있다. 이번 프로젝트는 국내 암 백신 분야에서 중요한 신약 파이프라인으로 기대되고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORkgyMUN3MkpqSnlCOXdIVF9kS3l1a1JjUFMxQ0dEVzlOYzJ1T3l3QW85RXZrYlI3N3ZYZXoyUWJ4MnBpcTg4SGxNY0l6Ml8tZ0lrdV9KUWlFZTJiZzBnTmZ1TnM2eFUxNFVYWFB4NkRSck5Fd3VmXy05VnJla3RzYQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-23T21:01:03+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "휴야바이오 인터내셔널, 진행성 흑색종 환자 대상 HBI-8000과 니볼루맙 병용요법 임상 3상서 질병 진행 위험 27% 감소 확인",
+      "summary": "휴야바이오 인터내셔널은 진행성 흑색종 환자를 대상으로 실시한 HBI-8000과 니볼루맙 병용 임상 3상에서 질병 진행 위험을 27% 낮추는 효과를 입증했다. 이는 병용요법의 임상적 의미를 보여주는 중요한 결과다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFAyanhOMmVTbkZJUDNwNFFTWEsyT0szN19RMHBGZDQ3MTJDcS14WGxRUk5DQXZ3QmlvcHMwRmNOa1pWajdVMlhDMWRxNGdTNDdtTW80?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-23T10:46:10+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "HUYABIO International Announces HBI-8000 and Nivolumab Combination Reduces the Risk of Disease Progression by 27% in Patients with Advanced Melanoma in Phase 3 Trial - FirstWord Pharma"
+    },
+    {
+      "title": "마렝고 테라퓨틱스, ESMO 2026에서 TMB-고형암 대상 조직 비특이적 단일항체 이빈카푸스 알파 임상 2상 결과 발표",
+      "summary": "마렝고 테라퓨틱스는 ESMO 2026에서 면역관문억제제에 거의 반응하지 않는 TMB-고형암 환자 대상 조직 비특이적 단일항체 치료제 이빈카푸스 알파의 임상 2상 결과를 발표했다. 단일제 단독 사용 시 유의미한 항암 활성을 확인했다.",
+      "source": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxPU2I5SmFqZzFERDJqVGI4b0JOcFAzNDd4WG1ScEJXT1FadkFqeUZMMVlwTGpYVENQc0lOME5yVmZyaWFjOHF4X05oSnJhdkZrdEFpakRndHpsVm02V0hVRnlVRk1UZmlxOEtqREdnV1JSanU4NUFDczJJXzRTSTBzREtWN0RNZHRoZ0ZzdWpRSnhZLXI3TFFad3FMaGtHZTdNX2VMLXhhRmdqZzZZRHdMWjB1bUc3TnJNcEZIaTZkUkxlc1M1V1VQM3Z0MjBXRWNPX1gwVGVENWZmLWk0X2wyYUViendHOFdES1hCdS1XNU9IZmlGOXZHOVN6UEJheG1DSUZKaFBRXy1NS25wbkNTWWVzd0w2Q3Y2aGlrdmxnYUhqaklITDBHQjN5ck1FV09lVk41Qk9Ja09ndkw5VlhDUktQbVdkYTJ0b0NZcUlJdWFTSDRvM0dUZXp2WXpwWEhPX25nV0tFbWEzbUk?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-23T13:21:42+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Marengo Therapeutics Presents Phase 2 STARt-001 Results at ESMO 2026 Demonstrating Tissue-Agnostic Single-Agent Activity of Invikafusp Alfa in TMB-H Solid Tumors Mostly Unresponsive to Immune Checkpoint Blockade - BioSpace"
+    },
+    {
+      "title": "알나일람, 헌팅턴병 RNAi 치료제 중추 임상시험 계획 발표",
+      "summary": "알나일람은 헌팅턴병에 대한 RNA 간섭(RNAi) 치료제의 중추 임상시험을 계획 중이라고 밝혔다. 해당 치료제는 최상위 유전자 억제 효과를 보이며 임상 진입을 준비한다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5NUFhpaXhtVVc3c0k4a2lpaU5BUU1vRlZUZ0FXTG1YQi04NmFQNjhOeFVtTWMySEkyTGEtdTZTY0JoOG9QLUxvU3NZOF9mQWJ5MTZF?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-23T10:36:10+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Alnylam plots pivotal study of RNAi therapy for Huntington's disease - FirstWord Pharma"
+    },
+    {
+      "title": "한사 바이오파마, ASN 신장 주간서 Idefirix PAES 임상 결과 긍정적 발표",
+      "summary": "한사 바이오파마가 ASN Kidney Week에서 Idefirix PAES 임상 결과를 발표하며 긍정적인 치료 효과와 안전성을 확인했다. 이는 신장질환 치료제 개발에 중요한 진전이다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5BWjhqUG1OcWkyNDlYb2tsZHJmM1laOGxDUlJyOS1GM3VacGZXT084NnItZmtTcVpBVmtkbENaaVpWejlHZlVjZEVtS2x0Tk1ZOWdj?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-23T18:30:35+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Hansa Biopharma announces positive Idefirix PAES results presented in the High-Impact Clinical Trials session at ASN Kidney Week - FirstWord Pharma"
+    },
+    {
+      "title": "노바티스, 재발성 다발성경화증(RMS) 대상 임상 3상서 리멤브루티닙의 포괄적 질병 조절 및 안전성 입증",
+      "summary": "노바티스의 리멤브루티닙이 재발성 다발성경화증(RMS) 대상 임상 3상 시험에서 질병 조절 효과와 견고한 안전성 프로파일을 입증했다. 이는 해당 치료제의 임상적 효능과 안전성을 뒷받침하는 주요 결과다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9WcFJEM0NZbTVaSi1WWVZjZTMwTEFmbGdxNEdJbmlLSVd3RTJCTWN1RllBLVhYVTAxdFRHRG45RFFlbDJaUXYySjhzeHVYTzFrREdN?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-23T16:50:06+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Novartis remibrutinib delivered comprehensive disease control in Phase III RMS trials, with proven, robust safety profile - FirstWord Pharma"
+    },
+    {
+      "title": "지더스, FDA로부터 최초 제네릭 클리마라 프로 승인 획득",
+      "summary": "지더스가 최초 제네릭 클리마라 프로(Climara Pro)에 대해 미국 FDA 승인을 받았다. 이는 국내 제네릭 품목 경쟁에 중요한 이정표가 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPakJBWVd4Zm5NWTRCNHppd3RONHRoNWRTLWtvM1c1bVBVakpWUTc3T3FwQlpKMHJGM1ZPM01za3h2amxVYVhTTzdMNHJyajZkTEdibzRMVU9LMHAxNkxneWgtTlB1cXpaaXhWN2RPQVZoOV9NbDR1T2k4dGJKQWNvMGdRNlhzaFVMWmxEOXQ0LUJuTkFST0g4Q3d4NTkwZXJ3a2RNV1RZVWo3Z1gzU0M2M1VCSzB0VTVpMXNlV1VWTmo4V1lQdXdxM28xRVFzdWdSWnBEa1pNeUVSUUw3M0duZVNDV1RZdw?oc=5",
+      "source_name": "Scrip/Pink Sheet",
+      "published_at": "2026-10-23T14:37:27+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Zydus Receives FDA Approval For First Generic Climara Pro - insights.citeline.com"
+    },
+    {
+      "title": "컨버전트 테라퓨틱스, ESMO 2026서 루-PSMA 무경험 전립선암 대상 CONV01-α 임상 2상 결과 공개",
+      "summary": "컨버전트 테라퓨틱스는 ESMO 2026에서 루테튬-PSMA 무경험 전립선암 환자를 대상으로 한 CONV01-α의 임상 2상에서 강력한 항종양 효과를 나타낸 결과를 공개했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFA0NG1nQTJid0c0N2xxaV96ak1GX2h2X21fb2Yzcm5UQnF1dF9ZbmZ4M1FQaUxZTDY0TF9TWjdSVVFjUk5XdmRVaWd6Z0oyQXQtQjhv?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-23T15:33:32+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Convergent Therapeutics to Present Phase 2 Results Demonstrating Potent Anti-Tumor Activity of CONV01-α in Lu-PSMA-Naïve Prostate Cancer at ESMO Congress 2026 - FirstWord Pharma"
+    },
+    {
+      "title": "이잘론타맙 브렌지텍(이자-브렌), 진행성 HR+/HER2- 유방암 임상 3상 PANKU-Breast01에서 질병 진행 또는 사망 위험 59% 감소",
+      "summary": "이잘론타맙 브렌지텍이 진행성 HR+/HER2- 유방암 환자 대상 임상 3상에서 화학요법 대비 질병 진행 또는 사망 위험을 59% 감소시키는 유효성을 доказ했다. 이는 유망한 항암제 후보로 평가받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMixgJBVV95cUxNeEw5MGJGWnJ0NXBaVjZjMHZ4MnZyY3FYLWFpQ1Nldy1yWjlfb2JtbWtxWm5EN09WMF9naWZfVnVQeUxHdHpmd0tsVXJLRW1jb1FUNjBOUzJUX20tSUx1MHdWYVdLS3FLTlBzTU12Tl9YY1VYa2M1RllkVTBHd0hmMWtXMHk4Uzh5R052ektzZ3pvWlZFQWF1ZGoxaGRnTnpoNFFsTTdBODRtUGpXWml1Y3NkQUp5ZkdnSWFaSVctWjBhUkJRd1Zub09BY09mcnlsMFFCUmRYdFlfZVhaZ0tIcHpBQXdvSWtvRlNnanVCZmhVUDNJSklnWF9xZV9nWEVkX0pzSmZ4SnNKc2s5SS1QOWtaSUZXd3JHMnBzTUJZSFYwcjRhWTZzZDVyemc1ZmgxbWpfd256LV84V3F3SU9Xb2ZZdXVqZw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-23T13:29:26+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Izalontamab Brengitecan (Iza-Bren) Reduced Risk of Disease Progression or Death by 59% versus Chemotherapy in Patients with Advanced HR+/HER2- Breast Cancer in Phase 3 PANKU-Breast01 Study - BioSpace"
+    },
+    {
+      "title": "다케다의 12억 달러 인노벤트 ADC, 임상 3상 성공으로 투자 성과 입증",
+      "summary": "다케다가 12억 달러를 투자한 인노벤트의 항체-약물 접합체(ADC)가 임상 3상 시험에서 성공적인 결과를 기록하며 투자 가치가 입증되었다. 이는 대형 기술수출 및 공동개발 계약의 성공 사례로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZUNIUjduMUx5NVVFYUNnMXJEdGJISWZMMUkxQ19KTkpEdy1wTjdOWnI2aTVoR3ZwbmZ4d3hVSmsycnFLU0ZvUVR3VG5wczExd3FqWWw5VHlrcDNJc2VJQlBrUmFURXcweUxZN0RaOXFfc1dYUDduZGNHRl95dF9sbmtOWnF3ZDBoZnFjNnV0SVdxZEExbVFmWk93V0VFRHE5S0E?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-23T12:48:59+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "ESMO: Takeda’s $1.2B bet on Innovent ‘absolutely’ pays off with details of ADC’s phase 3 win - Fierce Biotech"
+    },
+    {
+      "title": "ASN Kidney Week 2026 최신 고임팩트 임상 시험들, 신장 건강 개선 대한 새로운 접근법 제시",
+      "summary": "ASN Kidney Week 2026에서는 신장 건강 개선을 목표로 한 여러 최신 고임팩트 임상 연구 결과들이 공개되며 질환 관리와 치료 전략의 발전을 모색하였다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBMb1hQaXMwNDFNaTJ4eXBRdmxpUzRFRm9QRzJUVnB0dXVHb1VZRG1mME0ySURFZnBoVnQyYzFMNjRHSFAzS3BITnJpX0Viam14ZG9Z?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-23T19:24:50+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Late Breaking, High-Impact Clinical Trials Featured at Kidney Week 2026 Explore New Frontiers to Improve Kidney Health - FirstWord Pharma"
+    },
+    {
+      "title": "렉시콘 파마, 증상성 비대성 심근증 환자 대상 소타글리플로진 임상 3상 SONATA-HCM 첫 환자 특성 공개",
+      "summary": "렉시콘 파마는 증상성 비대성 심근증 환자를 대상으로 한 소타글리플로진 임상 3상 SONATA-HCM 연구에서 기저 환자 특성을 업데이트했다. 이는 임상 시험의 주요 기초 데이터를 제공한다.",
+      "source": "https://news.google.com/rss/articles/CBMitwJBVV95cUxQaWJrM0NXc095R0F6djZhaHdVdFNxVHprdlBTbkU4cXJBcmZvckRULUZPQ3pENUx6WUk4czFBZ081SmlDVDlMVFFVZkU4UkozY0NsNThYcFZobGp0c2s3TEpTWW5ZUHVSajFLOWlGV0U4RDNXTUtBTVc3b1RTeVA3QUFPUzBqSURZZTNoLTNzTjFsNkZ5YUNnb3VmMGJ4RTFCYVJOWXVodHA5UWVQNGg3c1ZFWXZ2dVQyVTY0dHBGQ2YwYVl0ZzFKcnMtSE8xbTI5RU1kMExmdGZrVjduNTBaTzRKbTh0dDhmaHhlVUxxWGR0UnROV25JeXJaWFgxWFJ5dmp5ZVJ1aXJLcU9waEgxOUQ0UFJoTzF1cXp5bFB6TWZERHlaUDBFdllDay10RWlSc2JNS3FVQQ?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-23T13:29:12+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Lexicon Pharmaceuticals Provides Update on Baseline Patient Characteristics for Pivotal Phase 3 SONATA-HCM Study of Sotagliflozin in Symptomatic Hypertrophic Cardiomyopathy - BioSpace"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 7,
+    "global": 11
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
