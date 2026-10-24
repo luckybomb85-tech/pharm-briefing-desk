@@ -1,0 +1,53 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-25",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "여성 폐경과 알츠하이머병 위험 분자 생화학적 연관성 있나",
+      "summary": "폐경이 심화된 뇌 노화 및 장기적인 신경퇴행과 관련된 16가지 혈중 단백질 변화와 알츠하이머병 위험 증가가 연관된다는 연구 결과가 발표됐다. 중년기에 나타나는 폐경 관련 바이오마커는 향후 치매 위험 예측에 활용될 수 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80142",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-24T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "FDA, 소아 당뇨병에도 '주 1회 인슐린' 첫 승인…노보 '아위클리' - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 미국 FDA가 노보 노디스크의 주 1회 투여 인슐린 '아위클리'를 소아 당뇨병 환자에 대해 첫 승인했다. 이는 소아 환자의 치료 편의성을 크게 높이는 진전이다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBCamEtWU5VRXI5MF93allhenNtWF82Rmw5S3VFeU45eDh5dFV2aHdzODlMbUtGdVRNcnRjZ1hYbGRPU0NhTnRyalNtU2hWX3ZjS0pDY1NKUmdOM1l6NklLeTlkeS1XR0xnS0dV?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-24T04:41:45+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "라이트팜텍, 소아 근시 진행 억제제 마이오클리어 식약처 허가 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 라이트팜텍이 소아 근시 진행을 억제하는 치료제 마이오클리어에 대해 식약처 허가를 획득했다. 이 허가는 국내 소아 근시 환자 치료에 중요한 의미를 가진다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9zdEZXQjBucUstZlgwRkkzVFVaTElSZnpIWjNHQlFVbENkQ0xQZU1kMF9sZHZnQkRCSjNJMnpfU1loS2QzY3pIeUJvZmdiOTRQMlhTTGdR?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-24T03:56:45+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 3,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
