@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-25T05:23:35+09:00",
+  "checked_at": "2026-10-26T05:23:16+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -8,7 +8,7 @@
     "pooled_queries": 1,
     "total_max": 18
   },
-  "candidate_count": 119,
+  "candidate_count": 180,
   "routes": [
     {
       "source": "FDA Press Releases",
@@ -20,8 +20,8 @@
     {
       "source": "FDA Drugs",
       "status": "PARTIAL",
-      "hits": 1,
-      "in_window_index_hits": 1,
+      "hits": 0,
+      "in_window_index_hits": 0,
       "error": null
     },
     {
@@ -49,7 +49,7 @@
       "source": "STAT",
       "status": "PARTIAL",
       "hits": 3,
-      "in_window_index_hits": 3,
+      "in_window_index_hits": 2,
       "error": null
     },
     {
@@ -69,36 +69,36 @@
     {
       "source": "Fierce Pharma",
       "status": "PARTIAL",
-      "hits": 4,
+      "hits": 5,
       "in_window_index_hits": 4,
       "error": null
     },
     {
       "source": "Fierce Biotech",
       "status": "PARTIAL",
-      "hits": 1,
-      "in_window_index_hits": 1,
+      "hits": 3,
+      "in_window_index_hits": 3,
       "error": null
     },
     {
       "source": "BioSpace",
       "status": "PARTIAL",
-      "hits": 2,
-      "in_window_index_hits": 2,
+      "hits": 1,
+      "in_window_index_hits": 1,
       "error": null
     },
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 2,
-      "in_window_index_hits": 2,
+      "hits": 64,
+      "in_window_index_hits": 64,
       "error": null
     },
     {
       "source": "Scrip/Pink Sheet",
       "status": "PARTIAL",
-      "hits": 5,
-      "in_window_index_hits": 4,
+      "hits": 4,
+      "in_window_index_hits": 2,
       "error": null
     },
     {
@@ -111,8 +111,8 @@
     {
       "source": "Pharmaceutical Technology",
       "status": "PARTIAL",
-      "hits": 0,
-      "in_window_index_hits": 0,
+      "hits": 1,
+      "in_window_index_hits": 1,
       "error": null
     },
     {
@@ -132,8 +132,8 @@
     {
       "source": "Global gap recovery",
       "status": "PARTIAL",
-      "hits": 2,
-      "in_window_index_hits": 2,
+      "hits": 3,
+      "in_window_index_hits": 3,
       "error": null
     }
   ],
