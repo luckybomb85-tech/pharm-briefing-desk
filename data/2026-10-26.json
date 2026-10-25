@@ -1,0 +1,351 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-26",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "[ESMO] 로슈, ‘디바라십’ KRAS G12C 변이 폐암 임상3상 사망 위험 44%↓",
+      "summary": "로슈가 개발 중인 차세대 KRAS G12C 억제제 ‘디바라십’이 글로벌 임상3상에서 기존 1세대 치료제 대비 무진행생존기간과 전체 생존기간을 유의하게 개선하며 사망 위험을 44% 낮췄다. 디바라십은 338명 진행성 혹은 전이성 비소세포폐암 환자를 대상으로 한 KRAScendo 1 연구에서 안전성은 우수하면서도 항종양 효과가 뛰어남을 확인했다. 이 결과는 KRAS G12C 변이 폐암 환자들의 새로운 표준 치료제가 될 가능성을 시사한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29418",
+      "source_name": "더바이오",
+      "published_at": "2026-10-25T22:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] 굽타 노바브릿지 CEO “지바스토믹, 기술이전·자체 임상3상 병행”",
+      "summary": "노바브릿지바이오사이언스는 에이비엘바이오와 공동 개발 중인 이중항체 '지바스토믹'의 위·식도선암 임상1b상 중간 결과를 발표했다. 8mg 투여군에서 객관적 반응률 79%, 무진행 생존기간 16.9개월로 기존 표준요법 대비 우수한 효과를 보였다. 안전성 개선을 고려해 8mg을 후속 임상 용량으로 선정했으며, FDA와 가속승인 경로 합의를 마쳤다. 글로벌 기술이전과 자체 임상3상 병행을 검토 중이며, 임상3상 개시는 이르면 올해 말로 예상한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29417",
+      "source_name": "더바이오",
+      "published_at": "2026-10-25T21:45:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[단독인터뷰]바이오헤이븐 “BHV-1530, ‘계열 내 최초’ 기대, 릴리 물질 넘어섰다” - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 바이오헤이븐은 BHV-1530이 계열 내 최초 신약으로 기대되며, 경쟁사인 릴리의 물질을 능가하는 효과를 보인다고 밝혔다. 이 신약은 임상 개발과 관련해 중요한 평가를 받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQdllKZWhhQU1BbmpYVmJlZW4tbk82b0pseGp3MVRlU01Zd3FLdkJ2dHdTUktrd2FwUGZCbzM0bVQtV0xKbkJxbVhwQkF1N0hpcUR2REdpR0l2MUx1YlpUYnAzSUt0czJ3V3htcTV0ODBXMnc5RktHZXFEU3pBZTFYYUR2cw?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-25T22:35:04+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "‘라쿠텐 암 신약’ 효능 입증에…롯데바이오 위탁생산 청신호 - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 라쿠텐의 암 신약이 효능을 입증하면서 롯데바이오가 해당 신약 위탁생산 사업에 청신호가 켜졌다. 이는 국내 신약 생산 역량 강화와 관련한 긍정적인 신호로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82VDlRdUlyTUlISmNBRXFtWGJMYVJMWi12NmMwbmdudEVidDlmYVBROG9hNm5qQ25PaUg2bTJYUDVIUU1zVENzZ1ptd2k4Y09IdFHSAVNBVV95cUxNXzF0MHFBTlZ6dTAxVmZDenZoTVJRMHl1S3Rtb0RuUllMSEZZZUZKcW90NHhteTYzSEJQeXF4NkNzUHdJTmdvOTZOdklVcmF1Y0RmQQ?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-10-25T22:00:04+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "마더스제약, 특허분쟁에 ‘IPO 먹구름’...신약개발 역량도 과제 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 마더스제약은 주요 특허분쟁으로 인해 IPO에 먹구름이 드리워진 상황이다. 동시에 신약 개발 역량 강화가 필요한 과제로 지적되면서 기업의 미래 전략에 중대한 영향을 미치고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYTVYd2w0cV9kTHlGMmFnak52dTZ1RUJhVlQyU3pyQTRvUWl4bjlETkdYN2Npbkw0Q3lsejlTeDF1enZ4WmMwbDNpbGJhUXA2V2lsTmxTdVlkM0FhREJTTjFRYnppa09ZNzhGR040SE9lZFBZVFBMZWFOaXM0RERPc0VFS3g0SFE?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-25T22:00:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신약 경제성평가 문턱 바뀌나…ICER 연구 뒤 내년 적용 논의",
+      "summary": "건강보험심사평가원은 신약의 비용효과성 평가기준(점증적 비용효과비, ICER) 개선 연구를 올해 5~11월 진행 중이며, 2027년 보건복지부 등과 협의를 거쳐 적용 여부를 논의할 계획이다. 명확한 임계값은 없으며, 사회적 질병부담 등 종합적 요소를 고려하는 방식은 유지한다. 단회 투여 치료제 등에 대해 유연한 평가 기준 적용 방안도 검토 중이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47758",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-25T21:18:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "웰리렉 연내 약평위 상정 목표…희귀치료제 급여 검토 어디까지",
+      "summary": "건강보험심사평가원은 희귀질환 치료제 웰리렉정의 고위험군 범위 및 재투여 기준 등 급여기준 및 비용효과성 검토 중이며, 연내 약제급여평가위원회 상정을 목표로 하고 있다. 신속등재 시범사업은 현행 5개 이내 선정 방침이며, 확대 시 인력과 관리여건 협의가 필요하다. 기존 비급여 심의 후 결정신청 없이 대기중인 품목들도 언급됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47759",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-25T21:16:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가 우대 늘렸지만 신규 적용 ‘0’…약품비 절감·비급여 관리도 과제",
+      "summary": "지난 8월 원료 직접생산 약가 우대기간 확대 이후 신규 품목 적용 사례는 없는 것으로 나타났다. 현재 인정 범위는 허가권자의 제조소 생산에 한정한다. 저가구매 장려금은 약 92.3%가 종합병원에 지급되고 있으며, 저가약 대체조제율은 다소 하락 추세다. 미등재 비급여 의약품 공급액은 증가했으며, 관련 관리개선방안 마련 및 직권등재 확대를 추진할 계획이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47760",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-25T21:14:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "위험분담 의약품에도 약가유연계약 병행 검토…신약 접근성 높인다",
+      "summary": "국민건강보험공단은 위험분담계약 의약품에 약가유연계약을 병행하는 방안을 검토 중이며, 단순환급형 의약품은 전환 가능하다고 밝혔다. 또한 복수 제약사 신약 병용요법을 위한 공식 협상절차 제도화와 전문인력 확충도 검토 대상이다. 희귀질환 치료제 급여확대 절차 간소화에 대해서는 비용효과성과 재정영향을 종합적으로 고려해 개선 필요성 판단할 계획이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47761",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-25T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "15년 환자 데이터로 근감소증 신약 찾는다...바이오바이츠의 도전",
+      "summary": "바이오바이츠는 15년간의 근감소증 환자 추적 데이터를 자체 코호트와 AI 분석 플랫폼을 활용해 연구, 신약 표적 후보 10종을 발굴했다. 이 중 5종은 세포실험에서 발현 변화가 확인됐다. 혈액·근육 조직·신체 기능 데이터를 장기 저장하며, 2040년까지 추적 관찰할 계획으로 근감소증 신약 개발을 위한 독점 데이터 기반 확보가 강점이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80121",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-25T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가에 막혔던 보신티, 유연계약으로 급여…3개사 동시 등재",
+      "summary": "한국다케다제약의 위식도역류질환 치료제 보신티정이 약가유연계약 체결로 재허가와 함께 급여권에 진입했다. 경보제약과 마더스제약의 보노프라잔 염변경 제품 3개사 6품목이 동시 등재됐다. 약가 차이는 공개 표시가격과 실제 청구 상한금액 분리 적용에 따른 것이며, 한국다케다제약은 과거 급여등재 포기 후 재도전 끝에 약가유연계약을 통해 급여권 복귀에 성공했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80176",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-25T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "스프라바토·엑스코프리도 ‘두 개의 약값’…약가유연제 14품목 추가",
+      "summary": "보건복지부는 11월부터 우울증 치료제 스프라바토, 뇌전증 치료제 엑스코프리 등 신규 급여 대상 10품목과 기존 급여 약제 4품목에 약가유연계약을 추가 적용한다. 공개 표시가격과 실제 청구가격을 분리하는 이중 약가 제도가 확대되며, 기존 급여품목은 표시가격 유지하되 실제가격은 별도 합의로 변경된다. 보신티정 2개 함량도 신규 대상에 포함됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47757",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-25T21:06:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "혁신형 60%부터 다품목까지…에독사반에 새 약가제도 총출동",
+      "summary": "한국다이이찌산쿄의 항응고제 에독사반 후발약 25개사 64품목이 11월 11일 급여등재된다. 혁신형 제약기업 가산(60%), 수급안정 선도기업 가산(50%) 등이 적용되고, 다품목등재관리 제도도 도입돼 상한금액은 1년 후 15~20% 인하된다. 등재 가격은 제약사별, 품목별로 기준요건 충족 여부에 따라 차등 산정됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80178",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-25T21:06:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가는 깎고 합칠 길은 막고… 시장 재편? 안 되는 이유 있다",
+      "summary": "제약바이오 업계가 반복되는 약가 인하로 인한 경영 악화를 극복하기 위해 기업 규모화 및 M&A 활성화를 위한 정부 제도와 재정 지원 방안을 검토 중이다. 품목 양도·양수 시 기존 약가 유지, 바이오벤처 M&A 세제 부담 완화, 정부 펀드 조성 등이 논의되고 있으며, 중소 제약사들이 통합을 통해 비용 절감 및 연구개발 투자를 확대할 수 있도록 지원하는 것이 목표다. 다만 약가 인하와 세제 문제, 자금 부족이 현실적 장벽으로 작용한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80179",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-25T21:05:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "삼성바이오, ‘매출 4조·현금 2조’ 돌파…차입금 줄이고 6공장 실탄까지 확보",
+      "summary": "삼성바이오로직스가 2026년 3분기까지 누적 매출 4조원을 넘어섰고, 현금성 자산 2조원 이상을 보유하며 차입금은 줄여 투자 재원을 확보했다. 5공장과 미국 록빌 생산시설 가동 확대로 매출 성장을 견인했고, 영업활동 현금흐름 증가로 인수 및 설비 투자에도 견실한 재무구조를 유지 중이다. 차입금 감소와 현금 유동성 증가는 6공장 증설 등 미래 성장동력 확보에 긍정적이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29411",
+      "source_name": "더바이오",
+      "published_at": "2026-10-25T21:30:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"세포독성 넘어 ADC·이중특이항체로…부인암 영역에 부는 새 바람\"",
+      "summary": "ESMO 2026에서 부인암 분야는 세포독성항암제를 넘어 항체약물접합체(ADC)와 이중특이항체 등 다양한 혁신 치료제가 생존율 개선 효과를 입증하며 주목받았다. 진행성 자궁내막암 대상 TROP-2 타깃 ADC ‘사시투주맙 티루모테칸’과 면역항암제 키트루다 단독요법의 효과가 부각됐다. 특히 국내 연구진도 다수 임상 연구를 주도하며 글로벌 무대에서 입지를 강화하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80171",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-25T21:38:43+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "CSO 관리감독 권한 제약사 부여 명분 전담인력 배치 방안 장고 '돌입'",
+      "summary": "보건복지부가 의약품 판촉 영업자인 CSO 관리 감독 권한을 제약사에 위임하고자 전담 인력 배치를 요구하나, 제약업계는 신규 인력 충원 부담에 난색을 표명하며 대책 마련에 신중한 상황이다. 복지부는 약사법 개정을 추진 중이며, 전담 인력 부족 문제를 심평원 등 외부 기관 활용 가능성도 검토 중이다. 현재 구체적인 논의 일정은 미정이며 국정감사 이후 실행 방안 마련에 집중할 계획이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47756",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-25T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“모더나가 암백신 원조 아니었어?”…암 재발 막는 국산 치료제 - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 국내 바이오기업이 암 재발을 막는 국산 치료용 암 백신 개발에서 성과를 내면서 모더나 암백신의 원조가 아니라는 주장이 부상하고 있다. 자세한 내용은 원문 미검증 상태로 확인 필요하다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPY3NNV3dObHVJczBKNURQU2hUd2cxalBOUjlqSmZ4THc5YWZLVWo4M05MVEV4dFpWNk8tQ28zSzRSVFo1S0M5Nkp5c3o0OVk2cmdDSDRoSDRGMWk2S2dWNEJlNEJXc0diaDltQkI0Z3JiVGRZVDNwZVY1bVNaeVk1UA?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-25T21:01:02+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "Sacituzumab Tirumotecan(sac-TMT) 3상 OptiTROP-Lung04 연구 최종 전체생존(OS) 분석 결과 2026 ESMO서 발표",
+      "summary": "Sacituzumab Tirumotecan(sac-TMT)의 3상 OptiTROP-Lung04 연구에서 도출한 최종 전체생존(OS) 분석 결과가 2026 ESMO에서 발표되었다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5RY2hTT1hRVHM4UDZhdV9TU1hoOGgwSDNqeHNOZjlicm9wd0RsY0tjZThhVi1kYTcxaHRqbmxwdnRMRjlnOEJOc1RwZm85T3VLeC1v?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:49:08+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Final OS Analysis Results from Phase III OptiTROP-Lung04 Study of Sacituzumab Tirumotecan (sac-TMT) Presented at 2026 ESMO - FirstWord Pharma"
+    },
+    {
+      "title": "Pathalys Pharma, 3상 주요 혈액투석 환자용 Upacicalcet 치료제 임상 결과 ASN Kidney Week 2026서 발표",
+      "summary": "Pathalys Pharma가 혈액투석 환자용 Upacicalcet의 3상 임상 연구에서 확보한 긍정적인 데이터를 ASN Kidney Week 2026에서 구두 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE93QmVpQlBtZzN1Yzk2N3pmRW1xTG5mdDZYTVlzZFVjcnF2N3NaVWlrVXllUGVJYTYzRmkwQzE5RDVkQUxHUHFwQ0F3NVNYVkQ5WUg0?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T13:17:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Pathalys Pharma Presents Positive Data from Pivotal Phase 3 Studies of Upacicalcet in Featured Oral Presentation at ASN Kidney Week 2026 - FirstWord Pharma"
+    },
+    {
+      "title": "Sacituzumab Tirumotecan plus Pembrolizumab, 진행성 요로상피암 대상 2상 연구 결과 2026 ESMO에서 발표",
+      "summary": "Sacituzumab Tirumotecan과 Pembrolizumab 병용요법의 진행성 요로상피암 치료 2상 연구 결과가 2026 ESMO에서 공개되었다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9WaTdBTGVvSC1RdkZKS0NOM3M4VldNQndsb3hfQTNSWFozMDQ1YkNHZVl2RHJseS0ycms4dnlYQkhYX0FtYXdTRnZENHBVMGZEOHVF?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:07:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Phase II Results of Sacituzumab Tirumotecan (sac-TMT) plus Pembrolizumab in Advanced Urothelial Carcinoma Presented at 2026 ESMO - FirstWord Pharma"
+    },
+    {
+      "title": "Sacituzumab Tirumotecan 3상 OptiTROP-Lung06 연구 결과 NEJM 게재 및 ESMO서 구두 발표",
+      "summary": "Sacituzumab Tirumotecan의 3상 OptiTROP-Lung06 연구 결과가 권위 있는 NEJM에 게재되고, 2026 ESMO에서 구두 발표되었다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1vMGZNb1ZDZFdZR0E5X0poMEthdHQyV0xabGotenhoejhQSXpKRnd5V1Y5LVdmRTFPb2lOcGFpbHJjd1FkeFBqVENfZnpabl8xUHow?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:49:12+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "The Results of Phase III OptiTROP-Lung06 Study of Sacituzumab Tirumotecan (sac-TMT) Presented as an ESMO Oral Presentation and Simultaneously Published in The New England Journal of Medicine - FirstWord Pharma"
+    },
+    {
+      "title": "Parabilis Medicines, 데스모이드 종양 대상 졸루카테타이드 1/2상 업데이트 데이터서 탁월한 효능 및 안전성 확인",
+      "summary": "Parabilis Medicines가 데스모이드 종양 환자 대상 졸루카테타이드 1/2상 임상 업데이트 결과에서 우수한 효능과 안전성 프로파일을 보고했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4zcFQ1dHFCRXhYMDUtY0hGWkljTzRRR1RxU2N5eXFBVHNrdWpzYWM4VjYwcDg2S3IzOE5JRC1zN0VGRnRtWHpaYXNLMmJvbnl4akxF?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:12:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Parabilis Medicines Presents Updated Phase 1/2 Data for Zolucatetide Demonstrating Compelling Efficacy and Favorable Safety and Tolerability Profile in Patients with Desmoid Tumors - FirstWord Pharma"
+    },
+    {
+      "title": "Agenus, 국소 진행성 dMMR 대장암 환자 대상 2상 NEOASIS 연구서 BOT+BAL 병용 6주 투여 후 수술 시 암이 남지 않는 환자 72% 보고",
+      "summary": "Agenus가 2026 ESMO에서 국소 진행성 dMMR 대장암 환자를 대상으로 한 2상 NEOASIS 연구 결과, BOT와 BAL 병용 6주 투여 후 수술 시 암이 남지 않은 환자가 72%에 달했다고 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5oVnY1N1QxT2VTWnVnY2RQR0tGNjRkcVlGZlZOVF91SUNnaV93ZGFmR0dDSUpBb3BKa2ota1dBWWZxNXpHMlI1WV9FVUtMTldNcDRj?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T15:08:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Agenus Reports 72% of Patients with Locally Advanced dMMR Colon Cancer Had No Cancer Remaining at Surgery Following Six Weeks of BOT+BAL in Phase 2 NEOASIS Study at ESMO 2026 - FirstWord Pharma"
+    },
+    {
+      "title": "Tegoprubart, 신장 이식 환자 면역억제제로서 투크롤리무스 대비 2상 BESTOW 연구서 신장 기능 및 삶의 질 개선 긍정적 결과",
+      "summary": "Tegoprubart가 신장 이식 환자에서 투크롤리무스 대비 신장 기능과 삶의 질 면에서 개선을 보였다는 BESTOW 2상 연구 결과가 발표되었다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1nUHBzcERHYm1YLW00VVhCTjl6a0pKYUw0QzRqSTNreDVHaVVBQkZXdGZLRjFGVGRrNGM0VFl3d3JyUktaMTNIcEVZOEJlMkFGZ3FZ?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T13:17:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Phase 2 BESTOW Trial Generates Promising Kidney Function and Quality of Life Results for Tegoprubart Versus Tacrolimus Immunosuppression in Kidney Transplant Recipients - FirstWord Pharma"
+    },
+    {
+      "title": "Zhejiang Wenda Pharma, 경구용 BET 억제제 NHWD-870 HCl 2상에서 긍정적 유효성 및 안전성 데이터 보고",
+      "summary": "Zhejiang Wenda Pharma가 개발 중인 경구용 BET 억제제 NHWD-870 HCl이 2상 임상에서 우수한 유효성과 안전성을 나타냈다고 2026 ESMO에서 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE41Mk5saVB1blNpV2xUWTVrQVRKTGVhRlVMU1ZuNEZDTG5nQW43Rm5IR3ZBa3hOa3VvZ2tWSGZJQ3lIeGVZNm9iNUZCSHY2SWRIM2Fv?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:28:40+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Zhejiang Wenda Pharma Announces Positive Results from Phase II Trial of Oral BET Inhibitor NHWD-870 HCl at the 2026 ESMO Annual Meeting - FirstWord Pharma"
+    },
+    {
+      "title": "Genmab, 전이성 대장암 환자 대상 펫오셈타맙 2상 추가 분석 결과 의미 있는 객관적 반응률 발표",
+      "summary": "Genmab이 전이성 대장암 환자를 대상으로 한 펫오셈타맙 2상 연구에서 업데이트된 추적 관찰 분석을 통해 의미 있는 객관적 반응률을 확인했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE51S0RLNnItSkpQa3YzTkVMSkxVQlJzR3ZHNUREY1J3Ry01dEFuQUZOWHI1UWMwQ2xnZkFtRURwTDFkekViaDNtbGFsN3FNVDd0Q1BN?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:44:01+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Genmab Announces Updated Follow-Up Analyses from Phase 2 Study of Petosemtamab Demonstrate Meaningful Objective Response Rates in Patients with Metastatic Colorectal Cancer - FirstWord Pharma"
+    },
+    {
+      "title": "바이오엔텍·BMS, 면역항암제 및 화학요법 이후 진행된 비소세포폐암 대상 펌티미그 2상 연구 긍정적 결과 발표",
+      "summary": "BioNTech와 Bristol Myers Squibb가 면역항암제와 화학요법 이후 진행된 비소세포폐암 환자를 대상으로 한 펌티미그(Pumitamig) 글로벌 2상 연구에서 고무적인 결과를 보고했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1zT0l5MTczMTBXal9iT2hNM2VtU1I0ekExejdteFB3ZHBnVXpyNUFCamt2OWVhaS1LTnc4SHVmZ2txcURGamFDZVlqMXpvS1h0dlpV?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:32:33+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "BioNTech and Bristol Myers Squibb Report Encouraging Global Phase 2 Data for Pumitamig in Advanced NSCLC After Progression on Immunotherapy Plus Chemotherapy - FirstWord Pharma"
+    },
+    {
+      "title": "개인 맞춤형 mRNA 신항원 치료제, 1차 긍정적 3상 데이터 발표",
+      "summary": "개인 맞춤형 mRNA 신항원 치료제에서 최초로 긍정적인 3상 임상 데이터가 보고되어 해당 치료제 개발에 중요한 진전을 이루었다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE44Y2ZMMURjMWxfTmFtN0daU1B6SnhaTlZwMzJGdVdZdjhmT1JvWXkxQ3JRVmlqeU5DRkV3TVo2cmtja2QzbzNxWnBZai1sOV9FdWRJ?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T14:17:54+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "First positive phase III data for personalised mRNA neoantigen therapy - FirstWord Pharma"
+    },
+    {
+      "title": "Compass Therapeutics, 위장관암 치료제 Tovecimig 2/3상 COMPANION-002 연구 결과 JCO 게재 및 2026 ESMO서 구두 발표",
+      "summary": "Compass Therapeutics가 Tovecimig의 2/3상 COMPANION-002 임상시험 결과를 Journal of Clinical Oncology에 게재하고 ESMO 2026에서 구두 발표를 진행했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4yZ0NGX2hnNW8wWnl1UDA1Y3JsMFU5VVdoRHB1emFjU19qZ2JrQzJaMXNGVVdLc0s3dFNyZTdJOENURWh2dTluZU5ENzlTaHNMNFRr?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-25T13:42:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Compass Therapeutics Announces Publication of Phase 2/3 COMPANION-002 Results for Tovecimig in the Journal of Clinical Oncology and Oral Presentation at ESMO 2026 - FirstWord Pharma"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 18,
+    "global": 12
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
