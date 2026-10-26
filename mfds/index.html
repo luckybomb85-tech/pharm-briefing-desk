@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>식약처 허가변경 레이더 | 데일리팜</title>
+<style>
+:root{--ink:#172234;--muted:#637085;--border:#e2e7ef;--wash:#f5f7fb;--blue:#155ad0;--red:#bf3535;--green:#147454;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;line-height:1.5;font-size:14px}
+.wrap{max-width:1170px;margin:auto;padding:35px 25px 80px}
+.head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:22px}.eyebrow{font-weight:800;color:var(--blue);letter-spacing:.14em;font-size:11px}
+h1{font-size:29px;letter-spacing:-1.4px;margin:5px 0 6px}h2{font-size:16px;margin:0}.sub{color:var(--muted);margin:0}
+.btn{border:1px solid var(--border);background:#fff;border-radius:9px;padding:9px 15px;font-weight:700;cursor:pointer;color:var(--ink)}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn:disabled{opacity:.5;cursor:default}
+.pill{font-size:11px;font-weight:700;border-radius:20px;display:inline-block;padding:3px 9px;white-space:nowrap}
+.pill.priority{background:#e6efff;color:#144da9}.pill.candidate{background:#f0f2f7;color:#525f74}.pill.new{background:#ffebeb;color:#a32727}.pill.base{background:#edf1f5;color:#576479}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.metric{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:17px 19px;min-height:104px}.metric label{font-size:12px;color:var(--muted);display:block;margin-bottom:8px}.metric strong{font-size:26px;line-height:1.15;font-weight:850}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:5px}
+.panel{background:#fff;border:1px solid var(--border);border-radius:13px;overflow:hidden}
+.bar{padding:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--border)}
+select,input{background:white;border:1px solid var(--border);border-radius:8px;padding:9px 10px;font-size:13px;color:var(--ink);font-family:inherit}
+input{min-width:210px;flex:1}select{max-width:195px}
+.rows{display:flex;flex-direction:column}
+.item{padding:19px 21px;border-bottom:1px solid var(--border)}.item:last-child{border-bottom:0}
+.topline{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}
+.meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.date{font-size:12px;color:var(--muted)}
+.item h3{margin:2px 0 5px;font-size:17px;line-height:1.4;letter-spacing:-.45px}
+.item h3 a{text-decoration:none;color:var(--ink)}.item h3 a:hover{color:var(--blue);text-decoration:underline}
+.dim{color:var(--muted);font-size:12px;margin:0 0 7px}
+.detail{background:#f7f9fc;border-radius:7px;padding:9px 12px;color:#435168;font-size:12px;margin:10px 0 0;overflow-wrap:anywhere}
+.reason{font-size:12px;color:#58677f;margin-top:8px}.link{color:var(--blue);text-decoration:none;font-size:12px;font-weight:750}
+.foot{color:var(--muted);font-size:12px;margin-top:14px;line-height:1.65}
+.alert{background:#fffbeb;border:1px solid #f0dfac;border-radius:10px;padding:13px 15px;margin:0 0 15px;color:#655429}
+.empty{text-align:center;padding:60px 15px;color:var(--muted)}
+.status{font-size:12px;color:var(--muted)}.progress{color:#146d50}
+@media(max-width:760px){.wrap{padding:22px 13px 70px}.head{margin-bottom:15px}h1{font-size:24px}.metrics{grid-template-columns:repeat(2,1fr);gap:9px}.metric{padding:13px;min-height:90px}.metric strong{font-size:23px}.bar,.filters{padding:13px}.item{padding:17px 14px}.item h3{font-size:15px}input,select{min-width:0;width:100%;max-width:100%;flex:auto}.btn{padding:9px 12px}.sub{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="head">
+<div><div class="eyebrow">DAILYPHARM · MFDS MONITOR</div><h1>의약품 허가변경 레이더</h1>
+<p class="sub">식약처 심사결과·변경명령 자동 감시 · 매일 08:20 / 13:20 / 18:20</p></div>
+<button class="btn" type="button" id="reload">새로고침</button>
+</header>
+<div class="alert"><strong>중요:</strong> '적응증 추가 후보'는 식약처 공개 문서의 제목·첨부파일명을 기준으로 추린 검토 대상입니다. 실제 적응증 추가 승인 여부는 공식 원문과 허가사항을 확인해야 합니다.</div>
+<div class="metrics">
+<div class="metric"><label>첨부명에 확대 단서</label><strong id="high">—</strong><small>보고서 파일명 분석 결과</small></div>
+<div class="metric"><label>변경허가 검토 후보</label><strong id="candidates">—</strong><small>고우선 포함</small></div>
+<div class="metric"><label>새로 발견된 후보</label><strong id="newCount">—</strong><small>최초 수집 기준 제외</small></div>
+<div class="metric"><label>마지막 수집</label><strong style="font-size:17px" id="lastRun">—</strong><small id="runDetail">자동 수집 대기</small></div>
+</div>
+<section class="panel">
+<div class="bar"><h2>변경허가 확인 목록 <span class="status" id="shown"></span></h2><span class="status" id="feedStatus">서버 연결 중…</span></div>
+<div class="filters">
+<select id="category" aria-label="분류 필터"><option value="candidates">적응증 변경 후보</option><option value="high">확대 표현 확인</option><option value="all">모든 공개 게시물</option></select>
+<select id="source" aria-label="출처 필터"><option value="all">전체 출처</option><option value="review">변경허가 심사결과</option><option value="change_order">허가사항 변경명령</option></select>
+<select id="fresh" aria-label="신규만 보기"><option value="all">신규 + 기존 자료</option><option value="new">새로 발견된 자료만</option></select>
+<input id="query" placeholder="제품명·회사명·성분명 검색" aria-label="검색어">
+</div>
+<div id="items" class="rows"><div class="empty">수집 결과를 불러오는 중입니다.</div></div>
+</section>
+<p class="foot">원문 출처: <a class="link" target="_blank" rel="noopener" href="https://nedrug.mfds.go.kr/pbp/CCBAC02/getList">의약품 등 심사결과정보 공개</a> · <a class="link" target="_blank" rel="noopener" href="https://nedrug.mfds.go.kr/CCBAR01F012/getList">허가사항 변경명령</a><br>
+첫 수집분은 기존 자료로 저장하므로 '신규'에 포함하지 않습니다. 수집 실패 시 마지막 성공 시간을 반드시 확인하세요. 이 화면은 별도 자동 푸시 없이도 최근 수집 결과를 보여주며, 외부 알림은 별도 채널 설정이 필요합니다.</p>
+</div>
+<script>
+(function(){
+"use strict";
+const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
+const $=s=>document.querySelector(s);
+let items=[],runs=[];
+const newKind=c=>["high_candidate","change_candidate"].includes(c);
+const fmtDate=t=>{if(!t)return"—";const d=new Date(t);return isNaN(d)?t:d.toLocaleString("ko-KR",{timeZone:"Asia/Seoul",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});};
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function addText(parent,cls,text){parent.appendChild(el("span",cls,text));}
+function setText(id,t){$(id).textContent=String(t);}
+function render(){
+ const high=items.filter(x=>x.classification==="high_candidate");
+ const candidate=items.filter(x=>newKind(x.classification));
+ const newCandidates=candidate.filter(x=>x.alert_state==="new");
+ setText("#high",high.length);setText("#candidates",candidate.length);setText("#newCount",newCandidates.length);
+ const last=runs[0];setText("#lastRun",last?fmtDate(last.finished_at||last.started_at):"미실행");
+ setText("#runDetail",last?(last.status==="success"?"정상 · ":"일부 오류 · ")+(last.reviews_checked+last.changes_checked)+"건 확인":"수집 기록 없음");
+ const category=$("#category").value,source=$("#source").value,fresh=$("#fresh").value,q=$("#query").value.trim().toLowerCase();
+ const selected=items.filter(x=>{
+ if(category==="candidates"&&!newKind(x.classification))return false;
+ if(category==="high"&&x.classification!=="high_candidate")return false;
+ if(source!=="all"&&x.source!==source)return false;
+ if(fresh==="new"&&x.alert_state!=="new")return false;
+ if(q&&!([x.title,x.company,x.product,x.ingredient,...(x.attachment_names||[])].join(" ").toLowerCase().includes(q)))return false;
+ return true;
+ });
+ setText("#shown","("+selected.length+"건)");
+ const target=$("#items");target.replaceChildren();
+ if(!selected.length){target.appendChild(el("div","empty","조건에 맞는 자료가 없습니다."));return;}
+ for(const x of selected){
+ const card=el("article","item"),top=el("div","topline"),meta=el("div","meta");
+ let kind=x.classification==="high_candidate"?["priority","첨부명 확대 단서"]:newKind(x.classification)?["candidate","변경허가 검토"]:["base","기타 게시"];
+ addText(meta,"pill "+kind[0],kind[1]);
+ if(x.alert_state==="new")addText(meta,"pill new","신규 포착");
+ addText(meta,"date",x.source==="review"?"심사결과 공개":"변경명령");
+ top.appendChild(meta);
+ top.appendChild(el("span","date",x.published_at||"날짜 미상"));card.appendChild(top);
+ const title=el("h3"),a=el("a",null,x.title);a.href=x.source_url;a.target="_blank";a.rel="noopener noreferrer";title.appendChild(a);card.appendChild(title);
+ const who=[x.company,x.product,x.ingredient].filter(Boolean).join("  ·  ");
+ if(who)card.appendChild(el("p","dim",who));
+ if(x.attachment_names&&x.attachment_names.length){
+   const detail=el("div","detail");detail.appendChild(el("b",null,"첨부 보고서: "));
+   detail.appendChild(document.createTextNode(x.attachment_names.join(" / ")));card.appendChild(detail);
+ }
+ if(x.rationale)card.appendChild(el("div","reason",x.rationale));
+ const link=el("a","link","식약처 원문 보기");link.href=x.source_url;link.target="_blank";link.rel="noopener noreferrer";card.appendChild(link);
+ target.appendChild(card);
+ }
+}
+async function load(){
+ $("#reload").disabled=true;setText("#feedStatus","불러오는 중…");
+ try{
+ const controller=new AbortController();const tid=setTimeout(()=>controller.abort(),16000);
+ const res=await fetch(API,{cache:"no-store",signal:controller.signal});clearTimeout(tid);
+ if(!res.ok)throw Error("응답 코드 "+res.status);
+ const data=await res.json();if(!Array.isArray(data.items))throw Error(data.error||"응답 형식 오류");
+ items=data.items;runs=data.runs||[];render();
+ setText("#feedStatus","자료 "+items.length+"건 · 조회 "+fmtDate(new Date().toISOString()));
+ }catch(e){setText("#feedStatus","연결 오류");$("#items").replaceChildren(el("div","empty","자료를 불러오지 못했습니다: "+String(e.message||e)));}
+ finally{$("#reload").disabled=false;}
+}
+for(const id of ["#category","#source","#fresh","#query"])$(id).addEventListener("input",render);
+$("#reload").addEventListener("click",load);load();setInterval(load,300000);
+})();
+</script>
+</body></html>
