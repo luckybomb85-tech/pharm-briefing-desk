@@ -777,7 +777,10 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
  const q=String(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
  if(q.length<2||q.length>70)return {matches:[],query:q};
  const key=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
- const local:any[]=await db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope&limit=1500");
+ const escaped=q.replace(/[(),.*%\\]/g,"").trim();
+ if(escaped.length<2)return {matches:[],query:q};
+ const clause="(product.ilike.*"+escaped+"*,ingredient.ilike.*"+escaped+"*,company.ilike.*"+escaped+"*)";
+ const local:any[]=await db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope&or="+encodeURIComponent(clause)+"&limit=50");
  const match=(x:any)=>[x.product,x.ingredient,x.company].some((t:any)=>
   String(t||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(key));
  const nearby=(local||[]).filter(match).map((x:any)=>({
@@ -801,7 +804,7 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
   }
   source="MFDS 품목조회";
  }catch(e){error=String(e).slice(0,130)}
- const results=[...combined.values()].sort((a,b)=>{
+ const results=[...combined.values()].filter(x=>String(x.product||"").length<=155).sort((a,b)=>{
   const rank=(x:any)=>{
    const norm=String(x.product||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"");
    if(norm===key)return 0;
