@@ -203,6 +203,48 @@ async function archiveSource(source: "review" | "change_order", maxPages: number
   return {source,pages:checked,newly_saved:saved,next_page:page,last_date:lastDate,total_pages:totalPages};
 }
 
+
+async function syncOfficialEfficacyHistory(): Promise<unknown> {
+  const targets=await db("GET","mfds_monitor_drug_targets?select=item_seq,product,company,source_url,active&active=eq.true&order=item_seq.asc&limit=100");
+  const results=[];
+  for(const target of targets){
+    try {
+      // Fetch the official MFDS item-detail change table. Do not infer the
+      // content/type of an indication change from the date alone.
+      const h=await html(target.source_url);
+      const tablePos=h.indexOf('id="tblChf"');
+      if(tablePos<0)throw Error("MFDS change history table not found");
+      const tbody=h.slice(tablePos).match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
+      if(!tbody)throw Error("No efficacy history rows");
+      const dates=new Set<string>();
+      for(const m of tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+        const cells=[...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
+        const date=cells.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
+        const category=cells.at(-1)||"";
+        if(date&&/효능.?효과/.test(category))dates.add(date);
+      }
+      const values=[...dates].map(date=>({
+        item_seq:target.item_seq,product:target.product,company:target.company,
+        changed_at:date,change_section:"효능·효과",
+        classification:"미분류",evidence_url:target.source_url
+      }));
+      if(values.length)await db("POST",
+        "mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",
+        values,"resolution=ignore-duplicates,return=minimal");
+      await db("PATCH","mfds_monitor_drug_targets?item_seq=eq."+target.item_seq,{
+        last_checked_at:new Date().toISOString(),last_checked_status:"ok:"+values.length
+      },"return=minimal");
+      results.push({product:target.product,item_seq:target.item_seq,dates:values.length,latest:[...dates].sort().at(-1)});
+    }catch(e){
+      const error=String(e).slice(0,250);
+      await db("PATCH","mfds_monitor_drug_targets?item_seq=eq."+target.item_seq,{
+        last_checked_at:new Date().toISOString(),last_checked_status:error
+      },"return=minimal");
+      results.push({product:target.product,item_seq:target.item_seq,error});
+    }
+  }
+  return {mode:"efficacy_sync",target_count:targets.length,results};
+}
 async function repairOrderHistory(): Promise<unknown> {
   let corrected=0;
   for(let page=1;page<=2;page++){
@@ -294,16 +336,18 @@ async function collect(): Promise<unknown> {
 }
 
 async function feed(): Promise<unknown> {
-  const [events, leads, recent, runs, stats] = await Promise.all([
+  const [events, leads, recent, runs, stats, efficacy, targets] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
     db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,company,product,ingredient,published_at,attachment_names,classification,rationale,alert_state&source=eq.review&classification=eq.clinical_lead&order=published_at.desc,id.desc&limit=150"),
     db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,effective_at,stage,attachment_names,classification,rationale,alert_state,approval_changed_at,change_type,change_summary,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200"),
     db("GET", "mfds_monitor_runs?select=id,started_at,finished_at,status,reviews_checked,changes_checked,errors&order=id.desc&limit=5"),
-    db("GET", "rpc/mfds_monitor_archive_stats")
+    db("GET", "rpc/mfds_monitor_archive_stats"),
+    db("GET", "mfds_monitor_efficacy_history?select=id,item_seq,product,company,changed_at,change_section,classification,evidence_url,first_seen_at&order=changed_at.desc,id.desc&limit=300"),
+    db("GET", "mfds_monitor_drug_targets?select=item_seq,product,company,last_checked_at,last_checked_status&active=eq.true&limit=100")
   ]);
   return {
-    events,leads,items:recent,runs,
-    counts:{verified_events:stats.verified,leads:(leads||[]).length,review_records:stats.review_changes,orders_records:stats.orders_total,review_total:stats.review_total},
+    events,leads,items:recent,runs,efficacy,targets,
+    counts:{verified_events:stats.verified,leads:(leads||[]).length,efficacy:(efficacy||[]).length,review_records:stats.review_changes,orders_records:stats.orders_total,review_total:stats.review_total},
     archive:stats.cursors,
     description:"실제 허가변경일을 확인한 이벤트와 변경심사자료/변경명령의 공개이력을 별도 구분합니다. 미확인 자료는 확정 변경으로 분류하지 않습니다."
   };
@@ -322,6 +366,7 @@ Deno.serve(async (req: Request) => {
     const input=await req.json().catch(()=>({}));
     if(input?.mode==="backfill") return reply(await backfill());
     if(input?.mode==="repair_order_dates") return reply(await repairOrderHistory());
+    if(input?.mode==="efficacy_sync") return reply(await syncOfficialEfficacyHistory());
     return reply(await collect());
   } catch (e) {
     return reply({error:String(e).slice(0,420)},500);
