@@ -6,6 +6,7 @@ on:
     paths:
       - 'mfds/index.html'
       - 'mfds/edge/index.ts'
+      - 'scripts/mfds_radar_interaction_smoke.mjs'
       - '.github/workflows/mfds-radar-live-smoke.yml'
 permissions:
   contents: read
@@ -31,35 +32,9 @@ jobs:
           assert doc["events"],"NO_VERIFIED_APPROVAL_EVENT"
           print("MFDS_API_OK", {k:len(doc[k]) for k in ("items","events","leads")})
           PY
-      - name: Check published UI in real headless Chrome
+      - name: Test metric cards, 2025 archive, pagination and mobile in real Chrome
         shell: bash
         run: |
           set -euo pipefail
-          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
-          test -n "$CHROME" || { echo 'CHROME_NOT_FOUND'; exit 1; }
-          timeout 65 "$CHROME" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
-            --disable-background-networking --virtual-time-budget=23000 --dump-dom \
-            'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?ui-test=1' \
-            > /tmp/mfds-radar-dom.html 2> /tmp/mfds-radar-chrome.log || {
-              echo 'CHROME_RENDER_FAILED'; tail -n 60 /tmp/mfds-radar-chrome.log;exit 1;
-            }
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          html=Path("/tmp/mfds-radar-dom.html").read_text(encoding="utf-8")
-          bad=["자료를 불러오지 못했습니다","자료를 가져오지 못했습니다","연결 오류","응답 형식 오류"]
-          # Only evaluate text actually rendered in the status / card region.
-          # Error messages appearing in <script> source are NOT UI errors.
-          status=re.search(r'id="feedStatus"[^>]*>([^<]*)<',html)
-          display_status=status.group(1) if status else "STATUS_NODE_MISSING"
-          cards=html.split('<div id="items" class="rows">',1)[-1].split('</section>',1)[0]
-          errors=[x for x in bad if x in cards or x in display_status]
-          rendered=len(re.findall(r'<article class="item"',cards))
-          ok=(rendered>=1 and "임델트라" in cards and "최신 조회" in display_status and not errors)
-          print("BROWSER_RENDERS",rendered,"STATUS",display_status,"UI_ERRORS",errors)
-          if not ok:
-              start=html.find('id="items"')
-              print(html[max(start-300,0):start+2000])
-              raise SystemExit("MFDS_RADAR_BROWSER_FAILED")
-          print("MFDS_RADAR_BROWSER_OK")
-          PY
+          export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
+          node scripts/mfds_radar_interaction_smoke.mjs
