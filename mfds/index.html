@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>효능·효과 변경이력 | 데일리팜</title>
+<title>의약품 적응증 변경이력 | 데일리팜</title>
 <style>
 :root{--ink:#17243a;--muted:#69768b;--border:#e1e7ee;--wash:#f7f8fb;--blue:#2458a6;--green:#157347;--red:#b44242}
 *{box-sizing:border-box}
@@ -149,7 +149,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .baseline-original .fulltext{max-height:400px}
 /* Compact product / ingredient / manufacturer hierarchy */
 .entry-main .drug{display:block;margin-bottom:6px}
-.entry-main .meta-fields{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:20px;row-gap:4px;margin-top:5px}
+.entry-main .meta-fields{display:block;margin-top:5px}
 .entry-main .meta-detail{display:flex;gap:7px;align-items:baseline;min-width:0;font-size:12px;line-height:1.5;color:#596980;overflow-wrap:anywhere}
 .entry-main .meta-title{font-size:11px;font-weight:760;white-space:nowrap;color:#8190a4;flex:0 0 auto}
 @media(max-width:650px){.entry-main .meta-fields{grid-template-columns:1fr;row-gap:3px}.entry-main .meta-detail{font-size:11px}}
@@ -169,6 +169,29 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .related-detail .entry{box-shadow:none;margin:0}
 @media(max-width:760px){.related-item{padding:10px}.related-trigger{width:100%}}
 
+/* Medicine heading + restrained publisher brand */
+.page-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+.page-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.title-icon{flex:0 0 auto;color:#2458a6}
+.page-identity h1{margin:0;font-size:25px;line-height:1.3;letter-spacing:-.8px}
+.header-tools{display:flex;align-items:center;gap:16px;flex:0 0 auto}
+.publisher{display:flex;align-items:center;gap:5px;white-space:nowrap;color:#496078;font-size:12px;font-weight:780}
+.publisher-mark{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;background:#1e509f;color:#fff;border-radius:5px;font-size:11px;font-weight:900}
+.settings-open{display:inline-flex;align-items:center;gap:5px;background:none;border:1px solid #d4deec;border-radius:8px;color:#465e7b;padding:7px 10px;font-size:12px;font-weight:760;white-space:nowrap}
+.settings-open:hover{background:#f0f5fc}
+#searchPeriod{font-size:11px;color:#69768b}
+@media(max-width:700px){
+ .page-header{gap:8px;align-items:flex-start}
+ .title-icon{width:23px;height:23px;margin-top:2px}
+ .page-identity{gap:6px}
+ .page-identity h1{font-size:20px;letter-spacing:-.8px}
+ .header-tools{flex-wrap:wrap;justify-content:flex-end;gap:6px}
+ .publisher{font-size:10px}
+ .publisher-mark{width:15px;height:15px;font-size:9px}
+ .settings-open{font-size:11px;padding:5px 7px}
+ .settings-open svg{width:14px;height:14px}
+}
+@media(max-width:400px){.page-identity h1{font-size:18px}.settings-open span{display:none}.settings-open{padding:7px}}
 /* Compact explicit date range and lightweight typeahead */
 .keyword-wrap{position:relative;flex:1 1 300px;min-width:170px}
 .search .keyword-wrap>input{display:block;width:100%;height:43px;min-width:0}
@@ -193,8 +216,21 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 </head>
 <body>
 <main class="wrap">
-<header>
-  <h1>효능·효과 변경이력</h1>
+<header class="page-header">
+  <div class="page-identity">
+    <svg class="title-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" role="img" aria-label="의약품">
+      <rect x="4.8" y="9.2" width="22.4" height="13.6" rx="6.8" fill="none" stroke="currentColor" stroke-width="2.2" transform="rotate(-45 16 16)"/>
+      <path d="m11.2 10.6 10.2 10.2" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    </svg>
+    <h1>의약품 적응증 변경이력</h1>
+  </div>
+  <div class="header-tools">
+    <button id="notificationSettings" type="button" class="settings-open" aria-label="알림 설정 열기" title="알림 설정">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"/><path d="M10 21h4"/></svg>
+      <span>알림 설정</span>
+    </button>
+    <div class="publisher" aria-label="데일리팜"><span class="publisher-mark" aria-hidden="true">D</span><span>데일리팜</span></div>
+  </div>
 </header>
 <form class="search" id="searchForm" autocomplete="off">
   <div class="keyword-wrap">
@@ -216,7 +252,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  <div id="catalogueItems" class="catalogue-list"></div>
  <div class="catalogue-foot" id="catalogueFoot" hidden><button id="catalogueMore" type="button">품목 더 보기</button><span>식약처 검색 결과가 여러 페이지인 경우 이전에 보지 못한 품목을 추가합니다.</span></div>
 </section>
-<div class="bar"><div class="bar-content"><strong id="resultCount">최근 효능·효과 변경이력 조회 중…</strong><span id="resultContext">검색창에서 품목을 찾으면 해당 의약품의 이력만 표시됩니다.</span></div><small id="sortLabel">변경일 최신순</small></div>
+<div class="bar"><div class="bar-content"><strong id="resultCount">변경이력 조회 중…</strong><span id="resultContext" hidden></span><span id="searchPeriod">검색 기간: 조회 중…</span></div><small id="sortLabel">변경일 최신순</small></div>
 <section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
   <div class="empty">자료를 불러오는 중입니다.</div>
 </section>
@@ -400,11 +436,6 @@ function renderCard(row){
  const meta=put(top,"span","entry-main");
  put(meta,"span","drug",row.product||"의약품");
  const info=put(meta,"span","meta-fields");
- if(row.ingredient){
-  const ingredient=put(info,"span","meta-detail");
-  put(ingredient,"span","meta-title","성분");
-  put(ingredient,"span","",row.ingredient);
- }
  if(row.company){
   const company=put(info,"span","meta-detail");
   put(company,"span","meta-title","업체");
@@ -452,10 +483,17 @@ function params(reset){
  }
  return url.toString();
 }
+function setSearchPeriod(first,last){
+ const start=$("#startDate").value||first;
+ const end=$("#endDate").value||last;
+ const text=start||end?"검색 기간: "+(start?fmtDate(start):"처음부터")+" ~ "+(end?fmtDate(end):"현재까지"):"검색 기간: 전체";
+ $("#searchPeriod").textContent=text;
+}
 function refreshLabel(){
- $("#resultCount").textContent="오리지널 중심 효능·효과 변경이력 "+state.total+"건";
+ $("#resultCount").textContent="변경이력 "+state.total+"건";
  $("#resultContext").textContent="";
  $("#resultContext").hidden=true;
+ setSearchPeriod(state.period?.start||"",state.period?.end||"");
  $("#moreWrap").hidden=!state.more;
  $("#moreButton").disabled=state.busy||!state.more;
  const end=$("#historyEnd");
@@ -535,7 +573,8 @@ function showSelectedHistory(){
  for(const entry of rows){
   root.appendChild(renderCard({...entry,item_seq:candidate.item_seq,product:candidate.product,company:candidate.company,ingredient:candidate.ingredient}));
  }
- $("#resultCount").textContent=candidate.product+" · 효능·효과 변경 "+rows.length+"건";
+ $("#resultCount").textContent="변경이력 "+rows.length+"건";
+ setSearchPeriod(rows.at(-1)?.changed_at||state.lookupData?.items?.at(-1)?.changed_at||"",rows[0]?.changed_at||state.lookupData?.items?.[0]?.changed_at||"");
  const all=state.lookupData?.official_change_total;
  const ef=state.lookupData?.official_efficacy_total;
  const missing=state.lookupData?.official_uncompared_dates?.length||0;
@@ -602,7 +641,7 @@ function renderCatalogue(){
   const btn=put(root,"button","catalogue-choice"+(state.lookupSelected?.item_seq===c.item_seq?" selected":""));
   btn.type="button";btn.dataset.itemSeq=c.item_seq;
   put(btn,"b","",c.product);
-  put(btn,"small","",[c.ingredient?"성분: "+c.ingredient:"",c.company?"업체: "+c.company:"",c.permit_date?"최초허가 "+c.permit_date:"",c.status!=="정상"?c.status:""].filter(Boolean).join(" · "));
+  put(btn,"small","",[c.company?"업체: "+c.company:"",c.permit_date?"최초허가 "+c.permit_date:"",c.status!=="정상"?c.status:""].filter(Boolean).join(" · "));
   btn.addEventListener("click",()=>chooseDrug(c));
  }
  $("#catalogueFoot").hidden=!state.lookupHasMore;
@@ -709,7 +748,7 @@ function drawSuggestions(){
   const option=put(panel,"button","suggest-option"+(state.suggestionActive===i?" is-active":""));
   option.type="button";option.setAttribute("role","option");option.setAttribute("aria-selected",state.suggestionActive===i?"true":"false");
   put(option,"strong","",item.product);
-  put(option,"small","",[item.ingredient?"성분 "+item.ingredient:"",item.company?"업체 "+item.company:""].filter(Boolean).join(" · "));
+  put(option,"small","",item.company?"업체 "+item.company:"");
   option.addEventListener("mousedown",e=>e.preventDefault());
   option.addEventListener("click",()=>selectSuggestion(item));
  });
