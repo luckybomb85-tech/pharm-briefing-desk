@@ -589,10 +589,19 @@ function editorialChangeKind(eventType:string):string {
 async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   // Dedicated efficacy-only read API. All dates are approval-change dates,
   // never the publication dates of delayed review reports.
-  const [history,editorial]=await Promise.all([
+  const [history,editorial,officialPrimaries]=await Promise.all([
     db("GET","mfds_monitor_efficacy_history?select=id,item_seq,product,company,ingredient,changed_at,classification,before_text,after_text,added_lines,removed_lines,diff_status,evidence_url&order=changed_at.desc,id.desc&limit=1000"),
-    db("GET","mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=500")
+    db("GET","mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=500"),
+    db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,product_role,classification_confidence&watch_scope=eq.primary&classification_confidence=in.(official_list,verified_review)&limit=1500")
   ]);
+  const originals=new Map<string,any>((officialPrimaries||[]).map((x:any)=>[x.item_seq,x]));
+  const normalizedBrand=(x:string)=>String(x||"").normalize("NFKC").toLocaleLowerCase("ko-KR")
+    .replace(/\([^)]*\)/g,"").replace(/[\s·.]/g,"");
+  const originalByBrand=(name:string,company:string)=>(officialPrimaries||[]).find((x:any)=>{
+    const a=normalizedBrand(name),b=normalizedBrand(x.product);
+    const brand=a===b||(a.length>=5&&b.length>=5&&(a.startsWith(b)||b.startsWith(a)));
+    return brand && (!company||!x.company||companyKey(company)===companyKey(x.company));
+  });
   const editorialKey=(p:string,d:string)=>p.replace(/\s+/g,"").replace(/\([^)]*\)/g,"")+"@"+d;
   const reviewed=new Map<string,any>();
   for(const event of editorial||[]) reviewed.set(editorialKey(event.product,event.event_date),event);
@@ -600,6 +609,8 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   const merged:any[]=[];
   for(const row of history||[]){
     if(row.diff_status==="baseline")continue;
+    const original=originals.get(row.item_seq);
+    if(!original)continue;
     const key=editorialKey(row.product,row.changed_at);
     const event=reviewed.get(key);
     if(event)included.add(key);
@@ -610,8 +621,9 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
       else if(event.event_type!=="addition"&&analyzed.removed_count)kind="삭제";
     }
     merged.push({
-      id:"official-"+row.id,changed_at:row.changed_at,product:row.product,
+      id:"official-"+row.id,item_seq:row.item_seq,changed_at:row.changed_at,product:row.product,
       company:row.company,ingredient:row.ingredient,change_type:kind,
+      product_role:original.product_role,classification_confidence:original.classification_confidence,
       title:event?.title||null,summary:event?.details||"",
       before_text:row.before_text||"",after_text:row.after_text||"",
       added_lines:analyzed.changes.filter(x=>x.kind==="added").map(x=>x.text),
@@ -624,11 +636,15 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
     });
   }
   for(const event of editorial||[]){
+    const original=originalByBrand(event.product,event.company);
+    if(!original)continue;
     const key=editorialKey(event.product,event.event_date);
     if(included.has(key))continue;
     included.add(key);
     merged.push({
-      id:"reviewed-"+event.id,changed_at:event.event_date,product:event.product,
+      id:"reviewed-"+event.id,item_seq:original.item_seq,
+      product_role:original.product_role,classification_confidence:original.classification_confidence,
+      changed_at:event.event_date,product:event.product,
       company:event.company,ingredient:event.ingredient,
       change_type:editorialChangeKind(event.event_type),
       title:event.title||"",summary:event.details||"",
@@ -672,7 +688,8 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   };
   return {items:rows.slice(offset,offset+limit),total,has_more:offset+limit<total,
     next_offset:offset+limit,counts:countByType,period,product_count,
-    source_description:"효능·효과 변경일을 기준으로 정렬. 비교 가능한 버전은 식약처 공식 효능·효과 XML 원문을 대조합니다. 일부 구버전 원문 및 품목은 미수집."};
+    master_primary_count:(officialPrimaries||[]).length,master_scope:"official_originals",
+    source_description:"식약처 신약 지정 및 공식 원제품 근거가 확인된 품목의 실제 효능·효과 변경일 최신순. 나머지 허가유형은 별도 검증 후 편입."};
 }
 
 
