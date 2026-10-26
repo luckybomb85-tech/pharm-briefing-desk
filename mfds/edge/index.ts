@@ -119,9 +119,9 @@ async function attachReportNames(item: Item): Promise<void> {
       .map(m => plain(m[1])).filter(Boolean);
     item.attachment_names = [...new Set(names)].slice(0, 10);
     const joined = names.join(" ");
-    if (/적응증|효능.{0,2}효과|치료.{0,7}추가|질환.{0,8}추가|암.{0,18}추가|확대/i.test(joined)) {
-      item.classification = "unverified";
-      item.rationale = "첨부 보고서 파일명에 적응증·치료영역 추가 관련 표현 발견. 원문 확인 필요.";
+    if (/적응증|효능.{0,2}효과|치료.{0,15}(?:추가|확대|축소|삭제)|질환.{0,12}(?:추가|확대|축소|삭제)|암.{0,22}(?:추가|확대|축소|삭제)|병용요법|병용.{0,5}확대|치료.?차수/i.test(joined)) {
+      item.classification = "clinical_lead";
+      item.rationale = "첨부 보고서 파일명에 적응증·치료영역 관련 표현. 실제 변경일 및 변경 전후 내용 확인 필요.";
     }
   } catch (_e) {
     item.rationale += " (첨부파일명 조회 실패)";
@@ -141,6 +141,87 @@ async function fetchList(source: "review" | "change_order"): Promise<Item[]> {
   }
   return first;
 }
+
+async function archiveSource(source: "review" | "change_order", maxPages: number): Promise<Record<string, unknown>> {
+  const [progress] = await db("GET", "mfds_monitor_archive_cursor?select=source,next_page,total_pages,finished&source=eq."+source+"&limit=1");
+  if (!progress) throw Error("No archive cursor row for "+source);
+  if (progress.finished) return { source, complete:true, total_pages:progress.total_pages, newly_saved:0, pages:0 };
+  const path = source==="review"?"/pbp/CCBAC02/getList":"/CCBAR01F012/getList";
+  let saved=0, checked=0, page=Number(progress.next_page), lastDate="";
+  let totalPages=progress.total_pages||null;
+  for (let n=0;n<maxPages;n++) {
+    try {
+      const doc=await html(ORIGIN+path+"?page="+page+"&limit=50");
+      if (!totalPages) {
+        const match=doc.match(/name=["']totalPages["'][^>]*value=["'](\d+)["']/i);
+        if (match) totalPages=Number(match[1]);
+      }
+      const rows=parseRows(doc,source);
+      if (!rows.length && page === 1) throw Error("Empty initial archive page");
+      if (!rows.length) {
+        await db("PATCH","mfds_monitor_archive_cursor?source=eq."+source,
+          {finished:true,total_pages:totalPages,last_run_at:new Date().toISOString(),last_error:null},"return=minimal");
+        return {source,complete:true, pages:checked, newly_saved:saved, last_date:lastDate};
+      }
+      const existing=await db("GET","mfds_monitor_items?select=source_id&source=eq."+source+
+        "&source_id=in.("+rows.map(x=>x.source_id).join(",")+")&limit=100");
+      const known=new Set<string>((existing||[]).map((x: {source_id:string})=>x.source_id));
+      const fresh=rows.filter(x=>!known.has(x.source_id));
+      // Fetch PDF filenames only for changed reviews (never the PDF body).
+      // Limit concurrency to respect the MFDS origin and Edge request budget.
+      if (source==="review") {
+        const important=fresh.filter(x=>x.classification==="unverified");
+        for(let i=0;i<important.length;i+=5) {
+          await Promise.all(important.slice(i,i+5).map(attachReportNames));
+        }
+      }
+      fresh.forEach(x=>{x.alert_state="baseline";});
+      if(fresh.length) await db("POST","mfds_monitor_items?on_conflict=source,source_id",
+        fresh,"resolution=ignore-duplicates,return=minimal");
+      saved+=fresh.length;checked++;
+      lastDate=rows.at(-1)?.published_at||"";
+      const ended=rows.length<50 || (totalPages!==null && page>=totalPages);
+      await db("PATCH","mfds_monitor_archive_cursor?source=eq."+source,{
+        next_page:page+1,last_completed_page:page,total_pages:totalPages,finished:ended,
+        last_run_at:new Date().toISOString(),last_error:null
+      },"return=minimal");
+      page++;
+      if(ended)break;
+    }catch(e){
+      const msg=String(e).slice(0,270);
+      await db("PATCH","mfds_monitor_archive_cursor?source=eq."+source,
+        {last_error:msg,last_run_at:new Date().toISOString()},"return=minimal");
+      return {source,pages:checked,newly_saved:saved,next_page:page,last_date:lastDate,error:msg};
+    }
+  }
+  return {source,pages:checked,newly_saved:saved,next_page:page,last_date:lastDate,total_pages:totalPages};
+}
+
+async function backfill(): Promise<unknown> {
+  // Low-impact incremental archive import, separate from daily monitoring.
+  const results=[];
+  results.push(await archiveSource("review",3));
+  results.push(await archiveSource("change_order",2));
+  return {mode:"backfill",results,ran_at:new Date().toISOString()};
+}
+async function archiveFeed(query: URLSearchParams): Promise<unknown> {
+  const kind=query.get("kind")==="orders"?"change_order":"review";
+  const limit=Math.max(10,Math.min(50,Number(query.get("limit")||30)||30));
+  const offset=Math.max(0,Math.min(10000,Number(query.get("offset")||0)||0));
+  let route="mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,first_seen_at"+
+    "&source=eq."+kind+"&order=published_at.desc.nullslast,id.desc&offset="+offset+"&limit="+(limit+1);
+  if(kind==="review") route+="&title=ilike."+encodeURIComponent("*변경*");
+  const year=query.get("year")||"";
+  if(/^20\d\d$/.test(year)) route+="&published_at=gte."+year+"-01-01&published_at=lt."+(Number(year)+1)+"-01-01";
+  const text=(query.get("q")||"").trim().slice(0,70).replace(/[(),.*%]/g," ").trim();
+  if(text) {
+    const term=encodeURIComponent("*"+text+"*");
+    route+="&or="+encodeURIComponent("(title.ilike."+decodeURIComponent(term)+",company.ilike."+decodeURIComponent(term)+",product.ilike."+decodeURIComponent(term)+",ingredient.ilike."+decodeURIComponent(term)+")");
+  }
+  const rows=await db("GET",route);
+  return {items:rows.slice(0,limit),has_more:rows.length>limit,next_offset:offset+limit,kind,year:year||null};
+}
+
 function equalHash(a: string, b: string): boolean {
   if (a.length !== b.length) return false;
   let same = 0; for (let i = 0; i < a.length; i++) same |= a.charCodeAt(i) ^ b.charCodeAt(i);
@@ -192,43 +273,35 @@ async function collect(): Promise<unknown> {
     { ...report, finished_at: new Date().toISOString() }, "return=minimal");
   return { ...report, run_id: run.id };
 }
-async function feed() {
-  // The existing public-list collector remains unchanged.
-  // Important: a newly published review report is not a newly approved indication.
-  const [events, raw, runs] = await Promise.all([
-    db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=150"),
-    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,company,product,ingredient,published_at,attachment_names,classification,rationale,alert_state,first_seen_at&source=eq.review&classification=eq.unverified&order=published_at.desc,id.desc&limit=150"),
+
+async function feed(): Promise<unknown> {
+  const [events, leads, recent, runs, stats] = await Promise.all([
+    db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
+    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,company,product,ingredient,published_at,attachment_names,classification,rationale,alert_state&source=eq.review&classification=eq.clinical_lead&order=published_at.desc,id.desc&limit=150"),
+    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,approval_changed_at,change_type,change_summary,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200"),
     db("GET", "mfds_monitor_runs?select=id,started_at,finished_at,status,reviews_checked,changes_checked,errors&order=id.desc&limit=5"),
+    db("GET", "rpc/mfds_monitor_archive_stats")
   ]);
-  // Only promote leads where the text actually signals indication, patient
-  // population, line of treatment, or combination therapy. Generic "change"
-  // reports stay stored but do not clutter the editorial shortlist.
-  const clinicalPattern = /적응증|효능.{0,2}효과|(?:치료|대상|환자|질환|암|림프종).{0,22}(?:추가|확대|삭제|축소)|(?:추가|확대|삭제|축소).{0,18}(?:치료|대상|환자|질환|암|림프종)|병용요법|병용\s*확대|(?:1|2|3)차\s*(?:치료|변경|확대)/i;
-  const leads = (raw||[]).filter((item: any) => {
-    const text = [item.title, ...(item.attachment_names||[])].join(" ");
-    return clinicalPattern.test(text);
-  }).map((item: any) => ({
-    ...item, review_state:"unverified",
-    priority_reason:"보고서 제목·첨부파일명에 적응증 또는 병용요법 관련 표현. 실제 허가변경일·전후 내용은 아직 미확인."
-  }));
-  // Backward compatibility: older GitHub Pages HTML can stay in mobile
-  // browser caches even after a new deployment. The original dashboard
-  // expects response.items; preserve it until every client has migrated.
-  const items = await db("GET",
-    "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,approval_changed_at,change_type,change_summary,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200");
   return {
-    events, leads, items, runs,
-    counts:{verified_events:(events||[]).length, leads:leads.length, review_records:(raw||[]).length},
-    description:"기존 수집 DB를 재활용하여 허가변경 사실(확인)과 심사보고서 단서(미검증)를 분리함."
+    events,leads,items:recent,runs,
+    counts:{verified_events:stats.verified,leads:(leads||[]).length,review_records:stats.review_changes,orders_records:stats.orders_total,review_total:stats.review_total},
+    archive:stats.cursors,
+    description:"실제 허가변경일을 확인한 이벤트와 변경심사자료/변경명령의 공개이력을 별도 구분합니다. 미확인 자료는 확정 변경으로 분류하지 않습니다."
   };
 }
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response(null,{status:204,headers:HEADERS});
   try {
-    if (req.method === "GET") return reply(await feed());
+    if (req.method === "GET") {
+      const url=new URL(req.url);
+      return reply(url.searchParams.get("view")==="archive"
+        ? await archiveFeed(url.searchParams) : await feed());
+    }
     if (req.method !== "POST") return reply({error:"Unsupported method"},405);
     if (!await validToken(req.headers.get("x-monitor-token") || "")) return reply({error:"Unauthorized"},401);
+    const input=await req.json().catch(()=>({}));
+    if(input?.mode==="backfill") return reply(await backfill());
     return reply(await collect());
   } catch (e) {
     return reply({error:String(e).slice(0,420)},500);
