@@ -377,7 +377,7 @@ function visibleSearchRows(){
   (year==="all"||x.changed_at?.startsWith(year))&&
   (type==="all"||(type==="추가"?(x.added_count>0||x.change_type==="추가"):
     type==="삭제"?(x.removed_count>0||x.change_type==="삭제"):
-    x.modified_count>0||x.change_type==="변경")))&&
+    x.modified_count>0||x.change_type==="변경"))&&
   (scope==="all"||(scope==="compared"?x.diff_status==="compared":x.diff_status!=="compared"))
  );
 }
