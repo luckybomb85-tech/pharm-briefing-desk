@@ -90,6 +90,53 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .catalogue-foot button{border:1px solid #c8d4e6;border-radius:7px;background:#fff;color:var(--blue);font-size:12px;font-weight:780;padding:8px 12px}
 .catalogue-foot span{font-size:11px;color:var(--muted)}
 @media(max-width:760px){.catalogue-list{grid-template-columns:1fr}.catalogue{padding:12px}}
+
+/* Clinical-change-first layout: summary visible, originals behind disclosure. */
+.entry summary{display:block;padding:16px 19px}
+.entry-header{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.entry-main{min-width:0;flex:1 1 230px}
+.entry-preview{display:grid;gap:5px;margin-top:11px;padding:10px 12px;border:1px solid #edf1f5;border-radius:7px;background:#f9fbfd}
+.preview-line{font-size:12px;color:#3e516a;line-height:1.48;display:flex;gap:7px}
+.preview-line .preview-symbol{font-weight:900;font-size:13px;color:#258663;flex-shrink:0}
+.preview-line.more-preview{font-weight:700;color:#537394}
+.entry[open] .entry-preview{display:none}
+.entry .arrow{font-size:18px;font-weight:750}
+.entry[open] summary{background:#f9fbff}
+.details-intro{font-size:12px;color:#576a83;margin:0 0 14px}
+.disease-group{border:1px solid #e8edf4;border-radius:8px;margin:11px 0 15px;overflow:hidden}
+.disease-title{font-size:13px;font-weight:850;color:#223752;padding:9px 12px;background:#f3f6fa;border-bottom:1px solid #e8edf4}
+.disease-inner{padding:10px 12px;display:flex;flex-direction:column;gap:9px}
+.change-unit{border-radius:7px;padding:10px 11px;border:1px solid #dbece4;background:#f3faf6}
+.change-unit.removed{border-color:#f0dada;background:#fff7f6}
+.change-unit.modified{border-color:#dfe8f5;background:#f7faff}
+.change-unit .unit-tag{font-size:11px;font-weight:900;display:block;margin-bottom:4px;color:#16724c}
+.change-unit.removed .unit-tag{color:#ae4444}
+.change-unit.modified .unit-tag{color:#2e6299}
+.change-unit .unit-text{font-size:13px;color:#23364c;overflow-wrap:anywhere;white-space:pre-wrap}
+.change-pair{display:flex;flex-direction:column;gap:6px}
+.change-pair .before{font-size:12px;color:#8e5252;text-decoration:line-through;background:#fff0f0;border-radius:4px;padding:6px 8px}
+.change-pair .after{font-size:13px;color:#244b78;background:#eaf2ff;border-radius:4px;padding:6px 8px}
+.cosmetic-note{font-size:12px;color:#607086;margin:11px 0 4px}
+.original-details{margin-top:15px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:white}
+.original-details>summary{display:flex!important;gap:8px;align-items:center;justify-content:space-between;padding:11px 13px!important;min-height:0!important;font-size:12px;font-weight:750;color:#45628b;list-style:none}
+.original-details>summary::-webkit-details-marker{display:none}
+.original-details[open]>summary{background:#f6f8fc;border-bottom:1px solid var(--border)}
+.original-body{padding:12px}
+.original-body .fulltext{border:0;max-height:410px;padding:0}
+.compact-message{font-size:12px;color:#63748b;padding:9px 0}
+.bar .bar-content{display:flex;flex-direction:column;gap:2px}
+.bar .bar-content strong{font-size:15px}
+.bar .bar-content span{font-size:11px;color:var(--muted)}
+@media(max-width:760px){
+ .entry summary{padding:13px!important}
+ .entry-header{gap:8px}
+ .entry-preview{margin-top:9px;padding:9px}
+ .preview-line{font-size:12px}
+ .disease-inner{padding:9px}
+ .change-unit{padding:9px}
+ .bar{margin-top:14px}
+}
+
 </style>
 </head>
 <body>
@@ -119,13 +166,13 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  <div id="catalogueItems" class="catalogue-list"></div>
  <div class="catalogue-foot" id="catalogueFoot" hidden><button id="catalogueMore" type="button">품목 더 보기</button><span>동일 성분·회사에 속한 다른 품목도 검색할 수 있습니다.</span></div>
 </section>
-<div class="bar"><strong id="resultCount">검색 결과 확인 중…</strong><small id="sortLabel">변경일 최신순</small></div>
+<div class="bar"><div class="bar-content"><strong id="resultCount">최근 효능·효과 변경이력 조회 중…</strong><span id="resultContext">검색창에서 품목을 찾으면 해당 의약품의 이력만 표시됩니다.</span></div><small id="sortLabel">실제 변경일 최신순</small></div>
 <section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
   <div class="empty">자료를 불러오는 중입니다.</div>
 </section>
 <div class="more" id="moreWrap" hidden><button type="button" id="moreButton">이전 변경이력 더 보기</button></div>
 <div id="sentinel"></div>
-<footer>식약처 품목 변경이력의 전자화된 원문을 비교합니다. ‘추가·삭제’ 표시는 문구의 증감 기준이며 적응증의 임상적 확대·폐지와 반드시 일치하지는 않습니다. 원문이 없는 변경일은 별도로 표시됩니다.</footer>
+<footer>식약처 공식 효능·효과 문구의 이전·이후 버전을 질환별로 비교합니다. 단순 띄어쓰기·표기 수정은 주요 변경에서 제외합니다. 자동 분류는 취재·의학적 검증을 대신하지 않으며, 원문이 없는 이력은 '내용 확인 필요'로 구분합니다.</footer>
 </main>
 <script>
 (()=>{
@@ -145,56 +192,113 @@ function normalizeLine(text){return String(text||"").normalize("NFKC").replace(/
 function makeLines(container,items,kind){
  for(const line of items||[])put(container,"div","line "+kind,line);
 }
+function displayType(row){
+ const k=String(row.change_type||"");
+ if(k==="추가")return "효능·효과 추가";
+ if(k==="삭제")return "효능·효과 삭제";
+ if(k==="변경")return "효능·효과 변경";
+ if(k==="추가·변경")return "추가·변경";
+ if(k==="추가·삭제")return "추가·삭제";
+ if(k==="삭제·변경")return "삭제·변경";
+ if(k==="표현 수정")return "표현 수정";
+ return "내용 확인 필요";
+}
+function smallPreview(entry){
+ const kind=entry.kind==="added"?"+":entry.kind==="removed"?"−":"~";
+ const context=(entry.context&&entry.context!=="효능·효과")?entry.context+" · ":"";
+ const treatment=(entry.after_text||entry.text||entry.before_text||"");
+ // Disease first; cut only in the compact preview. The full exact statement
+ // remains available after expanding the row.
+ const limit=117;
+ return {kind,text:context+(treatment.length>limit?treatment.slice(0,limit).trim()+"…":treatment)};
+}
+function renderChangeGroups(panel,row){
+ const details=Array.isArray(row.change_details)?row.change_details:[];
+ if(!details.length){
+  if(row.diff_status==="editorial_summary"){
+   put(panel,"h3","","주요 변경 내용");
+   put(panel,"p","hint",row.title||row.summary||row.after_text||"변경 내용이 확인된 자료입니다.");
+  }else{
+   put(panel,"p","compact-message","식약처 변경일은 확인되지만 비교 가능한 전후 원문이 없어 구체적인 추가·삭제 항목은 확인하지 못했습니다.");
+  }
+  return;
+ }
+ put(panel,"p","details-intro","실제 치료 대상·치료 차수·병용요법 문구가 달라진 부분만 질환별로 모았습니다.");
+ const groups=new Map();
+ for(const detail of details){
+  const ctx=detail.context&&detail.context!=="효능·효과"?detail.context:"효능·효과";
+  if(!groups.has(ctx))groups.set(ctx,[]);
+  groups.get(ctx).push(detail);
+ }
+ for(const [ctx,changes] of groups.entries()){
+  const group=put(panel,"section","disease-group");
+  put(group,"div","disease-title",ctx);
+  const inside=put(group,"div","disease-inner");
+  for(const detail of changes){
+   const change=put(inside,"div","change-unit"+(detail.kind==="removed"?" removed":detail.kind==="modified"?" modified":""));
+   const label=detail.kind==="added"?"＋ 새로 추가된 허가 문구":
+    detail.kind==="removed"?"－ 기존 허가 문구에서 삭제": "↔ 기존 허가 문구 변경";
+   put(change,"span","unit-tag",label);
+   if(detail.kind==="modified"){
+    const pair=put(change,"div","change-pair");
+    put(pair,"div","before","변경 전 · "+(detail.before_text||""));
+    put(pair,"div","after","변경 후 · "+(detail.after_text||detail.text||""));
+   }else put(change,"div","unit-text",detail.text||detail.after_text||detail.before_text||"");
+  }
+ }
+ if(Number(row.editorial_changes)>0){
+  put(panel,"p","cosmetic-note","참고: 공백·표기 또는 의미 변화가 작아 주요 추가·삭제로 보지 않은 문구 "+row.editorial_changes+"건은 제외했습니다.");
+ }
+}
+function addFullEfficacy(panel,row,label,text,highlight){
+ if(!text||!text.trim())return;
+ const details=put(panel,"details","original-details");
+ put(details,"summary","",label+" 펼쳐 보기");
+ const body=put(details,"div","original-body");
+ const textBox=put(body,"div","fulltext");
+ const plus=new Set((highlight||[]).map(normalizeLine));
+ for(const line of text.split("\n").filter(x=>x.trim())){
+  const added=plus.has(normalizeLine(line));
+  put(textBox,"div","line current"+(added?" is-added":""),line);
+ }
+}
 function renderCard(row){
  const card=element("details","entry");
  card.dataset.id=row.id;
  const summary=put(card,"summary","");
- const tagClass=row.change_type==="추가"?"add":row.change_type==="삭제"?"delete":"change";
- put(summary,"span","date",fmtDate(row.changed_at));
- put(summary,"span","tag "+tagClass,row.change_type);
- const heading=put(summary,"span","entry-main");
- put(heading,"span","drug",row.product);
- put(heading,"span","meta",[row.company,row.ingredient].filter(Boolean).join(" · "));
- put(summary,"span","arrow","⌄");
+ const top=put(summary,"div","entry-header");
+ const type=String(row.change_type||"");
+ const cls=type.includes("추가")?"add":type.includes("삭제")?"delete":"change";
+ put(top,"span","date",fmtDate(row.changed_at));
+ put(top,"span","tag "+cls,displayType(row));
+ const meta=put(top,"span","entry-main");
+ put(meta,"span","drug",row.product||"의약품");
+ put(meta,"span","meta",[row.company,row.ingredient].filter(Boolean).join(" · "));
+ put(top,"span","arrow","⌄");
+ const details=Array.isArray(row.change_details)?row.change_details:[];
+ const headlines=details.length?details.map(smallPreview):
+   (row.title?[{kind:"added",text:row.title}]:
+   (row.summary_lines||[]).slice(0,2).map(x=>({kind:"added",text:x})));
+ if(headlines.length){
+  const preview=put(summary,"div","entry-preview");
+  const show=headlines.slice(0,3);
+  for(const entry of show){
+   const p=put(preview,"div","preview-line");
+   const symbol=put(p,"span","preview-symbol",entry.kind);
+   if(entry.kind==="removed")symbol.style.color="#bc5555";
+   if(entry.kind==="modified")symbol.style.color="#436a9e";
+   put(p,"span","",entry.text);
+  }
+  if(headlines.length>3)put(preview,"span","preview-line more-preview","그 외 변경 "+(headlines.length-3)+"건");
+ }
  const panel=put(card,"div","content");
- const added=Array.isArray(row.added_lines)?row.added_lines:[];
- const removed=Array.isArray(row.removed_lines)?row.removed_lines:[];
- const official=row.diff_status==="compared";
- const hasDelta=official&&(added.length||removed.length);
- if(hasDelta){
-   put(panel,"h3","", "이번 변경에서 달라진 부분");
-   if(added.length){
-      put(panel,"p","hint","추가되거나 새 표현으로 바뀐 문구 ("+added.length+"개)");
-      const area=put(panel,"div","delta");
-      makeLines(area,added,"added");
-   }
-   if(removed.length){
-      put(panel,"p","hint","기존 문구에서 삭제되거나 교체된 부분 ("+removed.length+"개)");
-      const area=put(panel,"div","delta");
-      makeLines(area,removed,"removed");
-   }
- }
- if(row.after_text){
-   const full=row.diff_status==="editorial_summary"?"변경 내용 요약":"변경 후 효능·효과 전문";
-   put(panel,"h3","",full+" · "+fmtDate(row.changed_at));
-   if(row.diff_status==="editorial_summary")
-      put(panel,"p","hint","확인된 변경사항 요약입니다. 식약처 효능·효과 전문과는 구분됩니다.");
-   else if(row.diff_status==="baseline")
-      put(panel,"p","hint","비교 가능한 과거 원문이 없습니다.");
-   const box=put(panel,"div","fulltext");
-   const plus=new Set(added.map(normalizeLine));
-   for(const line of row.after_text.split("\n").filter(x=>x.trim())){
-      put(box,"div","line current"+(official&&plus.has(normalizeLine(line))?" is-added":""),line);
-   }
- }else{
-   put(panel,"p","hint","식약처에 변경일은 기록돼 있지만, 해당 시점의 전자화된 효능·효과 전문은 확보되지 않았습니다.");
- }
- if(!hasDelta&&official)
-    put(panel,"p","hint","표현상의 변경은 확인됐으나 문장 단위로 뚜렷한 추가·삭제를 구분하기 어렵습니다.");
+ renderChangeGroups(panel,row);
+ addFullEfficacy(panel,row,row.diff_status==="editorial_summary"?"확인된 변경 내용 요약":"변경 후 효능·효과 전문",row.after_text,details.filter(x=>x.kind==="added").map(x=>x.text));
+ addFullEfficacy(panel,row,"변경 전 효능·효과 전문",row.before_text,[]);
  const links=put(panel,"div","contents-footer");
- links.appendChild(originalLink(row.evidence_url,"식약처 원문 확인"));
- if(row.supplementary_url&&row.supplementary_url!==row.evidence_url)links.appendChild(originalLink(row.supplementary_url,"변경 확인 근거"));
- put(links,"small","","자료 기준: "+fmtDate(row.changed_at));
+ if(row.evidence_url)links.appendChild(originalLink(row.evidence_url,"식약처 공식 변경이력"));
+ if(row.supplementary_url&&row.supplementary_url!==row.evidence_url)links.appendChild(originalLink(row.supplementary_url,"추가 확인 근거"));
+ put(links,"small","","허가변경일 "+fmtDate(row.changed_at));
  return card;
 }
 function params(reset){
@@ -211,7 +315,8 @@ function params(reset){
  return url.toString();
 }
 function refreshLabel(){
- $("#resultCount").textContent="검색 결과 "+state.total+"건";
+ $("#resultCount").textContent="저장된 효능·효과 변경이력 "+state.total+"건";
+ $("#resultContext").textContent="전체 수집자료 기준 · 검색하려면 위에서 품목명·회사명·성분명을 입력하세요.";
  $("#moreWrap").hidden=!state.more;
  $("#moreButton").disabled=state.busy;
 }
@@ -270,7 +375,9 @@ function visibleSearchRows(){
  const year=$("#year").value,type=$("#type").value,scope=$("#scope").value;
  return records.filter(x=>
   (year==="all"||x.changed_at?.startsWith(year))&&
-  (type==="all"||x.change_type===type)&&
+  (type==="all"||(type==="추가"?(x.added_count>0||x.change_type==="추가"):
+    type==="삭제"?(x.removed_count>0||x.change_type==="삭제"):
+    x.modified_count>0||x.change_type==="변경")))&&
   (scope==="all"||(scope==="compared"?x.diff_status==="compared":x.diff_status!=="compared"))
  );
 }
@@ -283,7 +390,8 @@ function showSelectedHistory(){
  for(const entry of rows){
   root.appendChild(renderCard({...entry,product:candidate.product,company:candidate.company,ingredient:candidate.ingredient}));
  }
- $("#resultCount").textContent=candidate.product+" · 변경이력 "+rows.length+"건";
+ $("#resultCount").textContent=candidate.product+" · 효능·효과 변경 "+rows.length+"건";
+ $("#resultContext").textContent="해당 품목만 검색한 결과입니다. 위의 저장된 전체 건수와 별개입니다.";
  $("#sortLabel").textContent="실제 변경일 최신순";
  if(!rows.length){
   const empty=element("div","empty",state.lookupData?.total===0?
@@ -324,6 +432,7 @@ async function chooseDrug(candidate){
  renderCatalogue();
  $("#entries").replaceChildren(element("div","empty","식약처의 효능·효과 변경이력을 확인하고 있습니다…"));
  $("#resultCount").textContent=candidate.product+" · 변경이력 조회 중…";
+ $("#resultContext").textContent="식약처 품목 기준 검색을 진행하고 있습니다.";
  $("#moreWrap").hidden=true;
  $("#searchButton").disabled=true;
  try{
@@ -355,6 +464,7 @@ async function searchCatalogue(query,append=false){
   state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
   $("#entries").replaceChildren(element("div","empty","식약처 전체 품목정보에서 검색하고 있습니다…"));
   $("#resultCount").textContent="식약처 품목 검색 중…";
+  $("#resultContext").textContent="전체 저장된 이력이 아닌 실시간 품목 검색입니다.";
   $("#catalogue").hidden=true;$("#moreWrap").hidden=true;
  }
  try{
@@ -371,7 +481,8 @@ async function searchCatalogue(query,append=false){
    return;
   }
   renderCatalogue();
-  $("#resultCount").textContent="식약처 검색 결과 "+state.lookupMatches.length+"개 품목 · 하나를 선택해 변경이력 조회";
+  $("#resultCount").textContent="식약처 검색 결과 "+state.lookupMatches.length+"개 품목";
+  $("#resultContext").textContent="위에서 품목을 선택하면 해당 의약품의 변경 이력만 표시됩니다.";
   $("#entries").replaceChildren(element("div","empty",state.lookupMatches.length===1?
    "검색된 품목의 변경이력을 확인하고 있습니다…":"위 목록에서 확인할 품목을 선택해주세요."));
   if(state.lookupMatches.length===1&&!append)await chooseDrug(state.lookupMatches[0]);
