@@ -44,6 +44,9 @@ try{
   '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide")})',
   v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=15&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
  console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
+ const globalEnd=await evalPage('({buttonHidden:document.querySelector("#moreWrap")?.hidden,buttonDisplay:getComputedStyle(document.querySelector("#moreWrap")).display,message:document.querySelector("#historyEnd")?.textContent||"",label:document.querySelector("#resultCount")?.textContent||""})');
+ ensure(globalEnd.buttonHidden&&globalEnd.buttonDisplay==="none"&&globalEnd.message.includes("모두 표시했습니다")&&globalEnd.label.includes("일부 품목"),"Global last-page button shown despite no more records: "+JSON.stringify(globalEnd));
+ console.log("EXHAUSTED_GLOBAL_HISTORY_BUTTON_HIDDEN_OK",JSON.stringify(globalEnd));
  await evalPage('document.querySelector("details.entry summary").click()');
  const detail=await until("Expanding clinical change groups",
   '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",diseases:document.querySelectorAll("details.entry[open] .disease-group").length,units:document.querySelectorAll("details.entry[open] .change-unit").length,originals:document.querySelectorAll("details.entry[open] .original-details").length})',
@@ -76,6 +79,13 @@ try{
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,preview:document.querySelector("details.entry .entry-preview")?.textContent||"",catalogue:document.querySelectorAll(".catalogue-choice").length})',
   v=>v.count?.includes("2건")&&v.cards===2&&v.catalogue===1&&v.preview.includes("소세포폐암")&&v.preview.includes("비인두암"));
  console.log("TEVIMBRA_SCOPED_TWO_HISTORY_OK",JSON.stringify({count:tevimbra.count,cards:tevimbra.cards,preview:tevimbra.preview.slice(0,320)}));
+ const earliest=await evalPage('({baseline:document.querySelector("#entries .baseline-record")?.textContent||"",open:document.querySelector("#entries .baseline-record")?.open,hidden:document.querySelector("#moreWrap")?.hidden,display:getComputedStyle(document.querySelector("#moreWrap")).display,end:document.querySelector("#historyEnd")?.textContent||"",changedCards:document.querySelectorAll("#entries details.entry").length})');
+ ensure(earliest.baseline.includes("2023.11.20")&&earliest.baseline.includes("변경 건수 제외")&&earliest.hidden&&earliest.display==="none"&&earliest.changedCards===2&&earliest.end.includes("2건"),"Tevimbra earliest official version or pagination state failed: "+JSON.stringify(earliest));
+ console.log("TEVIMBRA_EARLIEST_ORIGINAL_AVAILABLE_OK",JSON.stringify({baseline:earliest.baseline.slice(0,200),hidden:earliest.hidden,display:earliest.display,end:earliest.end}));
+ await evalPage('document.querySelector("#entries .baseline-record summary").click()');
+ const originalVersion=await evalPage('({open:document.querySelector("#entries .baseline-record")?.open,lines:document.querySelectorAll("#entries .baseline-record .line.current").length})');
+ ensure(originalVersion.open&&originalVersion.lines>=1,"Original Tevimbra version cannot expand: "+JSON.stringify(originalVersion));
+ console.log("TEVIMBRA_ORIGINAL_VERSION_EXPAND_OK",JSON.stringify(originalVersion));
  await evalPage('document.querySelector("details.entry summary").click()');
  const tevimbraExpanded=await until("Tevimbra three substantive additions only",
   '({open:document.querySelector("details.entry")?.open,groups:document.querySelectorAll("details.entry[open] .disease-group").length,adds:document.querySelectorAll("details.entry[open] .change-unit:not(.modified):not(.removed)").length,removed:document.querySelectorAll("details.entry[open] .change-unit.removed").length,cosmetic:document.querySelector("details.entry[open] .cosmetic-note")?.textContent||"",hiddenOriginal:document.querySelectorAll("details.entry[open] details.original-details:not([open])").length})',
