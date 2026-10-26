@@ -1148,6 +1148,119 @@ async function originalMasterStatus():Promise<unknown>{
   note:"신약 공고를 품목기준코드로 연결하는 중이며 대조약·바이오·희귀·개량신약·자료제출의약품은 공식 증거 확인 시 각각 별도로 편입합니다."};
 }
 
+
+// Resolve subsequent products by exact ingredient, only when the user
+// explicitly requests related-product history. Never blanket-label every
+// same-ingredient medicine a generic/biosimilar.
+const activeIngredientTokens=(str:string)=>[...new Set(String(str||"").normalize("NFKC")
+ .split(/[\/;,\n]/).map(x=>x.replace(/\([^)]*\)/g,"").replace(/[\s·.()]/g,"").toLocaleLowerCase("ko-KR"))
+ .filter(x=>x.length>=2))].sort();
+async function inspectSameIngredient(params:URLSearchParams):Promise<unknown>{
+ const seq=String(params.get("item_seq")||"");
+ if(!/^\d{9}$/.test(seq))throw Error("품목기준코드 오류");
+ const page=Math.max(1,Math.min(30,Number(params.get("page")||1)||1));
+ const [masters,targets]=await Promise.all([
+   db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient&item_seq=eq."+seq+"&limit=1"),
+   db("GET","mfds_monitor_drug_targets?select=item_seq,product,company,ingredient&item_seq=eq."+seq+"&limit=1")
+ ]);
+ const main=(masters||[])[0]||(targets||[])[0];
+ if(!main)throw Error("조회할 품목의 식약처 성분정보를 찾지 못했습니다");
+ const components=activeIngredientTokens(main.ingredient);
+ if(!components.length||components[0].length>65)throw Error("동일 성분 검색에 필요한 단일 성분명을 확인할 수 없습니다");
+ const term=components[0];
+ const url=new URL(ORIGIN+"/searchDrug");
+ url.searchParams.set("searchYn","Y");
+ url.searchParams.set("page",String(page));
+ url.searchParams.set("ingrName1",term);
+ const markup=await html(url.toString());
+ const candidates=parseDrugCatalogue(markup);
+ const rawTotal=Number(markup.match(/class=["']sch_info["'][\s\S]{0,280}?<strong>\s*([\d,]+)\s*<\/strong>/i)?.[1]?.replace(/,/g,"")||0);
+ const filtered=candidates.filter(x=>
+  x.item_seq!==seq && JSON.stringify(activeIngredientTokens(x.ingredient))===JSON.stringify(components)
+ );
+ const roles=await db("GET","mfds_monitor_product_roles?select=item_seq,product_role,watch_scope&item_seq=in.("+
+  [...new Set([seq,...filtered.map(x=>x.item_seq)])].join(",")+")&limit=100");
+ const kinds=new Map((roles||[]).map((x:any)=>[x.item_seq,x]));
+ const info=filtered.map(x=>({
+  ...x,
+  verified_role:kinds.get(x.item_seq)?.product_role||null,
+  role_verified:!!kinds.get(x.item_seq),
+  change_dates:[] as string[],
+  electronic_revision_count:null as number|null
+ }));
+ // Only annotate six candidates per request; a user may inspect any other
+ // row individually without running parallel detail requests for all generics.
+ await Promise.allSettled(info.slice(0,6).map(async item=>{
+  const u=ORIGIN+"/pbp/CCBBB01/getItemChangeHistList?itemSeq="+item.item_seq+"&docType=EE&page=1";
+  const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),12500);
+  try{
+   const r=await fetch(u,{signal:ctl.signal,headers:{"User-Agent":"Mozilla/5.0","Accept":"text/html"}});
+   if(!r.ok)throw Error("HTTP "+r.status);
+   const h=await r.text();
+   if(!h.includes('id="hist_list"'))return;
+   const versions=parseOfficialHistoryVersions(h);
+   item.change_dates=versions.slice(1).map(x=>x.changed_at).sort().reverse().slice(0,5);
+   item.electronic_revision_count=Math.max(0,versions.length-1);
+  }catch(_ignored){}finally{clearTimeout(timer);}
+ }));
+ return {item_seq:seq,ingredient:main.ingredient,product:main.product,
+  page,has_more:rawTotal>page*15,total_at_least:rawTotal,matches:info,
+  note:"식약처에서 현재 조회 가능한 동일 성분 품목이며, 후발약·오리지널 여부는 별도 공식 근거가 있을 때만 구분합니다. 전자화된 변경이력과 전체 허가변경 이력은 다를 수 있습니다."};
+}
+async function syncOriginalMasterHistory(maxItems:number=6):Promise<unknown>{
+ const n=Math.max(1,Math.min(10,Number(maxItems)||6));
+ const [roles,targets]=await Promise.all([
+  db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope,classification_confidence&watch_scope=eq.primary&classification_confidence=in.(official_list,verified_review)&limit=1500"),
+  db("GET","mfds_monitor_drug_targets?select=item_seq,active,last_checked_at,source_url&limit=1500")
+ ]);
+ const targetBySeq=new Map((targets||[]).map((t:any)=>[t.item_seq,t]));
+ const pending=(roles||[]).filter((r:any)=>!targetBySeq.get(r.item_seq)?.active)
+ .sort((a:any,b:any)=>{
+  const x=String(targetBySeq.get(a.item_seq)?.last_checked_at||"");
+  const y=String(targetBySeq.get(b.item_seq)?.last_checked_at||"");
+  return x.localeCompare(y)||a.item_seq.localeCompare(b.item_seq);
+ }).slice(0,n);
+ const results:any[]=[];
+ async function process(item:any){
+  try{
+   const inspected:any=await inspectMFDSItem(new URLSearchParams({item_seq:item.item_seq}));
+   const baseline=inspected.initial_version_date||"";
+   const now=new Date().toISOString(),today=now.slice(0,10);
+   const rows=(inspected.items||[]).filter((x:any)=>
+     x.changed_at && x.changed_at!==baseline && x.changed_at<=today
+    ).map((ev:any)=>({
+      item_seq:item.item_seq,product:item.product,company:item.company,
+      ingredient:item.ingredient,changed_at:ev.changed_at,change_section:"효능·효과",
+      classification:ev.change_type||"확인 필요",
+      evidence_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+item.item_seq,
+      before_text:ev.before_text||null,after_text:ev.after_text||null,
+      added_lines:ev.added_lines||[],removed_lines:ev.removed_lines||[],
+      diff_status:ev.diff_status,detail_checked_at:now,last_seen_at:now
+    }));
+   for(let i=0;i<rows.length;i+=25)await db("POST",
+    "mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",
+    rows.slice(i,i+25),"resolution=merge-duplicates,return=minimal");
+   if(inspected.official_change_total!=null&&inspected.official_efficacy_total!=null)
+    await db("POST","mfds_monitor_history_summaries?on_conflict=item_seq",{
+     item_seq:item.item_seq,official_change_total:inspected.official_change_total,
+     official_efficacy_total:inspected.official_efficacy_total,verified_at:now
+    },"resolution=merge-duplicates,return=minimal");
+   await db("PATCH","mfds_monitor_drug_targets?item_seq=eq."+item.item_seq,{
+    last_checked_at:now,last_checked_status:"original-master:ok:"+rows.length
+   },"return=minimal");
+   results.push({item_seq:item.item_seq,product:item.product,records:rows.length,status:"ok"});
+  }catch(error){
+   const msg=String(error).slice(0,180);
+   await db("PATCH","mfds_monitor_drug_targets?item_seq=eq."+item.item_seq,{
+    last_checked_at:new Date().toISOString(),last_checked_status:msg
+   },"return=minimal").catch(()=>{});
+   results.push({item_seq:item.item_seq,status:"error",error:msg});
+  }
+ }
+ for(let i=0;i<pending.length;i+=3)await Promise.all(pending.slice(i,i+3).map(process));
+ return {mode:"original_sync",available:(roles||[]).length,processed:results.length,results};
+}
+
 async function feed(): Promise<unknown> {
   const [events, leads, recent, runs, stats, efficacy, targets] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
@@ -1173,6 +1286,7 @@ Deno.serve(async (req: Request) => {
       const url=new URL(req.url);
       const view=url.searchParams.get("view");
       if(view==="master")return reply(await originalMasterStatus());
+      if(view==="related")return reply(await inspectSameIngredient(url.searchParams));
       if(view==="lookup")return reply(await lookupMFDSCatalogue(url.searchParams));
       if(view==="inspect")return reply(await inspectMFDSItem(url.searchParams));
       return reply(view==="efficacy"
@@ -1187,6 +1301,7 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="efficacy_sync") return reply(await syncOfficialEfficacyHistory());
     if(input?.mode==="master_import")return reply(await importMFDSNewDrugDesignation(Number(input?.year)||2025));
     if(input?.mode==="master_resolve")return reply(await resolveMFDSOriginalSeeds(Number(input?.limit)||12));
+    if(input?.mode==="original_sync")return reply(await syncOriginalMasterHistory(Number(input?.limit)||6));
     if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
   } catch (e) {
