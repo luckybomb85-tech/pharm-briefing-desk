@@ -414,8 +414,13 @@ function showSelectedHistory(){
  const info=all!==null&&all!==undefined&&ef!==null&&ef!==undefined?
   "식약처 허가사항 변경 전체 "+all+"개 항목 중 효능·효과 변경 "+ef+"건":
   "해당 품목의 확인 가능한 효능·효과 이력";
- $("#resultContext").textContent=info+(missing?" · 전후 원문 비교 불가 "+missing+"건":"")+
-   " · 현재 조건에 "+rows.length+"건 표시";
+ const sourceNote=state.lookupData?.official_counts_from_cache?
+  " · 저장된 최근 공식 집계(식약처 상세 조회 일시 지연)":
+  state.lookupData?.official_history_warning?
+  " · 식약처 전체 변경 건수는 일시 확인 불가":"";
+ $("#resultContext").textContent=info+sourceNote+
+  (missing?" · 전후 원문 비교 불가 "+missing+"건":"")+
+  " · 현재 조건에 "+rows.length+"건 표시";
  $("#sortLabel").textContent="실제 변경일 최신순";
  const end=$("#historyEnd");
  end.hidden=false;
