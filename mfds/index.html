@@ -530,8 +530,11 @@ async function searchCatalogue(query,append=false){
   state.lookupTotalAtLeast=Math.max(state.lookupTotalAtLeast,Number(result.total_at_least)||0);
   state.lookupPartial=state.lookupPartial||!!result.partial;
   if(!state.lookupMatches.length){
-   $("#catalogue").hidden=true;$("#entries").replaceChildren(element("div","empty","식약처 의약품 품목검색에서도 일치하는 품목을 찾지 못했습니다. 제품명 또는 성분명을 확인해주세요."));
-   $("#resultCount").textContent="식약처 품목검색 결과 0건";
+   $("#catalogue").hidden=true;
+   $("#entries").replaceChildren(element("div","empty",result.partial?
+    "식약처의 일부 검색 경로에서 오류가 발생했습니다. 검색 결과가 없다고 단정할 수 없습니다. 다시 검색해 주세요.":
+    "식약처 의약품 품목검색에서도 일치하는 품목을 찾지 못했습니다. 제품명 또는 성분명을 확인해주세요."));
+   $("#resultCount").textContent=result.partial?"식약처 검색 일부 실패":"식약처 품목검색 결과 0건";
    return;
   }
   renderCatalogue();
