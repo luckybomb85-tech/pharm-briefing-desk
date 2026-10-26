@@ -19,7 +19,7 @@ async function evalPage(expression){
 }
 async function until(title,expr,test){
  let val;
- for(let i=0;i<60;i++){val=await evalPage(expr);if(test(val))return val;await sleep(300);}
+ for(let i=0;i<125;i++){val=await evalPage(expr);if(test(val))return val;await sleep(300);}
  throw Error(title+" timed out: "+JSON.stringify(val));
 }
 async function submit(filter){
@@ -42,7 +42,7 @@ try{
  });
  const ready=await until("Simple efficacy screen",
   '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide")})',
-  v=>v.title?.includes("효능·효과 변경이력")&&v.count?.includes("15건")&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
+  v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=15&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
  console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
  await evalPage('document.querySelector("details.entry summary").click()');
  const detail=await until("Expanding actual diff",
@@ -69,6 +69,28 @@ try{
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
   v=>v.count?.includes("0건")&&v.cards===0&&v.body.includes("검색 조건"));
  console.log("DELETE_FILTER_EMPTY_OK",none.count);
+
+ // New: unregistered MFDS catalogue entries must now be searchable.
+ await submit({keyword:"오젬픽",year:"all",type:"all",scope:"all"});
+ const ozempic=await until("Unregistered Ozempic live search",
+  '({count:document.querySelector("#resultCount")?.textContent,match:document.querySelectorAll(".catalogue-choice").length,cards:document.querySelectorAll("details.entry").length,brand:document.querySelector("details.entry")?.textContent||""})',
+  v=>v.match>=1&&v.cards>=1&&v.brand.includes("오젬픽")&&v.count?.includes("변경이력"));
+ console.log("LIVE_UNREGISTERED_DRUG_SEARCH_OK",JSON.stringify({matches:ozempic.match,cards:ozempic.cards}));
+ await submit({keyword:"세마글루티드",year:"all",type:"all",scope:"all"});
+ const ingredientMatches=await until("Global MFDS ingredient lookup",
+  '({matches:document.querySelectorAll(".catalogue-choice").length,text:document.querySelector("#catalogueItems")?.textContent||"",count:document.querySelector("#resultCount")?.textContent||""})',
+  v=>v.matches>=6&&v.text.includes("위고비")&&v.text.includes("오젬픽"));
+ console.log("LIVE_INGREDIENT_PRODUCT_DISCOVERY_OK",ingredientMatches.matches);
+ await evalPage('(()=>{const b=[...document.querySelectorAll(".catalogue-choice")].find(x=>x.textContent.includes("오젬픽"));if(!b)throw Error("no Ozempic product to select");b.click();return true})()');
+ const chosen=await until("Product history for selected ingredient match",
+  '({cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",count:document.querySelector("#resultCount")?.textContent||""})',
+  v=>v.cards>=1&&v.first.includes("오젬픽")&&v.count.includes("변경이력"));
+ console.log("LIVE_PRODUCT_SELECT_HISTORY_OK",chosen.cards);
+ await submit({keyword:"노보노디스크",year:"all",type:"all",scope:"all"});
+ const companyMatches=await until("Company-wide MFDS lookup",
+  '({matches:document.querySelectorAll(".catalogue-choice").length,items:document.querySelector("#catalogueItems")?.textContent||""})',
+  v=>v.matches>=8&&v.items.includes("노디트로핀"));
+ console.log("LIVE_COMPANY_SEARCH_OK",companyMatches.matches);
  const id=++seq,awaitMetric=new Promise((resolve,reject)=>pending.set(id,{resolve,reject}));
  socket.send(JSON.stringify({id,method:"Emulation.setDeviceMetricsOverride",params:{width:390,height:844,deviceScaleFactor:1,mobile:true}}));
  await awaitMetric;
