@@ -589,12 +589,16 @@ function editorialChangeKind(eventType:string):string {
 async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   // Dedicated efficacy-only read API. All dates are approval-change dates,
   // never the publication dates of delayed review reports.
-  const [history,editorial,officialPrimaries]=await Promise.all([
+  const [history,editorial,officialPrimaries,gapClosures,relatedRoles]=await Promise.all([
     db("GET","mfds_monitor_efficacy_history?select=id,item_seq,product,company,ingredient,changed_at,classification,before_text,after_text,added_lines,removed_lines,diff_status,evidence_url&order=changed_at.desc,id.desc&limit=1000"),
     db("GET","mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=500"),
-    db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,product_role,classification_confidence&watch_scope=eq.primary&classification_confidence=in.(official_list,verified_review)&limit=1500")
+    db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,product_role,classification_confidence&watch_scope=eq.primary&classification_confidence=in.(official_list,verified_review)&limit=1500"),
+    db("GET","mfds_monitor_indication_gap_watches?select=item_seq,observed_change_date,status&status=eq.closed&limit=300"),
+    db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,product_role,classification_confidence&watch_scope=eq.related&limit=400")
   ]);
   const originals=new Map<string,any>((officialPrimaries||[]).map((x:any)=>[x.item_seq,x]));
+  const relatedMap=new Map<string,any>((relatedRoles||[]).map((x:any)=>[x.item_seq,x]));
+  const gapSet=new Set((gapClosures||[]).map((x:any)=>x.item_seq+"@"+x.observed_change_date));
   const normalizedBrand=(x:string)=>String(x||"").normalize("NFKC").toLocaleLowerCase("ko-KR")
     .replace(/\([^)]*\)/g,"").replace(/[\s·.]/g,"");
   const originalByBrand=(name:string,company:string)=>(officialPrimaries||[]).find((x:any)=>{
@@ -609,13 +613,15 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   const merged:any[]=[];
   for(const row of history||[]){
     if(row.diff_status==="baseline")continue;
-    const original=originals.get(row.item_seq);
+    const isGapClosure=gapSet.has(row.item_seq+"@"+row.changed_at);
+    const original=originals.get(row.item_seq)||(isGapClosure?relatedMap.get(row.item_seq):null);
     if(!original)continue;
     const key=editorialKey(row.product,row.changed_at);
     const event=reviewed.get(key);
     if(event)included.add(key);
     const analyzed=substantiveEffectDiff(row.before_text||"",row.after_text||"");
     let kind=analyzed.change_type;
+    if(isGapClosure&&analyzed.added_count>0)kind="추가";
     if(event && ["addition","deletion","reduction"].includes(event.event_type) && kind!=="확인 필요"&&kind!=="표현 수정"){
       if(event.event_type==="addition"&&analyzed.added_count)kind="추가";
       else if(event.event_type!=="addition"&&analyzed.removed_count)kind="삭제";
@@ -624,6 +630,7 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
       id:"official-"+row.id,item_seq:row.item_seq,changed_at:row.changed_at,product:row.product,
       company:row.company,ingredient:row.ingredient,change_type:kind,
       product_role:original.product_role,classification_confidence:original.classification_confidence,
+      gap_watch:isGapClosure,
       title:event?.title||null,summary:event?.details||"",
       before_text:row.before_text||"",after_text:row.after_text||"",
       added_lines:analyzed.changes.filter(x=>x.kind==="added").map(x=>x.text),
@@ -1507,6 +1514,57 @@ async function syncOriginatorFamily(maxGroups:number=2):Promise<unknown>{
   note:"동일 원개발사·동일 성분의 허가심사유형이 공식 확인된 제품만 기본 감시에 추가하며 자동 탐색은 회당 최대 3성분·각 7품목으로 제한합니다."};
 }
 
+
+// Small, explicitly verified indication gaps only. This does not crawl the
+// generic market: one previously confirmed generic per request by default.
+async function syncVerifiedIndicationGaps(maxItems:number=2):Promise<unknown>{
+ const limit=Math.max(1,Math.min(3,Number(maxItems)||2));
+ const targets=await db("GET","mfds_monitor_indication_gap_watches?select=item_seq,original_item_seq,ingredient,distinctive_phrase,status,initial_efficacy,checked_count,evidence_url&status=eq.gap&order=last_checked_at.asc.nullsfirst&limit="+limit);
+ const results:any[]=[];
+ for(const watch of targets||[]){
+  let status="gap",error="",changeDate:null|string=null;
+  try{
+   const data:any=await inspectMFDSItem(new URLSearchParams({item_seq:watch.item_seq}));
+   const current=String(data.current_efficacy||"");
+   const key=normalizedEffectText(watch.distinctive_phrase||"");
+   const nowPresent=normalizedEffectText(current).includes(key);
+   const oldPresent=normalizedEffectText(watch.initial_efficacy||"").includes(key);
+   if(nowPresent&&!oldPresent){
+    // Current wording alone is insufficient proof: require an actual official
+    // dated change with the newly present indication in its after-text.
+    const changes=(data.items||[]).filter((x:any)=>
+      x.diff_status==="compared"&&
+      x.changed_at!==data.initial_version_date &&
+      normalizedEffectText(x.after_text||"").includes(key)&&
+      !normalizedEffectText(x.before_text||"").includes(key)
+    ).sort((a:any,b:any)=>b.changed_at.localeCompare(a.changed_at));
+    const event=changes[0];
+    if(event){
+     changeDate=event.changed_at;status="closed";
+     const roles=await db("GET","mfds_monitor_product_roles?select=product,company,ingredient&item_seq=eq."+watch.item_seq+"&limit=1");
+     const product=roles[0];
+     if(!product)throw Error("허가 품목 마스터 등록 필요");
+     await db("POST","mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",{
+       item_seq:watch.item_seq,product:product.product,company:product.company,
+       ingredient:product.ingredient,changed_at:event.changed_at,change_section:"효능·효과",
+       classification:"추가",evidence_url:watch.evidence_url,
+       before_text:event.before_text,after_text:event.after_text,
+       added_lines:event.added_lines||[],removed_lines:event.removed_lines||[],
+       diff_status:"compared",detail_checked_at:new Date().toISOString(),last_seen_at:new Date().toISOString()
+     },"resolution=merge-duplicates,return=minimal");
+    }else status="review_needed";
+   }
+  }catch(e){status="error";error=String(e).slice(0,180)}
+  const payload:any={status,last_checked_at:new Date().toISOString(),last_error:error||null,
+    checked_count:Number(watch.checked_count||0)+1};
+  if(changeDate)payload.observed_change_date=changeDate;
+  await db("PATCH","mfds_monitor_indication_gap_watches?item_seq=eq."+watch.item_seq,payload,"return=minimal");
+  results.push({item_seq:watch.item_seq,status,change_date:changeDate,error:error||undefined});
+ }
+ return {mode:"indication_gap_sync",checked:results.length,results,
+  note:"허가사항 차이가 확인된 후발약만 조회하며 실제 효능·효과 변경일과 원문 확대가 검증될 때만 첫 화면에 추가합니다."};
+}
+
 async function syncOriginalMasterHistory(maxItems:number=6):Promise<unknown>{
  const n=Math.max(1,Math.min(10,Number(maxItems)||6));
  const [roles,targets]=await Promise.all([
@@ -1607,6 +1665,7 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="master_stage_new_drugs")return reply(await stageCurrentMFDSNewDrugReviews());
     if(input?.mode==="original_sync")return reply(await syncOriginalMasterHistory(Number(input?.limit)||6));
     if(input?.mode==="originator_family_sync")return reply(await syncOriginatorFamily(Number(input?.limit)||2));
+    if(input?.mode==="indication_gap_sync")return reply(await syncVerifiedIndicationGaps(Number(input?.limit)||2));
     if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
   } catch (e) {
