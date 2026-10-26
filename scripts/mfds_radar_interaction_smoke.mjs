@@ -42,7 +42,7 @@ try{
  });
  const ready=await until("Original-first efficacy timeline",
   '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide"),dates:[...document.querySelectorAll("details.entry .date")].map(x=>x.textContent)})',
-  v=>v.title?.includes("효능·효과 변경이력")&&v.count?.includes("오리지널 중심")&&Number((v.count||"").match(/\\d+/)?.[0])>=50&&v.cards>=10&&v.noCards&&v.noGuide&&v.dates.every((d,i)=>i===0||d<=v.dates[i-1]));
+  v=>v.title?.includes("효능·효과 변경이력")&&v.count?.includes("오리지널 중심")&&Number((v.count||"").match(/\d+/)?.[0])>=50&&v.cards>=10&&v.noCards&&v.noGuide&&v.dates.every((d,i)=>i===0||d<=v.dates[i-1]));
  console.log("ORIGINAL_FIRST_CHRONOLOGY_OK",JSON.stringify({count:ready.count,first:ready.dates.slice(0,5)}));
  const summary=await evalPage('({subtitle:document.querySelector("header .subtitle")?.textContent||"",contextHidden:document.querySelector("#resultContext")?.hidden,label:document.querySelector("#resultCount")?.textContent||""})');
  ensure(!summary.subtitle&&summary.contextHidden&&!summary.label.includes("일부 품목"),"Original-only concise header invalid "+JSON.stringify(summary));
