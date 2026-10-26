@@ -41,28 +41,28 @@ input{min-width:210px;flex:1}select{max-width:195px}
 <div class="wrap">
 <header class="head">
 <div><div class="eyebrow">DAILYPHARM · MFDS MONITOR</div><h1>의약품 허가변경 레이더</h1>
-<p class="sub">식약처 심사결과·변경명령 자동 감시 · 매일 08:20 / 13:20 / 18:20</p></div>
+<p class="sub">허가사항의 실제 변경일 기준 · 매일 08:20 / 13:20 / 18:20</p></div>
 <button class="btn" type="button" id="reload">새로고침</button>
 </header>
-<div class="alert"><strong>중요:</strong> '적응증 추가 후보'는 식약처 공개 문서의 제목·첨부파일명을 기준으로 추린 검토 대상입니다. 실제 적응증 추가 승인 여부는 공식 원문과 허가사항을 확인해야 합니다.</div>
+<div class="alert"><strong>중요:</strong> 실제 허가 변경일과 변경 전후 내용을 확인한 건만 기본 화면에 표시합니다. 검증 전 자료는 별도 필터에서 확인할 수 있습니다.</div>
 <div class="metrics">
-<div class="metric"><label>첨부명에 확대 단서</label><strong id="high">—</strong><small>보고서 파일명 분석 결과</small></div>
-<div class="metric"><label>변경허가 검토 후보</label><strong id="candidates">—</strong><small>고우선 포함</small></div>
+<div class="metric"><label>확인된 허가 변경</label><strong id="high">—</strong><small>변경일·변경내용 확인 기준</small></div>
+<div class="metric"><label>검증 대기 자료</label><strong id="candidates">—</strong><small>알림 대상에서 제외</small></div>
 <div class="metric"><label>새로 발견된 후보</label><strong id="newCount">—</strong><small>최초 수집 기준 제외</small></div>
 <div class="metric"><label>마지막 수집</label><strong style="font-size:17px" id="lastRun">—</strong><small id="runDetail">자동 수집 대기</small></div>
 </div>
 <section class="panel">
 <div class="bar"><h2>변경허가 확인 목록 <span class="status" id="shown"></span></h2><span class="status" id="feedStatus">서버 연결 중…</span></div>
 <div class="filters">
-<select id="category" aria-label="분류 필터"><option value="candidates">적응증 변경 후보</option><option value="high">확대 표현 확인</option><option value="all">모든 공개 게시물</option></select>
+<select id="category" aria-label="분류 필터"><option value="verified">확인된 허가 변경</option><option value="candidates">검증 대기 자료</option><option value="all">전체 수집 자료</option></select>
 <select id="source" aria-label="출처 필터"><option value="all">전체 출처</option><option value="review">변경허가 심사결과</option><option value="change_order">허가사항 변경명령</option></select>
-<select id="fresh" aria-label="신규만 보기"><option value="all">신규 + 기존 자료</option><option value="new">새로 발견된 자료만</option></select>
+<select id="fresh" aria-label="신규만 보기"><option value="all">전체 기간</option><option value="new">새로 발견된 자료만</option></select>
 <input id="query" placeholder="제품명·회사명·성분명 검색" aria-label="검색어">
 </div>
 <div id="items" class="rows"><div class="empty">수집 결과를 불러오는 중입니다.</div></div>
 </section>
 <p class="foot">원문 출처: <a class="link" target="_blank" rel="noopener" href="https://nedrug.mfds.go.kr/pbp/CCBAC02/getList">의약품 등 심사결과정보 공개</a> · <a class="link" target="_blank" rel="noopener" href="https://nedrug.mfds.go.kr/CCBAR01F012/getList">허가사항 변경명령</a><br>
-첫 수집분은 기존 자료로 저장하므로 '신규'에 포함하지 않습니다. 수집 실패 시 마지막 성공 시간을 반드시 확인하세요. 이 화면은 별도 자동 푸시 없이도 최근 수집 결과를 보여주며, 외부 알림은 별도 채널 설정이 필요합니다.</p>
+실제 허가 변경일이 확인되지 않은 심사보고서는 기본 화면과 알림에서 제외합니다. 수집 실패 시 마지막 성공 시간을 반드시 확인하세요. 이 화면은 별도 자동 푸시 없이도 최근 수집 결과를 보여주며, 외부 알림은 별도 채널 설정이 필요합니다.</p>
 </div>
 <script>
 (function(){
@@ -76,14 +76,15 @@ function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className
 function addText(parent,cls,text){parent.appendChild(el("span",cls,text));}
 function setText(id,t){$(id).textContent=String(t);}
 function render(){
- const high=items.filter(x=>x.classification==="high_candidate");
+ const high=items.filter(x=>x.classification==="verified_change");
  const candidate=items.filter(x=>newKind(x.classification));
  const newCandidates=candidate.filter(x=>x.alert_state==="new");
- setText("#high",high.length);setText("#candidates",candidate.length);setText("#newCount",newCandidates.length);
+ setText("#high",high.length);setText("#candidates",candidate.length);setText("#newCount",items.filter(x=>x.classification==="verified_change"&&x.alert_state==="new").length);
  const last=runs[0];setText("#lastRun",last?fmtDate(last.finished_at||last.started_at):"미실행");
  setText("#runDetail",last?(last.status==="success"?"정상 · ":"일부 오류 · ")+(last.reviews_checked+last.changes_checked)+"건 확인":"수집 기록 없음");
  const category=$("#category").value,source=$("#source").value,fresh=$("#fresh").value,q=$("#query").value.trim().toLowerCase();
  const selected=items.filter(x=>{
+ if(category==="verified"&&x.classification!=="verified_change")return false;
  if(category==="candidates"&&!newKind(x.classification))return false;
  if(category==="high"&&x.classification!=="high_candidate")return false;
  if(source!=="all"&&x.source!==source)return false;
@@ -96,20 +97,20 @@ function render(){
  if(!selected.length){target.appendChild(el("div","empty","조건에 맞는 자료가 없습니다."));return;}
  for(const x of selected){
  const card=el("article","item"),top=el("div","topline"),meta=el("div","meta");
- let kind=x.classification==="high_candidate"?["priority","첨부명 확대 단서"]:newKind(x.classification)?["candidate","변경허가 검토"]:["base","기타 게시"];
+ let kind=x.classification==="verified_change"?["priority",x.change_type||"확대"]:newKind(x.classification)?["candidate","미검증"]:["base","기타 게시"];
  addText(meta,"pill "+kind[0],kind[1]);
  if(x.alert_state==="new")addText(meta,"pill new","신규 포착");
  addText(meta,"date",x.source==="review"?"심사결과 공개":"변경명령");
  top.appendChild(meta);
- top.appendChild(el("span","date",x.published_at||"날짜 미상"));card.appendChild(top);
- const title=el("h3"),a=el("a",null,x.title);a.href=x.source_url;a.target="_blank";a.rel="noopener noreferrer";title.appendChild(a);card.appendChild(title);
+ top.appendChild(el("span","date",x.approval_changed_at?"허가변경 "+x.approval_changed_at:(x.published_at?"자료공개 "+x.published_at:"날짜 미상")));card.appendChild(top);
+ const title=el("h3"),a=el("a",null,x.change_summary||x.title);a.href=x.source_url;a.target="_blank";a.rel="noopener noreferrer";title.appendChild(a);card.appendChild(title);
  const who=[x.company,x.product,x.ingredient].filter(Boolean).join("  ·  ");
  if(who)card.appendChild(el("p","dim",who));
- if(x.attachment_names&&x.attachment_names.length){
+ if(category==="all"&&x.attachment_names&&x.attachment_names.length){
    const detail=el("div","detail");detail.appendChild(el("b",null,"첨부 보고서: "));
    detail.appendChild(document.createTextNode(x.attachment_names.join(" / ")));card.appendChild(detail);
  }
- if(x.rationale)card.appendChild(el("div","reason",x.rationale));
+ if(x.rationale&&x.classification==="verified_change")card.appendChild(el("div","reason",x.rationale));
  const link=el("a","link","식약처 원문 보기");link.href=x.source_url;link.target="_blank";link.rel="noopener noreferrer";card.appendChild(link);
  target.appendChild(card);
  }
