@@ -790,6 +790,19 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
   note:"식약처 실시간 품목검색 결과입니다. 뒤쪽 페이지가 있으면 더 보기를 통해 모두 검색할 수 있습니다."};
 }
 
+async function directDrugInfo(params:URLSearchParams):Promise<unknown>{
+ const itemSeq=params.get("item_seq")||"";
+ if(!/^\\d{9}$/.test(itemSeq))throw Error("잘못된 품목기준코드");
+ const [roles,targets]=await Promise.all([
+  db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient&item_seq=eq."+itemSeq+"&limit=1"),
+  db("GET","mfds_monitor_drug_targets?select=item_seq,product,company,ingredient&item_seq=eq."+itemSeq+"&limit=1")
+ ]);
+ const item=roles?.[0]||targets?.[0];
+ if(!item)throw Error("등록된 감시 의약품을 찾지 못했습니다");
+ return {item_seq:itemSeq,product:item.product,company:item.company,
+  ingredient:item.ingredient,permit_date:"",status:"정상"};
+}
+
 async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
  const q=String(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
  if(q.length<2||q.length>70)return {matches:[],query:q};
@@ -1685,6 +1698,7 @@ Deno.serve(async (req: Request) => {
       if(view==="master")return reply(await originalMasterStatus());
       if(view==="related")return reply(await inspectSameIngredient(url.searchParams));
       if(view==="suggest")return reply(await suggestDrugCatalogue(url.searchParams));
+      if(view==="drug_info")return reply(await directDrugInfo(url.searchParams));
       if(view==="lookup")return reply(await lookupMFDSCatalogue(url.searchParams));
       if(view==="inspect")return reply(await inspectMFDSItem(url.searchParams));
       return reply(view==="efficacy"
