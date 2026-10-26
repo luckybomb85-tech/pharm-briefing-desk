@@ -1085,7 +1085,7 @@ function seedResolutionScore(seed:any,drug:CatalogueItem):number{
 }
 async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
  const n=Math.max(1,Math.min(40,Math.floor(maxItems)||12));
- const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
+ const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at&source_type=eq.mfds_new_drug_designation&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
  const prioritized=["키트루다","임핀지","테빔브라","파센라","엔허투","옵디보","오젬픽","레켐비","트렘피어","듀피젠트","가다실","티쎈트릭","레켐비"];
  const priority=(row:any)=>{const i=prioritized.findIndex(x=>row.product.includes(x));return i<0?100:i;};
  const now=Date.now();
@@ -1146,6 +1146,99 @@ async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
  const resolved=results.filter(x=>x.status==="matched").length;
  return {mode:"master_resolve",attempted:results.length,matched:resolved,results};
 }
+
+async function importMFDSReferenceDrugs(maxPages:number=4):Promise<unknown>{
+ const n=Math.max(1,Math.min(10,Number(maxPages)||4));
+ const [cursor]=await db("GET","mfds_monitor_reference_cursor?select=id,next_page,pages_imported,rows_imported,finished&id=eq.1&limit=1");
+ if(!cursor)throw Error("대조약 수집 진행 정보가 없습니다.");
+ if(cursor.finished)return {mode:"master_reference_import",finished:true,next_page:cursor.next_page};
+ let page=cursor.next_page,inserted=0,completed=0,finished=false;
+ const errors:string[]=[];
+ for(let i=0;i<n;i++){
+  try{
+   const url=ORIGIN+"/pbp/CCBBR01/getList?page="+page;
+   const markup=await html(url);
+   const body=markup.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
+   const rows=[...body.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+   const parsed=rows.flatMap(m=>{
+    const cols=[...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
+    const seq=m[1].match(/getItemDetail\?itemSeq=(\d{9})/)?.[1];
+    if(!seq||cols.length<5||!cols[2]||!cols[3])return [];
+    return [{seq,cols}];
+   });
+   if(!parsed.length){
+    if(page===1)throw Error("식약처 대조약 첫 페이지가 비어 있습니다.");
+    finished=true;break;
+   }
+   const seeds=parsed.map(({seq,cols})=>({
+    seed_key:"reference-"+seq,source_year:2026,ordinal:Math.max(1,Number(cols[0])||((page-1)*10+1)),
+    product:cols[2].slice(0,450),company:cols[3].slice(0,240),
+    ingredient:cols[1].slice(0,600),permit_date:null,
+    source_type:"mfds_reference_drug",
+    source_url:ORIGIN+"/pbp/CCBBR01",item_seq:seq,
+    match_status:"matched",match_note:"식약처 대조약 지정 확인. 원개발사/오리지널 여부는 별도 확인 필요.",
+    last_attempt_at:new Date().toISOString()
+   }));
+   await db("POST","mfds_monitor_master_seeds?on_conflict=seed_key",seeds,
+    "resolution=ignore-duplicates,return=minimal");
+   const roles=seeds.map(x=>({
+    item_seq:x.item_seq,product:x.product,company:x.company,ingredient:x.ingredient,
+    product_role:"review_pending",watch_scope:"review",
+    evidence_source:"mfds_reference_drug",evidence_url:x.source_url,
+    evidence_note:"대조약 지정으로 원개발사/오리지널이 자동 입증되지는 않음",
+    evidence_year:2026,classification_confidence:"candidate"
+   }));
+   await db("POST","mfds_monitor_product_roles?on_conflict=item_seq",roles,
+    "resolution=ignore-duplicates,return=minimal");
+   inserted+=parsed.length;completed++;page++;
+   if(parsed.length<10){finished=true;break;}
+  }catch(e){errors.push(String(e).slice(0,270));break;}
+ }
+ await db("PATCH","mfds_monitor_reference_cursor?id=eq.1",{
+  next_page:page,pages_imported:cursor.pages_imported+completed,
+  rows_imported:cursor.rows_imported+inserted,
+  finished,last_checked_at:new Date().toISOString(),
+  last_error:errors[0]||null
+ },"return=minimal");
+ return {mode:"master_reference_import",pages:completed,reference_candidates:inserted,
+  next_page:page,finished,error:errors[0]||null,
+  note:"대조약은 원개발 제품과 동일하지 않을 수 있어 검증 대기로 분류하고 첫 화면에는 포함하지 않습니다."};
+}
+async function stageMFDSReviewCategories():Promise<unknown>{
+ const items=await db("GET","mfds_monitor_items?select=source_id,title,product,company,ingredient,source_url,published_at&source=eq.review&order=published_at.desc&limit=900");
+ const seeds:any[]=[];
+ const totals:Record<string,number>={};
+ for(const item of items||[]){
+  const text=String(item.title||"");
+  let type="";
+  if(/개량신약/.test(text))type="mfds_incremental_candidate";
+  else if(/동등생물의약품|바이오시밀러/.test(text))type="mfds_biosimilar_candidate";
+  else if(/희귀의약품/.test(text))type="mfds_orphan_candidate";
+  else if(/자료제출의약품/.test(text))type="mfds_data_submission_candidate";
+  else continue;
+  const year=Number(String(item.published_at||"").slice(0,4));
+  if(!year||year<1990||year>2100)continue;
+  const entries=splitProductNames(item.product||"").slice(0,6);
+  if(!entries.length)entries.push(item.product||text.replace(/^\s*\[[^\]]*\]\s*/,""));
+  for(let i=0;i<entries.length;i++){
+   if(!entries[i]?.trim())continue;
+   seeds.push({seed_key:"review-"+item.source_id+"-"+i,source_year:year,
+    ordinal:i+1,product:entries[i].slice(0,450),company:String(item.company||"").slice(0,240),
+    ingredient:String(item.ingredient||"").slice(0,600),permit_date:null,
+    source_type:type,source_url:item.source_url,
+    match_status:"pending",
+    match_note:"허가심사 공개자료의 유형 후보. 오리지널 여부와 독자적 임상 근거는 미검증"
+   });
+   totals[type]=(totals[type]||0)+1;
+  }
+ }
+ for(let i=0;i<seeds.length;i+=100)await db("POST",
+  "mfds_monitor_master_seeds?on_conflict=seed_key",seeds.slice(i,i+100),
+  "resolution=ignore-duplicates,return=minimal");
+ return {mode:"stage_review_categories",candidates:seeds.length,counts:totals,
+  note:"자료제출/희귀/개량/바이오시밀러 심사 품목을 '검증 후보'로만 저장했습니다. 원개발사 확인 전 기본 감시에 편입하지 않습니다."};
+}
+
 async function originalMasterStatus():Promise<unknown>{
  const [seeds,roles,unresolved]=await Promise.all([
   db("GET","mfds_monitor_master_seeds?select=match_status,source_year&limit=2000"),
@@ -1318,6 +1411,8 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="efficacy_sync") return reply(await syncOfficialEfficacyHistory());
     if(input?.mode==="master_import")return reply(await importMFDSNewDrugDesignation(Number(input?.year)||2025));
     if(input?.mode==="master_resolve")return reply(await resolveMFDSOriginalSeeds(Number(input?.limit)||12));
+    if(input?.mode==="master_reference_import")return reply(await importMFDSReferenceDrugs(Number(input?.limit)||4));
+    if(input?.mode==="master_stage_review")return reply(await stageMFDSReviewCategories());
     if(input?.mode==="original_sync")return reply(await syncOriginalMasterHistory(Number(input?.limit)||6));
     if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
