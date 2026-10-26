@@ -53,6 +53,7 @@ try{
  assert(!loaded.company.includes("성분"),"Ingredient duplicated next to the manufacturer");
  console.log("INDICATION_TITLE_PERIOD_MANUFACTURER_OK",JSON.stringify({title:loaded.title,count:loaded.count,period:loaded.period}));
  const settings=await evalPage('(()=>{document.querySelector("#notificationSettings").click();return {dialog:document.querySelector("#pushDialog").open,types:[...document.querySelectorAll("#pushDialog input[type=checkbox]")].map(x=>x.id),enable:!!document.querySelector("#pushEnable"),disable:!!document.querySelector("#pushDisable")}})()');
+ console.log("PUSH_DIALOG_DEBUG",JSON.stringify(settings));
  assert(settings.dialog&&settings.types.length===3&&settings.enable&&settings.disable,"Settings dialog and per-device type preferences missing");
  console.log("OPT_IN_PUSH_SETTINGS_DIALOG_OK",JSON.stringify(settings));
  await evalPage('document.querySelector("#pushClose").click()');
