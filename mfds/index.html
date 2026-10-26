@@ -215,6 +215,8 @@ function renderRaw(x,context){
 }
 function activate(view,scroll){
  state.view=view;
+ // Clicking a summary count should always show that full category, not a stale year/search filter.
+ $("#keyword").value="";$("#year").value="all";$("#changeType").value="all";$("#fresh").value="all";
  document.querySelectorAll(".metric").forEach(b=>{
   const active=b.dataset.view===view;
   b.classList.toggle("active",active);
