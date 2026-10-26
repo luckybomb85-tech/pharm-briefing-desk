@@ -1009,9 +1009,9 @@ const companyKey=(x:string)=>String(x||"").normalize("NFKC").toLocaleLowerCase("
 const seedBaseName=(x:string)=>String(x||"").split(/\r?\n/)[0].trim().replace(/\s*[\[\(][^\])]*(?:\]|\))\s*$/,"").trim();
 function parseMFDSExcelDate(value:unknown):string|null{
  if(typeof value==="number"){
-  const parts=XLSX.SSF.parse_date_code(value);
-  if(!parts||parts.y<1900||parts.y>2100)return null;
-  return [String(parts.y).padStart(4,"0"),String(parts.m).padStart(2,"0"),String(parts.d).padStart(2,"0")].join("-");
+  const day=new Date(Date.UTC(1899,11,30)+Math.floor(value)*86400000);
+  if(!Number.isFinite(day.getTime())||day.getUTCFullYear()<1900||day.getUTCFullYear()>2100)return null;
+  return day.toISOString().slice(0,10);
  }
  const v=String(value||"").replace(/\./g,"-").trim();
  return /^\d{4}-\d{2}-\d{2}$/.test(v)?v:null;
