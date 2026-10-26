@@ -1108,7 +1108,7 @@ async function stageCurrentMFDSNewDrugReviews():Promise<unknown>{
     permit_date:null,source_type:"mfds_new_drug_review",
     source_url:String(item.source_url||""),
     match_status:"pending",
-    match_note:"2026년 식약처 허가심사보고서 신약/희귀신약 구분. 제품명·업체명·성분 추가 대조 후 기본 감시 대상."
+    match_note:"허가심사보고서 분류:"+(/\[희귀신약\]/.test(title)?"희귀신약":"신약")+". 품목명·업체명·성분 추가 확인 후 기본 감시 대상."
    });
   }
  }
@@ -1122,7 +1122,7 @@ async function stageCurrentMFDSNewDrugReviews():Promise<unknown>{
 
 async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
  const n=Math.max(1,Math.min(40,Math.floor(maxItems)||12));
- const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at&source_type=in.(mfds_new_drug_designation,mfds_new_drug_review)&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
+ const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at,match_note&source_type=in.(mfds_new_drug_designation,mfds_new_drug_review)&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
  const prioritized=["키트루다","임핀지","테빔브라","파센라","엔허투","옵디보","오젬픽","레켐비","트렘피어","듀피젠트","가다실","티쎈트릭","레켐비"];
  const priority=(row:any)=>{
   if(row.source_type==="mfds_new_drug_review"&&row.source_year>=2026)return -15;
@@ -1161,8 +1161,7 @@ async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
      result=sorted[0].c;
      score=sorted[0].score;state="matched";code=result.item_seq;
      const newDrugReview=seed.source_type==="mfds_new_drug_review";
-     const reviewIsOrphan=String(seed.source_url||"").includes("jdgmnResultInfoSeq")&&
-       /희귀신약/.test(String(seed.product||""));// separate report title is in seed note if needed
+     const reviewIsOrphan=newDrugReview&&/분류:희귀신약/.test(String(seed.match_note||""));
      await db("POST","mfds_monitor_product_roles?on_conflict=item_seq",{
        item_seq:result.item_seq,product:result.product,company:result.company,
        ingredient:result.ingredient,
