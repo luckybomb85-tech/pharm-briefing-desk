@@ -792,7 +792,7 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
 
 async function directDrugInfo(params:URLSearchParams):Promise<unknown>{
  const itemSeq=params.get("item_seq")||"";
- if(!/^\\d{9}$/.test(itemSeq))throw Error("잘못된 품목기준코드");
+ if(!/^\d{9}$/.test(itemSeq))throw Error("잘못된 품목기준코드");
  const [roles,targets]=await Promise.all([
   db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient&item_seq=eq."+itemSeq+"&limit=1"),
   db("GET","mfds_monitor_drug_targets?select=item_seq,product,company,ingredient&item_seq=eq."+itemSeq+"&limit=1")
