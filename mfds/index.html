@@ -473,6 +473,7 @@ function addSameIngredientSearch(panel,row){
 function renderCard(row){
  const card=element("details","entry");
  card.dataset.id=row.id;
+ card.dataset.changeDate=row.changed_at||"";
  const summary=put(card,"summary","");
  const top=put(summary,"div","entry-header");
  const type=String(row.change_type||"");
@@ -896,8 +897,29 @@ if("IntersectionObserver" in window){
  },{rootMargin:"0px 0px 220px 0px"});
  observer.observe($("#sentinel"));
 }
-const urlKeyword=(new URLSearchParams(window.location.search)).get("q");
-if(urlKeyword){$("#keyword").value=urlKeyword.slice(0,80);submitSearch()}
+const urlParams=new URLSearchParams(window.location.search);
+const directSeq=urlParams.get("seq")||"";
+const directDate=urlParams.get("date")||"";
+const urlKeyword=urlParams.get("q");
+if(/^\d{9}$/.test(directSeq)){
+ (async()=>{
+  try{
+   const candidate=await fetchJson(paramsFor("drug_info",{item_seq:directSeq}),18000);
+   state.lookupQuery=candidate.product;
+   state.lookupPage=1;state.lookupMatches=[candidate];state.lookupHasMore=false;
+   state.lookupTotalAtLeast=1;
+   $("#keyword").value=candidate.product.slice(0,80);
+   await chooseDrug(candidate);
+   if(/^20\d{2}-\d{2}-\d{2}$/.test(directDate)){
+    const item=[...document.querySelectorAll("#entries details.entry")].find(x=>x.dataset.changeDate===directDate);
+    if(item){item.open=true;item.scrollIntoView({block:"start",behavior:"smooth"});}
+   }
+  }catch(e){
+   $("#resultCount").textContent="변경이력 조회 실패";
+   $("#entries").replaceChildren(element("div","empty","알림의 품목을 조회할 수 없습니다: "+String(e.message||e)));
+  }
+ })();
+}else if(urlKeyword){$("#keyword").value=urlKeyword.slice(0,80);submitSearch()}
 else load(true);
 })();
 </script>
