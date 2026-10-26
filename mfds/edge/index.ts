@@ -661,6 +661,8 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   });
   rows.sort((a:any,b:any)=>b.changed_at.localeCompare(a.changed_at)||a.product.localeCompare(b.product,"ko-KR"));
   const total=rows.length,offset=Math.max(0,Math.min(20000,Number(query.get("offset")||0)||0));
+  const period=total?{start:rows[total-1].changed_at,end:rows[0].changed_at}:null;
+  const product_count=new Set(rows.map((x:any)=>x.product)).size;
   const limit=Math.max(10,Math.min(50,Number(query.get("limit")||20)||20));
   const countByType={
     added:rows.filter((x:any)=>x.added_count>0||x.change_type==="추가").length,
@@ -668,7 +670,7 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
     deleted:rows.filter((x:any)=>x.removed_count>0||x.change_type==="삭제").length
   };
   return {items:rows.slice(offset,offset+limit),total,has_more:offset+limit<total,
-    next_offset:offset+limit,counts:countByType,
+    next_offset:offset+limit,counts:countByType,period,product_count,
     source_description:"효능·효과 변경일을 기준으로 정렬. 비교 가능한 버전은 식약처 공식 효능·효과 XML 원문을 대조합니다. 일부 구버전 원문 및 품목은 미수집."};
 }
 
