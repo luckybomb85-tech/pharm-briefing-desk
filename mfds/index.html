@@ -137,6 +137,16 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  .bar{margin-top:14px}
 }
 
+/* Hidden must override flex/grid display for pagination and chooser controls. */
+[hidden]{display:none!important}
+.history-end{color:#66788c;text-align:center;padding:13px 16px;margin:4px 0 9px;font-size:12px;line-height:1.6}
+.baseline-record{margin-top:15px;border:1px solid #d8e3ef;border-radius:9px;background:#fff;overflow:hidden}
+.baseline-record>summary{padding:13px 16px!important;display:flex!important;align-items:center;gap:10px;list-style:none;cursor:pointer;font-size:13px;font-weight:800;color:#3d5c83}
+.baseline-record>summary::-webkit-details-marker{display:none}
+.baseline-record[open]>summary{border-bottom:1px solid #e1e7ee;background:#f8fbff}
+.baseline-original{padding:12px 15px 16px}
+.baseline-original p{font-size:12px;color:#64748b;margin:0 0 9px}
+.baseline-original .fulltext{max-height:400px}
 </style>
 </head>
 <body>
@@ -171,8 +181,9 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
   <div class="empty">자료를 불러오는 중입니다.</div>
 </section>
 <div class="more" id="moreWrap" hidden><button type="button" id="moreButton">이전 변경이력 더 보기</button></div>
+<div id="historyEnd" class="history-end" hidden aria-live="polite"></div>
 <div id="sentinel"></div>
-<footer>식약처 공식 효능·효과 문구의 이전·이후 버전을 질환별로 비교합니다. 단순 띄어쓰기·표기 수정은 주요 변경에서 제외합니다. 자동 분류는 취재·의학적 검증을 대신하지 않으며, 원문이 없는 이력은 '내용 확인 필요'로 구분합니다.</footer>
+<footer>초기 목록은 수집된 일부 품목의 이력으로, 식약처 전체 의약품의 누적 변경건수가 아닙니다. 개별 품목을 검색하면 식약처에서 직접 조회합니다. 식약처 공식 효능·효과 문구의 이전·이후 버전을 질환별로 비교합니다. 단순 띄어쓰기·표기 수정은 주요 변경에서 제외합니다. 자동 분류는 취재·의학적 검증을 대신하지 않으며, 원문이 없는 이력은 '내용 확인 필요'로 구분합니다.</footer>
 </main>
 <script>
 (()=>{
@@ -315,10 +326,13 @@ function params(reset){
  return url.toString();
 }
 function refreshLabel(){
- $("#resultCount").textContent="저장된 효능·효과 변경이력 "+state.total+"건";
- $("#resultContext").textContent="전체 수집자료 기준 · 검색하려면 위에서 품목명·회사명·성분명을 입력하세요.";
+ $("#resultCount").textContent="수집된 일부 품목의 변경이력 "+state.total+"건";
+ $("#resultContext").textContent="식약처 전체 의약품의 누적 건수가 아닙니다. 검색하면 해당 품목을 직접 조회합니다.";
  $("#moreWrap").hidden=!state.more;
- $("#moreButton").disabled=state.busy;
+ $("#moreButton").disabled=state.busy||!state.more;
+ const end=$("#historyEnd");
+ end.hidden=state.more||state.rows.length===0;
+ if(!end.hidden)end.textContent="현재 저장된 "+state.rows.length+"건을 모두 표시했습니다. 더 오래된 변경이력이 없다는 뜻은 아닙니다.";
 }
 async function load(reset=false){
  if(state.busy&&!reset)return;
@@ -393,6 +407,11 @@ function showSelectedHistory(){
  $("#resultCount").textContent=candidate.product+" · 효능·효과 변경 "+rows.length+"건";
  $("#resultContext").textContent="해당 품목만 검색한 결과입니다. 위의 저장된 전체 건수와 별개입니다.";
  $("#sortLabel").textContent="실제 변경일 최신순";
+ const end=$("#historyEnd");
+ end.hidden=false;
+ end.textContent=rows.length?
+   "이 품목에서 검색 조건에 맞는 변경 기록 "+rows.length+"건을 모두 표시했습니다.":
+   "선택한 조건의 이전 변경 기록은 더 없습니다.";
  if(!rows.length){
   const empty=element("div","empty",state.lookupData?.total===0?
     "식약처에서 품목을 확인했습니다. 공개된 전자화 효능·효과 이력상 최초 버전 이후의 변경은 확인되지 않습니다.":
@@ -410,6 +429,20 @@ function showSelectedHistory(){
  }
  if(state.lookupData?.official_history_complete===false&&state.lookupData?.total===0){
   $("#sortLabel").textContent="전자화 이력 기준";
+ }
+ const firstText=state.lookupData?.initial_efficacy||"";
+ const firstDate=state.lookupData?.initial_version_date;
+ if(firstText&&firstDate){
+  const initialIsPermitDate=candidate.permit_date===firstDate;
+  const baseline=put(root,"details","baseline-record");
+  const initialLabel=initialIsPermitDate?"최초 허가 당시 효능·효과":"가장 오래된 전자화 효능·효과 원문";
+  put(baseline,"summary","",fmtDate(firstDate)+" · "+initialLabel+" 보기 (변경 건수 제외)");
+  const body=put(baseline,"div","baseline-original");
+  put(body,"p","",initialIsPermitDate?
+    "최초 허가 시 효능·효과입니다. 이후 변경이력 건수에는 포함되지 않습니다.":
+    "식약처가 제공하는 가장 오래된 전자화 효능·효과 원문입니다. 최초 허가 당시 내용과 반드시 같지는 않습니다.");
+  const box=put(body,"div","fulltext");
+  for(const line of firstText.split("\n").filter(x=>x.trim()))put(box,"div","line current",line);
  }
 }
 function renderCatalogue(){
@@ -434,6 +467,7 @@ async function chooseDrug(candidate){
  $("#resultCount").textContent=candidate.product+" · 변경이력 조회 중…";
  $("#resultContext").textContent="식약처 품목 기준 검색을 진행하고 있습니다.";
  $("#moreWrap").hidden=true;
+ $("#historyEnd").hidden=true;
  $("#searchButton").disabled=true;
  try{
   const record=await fetchJson(paramsFor("inspect",{item_seq:candidate.item_seq}),40000);
@@ -465,7 +499,7 @@ async function searchCatalogue(query,append=false){
   $("#entries").replaceChildren(element("div","empty","식약처 전체 품목정보에서 검색하고 있습니다…"));
   $("#resultCount").textContent="식약처 품목 검색 중…";
   $("#resultContext").textContent="전체 저장된 이력이 아닌 실시간 품목 검색입니다.";
-  $("#catalogue").hidden=true;$("#moreWrap").hidden=true;
+  $("#catalogue").hidden=true;$("#moreWrap").hidden=true;$("#historyEnd").hidden=true;
  }
  try{
   const page=append?state.lookupPage+1:1;
@@ -496,7 +530,7 @@ async function submitSearch(){
  const query=$("#keyword").value.trim();
  if(!query){
   state.lookupSerial++;state.lookupQuery="";state.lookupSelected=null;state.lookupData=null;state.lookupMatches=[];
-  $("#catalogue").hidden=true;return load(true);
+  $("#catalogue").hidden=true;$("#historyEnd").hidden=true;return load(true);
  }
  if(state.lookupQuery===query&&state.lookupSelected&&state.lookupData){
   showSelectedHistory();return;
@@ -507,7 +541,7 @@ async function submitSearch(){
 const form=$("#searchForm");
 form.addEventListener("submit",ev=>{ev.preventDefault();submitSearch()});
 $("#catalogueMore").addEventListener("click",()=>searchCatalogue(state.lookupQuery,true));
-$("#moreButton").addEventListener("click",()=>load(false));
+$("#moreButton").addEventListener("click",()=>{if(!state.lookupSelected&&state.more&&!state.busy)load(false)});
 if("IntersectionObserver" in window){
  const observer=new IntersectionObserver(entries=>{
    if(entries.some(e=>e.isIntersecting)&&state.more&&!state.busy)load(false);
