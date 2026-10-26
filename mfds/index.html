@@ -35,99 +35,130 @@ input{min-width:210px;flex:1}select{max-width:195px}
 .empty{text-align:center;padding:60px 15px;color:var(--muted)}
 .status{font-size:12px;color:var(--muted)}.progress{color:#146d50}
 @media(max-width:760px){.wrap{padding:22px 13px 70px}.head{margin-bottom:15px}h1{font-size:24px}.metrics{grid-template-columns:repeat(2,1fr);gap:9px}.metric{padding:13px;min-height:90px}.metric strong{font-size:23px}.bar,.filters{padding:13px}.item{padding:17px 14px}.item h3{font-size:15px}input,select{min-width:0;width:100%;max-width:100%;flex:auto}.btn{padding:9px 12px}.sub{font-size:12px}}
+.approval-date{font-size:15px;color:#124995;font-weight:850;white-space:nowrap;letter-spacing:-.3px}.pub-date{font-size:12px;color:var(--muted)}
+.change-comparison{margin:11px 0;background:#f6f8fc;padding:11px 14px;border-radius:8px;border:1px solid #edf0f5}
+.comparison-line{display:flex;gap:10px;padding:4px 0}.comparison-key{font-size:12px;color:#65738a;flex:0 0 60px;font-weight:700}.comparison-value{font-size:13px;flex:1}
+.linkrow{display:flex;gap:15px;padding-top:12px}
+@media(max-width:760px){.approval-date{font-size:13px}.comparison-line{gap:6px}.comparison-key{flex:0 0 51px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="head">
 <div><div class="eyebrow">DAILYPHARM · MFDS MONITOR</div><h1>의약품 허가변경 레이더</h1>
-<p class="sub">허가사항의 실제 변경일 기준 · 매일 08:20 / 13:20 / 18:20</p></div>
+<p class="sub">기존 식약처 수집자료 재활용 · 허가변경 확인 건과 미검증 검토 후보 분리 · 매일 08:20 / 13:20 / 18:20</p></div>
 <button class="btn" type="button" id="reload">새로고침</button>
 </header>
-<div class="alert"><strong>중요:</strong> 실제 허가 변경일과 변경 전후 내용을 확인한 건만 기본 화면에 표시합니다. 검증 전 자료는 별도 필터에서 확인할 수 있습니다.</div>
+<div class="alert"><strong>중요:</strong> 실제 변경일·변경 전후가 확인된 건만 기본 화면에 표시합니다. 심사보고서 제목·첨부파일명에 등장하는 사항은 별도의 검토 후보이며 새 허가로 확정하지 않습니다.</div>
 <div class="metrics">
-<div class="metric"><label>확인된 허가 변경</label><strong id="high">—</strong><small>변경일·변경내용 확인 기준</small></div>
-<div class="metric"><label>검증 대기 자료</label><strong id="candidates">—</strong><small>알림 대상에서 제외</small></div>
-<div class="metric"><label>새로 발견된 후보</label><strong id="newCount">—</strong><small>최초 수집 기준 제외</small></div>
+<div class="metric"><label>허가변경 사실 확인</label><strong id="high">—</strong><small>실제 변경일 기준</small></div>
+<div class="metric"><label>검토할 주요 단서</label><strong id="candidates">—</strong><small>기존 수집자료에서 추출</small></div>
+<div class="metric"><label>저장된 변경심사 자료</label><strong id="newCount">—</strong><small>일반 변경도 포함</small></div>
 <div class="metric"><label>마지막 수집</label><strong style="font-size:17px" id="lastRun">—</strong><small id="runDetail">자동 수집 대기</small></div>
 </div>
 <section class="panel">
 <div class="bar"><h2>변경허가 확인 목록 <span class="status" id="shown"></span></h2><span class="status" id="feedStatus">서버 연결 중…</span></div>
 <div class="filters">
-<select id="category" aria-label="분류 필터"><option value="verified">확인된 허가 변경</option><option value="candidates">검증 대기 자료</option><option value="all">전체 수집 자료</option></select>
-<select id="source" aria-label="출처 필터"><option value="all">전체 출처</option><option value="review">변경허가 심사결과</option><option value="change_order">허가사항 변경명령</option></select>
-<select id="fresh" aria-label="신규만 보기"><option value="all">전체 기간</option><option value="new">새로 발견된 자료만</option></select>
+<select id="category" aria-label="분류 필터"><option value="verified">허가변경 확인</option><option value="leads">주요 변경 검토 후보</option></select>
+<select id="changeType" aria-label="변경 유형"><option value="all">모든 변경 유형</option><option value="추가">추가</option><option value="확대">확대</option><option value="축소">축소</option><option value="삭제">삭제</option><option value="변경">기타 변경</option></select>
+<select id="fresh" aria-label="신규만 보기"><option value="all">전체 기간</option><option value="new">새로 포착된 건만</option></select>
 <input id="query" placeholder="제품명·회사명·성분명 검색" aria-label="검색어">
 </div>
 <div id="items" class="rows"><div class="empty">수집 결과를 불러오는 중입니다.</div></div>
 </section>
 <p class="foot">원문 출처: <a class="link" target="_blank" rel="noopener" href="https://nedrug.mfds.go.kr/pbp/CCBAC02/getList">의약품 등 심사결과정보 공개</a> · <a class="link" target="_blank" rel="noopener" href="https://nedrug.mfds.go.kr/CCBAR01F012/getList">허가사항 변경명령</a><br>
-실제 허가 변경일이 확인되지 않은 심사보고서는 기본 화면과 알림에서 제외합니다. 수집 실패 시 마지막 성공 시간을 반드시 확인하세요. 이 화면은 별도 자동 푸시 없이도 최근 수집 결과를 보여주며, 외부 알림은 별도 채널 설정이 필요합니다.</p>
+기존에 저장된 수집자료를 재분류하며, 심사보고서 공개일은 실제 허가변경일로 취급하지 않습니다. 검증 대기 후보는 알림 대상에서 제외합니다. 수집 실패 시 마지막 성공 시간을 반드시 확인하세요. 이 화면은 별도 자동 푸시 없이도 최근 수집 결과를 보여주며, 외부 알림은 별도 채널 설정이 필요합니다.</p>
 </div>
 <script>
-(function(){
+(() => {
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-let items=[],runs=[];
-const newKind=c=>["high_candidate","change_candidate"].includes(c);
-const fmtDate=t=>{if(!t)return"—";const d=new Date(t);return isNaN(d)?t:d.toLocaleString("ko-KR",{timeZone:"Asia/Seoul",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});};
-function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
-function addText(parent,cls,text){parent.appendChild(el("span",cls,text));}
-function setText(id,t){$(id).textContent=String(t);}
-function render(){
- const high=items.filter(x=>x.classification==="verified_change");
- const candidate=items.filter(x=>newKind(x.classification));
- const newCandidates=candidate.filter(x=>x.alert_state==="new");
- setText("#high",high.length);setText("#candidates",candidate.length);setText("#newCount",items.filter(x=>x.classification==="verified_change"&&x.alert_state==="new").length);
- const last=runs[0];setText("#lastRun",last?fmtDate(last.finished_at||last.started_at):"미실행");
- setText("#runDetail",last?(last.status==="success"?"정상 · ":"일부 오류 · ")+(last.reviews_checked+last.changes_checked)+"건 확인":"수집 기록 없음");
- const category=$("#category").value,source=$("#source").value,fresh=$("#fresh").value,q=$("#query").value.trim().toLowerCase();
- const selected=items.filter(x=>{
- if(category==="verified"&&x.classification!=="verified_change")return false;
- if(category==="candidates"&&!newKind(x.classification))return false;
- if(category==="high"&&x.classification!=="high_candidate")return false;
- if(source!=="all"&&x.source!==source)return false;
- if(fresh==="new"&&x.alert_state!=="new")return false;
- if(q&&!([x.title,x.company,x.product,x.ingredient,...(x.attachment_names||[])].join(" ").toLowerCase().includes(q)))return false;
- return true;
- });
- setText("#shown","("+selected.length+"건)");
- const target=$("#items");target.replaceChildren();
- if(!selected.length){target.appendChild(el("div","empty","조건에 맞는 자료가 없습니다."));return;}
- for(const x of selected){
+let events=[],leads=[],runs=[],counts={};
+const esc=(s)=>String(s??"");
+const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=esc(text);return node;};
+const label=(x)=>{
+ const t=esc(x.title).concat(" ",esc(x.change_area)); const eventType=esc(x.event_type);
+ if(/삭제|철회|제외/.test(t)||eventType.includes("delet"))return "삭제";
+ if(/축소|제한|범위 축소/.test(t)||eventType.includes("reduct"))return "축소";
+ if(/추가/.test(t)||eventType.includes("add"))return "추가";
+ if(/확대|확장|2차|1차/.test(t)||eventType.includes("expan")||eventType==="line_change")return "확대";
+ return "변경";
+};
+const formatTime=(t)=>{
+ if(!t)return "—";
+ const d=new Date(t);return isNaN(d)?"—":d.toLocaleString("ko-KR",{timeZone:"Asia/Seoul",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});
+};
+const formatDay=t=> /^\d{4}-\d{2}-\d{2}$/.test(esc(t))?String(t).replaceAll("-","."):"날짜 미확인";
+const link=(url,title)=>{let a=el("a","link",title);a.href=url||"#";a.target="_blank";a.rel="noopener noreferrer";return a;};
+function putPair(parent,kind,value){
+ if(!value)return;
+ const n=el("div","comparison-line");n.appendChild(el("span","comparison-key",kind));n.appendChild(el("span","comparison-value",value));parent.appendChild(n);
+}
+function eventCard(x){
+ const card=el("article","item");
+ const top=el("div","topline"),tags=el("div","meta");
+ tags.appendChild(el("span","pill priority",label(x)));tags.appendChild(el("span","pill base",x.verification==="official_confirmed"?"식약처 직접 확인":"변경 내용 확인"));
+ top.appendChild(tags);
+ top.appendChild(el("span","approval-date","허가변경 "+formatDay(x.event_date)));card.appendChild(top);
+ const title=el("h3");title.appendChild(link(x.mfds_url||x.evidence_url,x.title||x.product));card.appendChild(title);
+ card.appendChild(el("p","dim",[x.company,x.product,x.ingredient].filter(Boolean).join(" · ")));
+ const change=el("div","change-comparison");
+ putPair(change,"변경 전",x.before_text);putPair(change,"변경 후",x.after_text);
+ if(change.childElementCount)card.appendChild(change);
+ if(x.details)card.appendChild(el("div","reason",x.details));
+ const links=el("div","linkrow");
+ if(x.mfds_url)links.appendChild(link(x.mfds_url,"식약처 자료"));
+ if(x.evidence_url)links.appendChild(link(x.evidence_url,"확인 근거"));
+ card.appendChild(links);return card;
+}
+function leadCard(x){
  const card=el("article","item"),top=el("div","topline"),meta=el("div","meta");
- let kind=x.classification==="verified_change"?["priority",x.change_type||"확대"]:newKind(x.classification)?["candidate","미검증"]:["base","기타 게시"];
- addText(meta,"pill "+kind[0],kind[1]);
- if(x.alert_state==="new")addText(meta,"pill new","신규 포착");
- addText(meta,"date",x.source==="review"?"심사결과 공개":"변경명령");
- top.appendChild(meta);
- top.appendChild(el("span","date",x.approval_changed_at?"허가변경 "+x.approval_changed_at:(x.published_at?"자료공개 "+x.published_at:"날짜 미상")));card.appendChild(top);
- const title=el("h3"),a=el("a",null,x.change_summary||x.title);a.href=x.source_url;a.target="_blank";a.rel="noopener noreferrer";title.appendChild(a);card.appendChild(title);
- const who=[x.company,x.product,x.ingredient].filter(Boolean).join("  ·  ");
- if(who)card.appendChild(el("p","dim",who));
- if(category==="all"&&x.attachment_names&&x.attachment_names.length){
-   const detail=el("div","detail");detail.appendChild(el("b",null,"첨부 보고서: "));
-   detail.appendChild(document.createTextNode(x.attachment_names.join(" / ")));card.appendChild(detail);
+ meta.appendChild(el("span","pill candidate","내용 확인 필요"));
+ top.appendChild(meta);top.appendChild(el("span","pub-date","보고서 공개 "+formatDay(x.published_at)));card.appendChild(top);
+ const title=el("h3");title.appendChild(link(x.source_url,x.product||x.title));card.appendChild(title);
+ card.appendChild(el("p","dim",[x.company,x.ingredient].filter(Boolean).join(" · ")));
+ const file=(x.attachment_names||[]).join(" / ");
+ if(file){
+   const box=el("div","detail");
+   box.appendChild(el("span","comparison-key","단서 · "));
+   box.appendChild(document.createTextNode(file));card.appendChild(box);
  }
- if(x.rationale&&x.classification==="verified_change")card.appendChild(el("div","reason",x.rationale));
- const link=el("a","link","식약처 원문 보기");link.href=x.source_url;link.target="_blank";link.rel="noopener noreferrer";card.appendChild(link);
- target.appendChild(card);
- }
+ card.appendChild(el("div","reason","이 항목은 기존 수집 자료에서 키워드로 선별한 후보입니다. 실제 허가 변경일과 전후 내용은 아직 확인되지 않았습니다."));
+ card.appendChild(link(x.source_url,"심사자료 원문"));return card;
+}
+function matchText(x,q){
+ return !q||[x.title,x.product,x.company,x.ingredient,x.change_area,x.before_text,x.after_text,...(x.attachment_names||[])].join(" ").toLowerCase().includes(q);
+}
+function render(){
+ $("#high").textContent=events.length;
+ $("#candidates").textContent=leads.length;
+ $("#newCount").textContent=counts.review_records??"—";
+ const last=runs[0];$("#lastRun").textContent=last?formatTime(last.finished_at||last.started_at):"미실행";
+ $("#runDetail").textContent=last?
+  (last.status==="success"?"정상":"오류 확인 필요")+" · "+((last.reviews_checked||0)+(last.changes_checked||0))+"건 확인":"수집 기록 없음";
+ const tab=$("#category").value,q=$("#query").value.trim().toLowerCase(),type=$("#changeType").value,fresh=$("#fresh").value;
+ const rows=tab==="verified"?
+ events.filter(x=>(type==="all"||label(x)===type)&&(fresh!=="new"||x.alert_state==="new")&&matchText(x,q))
+ :leads.filter(x=>(fresh!=="new"||x.alert_state==="new")&&matchText(x,q));
+ $("#changeType").disabled=tab!=="verified";
+ $("#shown").textContent="("+rows.length+"건)";
+ const root=$("#items");root.replaceChildren();
+ if(!rows.length){root.appendChild(el("div","empty",tab==="verified"?"확인된 허가변경 자료가 없습니다. 검토 후보와 별개로 확인된 건만 표시됩니다.":"선별 조건에 맞는 검토 후보가 없습니다."));return;}
+ rows.forEach(x=>root.appendChild(tab==="verified"?eventCard(x):leadCard(x)));
 }
 async function load(){
- $("#reload").disabled=true;setText("#feedStatus","불러오는 중…");
+ $("#reload").disabled=true;$("#feedStatus").textContent="수집 결과 불러오는 중…";
  try{
- const controller=new AbortController();const tid=setTimeout(()=>controller.abort(),16000);
- const res=await fetch(API,{cache:"no-store",signal:controller.signal});clearTimeout(tid);
- if(!res.ok)throw Error("응답 코드 "+res.status);
- const data=await res.json();if(!Array.isArray(data.items))throw Error(data.error||"응답 형식 오류");
- items=data.items;runs=data.runs||[];render();
- setText("#feedStatus","자료 "+items.length+"건 · 조회 "+fmtDate(new Date().toISOString()));
- }catch(e){setText("#feedStatus","연결 오류");$("#items").replaceChildren(el("div","empty","자료를 불러오지 못했습니다: "+String(e.message||e)));}
+ const controller=new AbortController(),t=setTimeout(()=>controller.abort(),15000);
+ const r=await fetch(API,{cache:"no-store",signal:controller.signal});clearTimeout(t);
+ const data=await r.json();if(!r.ok||!Array.isArray(data.events)||!Array.isArray(data.leads))throw Error(data.error||"서버 응답 형식 오류");
+ events=data.events;runs=data.runs||[];leads=data.leads;counts=data.counts||{};render();
+ $("#feedStatus").textContent="최신 조회 "+formatTime(new Date().toISOString());
+ }catch(e){$("#feedStatus").textContent="연결 오류";$("#items").replaceChildren(el("div","empty","자료를 가져오지 못했습니다. "+String(e.message||e)));}
  finally{$("#reload").disabled=false;}
 }
-for(const id of ["#category","#source","#fresh","#query"])$(id).addEventListener("input",render);
+["category","changeType","fresh","query"].forEach(id=>$("#"+id).addEventListener("input",render));
 $("#reload").addEventListener("click",load);load();setInterval(load,300000);
 })();
 </script>
