@@ -801,9 +801,12 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  }
  items.sort((a,b)=>b.changed_at.localeCompare(a.changed_at));
  const current=versions.at(-1);
+ const earliest=versions[0];
  return {item_seq:itemSeq,items,total:items.length,
   current_efficacy:current?.lines.join("\n")||"",official_history_complete:detailComplete,
-  initial_version_date:versions[0]?.changed_at||null,
+  initial_version_date:earliest?.changed_at||null,
+  initial_efficacy:earliest?.lines.join("\n")||"",
+  all_history_dates_seen:officialDates.size,
   source:"식약처 효능·효과 변경이력",reviewed:false,
   note:"식약처가 전자화한 효능·효과 원문의 연속 버전을 비교했습니다. 전자화 이전 이력과 문구 변경의 의학적 의미는 별도 확인이 필요합니다."};
 }
