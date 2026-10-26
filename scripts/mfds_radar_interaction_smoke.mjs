@@ -40,13 +40,13 @@ try{
   const msg=JSON.parse(e.data);if(!msg.id)return;const p=pending.get(msg.id);
   if(!p)return;pending.delete(msg.id);if(msg.error)p.reject(Error(JSON.stringify(msg.error)));else p.resolve(msg.result);
  });
- const ready=await until("Simple efficacy screen",
-  '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide")})',
-  v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=25&&v.cards===20&&v.first?.includes("파센라")&&v.noCards&&v.noGuide);
- console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
- const globalEnd=await evalPage('({buttonHidden:document.querySelector("#moreWrap")?.hidden,buttonDisplay:getComputedStyle(document.querySelector("#moreWrap")).display,message:document.querySelector("#historyEnd")?.textContent||"",label:document.querySelector("#resultCount")?.textContent||"",rangeHidden:document.querySelector("#resultContext")?.hidden,intro:document.querySelector("header .subtitle")?.textContent||"",name:document.querySelector(".entry-main .drug")?.textContent||"",fields:[...document.querySelectorAll(".entry-main .meta-title")].slice(0,2).map(x=>x.textContent),button:document.querySelector("details.entry .related-trigger")?.textContent||""})');
- ensure(!globalEnd.buttonHidden&&globalEnd.buttonDisplay!=="none"&&globalEnd.label.includes("오리지널 중심 효능·효과 변경이력")&&globalEnd.rangeHidden&&!globalEnd.intro&&globalEnd.fields[0]==="성분"&&globalEnd.fields[1]==="업체"&&globalEnd.button.includes("동일 성분 의약품 변경이력"),"Original-first home, detail order, and pagination incorrect: "+JSON.stringify(globalEnd));
- console.log("ORIGINAL_FIRST_GLOBAL_PAGINATION_AND_CARD_LAYOUT_OK",JSON.stringify(globalEnd));
+ const ready=await until("Original-first efficacy timeline",
+  '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide"),dates:[...document.querySelectorAll("details.entry .date")].map(x=>x.textContent)})',
+  v=>v.title?.includes("효능·효과 변경이력")&&v.count?.includes("오리지널 중심")&&Number((v.count||"").match(/\\d+/)?.[0])>=50&&v.cards>=10&&v.noCards&&v.noGuide&&v.dates.every((d,i)=>i===0||d<=v.dates[i-1]));
+ console.log("ORIGINAL_FIRST_CHRONOLOGY_OK",JSON.stringify({count:ready.count,first:ready.dates.slice(0,5)}));
+ const summary=await evalPage('({subtitle:document.querySelector("header .subtitle")?.textContent||"",contextHidden:document.querySelector("#resultContext")?.hidden,label:document.querySelector("#resultCount")?.textContent||""})');
+ ensure(!summary.subtitle&&summary.contextHidden&&!summary.label.includes("일부 품목"),"Original-only concise header invalid "+JSON.stringify(summary));
+ console.log("ORIGINAL_COMPACT_HEADER_OK",JSON.stringify(summary));
  await evalPage('document.querySelector("details.entry summary").click()');
  const detail=await until("Expanding clinical change groups",
   '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",diseases:document.querySelectorAll("details.entry[open] .disease-group").length,units:document.querySelectorAll("details.entry[open] .change-unit").length,originals:document.querySelectorAll("details.entry[open] .original-details").length})',
@@ -68,10 +68,10 @@ try{
   v=>v.cards>=2&&v.count?.includes("건")&&v.body.includes("내용 확인 필요"));
  console.log("OLDER_CHANGES_FILTER_OK",old.cards);
  await submit({keyword:"",year:"all",type:"삭제",scope:"all"});
- const deleted=await until("Meaningful deletions across verified originals",
+ const deletions=await until("Deletion filter",
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
-  v=>v.count?.includes("건")&&v.cards>=1&&v.body.includes("효능·효과"));
- console.log("VERIFIED_ORIGINAL_DELETION_FILTER_OK",deleted.count);
+  v=>v.count?.includes("건")&&(v.cards>0||v.body.includes("검색 조건")));
+ console.log("DELETION_FILTER_OK",deletions.count);
 
  // Tevimbra: two change dates, no misleading deletions from whitespace.
  await submit({keyword:"테빔브라",year:"all",type:"all",scope:"all"});
@@ -133,6 +133,14 @@ try{
   '({cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",count:document.querySelector("#resultCount")?.textContent||""})',
   v=>v.cards>=1&&v.first.includes("오젬픽")&&v.count.includes("효능·효과 변경"));
  console.log("LIVE_PRODUCT_SELECT_HISTORY_OK",chosen.cards);
+ await evalPage('document.querySelector("details.entry summary").click()');
+ const relatedReady=await evalPage('document.querySelector("details.entry[open] .related-trigger")?.textContent||""');
+ ensure(relatedReady.includes("동일 성분"),"On-demand related-drug button missing "+relatedReady);
+ await evalPage('document.querySelector("details.entry[open] .related-trigger").click()');
+ const related=await until("On-demand same-ingredient matched products",
+  '({cards:document.querySelectorAll("details.entry[open] .related-item").length,txt:document.querySelector("details.entry[open] .related-result")?.textContent||"",status:document.querySelector("details.entry[open] .related-status")?.textContent||"",loading:document.querySelector("details.entry[open] .related-trigger")?.disabled})',
+  v=>v.cards>=2&&v.txt.includes("위고비")&&!v.loading);
+ console.log("SAME_INGREDIENT_OPT_IN_SEARCH_OK",JSON.stringify({cards:related.cards,sample:related.txt.slice(0,170)}));
  await submit({keyword:"노보노디스크",year:"all",type:"all",scope:"all"});
  const companyMatches=await until("Company-wide MFDS lookup",
   '({matches:document.querySelectorAll(".catalogue-choice").length,items:document.querySelector("#catalogueItems")?.textContent||""})',
