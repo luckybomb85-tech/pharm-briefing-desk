@@ -939,6 +939,14 @@ async function globalEfficacyScan(maxSources:number=5):Promise<unknown>{
    if(!found.length)status="not_found";
    for(const product of found){
     if(Date.now()>deadline)break;
+    // Efficacy history has a foreign key to the shared official product
+    // registry. Register newly discovered products without activating them
+    // in the older manually curated four-product high-frequency cron.
+    await db("POST","mfds_monitor_drug_targets?on_conflict=item_seq",{
+      item_seq:product.item_seq,product:product.product,company:product.company,
+      ingredient:product.ingredient||"",source_url:product.source_url,active:false,
+      last_checked_status:"global-discovered"
+    },"resolution=ignore-duplicates,return=minimal");
     const inspection:any=await inspectMFDSItem(new URLSearchParams({item_seq:product.item_seq}));
     if(!first)first=product;
     const original=inspection.initial_version_date||"";
