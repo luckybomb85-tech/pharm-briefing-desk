@@ -224,7 +224,7 @@ async function archiveFeed(query: URLSearchParams): Promise<unknown> {
   const kind=query.get("kind")==="orders"?"change_order":"review";
   const limit=Math.max(10,Math.min(50,Number(query.get("limit")||30)||30));
   const offset=Math.max(0,Math.min(10000,Number(query.get("offset")||0)||0));
-  let route="mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,effective_at,stage,attachment_names,classification,rationale,alert_state,first_seen_at"+
+  let route="mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,effective_at,approval_changed_at,change_type,change_summary,stage,attachment_names,classification,rationale,alert_state,first_seen_at"+
     "&source=eq."+kind+"&order=published_at.desc.nullslast,id.desc&offset="+offset+"&limit="+(limit+1);
   if(kind==="review") route+="&title=ilike."+encodeURIComponent("*변경*");
   const year=query.get("year")||"";
