@@ -244,6 +244,8 @@ if("IntersectionObserver" in window){
 for(let y=2026;y>=2014;y--){
  const option=element("option","",String(y)+"년");option.value=String(y);$("#year").appendChild(option);
 }
+const urlKeyword=(new URLSearchParams(window.location.search)).get("q");
+if(urlKeyword)$("#keyword").value=urlKeyword.slice(0,80);
 load(true);
 })();
 </script>
