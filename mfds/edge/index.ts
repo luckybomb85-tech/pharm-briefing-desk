@@ -1424,6 +1424,89 @@ async function inspectSameIngredient(params:URLSearchParams):Promise<unknown>{
   page,has_more:rawTotal>page*15,total_at_least:rawTotal,matches:info,
   note:"식약처에서 현재 조회 가능한 동일 성분 품목이며, 후발약·오리지널 여부는 별도 공식 근거가 있을 때만 구분합니다. 전자화된 변경이력과 전체 허가변경 이력은 다를 수 있습니다."};
 }
+
+async function syncOriginatorFamily(maxGroups:number=2):Promise<unknown>{
+ const n=Math.max(1,Math.min(3,Number(maxGroups)||2));
+ const [roles,scans]=await Promise.all([
+  db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope,classification_confidence&watch_scope=eq.primary&classification_confidence=in.(official_list,verified_review)&limit=1500"),
+  db("GET","mfds_monitor_family_scans?select=group_key,checked_at&limit=1200")
+ ]);
+ const found=new Set((scans||[]).map((x:any)=>x.group_key));
+ const groups=new Map<string,any>();
+ for(const role of roles||[]){
+  const parts=activeIngredientTokens(role.ingredient);
+  if(parts.length!==1||parts[0].length>35||parts[0].length<3)continue;
+  const company=companyKey(role.company);
+  if(!company)continue;
+  const key=company+"|"+parts[0];
+  if(!groups.has(key))groups.set(key,{key,...role,term:parts[0]});
+ }
+ const priority=(x:any)=>
+  x.term==="세마글루티드"?-20:
+  /터제파타이드|티르제파타이드|리라글루티드|두필루맙/.test(x.term)?-10:0;
+ const pending=[...groups.values()].filter(x=>!found.has(x.key))
+  .sort((a,b)=>priority(a)-priority(b)||a.key.localeCompare(b.key)).slice(0,n);
+ const results:any[]=[];
+ for(const seed of pending){
+  const checkedAt=new Date().toISOString();
+  let added=0,matched=0,error="";
+  try{
+   const u=new URL(ORIGIN+"/searchDrug");
+   u.searchParams.set("searchYn","Y");u.searchParams.set("ingrName1",seed.term);
+   const candidates=new Map<string,CatalogueItem>();
+   for(let page=1;page<=2;page++){
+    u.searchParams.set("page",String(page));
+    const txt=await html(u.toString());
+    const arr=parseDrugCatalogue(txt);
+    for(const drug of arr){
+     if(companyKey(drug.company)!==companyKey(seed.company)||
+        activeIngredientTokens(drug.ingredient).join("|")!==seed.term||
+        drug.status!=="정상"||drug.item_seq===seed.item_seq)continue;
+     candidates.set(drug.item_seq,drug);
+    }
+    if(arr.length<15)break;
+   }
+   matched=candidates.size;
+   // Never classify a medicine as an originator merely because its company
+   // and ingredient match: verify its MFDS regulatory review category.
+   for(const drug of [...candidates.values()].slice(0,7)){
+    const detailUrl=ORIGIN+"/pbp/CCBBB01/getItemDetailCache?cacheSeq="+drug.item_seq;
+    const page=await html(detailUrl);
+    const idx=page.indexOf("허가심사유형");
+    const detail=idx>=0 ? plain(page.slice(idx,idx+380)) : "";
+    let role="";
+    if(/동등생물의약품|바이오시밀러/.test(detail))role="biosimilar";
+    else if(/개량신약/.test(detail))role="incremental_new_drug";
+    else if(/자료제출의약품/.test(detail))role="innovative_data_submission";
+    else if(/신약/.test(detail))role="new_drug";
+    if(!role)continue;
+    await db("POST","mfds_monitor_product_roles?on_conflict=item_seq",{
+      item_seq:drug.item_seq,product:drug.product,company:drug.company,
+      ingredient:drug.ingredient,product_role:role,watch_scope:"primary",
+      evidence_source:"mfds_same_originator_family_and_review_type",
+      evidence_url:detailUrl,
+      evidence_note:"식약처 품목정보 허가심사유형 '"+role+"' 확인; 기존 신약과 같은 성분·허가업체의 별도 제형 또는 제품군",
+      classification_confidence:"verified_review",updated_at:checkedAt
+    },"resolution=ignore-duplicates,return=minimal");
+    await db("POST","mfds_monitor_drug_targets?on_conflict=item_seq",{
+      item_seq:drug.item_seq,product:drug.product,company:drug.company,
+      ingredient:drug.ingredient,source_url:detailUrl,
+      active:false,last_checked_status:"originator-family"
+    },"resolution=ignore-duplicates,return=minimal");
+    added++;
+   }
+  }catch(e){error=String(e).slice(0,220)}
+  await db("POST","mfds_monitor_family_scans?on_conflict=group_key",{
+    group_key:seed.key,origin_item_seq:seed.item_seq,
+    ingredient:seed.term,company:seed.company,checked_at:checkedAt,
+    matched_products:matched,added_products:added,last_error:error||null
+  },"resolution=merge-duplicates,return=minimal");
+  results.push({origin:seed.product,ingredient:seed.term,matched,added,error:error||undefined});
+ }
+ return {mode:"originator_family_sync",checked:results.length,results,
+  note:"동일 원개발사·동일 성분의 허가심사유형이 공식 확인된 제품만 기본 감시에 추가하며 자동 탐색은 회당 최대 3성분·각 7품목으로 제한합니다."};
+}
+
 async function syncOriginalMasterHistory(maxItems:number=6):Promise<unknown>{
  const n=Math.max(1,Math.min(10,Number(maxItems)||6));
  const [roles,targets]=await Promise.all([
@@ -1523,6 +1606,7 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="master_stage_review")return reply(await stageMFDSReviewCategories());
     if(input?.mode==="master_stage_new_drugs")return reply(await stageCurrentMFDSNewDrugReviews());
     if(input?.mode==="original_sync")return reply(await syncOriginalMasterHistory(Number(input?.limit)||6));
+    if(input?.mode==="originator_family_sync")return reply(await syncOriginatorFamily(Number(input?.limit)||2));
     if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
   } catch (e) {
