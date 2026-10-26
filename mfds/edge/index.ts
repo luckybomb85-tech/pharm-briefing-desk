@@ -497,6 +497,111 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
     source_description:"효능·효과 변경일을 기준으로 정렬. 비교 가능한 버전은 식약처 공식 효능·효과 XML 원문을 대조합니다. 일부 구버전 원문 및 품목은 미수집."};
 }
 
+
+// Public, read-only lookup across the live MFDS product catalogue.
+// No unauthenticated request inserts/updates monitoring or historical records.
+type CatalogueItem={
+ item_seq:string;product:string;company:string;ingredient:string;
+ permit_date:string;status:string;source_url:string;
+};
+function parseDrugCatalogue(markup:string):CatalogueItem[]{
+ const body=markup.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
+ const results:CatalogueItem[]=[];
+ const seen=new Set<string>();
+ for(const row of body.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+  const cells=[...row[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m=>plain(m[1]));
+  if(cells.length<12)continue;
+  const item_seq=row[1].match(/getItemDetail\?itemSeq=(\d{9})/)?.[1]||"";
+  if(!item_seq||seen.has(item_seq))continue;
+  seen.add(item_seq);
+  const product=cells[1],company=cells[3],ingredient=cells[11];
+  if(!product||!company)continue;
+  results.push({
+   item_seq,product,company,ingredient,
+   permit_date:/^\d{4}-\d{2}-\d{2}$/.test(cells[7]||"")?cells[7]:"",
+   status:cells[9]||"",
+   source_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+item_seq
+  });
+ }
+ return results;
+}
+async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
+ const q=(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
+ if(q.length<2||q.length>70) return {matches:[],has_more:false,total:0,message:"검색어는 2~70자로 입력해주세요."};
+ const page=Math.max(1,Math.min(50,Number(params.get("page")||1)||1));
+ const fields=["itemName","ingrName1","entpName"];
+ const jobs=await Promise.allSettled(fields.map(async field=>{
+  const url=new URL(ORIGIN+"/searchDrug");
+  url.searchParams.set("searchYn","Y");
+  url.searchParams.set("page",String(page));
+  url.searchParams.set("limit","20");
+  url.searchParams.set(field,q);
+  const markup=await html(url.toString());
+  return parseDrugCatalogue(markup);
+ }));
+ const ok=jobs.filter((j):j is PromiseFulfilledResult<CatalogueItem[]>=>j.status==="fulfilled");
+ if(!ok.length)throw Error("식약처 품목 검색 서버에 연결하지 못했습니다.");
+ const matches=new Map<string,CatalogueItem>();
+ for(const part of ok)for(const item of part.value)matches.set(item.item_seq,item);
+ const norm=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+ const ranked=[...matches.values()].filter(item=>
+  [item.product,item.company,item.ingredient].some(x=>x.toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(norm))
+ ).sort((a,b)=>{
+  const score=(x:CatalogueItem)=>{
+   const product=x.product.toLocaleLowerCase("ko-KR");
+   if(product===norm||product.replace(/\([^)]*\)/g,"").trim()===norm)return 0;
+   if(product.startsWith(norm))return 1;
+   if(product.includes(norm))return 2;
+   if(x.ingredient.toLocaleLowerCase("ko-KR").includes(norm))return 3;
+   return 4;
+  };
+  return score(a)-score(b)||a.product.localeCompare(b.product,"ko-KR");
+ });
+ const incomplete=jobs.some(j=>j.status==="rejected");
+ return {matches:ranked.slice(0,55),has_more:ok.some(j=>j.value.length>=20),
+  page,source:"MFDS 의약품등 정보검색",partial:incomplete,
+  note:"식약처 실시간 품목검색 결과입니다. 제품을 선택하면 효능·효과 변경이력을 조회합니다."};
+}
+async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
+ const itemSeq=(params.get("item_seq")||"").trim();
+ if(!/^\d{9}$/.test(itemSeq))throw Error("유효한 품목기준코드가 필요합니다.");
+ const url=ORIGIN+"/pbp/CCBBB01/getItemChangeHistList?itemSeq="+itemSeq+"&docType=EE&page=1";
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),16000);
+ let content="";
+ try{
+  const response=await fetch(url,{signal:controller.signal,headers:{"User-Agent":"Mozilla/5.0","Accept":"text/html"}});
+  if(!response.ok)throw Error("식약처 이력 조회 HTTP "+response.status);
+  content=await response.text();
+  if(!content.includes('id="hist_list"'))throw Error("식약처 효능·효과 변경이력 응답이 올바르지 않습니다.");
+ }finally{clearTimeout(timer);}
+ const versions=parseOfficialHistoryVersions(content);
+ const items:any[]=[];
+ for(let i=1;i<versions.length;i++){
+  const prior=versions[i-1],next=versions[i];
+  const before=new Set(prior.lines.map(comparisonKey)),after=new Set(next.lines.map(comparisonKey));
+  const added=next.lines.filter(line=>!before.has(comparisonKey(line)));
+  const removed=prior.lines.filter(line=>!after.has(comparisonKey(line)));
+  let kind="변경";
+  if(added.length&&!removed.length)kind="추가";
+  if(removed.length&&!added.length)kind="삭제";
+  items.push({
+   id:"live-"+itemSeq+"-"+next.changed_at,
+   changed_at:next.changed_at,change_type:kind,
+   before_text:prior.lines.join("\n"),after_text:next.lines.join("\n"),
+   added_lines:added,removed_lines:removed,diff_status:"compared",
+   evidence_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+itemSeq,
+   source_kind:"official_live",comparison_kind:"literal"
+  });
+ }
+ items.sort((a,b)=>b.changed_at.localeCompare(a.changed_at));
+ const current=versions.at(-1);
+ return {item_seq:itemSeq,items,total:items.length,
+  current_efficacy:current?.lines.join("\n")||"",
+  initial_version_date:versions[0]?.changed_at||null,
+  source:"식약처 효능·효과 변경이력",reviewed:false,
+  note:"식약처가 전자화한 효능·효과 원문의 연속 버전을 비교했습니다. 전자화 이전 이력과 문구 변경의 의학적 의미는 별도 확인이 필요합니다."};
+}
+
 async function feed(): Promise<unknown> {
   const [events, leads, recent, runs, stats, efficacy, targets] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
@@ -520,10 +625,12 @@ Deno.serve(async (req: Request) => {
   try {
     if (req.method === "GET") {
       const url=new URL(req.url);
-      return reply(url.searchParams.get("view")==="efficacy"
+      const view=url.searchParams.get("view");
+      if(view==="lookup")return reply(await lookupMFDSCatalogue(url.searchParams));
+      if(view==="inspect")return reply(await inspectMFDSItem(url.searchParams));
+      return reply(view==="efficacy"
         ? await filteredEfficacyFeed(url.searchParams)
-        : url.searchParams.get("view")==="archive"
-          ? await archiveFeed(url.searchParams) : await feed());
+        : view==="archive" ? await archiveFeed(url.searchParams) : await feed());
     }
     if (req.method !== "POST") return reply({error:"Unsupported method"},405);
     if (!await validToken(req.headers.get("x-monitor-token") || "")) return reply({error:"Unauthorized"},401);
