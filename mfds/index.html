@@ -21,8 +21,8 @@ h2{margin:0;font-size:18px;letter-spacing:-.5px}
 .reload:disabled{opacity:.5}
 .guide{margin:17px 0;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;color:#586980;font-size:12px}
 .guide b{color:var(--ink)}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:14px 0}
-.metric{background:#fff;border:1px solid var(--border);border-radius:12px;padding:15px 17px;text-align:left;min-height:118px;display:flex;flex-direction:column;transition:border-color .15s,background .15s}
+.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin:14px 0}
+.metric{cursor:pointer;background:#fff;border:1px solid var(--border);border-radius:12px;padding:15px 17px;text-align:left;min-height:118px;display:flex;flex-direction:column;transition:border-color .15s,background .15s}
 .metric:hover,.metric:focus-visible{border-color:#6b91d6;outline:none}
 .metric.active{border:2px solid var(--blue);padding:14px 16px;background:#f8fbff}
 .metric-label{font-size:12px;color:var(--muted);font-weight:700}
@@ -89,12 +89,15 @@ h2{margin:0;font-size:18px;letter-spacing:-.5px}
 </div>
 <button id="reload" class="reload" type="button">새로고침</button>
 </header>
-<div class="guide"><b>날짜 구분:</b> '허가변경 확인'의 날짜는 실제 변경일입니다. '심사자료'와 '변경명령'의 날짜는 게시·등록일이며, 그날 적응증이 변경됐다는 뜻은 아닙니다. 확정 여부를 확인하지 않은 자료는 알림 대상에서 제외합니다.</div>
+<div class="guide"><b>날짜 구분:</b> '주요 허가변경 확인'과 '효능·효과 변경이력'의 날짜는 실제 변경일입니다. '심사자료'와 '변경명령'의 날짜는 게시·등록일이며, 그날 적응증이 변경됐다는 뜻은 아닙니다. 확정 여부를 확인하지 않은 자료는 알림 대상에서 제외합니다.</div>
 <section class="metrics" aria-label="이력 유형 선택">
-<button class="metric" type="button" data-view="verified" aria-pressed="false">
- <span class="metric-label">허가변경 확인</span><strong id="numVerified">—</strong><small>실제 변경일·변경 내용 확인</small>
+<button class="metric active" type="button" data-view="verified" aria-pressed="true">
+ <span class="metric-label">주요 허가변경 확인</span><strong id="numVerified">—</strong><small>실제 변경일·변경 내용 확인</small>
 </button>
-<button class="metric active" type="button" data-view="leads" aria-pressed="true">
+<button class="metric" type="button" data-view="efficacy" aria-pressed="false">
+ <span class="metric-label">효능·효과 변경이력</span><strong id="numEfficacy">—</strong><small>실제 변경일 · 유형 미확인 포함</small>
+</button>
+<button class="metric" type="button" data-view="leads" aria-pressed="false">
  <span class="metric-label">주요 변경 검토 후보</span><strong id="numLeads">—</strong><small>적응증·치료 범위 관련 단서</small>
 </button>
 <button class="metric" type="button" data-view="review" aria-pressed="false">
@@ -110,8 +113,8 @@ h2{margin:0;font-size:18px;letter-spacing:-.5px}
 </div>
 <section class="panel" id="listPanel">
 <div class="panel-header">
- <h2 id="sectionTitle">주요 변경 검토 후보</h2>
- <p id="sectionDesc">식약처 공개자료에 주요 변경 단서가 있는 품목. 실제 적응증 변경 여부는 별도 확인이 필요합니다.</p>
+ <h2 id="sectionTitle">주요 허가변경 확인</h2>
+ <p id="sectionDesc">실제 변경일·변경 내용이 확인된 건입니다. 별도의 효능·효과 변경이력 메뉴에는 유형을 아직 확인하지 못한 변경도 포함됩니다.</p>
 </div>
 <div class="toolbar">
  <input id="keyword" type="search" placeholder="품목명·회사명·성분명 검색" aria-label="검색어">
@@ -142,9 +145,10 @@ h2{margin:0;font-size:18px;letter-spacing:-.5px}
 "use strict";
 const BASE="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-const state={view:"leads",events:[],leads:[],runs:[],counts:{},archive:[],archiveItems:[],offset:0,hasMore:false,archiveLoading:false,refreshing:false,querySerial:0,loadedIds:new Set()};
+const state={view:"verified",events:[],efficacy:[],leads:[],targets:[],runs:[],counts:{},archive:[],archiveItems:[],offset:0,hasMore:false,archiveLoading:false,refreshing:false,querySerial:0,loadedIds:new Set()};
 const names={
- verified:["허가변경 확인","실제 허가변경일·변경 전후 내용을 확인한 건만 표시합니다. 확인된 기록이 적다고 실제 허가변경이 없었던 것은 아닙니다."],
+ verified:["주요 허가변경 확인","실제 허가변경일·변경 전후 내용을 확인한 건만 표시합니다. 확인된 기록이 적다고 실제 허가변경이 없었던 것은 아닙니다."],
+ efficacy:["효능·효과 변경이력","식약처 품목 상세정보에 기록된 실제 효능·효과 변경일입니다. 추가·확대·축소·삭제인지 아직 판별되지 않은 건은 유형 미확인으로 표시합니다. 현재 추적 중인 품목에 한합니다."],
  leads:["주요 변경 검토 후보","공개 심사자료에 적응증·환자군·치료 차수·병용요법 등 단서가 있는 건입니다. 등록일은 승인일이 아닙니다."],
  review:["변경허가 심사자료 이력","기존 게시자료를 계속 아래로 탐색합니다. 표시 날짜는 심사자료 공개일이며 실제 적응증 변경일과 다릅니다."],
  orders:["허가사항 변경명령 이력","안전성·재심사·통일조정 등의 변경명령도 포함합니다. 적응증 추가·삭제와 무관한 자료가 많습니다."]
@@ -183,6 +187,22 @@ function renderVerified(x){
  const links=appended(card,"div","links");
  if(x.mfds_url)links.appendChild(link(x.mfds_url,"식약처 자료"));
  if(x.evidence_url)links.appendChild(link(x.evidence_url,"확인 근거"));
+ return card;
+}
+
+function renderEfficacy(x){
+ const card=node("article","item");
+ const head=appended(card,"div","item-head");
+ const tags=appended(head,"div","item-tags");
+ appended(tags,"span","pill verified","효능·효과 변경");
+ appended(tags,"span","pill unverified","유형 미확인");
+ appended(head,"span","item-date actual","실제 변경 "+date(x.changed_at));
+ const title=appended(card,"h3","item-title");
+ title.appendChild(link(x.evidence_url,x.product+" · 효능·효과 변경"));
+ appended(card,"p","dim",[x.company,x.product].filter(Boolean).join(" · "));
+ appended(card,"div","note","식약처 품목 변경이력에서 변경일을 확인했습니다. 적응증 추가·확대·축소·삭제 여부와 변경 전후 내용은 별도 검증이 필요합니다.");
+ const links=appended(card,"div","links");
+ links.appendChild(link(x.evidence_url,"식약처 품목별 변경이력"));
  return card;
 }
 function renderRaw(x,context){
@@ -233,11 +253,11 @@ function activate(view,scroll){
  if(view==="review"||view==="orders")loadArchive(false);
 }
 function localRows(){
- let rows=state.view==="verified"?state.events:state.leads;
+ let rows=state.view==="verified"?state.events:state.view==="efficacy"?state.efficacy:state.leads;
  const q=$("#keyword").value.trim().toLowerCase();
  const year=$("#year").value,kind=$("#changeType").value,fresh=$("#fresh").value;
  return rows.filter(x=>{
-  const dt=state.view==="verified"?x.event_date:x.published_at;
+  const dt=state.view==="verified"?x.event_date:state.view==="efficacy"?x.changed_at:x.published_at;
   if(year!=="all"&&!(dt||"").startsWith(year))return false;
   if(fresh==="new"&&x.alert_state!=="new")return false;
   if(kind!=="all"){
@@ -259,7 +279,7 @@ function render(){
   root.appendChild(node("div","empty",msg));
  }else{
   const chunk=document.createDocumentFragment();
-  for(const row of rows)chunk.appendChild(archiveView?renderRaw(row,state.view):state.view==="verified"?renderVerified(row):renderRaw(row,"leads"));
+  for(const row of rows)chunk.appendChild(archiveView?renderRaw(row,state.view):state.view==="verified"?renderVerified(row):state.view==="efficacy"?renderEfficacy(row):renderRaw(row,"leads"));
   root.appendChild(chunk);
  }
  $("#moreWrap").hidden=!archiveView||!state.hasMore;
@@ -313,8 +333,9 @@ async function loadMain(){
   const r=await fetch(BASE,{cache:"no-store",signal:controller.signal});clearTimeout(timer);
   const d=await r.json();
   if(!r.ok||!Array.isArray(d.events)||!Array.isArray(d.leads))throw Error(d.error||"데이터 형식 오류");
-  state.events=d.events;state.leads=d.leads;state.runs=d.runs||[];state.counts=d.counts||{};state.archive=d.archive||[];
+  state.events=d.events;state.efficacy=d.efficacy||[];state.targets=d.targets||[];state.leads=d.leads;state.runs=d.runs||[];state.counts=d.counts||{};state.archive=d.archive||[];
   $("#numVerified").textContent=state.counts.verified_events??state.events.length;
+  $("#numEfficacy").textContent=state.counts.efficacy??state.efficacy.length;
   $("#numLeads").textContent=state.counts.leads??state.leads.length;
   $("#numReview").textContent=state.counts.review_records??"—";
   $("#numOrders").textContent=state.counts.orders_records??"—";
