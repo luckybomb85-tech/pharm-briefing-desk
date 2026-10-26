@@ -1083,11 +1083,52 @@ function seedResolutionScore(seed:any,drug:CatalogueItem):number{
  if(drug.status&&!/정상/.test(drug.status))score-=5;
  return score;
 }
+
+async function stageCurrentMFDSNewDrugReviews():Promise<unknown>{
+ // Before the next cumulative annual designation notice is issued, newly
+ // reviewed 'new drug' dossiers provide directly verifiable MFDS evidence.
+ // Review publication is not a change-of-indication date.
+ const reviews=await db("GET","mfds_monitor_items?select=source_id,title,product,company,ingredient,source_url,published_at&source=eq.review&order=published_at.desc&limit=1100");
+ const currentYear=new Date().getUTCFullYear();
+ const seeds:any[]=[];
+ for(const item of reviews||[]){
+  const title=String(item.title||"").trim();
+  if(!/^\[(?:신약|희귀신약)\]/.test(title))continue;
+  const year=Number(String(item.published_at||"").slice(0,4));
+  if(year<2026||year>currentYear)continue;
+  const products=splitProductNames(item.product||"").slice(0,8);
+  for(let i=0;i<products.length;i++){
+   const product=products[i].trim();
+   if(!product)continue;
+   seeds.push({
+    seed_key:"newdrug-review-"+item.source_id+"-"+i,
+    source_year:year,ordinal:i+1,product:product.slice(0,450),
+    company:String(item.company||"").slice(0,240),
+    ingredient:String(item.ingredient||"").slice(0,600),
+    permit_date:null,source_type:"mfds_new_drug_review",
+    source_url:String(item.source_url||""),
+    match_status:"pending",
+    match_note:"2026년 식약처 허가심사보고서 신약/희귀신약 구분. 제품명·업체명·성분 추가 대조 후 기본 감시 대상."
+   });
+  }
+ }
+ for(let i=0;i<seeds.length;i+=70)await db("POST",
+  "mfds_monitor_master_seeds?on_conflict=seed_key",seeds.slice(i,i+70),
+  "resolution=ignore-duplicates,return=minimal");
+ return {mode:"stage_new_drug_reviews",year_from:2026,seeds:seeds.length,
+  source:"식약처 신약·희귀신약 허가심사 보고서",
+  note:"신약 지정 연간 공고 이전의 품목. 실제 변경이력은 별도 공식 효능·효과 이력에서만 수집합니다."};
+}
+
 async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
  const n=Math.max(1,Math.min(40,Math.floor(maxItems)||12));
- const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at&source_type=eq.mfds_new_drug_designation&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
+ const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at&source_type=in.(mfds_new_drug_designation,mfds_new_drug_review)&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
  const prioritized=["키트루다","임핀지","테빔브라","파센라","엔허투","옵디보","오젬픽","레켐비","트렘피어","듀피젠트","가다실","티쎈트릭","레켐비"];
- const priority=(row:any)=>{const i=prioritized.findIndex(x=>row.product.includes(x));return i<0?100:i;};
+ const priority=(row:any)=>{
+  if(row.source_type==="mfds_new_drug_review"&&row.source_year>=2026)return -15;
+  const i=prioritized.findIndex(x=>row.product.includes(x));
+  return i<0?100:i;
+ };
  const now=Date.now();
  const pending=(seeds||[]).filter((x:any)=>x.match_status==="pending"||
   !x.last_attempt_at||now-new Date(x.last_attempt_at).getTime()>24*3600000)
@@ -1119,12 +1160,21 @@ async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
       (!sorted[1]||sorted[0].score-sorted[1].score>=10)){
      result=sorted[0].c;
      score=sorted[0].score;state="matched";code=result.item_seq;
+     const newDrugReview=seed.source_type==="mfds_new_drug_review";
+     const reviewIsOrphan=String(seed.source_url||"").includes("jdgmnResultInfoSeq")&&
+       /희귀신약/.test(String(seed.product||""));// separate report title is in seed note if needed
      await db("POST","mfds_monitor_product_roles?on_conflict=item_seq",{
        item_seq:result.item_seq,product:result.product,company:result.company,
-       ingredient:result.ingredient,product_role:"new_drug",watch_scope:"primary",
-       evidence_source:"mfds_new_drug_designation",evidence_url:seed.source_url,
-       evidence_note:"식약처 "+seed.source_year+"년 신약 지정 공고 원문과 제품명·업체명·허가일자 대조",
-       evidence_year:seed.source_year,classification_confidence:"official_list"
+       ingredient:result.ingredient,
+       product_role:newDrugReview?(reviewIsOrphan?"orphan_original":"new_drug"):"new_drug",
+       watch_scope:"primary",
+       evidence_source:newDrugReview?"mfds_new_drug_review":"mfds_new_drug_designation",
+       evidence_url:seed.source_url,
+       evidence_note:newDrugReview?
+        "2026년 식약처 신약/희귀신약 허가심사 공개 보고서와 식약처 품목명·업체명 대조":
+        "식약처 "+seed.source_year+"년 신약 지정 공고 원문과 제품명·업체명·허가일자 대조",
+       evidence_year:seed.source_year,
+       classification_confidence:newDrugReview?"verified_review":"official_list"
      },"resolution=ignore-duplicates,return=minimal");
      await db("POST","mfds_monitor_drug_targets?on_conflict=item_seq",{
        item_seq:result.item_seq,product:result.product,company:result.company,
@@ -1413,6 +1463,7 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="master_resolve")return reply(await resolveMFDSOriginalSeeds(Number(input?.limit)||12));
     if(input?.mode==="master_reference_import")return reply(await importMFDSReferenceDrugs(Number(input?.limit)||4));
     if(input?.mode==="master_stage_review")return reply(await stageMFDSReviewCategories());
+    if(input?.mode==="master_stage_new_drugs")return reply(await stageCurrentMFDSNewDrugReviews());
     if(input?.mode==="original_sync")return reply(await syncOriginalMasterHistory(Number(input?.limit)||6));
     if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
