@@ -36,6 +36,22 @@ jobs:
           assert tev[0]["added_count"]==3 and tev[0]["removed_count"]==0 and tev[0]["editorial_changes"]>=4,tev[0]
           assert {x["context"] for x in tev[0]["change_details"]}=={"비소세포폐암","소세포폐암","비인두암"},tev[0]["change_details"]
           assert any(x["product"]=="임핀지주" and x["changed_at"]=="2026-03-23" and x["change_type"]=="추가" for x in data["items"])
+          with urllib.request.urlopen("https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=inspect&item_seq=202303165",timeout=25) as resp:
+              drug=json.load(resp)
+          assert drug["official_change_total"]==12,drug
+          assert drug["official_efficacy_total"]==2,drug
+          assert drug["total"]==2,drug
+          import urllib.parse
+          base="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=lookup&q="+urllib.parse.quote("노보노디스크")
+          counts=[]
+          for page in (1,2,3):
+              with urllib.request.urlopen(base+"&page="+str(page),timeout=30) as resp:
+                  r=json.load(resp)
+              assert r["total_at_least"]==36,(page,r)
+              counts.append(len(r["matches"]))
+              assert r["has_more"]==(page<3),(page,r)
+          assert counts==[15,15,6],counts
+          print("OFFICIAL_CATEGORY_COUNTS_AND_PAGINATION_OK",drug["official_change_total"],drug["official_efficacy_total"],counts)
           print("EFFICACY_API_OK",data["total"],data["counts"])
           PY
       - name: Test search, type/year sorting, expandable efficacy text and mobile
