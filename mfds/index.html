@@ -4,376 +4,247 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>의약품 허가변경 레이더 | 데일리팜</title>
+<title>효능·효과 변경이력 | 데일리팜</title>
 <style>
-:root{--ink:#1c2b3e;--muted:#64748b;--border:#e1e6ef;--wash:#f5f7fa;--blue:#1b58c6;--bluepale:#e8f0ff;--white:#fff}
+:root{--ink:#17243a;--muted:#69768b;--border:#e1e7ee;--wash:#f7f8fb;--blue:#2458a6;--green:#157347;--red:#b44242}
 *{box-sizing:border-box}
-body{margin:0;background:var(--wash);color:var(--ink);font:14px/1.55 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
-button,input,select{font:inherit}button{cursor:pointer}
-a{color:inherit}a:hover{color:var(--blue)}
-.wrap{max-width:1140px;margin:auto;padding:30px 24px 70px}
-.head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
-.eyebrow{font-size:11px;font-weight:850;letter-spacing:.12em;color:var(--blue)}
-h1{margin:5px 0 6px;font-size:28px;letter-spacing:-1px}
-h2{margin:0;font-size:18px;letter-spacing:-.5px}
-.sub{color:var(--muted);font-size:13px;margin:0}
-.reload{background:#fff;border:1px solid var(--border);border-radius:8px;padding:9px 14px;font-weight:750;white-space:nowrap}
-.reload:disabled{opacity:.5}
-.guide{margin:17px 0;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;color:#586980;font-size:12px}
-.guide b{color:var(--ink)}
-.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin:14px 0}
-.metric{cursor:pointer;background:#fff;border:1px solid var(--border);border-radius:12px;padding:15px 17px;text-align:left;min-height:118px;display:flex;flex-direction:column;transition:border-color .15s,background .15s}
-.metric:hover,.metric:focus-visible{border-color:#6b91d6;outline:none}
-.metric.active{border:2px solid var(--blue);padding:14px 16px;background:#f8fbff}
-.metric-label{font-size:12px;color:var(--muted);font-weight:700}
-.metric strong{font-size:28px;line-height:1.24;font-weight:850;margin:8px 0 3px;letter-spacing:-.7px}
-.metric small{font-size:11px;color:var(--muted);margin-top:auto}
-.statusline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0 17px;color:var(--muted);font-size:12px;flex-wrap:wrap}
-.pill{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap}
-.pill.verified{color:#1856b4;background:#e6efff}
-.pill.lead{color:#805615;background:#fff0d7}
-.pill.unverified{color:#64718a;background:#edf0f6}
-.pill.source{color:#596b80;background:#eaf0f6}
-.pill.new{color:#ba3434;background:#ffecec}
-.panel{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.panel-header{padding:19px 21px 14px;border-bottom:1px solid var(--border)}
-.panel-header p{font-size:12px;margin:6px 0 0;color:var(--muted)}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:13px 20px;border-bottom:1px solid var(--border)}
-.toolbar input,.toolbar select{border:1px solid #d5dde9;background:#fff;border-radius:8px;padding:9px 10px;color:var(--ink);min-height:40px}
-.toolbar input{min-width:200px;flex:1}
-.toolbar select{max-width:195px}
-.rows{display:flex;flex-direction:column}
-.item{padding:17px 22px;border-bottom:1px solid var(--border);scroll-margin:85px}
-.item:last-child{border-bottom:0}
-.item-head{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-bottom:7px}
-.item-tags{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.item-date{font-size:13px;color:#51627a;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
-.item-date.actual{font-size:15px;color:var(--blue);font-weight:850}
-.item-title{font-size:16px;font-weight:800;letter-spacing:-.35px;margin:0 0 5px;line-height:1.45}
-.item-title a{text-decoration:none;font-size:inherit;color:var(--ink);font-weight:inherit}.item-title a:hover{text-decoration:underline}
-.dim{font-size:12px;color:var(--muted);margin:0}
-.evidence{background:#f7f9fc;border-radius:7px;border:1px solid #edf1f6;margin-top:10px;padding:10px 12px;font-size:12px;line-height:1.6;overflow-wrap:anywhere;color:#536078}
-.diff{background:#f7faff;border:1px solid #e5edf9;border-radius:9px;padding:10px 13px;margin-top:12px}
-.diff-row{display:flex;gap:12px;padding:5px 0}.diff-title{font-size:12px;color:#5b6b84;flex:0 0 50px;font-weight:800}.diff-value{font-size:13px;flex:1}
-.links{display:flex;gap:15px;margin-top:10px;flex-wrap:wrap}
-.source-link{color:var(--blue);text-decoration:none;font-size:12px;font-weight:800}
-.source-link:hover{text-decoration:underline}
-.note{font-size:12px;color:var(--muted);margin-top:9px}
-.empty{padding:65px 20px;text-align:center;color:var(--muted)}
-.morewrap{display:flex;flex-direction:column;align-items:center;gap:9px;padding:17px 14px 22px}
-.morebtn{border:1px solid #c7d2e2;border-radius:9px;background:#fff;color:var(--blue);padding:11px 24px;font-weight:800;min-width:160px}
-.morebtn:disabled{opacity:.5}
-.moreinfo{font-size:12px;color:var(--muted)}
-.foot{margin-top:16px;color:var(--muted);font-size:12px;line-height:1.8}
-#bottomSentinel{height:1px}
+body{margin:0;background:var(--wash);color:var(--ink);font:14px/1.55 system-ui,-apple-system,"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.wrap{max-width:1070px;padding:30px 22px 80px;margin:auto}
+header{margin:0 0 17px}
+h1{margin:0 0 5px;font-size:27px;letter-spacing:-.85px}
+.subtitle{margin:0;color:var(--muted);font-size:12px}
+.search{display:flex;flex-wrap:wrap;gap:9px;background:white;border:1px solid var(--border);border-radius:12px;padding:13px;margin:18px 0}
+.search input,.search select{border:1px solid #d7deea;border-radius:8px;background:white;padding:10px 11px;height:43px;color:var(--ink);min-width:0}
+.search input{flex:1 1 260px;min-width:180px}
+.search select{flex:0 1 138px;min-width:112px;max-width:160px}
+.search .submit{height:43px;min-width:83px;background:#224f9b;border:1px solid #224f9b;border-radius:8px;color:white;font-weight:750;padding:8px 17px}
+.search .submit:hover{background:#143d84}
+.search button:disabled{opacity:.65;cursor:default}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:21px 1px 9px}
+.bar strong{font-size:15px}.bar small{font-size:12px;color:var(--muted)}
+.entries{display:flex;flex-direction:column;gap:9px}
+.entry{border:1px solid var(--border);border-radius:10px;background:white;overflow:hidden}
+.entry summary{display:flex;align-items:center;gap:11px;padding:16px 17px;cursor:pointer;list-style:none;min-height:69px}
+.entry summary::-webkit-details-marker{display:none}
+.entry summary:focus-visible{outline:2px solid var(--blue);outline-offset:-3px}
+.entry[open] summary{border-bottom:1px solid var(--border);background:#fafcff}
+.date{color:#435773;font-size:13px;font-weight:760;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tag{border-radius:6px;display:inline-block;white-space:nowrap;font-size:11px;font-weight:800;line-height:1.35;padding:4px 9px;background:#edf0f5;color:#415573}
+.tag.add{color:#0d6d47;background:#e3f4ed}
+.tag.delete{color:#a23d3d;background:#fdebed}
+.tag.change{color:#244d95;background:#eaf0fb}
+.entry-main{flex:1;min-width:0}
+.drug{font-size:16px;font-weight:780;letter-spacing:-.35px;line-height:1.35;overflow-wrap:anywhere}
+.meta{font-size:12px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+.arrow{font-size:17px;color:#8491a4;transform:rotate(0);transition:transform .15s;flex:0 0 auto}
+.entry[open] .arrow{transform:rotate(180deg)}
+.content{padding:17px 20px 21px}
+.content h3{font-size:13px;margin:19px 0 8px;letter-spacing:-.2px}
+.content h3:first-child{margin-top:0}
+.hint{color:var(--muted);font-size:12px;margin:1px 0 11px}
+.delta{display:flex;flex-direction:column;gap:5px}
+.line{font-size:13px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;padding:5px 9px;border-radius:5px}
+.line.added{background:#ebf7f0;border-left:3px solid #2f9971}
+.line.removed{background:#fff0f0;border-left:3px solid #d77676;text-decoration:line-through;text-decoration-color:#bd7b7b}
+.line.current{padding:5px 8px;border-radius:0}
+.line.current.is-added{background:#e6f5ed;border-left:3px solid #29936d;padding-left:9px}
+.fulltext{border:1px solid #e7ebf2;border-radius:9px;padding:10px 12px;max-height:450px;overflow:auto;display:flex;flex-direction:column;gap:2px}
+.fulltext .line{white-space:pre-wrap}
+.contents-footer{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.contents-footer small{font-size:11px;color:#778297}
+.empty{text-align:center;background:white;border:1px solid var(--border);border-radius:10px;padding:55px 15px;color:var(--muted)}
+.more{display:flex;justify-content:center;padding:22px 0;min-height:55px}
+.more button{border:1px solid #ccd6e6;background:white;border-radius:8px;color:var(--blue);padding:10px 22px;font-weight:800}
+.more button:disabled{opacity:.55}
+.error{color:#a43737;font-size:12px}
+footer{font-size:11px;color:#8a94a4;margin-top:26px}
+#sentinel{height:1px}
 @media(max-width:760px){
-.wrap{padding:20px 12px 65px}h1{font-size:22px}.sub{font-size:12px}.head{gap:7px}
-.reload{padding:8px 10px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.metric{padding:13px 12px;min-height:104px}.metric.active{padding:12px 11px}
-.metric strong{font-size:24px}.metric-label{font-size:11px}
-.panel-header{padding:15px}.toolbar{padding:12px;display:grid;grid-template-columns:1fr 1fr}
-.toolbar input{grid-column:span 2;min-width:0}
-.toolbar select{max-width:none;min-width:0;width:100%}
-.item{padding:16px 14px}.item-title{font-size:15px}.item-date.actual{font-size:13px}
-.diff-row{gap:7px}.diff-title{flex-basis:45px}
+.wrap{padding:20px 12px 65px}h1{font-size:23px}
+.search{gap:7px;padding:10px}
+.search input{flex:1 1 100%;width:100%;min-width:0}
+.search select{flex:1 1 25%;width:auto;min-width:0;max-width:none;padding:8px 6px;font-size:12px}
+.search .submit{flex:1 1 100%;width:100%}
+.entry summary{gap:8px;padding:14px 12px;flex-wrap:wrap}
+.entry-main{flex:1 1 55%;order:0}
+.date{order:0;font-size:12px}.tag{order:0}
+.drug{font-size:15px}
+.arrow{margin-left:auto}
+.content{padding:13px}
+.fulltext{max-height:350px}
+.bar{align-items:baseline}
 }
 </style>
 </head>
 <body>
 <main class="wrap">
-<header class="head">
-<div>
-<div class="eyebrow">DAILYPHARM · MFDS CHANGE RADAR</div>
-<h1>의약품 허가변경 레이더</h1>
-<p class="sub">적응증 추가·치료 차수 확대·축소·삭제 탐지 및 과거 이력 조회</p>
-</div>
-<button id="reload" class="reload" type="button">새로고침</button>
+<header>
+  <h1>효능·효과 변경이력</h1>
+  <p class="subtitle">식약처 실제 변경일 기준 · 품목을 누르면 변경 전후 내용을 확인할 수 있습니다.</p>
 </header>
-<div class="guide"><b>날짜 구분:</b> '주요 허가변경 확인'과 '효능·효과 변경이력'의 날짜는 실제 변경일입니다. '심사자료'와 '변경명령'의 날짜는 게시·등록일이며, 그날 적응증이 변경됐다는 뜻은 아닙니다. 확정 여부를 확인하지 않은 자료는 알림 대상에서 제외합니다.</div>
-<section class="metrics" aria-label="이력 유형 선택">
-<button class="metric active" type="button" data-view="verified" aria-pressed="true">
- <span class="metric-label">주요 허가변경 확인</span><strong id="numVerified">—</strong><small>실제 변경일·변경 내용 확인</small>
-</button>
-<button class="metric" type="button" data-view="efficacy" aria-pressed="false">
- <span class="metric-label">효능·효과 변경이력</span><strong id="numEfficacy">—</strong><small>실제 변경일 · 유형 미확인 포함</small>
-</button>
-<button class="metric" type="button" data-view="leads" aria-pressed="false">
- <span class="metric-label">주요 변경 검토 후보</span><strong id="numLeads">—</strong><small>적응증·치료 범위 관련 단서</small>
-</button>
-<button class="metric" type="button" data-view="review" aria-pressed="false">
- <span class="metric-label">변경허가 심사자료</span><strong id="numReview">—</strong><small>과거 심사자료 계속 보기</small>
-</button>
-<button class="metric" type="button" data-view="orders" aria-pressed="false">
- <span class="metric-label">허가사항 변경명령</span><strong id="numOrders">—</strong><small>안전성 등 모든 변경명령 포함</small>
-</button>
+<form class="search" id="searchForm" autocomplete="off">
+  <input type="search" id="keyword" aria-label="검색어" placeholder="품목명 · 회사명 · 성분명 검색">
+  <select id="year" aria-label="연도"><option value="all">전체 연도</option></select>
+  <select id="type" aria-label="변경 유형">
+    <option value="all">전체 유형</option>
+    <option value="추가">추가</option>
+    <option value="변경">변경</option>
+    <option value="삭제">삭제</option>
+  </select>
+  <select id="scope" aria-label="자료 구분">
+    <option value="all">전체 자료</option>
+    <option value="compared">변경내용 확인</option>
+    <option value="uncompared">원문 미확인</option>
+  </select>
+  <button class="submit" id="searchButton" type="submit">검색</button>
+</form>
+<div class="bar"><strong id="resultCount">검색 결과 확인 중…</strong><small id="sortLabel">변경일 최신순</small></div>
+<section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
+  <div class="empty">자료를 불러오는 중입니다.</div>
 </section>
-<div class="statusline">
- <span id="latestRun">수집 기록을 확인하는 중…</span>
- <span id="historyCoverage">과거 자료 범위 확인 중…</span>
-</div>
-<section class="panel" id="listPanel">
-<div class="panel-header">
- <h2 id="sectionTitle">주요 허가변경 확인</h2>
- <p id="sectionDesc">실제 변경일·변경 내용이 확인된 건입니다. 별도의 효능·효과 변경이력 메뉴에는 유형을 아직 확인하지 못한 변경도 포함됩니다.</p>
-</div>
-<div class="toolbar">
- <input id="keyword" type="search" placeholder="품목명·회사명·성분명 검색" aria-label="검색어">
- <select id="year" aria-label="연도별 자료"><option value="all">전체 연도</option></select>
- <select id="changeType" aria-label="변경 유형">
-  <option value="all">모든 변경 유형</option>
-  <option value="추가">추가</option><option value="확대">확대</option><option value="축소">축소</option><option value="삭제">삭제</option>
- </select>
- <select id="fresh" aria-label="신규 또는 전체">
-  <option value="all">전체 자료</option>
-  <option value="new">신규 발견만</option>
- </select>
-</div>
-<div id="list" class="rows" aria-live="polite"><div class="empty">자료를 불러오고 있습니다.</div></div>
-<div class="morewrap" id="moreWrap" hidden>
- <button type="button" class="morebtn" id="moreButton">과거 자료 더 보기</button>
- <span id="moreInfo" class="moreinfo"></span>
- <div id="bottomSentinel"></div>
-</div>
-</section>
-<p class="foot">
-원문: <a class="source-link" href="https://nedrug.mfds.go.kr/pbp/CCBAC02/getList" target="_blank" rel="noopener">식약처 변경허가 심사결과</a> · <a class="source-link" href="https://nedrug.mfds.go.kr/CCBAR01F012/getList" target="_blank" rel="noopener">허가사항 변경명령</a>.
-기존 수집자료와 과거 공개자료를 단계적으로 적재하므로 역사적 변경을 아직 모두 검증하거나 수집한 것은 아닙니다.
-</p>
+<div class="more" id="moreWrap" hidden><button type="button" id="moreButton">이전 변경이력 더 보기</button></div>
+<div id="sentinel"></div>
+<footer>식약처 품목 변경이력의 전자화된 원문을 비교합니다. ‘추가·삭제’ 표시는 문구의 증감 기준이며 적응증의 임상적 확대·폐지와 반드시 일치하지는 않습니다. 원문이 없는 변경일은 별도로 표시됩니다.</footer>
 </main>
 <script>
-(() => {
+(()=>{
 "use strict";
-const BASE="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
+const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-const state={view:"verified",events:[],efficacy:[],leads:[],targets:[],runs:[],counts:{},archive:[],archiveItems:[],offset:0,hasMore:false,archiveLoading:false,refreshing:false,querySerial:0,loadedIds:new Set()};
-const names={
- verified:["주요 허가변경 확인","실제 허가변경일·변경 전후 내용을 확인한 건만 표시합니다. 확인된 기록이 적다고 실제 허가변경이 없었던 것은 아닙니다."],
- efficacy:["효능·효과 변경이력","식약처 품목 상세정보에 기록된 실제 효능·효과 변경일입니다. 추가·확대·축소·삭제인지 아직 판별되지 않은 건은 유형 미확인으로 표시합니다. 현재 추적 중인 품목에 한합니다."],
- leads:["주요 변경 검토 후보","공개 심사자료에 적응증·환자군·치료 차수·병용요법 등 단서가 있는 건입니다. 등록일은 승인일이 아닙니다."],
- review:["변경허가 심사자료 이력","기존 게시자료를 계속 아래로 탐색합니다. 표시 날짜는 심사자료 공개일이며 실제 적응증 변경일과 다릅니다."],
- orders:["허가사항 변경명령 이력","안전성·재심사·통일조정 등의 변경명령도 포함합니다. 적응증 추가·삭제와 무관한 자료가 많습니다."]
-};
-function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text??"");return n}
-function appended(parent,tag,cls,text){const n=node(tag,cls,text);parent.appendChild(n);return n}
-function link(url,text){const a=node("a","source-link",text);a.href=url&&/^https:\/\//.test(url)?url:"#";a.target="_blank";a.rel="noopener noreferrer";return a}
-function date(t){return /^\d{4}-\d{2}-\d{2}$/.test(String(t||""))?t.replaceAll("-","."):"날짜 미확인"}
-function stamp(t){const d=new Date(t||"");return isNaN(d)?"기록 없음":d.toLocaleString("ko-KR",{timeZone:"Asia/Seoul",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"})}
-function labelEvent(x){
- const t=String(x.event_type||""),c=String(x.title||"");
- if(t==="deletion")return "삭제";
- if(t==="reduction")return "축소";
- if(t==="addition")return "추가";
- if(t==="expansion"||t==="line_change")return "확대";
- if(/삭제/.test(c))return "삭제";
- return "변경";
+const state={rows:[],offset:0,total:0,more:false,busy:false,serial:0,filter:{}};
+function element(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text??"");return n;}
+function put(where,tag,cls,text){const n=element(tag,cls,text);where.appendChild(n);return n}
+function fmtDate(day){return /^\d{4}-\d{2}-\d{2}$/.test(day||"")?day.replaceAll("-","."):"날짜 미확인"}
+function originalLink(url,label){
+ const a=element("a","",label);
+ a.href=/^https:\/\//.test(url||"")?url:"#";
+ a.target="_blank";a.rel="noopener noreferrer";return a;
 }
-function textForSearch(x){return [x.title,x.product,x.company,x.ingredient,x.change_area,x.before_text,x.after_text,...(x.attachment_names||[])].filter(Boolean).join(" ").toLowerCase()}
-function termMatch(x,q){return !q||textForSearch(x).includes(q)}
-function renderVerified(x){
- const card=node("article","item");
- const head=appended(card,"div","item-head");
- const tags=appended(head,"div","item-tags");
- appended(tags,"span","pill verified",labelEvent(x));
- appended(tags,"span","pill source",x.verification==="official_confirmed"?"공식 자료 확인":"변경 내용 검토");
- appended(head,"span","item-date actual","허가변경 "+date(x.event_date));
- const h=appended(card,"h3","item-title");h.appendChild(link(x.mfds_url||x.evidence_url,x.title||x.product));
- appended(card,"p","dim",[x.company,x.product,x.ingredient].filter(Boolean).join(" · "));
- const diff=appended(card,"div","diff");
- const before=appended(diff,"div","diff-row");
- appended(before,"span","diff-title","변경 전");appended(before,"span","diff-value",x.before_text);
- const after=appended(diff,"div","diff-row");
- appended(after,"span","diff-title","변경 후");appended(after,"span","diff-value",x.after_text);
- if(x.details)appended(card,"p","note",x.details);
- const links=appended(card,"div","links");
- if(x.mfds_url)links.appendChild(link(x.mfds_url,"식약처 자료"));
- if(x.evidence_url)links.appendChild(link(x.evidence_url,"확인 근거"));
- return card;
+function normalizeLine(text){return String(text||"").normalize("NFKC").replace(/^\s*\d{1,2}\s*[.)]\s*/,"").replace(/\s+/g," ").trim()}
+function makeLines(container,items,kind){
+ for(const line of items||[])put(container,"div","line "+kind,line);
 }
-
-function renderEfficacy(x){
- const card=node("article","item");
- const head=appended(card,"div","item-head");
- const tags=appended(head,"div","item-tags");
- appended(tags,"span","pill verified","효능·효과 변경");
- appended(tags,"span","pill unverified","유형 미확인");
- appended(head,"span","item-date actual","실제 변경 "+date(x.changed_at));
- const title=appended(card,"h3","item-title");
- title.appendChild(link(x.evidence_url,x.product+" · 효능·효과 변경"));
- appended(card,"p","dim",[x.company,x.product].filter(Boolean).join(" · "));
- appended(card,"div","note","식약처 품목 변경이력에서 변경일을 확인했습니다. 적응증 추가·확대·축소·삭제 여부와 변경 전후 내용은 별도 검증이 필요합니다.");
- const links=appended(card,"div","links");
- links.appendChild(link(x.evidence_url,"식약처 품목별 변경이력"));
- return card;
-}
-function renderRaw(x,context){
- const card=node("article","item");
- const head=appended(card,"div","item-head");
- const tags=appended(head,"div","item-tags");
- const lead=x.classification==="clinical_lead";
- appended(tags,"span","pill "+(lead?"lead":"unverified"),lead?"중요 검토 후보":context==="orders"?"변경명령":"변경심사 자료");
- if(x.category)appended(tags,"span","pill source",x.category);
- if(x.approval_changed_at){
-  appended(tags,"span","pill verified",x.change_type||"허가변경 확인");
-  appended(head,"span","item-date actual","허가변경 "+date(x.approval_changed_at));
- }else appended(head,"span","item-date",(context==="orders"?"최초등록 ":"자료공개 ")+date(x.published_at));
- const h=appended(card,"h3","item-title");
- h.appendChild(link(x.source_url,x.product||x.title));
- appended(card,"p","dim",[x.company,x.ingredient].filter(Boolean).join(" · "));
- if(x.approval_changed_at)appended(card,"div","note","심사보고서 공개일: "+date(x.published_at)+" (허가변경일과 별개)");
- const titleText=x.title&&x.title!==x.product?x.title:"";
- if(titleText)appended(card,"div","note",titleText);
- if(x.attachment_names&&x.attachment_names.length){
-   appended(card,"div","evidence","첨부 보고서 · "+x.attachment_names.join(" / "));
+function renderCard(row){
+ const card=element("details","entry");
+ card.dataset.id=row.id;
+ const summary=put(card,"summary","");
+ const tagClass=row.change_type==="추가"?"add":row.change_type==="삭제"?"delete":"change";
+ put(summary,"span","date",fmtDate(row.changed_at));
+ put(summary,"span","tag "+tagClass,row.change_type);
+ const heading=put(summary,"span","entry-main");
+ put(heading,"span","drug",row.product);
+ put(heading,"span","meta",[row.company,row.ingredient].filter(Boolean).join(" · "));
+ put(summary,"span","arrow","⌄");
+ const panel=put(card,"div","content");
+ const added=Array.isArray(row.added_lines)?row.added_lines:[];
+ const removed=Array.isArray(row.removed_lines)?row.removed_lines:[];
+ const official=row.diff_status==="compared";
+ const hasDelta=official&&(added.length||removed.length);
+ if(hasDelta){
+   put(panel,"h3","", "이번 변경에서 달라진 부분");
+   if(added.length){
+      put(panel,"p","hint","추가되거나 새 표현으로 바뀐 문구 ("+added.length+"개)");
+      const area=put(panel,"div","delta");
+      makeLines(area,added,"added");
+   }
+   if(removed.length){
+      put(panel,"p","hint","기존 문구에서 삭제되거나 교체된 부분 ("+removed.length+"개)");
+      const area=put(panel,"div","delta");
+      makeLines(area,removed,"removed");
+   }
  }
- if(context==="orders"){
-   if(x.stage)appended(card,"div","note","진행단계: "+x.stage);
-   if(x.effective_at)appended(card,"div","note","허가반영일자: "+date(x.effective_at)+" (등록일과 다름)");
- }
- const links=appended(card,"div","links");
- links.appendChild(link(x.source_url,"식약처 원문 보기"));
- return card;
-}
-function activate(view,scroll){
- state.view=view;
- // Clicking a summary count should always show that full category, not a stale year/search filter.
- $("#keyword").value="";$("#year").value="all";$("#changeType").value="all";$("#fresh").value="all";
- document.querySelectorAll(".metric").forEach(b=>{
-  const active=b.dataset.view===view;
-  b.classList.toggle("active",active);
-  b.setAttribute("aria-pressed",active?"true":"false");
- });
- $("#sectionTitle").textContent=names[view][0];$("#sectionDesc").textContent=names[view][1];
- $("#changeType").disabled=view!=="verified"&&view!=="leads";
- $("#fresh").disabled=view==="orders"||view==="review";
- state.querySerial++;
- state.archiveItems=[];state.loadedIds.clear();state.offset=0;state.hasMore=false;
- $("#moreWrap").hidden=true;
- render();
- if(scroll)$("#listPanel").scrollIntoView({behavior:"smooth",block:"start"});
- if(view==="review"||view==="orders")loadArchive(false);
-}
-function localRows(){
- let rows=state.view==="verified"?state.events:state.view==="efficacy"?state.efficacy:state.leads;
- const q=$("#keyword").value.trim().toLowerCase();
- const year=$("#year").value,kind=$("#changeType").value,fresh=$("#fresh").value;
- return rows.filter(x=>{
-  const dt=state.view==="verified"?x.event_date:state.view==="efficacy"?x.changed_at:x.published_at;
-  if(year!=="all"&&!(dt||"").startsWith(year))return false;
-  if(fresh==="new"&&x.alert_state!=="new")return false;
-  if(kind!=="all"){
-   if(state.view==="verified"){if(labelEvent(x)!==kind)return false}
-   else if(!textForSearch(x).includes(kind))return false;
-  }
-  return termMatch(x,q);
- });
-}
-function render(){
- const archiveView=state.view==="review"||state.view==="orders";
- const rows=archiveView?state.archiveItems:localRows();
- const root=$("#list");root.replaceChildren();
- if(!rows.length){
-  const msg=state.archiveLoading?"과거 자료를 불러오는 중…":
-   archiveView?"조건에 맞는 저장된 기록이 없습니다. 과거 자료는 단계적으로 추가 수집됩니다.":
-   state.view==="verified"?"확인된 기록이 없습니다. 실제 허가 변경이 없었다는 의미는 아닙니다.":
-   "해당 조건의 주요 검토 후보가 없습니다.";
-  root.appendChild(node("div","empty",msg));
+ if(row.after_text){
+   const full=row.diff_status==="editorial_summary"?"변경 내용 요약":"변경 후 효능·효과 전문";
+   put(panel,"h3","",full+" · "+fmtDate(row.changed_at));
+   if(row.diff_status==="editorial_summary")
+      put(panel,"p","hint","확인된 변경사항 요약입니다. 식약처 효능·효과 전문과는 구분됩니다.");
+   else if(row.diff_status==="baseline")
+      put(panel,"p","hint","비교 가능한 과거 원문이 없습니다.");
+   const box=put(panel,"div","fulltext");
+   const plus=new Set(added.map(normalizeLine));
+   for(const line of row.after_text.split("\n").filter(x=>x.trim())){
+      put(box,"div","line current"+(official&&plus.has(normalizeLine(line))?" is-added":""),line);
+   }
  }else{
-  const chunk=document.createDocumentFragment();
-  for(const row of rows)chunk.appendChild(archiveView?renderRaw(row,state.view):state.view==="verified"?renderVerified(row):state.view==="efficacy"?renderEfficacy(row):renderRaw(row,"leads"));
-  root.appendChild(chunk);
+   put(panel,"p","hint","식약처에 변경일은 기록돼 있지만, 해당 시점의 전자화된 효능·효과 전문은 확보되지 않았습니다.");
  }
- $("#moreWrap").hidden=!archiveView||!state.hasMore;
- $("#moreButton").disabled=state.archiveLoading;
- $("#moreButton").textContent=state.archiveLoading?"불러오는 중…":"과거 자료 더 보기";
- $("#moreInfo").textContent=archiveView?"현재 "+rows.length+"건 표시 · 아래로 스크롤하면 이전 기록 추가":"";
+ if(!hasDelta&&official)
+    put(panel,"p","hint","표현상의 변경은 확인됐으나 문장 단위로 뚜렷한 추가·삭제를 구분하기 어렵습니다.");
+ const links=put(panel,"div","contents-footer");
+ links.appendChild(originalLink(row.evidence_url,"식약처 원문 확인"));
+ if(row.supplementary_url&&row.supplementary_url!==row.evidence_url)links.appendChild(originalLink(row.supplementary_url,"변경 확인 근거"));
+ put(links,"small","","자료 기준: "+fmtDate(row.changed_at));
+ return card;
 }
-function buildUrl(extra){
- const u=new URL(BASE);
- Object.entries(extra||{}).forEach(([k,v])=>{if(v!==null&&v!==undefined&&v!=="")u.searchParams.set(k,String(v))});
- return u.toString();
+function params(reset){
+ if(reset){
+   state.filter={q:$("#keyword").value.trim(),year:$("#year").value,type:$("#type").value,scope:$("#scope").value};
+ }
+ const url=new URL(API);
+ url.searchParams.set("view","efficacy");
+ url.searchParams.set("offset",String(state.offset));
+ url.searchParams.set("limit","20");
+ for(const [k,v] of Object.entries(state.filter)){
+   if(v&&v!=="all")url.searchParams.set(k,String(v));
+ }
+ return url.toString();
 }
-async function loadArchive(append){
- if(!["review","orders"].includes(state.view)||state.archiveLoading)return;
- state.archiveLoading=true;
- const serial=++state.querySerial, kind=state.view,offset=append?state.offset:0;
- if(!append){state.archiveItems=[];state.loadedIds.clear();state.offset=0;state.hasMore=true;}
- render();
+function refreshLabel(){
+ $("#resultCount").textContent="검색 결과 "+state.total+"건";
+ $("#moreWrap").hidden=!state.more;
+ $("#moreButton").disabled=state.busy;
+}
+async function load(reset=false){
+ if(state.busy&&!reset)return;
+ const serial=++state.serial;
+ if(reset){
+   state.offset=0;state.rows=[];state.total=0;state.more=false;
+   $("#entries").replaceChildren(element("div","empty","검색 중…"));
+ }
+ state.busy=true;$("#searchButton").disabled=true;$("#moreButton").disabled=true;
  try{
-  const params={view:"archive",kind,offset,limit:30};
-  const year=$("#year").value,keyword=$("#keyword").value.trim();
-  if(year!=="all")params.year=year;
-  if(keyword)params.q=keyword;
-  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),18000);
-  const response=await fetch(buildUrl(params),{cache:"no-store",signal:controller.signal});
-  clearTimeout(timer);
-  const data=await response.json();
-  if(!response.ok||!Array.isArray(data.items))throw Error(data.error||"과거 이력 응답 오류");
-  if(serial!==state.querySerial||kind!==state.view)return;
-  let batch=data.items;
-  for(const row of batch){
-    if(!state.loadedIds.has(row.source_id)){
-      state.loadedIds.add(row.source_id);state.archiveItems.push(row);
-    }
-  }
-  state.offset=data.next_offset;
-  state.hasMore=data.has_more;
-  render();
+   const u=params(reset);
+   const controller=new AbortController();
+   const timer=setTimeout(()=>controller.abort(),17000);
+   const resp=await fetch(u,{cache:"no-store",signal:controller.signal});
+   clearTimeout(timer);
+   const data=await resp.json();
+   if(!resp.ok||!Array.isArray(data.items))throw Error(data.error||"응답 형식 오류");
+   if(serial!==state.serial)return;
+   if(reset)$("#entries").replaceChildren();
+   const fragment=document.createDocumentFragment();
+   for(const item of data.items){
+     state.rows.push(item);fragment.appendChild(renderCard(item));
+   }
+   $("#entries").appendChild(fragment);
+   state.offset=data.next_offset;state.total=data.total;state.more=data.has_more;
+   if(!state.rows.length)$("#entries").replaceChildren(element("div","empty","검색 조건에 맞는 효능·효과 변경 기록이 없습니다."));
  }catch(e){
-  if(serial===state.querySerial){
-   $("#list").appendChild(node("div","note","과거 목록 조회 오류: "+String(e.message||e)));
-   state.hasMore=true;$("#moreWrap").hidden=false;
-  }
- }finally{state.archiveLoading=false;if(serial===state.querySerial)render();}
+   if(serial===state.serial){
+      if(reset)$("#entries").replaceChildren(element("div","empty","자료를 불러오지 못했습니다. 다시 검색해주세요."));
+      $("#resultCount").textContent="연결 오류: "+String(e.message||e);
+      state.more=false;
+   }
+ }finally{
+   if(serial===state.serial){state.busy=false;$("#searchButton").disabled=false;refreshLabel();}
+ }
 }
-async function loadMain(){
- if(state.refreshing)return;state.refreshing=true;$("#reload").disabled=true;
- $("#latestRun").textContent="데이터를 확인하는 중…";
- try{
-  const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),18000);
-  const r=await fetch(BASE,{cache:"no-store",signal:controller.signal});clearTimeout(timer);
-  const d=await r.json();
-  if(!r.ok||!Array.isArray(d.events)||!Array.isArray(d.leads))throw Error(d.error||"데이터 형식 오류");
-  state.events=d.events;state.efficacy=d.efficacy||[];state.targets=d.targets||[];state.leads=d.leads;state.runs=d.runs||[];state.counts=d.counts||{};state.archive=d.archive||[];
-  $("#numVerified").textContent=state.counts.verified_events??state.events.length;
-  $("#numEfficacy").textContent=state.counts.efficacy??state.efficacy.length;
-  $("#numLeads").textContent=state.counts.leads??state.leads.length;
-  $("#numReview").textContent=state.counts.review_records??"—";
-  $("#numOrders").textContent=state.counts.orders_records??"—";
-  const last=state.runs[0];$("#latestRun").textContent=last?
-    "마지막 수집: "+stamp(last.finished_at||last.started_at)+(last.status!=="success"?" · 오류 확인 필요":" · 정상"):
-    "자동 수집 기록 없음";
-  const review=(state.archive||[]).find(x=>x.source==="review");
-  const order=(state.archive||[]).find(x=>x.source==="change_order");
-  $("#historyCoverage").textContent="과거 수집 진행: 심사결과 "+(review?.last_completed_page||0)+"쪽 / "+(review?.total_pages||"…")+
-    " · 변경명령 "+(order?.last_completed_page||0)+"쪽 / "+(order?.total_pages||"…");
-  if(state.view==="review"||state.view==="orders")loadArchive(false);else render();
- }catch(e){
-  $("#latestRun").textContent="조회 오류 · "+String(e.message||e);
-  $("#list").replaceChildren(node("div","empty","자료 연결에 실패했습니다. 새로고침을 눌러 다시 확인하세요."));
- }finally{state.refreshing=false;$("#reload").disabled=false;}
-}
-function initYear(){
- const sel=$("#year"),now=2026;
- for(let y=now;y>=2015;y--){const o=node("option",null,String(y)+"년");o.value=String(y);sel.appendChild(o);}
-}
-let debounce;
-for(const b of document.querySelectorAll(".metric"))b.addEventListener("click",()=>activate(b.dataset.view,true));
-$("#reload").addEventListener("click",loadMain);
-$("#keyword").addEventListener("input",()=>{
- clearTimeout(debounce);
- debounce=setTimeout(()=>["review","orders"].includes(state.view)?loadArchive(false):render(),320);
-});
-["year","fresh","changeType"].forEach(id=>$("#"+id).addEventListener("change",()=>["review","orders"].includes(state.view)?loadArchive(false):render()));
-$("#moreButton").addEventListener("click",()=>loadArchive(true));
+const form=$("#searchForm");
+form.addEventListener("submit",ev=>{ev.preventDefault();load(true)});
+$("#moreButton").addEventListener("click",()=>load(false));
 if("IntersectionObserver" in window){
  const observer=new IntersectionObserver(entries=>{
-  if(entries.some(e=>e.isIntersecting)&&state.hasMore&&!state.archiveLoading){
-    loadArchive(true);
-  }
- },{rootMargin:"0px 0px 320px 0px"});
- observer.observe($("#bottomSentinel"));
+   if(entries.some(e=>e.isIntersecting)&&state.more&&!state.busy)load(false);
+ },{rootMargin:"0px 0px 220px 0px"});
+ observer.observe($("#sentinel"));
 }
-initYear();loadMain();setInterval(loadMain,300000);
+for(let y=2026;y>=2014;y--){
+ const option=element("option","",String(y)+"년");option.value=String(y);$("#year").appendChild(option);
+}
+load(true);
 })();
 </script>
 </body>
