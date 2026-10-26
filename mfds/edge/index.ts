@@ -659,20 +659,22 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
       source_kind:"reviewed",comparison_kind:"summary",verified_summary:true
     });
   }
-  const year=query.get("year")||"";
+  const start=query.get("start")||"";
+  const end=query.get("end")||"";
+  const iso=(v:string)=>/^20\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$/.test(v)&&!Number.isNaN(Date.parse(v));
+  if((start&&!iso(start))||(end&&!iso(end)))throw Error("유효하지 않은 날짜 범위입니다.");
+  if(start&&end&&start>end)throw Error("시작 날짜가 종료 날짜보다 늦습니다.");
   const kind=query.get("type")||"all";
-  const scope=query.get("scope")||"all";
   const needle=(query.get("q")||"").trim().toLocaleLowerCase("ko-KR").slice(0,80);
   const rows=merged.filter((row:any)=>{
-    if(/^20\d{2}$/.test(year)&&!row.changed_at.startsWith(year))return false;
+    if(start&&row.changed_at<start)return false;
+    if(end&&row.changed_at>end)return false;
     if(["추가","삭제","변경"].includes(kind)){
       const contains=kind==="추가"?(row.added_count>0||row.change_type==="추가"):
         kind==="삭제"?(row.removed_count>0||row.change_type==="삭제"):
         (row.modified_count>0||row.change_type==="변경");
       if(!contains)return false;
     }
-    if(scope==="compared"&&!["compared","editorial_summary"].includes(row.diff_status))return false;
-    if(scope==="uncompared"&&["compared","editorial_summary"].includes(row.diff_status))return false;
     if(needle&&![row.product,row.company,row.ingredient].join(" ").toLocaleLowerCase("ko-KR").includes(needle))return false;
     return true;
   });
@@ -763,6 +765,51 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
   source:"MFDS 의약품등 정보검색",partial:incomplete,
   note:"식약처 실시간 품목검색 결과입니다. 뒤쪽 페이지가 있으면 더 보기를 통해 모두 검색할 수 있습니다."};
 }
+
+async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
+ const q=String(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
+ if(q.length<2||q.length>70)return {matches:[],query:q};
+ const key=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+ const local:any[]=await db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope&limit=1500");
+ const match=(x:any)=>[x.product,x.ingredient,x.company].some((t:any)=>
+  String(t||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(key));
+ const nearby=(local||[]).filter(match).map((x:any)=>({
+  item_seq:x.item_seq,product:x.product,ingredient:x.ingredient,company:x.company,
+  source_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+x.item_seq,
+  permit_date:"",status:"",master_watch:x.watch_scope==="primary"
+ }));
+ let source="official_master";
+ const combined=new Map<string,any>();
+ for(const item of nearby)combined.set(item.item_seq,item);
+ // One official product-name query, not the existing 3-way catalogue lookup.
+ // Important for 2-character live autocomplete to avoid excessive traffic.
+ let error="";
+ try{
+  const u=new URL(ORIGIN+"/searchDrug");
+  u.searchParams.set("searchYn","Y");u.searchParams.set("page","1");
+  u.searchParams.set("itemName",q);
+  const htmlText=await html(u.toString());
+  for(const item of parseDrugCatalogue(htmlText))if(match(item)){
+   combined.set(item.item_seq,{...item,master_watch:combined.get(item.item_seq)?.master_watch||false});
+  }
+  source="MFDS 품목조회";
+ }catch(e){error=String(e).slice(0,130)}
+ const results=[...combined.values()].sort((a,b)=>{
+  const rank=(x:any)=>{
+   const norm=String(x.product||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+   if(norm===key)return 0;
+   if(norm.startsWith(key))return 1;
+   if(norm.includes(key))return 2;
+   if(String(x.ingredient||"").toLocaleLowerCase("ko-KR").includes(key))return 3;
+   return 4;
+  };
+  return rank(a)-rank(b)||Number(b.master_watch)-Number(a.master_watch)||
+   a.product.localeCompare(b.product,"ko-KR");
+ });
+ return {matches:results.slice(0,9),query:q,source,partial:!!error,
+  note:error?"식약처 실시간 조회가 지연되어 확인된 품목 마스터의 검색 결과를 표시했습니다.":null};
+}
+
 async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  const itemSeq=(params.get("item_seq")||"").trim();
  if(!/^\d{9}$/.test(itemSeq))throw Error("유효한 품목기준코드가 필요합니다.");
@@ -1457,6 +1504,7 @@ Deno.serve(async (req: Request) => {
       const view=url.searchParams.get("view");
       if(view==="master")return reply(await originalMasterStatus());
       if(view==="related")return reply(await inspectSameIngredient(url.searchParams));
+      if(view==="suggest")return reply(await suggestDrugCatalogue(url.searchParams));
       if(view==="lookup")return reply(await lookupMFDSCatalogue(url.searchParams));
       if(view==="inspect")return reply(await inspectMFDSItem(url.searchParams));
       return reply(view==="efficacy"
