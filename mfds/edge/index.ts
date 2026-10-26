@@ -262,11 +262,16 @@ async function syncOfficialEfficacyHistory(): Promise<unknown> {
       const tbody=section.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
       if(!tbody)throw Error("Official efficacy-change history table missing");
       const officialDates=new Set<string>();
-      for(const row of tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+      const officialRows=[...tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+      for(const row of officialRows){
         const cols=[...row[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
         const day=cols.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
         if(day&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(day);
       }
+      await db("POST","mfds_monitor_history_summaries?on_conflict=item_seq",{
+        item_seq:target.item_seq,official_change_total:officialRows.length,
+        official_efficacy_total:officialDates.size,verified_at:new Date().toISOString()
+      },"resolution=merge-duplicates,return=minimal");
       const url=ORIGIN+"/pbp/CCBBB01/getItemChangeHistList?itemSeq="+target.item_seq+"&docType=EE&page=1";
       const versionResponse=await fetch(url,{headers:{"User-Agent":"Mozilla/5.0 (compatible; MFDS-monitor/1.0)","Accept":"text/html"}});
       if(!versionResponse.ok)throw Error("MFDS history HTTP "+versionResponse.status);
@@ -757,26 +762,50 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  let detailComplete=false;
  let officialChangeTotal:null|number=null;
  const detailedUrl=ORIGIN+"/pbp/CCBBB01/getItemDetailCache?cacheSeq="+itemSeq;
- const detailController=new AbortController();
- const detailTimer=setTimeout(()=>detailController.abort(),15000);
- try{
-  const result=await fetch(detailedUrl,{signal:detailController.signal,headers:{"User-Agent":"Mozilla/5.0","Accept":"text/html"}});
-  if(result.ok){
-   const detail=await result.text();
-   const section=detail.slice(detail.indexOf('id="tblChf"'));
-   const tbody=section.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
-   if(tbody){
-    detailComplete=true;
-    const officialRows=[...tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
-    officialChangeTotal=officialRows.length;
-    for(const entry of officialRows){
-     const cols=[...entry[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
-     const date=cols.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
-     if(date&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(date);
-    }
+ let detailError="";
+ let cachedSummary=false;
+ let officialEfficacyCount:number|null=null;
+ let latestSummaryDate:string|null=null;
+ // The MFDS detail page can intermittently time out even though its
+ // electronically stored efficacy XML remains available. Retry briefly.
+ for(let attempt=0;attempt<2&&!detailComplete;attempt++){
+  const detailController=new AbortController();
+  const detailTimer=setTimeout(()=>detailController.abort(),attempt===0?10000:8500);
+  try{
+   const response=await fetch(detailedUrl,{signal:detailController.signal,headers:{"User-Agent":"Mozilla/5.0","Accept":"text/html"}});
+   if(!response.ok)throw Error("MFDS detail HTTP "+response.status);
+   const detail=await response.text();
+   const tableIndex=detail.indexOf('id="tblChf"');
+   if(tableIndex<0)throw Error("MFDS detail change table missing");
+   const tbody=detail.slice(tableIndex).match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
+   if(!tbody)throw Error("MFDS detail change rows missing");
+   const officialRows=[...tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+   officialChangeTotal=officialRows.length;
+   for(const entry of officialRows){
+    const cols=[...entry[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
+    const date=cols.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
+    if(date&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(date);
    }
-  }
- }catch(_error){}finally{clearTimeout(detailTimer);}
+   detailComplete=true;
+   officialEfficacyCount=officialDates.size;
+  }catch(e){detailError=String(e).slice(0,130)}
+  finally{clearTimeout(detailTimer)}
+ }
+ if(!detailComplete){
+  // Read-only fallback to a previously verified official summary. Never
+  // silently assert that the absence of a response means no older changes.
+  try{
+   const saved=await db("GET","mfds_monitor_history_summaries?select=official_change_total,official_efficacy_total,verified_at&item_seq=eq."+itemSeq+"&limit=1");
+   if(saved?.length){
+    officialChangeTotal=saved[0].official_change_total;
+    officialEfficacyCount=saved[0].official_efficacy_total;
+    latestSummaryDate=saved[0].verified_at;
+    cachedSummary=true;
+   }
+   const old=await db("GET","mfds_monitor_efficacy_history?select=changed_at&item_seq=eq."+itemSeq+"&limit=300");
+   for(const row of old||[])if(row.changed_at)officialDates.add(row.changed_at);
+  }catch(_ignored){}
+ }
  const items:any[]=[];
  for(let i=1;i<versions.length;i++){
   const prior=versions[i-1],next=versions[i];
@@ -817,8 +846,12 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
   initial_version_date:earliest?.changed_at||null,
   initial_efficacy:earliest?.lines.join("\n")||"",
   official_change_total:officialChangeTotal,
-  official_efficacy_total:detailComplete?officialDates.size:null,
-  official_other_total:officialChangeTotal===null?null:Math.max(0,officialChangeTotal-officialDates.size),
+  official_efficacy_total:officialEfficacyCount,
+  official_other_total:officialChangeTotal===null||officialEfficacyCount===null?
+    null:Math.max(0,officialChangeTotal-officialEfficacyCount),
+  official_counts_from_cache:cachedSummary,
+  official_summary_date:cachedSummary?latestSummaryDate:null,
+  official_history_warning:detailComplete?null:"식약처 품목별 변경이력 상세 페이지의 실시간 조회가 지연돼 저장된 확인 자료를 우선 표시합니다.",
   official_uncompared_dates:items.filter(x=>x.diff_status==="not_available").map(x=>x.changed_at),
   all_history_dates_seen:officialDates.size,
   source:"식약처 효능·효과 변경이력",reviewed:false,
