@@ -168,6 +168,27 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .related-detail{margin-top:10px;display:grid;gap:7px}
 .related-detail .entry{box-shadow:none;margin:0}
 @media(max-width:760px){.related-item{padding:10px}.related-trigger{width:100%}}
+
+/* Compact explicit date range and lightweight typeahead */
+.keyword-wrap{position:relative;flex:1 1 300px;min-width:170px}
+.search .keyword-wrap>input{display:block;width:100%;height:43px;min-width:0}
+.search .date-field{display:flex;align-items:center;gap:6px;flex:0 1 174px;min-width:155px;font-size:12px;white-space:nowrap;color:#64748b}
+.search .date-field>input{min-width:0;width:100%;height:43px;font-size:12px;padding:8px 7px}
+.search .date-field>span{flex:0 0 auto}
+.suggestions{position:absolute;z-index:30;top:calc(100% + 5px);left:0;right:0;border:1px solid #ccd8e8;border-radius:9px;background:#fff;max-height:310px;overflow:auto;box-shadow:0 8px 24px #13294b20}
+.suggest-option{display:block;text-align:left;width:100%;background:#fff;border:0;border-bottom:1px solid #edf1f6;padding:9px 11px}
+.suggest-option:last-child{border-bottom:0}
+.suggest-option:hover,.suggest-option.is-active{background:#edf5ff}
+.suggest-option strong{display:block;font-size:13px;font-weight:780;overflow-wrap:anywhere}
+.suggest-option small{display:block;font-size:11px;color:#69788a;margin-top:3px;overflow-wrap:anywhere}
+.suggest-empty{color:#6b7889;padding:10px 12px;font-size:12px}
+@media(max-width:760px){
+.search .keyword-wrap{flex:1 1 100%;width:100%}
+.search .date-field{flex:1 1 calc(50% - 5px);min-width:0;flex-wrap:wrap;gap:2px}
+.search .date-field>input{flex:1 1 100%;max-width:none}
+.search .date-field>span{font-size:11px}
+.search select{flex:1 1 100%;max-width:none}
+}
 </style>
 </head>
 <body>
@@ -176,18 +197,17 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
   <h1>효능·효과 변경이력</h1>
 </header>
 <form class="search" id="searchForm" autocomplete="off">
-  <input type="search" id="keyword" aria-label="검색어" placeholder="품목명 · 회사명 · 성분명 검색">
-  <select id="year" aria-label="연도"><option value="all">전체 연도</option></select>
+  <div class="keyword-wrap">
+   <input type="search" id="keyword" aria-label="검색어" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="품목명 · 회사명 · 성분명 검색">
+   <div id="suggestions" class="suggestions" role="listbox" hidden></div>
+  </div>
+  <label class="date-field"><span>시작일</span><input id="startDate" type="date" aria-label="변경 시작일"></label>
+  <label class="date-field"><span>종료일</span><input id="endDate" type="date" aria-label="변경 종료일"></label>
   <select id="type" aria-label="변경 유형">
-    <option value="all">전체 유형</option>
+    <option value="all">유형 검색</option>
     <option value="추가">추가</option>
     <option value="변경">변경</option>
     <option value="삭제">삭제</option>
-  </select>
-  <select id="scope" aria-label="자료 구분">
-    <option value="all">전체 자료</option>
-    <option value="compared">변경내용 확인</option>
-    <option value="uncompared">원문 미확인</option>
   </select>
   <button class="submit" id="searchButton" type="submit">검색</button>
 </form>
@@ -210,7 +230,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-const state={rows:[],offset:0,total:0,period:null,productCount:0,more:false,busy:false,serial:0,filter:{},lookupQuery:"",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false,lookupBusyToken:0,lookupTotalAtLeast:0,lookupPartial:false};
+const state={rows:[],offset:0,total:0,period:null,productCount:0,more:false,busy:false,serial:0,filter:{},suggestionSerial:0,suggestionTimer:null,suggestionMatches:[],suggestionActive:-1,lookupQuery:"",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false,lookupBusyToken:0,lookupTotalAtLeast:0,lookupPartial:false};
 function element(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text??"");return n;}
 function put(where,tag,cls,text){const n=element(tag,cls,text);where.appendChild(n);return n}
 function fmtDate(day){return /^\d{4}-\d{2}-\d{2}$/.test(day||"")?day.replaceAll("-","."):"날짜 미확인"}
@@ -420,7 +440,7 @@ function renderCard(row){
 }
 function params(reset){
  if(reset){
-   state.filter={q:$("#keyword").value.trim(),year:$("#year").value,type:$("#type").value,scope:$("#scope").value};
+   state.filter={q:$("#keyword").value.trim(),start:$("#startDate").value,end:$("#endDate").value,type:$("#type").value};
  }
  const url=new URL(API);
  url.searchParams.set("view","efficacy");
@@ -497,13 +517,12 @@ async function fetchJson(url,timeout=27000){
 }
 function visibleSearchRows(){
  const records=state.lookupData?.items||[];
- const year=$("#year").value,type=$("#type").value,scope=$("#scope").value;
+ const start=$("#startDate").value,end=$("#endDate").value,type=$("#type").value;
  return records.filter(x=>
-  (year==="all"||x.changed_at?.startsWith(year))&&
+  (!start||x.changed_at>=start)&&(!end||x.changed_at<=end)&&
   (type==="all"||(type==="추가"?(x.added_count>0||x.change_type==="추가"):
     type==="삭제"?(x.removed_count>0||x.change_type==="삭제"):
-    x.modified_count>0||x.change_type==="변경"))&&
-  (scope==="all"||(scope==="compared"?x.diff_status==="compared":x.diff_status!=="compared"))
+    x.modified_count>0||x.change_type==="변경"))
  );
 }
 function showSelectedHistory(){
@@ -539,7 +558,7 @@ function showSelectedHistory(){
  if(!rows.length){
   const empty=element("div","empty",state.lookupData?.total===0?
     "식약처에서 품목을 확인했습니다. 공개된 전자화 효능·효과 이력상 최초 버전 이후의 변경은 확인되지 않습니다.":
-    "선택한 연도·변경 유형에 해당하는 이력이 없습니다.");
+    "선택한 기간·변경 유형에 해당하는 이력이 없습니다.");
   root.appendChild(empty);
   const current=state.lookupData?.current_efficacy||"";
   if(current&&state.lookupData?.total===0){
@@ -675,7 +694,72 @@ async function searchCatalogue(query,append=false){
   }
  }
 }
+
+function closeSuggestions(){
+ $("#suggestions").hidden=true;
+ $("#keyword").setAttribute("aria-expanded","false");
+ state.suggestionActive=-1;
+}
+function drawSuggestions(){
+ const panel=$("#suggestions");panel.replaceChildren();
+ const choices=state.suggestionMatches;
+ if(!choices.length){closeSuggestions();return;}
+ choices.forEach((item,i)=>{
+  const option=put(panel,"button","suggest-option"+(state.suggestionActive===i?" is-active":""));
+  option.type="button";option.setAttribute("role","option");option.setAttribute("aria-selected",state.suggestionActive===i?"true":"false");
+  put(option,"strong","",item.product);
+  put(option,"small","",[item.ingredient?"성분 "+item.ingredient:"",item.company?"업체 "+item.company:""].filter(Boolean).join(" · "));
+  option.addEventListener("mousedown",e=>e.preventDefault());
+  option.addEventListener("click",()=>selectSuggestion(item));
+ });
+ panel.hidden=false;$("#keyword").setAttribute("aria-expanded","true");
+}
+function selectSuggestion(item){
+ window.clearTimeout(state.suggestionTimer);
+ ++state.suggestionSerial;
+ closeSuggestions();
+ $("#keyword").value=item.product;
+ state.serial++;state.lookupSerial++;
+ state.lookupQuery=item.product;
+ state.lookupPage=1;state.lookupMatches=[item];
+ state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
+ state.lookupTotalAtLeast=1;state.lookupPartial=false;
+ renderCatalogue();
+ chooseDrug(item);
+}
+async function searchSuggestions(query){
+ const serial=++state.suggestionSerial;
+ try{
+  const data=await fetchJson(paramsFor("suggest",{q:query}),16000);
+  if(serial!==state.suggestionSerial||$("#keyword").value.trim()!==query)return;
+  state.suggestionMatches=Array.isArray(data.matches)?data.matches.slice(0,9):[];
+  state.suggestionActive=-1;
+  drawSuggestions();
+ }catch(e){
+  if(serial===state.suggestionSerial){state.suggestionMatches=[];closeSuggestions();}
+ }
+}
+function onKeywordInput(){
+ window.clearTimeout(state.suggestionTimer);
+ ++state.suggestionSerial;
+ const q=$("#keyword").value.trim();
+ if(q.length<2){state.suggestionMatches=[];closeSuggestions();return;}
+ state.suggestionTimer=window.setTimeout(()=>searchSuggestions(q),360);
+}
+function validRange(){
+ const start=$("#startDate").value,end=$("#endDate").value;
+ if(start&&end&&start>end){
+  $("#resultCount").textContent="시작일이 종료일보다 늦습니다.";
+  $("#startDate").focus();return false;
+ }
+ return true;
+}
+
 async function submitSearch(){
+ if(!validRange())return;
+ window.clearTimeout(state.suggestionTimer);
+ ++state.suggestionSerial;
+ closeSuggestions();
  const query=$("#keyword").value.trim();
  if(!query){
   state.serial++;
@@ -690,7 +774,34 @@ async function submitSearch(){
 }
 
 const form=$("#searchForm");
-form.addEventListener("submit",ev=>{ev.preventDefault();submitSearch()});
+form.addEventListener("submit",ev=>{
+ ev.preventDefault();
+ if(!$("#suggestions").hidden&&state.suggestionActive>=0&&state.suggestionMatches[state.suggestionActive]){
+  selectSuggestion(state.suggestionMatches[state.suggestionActive]);return;
+ }
+ submitSearch();
+});
+$("#keyword").addEventListener("input",onKeywordInput);
+$("#keyword").addEventListener("keydown",event=>{
+ if(event.key==="Escape"){closeSuggestions();return;}
+ if($("#suggestions").hidden||!state.suggestionMatches.length)return;
+ if(event.key==="ArrowDown"||event.key==="ArrowUp"){
+  event.preventDefault();
+  const step=event.key==="ArrowDown"?1:-1;
+  state.suggestionActive=(state.suggestionActive+step+state.suggestionMatches.length)%state.suggestionMatches.length;
+  drawSuggestions();
+ }
+ if(event.key==="Enter"&&state.suggestionActive>=0){
+  event.preventDefault();selectSuggestion(state.suggestionMatches[state.suggestionActive]);
+ }
+});
+$("#keyword").addEventListener("blur",()=>window.setTimeout(closeSuggestions,140));
+$("#keyword").addEventListener("focus",()=>{
+ if(state.suggestionMatches.length&&$("#keyword").value.trim().length>=2)drawSuggestions();
+});
+$("#startDate").addEventListener("change",()=>{if(state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory()});
+$("#endDate").addEventListener("change",()=>{if(state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory()});
+$("#type").addEventListener("change",()=>{if(state.lookupSelected&&state.lookupData)showSelectedHistory()});
 $("#catalogueMore").addEventListener("click",()=>searchCatalogue(state.lookupQuery,true));
 $("#moreButton").addEventListener("click",()=>{if(!state.lookupSelected&&state.more&&!state.busy)load(false)});
 if("IntersectionObserver" in window){
@@ -698,9 +809,6 @@ if("IntersectionObserver" in window){
    if(entries.some(e=>e.isIntersecting)&&state.more&&!state.busy)load(false);
  },{rootMargin:"0px 0px 220px 0px"});
  observer.observe($("#sentinel"));
-}
-for(let y=2026;y>=1990;y--){
- const option=element("option","",String(y)+"년");option.value=String(y);$("#year").appendChild(option);
 }
 const urlKeyword=(new URLSearchParams(window.location.search)).get("q");
 if(urlKeyword){$("#keyword").value=urlKeyword.slice(0,80);submitSearch()}
