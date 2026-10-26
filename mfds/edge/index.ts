@@ -268,7 +268,11 @@ async function syncOfficialEfficacyHistory(): Promise<unknown> {
         if(day&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(day);
       }
       const url=ORIGIN+"/pbp/CCBBB01/getItemChangeHistList?itemSeq="+target.item_seq+"&docType=EE&page=1";
-      const versions=parseOfficialHistoryVersions(await html(url));
+      const versionResponse=await fetch(url,{headers:{"User-Agent":"Mozilla/5.0 (compatible; MFDS-monitor/1.0)","Accept":"text/html"}});
+      if(!versionResponse.ok)throw Error("MFDS history HTTP "+versionResponse.status);
+      const versionHtml=await versionResponse.text();
+      if(!versionHtml.includes('id="hist_list"'))throw Error("MFDS version list markup missing");
+      const versions=parseOfficialHistoryVersions(versionHtml);
       // MFDS marks the first digital version with a star. It is a comparison
       // baseline, not proof of a new indication on that date.
       const indexed=new Map<string,Record<string,unknown>>();
