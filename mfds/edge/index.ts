@@ -863,6 +863,127 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
   note:"식약처가 전자화한 효능·효과 원문의 연속 버전을 비교했습니다. 전자화 이전 이력과 문구 변경의 의학적 의미는 별도 확인이 필요합니다."};
 }
 
+
+// Cross-product source discovery. The MFDS catalogue cannot be sorted by
+// last indication-change date, so we resolve products from newly published
+// change-review records, then obtain their *actual* regulatory change dates
+// from each official product's history. Publication dates are never events.
+function splitProductNames(input:string):string[]{
+ const parts:string[]=[];let part="",depth=0;
+ for(const char of String(input||"")){
+  if(char==="("||char==="[")depth++;
+  if(char===")"||char==="]")depth=Math.max(0,depth-1);
+  if(char===","&&depth===0){if(part.trim())parts.push(part.trim());part="";continue;}
+  part+=char;
+ }
+ if(part.trim())parts.push(part.trim());
+ return parts;
+}
+function searchProductName(raw:string):string {
+ return raw.replace(/^\s*(?:\[[^\]]*\]\s*)+/,"")
+  .replace(/^\s*\([^)]*(?:주식회사|주|유)\)\s*,\s*/,"")
+  .replace(/\([^)]*\)/g,"").replace(/\[[^\]]*\]/g,"")
+  .replace(/\s*외\s*\d+\s*(?:품목|건).*$/,"")
+  .replace(/\s+/g," ").trim().slice(0,95);
+}
+async function findChangeReviewProducts(source:any):Promise<CatalogueItem[]>{
+ const inputs=splitProductNames(source.product||"").slice(0,3);
+ const title=source.title?.replace(/^\s*(?:\[[^\]]*\]\s*)+/,"")||"";
+ if(!inputs.length)inputs.push(title);
+ if(inputs.length===1&&searchProductName(inputs[0])!==searchProductName(title))
+  inputs.push(title);
+ const seen=new Map<string,CatalogueItem>();
+ for(const candidate of inputs.slice(0,3)){
+  const q=searchProductName(candidate);
+  if(q.length<2)continue;
+  const url=new URL(ORIGIN+"/searchDrug");
+  url.searchParams.set("searchYn","Y");
+  url.searchParams.set("page","1");
+  url.searchParams.set("itemName",q);
+  const candidates=parseDrugCatalogue(await html(url.toString()));
+  // Match the queried item, not unrelated similar formulations.
+  const key=q.normalize("NFKC").replace(/[\s()[\]·,]/g,"").toLocaleLowerCase("ko-KR");
+  const matched=candidates.filter(x=>{
+   const n=x.product.normalize("NFKC").replace(/[\s()[\]·,]/g,"").toLocaleLowerCase("ko-KR");
+   return n.includes(key);
+  });
+  for(const drug of matched.slice(0,2))seen.set(drug.item_seq,drug);
+  if(seen.size>=4)break;
+ }
+ return [...seen.values()].slice(0,4);
+}
+async function globalEfficacyScan(maxSources:number=5):Promise<unknown>{
+ const count=Math.max(1,Math.min(12,Math.floor(maxSources)||5));
+ const [reviews,prior] = await Promise.all([
+  db("GET","mfds_monitor_items?select=source_id,title,product,company,published_at&source=eq.review&order=published_at.desc,id.desc&limit=900"),
+  db("GET","mfds_monitor_global_source_scans?select=source_id,status,attempted_at&limit=1500")
+ ]);
+ const scanned=new Map<string,any>((prior||[]).map((x:any)=>[x.source_id,x]));
+ const deadline=Date.now()+105000;
+ const now=Date.now();
+ const fresh=(reviews||[]).filter((item:any)=>{
+  if(!/변경/.test(item.title||"") || !item.source_id)return false;
+  const existing=scanned.get(item.source_id);
+  if(!existing)return true;
+  if(existing.status==="done"||existing.status==="not_found"||existing.status==="skipped")return false;
+  return now-new Date(existing.attempted_at).getTime()>6*3600000;
+ }).slice(0,count);
+ const results:any[]=[];
+ let added=0;
+ for(const item of fresh){
+  if(Date.now()>deadline)break;
+  const stamp=new Date().toISOString();
+  let status="done",summary="",saved=0,first:any=null;
+  try{
+   const found=await findChangeReviewProducts(item);
+   if(!found.length)status="not_found";
+   for(const product of found){
+    if(Date.now()>deadline)break;
+    const inspection:any=await inspectMFDSItem(new URLSearchParams({item_seq:product.item_seq}));
+    if(!first)first=product;
+    const original=inspection.initial_version_date||"";
+    const today=new Date().toISOString().slice(0,10);
+    const events=(inspection.items||[]).filter((x:any)=>
+      /^\d{4}-\d{2}-\d{2}$/.test(x.changed_at||"") &&
+      x.changed_at!==original && x.changed_at<=today &&
+      ["compared","not_available"].includes(x.diff_status)
+    );
+    const rows=events.map((ev:any)=>({
+      item_seq:product.item_seq,product:product.product,company:product.company,
+      ingredient:product.ingredient||"",changed_at:ev.changed_at,
+      change_section:"효능·효과",classification:ev.change_type||"확인 필요",
+      evidence_url:product.source_url,
+      before_text:ev.before_text||null,after_text:ev.after_text||null,
+      added_lines:ev.added_lines||[],removed_lines:ev.removed_lines||[],
+      diff_status:ev.diff_status,detail_checked_at:stamp,last_seen_at:stamp
+    }));
+    for(let i=0;i<rows.length;i+=25)await db("POST",
+      "mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",
+      rows.slice(i,i+25),"resolution=merge-duplicates,return=minimal");
+    if(inspection.official_change_total!=null&&inspection.official_efficacy_total!=null)
+      await db("POST","mfds_monitor_history_summaries?on_conflict=item_seq",{
+        item_seq:product.item_seq,
+        official_change_total:inspection.official_change_total,
+        official_efficacy_total:inspection.official_efficacy_total,
+        verified_at:stamp
+      },"resolution=merge-duplicates,return=minimal");
+    saved+=rows.length;
+   }
+  }catch(e){status="error";summary=String(e).slice(0,220)}
+  await db("POST","mfds_monitor_global_source_scans?on_conflict=source_id",{
+    source_id:item.source_id,source_title:(item.title||"").slice(0,350),
+    product_hint:(item.product||"").slice(0,450),item_seq:first?.item_seq||null,
+    product:first?.product||null,company:first?.company||null,
+    status,changed_records:saved,attempted_at:stamp,error_text:summary||null
+  },"resolution=merge-duplicates,return=minimal");
+  results.push({source:item.title,item_seq:first?.item_seq||null,status,saved,error:summary||undefined});
+  added+=saved;
+ }
+ return {mode:"global_efficacy_scan",processed:results.length,saved_records:added,
+  source_review_count:(reviews||[]).length,results,
+  coverage:"식약처 변경심사 공개자료에서 품목을 찾고 실제 품목별 효능·효과 변경일만 수집. 전체 의약품 정밀 전수조사 완료 아님."};
+}
+
 async function feed(): Promise<unknown> {
   const [events, leads, recent, runs, stats, efficacy, targets] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
@@ -899,6 +1020,7 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="backfill") return reply(await backfill());
     if(input?.mode==="repair_order_dates") return reply(await repairOrderHistory());
     if(input?.mode==="efficacy_sync") return reply(await syncOfficialEfficacyHistory());
+    if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
   } catch (e) {
     return reply({error:String(e).slice(0,420)},500);
