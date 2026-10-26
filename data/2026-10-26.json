@@ -52,6 +52,17 @@
       "original_title": null
     },
     {
+      "title": "마더스제약, 특허분쟁에 ‘IPO 먹구름’...신약개발 역량도 과제 - 조선비즈 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 마더스제약이 특허분쟁으로 인해 기업공개(IPO)에 부정적 영향이 우려되고 있다. 이와 함께 신약개발 역량 강화 역시 회사가 해결해야 할 주요 과제로 부상하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYTVYd2w0cV9kTHlGMmFnak52dTZ1RUJhVlQyU3pyQTRvUWl4bjlETkdYN2Npbkw0Q3lsejlTeDF1enZ4WmMwbDNpbGJhUXA2V2lsTmxTdVlkM0FhREJTTjFRYnppa09ZNzhGR040SE9lZFBZVFBMZWFOaXM0RERPc0VFS3g0SFHSAZsBQVVfeXFMTjlnQ05ldWdCdEhVQ1lHQXoydEV1Q2oteGpRRS0zYjd1bFdRdVBDbzhmN2J2MTJUZ0plWlQzUlh6Sm5HWmdMOXZ5SkJGTHV5RlhZZU93blU1NXlJSUFpZVd6VWx4SWdnZTFXb1BFV1dLMHhFTTYzQXFYOXkzY2g3NlVINGFDaUl5NGdDelpYZHg1SjJpcE1RaWRqZjQ?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-25T22:00:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
       "title": "마더스제약, 특허분쟁에 ‘IPO 먹구름’...신약개발 역량도 과제 - Chosunbiz",
       "summary": "(제목 기준·원문 미검증) 마더스제약은 주요 특허분쟁으로 인해 IPO에 먹구름이 드리워진 상황이다. 동시에 신약 개발 역량 강화가 필요한 과제로 지적되면서 기업의 미래 전략에 중대한 영향을 미치고 있다.",
       "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYTVYd2w0cV9kTHlGMmFnak52dTZ1RUJhVlQyU3pyQTRvUWl4bjlETkdYN2Npbkw0Q3lsejlTeDF1enZ4WmMwbDNpbGJhUXA2V2lsTmxTdVlkM0FhREJTTjFRYnppa09ZNzhGR040SE9lZFBZVFBMZWFOaXM0RERPc0VFS3g0SFE?oc=5",
@@ -158,6 +169,28 @@
       "published_at": "2026-10-25T21:05:00+00:00",
       "tag": "약가·급여",
       "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약기업 AI, 신약개발 넘어 생산 현장 도입 '다양' - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 국내 제약기업들이 인공지능(AI)을 활용해 신약개발뿐만 아니라 생산 현장까지 적용 범위를 확대하고 있다. 이는 제약산업의 효율성과 경쟁력 강화에 기여하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94dHNaOVFnYzFhT0Z2NlZEcWY2UDE0MHc2T2Y5c3FTVDYyY2I3RjdnSzNaQnpGYWNnbmVoR0hpcTdFYjhlVWVEbXJmZlJiV09PSTNaLUtDZ2g0LVRBQTQ0X1pSYXdSYUF4cmE4?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-25T21:01:16+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"중증근무력증, 위기 전 치료 중요···신약 접근성 넓혀야\" - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 중증근무력증 환자의 위기 상황을 예방하기 위해 조기 치료가 중요하며, 이를 위해 신약의 접근성을 확대해야 한다는 전문가 의견이 제기되었다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE16eE5DdFYycmlGZVViY2kwNFdUdWtkeHcwNkk1RDVjMFVjVnR1OTd3dFRzZUxFYXhZRF91VmtLS0k0X0Y4RkJuTEl1RFZRblJ1djV2cnZSM0xYb090MnVpNC1NVDJEQzlfTUVr?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-25T21:01:09+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
       "selection_status": "selected",
       "original_title": null
     },
@@ -344,7 +377,7 @@
   "telegram": false,
   "publish_allowed": false,
   "selected_count": {
-    "domestic": 18,
+    "domestic": 21,
     "global": 12
   },
   "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
