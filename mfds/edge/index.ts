@@ -1441,7 +1441,13 @@ async function syncOriginatorFamily(maxGroups:number=2):Promise<unknown>{
   db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope,classification_confidence&watch_scope=eq.primary&classification_confidence=in.(official_list,verified_review)&limit=1500"),
   db("GET","mfds_monitor_family_scans?select=group_key,checked_at&limit=1200")
  ]);
- const found=new Set((scans||[]).map((x:any)=>x.group_key));
+ // Revisit each verified originator+ingredient group after 30 days so
+ // newly approved strengths/formulations are eventually discovered too.
+ // Never scan the same group more than once in the 30-day interval.
+ const recent=new Set((scans||[]).filter((x:any)=>{
+  const then=Date.parse(x.checked_at||"");
+  return Number.isFinite(then)&&Date.now()-then<30*86400000;
+ }).map((x:any)=>x.group_key));
  const groups=new Map<string,any>();
  for(const role of roles||[]){
   const parts=activeIngredientTokens(role.ingredient);
@@ -1454,8 +1460,10 @@ async function syncOriginatorFamily(maxGroups:number=2):Promise<unknown>{
  const priority=(x:any)=>
   x.term==="세마글루티드"?-20:
   /터제파타이드|티르제파타이드|리라글루티드|두필루맙/.test(x.term)?-10:0;
- const pending=[...groups.values()].filter(x=>!found.has(x.key))
-  .sort((a,b)=>priority(a)-priority(b)||a.key.localeCompare(b.key)).slice(0,n);
+ const scannedKeys=new Set((scans||[]).map((x:any)=>x.group_key));
+ const pending=[...groups.values()].filter(x=>!recent.has(x.key))
+  .sort((a,b)=>Number(scannedKeys.has(a.key))-Number(scannedKeys.has(b.key))||
+    priority(a)-priority(b)||a.key.localeCompare(b.key)).slice(0,n);
  const results:any[]=[];
  for(const seed of pending){
   const checkedAt=new Date().toISOString();
@@ -1598,9 +1606,13 @@ async function syncOriginalMasterHistory(maxItems:number=6):Promise<unknown>{
       added_lines:ev.added_lines||[],removed_lines:ev.removed_lines||[],
       diff_status:ev.diff_status,detail_checked_at:now,last_seen_at:now
     }));
-   for(let i=0;i<rows.length;i+=25)await db("POST",
+   // MFDS can publish multiple versions of a label on the same date.
+   // The database key is (item_seq,changed_at,section), so keep the latest
+   // version for each date to avoid HTTP 500 duplicate-key upserts.
+   const uniqueRows=[...new Map(rows.map((row:any)=>[row.changed_at+"|"+row.change_section,row])).values()];
+   for(let i=0;i<uniqueRows.length;i+=25)await db("POST",
     "mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",
-    rows.slice(i,i+25),"resolution=merge-duplicates,return=minimal");
+    uniqueRows.slice(i,i+25),"resolution=merge-duplicates,return=minimal");
    if(inspected.official_change_total!=null&&inspected.official_efficacy_total!=null)
     await db("POST","mfds_monitor_history_summaries?on_conflict=item_seq",{
      item_seq:item.item_seq,official_change_total:inspected.official_change_total,
