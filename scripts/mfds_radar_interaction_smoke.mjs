@@ -23,7 +23,7 @@ async function until(title,expr,test){
  throw Error(title+" timed out: "+JSON.stringify(val));
 }
 async function submit(filter){
- const js='(()=>{const p='+JSON.stringify(filter)+';for(const [k,v] of Object.entries(p)){document.getElementById(k).value=v;}document.getElementById("searchForm").dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));return true})()';
+ const js='(()=>{const f='+JSON.stringify(filter)+';const p={keyword:f.keyword??"",type:f.type??"all",startDate:f.startDate||(f.year&&f.year!=="all"?f.year+"-01-01":""),endDate:f.endDate||(f.year&&f.year!=="all"?f.year+"-12-31":"")};for(const [k,v] of Object.entries(p)){document.getElementById(k).value=v;}document.getElementById("searchForm").dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));return true})()';
  return evalPage(js);
 }
 function ensure(value,msg){if(!value)throw Error(msg)}
@@ -47,6 +47,32 @@ try{
  const summary=await evalPage('({subtitle:document.querySelector("header .subtitle")?.textContent||"",contextHidden:document.querySelector("#resultContext")?.hidden,label:document.querySelector("#resultCount")?.textContent||""})');
  ensure(!summary.subtitle&&summary.contextHidden&&!summary.label.includes("일부 품목"),"Original-only concise header invalid "+JSON.stringify(summary));
  console.log("ORIGINAL_COMPACT_HEADER_OK",JSON.stringify(summary));
+
+ const searchInputs=await evalPage('({year:!!document.querySelector("#year"),scope:!!document.querySelector("#scope"),start:document.querySelector("#startDate")?.type,end:document.querySelector("#endDate")?.type,defaultType:document.querySelector("#type option")?.textContent,explanatory:document.querySelector("header .subtitle")?.textContent||""})');
+ ensure(!searchInputs.year&&!searchInputs.scope&&searchInputs.start==="date"&&searchInputs.end==="date"&&searchInputs.defaultType==="유형 검색"&&!searchInputs.explanatory,"Search controls not updated: "+JSON.stringify(searchInputs));
+ console.log("DIRECT_DATE_AND_TYPE_FILTER_UI_OK",JSON.stringify(searchInputs));
+ await evalPage('(()=>{const input=document.querySelector("#keyword");input.value="키트";input.dispatchEvent(new Event("input",{bubbles:true}));return true})()');
+ const suggested=await until("Two-character autocomplete for Keytruda",
+  '({count:document.querySelectorAll("#suggestions .suggest-option").length,labels:document.querySelector("#suggestions")?.textContent||"",expanded:document.querySelector("#keyword")?.getAttribute("aria-expanded")})',
+  v=>v.count>=1&&v.labels.includes("키트루다")&&v.expanded==="true");
+ console.log("TWO_CHAR_KEYTRUDA_AUTOCOMPLETE_OK",JSON.stringify({count:suggested.count,first:suggested.labels.slice(0,120)}));
+ await evalPage('(()=>{const opt=[...document.querySelectorAll("#suggestions .suggest-option")].find(x=>x.textContent.includes("키트루다"));if(!opt)throw Error("No Keytruda option");opt.click();return true})()');
+ const chosenSuggestion=await until("Autocomplete selection loads MFDS product indication history",
+  '({selected:document.querySelector("#keyword")?.value||"",count:document.querySelector("#resultCount")?.textContent||"",cards:document.querySelectorAll("#entries details.entry").length})',
+  v=>v.selected.includes("키트루다")&&v.cards>=1&&v.count.includes("효능·효과 변경"));
+ console.log("AUTOCOMPLETE_PICK_LOADS_HISTORY_OK",JSON.stringify(chosenSuggestion));
+ await submit({keyword:"",startDate:"2026-07-01",endDate:"2026-10-26",type:"추가"});
+ const dates=await until("Date interval search",
+  '({items:[...document.querySelectorAll("#entries details.entry")].map(x=>x.querySelector(".date")?.textContent||""),count:document.querySelector("#resultCount")?.textContent||""})',
+  v=>v.items.length>=1&&v.items.every(x=>x>="2026.07.01"&&x<="2026.10.26"));
+ console.log("DIRECT_DATE_INTERVAL_FILTER_OK",JSON.stringify({rows:dates.items.length,first:dates.items.slice(0,3)}));
+ await submit({keyword:"",startDate:"2026-10-27",endDate:"2026-10-01",type:"all"});
+ const invalid=await evalPage('document.querySelector("#resultCount")?.textContent||""');
+ ensure(invalid.includes("시작일이 종료일보다 늦습니다"),"Invalid date validation missing "+invalid);
+ console.log("INVALID_RANGE_BLOCKED_OK",invalid);
+ await submit({keyword:"",type:"all",startDate:"",endDate:""});
+ await until("Restore original timeline",'document.querySelector("#resultCount")?.textContent||""',v=>v.includes("오리지널 중심"));
+
  await evalPage('document.querySelector("details.entry summary").click()');
  const detail=await until("Expanding clinical change groups",
   '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",diseases:document.querySelectorAll("details.entry[open] .disease-group").length,units:document.querySelectorAll("details.entry[open] .change-unit").length,originals:document.querySelectorAll("details.entry[open] .original-details").length})',
@@ -62,11 +88,11 @@ try{
   '({cards:document.querySelectorAll("details.entry").length,names:[...document.querySelectorAll("details.entry .drug")].map(x=>x.textContent)})',
   v=>v.cards>=4&&v.names.every(x=>x.includes("임핀지")));
  console.log("INGREDIENT_SEARCH_OK",ingredient.cards);
- await submit({keyword:"",year:"all",type:"all",scope:"uncompared"});
- const old=await until("Old records without original XML",
-  '({cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||"",count:document.querySelector("#resultCount")?.textContent})',
-  v=>v.cards>=2&&v.count?.includes("건")&&v.body.includes("내용 확인 필요"));
- console.log("OLDER_CHANGES_FILTER_OK",old.cards);
+ await submit({keyword:"",startDate:"2014-01-01",endDate:"2018-12-31",type:"all"});
+ const old=await until("Old official indications with missing XML",
+  '({cards:document.querySelectorAll("details.entry").length,count:document.querySelector("#resultCount")?.textContent||"",body:document.querySelector("#entries")?.textContent||""})',
+  v=>v.cards>=2&&v.count.includes("건")&&v.body.includes("내용 확인 필요"));
+ console.log("HISTORIC_UNCOMPARED_ITEMS_OK",old.cards);
  await submit({keyword:"",year:"all",type:"삭제",scope:"all"});
  const deletions=await until("Deletion filter",
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
