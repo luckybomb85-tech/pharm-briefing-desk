@@ -1,0 +1,229 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-27",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "복수 제약사 병용요법 급여 모색…심평원·공단, 절차 정비 검토",
+      "summary": "국회 보건복지위원회는 건강보험심사평가원과 국민건강보험공단에 병용요법 신약의 임상적 유용성과 비용효과성 평가 기준 및 복수 제약사 간 급여 협상 절차 개선을 주문했다. 심평원과 공단은 각각 전문인력 확충을 포함한 평가 및 협상 절차 개선을 검토 중이다. 이번 제도 정비가 병용요법의 급여 접근성 향상으로 이어질지 주목된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80206",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] “美 뚫은 ‘리픽투’ 12월 상업화…‘리보세라닙’, 빠르면 연내 미국 허가”",
+      "summary": "엘레바테라퓨틱스가 FDA로부터 승인받은 담관암 치료제 ‘리픽투(리라푸그라티닙)’를 오는 12월 미국 시장에 상업 공급한다. 초기 치료 대상 환자는 약 600명으로 의료진 교육과 보험급여 협상에 집중 중이다. 또한 간세포암 1차 치료제로 ‘리보세라닙·캄렐리주맙’ 병용요법의 FDA 허가 재신청을 진행해 네 번째 도전에 임하고 있다. 이번 재신청의 핵심 변수는 제조시설 관련 규제 요건이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29475",
+      "source_name": "더바이오",
+      "published_at": "2026-10-26T21:30:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[HIT 포커스] 자료제출약 허가 문턱 높아지나…수수료 515% 인상",
+      "summary": "식품의약품안전처가 자료제출의약품 허가심사 수수료를 기존 약 260만원에서 1600만원으로 인상하는 방안을 추진 중이다. 특히 복합제와 함량별 허가가 필요한 의약품의 경우 수천만 원대 비용이 발생할 수 있어 중소 제약사의 개발 위축 우려가 크다. 업계는 심사 인력 확충과 절차 개선 등 행정 서비스 개선도 요구하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80223",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:08:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "‘릭시아나’ 후발약 64품목 급여 진입…같은 함량도 약가 달라",
+      "summary": "에독사반 성분 의약품 64품목이 내달 11일부터 건강보험 급여 목록에 새로 등재될 전망이다. 동일 성분·함량이라도 제약기업의 가산 자격과 기준요건 충족 여부에 따라 약가가 차등 적용되며, 일부는 등재 시점에 연동조정과 내년 추가 인하가 예정돼 있다. 한국다이이찌산쿄의 ‘릭시아나정’이 오리지널 의약품이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47777",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-26T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "렘트라다·큐피스템 등 660품목, 건강보험 급여목록서 빠진다",
+      "summary": "미생산 및 유효기한 도과 의약품 602품목을 비롯해 최근 2년간 청구 없는 37품목, 품목 허가 자진취하 9품목 등 총 660품목의 급여목록에서 삭제가 추진된다. 이번 정비는 국민건강보험 요양급여 기준 규칙에 따른 것으로, 일부 유명 품목도 포함됐다. 해당 품목들은 실제 공급 여부 확인이 필요하다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47778",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-26T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "퓨쳐켐 FC705, 미국 2a상 성과로 국내 허가·미 3상 노린다",
+      "summary": "퓨쳐켐의 전립선암 치료 방사성의약품 후보물질 FC705가 미국 임상 2a상에서 RECIST 1.1 기준 객관적반응률 38.9%, 완전관해율 포함 유의미한 항종양 효과를 보였다. PSA50 반응률도 경쟁 약물 대비 우수해 국내 조건부 허가와 미국 3상 임상을 준비 중이다. 통상적 평가 기준의 부재 문제도 보완해 유효성에 의문을 일부 해소했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80209",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:02:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"리쥬란, 특허 기술로 부작용 줄이고 자연스러운 효과 도출\"",
+      "summary": "파마리서치의 스킨부스터 제품 '리쥬란'은 폴리뉴클레오타이드(PN)를 주성분으로 독자 개발한 DOT 기술을 적용해 피부 자생력과 탄력 개선에 도움을 주며 부작용 위험이 낮다. 필러 대비 자연스러운 효과와 다양한 적응증 적용이 가능해 국내 1000억원대 시장을 넘어 유럽과 중동 진출을 확대하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80225",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:02:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"DDR 변이 담도암 1차 유지요법, 린파자 단독·병용 모두 임상 혜택\"",
+      "summary": "서울아산병원 유창훈 교수가 발표한 2상 연구자 주도 임상 'OPTIMUM' 결과에 따르면, DNA 손상 복구(DDR) 변이 담도암 환자에서 백금기반 1차 치료 후 린파자 단독 및 임핀지 병용 유지요법 모두 6개월 무진행생존율 62% 이상과 PFS 및 OS 개선 등 임상적 혜택을 보였다. 특히 핵심 상동재조합결손군에서 더 큰 생존 혜택을 확인했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80229",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "삼성바이오로직스·셀트리온, 3Q 매출 1.5조 '접전'…4Q 승부처는",
+      "summary": "삼성바이오로직스와 셀트리온이 2026년 3분기 각각 약 1조5000억원의 매출을 기록했다. 삼성바이오로직스는 5공장과 미국 록빌 생산시설 매출 증가로 외형 성장했으나 수익성은 제한적이다. 셀트리온은 바이오시밀러 판매 확대와 원가 개선으로 영업이익 증가를 견인했다. 4분기는 신규 시설 매출 확대와 글로벌 바이오시밀러 판매가 주요 변수다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80222",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:09:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "中 바이오, 기술수출 200조원 돌파 눈앞 - 조선비즈 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 중국 바이오기업들의 기술수출 규모가 200조원에 육박하며 글로벌 시장에서 입지를 강화하고 있다. 대형 기술수출과 공동개발 계약을 앞세워 중국 바이오산업의 성장세가 지속되고 있음을 보여준다.",
+      "source": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMUZEaVA4VkgzWE82MkZLTEtadVJjYS1wa2JWY3BZSTFkcmJpNF9HbWFJQVFUVmJwelY4WDRBN216ZFdMQU54S0VveEp1NWVkSF85cE9uSFlZSWlueTd1Rlp5dHktZUFkUVpfM0pmcWJicW1kWkVpSzFBME5qVGQySkNnWW9IT1BLcTFLd9IBoAFBVV95cUxQb3RyVmFfZldTa3pvSHJBQXYwZFdXTUVjbmxsODNEY1ItbENQTS1hSWMtQ0taYkpXdml0VU5RdVpEcUpFNDBrd0tWM2Z1anh2RjdJdkJORTdKYURfeHBlbkVJZ2VIM1FsT1l3Znpmc1AwX2pDOTg0dlN4T2p5c0VZVzNRd2g2MklLNFoxYzNJalpPWHpkY0ZMWEhyM3pfNEVJ?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-10-26T21:00:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] GSK·中 한소제약, B7-H3 ADC 골육종 3상서 진행·사망 위험 67%↓",
+      "summary": "글락소스미스클라인(GSK)과 중국 한소제약이 개발한 B7-H3 표적 항체약물접합체(ADC) ‘리스부타투그 레제테칸’이 급성 재발성·불응성 골육종 환자의 임상 3상에서 기존 화학항암 대비 무진행생존기간을 5.5개월로 연장하고 사망 위험을 67% 낮췄다. 다만 이상반응에 따른 용량 조절이 흔한 가운데 혈액학적 독성 관리가 중요한 과제로 지목됐다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29477",
+      "source_name": "더바이오",
+      "published_at": "2026-10-26T21:50:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "에이비엘, 'CLDN18.2x4-1BB' 위암 1차 3상 \"용량확정\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 에이비엘은 CLDN18.2x4-1BB 이중항체를 투여하는 위암 1차 치료제 임상 3상에서 용량확정 단계에 접어들었다고 발표했다. 이는 대형 임상에서 안전성과 적정 용량을 평가하는 중요한 단계로, 향후 위암 치료 옵션으로 주목받을 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1XRXp6bFlUNnJTNlFUSDJKTmY4eXotbWhSa2NWc1NvUTZZd2R5Q0NXd1BXeDl4WURuelFRY0U5cUFNOUhETkgyOUhCcUFWM1ppYktRY3NqRQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-26T21:14:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "삼성바이오에피스, 미∙유럽 키트루다와 시밀러 'SB27' 간 동등성 입증",
+      "summary": "삼성바이오에피스가 개발 중인 키트루다 바이오시밀러 ‘SB27’가 미국과 유럽 허가 제품과 3-Way 임상 1상에서 약동학적 동등성을 입증했다. 163명의 비소세포폐암 환자를 대상으로 약물 농도, 무병생존기간, 전체생존기간 등이 유사하게 나타났으며 면역원성도 없었다. 회사는 글로벌 신속 허가에 박차를 가할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80231",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:08:38+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀센터 공급 긴급도입의약품, 건강보험 적용은 4개 중 1개꼴",
+      "summary": "희귀 및 필수 의약품을 지원하는 한국희귀필수의약품센터가 공급하는 긴급도입의약품 122품목 중 23.8%에 해당하는 29품목만 건강보험 급여 대상으로 분류됐다. 에피디올렉스, 키너렛 등 주요 품목이 포함되어 있으나 다수 품목은 비급여 상태로, 실제 급여 적용 여부와 공급 가능성은 별도 확인이 필요하다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47785",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-26T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "국가필수의약품 확대 의견조회...\"안정적 공급 필요 의약품 지정 관리\"",
+      "summary": "식품의약품안전처가 의료단체에 국가필수의약품 지정 및 적용 범위 확대를 위한 의견 조사를 실시한다. 현재 491개 의약품이 지정돼 있으며, 신규 지정 약품에는 급성 백혈병, 신생아 호흡곤란증후군 등에 쓰이는 주사제 등이 포함됐다. 의료계는 11월 9일까지 의견 제출해야 한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47783",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-26T21:06:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] 미충족 수요 겨냥 K-바이오... ESMO 경쟁력 검증",
+      "summary": "유럽종양학회(ESMO 2026)에서 보로노이, 신라젠, 리가켐바이오 등 국내 바이오기업이 HER2 표적 항암제, 다중억제 항암제, CLDN18.2 표적 항체약물접합체 등의 초기 및 중간 임상 결과를 공개하고 글로벌 임상 확대 계획을 밝혔다. 보로노이 VRN10은 HER2 변이 고형암에서 주목할 만한 항종양 반응을 보였고, 신라젠은 진행성 고형암에서 다중표적 억제제 임상 중간 결과를 설명했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80210",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:05:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"희귀암 '흉선상피종양', '리보세라닙' 후속 치료제 가능성 확인\"",
+      "summary": "삼성서울병원 박세훈 교수가 발표한 임상 2상 연구에서 VEGFR-2 억제제 리보세라닙이 전신 치료를 받은 전이성 흉선상피종양 환자 대상 35% 객관적반응률과 11.8개월 무진행생존기간 중앙값을 기록하며 지속적인 항종양 효과를 입증했다. 이상반응은 관리 가능했으며, 전이성 흉선상피종양의 새로운 치료 옵션 가능성을 제시했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80230",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:03:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 루닛, 미 항암제 협력에 상한가… 재무 부담 넘을까",
+      "summary": "루닛은 미국 서밋 테라퓨틱스와 신약 후보물질 '이보네시맙' 임상 3상에 적용할 AI 바이오마커 플랫폼 협력을 발표했다. 이 기술은 기존 조직 슬라이드 이미지만으로 치료 반응 예측 바이오마커 발굴을 가능하게 하며, 루닛은 이번 협력으로 글로벌 신약 개발 분야에서 AI 병리 기술 활용 가치를 높일 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80213",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-26T21:01:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "국내 제약바이오, ‘뷰티’도 M&A로 키운다…해외 유통·생산망 확보 경쟁",
+      "summary": "지놈앤컴퍼니, 샤페론, 셀트리온 등 국내 제약바이오 기업들이 뷰티·미용의료 분야에서 M&A와 투자로 사업을 확장하고 있다. 지놈앤컴퍼니는 미국 유통사 올블룸 지분을 확보했고, 샤페론은 홈 헬스케어 기업 니즈테크 인수로 글로벌 판매망을 넓혔다. 셀트리온은 프랑스 지프레 인수 후 약국망을 활용해 제품 판매에 나서는 등 해외 생산과 유통망 확보가 경쟁 포인트다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29471",
+      "source_name": "더바이오",
+      "published_at": "2026-10-26T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 19,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
