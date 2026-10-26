@@ -8,6 +8,7 @@ const BASE = Deno.env.get("SUPABASE_URL") || "";
 const KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const HEADERS = {
   "Access-Control-Allow-Origin": "*",
+  "Vary": "Origin",
   "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
   "Access-Control-Allow-Headers": "content-type,x-monitor-token",
   "Cache-Control": "no-store",
@@ -210,8 +211,13 @@ async function feed() {
     ...item, review_state:"unverified",
     priority_reason:"보고서 제목·첨부파일명에 적응증 또는 병용요법 관련 표현. 실제 허가변경일·전후 내용은 아직 미확인."
   }));
+  // Backward compatibility: older GitHub Pages HTML can stay in mobile
+  // browser caches even after a new deployment. The original dashboard
+  // expects response.items; preserve it until every client has migrated.
+  const items = await db("GET",
+    "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,approval_changed_at,change_type,change_summary,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200");
   return {
-    events, leads, runs,
+    events, leads, items, runs,
     counts:{verified_events:(events||[]).length, leads:leads.length, review_records:(raw||[]).length},
     description:"기존 수집 DB를 재활용하여 허가변경 사실(확인)과 심사보고서 단서(미검증)를 분리함."
   };
