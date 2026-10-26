@@ -1,0 +1,60 @@
+name: mfds-radar-live-smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'mfds/index.html'
+      - 'mfds/edge/index.ts'
+      - '.github/workflows/mfds-radar-live-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  verify-live-radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify both current and cached-client API formats
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request
+          url="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor"
+          req=urllib.request.Request(url,headers={"Origin":"https://luckybomb85-tech.github.io","Cache-Control":"no-cache"})
+          with urllib.request.urlopen(req,timeout=25) as resp:
+              assert resp.status==200,(resp.status,"HTTP_ERROR")
+              assert resp.headers.get("access-control-allow-origin")=="*","CORS_MISSING"
+              doc=json.load(resp)
+          for key in ("items","events","leads","runs"):
+              assert isinstance(doc.get(key),list),("API_FORMAT_MISSING",key)
+          assert doc["events"],"NO_VERIFIED_APPROVAL_EVENT"
+          print("MFDS_API_OK", {k:len(doc[k]) for k in ("items","events","leads")})
+          PY
+      - name: Check published UI in real headless Chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME" || { echo 'CHROME_NOT_FOUND'; exit 1; }
+          timeout 65 "$CHROME" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
+            --disable-background-networking --virtual-time-budget=23000 --dump-dom \
+            'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?ui-test=1' \
+            > /tmp/mfds-radar-dom.html 2> /tmp/mfds-radar-chrome.log || {
+              echo 'CHROME_RENDER_FAILED'; tail -n 60 /tmp/mfds-radar-chrome.log;exit 1;
+            }
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html=Path("/tmp/mfds-radar-dom.html").read_text(encoding="utf-8")
+          bad=["자료를 불러오지 못했습니다","자료를 가져오지 못했습니다","연결 오류","응답 형식 오류"]
+          errors=[x for x in bad if x in html]
+          rendered=len(re.findall(r'<article class="item"',html))
+          ok=(rendered>=1 and "임델트라" in html and "최신 조회" in html and not errors)
+          print("BROWSER_RENDERS",rendered,"HAS_IMDELTRA",("임델트라" in html),"UI_ERRORS",errors)
+          if not ok:
+              start=html.find('id="items"')
+              print(html[max(start-300,0):start+2000])
+              raise SystemExit("MFDS_RADAR_BROWSER_FAILED")
+          print("MFDS_RADAR_BROWSER_OK")
+          PY
