@@ -147,6 +147,12 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .baseline-original{padding:12px 15px 16px}
 .baseline-original p{font-size:12px;color:#64748b;margin:0 0 9px}
 .baseline-original .fulltext{max-height:400px}
+/* Compact product / ingredient / manufacturer hierarchy */
+.entry-main .drug{display:block;margin-bottom:6px}
+.entry-main .meta-fields{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:20px;row-gap:4px;margin-top:5px}
+.entry-main .meta-detail{display:flex;gap:7px;align-items:baseline;min-width:0;font-size:12px;line-height:1.5;color:#596980;overflow-wrap:anywhere}
+.entry-main .meta-title{font-size:11px;font-weight:760;white-space:nowrap;color:#8190a4;flex:0 0 auto}
+@media(max-width:650px){.entry-main .meta-fields{grid-template-columns:1fr;row-gap:3px}.entry-main .meta-detail{font-size:11px}}
 </style>
 </head>
 <body>
@@ -283,7 +289,17 @@ function renderCard(row){
  put(top,"span","tag "+cls,displayType(row));
  const meta=put(top,"span","entry-main");
  put(meta,"span","drug",row.product||"의약품");
- put(meta,"span","meta",[row.company,row.ingredient].filter(Boolean).join(" · "));
+ const info=put(meta,"span","meta-fields");
+ if(row.ingredient){
+  const ingredient=put(info,"span","meta-detail");
+  put(ingredient,"span","meta-title","성분");
+  put(ingredient,"span","",row.ingredient);
+ }
+ if(row.company){
+  const company=put(info,"span","meta-detail");
+  put(company,"span","meta-title","업체");
+  put(company,"span","",row.company);
+ }
  put(top,"span","arrow","⌄");
  const details=Array.isArray(row.change_details)?row.change_details:[];
  const headlines=details.length?details.map(smallPreview):
@@ -476,7 +492,7 @@ function renderCatalogue(){
   const btn=put(root,"button","catalogue-choice"+(state.lookupSelected?.item_seq===c.item_seq?" selected":""));
   btn.type="button";btn.dataset.itemSeq=c.item_seq;
   put(btn,"b","",c.product);
-  put(btn,"small","",[c.company,c.ingredient,c.permit_date?"최초허가 "+c.permit_date:"",c.status!=="정상"?c.status:""].filter(Boolean).join(" · "));
+  put(btn,"small","",[c.ingredient?"성분: "+c.ingredient:"",c.company?"업체: "+c.company:"",c.permit_date?"최초허가 "+c.permit_date:"",c.status!=="정상"?c.status:""].filter(Boolean).join(" · "));
   btn.addEventListener("click",()=>chooseDrug(c));
  }
  $("#catalogueFoot").hidden=!state.lookupHasMore;
