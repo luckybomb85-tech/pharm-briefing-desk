@@ -396,7 +396,7 @@ function renderCard(row){
  const type=String(row.change_type||"");
  const cls=type.includes("추가")?"add":type.includes("삭제")?"delete":"change";
  put(top,"span","date",fmtDate(row.changed_at));
- put(top,"span","tag "+cls,displayType(row));
+ put(top,"span","tag "+cls,row.gap_watch?"후발약 적응증 추가":displayType(row));
  const meta=put(top,"span","entry-main");
  put(meta,"span","drug",row.product||"의약품");
  const info=put(meta,"span","meta-fields");
@@ -429,6 +429,7 @@ function renderCard(row){
  }
  const panel=put(card,"div","content");
  renderChangeGroups(panel,row);
+ if(row.gap_watch)put(panel,"p","details-intro","오리지널과 적응증 차이가 확인돼 선별 감시하던 후발약의 추가 허가사항입니다. 실제 식약처 변경일 기준.");
  addFullEfficacy(panel,row,row.diff_status==="editorial_summary"?"확인된 변경 내용 요약":"변경 후 효능·효과 전문",row.after_text,details.filter(x=>x.kind==="added").map(x=>x.text));
  addFullEfficacy(panel,row,"변경 전 효능·효과 전문",row.before_text,[]);
  const links=put(panel,"div","contents-footer");
