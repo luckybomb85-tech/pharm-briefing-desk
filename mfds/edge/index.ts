@@ -575,6 +575,29 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
   if(!content.includes('id="hist_list"'))throw Error("식약처 효능·효과 변경이력 응답이 올바르지 않습니다.");
  }finally{clearTimeout(timer);}
  const versions=parseOfficialHistoryVersions(content);
+ // MFDS product-detail change table can list regulatory efficacy-change dates
+ // newer than the last electronically archived XML revision.
+ const officialDates=new Set<string>();
+ let detailComplete=false;
+ const detailedUrl=ORIGIN+"/pbp/CCBBB01/getItemDetailCache?cacheSeq="+itemSeq;
+ const detailController=new AbortController();
+ const detailTimer=setTimeout(()=>detailController.abort(),15000);
+ try{
+  const result=await fetch(detailedUrl,{signal:detailController.signal,headers:{"User-Agent":"Mozilla/5.0","Accept":"text/html"}});
+  if(result.ok){
+   const detail=await result.text();
+   const section=detail.slice(detail.indexOf('id="tblChf"'));
+   const tbody=section.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
+   if(tbody){
+    detailComplete=true;
+    for(const entry of tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+     const cols=[...entry[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
+     const date=cols.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
+     if(date&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(date);
+    }
+   }
+  }
+ }catch(_error){}finally{clearTimeout(detailTimer);}
  const items:any[]=[];
  for(let i=1;i<versions.length;i++){
   const prior=versions[i-1],next=versions[i];
@@ -593,10 +616,21 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
    source_kind:"official_live",comparison_kind:"literal"
   });
  }
+ const baseline=versions[0]?.changed_at;
+ const known=new Set(versions.map(x=>x.changed_at));
+ for(const day of officialDates){
+  if(day===baseline||known.has(day))continue;
+  items.push({
+   id:"live-"+itemSeq+"-"+day,changed_at:day,change_type:"변경",
+   before_text:"",after_text:"",added_lines:[],removed_lines:[],
+   diff_status:"not_available",evidence_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+itemSeq,
+   source_kind:"official_live",comparison_kind:"unknown"
+  });
+ }
  items.sort((a,b)=>b.changed_at.localeCompare(a.changed_at));
  const current=versions.at(-1);
  return {item_seq:itemSeq,items,total:items.length,
-  current_efficacy:current?.lines.join("\n")||"",
+  current_efficacy:current?.lines.join("\n")||"",official_history_complete:detailComplete,
   initial_version_date:versions[0]?.changed_at||null,
   source:"식약처 효능·효과 변경이력",reviewed:false,
   note:"식약처가 전자화한 효능·효과 원문의 연속 버전을 비교했습니다. 전자화 이전 이력과 문구 변경의 의학적 의미는 별도 확인이 필요합니다."};
