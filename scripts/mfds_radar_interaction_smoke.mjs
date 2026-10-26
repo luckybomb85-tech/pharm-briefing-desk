@@ -45,14 +45,14 @@ try{
   v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=15&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
  console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
  await evalPage('document.querySelector("details.entry summary").click()');
- const detail=await until("Expanding actual diff",
-  '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",added:document.querySelectorAll("details.entry[open] .line.added").length,removed:document.querySelectorAll("details.entry[open] .line.removed").length,marked:document.querySelectorAll("details.entry[open] .line.is-added").length})',
-  v=>v.open&&v.text.includes("변경 후 효능·효과 전문")&&v.added>0&&v.removed>0&&v.marked>0);
- console.log("TEXT_DIFF_EXPANSION_OK",JSON.stringify({added:detail.added,removed:detail.removed,marked:detail.marked}));
+ const detail=await until("Expanding clinical change groups",
+  '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",diseases:document.querySelectorAll("details.entry[open] .disease-group").length,units:document.querySelectorAll("details.entry[open] .change-unit").length,originals:document.querySelectorAll("details.entry[open] .original-details").length})',
+  v=>v.open&&v.text.includes("변경 후 효능·효과 전문")&&v.diseases>0&&v.units>0&&v.originals>0);
+ console.log("CLINICAL_GROUPED_DIFF_OK",JSON.stringify({diseases:detail.diseases,changes:detail.units,originals:detail.originals}));
  await submit({keyword:"",year:"2026",type:"추가",scope:"all"});
  const changed=await until("Year and change-type filter",
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
-  v=>v.cards===1&&v.count?.includes("1건")&&v.body.includes("임핀지")&&v.body.includes("2026.03.23"));
+  v=>v.cards>=2&&v.count?.includes("건")&&v.body.includes("임핀지")&&v.body.includes("2026.03.23"));
  console.log("YEAR_TYPE_SEARCH_OK",changed.count);
  await submit({keyword:"더발루맙",year:"all",type:"all",scope:"compared"});
  const ingredient=await until("Ingredient search",
@@ -69,6 +69,23 @@ try{
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
   v=>v.count?.includes("0건")&&v.cards===0&&v.body.includes("검색 조건"));
  console.log("DELETE_FILTER_EMPTY_OK",none.count);
+
+ // Tevimbra: two change dates, no misleading deletions from whitespace.
+ await submit({keyword:"테빔브라",year:"all",type:"all",scope:"all"});
+ const tevimbra=await until("Tevimbra scoped result count and disease summaries",
+  '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,preview:document.querySelector("details.entry .entry-preview")?.textContent||"",catalogue:document.querySelectorAll(".catalogue-choice").length})',
+  v=>v.count?.includes("2건")&&v.cards===2&&v.catalogue===1&&v.preview.includes("소세포폐암")&&v.preview.includes("비인두암"));
+ console.log("TEVIMBRA_SCOPED_TWO_HISTORY_OK",JSON.stringify({count:tevimbra.count,cards:tevimbra.cards,preview:tevimbra.preview.slice(0,320)}));
+ await evalPage('document.querySelector("details.entry summary").click()');
+ const tevimbraExpanded=await until("Tevimbra three substantive additions only",
+  '({open:document.querySelector("details.entry")?.open,groups:document.querySelectorAll("details.entry[open] .disease-group").length,adds:document.querySelectorAll("details.entry[open] .change-unit:not(.modified):not(.removed)").length,removed:document.querySelectorAll("details.entry[open] .change-unit.removed").length,cosmetic:document.querySelector("details.entry[open] .cosmetic-note")?.textContent||"",hiddenOriginal:document.querySelectorAll("details.entry[open] details.original-details:not([open])").length})',
+  v=>v.open&&v.groups===3&&v.adds===3&&v.removed===0&&v.cosmetic.includes("4건")&&v.hiddenOriginal>=2);
+ console.log("TEVIMBRA_THREE_CLINICAL_ADDITIONS_OK",JSON.stringify(tevimbraExpanded));
+ await evalPage('document.querySelector("details.entry[open] details.original-details summary").click()');
+ const fullText=await until("Tevimbra official full text opened",
+  '({original:document.querySelector("details.entry[open] details.original-details")?.open,lines:document.querySelectorAll("details.entry[open] details.original-details[open] .line.current").length,marked:document.querySelectorAll("details.entry[open] details.original-details[open] .line.is-added").length})',
+  v=>v.original&&v.lines>=10&&v.marked===3);
+ console.log("TEVIMBRA_COLLAPSIBLE_FULL_TEXT_OK",JSON.stringify(fullText));
 
  // New: unregistered MFDS catalogue entries must now be searchable.
  await submit({keyword:"오젬픽",year:"all",type:"all",scope:"all"});
