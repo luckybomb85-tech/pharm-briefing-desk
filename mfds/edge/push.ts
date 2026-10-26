@@ -181,7 +181,7 @@ async function sendQueued():Promise<any>{
  for(let i=0;i<jobs.length;i+=3){
   const batch=jobs.slice(i,i+3);
   const part=await Promise.all(batch.map(async (job:any)=>{
-   const url=APP+"?q="+encodeURIComponent(job.product);
+   const url=APP+"?seq="+encodeURIComponent(job.item_seq)+"&date="+encodeURIComponent(job.change_date);
    const body=JSON.stringify({title:"적응증 변경이력 · "+job.change_kind,
     body:String(job.product).slice(0,100)+" · "+job.change_date+" 허가변경",
     url,tag:job.event_key});
