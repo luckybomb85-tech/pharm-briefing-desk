@@ -302,7 +302,7 @@ function addSameIngredientSearch(panel,row){
  notice.hidden=true;
  const list=put(wrap,"div","related-result");
  const seen=new Set();
- let loadedPage=0,active=false;
+ let loadedPage=0,active=false,moreAvailable=false;
  const more=put(wrap,"button","related-more","동일 성분 다른 품목 더 보기");
  more.type="button";more.hidden=true;
  async function getPage(page){
@@ -352,7 +352,8 @@ function addSameIngredientSearch(panel,row){
     });
    }
    if(!seen.size)put(list,"div","related-status","같은 성분의 다른 식약처 품목을 찾지 못했습니다.");
-   more.hidden=!response.has_more;
+   moreAvailable=!!response.has_more;
+   more.hidden=!moreAvailable;
    more.disabled=false;
    if(page===1&&seen.size)trigger.textContent="동일 성분 품목 "+seen.size+"개 조회됨";
   }catch(e){
@@ -361,7 +362,7 @@ function addSameIngredientSearch(panel,row){
   }finally{active=false;trigger.disabled=false;}
  }
  trigger.addEventListener("click",()=>{
-  if(loadedPage){list.hidden=!list.hidden;notice.hidden=list.hidden;more.hidden=list.hidden||more.hidden;return;}
+  if(loadedPage){list.hidden=!list.hidden;notice.hidden=list.hidden;more.hidden=list.hidden||!moreAvailable;return;}
   getPage(1);
  });
  more.addEventListener("click",()=>getPage(loadedPage+1));
@@ -512,7 +513,7 @@ function showSelectedHistory(){
  const rows=visibleSearchRows();
  const root=$("#entries");root.replaceChildren();
  for(const entry of rows){
-  root.appendChild(renderCard({...entry,product:candidate.product,company:candidate.company,ingredient:candidate.ingredient}));
+  root.appendChild(renderCard({...entry,item_seq:candidate.item_seq,product:candidate.product,company:candidate.company,ingredient:candidate.ingredient}));
  }
  $("#resultCount").textContent=candidate.product+" · 효능·효과 변경 "+rows.length+"건";
  const all=state.lookupData?.official_change_total;
