@@ -697,22 +697,25 @@ function parseDrugCatalogue(markup:string):CatalogueItem[]{
 }
 async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
  const q=(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
- if(q.length<2||q.length>70) return {matches:[],has_more:false,total:0,message:"검색어는 2~70자로 입력해주세요."};
+ if(q.length<2||q.length>70)return {matches:[],has_more:false,total_at_least:0,page:1,message:"검색어는 2~70자로 입력해주세요."};
  const page=Math.max(1,Math.min(50,Number(params.get("page")||1)||1));
  const fields=["itemName","ingrName1","entpName"];
+ const pageSize=15; // MFDS searchDrug's fixed actual page size; the 'limit' query string is ignored.
  const jobs=await Promise.allSettled(fields.map(async field=>{
   const url=new URL(ORIGIN+"/searchDrug");
   url.searchParams.set("searchYn","Y");
   url.searchParams.set("page",String(page));
-  url.searchParams.set("limit","20");
   url.searchParams.set(field,q);
   const markup=await html(url.toString());
-  return parseDrugCatalogue(markup);
+  const items=parseDrugCatalogue(markup);
+  const countText=markup.match(/class=["']sch_info["'][\s\S]{0,280}?<strong>\s*([\d,]+)\s*<\/strong>/i)?.[1];
+  const total=countText?Number(countText.replace(/,/g,"")):items.length;
+  return {field,items,total,has_more:total>page*pageSize};
  }));
- const ok=jobs.filter((j):j is PromiseFulfilledResult<CatalogueItem[]>=>j.status==="fulfilled");
+ const ok=jobs.filter((j):j is PromiseFulfilledResult<{field:string,items:CatalogueItem[],total:number,has_more:boolean}>=>j.status==="fulfilled");
  if(!ok.length)throw Error("식약처 품목 검색 서버에 연결하지 못했습니다.");
  const matches=new Map<string,CatalogueItem>();
- for(const part of ok)for(const item of part.value)matches.set(item.item_seq,item);
+ for(const part of ok)for(const item of part.value.items)matches.set(item.item_seq,item);
  const norm=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
  const ranked=[...matches.values()].filter(item=>
   [item.product,item.company,item.ingredient].some(x=>x.toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(norm))
@@ -728,9 +731,12 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
   return score(a)-score(b)||a.product.localeCompare(b.product,"ko-KR");
  });
  const incomplete=jobs.some(j=>j.status==="rejected");
- return {matches:ranked.slice(0,55),has_more:ok.some(j=>j.value.length>=20),
-  page,source:"MFDS 의약품등 정보검색",partial:incomplete,
-  note:"식약처 실시간 품목검색 결과입니다. 제품을 선택하면 효능·효과 변경이력을 조회합니다."};
+ const totalAtLeast=Math.max(0,...ok.map(x=>x.value.total));
+ const byField=Object.fromEntries(ok.map(x=>[x.value.field,x.value.total]));
+ return {matches:ranked,has_more:ok.some(j=>j.value.has_more),
+  page,total_at_least:totalAtLeast,totals_by_field:byField,
+  source:"MFDS 의약품등 정보검색",partial:incomplete,
+  note:"식약처 실시간 품목검색 결과입니다. 뒤쪽 페이지가 있으면 더 보기를 통해 모두 검색할 수 있습니다."};
 }
 async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  const itemSeq=(params.get("item_seq")||"").trim();
@@ -749,6 +755,7 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  // newer than the last electronically archived XML revision.
  const officialDates=new Set<string>();
  let detailComplete=false;
+ let officialChangeTotal:null|number=null;
  const detailedUrl=ORIGIN+"/pbp/CCBBB01/getItemDetailCache?cacheSeq="+itemSeq;
  const detailController=new AbortController();
  const detailTimer=setTimeout(()=>detailController.abort(),15000);
@@ -760,7 +767,9 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
    const tbody=section.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
    if(tbody){
     detailComplete=true;
-    for(const entry of tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+    const officialRows=[...tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+    officialChangeTotal=officialRows.length;
+    for(const entry of officialRows){
      const cols=[...entry[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
      const date=cols.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
      if(date&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(date);
@@ -790,10 +799,11 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  const baseline=versions[0]?.changed_at;
  const known=new Set(versions.map(x=>x.changed_at));
  for(const day of officialDates){
-  if(day===baseline||known.has(day))continue;
+  if(known.has(day)&&day!==baseline)continue;
   items.push({
    id:"live-"+itemSeq+"-"+day,changed_at:day,change_type:"확인 필요",
-   before_text:"",after_text:"",added_lines:[],removed_lines:[],
+   before_text:"",after_text:day===baseline ? (versions[0]?.lines.join("\n")||"") : "",
+   added_lines:[],removed_lines:[],
    change_details:[],summary_lines:[],editorial_changes:0,added_count:0,removed_count:0,modified_count:0,
    diff_status:"not_available",evidence_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+itemSeq,
    source_kind:"official_live",comparison_kind:"unknown"
@@ -806,6 +816,10 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
   current_efficacy:current?.lines.join("\n")||"",official_history_complete:detailComplete,
   initial_version_date:earliest?.changed_at||null,
   initial_efficacy:earliest?.lines.join("\n")||"",
+  official_change_total:officialChangeTotal,
+  official_efficacy_total:detailComplete?officialDates.size:null,
+  official_other_total:officialChangeTotal===null?null:Math.max(0,officialChangeTotal-officialDates.size),
+  official_uncompared_dates:items.filter(x=>x.diff_status==="not_available").map(x=>x.changed_at),
   all_history_dates_seen:officialDates.size,
   source:"식약처 효능·효과 변경이력",reviewed:false,
   note:"식약처가 전자화한 효능·효과 원문의 연속 버전을 비교했습니다. 전자화 이전 이력과 문구 변경의 의학적 의미는 별도 확인이 필요합니다."};
