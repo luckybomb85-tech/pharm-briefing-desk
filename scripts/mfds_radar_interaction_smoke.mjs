@@ -42,11 +42,11 @@ try{
  });
  const ready=await until("Simple efficacy screen",
   '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide")})',
-  v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=15&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
+  v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=25&&v.cards===20&&v.first?.includes("파센라")&&v.noCards&&v.noGuide);
  console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
- const globalEnd=await evalPage('({buttonHidden:document.querySelector("#moreWrap")?.hidden,buttonDisplay:getComputedStyle(document.querySelector("#moreWrap")).display,message:document.querySelector("#historyEnd")?.textContent||"",label:document.querySelector("#resultCount")?.textContent||"",range:document.querySelector("#resultContext")?.textContent||"",intro:document.querySelector("header .subtitle")?.textContent||""})');
- ensure(globalEnd.buttonHidden&&globalEnd.buttonDisplay==="none"&&globalEnd.message.includes("모두 표시했습니다")&&globalEnd.label.includes("효능·효과 변경이력")&&!globalEnd.label.includes("일부 품목")&&globalEnd.range.includes("2014.09.30 ~ 2026.07.29")&&globalEnd.range.includes("5개 품목")&&!globalEnd.intro,"Date range or button or header subtitle incorrect: "+JSON.stringify(globalEnd));
- console.log("EXHAUSTED_GLOBAL_HISTORY_BUTTON_HIDDEN_OK",JSON.stringify(globalEnd));
+ const globalEnd=await evalPage('({buttonHidden:document.querySelector("#moreWrap")?.hidden,buttonDisplay:getComputedStyle(document.querySelector("#moreWrap")).display,message:document.querySelector("#historyEnd")?.textContent||"",label:document.querySelector("#resultCount")?.textContent||"",rangeHidden:document.querySelector("#resultContext")?.hidden,intro:document.querySelector("header .subtitle")?.textContent||"",name:document.querySelector(".entry-main .drug")?.textContent||"",fields:[...document.querySelectorAll(".entry-main .meta-title")].slice(0,2).map(x=>x.textContent),button:document.querySelector("details.entry .related-trigger")?.textContent||""})');
+ ensure(!globalEnd.buttonHidden&&globalEnd.buttonDisplay!=="none"&&globalEnd.label.includes("오리지널 중심 효능·효과 변경이력")&&globalEnd.rangeHidden&&!globalEnd.intro&&globalEnd.fields[0]==="성분"&&globalEnd.fields[1]==="업체"&&globalEnd.button.includes("동일 성분 의약품 변경이력"),"Original-first home, detail order, and pagination incorrect: "+JSON.stringify(globalEnd));
+ console.log("ORIGINAL_FIRST_GLOBAL_PAGINATION_AND_CARD_LAYOUT_OK",JSON.stringify(globalEnd));
  await evalPage('document.querySelector("details.entry summary").click()');
  const detail=await until("Expanding clinical change groups",
   '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",diseases:document.querySelectorAll("details.entry[open] .disease-group").length,units:document.querySelectorAll("details.entry[open] .change-unit").length,originals:document.querySelectorAll("details.entry[open] .original-details").length})',
@@ -64,14 +64,14 @@ try{
  console.log("INGREDIENT_SEARCH_OK",ingredient.cards);
  await submit({keyword:"",year:"all",type:"all",scope:"uncompared"});
  const old=await until("Old records without original XML",
-  '({cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
-  v=>v.cards>=2&&v.body.includes("얼비툭스")&&v.body.includes("2015.11.04"));
+  '({cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||"",count:document.querySelector("#resultCount")?.textContent})',
+  v=>v.cards>=2&&v.count?.includes("건")&&v.body.includes("효능·효과"));
  console.log("OLDER_CHANGES_FILTER_OK",old.cards);
  await submit({keyword:"",year:"all",type:"삭제",scope:"all"});
- const none=await until("No deleted lines case",
+ const deleted=await until("Meaningful deletions across verified originals",
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
-  v=>v.count?.includes("0건")&&v.cards===0&&v.body.includes("검색 조건"));
- console.log("DELETE_FILTER_EMPTY_OK",none.count);
+  v=>v.count?.includes("건")&&v.cards>=1&&v.body.includes("효능·효과"));
+ console.log("VERIFIED_ORIGINAL_DELETION_FILTER_OK",deleted.count);
 
  // Tevimbra: two change dates, no misleading deletions from whitespace.
  await submit({keyword:"테빔브라",year:"all",type:"all",scope:"all"});
@@ -106,6 +106,23 @@ try{
   '({count:document.querySelector("#resultCount")?.textContent,match:document.querySelectorAll(".catalogue-choice").length,cards:document.querySelectorAll("details.entry").length,brand:document.querySelector("details.entry")?.textContent||""})',
   v=>v.match>=1&&v.cards>=1&&v.brand.includes("오젬픽")&&v.count?.includes("효능·효과 변경"));
  console.log("LIVE_UNREGISTERED_DRUG_SEARCH_OK",JSON.stringify({matches:ozempic.match,cards:ozempic.cards}));
+
+ await evalPage('document.querySelector("#entries details.entry summary").click()');
+ const relatedButton=await until("Same ingredient on-demand button visible",
+  '({open:document.querySelector("#entries details.entry")?.open,button:document.querySelector("#entries .related-trigger")?.textContent||""})',
+  v=>v.open&&v.button.includes("동일 성분 의약품"));
+ console.log("ORIGINAL_RELATED_ON_DEMAND_BUTTON_OK",JSON.stringify(relatedButton));
+ await evalPage('document.querySelector("#entries .related-trigger").click()');
+ const relatedList=await until("Real-time related Ozempic ingredient matches",
+  '({cards:document.querySelectorAll("#entries .related-item").length,text:document.querySelector("#entries .related-result")?.textContent||"",status:document.querySelector("#entries .related-status")?.textContent||""})',
+  v=>v.cards>=5&&v.text.includes("위고비")&&v.text.includes("리벨서스"));
+ console.log("RELATED_SEMAGLUTIDE_REAL_TIME_DISCOVERY_OK",JSON.stringify({items:relatedList.cards}));
+ await evalPage('(()=>{const cards=[...document.querySelectorAll("#entries .related-item")];const wegovy=cards.find(x=>x.textContent.includes("위고비"));if(!wegovy)throw Error("No Wegovy related item");wegovy.querySelector(".related-check").click();return true})()');
+ const relatedHistory=await until("Related drug official efficacy dates",
+  '({items:[...document.querySelectorAll("#entries .related-item")].filter(x=>x.textContent.includes("위고비")).map(x=>({count:x.querySelectorAll(".related-detail details.entry").length,body:x.querySelector(".related-detail")?.textContent?.slice(0,360)||""}))})',
+  v=>v.items?.some(x=>x.count>=1&&/2025|2024/.test(x.body)));
+ console.log("RELATED_PRODUCT_OFFICIAL_EFFICACY_DETAIL_OK",JSON.stringify(relatedHistory.items[0]));
+
  await submit({keyword:"세마글루티드",year:"all",type:"all",scope:"all"});
  const ingredientMatches=await until("Global MFDS ingredient lookup",
   '({matches:document.querySelectorAll(".catalogue-choice").length,text:document.querySelector("#catalogueItems")?.textContent||"",count:document.querySelector("#resultCount")?.textContent||""})',
