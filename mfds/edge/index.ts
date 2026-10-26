@@ -1090,7 +1090,11 @@ async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
    // For officially renamed products try a shortened brand name, but only
    // trust the result if company and permit date still match.
    if(!candidates.length&&query.length>9){
-    url.searchParams.set("itemName",query.slice(0,Math.min(7,query.length)));
+    // MFDS sometimes removes strengths from trade names, e.g.
+    // 테빔브라주100밀리그램 -> 테빔브라주. Preserve brand+dosage form.
+    const shortened=query.replace(/\d+(?:\.\d+)?\s*(?:밀리그램|mg|마이크로그램|mcg|mL|ml|IU|단위|%)/gi,"").trim();
+    const fallback=shortened.length>=4&&shortened.length<query.length?shortened:query.slice(0,Math.min(6,query.length));
+    url.searchParams.set("itemName",fallback);
     candidates=parseDrugCatalogue(await html(url.toString()));
    }
    const sorted=candidates.map(c=>({c,score:seedResolutionScore(seed,c)})).sort((a,b)=>b.score-a.score);
