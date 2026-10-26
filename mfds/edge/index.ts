@@ -1047,7 +1047,18 @@ async function importMFDSNewDrugDesignation(year:number):Promise<unknown>{
   typeof x[1]==="string"&&String(x[1]).trim()&&String(x[2]||"").trim());
  // Refuse malformed attachments rather than silently inserting wrong data.
  if(rows.length<100)throw Error("Unusually small MFDS original designation list: "+rows.length);
- const body=rows.map(row=>({
+ // A prior-year cumulative list can recover products which disappeared
+ // from the latest notice; import only genuine year-over-year differences.
+ const latest=year<2025 ? await db("GET",
+   "mfds_monitor_master_seeds?select=product,company,permit_date&source_type=eq.mfds_new_drug_designation&source_year=eq.2025&limit=1200") : [];
+ const latestKeys=new Set((latest||[]).map((x:any)=>
+   cleanMFDSKey(seedBaseName(x.product))+"|"+companyKey(x.company)+"|"+String(x.permit_date||"")));
+ const selected=rows.filter(row=>{
+   if(year>=2025)return true;
+   const excelPermit=parseMFDSExcelDate(row[5]);
+   return !latestKeys.has(cleanMFDSKey(seedBaseName(row[1]))+"|"+companyKey(row[2])+"|"+String(excelPermit||""));
+ });
+ const body=selected.map(row=>({
   seed_key:"newdrug-"+year+"-"+String(row[0]).padStart(4,"0"),
   source_year:year,ordinal:row[0],
   product:String(row[1]).trim().slice(0,450),
@@ -1062,7 +1073,7 @@ async function importMFDSNewDrugDesignation(year:number):Promise<unknown>{
   await db("POST","mfds_monitor_master_seeds?on_conflict=seed_key",
    body.slice(i,i+100),"resolution=ignore-duplicates,return=minimal");
  }
- return {mode:"master_import",year,official_items:rows.length,seed_rows:body.length,
+ return {mode:"master_import",year,official_items:rows.length,seed_rows:body.length,skipped_cumulative_overlap:rows.length-body.length,
   source:entry.label,source_url:body[0].source_url,
   note:"신약 지정 공식 엑셀의 명단을 가져왔습니다. 품목기준코드 연결은 별도 검증 단계입니다."};
 }
