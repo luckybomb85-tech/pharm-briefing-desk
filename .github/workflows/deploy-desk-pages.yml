@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'mfds/index.html'
       - 'global/**'
       - 'domestic/**'
       - 'data/**'
@@ -51,6 +52,8 @@ jobs:
           for dir in global domestic data live schedule; do
             if [ -d "$dir" ]; then cp -R "$dir" "_site/$dir"; fi
           done
+          mkdir -p _site/mfds
+          cp mfds/index.html _site/mfds/index.html
       - name: Verify Oct 13 domestic regression baseline is packaged
         run: |
           python - <<'PY'
