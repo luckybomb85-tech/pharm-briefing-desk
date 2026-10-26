@@ -803,7 +803,10 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
     cachedSummary=true;
    }
    const old=await db("GET","mfds_monitor_efficacy_history?select=changed_at&item_seq=eq."+itemSeq+"&limit=300");
-   for(const row of old||[])if(row.changed_at)officialDates.add(row.changed_at);
+   // The earliest electronic snapshot is only a comparison baseline.
+   // Do not mistake an original marketing authorisation for a new change
+   // when reconstructing history from the local read-only cache.
+   for(const row of old||[])if(row.changed_at&&row.changed_at!==versions[0]?.changed_at)officialDates.add(row.changed_at);
   }catch(_ignored){}
  }
  const items:any[]=[];
