@@ -30,7 +30,11 @@ jobs:
               assert resp.headers.get("access-control-allow-origin")=="*"
               data=json.load(resp)
           assert data["total"]>=15,data
-          assert any(x["product"]=="얼비툭스주" and x["changed_at"]=="2026-07-29" and x["added_lines"] and x["removed_lines"] for x in data["items"])
+          assert any(x["product"]=="얼비툭스주" and x["changed_at"]=="2026-07-29" and x["added_count"]>=1 and x["removed_count"]==0 for x in data["items"])
+          tev=[x for x in data["items"] if x["product"]=="테빔브라주" and x["changed_at"]=="2025-12-18"]
+          assert len(tev)==1,(len(tev),"tevimbra missing")
+          assert tev[0]["added_count"]==3 and tev[0]["removed_count"]==0 and tev[0]["editorial_changes"]>=4,tev[0]
+          assert {x["context"] for x in tev[0]["change_details"]}=={"비소세포폐암","소세포폐암","비인두암"},tev[0]["change_details"]
           assert any(x["product"]=="임핀지주" and x["changed_at"]=="2026-03-23" and x["change_type"]=="추가" for x in data["items"])
           print("EFFICACY_API_OK",data["total"],data["counts"])
           PY
