@@ -153,7 +153,6 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 <main class="wrap">
 <header>
   <h1>효능·효과 변경이력</h1>
-  <p class="subtitle">식약처 실제 변경일 기준 · 품목을 누르면 변경 전후 내용을 확인할 수 있습니다.</p>
 </header>
 <form class="search" id="searchForm" autocomplete="off">
   <input type="search" id="keyword" aria-label="검색어" placeholder="품목명 · 회사명 · 성분명 검색">
@@ -176,7 +175,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  <div id="catalogueItems" class="catalogue-list"></div>
  <div class="catalogue-foot" id="catalogueFoot" hidden><button id="catalogueMore" type="button">품목 더 보기</button><span>식약처 검색 결과가 여러 페이지인 경우 이전에 보지 못한 품목을 추가합니다.</span></div>
 </section>
-<div class="bar"><div class="bar-content"><strong id="resultCount">최근 효능·효과 변경이력 조회 중…</strong><span id="resultContext">검색창에서 품목을 찾으면 해당 의약품의 이력만 표시됩니다.</span></div><small id="sortLabel">실제 변경일 최신순</small></div>
+<div class="bar"><div class="bar-content"><strong id="resultCount">최근 효능·효과 변경이력 조회 중…</strong><span id="resultContext">검색창에서 품목을 찾으면 해당 의약품의 이력만 표시됩니다.</span></div><small id="sortLabel">변경일 최신순</small></div>
 <section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
   <div class="empty">자료를 불러오는 중입니다.</div>
 </section>
@@ -190,7 +189,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-const state={rows:[],offset:0,total:0,more:false,busy:false,serial:0,filter:{},lookupQuery:"",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false,lookupBusyToken:0,lookupTotalAtLeast:0,lookupPartial:false};
+const state={rows:[],offset:0,total:0,period:null,productCount:0,more:false,busy:false,serial:0,filter:{},lookupQuery:"",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false,lookupBusyToken:0,lookupTotalAtLeast:0,lookupPartial:false};
 function element(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text??"");return n;}
 function put(where,tag,cls,text){const n=element(tag,cls,text);where.appendChild(n);return n}
 function fmtDate(day){return /^\d{4}-\d{2}-\d{2}$/.test(day||"")?day.replaceAll("-","."):"날짜 미확인"}
@@ -326,8 +325,11 @@ function params(reset){
  return url.toString();
 }
 function refreshLabel(){
- $("#resultCount").textContent="수집된 일부 품목의 변경이력 "+state.total+"건";
- $("#resultContext").textContent="식약처 전체 의약품의 누적 건수가 아닙니다. 검색하면 해당 품목을 직접 조회합니다.";
+ $("#resultCount").textContent="효능·효과 변경이력 "+state.total+"건";
+ const p=state.period;
+ $("#resultContext").textContent=p?
+  "변경일 "+fmtDate(p.start)+" ~ "+fmtDate(p.end)+" · 확인된 "+state.productCount+"개 품목 기준":
+  "현재 조건에 해당하는 변경이력이 없습니다.";
  $("#moreWrap").hidden=!state.more;
  $("#moreButton").disabled=state.busy||!state.more;
  const end=$("#historyEnd");
@@ -338,7 +340,7 @@ async function load(reset=false){
  if(state.busy&&!reset)return;
  const serial=++state.serial;
  if(reset){
-   state.offset=0;state.rows=[];state.total=0;state.more=false;state.loadError=null;
+   state.offset=0;state.rows=[];state.total=0;state.period=null;state.productCount=0;state.more=false;state.loadError=null;
    $("#entries").replaceChildren(element("div","empty","검색 중…"));
  }
  state.busy=true;$("#searchButton").disabled=true;$("#moreButton").disabled=true;
@@ -358,6 +360,7 @@ async function load(reset=false){
    }
    $("#entries").appendChild(fragment);
    state.offset=data.next_offset;state.total=data.total;state.more=data.has_more;
+   state.period=data.period||null;state.productCount=Number(data.product_count)||0;
    if(!state.rows.length)$("#entries").replaceChildren(element("div","empty","검색 조건에 맞는 효능·효과 변경 기록이 없습니다."));
  }catch(e){
    if(serial===state.serial){
