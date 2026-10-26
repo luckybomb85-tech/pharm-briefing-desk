@@ -735,22 +735,39 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
  const page=Math.max(1,Math.min(50,Number(params.get("page")||1)||1));
  const fields=["itemName","ingrName1","entpName"];
  const pageSize=15; // MFDS searchDrug's fixed actual page size; the 'limit' query string is ignored.
+ const norm=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+ const propertyByField:Record<string,"product"|"ingredient"|"company">={
+  itemName:"product",ingrName1:"ingredient",entpName:"company"
+ };
  const jobs=await Promise.allSettled(fields.map(async field=>{
   const url=new URL(ORIGIN+"/searchDrug");
   url.searchParams.set("searchYn","Y");
   url.searchParams.set("page",String(page));
   url.searchParams.set(field,q);
-  const markup=await html(url.toString());
-  const items=parseDrugCatalogue(markup);
-  const countText=markup.match(/class=["']sch_info["'][\s\S]{0,280}?<strong>\s*([\d,]+)\s*<\/strong>/i)?.[1];
-  const total=countText?Number(countText.replace(/,/g,"")):items.length;
-  return {field,items,total,has_more:total>page*pageSize};
+  const prop=propertyByField[field];
+  let result:{field:string,items:CatalogueItem[],total:number,has_more:boolean,filtered:boolean}={
+   field,items:[],total:0,has_more:false,filtered:false
+  };
+  for(let attempt=0;attempt<2;attempt++){
+   const markup=await html(url.toString());
+   const all=parseDrugCatalogue(markup);
+   const matched=all.filter(item=>item[prop].toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(norm));
+   const countText=markup.match(/class=["']sch_info["'][\s\S]{0,280}?<strong>\s*([\d,]+)\s*<\/strong>/i)?.[1];
+   const count=countText?Number(countText.replace(/,/g,"")):all.length;
+   // The MFDS endpoint sometimes returns an unfiltered catalogue list
+   // (e.g. 95,251 drugs) while keeping HTTP 200. Never use that total for
+   // the "more results" button; retry once, and trust only matched fields.
+   const trustworthy=matched.length>0&&count<=10000;
+   result={field,items:matched,total:trustworthy?count:matched.length,
+    has_more:trustworthy&&count>page*pageSize,filtered:trustworthy};
+   if(trustworthy||all.length===0)break;
+  }
+  return result;
  }));
- const ok=jobs.filter((j):j is PromiseFulfilledResult<{field:string,items:CatalogueItem[],total:number,has_more:boolean}>=>j.status==="fulfilled");
+ const ok=jobs.filter((j):j is PromiseFulfilledResult<{field:string,items:CatalogueItem[],total:number,has_more:boolean,filtered:boolean}>=>j.status==="fulfilled");
  if(!ok.length)throw Error("식약처 품목 검색 서버에 연결하지 못했습니다.");
  const matches=new Map<string,CatalogueItem>();
  for(const part of ok)for(const item of part.value.items)matches.set(item.item_seq,item);
- const norm=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
  const ranked=[...matches.values()].filter(item=>
   [item.product,item.company,item.ingredient].some(x=>x.toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(norm))
  ).sort((a,b)=>{
