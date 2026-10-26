@@ -476,7 +476,7 @@ function importantTherapeuticChange(a:string,b:string):boolean{
   /(?:페메트렉시드|카보플라틴|시스플라틴|파클리탁셀|젬시타빈|에토포시드|엔코라페닙)/g
  ];
  for(const pattern of signatures){
-  const sig=(s:string)=>(s.match(pattern)||[]).map(normalizedEffectText).sort().join("|");
+  const sig=(s:string)=>[...new Set((s.match(pattern)||[]).map(normalizedEffectText))].sort().join("|");
   if(sig(a)!==sig(b))return true;
  }
  return false;
