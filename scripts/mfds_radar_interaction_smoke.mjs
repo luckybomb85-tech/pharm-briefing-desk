@@ -65,7 +65,7 @@ try{
  await submit({keyword:"",year:"all",type:"all",scope:"uncompared"});
  const old=await until("Old records without original XML",
   '({cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||"",count:document.querySelector("#resultCount")?.textContent})',
-  v=>v.cards>=2&&v.count?.includes("건")&&v.body.includes("효능·효과"));
+  v=>v.cards>=2&&v.count?.includes("건")&&v.body.includes("내용 확인 필요"));
  console.log("OLDER_CHANGES_FILTER_OK",old.cards);
  await submit({keyword:"",year:"all",type:"삭제",scope:"all"});
  const deleted=await until("Meaningful deletions across verified originals",
