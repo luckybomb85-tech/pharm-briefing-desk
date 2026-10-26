@@ -2,85 +2,82 @@ import {spawn} from "node:child_process";
 import {mkdtemp,rm} from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+const url=process.argv[2]||"https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?ui=efficacy";
 const chrome=process.env.CHROME_BIN||"/usr/bin/google-chrome";
-const dir=await mkdtemp(path.join(os.tmpdir(),"mfds-test-"));
-const port=22000+Math.floor(Math.random()*8000);
-const url="https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?test=interactions";
-const proc=spawn(chrome,["--headless=new","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--disable-background-networking","--no-first-run","--remote-allow-origins=*","--remote-debugging-port="+port,"--user-data-dir="+dir,url],{stdio:"ignore"});
+const profile=await mkdtemp(path.join(os.tmpdir(),"mfds-efficacy-test-"));
+const port=22000+Math.floor(Math.random()*9000);
+const proc=spawn(chrome,["--headless=new","--no-sandbox","--disable-dev-shm-usage","--disable-gpu","--disable-background-networking","--no-first-run","--remote-allow-origins=*","--remote-debugging-port="+port,"--user-data-dir="+profile,url],{stdio:"ignore"});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let socket,seq=0;const pending=new Map();
 async function evalPage(expression){
- const id=++seq;const p=new Promise((resolve,reject)=>pending.set(id,{resolve,reject}));
+ const id=++seq;
+ const promise=new Promise((resolve,reject)=>pending.set(id,{resolve,reject}));
  socket.send(JSON.stringify({id,method:"Runtime.evaluate",params:{expression,awaitPromise:true,returnByValue:true}}));
- const out=await p;if(out.exceptionDetails)throw Error("Browser JS exception: "+JSON.stringify(out.exceptionDetails));
- return out.result?.value;
+ const result=await promise;
+ if(result.exceptionDetails)throw Error("JavaScript exception "+JSON.stringify(result.exceptionDetails).slice(0,400));
+ return result.result?.value;
 }
-async function until(name,expr,test){
- let v;for(let n=0;n<60;n++){v=await evalPage(expr);if(test(v))return v;await sleep(300);}
- throw Error(name+" timed out: "+JSON.stringify(v));
+async function until(title,expr,test){
+ let val;
+ for(let i=0;i<60;i++){val=await evalPage(expr);if(test(val))return val;await sleep(300);}
+ throw Error(title+" timed out: "+JSON.stringify(val));
 }
-function ensure(value,msg){if(!value)throw Error(msg);}
+async function submit(filter){
+ const js='(()=>{const p='+JSON.stringify(filter)+';for(const [k,v] of Object.entries(p)){document.getElementById(k).value=v;}document.getElementById("searchForm").dispatchEvent(new Event("submit",{bubbles:true,cancelable:true}));return true})()';
+ return evalPage(js);
+}
+function ensure(value,msg){if(!value)throw Error(msg)}
 try{
  let tab;
- for(let i=0;i<50;i++){
-  try{const tabs=await(await fetch("http://127.0.0.1:"+port+"/json/list")).json();tab=tabs.find(x=>x.type==="page"&&x.webSocketDebuggerUrl);if(tab)break}catch{}
-  await sleep(300);
+ for(let i=0;i<55;i++){
+  try{tab=(await(await fetch("http://127.0.0.1:"+port+"/json/list")).json()).find(x=>x.type==="page"&&x.webSocketDebuggerUrl);if(tab)break;}catch{}
+  await sleep(310);
  }
- ensure(tab,"Chrome did not start");
+ ensure(tab,"Chrome DevTools page missing");
  socket=new WebSocket(tab.webSocketDebuggerUrl);
- await new Promise((resolve,reject)=>{socket.addEventListener("open",resolve,{once:true});socket.addEventListener("error",reject,{once:true})});
- socket.addEventListener("message",ev=>{
-  const msg=JSON.parse(ev.data);if(!msg.id)return;const p=pending.get(msg.id);if(!p)return;
-  pending.delete(msg.id);if(msg.error)p.reject(Error(JSON.stringify(msg.error)));else p.resolve(msg.result);
+ await new Promise((res,rej)=>{socket.addEventListener("open",res,{once:true});socket.addEventListener("error",rej,{once:true})});
+ socket.addEventListener("message",e=>{
+  const msg=JSON.parse(e.data);if(!msg.id)return;const p=pending.get(msg.id);
+  if(!p)return;pending.delete(msg.id);if(msg.error)p.reject(Error(JSON.stringify(msg.error)));else p.resolve(msg.result);
  });
- const start=await until("Counters and leads",
-  '({verified:document.querySelector("#numVerified")?.textContent,leads:document.querySelector("#numLeads")?.textContent,review:document.querySelector("#numReview")?.textContent,orders:document.querySelector("#numOrders")?.textContent,cards:document.querySelectorAll("#list .item").length})',
-  v=>Number(v?.leads)>=3&&Number(v?.review)>=11&&Number(v?.orders)>=60&&v.cards>=3);
- console.log("MFDS_COUNTERS_OK",JSON.stringify(start));
- await evalPage('document.querySelector("[data-view=verified]").click()');
- const verified=await until("Verified events",
-  '({cards:document.querySelectorAll("#list .item").length,body:document.querySelector("#list")?.textContent||"",active:document.querySelector("[data-view=verified]")?.getAttribute("aria-pressed")})',
-  v=>v.cards>=1&&v.body.includes("임델트라")&&v.body.includes("2026.07.15")&&v.active==="true");
- console.log("MFDS_VERIFIED_CLICK_OK",verified.cards);
- await evalPage('document.querySelector("[data-view=efficacy]").click()');
- const official=await until("Official efficacy changes",
-  '({cards:document.querySelectorAll("#list .item").length,active:document.querySelector("[data-view=efficacy]")?.getAttribute("aria-pressed"),body:document.querySelector("#list")?.textContent||"",counter:document.querySelector("#numEfficacy")?.textContent})',
-  v=>v.cards>=14&&Number(v.counter)>=14&&v.active==="true"&&v.body.includes("얼비툭스")&&v.body.includes("2026.07.29"));
- console.log("MFDS_EFFICACY_HISTORY_OK",official.cards);
- await evalPage('document.querySelector("[data-view=review]").click()');
- const review=await until("History tab",
-  '({cards:document.querySelectorAll("#list .item").length,active:document.querySelector("[data-view=review]")?.getAttribute("aria-pressed"),hidden:document.querySelector("#moreWrap")?.hidden})',
-  v=>v.cards>=25&&v.active==="true");
- console.log("MFDS_REVIEW_HISTORY_OK",JSON.stringify(review));
- if(review.cards<=60&&!review.hidden){
-  await evalPage('document.querySelector("#moreButton").click()');
-  const count=await until("Load older records",'document.querySelectorAll("#list .item").length',v=>v>review.cards);
-  console.log("MFDS_MORE_HISTORY_OK",count);
- }
- await evalPage('document.querySelector("[data-view=orders]").click()');
- const orders=await until("Change orders",
-  '({cards:document.querySelectorAll("#list .item").length,active:document.querySelector("[data-view=orders]")?.getAttribute("aria-pressed"),text:document.querySelector("#list")?.textContent||""})',
-  v=>v.cards>=20&&v.active==="true"&&v.text.includes("최초등록"));
- console.log("MFDS_ORDERS_CLICK_OK",orders.cards);
- await evalPage('(()=>{const y=document.querySelector("#year");y.value="2025";y.dispatchEvent(new Event("change",{bubbles:true}));return true})()');
- const year=await until("Year filter", 
-  '({cards:document.querySelectorAll("#list .item").length,date:document.querySelector("#list .item-date")?.textContent||""})',
-  v=>v.cards>=1&&v.date.includes("2025."));
- console.log("MFDS_YEAR_SEARCH_OK",year.cards);
- await evalPage('(()=>{const y=document.querySelector("#year");y.value="all";y.dispatchEvent(new Event("change",{bubbles:true}));document.querySelector("[data-view=leads]").click();return true})()');
- const leads=await until("Lead metric",
-  '({cards:document.querySelectorAll("#list .item").length,active:document.querySelector("[data-view=leads]")?.getAttribute("aria-pressed")})',
-  v=>v.cards>=3&&v.active==="true");
- console.log("MFDS_LEADS_CLICK_OK",leads.cards);
- const id=++seq,wait=new Promise((resolve,reject)=>pending.set(id,{resolve,reject}));
+ const ready=await until("Simple efficacy screen",
+  '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide")})',
+  v=>v.title?.includes("효능·효과 변경이력")&&v.count?.includes("15건")&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
+ console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
+ await evalPage('document.querySelector("details.entry summary").click()');
+ const detail=await until("Expanding actual diff",
+  '({open:document.querySelector("details.entry")?.open,text:document.querySelector("details.entry .content")?.textContent||"",added:document.querySelectorAll("details.entry[open] .line.added").length,removed:document.querySelectorAll("details.entry[open] .line.removed").length,marked:document.querySelectorAll("details.entry[open] .line.is-added").length})',
+  v=>v.open&&v.text.includes("변경 후 효능·효과 전문")&&v.added>0&&v.removed>0&&v.marked>0);
+ console.log("TEXT_DIFF_EXPANSION_OK",JSON.stringify({added:detail.added,removed:detail.removed,marked:detail.marked}));
+ await submit({keyword:"",year:"2026",type:"추가",scope:"all"});
+ const changed=await until("Year and change-type filter",
+  '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
+  v=>v.cards===1&&v.count?.includes("1건")&&v.body.includes("임핀지")&&v.body.includes("2026.03.23"));
+ console.log("YEAR_TYPE_SEARCH_OK",changed.count);
+ await submit({keyword:"더발루맙",year:"all",type:"all",scope:"compared"});
+ const ingredient=await until("Ingredient search",
+  '({cards:document.querySelectorAll("details.entry").length,names:[...document.querySelectorAll("details.entry .drug")].map(x=>x.textContent)})',
+  v=>v.cards>=4&&v.names.every(x=>x.includes("임핀지")));
+ console.log("INGREDIENT_SEARCH_OK",ingredient.cards);
+ await submit({keyword:"",year:"all",type:"all",scope:"uncompared"});
+ const old=await until("Old records without original XML",
+  '({cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
+  v=>v.cards>=2&&v.body.includes("얼비툭스")&&v.body.includes("2015.11.04"));
+ console.log("OLDER_CHANGES_FILTER_OK",old.cards);
+ await submit({keyword:"",year:"all",type:"삭제",scope:"all"});
+ const none=await until("No deleted lines case",
+  '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,body:document.querySelector("#entries")?.textContent||""})',
+  v=>v.count?.includes("0건")&&v.cards===0&&v.body.includes("검색 조건"));
+ console.log("DELETE_FILTER_EMPTY_OK",none.count);
+ const id=++seq,awaitMetric=new Promise((resolve,reject)=>pending.set(id,{resolve,reject}));
  socket.send(JSON.stringify({id,method:"Emulation.setDeviceMetricsOverride",params:{width:390,height:844,deviceScaleFactor:1,mobile:true}}));
- await wait;
- const mobile=await evalPage('({width:window.innerWidth,scrollWidth:document.documentElement.scrollWidth,buttons:[...document.querySelectorAll(".metric")].map(x=>x.getBoundingClientRect().right)})');
- ensure(mobile.scrollWidth<=mobile.width+5,"Mobile horizontal overflow: "+JSON.stringify(mobile));
- console.log("MFDS_MOBILE_OK",JSON.stringify(mobile));
- console.log("MFDS_RADAR_INTERACTION_OK");
+ await awaitMetric;
+ const mobile=await evalPage('({width:window.innerWidth,documentWidth:document.documentElement.scrollWidth,searchRight:document.querySelector("#searchForm")?.getBoundingClientRect().right})');
+ ensure(mobile.documentWidth<=mobile.width+3,"Mobile horizontal overflow "+JSON.stringify(mobile));
+ console.log("MOBILE_EFFICACY_SEARCH_OK",JSON.stringify(mobile));
+ console.log("MFDS_EFFICACY_INTERACTION_OK");
 }finally{
  try{socket?.close()}catch{}
- proc.kill("SIGTERM");await sleep(250);
- await rm(dir,{recursive:true,force:true}).catch(()=>{});
+ proc.kill("SIGTERM");await sleep(260);
+ await rm(profile,{recursive:true,force:true}).catch(()=>{});
 }
