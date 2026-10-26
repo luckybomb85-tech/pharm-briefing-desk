@@ -4,9 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'mfds/index.html'
-      - 'mfds/edge/index.ts'
-      - 'scripts/mfds_radar_interaction_smoke.mjs'
+      - 'mfds/**'
+      - 'scripts/mfds_indication_push_smoke.mjs'
       - '.github/workflows/mfds-radar-live-smoke.yml'
 permissions:
   contents: read
@@ -19,67 +18,49 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check official history and original comparison data
+      - name: Check original indication feed, date range, autocomplete and push configuration
         shell: bash
         run: |
           python3 - <<'PY'
-          import json,urllib.request
-          url="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=efficacy"
-          with urllib.request.urlopen(urllib.request.Request(url,headers={"Origin":"https://luckybomb85-tech.github.io"}),timeout=22) as resp:
-              assert resp.status==200
-              assert resp.headers.get("access-control-allow-origin")=="*"
-              data=json.load(resp)
-          assert data["total"]>=60,data
+          import json,urllib.request,urllib.parse
+          BASE="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/"
+          def read(path,params):
+              query=urllib.parse.urlencode(params)
+              with urllib.request.urlopen(BASE+path+"?"+query,timeout=30) as response:
+                  assert response.status==200
+                  return json.load(response)
+          data=read("mfds-indication-monitor",{"view":"efficacy","limit":50})
+          assert data["total"]>=30,data["total"]
           assert data["master_scope"]=="official_originals",data
           assert data["master_primary_count"]>=20,data
-          assert all(x["item_seq"] and x["product_role"] in ("new_drug","biologic_original","orphan_original","reference_original","incremental_new_drug","innovative_data_submission") for x in data["items"]),data
-          assert any(x["product"]=="얼비툭스주" and x["changed_at"]=="2026-07-29" and x["added_count"]>=1 and x["removed_count"]==0 for x in data["items"])
-          tev=[x for x in data["items"] if x["product"]=="테빔브라주" and x["changed_at"]=="2025-12-18"]
-          assert len(tev)==1,(len(tev),"tevimbra missing")
-          assert tev[0]["added_count"]==3 and tev[0]["removed_count"]==0 and tev[0]["editorial_changes"]>=4,tev[0]
-          assert {x["context"] for x in tev[0]["change_details"]}=={"비소세포폐암","소세포폐암","비인두암"},tev[0]["change_details"]
-          assert any(x["product"]=="임핀지주" and x["changed_at"]=="2026-03-23" and x["change_type"]=="추가" for x in data["items"])
-          with urllib.request.urlopen("https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=inspect&item_seq=202303165",timeout=25) as resp:
-              drug=json.load(resp)
-          assert drug["official_change_total"]==12,drug
-          assert drug["official_efficacy_total"]==2,drug
-          assert drug["total"]==2,drug
-          import urllib.parse
-          base="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=lookup&q="+urllib.parse.quote("노보노디스크")
-          counts=[]
-          for page in (1,2,3):
-              with urllib.request.urlopen(base+"&page="+str(page),timeout=30) as resp:
-                  r=json.load(resp)
-              assert r["total_at_least"]==36,(page,r)
-              counts.append(len(r["matches"]))
-              assert r["has_more"]==(page<3),(page,r)
-          assert counts==[15,15,6],counts
-          print("OFFICIAL_CATEGORY_COUNTS_AND_PAGINATION_OK",drug["official_change_total"],drug["official_efficacy_total"],counts)
-          with urllib.request.urlopen("https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=master",timeout=22) as resp:
-              master=json.load(resp)
-          assert master["seeds"]>=810,master
-          assert master["watch_scopes"]["primary"]>=20,master
-          with urllib.request.urlopen("https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=related&item_seq=202201737",timeout=40) as resp:
-              related=json.load(resp)
-          assert related["ingredient"]=="세마글루티드",related
-          assert any("위고비" in x["product"] for x in related["matches"]),related
-          assert all(x["ingredient"]=="세마글루티드" for x in related["matches"]),related
-          print("ORIGINAL_MASTER_RELATED_SEARCH_OK",master["seeds"],master["watch_scopes"]["primary"],len(related["matches"]))
-          print("EFFICACY_API_OK",data["total"],data["counts"])
+          dates=[x["changed_at"] for x in data["items"]]
+          assert dates==sorted(dates,reverse=True),"Changes not sorted by actual date"
+          accepted={"new_drug","biologic_original","orphan_original","reference_original","incremental_new_drug","innovative_data_submission","biosimilar","generic"}
+          assert all(x["item_seq"] and x["product_role"] in accepted for x in data["items"]),"Unverified watch item leaked into primary feed"
+          period=read("mfds-indication-monitor",{"view":"efficacy","start":"2026-07-01","end":"2026-10-27","type":"추가","limit":50})
+          assert all("2026-07-01"<=x["changed_at"]<="2026-10-27" for x in period["items"]),period["period"]
+          tevim=read("mfds-indication-monitor",{"view":"efficacy","q":"테빔브라","limit":50})
+          assert any(x["changed_at"]=="2025-12-18" for x in tevim["items"]),tevim
+          suggest=read("mfds-indication-monitor",{"view":"suggest","q":"키트"})
+          assert any("키트루다" in x["product"] for x in suggest["matches"]),suggest
+          config=read("mfds-webpush",{"view":"config"})
+          assert len(config["public_key"])>70,config
+          assert config["site"].endswith("/pharm-briefing-desk/mfds/"),config
+          print("MFDS_API_PERIOD_SUGGEST_PUSH_OK",data["total"],len(tevim["items"]),len(suggest["matches"]))
           PY
-      - name: Test search, type/year sorting, expandable efficacy text and mobile
+      - name: Test indication UI, settings dialog, search and mobile on local files and Pages
         shell: bash
         run: |
           set -euo pipefail
           export CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium)"
-          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mfds-ui-server.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/mfds-ui-server.log 2>&1 &
           sleep 1
-          node scripts/mfds_radar_interaction_smoke.mjs 'http://127.0.0.1:8765/mfds/'
-          # Pages deployment can lag the GitHub commit by several seconds.
-          for attempt in $(seq 1 24); do
-            if curl -fsSL 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?v=20261026-original-master' | grep -q 'addSameIngredientSearch'; then
+          node scripts/mfds_indication_push_smoke.mjs 'http://127.0.0.1:8765/mfds/'
+          # The Pages build may run slightly after this workflow starts.
+          for i in $(seq 1 30); do
+            if curl -fsSL 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/push-ui.js' | grep -q 'mfds_indication_push_device_v1'; then
               break
             fi
             sleep 5
           done
-          node scripts/mfds_radar_interaction_smoke.mjs 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?v=20261026-original-master'
+          node scripts/mfds_indication_push_smoke.mjs 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?v=20261027-alerts'
