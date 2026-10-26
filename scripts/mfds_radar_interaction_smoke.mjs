@@ -44,8 +44,8 @@ try{
   '({title:document.querySelector("h1")?.textContent,count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,first:document.querySelector("details.entry")?.textContent||"",noCards:!document.querySelector(".metrics"),noGuide:!document.querySelector(".guide")})',
   v=>v.title?.includes("효능·효과 변경이력")&&Number((v.count||"").match(/\d+/)?.[0])>=15&&v.cards>=10&&v.first?.includes("얼비툭스")&&v.noCards&&v.noGuide);
  console.log("SIMPLE_EFFICACY_VIEW_OK",JSON.stringify(ready));
- const globalEnd=await evalPage('({buttonHidden:document.querySelector("#moreWrap")?.hidden,buttonDisplay:getComputedStyle(document.querySelector("#moreWrap")).display,message:document.querySelector("#historyEnd")?.textContent||"",label:document.querySelector("#resultCount")?.textContent||""})');
- ensure(globalEnd.buttonHidden&&globalEnd.buttonDisplay==="none"&&globalEnd.message.includes("모두 표시했습니다")&&globalEnd.label.includes("일부 품목"),"Global last-page button shown despite no more records: "+JSON.stringify(globalEnd));
+ const globalEnd=await evalPage('({buttonHidden:document.querySelector("#moreWrap")?.hidden,buttonDisplay:getComputedStyle(document.querySelector("#moreWrap")).display,message:document.querySelector("#historyEnd")?.textContent||"",label:document.querySelector("#resultCount")?.textContent||"",range:document.querySelector("#resultContext")?.textContent||"",intro:document.querySelector("header .subtitle")?.textContent||""})');
+ ensure(globalEnd.buttonHidden&&globalEnd.buttonDisplay==="none"&&globalEnd.message.includes("모두 표시했습니다")&&globalEnd.label.includes("효능·효과 변경이력")&&!globalEnd.label.includes("일부 품목")&&globalEnd.range.includes("2014.09.30 ~ 2026.07.29")&&globalEnd.range.includes("5개 품목")&&!globalEnd.intro,"Date range or button or header subtitle incorrect: "+JSON.stringify(globalEnd));
  console.log("EXHAUSTED_GLOBAL_HISTORY_BUTTON_HIDDEN_OK",JSON.stringify(globalEnd));
  await evalPage('document.querySelector("details.entry summary").click()');
  const detail=await until("Expanding clinical change groups",
