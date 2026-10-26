@@ -192,15 +192,31 @@ async function collect(): Promise<unknown> {
   return { ...report, run_id: run.id };
 }
 async function feed() {
-  // Critical: the review-publication date is NOT the date an indication
-  // changed. Raw source-list entries are retained as internal leads only.
-  // Never publish those as clinical approval events or push notifications.
-  const [events, runs] = await Promise.all([
-    db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=250"),
+  // The existing public-list collector remains unchanged.
+  // Important: a newly published review report is not a newly approved indication.
+  const [events, raw, runs] = await Promise.all([
+    db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=150"),
+    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,company,product,ingredient,published_at,attachment_names,classification,rationale,alert_state,first_seen_at&source=eq.review&classification=eq.unverified&order=published_at.desc,id.desc&limit=150"),
     db("GET", "mfds_monitor_runs?select=id,started_at,finished_at,status,reviews_checked,changes_checked,errors&order=id.desc&limit=5"),
   ]);
-  return { events, runs, description:"허가사항 실제 변경일과 전후 내용을 확인한 사건만 표시. 공개일만 있는 심사보고서는 제외.", count:events.length };
+  // Only promote leads where the text actually signals indication, patient
+  // population, line of treatment, or combination therapy. Generic "change"
+  // reports stay stored but do not clutter the editorial shortlist.
+  const clinicalPattern = /적응증|효능.{0,2}효과|(?:치료|대상|환자|질환|암|림프종).{0,22}(?:추가|확대|삭제|축소)|(?:추가|확대|삭제|축소).{0,18}(?:치료|대상|환자|질환|암|림프종)|병용요법|병용\s*확대|(?:1|2|3)차\s*(?:치료|변경|확대)/i;
+  const leads = (raw||[]).filter((item: any) => {
+    const text = [item.title, ...(item.attachment_names||[])].join(" ");
+    return clinicalPattern.test(text);
+  }).map((item: any) => ({
+    ...item, review_state:"unverified",
+    priority_reason:"보고서 제목·첨부파일명에 적응증 또는 병용요법 관련 표현. 실제 허가변경일·전후 내용은 아직 미확인."
+  }));
+  return {
+    events, leads, runs,
+    counts:{verified_events:(events||[]).length, leads:leads.length, review_records:(raw||[]).length},
+    description:"기존 수집 DB를 재활용하여 허가변경 사실(확인)과 심사보고서 단서(미검증)를 분리함."
+  };
 }
+
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response(null,{status:204,headers:HEADERS});
   try {
