@@ -79,6 +79,9 @@ try{
   '({count:document.querySelector("#resultCount")?.textContent,cards:document.querySelectorAll("details.entry").length,preview:document.querySelector("details.entry .entry-preview")?.textContent||"",catalogue:document.querySelectorAll(".catalogue-choice").length})',
   v=>v.count?.includes("2건")&&v.cards===2&&v.catalogue===1&&v.preview.includes("소세포폐암")&&v.preview.includes("비인두암"));
  console.log("TEVIMBRA_SCOPED_TWO_HISTORY_OK",JSON.stringify({count:tevimbra.count,cards:tevimbra.cards,preview:tevimbra.preview.slice(0,320)}));
+ const officialCounts=await evalPage('document.querySelector("#resultContext")?.textContent||""');
+ ensure(officialCounts.includes("전체 12개 항목 중 효능·효과 변경 2건"),"Missing official vs efficacy count distinction: "+officialCounts);
+ console.log("TEVIMBRA_OFFICIAL_12_VS_EFFICACY_2_OK",officialCounts);
  const earliest=await evalPage('({baseline:document.querySelector("#entries .baseline-record")?.textContent||"",open:document.querySelector("#entries .baseline-record")?.open,hidden:document.querySelector("#moreWrap")?.hidden,display:getComputedStyle(document.querySelector("#moreWrap")).display,end:document.querySelector("#historyEnd")?.textContent||"",changedCards:document.querySelectorAll("#entries details.entry").length})');
  ensure(earliest.baseline.includes("2023.11.20")&&earliest.baseline.includes("변경 건수 제외")&&earliest.hidden&&earliest.display==="none"&&earliest.changedCards===2&&earliest.end.includes("2건"),"Tevimbra earliest official version or pagination state failed: "+JSON.stringify(earliest));
  console.log("TEVIMBRA_EARLIEST_ORIGINAL_AVAILABLE_OK",JSON.stringify({baseline:earliest.baseline.slice(0,200),hidden:earliest.hidden,display:earliest.display,end:earliest.end}));
@@ -118,6 +121,18 @@ try{
   '({matches:document.querySelectorAll(".catalogue-choice").length,items:document.querySelector("#catalogueItems")?.textContent||""})',
   v=>v.matches>=8&&v.items.includes("노디트로핀"));
  console.log("LIVE_COMPANY_SEARCH_OK",companyMatches.matches);
+ const pagingInitial=await evalPage('({total:document.querySelector("#catalogueTitle")?.textContent||"",moreHidden:document.querySelector("#catalogueFoot")?.hidden,buttonDisabled:document.querySelector("#catalogueMore")?.disabled})');
+ ensure(!pagingInitial.moreHidden&&pagingInitial.total.includes("36개"),"Company first page hides actual remaining matches: "+JSON.stringify(pagingInitial));
+ await evalPage('document.querySelector("#catalogueMore").click()');
+ const second=await until("Company second page",
+  '({items:document.querySelectorAll(".catalogue-choice").length,stillMore:!document.querySelector("#catalogueFoot").hidden,buttonDisabled:document.querySelector("#catalogueMore")?.disabled})',
+  v=>v.items>=30&&v.stillMore&&!v.buttonDisabled);
+ console.log("LIVE_COMPANY_PAGE_TWO_OK",JSON.stringify(second));
+ await evalPage('document.querySelector("#catalogueMore").click()');
+ const third=await until("Company third page exhausted",
+  '({items:document.querySelectorAll(".catalogue-choice").length,moreHidden:document.querySelector("#catalogueFoot")?.hidden,display:getComputedStyle(document.querySelector("#catalogueFoot")).display,total:document.querySelector("#catalogueTitle")?.textContent||""})',
+  v=>v.items===36&&v.moreHidden&&v.display==="none");
+ console.log("LIVE_COMPANY_ALL_36_PAGES_OK",JSON.stringify(third));
  const id=++seq,awaitMetric=new Promise((resolve,reject)=>pending.set(id,{resolve,reject}));
  socket.send(JSON.stringify({id,method:"Emulation.setDeviceMetricsOverride",params:{width:390,height:844,deviceScaleFactor:1,mobile:true}}));
  await awaitMetric;
