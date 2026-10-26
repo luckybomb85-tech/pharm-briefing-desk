@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import * as XLSX from "npm:xlsx@0.18.5";
 
 // MFDS indication-change monitor, v1. Public GET is read-only.
 // POST collection requires an independent secret stored in Supabase Vault;
@@ -992,6 +993,157 @@ async function globalEfficacyScan(maxSources:number=5):Promise<unknown>{
   coverage:"식약처 변경심사 공개자료에서 품목을 찾고 실제 품목별 효능·효과 변경일만 수집. 전체 의약품 정밀 전수조사 완료 아님."};
 }
 
+
+// Official-original master. Keep evidence, match confidence and surveillance
+// scope distinct so a generic reference standard is never silently called an
+// original. The 2025 annual designation is a cumulative MFDS list (810 rows).
+const MFDS_NEW_DRUG_NOTICES={
+  2025:{seq:16201,label:"2025년도 신약 지정 목록(누적)"},
+  2024:{seq:15931,label:"2024년도 신약 지정 목록(누적)"}
+} as const;
+const cleanMFDSKey=(x:string)=>String(x||"").normalize("NFKC").toLocaleLowerCase("ko-KR")
+ .replace(/\([^)]*\)/g,"").replace(/\[[^\]]*\]/g,"").replace(/[（）（）㈜\s.,·"'‘’\-]/g,"");
+const companyKey=(x:string)=>String(x||"").normalize("NFKC").toLocaleLowerCase("ko-KR")
+ .replace(/(?:주식회사|유한회사|\(주\)|\(유\)|㈜|주\)|유\))/g,"")
+ .replace(/[()（）\s,.\-]/g,"");
+const seedBaseName=(x:string)=>String(x||"").split(/\r?\n/)[0].trim().replace(/\s*[\[\(][^\])]*(?:\]|\))\s*$/,"").trim();
+function parseMFDSExcelDate(value:unknown):string|null{
+ if(typeof value==="number"){
+  const parts=XLSX.SSF.parse_date_code(value);
+  if(!parts||parts.y<1900||parts.y>2100)return null;
+  return [String(parts.y).padStart(4,"0"),String(parts.m).padStart(2,"0"),String(parts.d).padStart(2,"0")].join("-");
+ }
+ const v=String(value||"").replace(/\./g,"-").trim();
+ return /^\d{4}-\d{2}-\d{2}$/.test(v)?v:null;
+}
+async function importMFDSNewDrugDesignation(year:number):Promise<unknown>{
+ if(!Number.isInteger(year)||!(year in MFDS_NEW_DRUG_NOTICES))throw Error("Unsupported verified MFDS new-drug year");
+ const entry=MFDS_NEW_DRUG_NOTICES[year as keyof typeof MFDS_NEW_DRUG_NOTICES];
+ const url="https://www.mfds.go.kr/brd/m_76/down.do?brd_id=ntc0004&seq="+entry.seq+"&data_tp=A&file_seq=1";
+ const response=await fetch(url,{headers:{"Accept":"application/octet-stream,*/*"}});
+ if(!response.ok)throw Error("Official MFDS spreadsheet unavailable: "+response.status);
+ const workbook=XLSX.read(await response.arrayBuffer(),{type:"array"});
+ const main=workbook.Sheets[workbook.SheetNames[0]];
+ if(!main)throw Error("MFDS spreadsheet did not contain the original designation list");
+ const all:any[][]=XLSX.utils.sheet_to_json(main,{header:1,defval:"",blankrows:false});
+ const rows=all.filter(x=>typeof x[0]==="number"&&
+  typeof x[1]==="string"&&String(x[1]).trim()&&String(x[2]||"").trim());
+ // Refuse malformed attachments rather than silently inserting wrong data.
+ if(rows.length<100)throw Error("Unusually small MFDS original designation list: "+rows.length);
+ const body=rows.map(row=>({
+  seed_key:"newdrug-"+year+"-"+String(row[0]).padStart(4,"0"),
+  source_year:year,ordinal:row[0],
+  product:String(row[1]).trim().slice(0,450),
+  company:String(row[2]).trim().slice(0,240),
+  ingredient:String(row[3]||"").trim().slice(0,600),
+  permit_date:parseMFDSExcelDate(year===2025?row[4]:row[5]),
+  source_type:"mfds_new_drug_designation",
+  source_url:"https://www.mfds.go.kr/brd/m_76/view.do?seq="+entry.seq,
+  match_status:"pending"
+ }));
+ for(let i=0;i<body.length;i+=100){
+  await db("POST","mfds_monitor_master_seeds?on_conflict=seed_key",
+   body.slice(i,i+100),"resolution=ignore-duplicates,return=minimal");
+ }
+ return {mode:"master_import",year,official_items:rows.length,seed_rows:body.length,
+  source:entry.label,source_url:body[0].source_url,
+  note:"신약 지정 공식 엑셀의 명단을 가져왔습니다. 품목기준코드 연결은 별도 검증 단계입니다."};
+}
+function seedResolutionScore(seed:any,drug:CatalogueItem):number{
+ const s=cleanMFDSKey(seedBaseName(seed.product).replace(/\([^)]*\)/g,""));
+ const d=cleanMFDSKey(seedBaseName(drug.product).replace(/\([^)]*\)/g,""));
+ if(!s||!d)return -100;
+ let score=s===d?60:(s.length>=5&&d.length>=5&&(s.startsWith(d)||d.startsWith(s))?27:0);
+ if(!score)return -100;
+ const companyMatch=companyKey(seed.company)===companyKey(drug.company);
+ if(companyMatch)score+=23;
+ // Date is crucial to disambiguate different strength-specific licenses.
+ if(seed.permit_date&&drug.permit_date&&seed.permit_date===drug.permit_date)score+=25;
+ else if(seed.permit_date&&drug.permit_date)score-=40;
+ const searchIngredient=String(seed.ingredient||"").replace(/\([^)]*\)/g,"").split(/[\/,]/)[0];
+ if(searchIngredient.length>=3&&drug.ingredient.includes(searchIngredient))score+=10;
+ if(!companyMatch)score-=30;
+ if(drug.status&&!/정상/.test(drug.status))score-=5;
+ return score;
+}
+async function resolveMFDSOriginalSeeds(maxItems:number=12):Promise<unknown>{
+ const n=Math.max(1,Math.min(40,Math.floor(maxItems)||12));
+ const seeds=await db("GET","mfds_monitor_master_seeds?select=seed_key,source_year,product,company,ingredient,permit_date,source_url,source_type,match_status,last_attempt_at&match_status=in.(pending,error,not_found,ambiguous)&limit=1100");
+ const prioritized=["키트루다","임핀지","테빔브라","파센라","엔허투","옵디보","오젬픽","레켐비","트렘피어","듀피젠트","가다실","티쎈트릭","레켐비"];
+ const priority=(row:any)=>{const i=prioritized.findIndex(x=>row.product.includes(x));return i<0?100:i;};
+ const now=Date.now();
+ const pending=(seeds||[]).filter((x:any)=>x.match_status==="pending"||
+  !x.last_attempt_at||now-new Date(x.last_attempt_at).getTime()>24*3600000)
+  .sort((a:any,b:any)=>priority(a)-priority(b)||
+   String(b.permit_date||"").localeCompare(String(a.permit_date||""))||
+   a.seed_key.localeCompare(b.seed_key))
+  .slice(0,n);
+ const results:any[]=[];
+ async function process(seed:any):Promise<void>{
+  let state="not_found",code:string|null=null,score:number|null=null,note="";
+  let result:CatalogueItem|null=null;
+  try{
+   const query=seedBaseName(seed.product).replace(/\([^)]*\)/g,"").trim();
+   const url=new URL(ORIGIN+"/searchDrug");
+   url.searchParams.set("searchYn","Y");url.searchParams.set("page","1");url.searchParams.set("itemName",query);
+   let candidates=parseDrugCatalogue(await html(url.toString()));
+   // For officially renamed products try a shortened brand name, but only
+   // trust the result if company and permit date still match.
+   if(!candidates.length&&query.length>9){
+    url.searchParams.set("itemName",query.slice(0,Math.min(7,query.length)));
+    candidates=parseDrugCatalogue(await html(url.toString()));
+   }
+   const sorted=candidates.map(c=>({c,score:seedResolutionScore(seed,c)})).sort((a,b)=>b.score-a.score);
+   if(sorted.length&&sorted[0].score>=70&&
+      (!sorted[1]||sorted[0].score-sorted[1].score>=10)){
+     result=sorted[0].c;
+     score=sorted[0].score;state="matched";code=result.item_seq;
+     await db("POST","mfds_monitor_product_roles?on_conflict=item_seq",{
+       item_seq:result.item_seq,product:result.product,company:result.company,
+       ingredient:result.ingredient,product_role:"new_drug",watch_scope:"primary",
+       evidence_source:"mfds_new_drug_designation",evidence_url:seed.source_url,
+       evidence_note:"식약처 "+seed.source_year+"년 신약 지정 공고 원문과 제품명·업체명·허가일자 대조",
+       evidence_year:seed.source_year,classification_confidence:"official_list"
+     },"resolution=ignore-duplicates,return=minimal");
+     await db("POST","mfds_monitor_drug_targets?on_conflict=item_seq",{
+       item_seq:result.item_seq,product:result.product,company:result.company,
+       ingredient:result.ingredient,source_url:result.source_url,
+       active:false,last_checked_status:"original-master"
+     },"resolution=ignore-duplicates,return=minimal");
+   }else if(sorted.length){
+     state="ambiguous";note="최적 적합점수 "+sorted[0].score+"; 후보 "+sorted.slice(0,3).map(x=>x.c.product+"("+x.score+")").join(", ");
+   }else note="식약처 검색 결과 0건; 이관·취하·품목명 변경 여부 확인 필요";
+  }catch(e){state="error";note=String(e).slice(0,240)}
+  await db("PATCH","mfds_monitor_master_seeds?seed_key=eq."+encodeURIComponent(seed.seed_key),{
+    match_status:state,item_seq:code,match_score:score,
+    match_note:note||null,last_attempt_at:new Date().toISOString()
+  },"return=minimal");
+  results.push({seed:seed.product.slice(0,90),status:state,item_seq:code,score,
+   note:note.slice(0,160)});
+ }
+ for(let i=0;i<pending.length;i+=4)await Promise.all(pending.slice(i,i+4).map(process));
+ const resolved=results.filter(x=>x.status==="matched").length;
+ return {mode:"master_resolve",attempted:results.length,matched:resolved,results};
+}
+async function originalMasterStatus():Promise<unknown>{
+ const [seeds,roles,unresolved]=await Promise.all([
+  db("GET","mfds_monitor_master_seeds?select=match_status,source_year&limit=2000"),
+  db("GET","mfds_monitor_product_roles?select=product_role,watch_scope,classification_confidence&limit=3000"),
+  db("GET","mfds_monitor_master_seeds?select=seed_key,product,company,match_status,match_note&match_status=eq.ambiguous&limit=12")
+ ]);
+ const aggregate=(input:any[],field:string)=>{
+  const map:Record<string,number>={};
+  for(const x of input||[])map[x[field]]=(map[x[field]]||0)+1;
+  return map;
+ };
+ return {source:"식약처 연도별 신약 지정 목록 및 검증된 허가정보",
+  seeds:(seeds||[]).length,seed_status:aggregate(seeds,"match_status"),
+  classified:(roles||[]).length,watch_scopes:aggregate(roles,"watch_scope"),
+  classes:aggregate(roles,"product_role"),needs_review:unresolved||[],
+  selection_complete:false,
+  note:"신약 공고를 품목기준코드로 연결하는 중이며 대조약·바이오·희귀·개량신약·자료제출의약품은 공식 증거 확인 시 각각 별도로 편입합니다."};
+}
+
 async function feed(): Promise<unknown> {
   const [events, leads, recent, runs, stats, efficacy, targets] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
@@ -1016,6 +1168,7 @@ Deno.serve(async (req: Request) => {
     if (req.method === "GET") {
       const url=new URL(req.url);
       const view=url.searchParams.get("view");
+      if(view==="master")return reply(await originalMasterStatus());
       if(view==="lookup")return reply(await lookupMFDSCatalogue(url.searchParams));
       if(view==="inspect")return reply(await inspectMFDSItem(url.searchParams));
       return reply(view==="efficacy"
@@ -1028,6 +1181,8 @@ Deno.serve(async (req: Request) => {
     if(input?.mode==="backfill") return reply(await backfill());
     if(input?.mode==="repair_order_dates") return reply(await repairOrderHistory());
     if(input?.mode==="efficacy_sync") return reply(await syncOfficialEfficacyHistory());
+    if(input?.mode==="master_import")return reply(await importMFDSNewDrugDesignation(Number(input?.year)||2025));
+    if(input?.mode==="master_resolve")return reply(await resolveMFDSOriginalSeeds(Number(input?.limit)||12));
     if(input?.mode==="global_efficacy_scan") return reply(await globalEfficacyScan(input?.max_sources));
     return reply(await collect());
   } catch (e) {
