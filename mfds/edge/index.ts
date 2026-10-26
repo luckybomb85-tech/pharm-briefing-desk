@@ -421,6 +421,147 @@ async function collect(): Promise<unknown> {
 }
 
 
+
+// Compare efficacy statements by therapeutic context, not by raw HTML
+// paragraphs. Cosmetic differences never count as added/deleted indications.
+type EffectEntry={text:string,context:string,heading:boolean};
+type EffectDelta={kind:"added"|"removed"|"modified",context:string,text:string,before_text?:string,after_text?:string};
+function normalizedEffectText(source:string):string{
+ return source.normalize("NFKC").toLocaleLowerCase("ko-KR")
+  .replace(/항암\s*화학\s*요법/g,"화학요법")
+  .replace(/\s+/g,"").replace(/[().,;:·\-–—'"‘’“”/]/g,"");
+}
+function effectHeading(line:string):boolean {
+ const s=line.trim();
+ if(s.length>155||s.length<3)return false;
+ if(/환자에서|환자의 치료|치료로서|투여|병용요법|단독요법|수술 전 보조요법|수술 후 보조요법|확인된 경우/.test(s))return false;
+ return (/(?:세포암|편평세포암|선암|비인두암|림프종|백혈병|골수종|유방암|흑색종|식도암|폐암|위암|난소암|간암|직장암|당뇨병|비만|염증성 장질환).*\([^)]+\)\s*$/.test(s)
+ || /^\d{1,2}[.)]\s*[^.]+(?:암|환자|질환)\s*$/.test(s)
+ || /^[가-힣\s/()-]+(?:암|질환|병)\s*$/.test(s));
+}
+function effectStatements(text:string):EffectEntry[]{
+ let context="효능·효과";
+ const result:EffectEntry[]=[];
+ for(const raw of text.split(/\r?\n/)){
+  const line=raw.replace(/\s+/g," ").trim();
+  if(!line)continue;
+  const heading=effectHeading(line);
+  if(heading)context=line.replace(/\s*\([^)]*\)\s*$/,"").replace(/^\d{1,2}[.)]\s*/,"").trim();
+  result.push({text:line,context,heading});
+ }
+ return result;
+}
+function effectDice(a:string,b:string):number{
+ if(a===b)return 1;
+ if(!a||!b)return 0;
+ const gram=(s:string)=>{
+  const map=new Map<string,number>();
+  for(let i=0;i<s.length-1;i++){const g=s.slice(i,i+2);map.set(g,(map.get(g)||0)+1);}
+  return map;
+ };
+ const x=gram(a),y=gram(b);let count=0;
+ for(const [key,n] of x)count+=Math.min(n,y.get(key)||0);
+ return 2*count/Math.max(1,a.length+b.length-2);
+}
+function importantTherapeuticChange(a:string,b:string):boolean{
+ // Numeric/line-of-therapy, biomarker and regimen changes have clinical
+ // meaning, even when just one character changed in a long paragraph.
+ const signatures=[
+  /\d+\s*차\s*(?:치료|이상|요법)?/g,
+  /수술\s*전|수술\s*후|절제\s*가능|절제\s*불가능/g,
+  /단독\s*요법|병용\s*요법|병용\s*투여/g,
+  /양성|음성|변이|전이성|재발성|국소\s*진행성|확장\s*병기|제한\s*병기/g,
+  /(?:pd-l1|her-?2|egfr|alk|braf|ras)[^\s,.;)]{0,18}/gi,
+  /[≥≤<>]\s*\d+(?:\.\d+)?\s*%?/g,
+  /(?:페메트렉시드|카보플라틴|시스플라틴|파클리탁셀|젬시타빈|에토포시드|엔코라페닙)/g
+ ];
+ for(const pattern of signatures){
+  const sig=(s:string)=>(s.match(pattern)||[]).map(normalizedEffectText).sort().join("|");
+  if(sig(a)!==sig(b))return true;
+ }
+ return false;
+}
+function substantiveEffectDiff(before:string,after:string):{
+ changes:EffectDelta[],editorial_changes:number,change_type:string,
+ summary_lines:string[],added_count:number,removed_count:number,modified_count:number
+}{
+ const old=effectStatements(before),current=effectStatements(after);
+ if(!before.trim()||!after.trim())return {changes:[],editorial_changes:0,change_type:"확인 필요",summary_lines:[],added_count:0,removed_count:0,modified_count:0};
+ const used=new Set<number>(), unmatched:number[]=[];
+ const changes:EffectDelta[]=[];let editorial=0;
+ for(const fresh of current){
+  const normalized=normalizedEffectText(fresh.text);
+  let found=-1;
+  for(let i=0;i<old.length;i++){
+   if(used.has(i))continue;
+   if(normalizedEffectText(old[i].text)===normalized){found=i;break;}
+  }
+  if(found>=0){used.add(found);if(old[found].text!==fresh.text)editorial++;continue;}
+  unmatched.push(current.indexOf(fresh));
+ }
+ // Mark new headings as context only. They are not full treatment indications.
+ const toCompare=unmatched.filter(i=>!current[i].heading), usedAfter=new Set<number>();
+ for(const currentIndex of toCompare){
+  const next=current[currentIndex],newKey=normalizedEffectText(next.text);
+  let bestIndex=-1,bestScore=0;
+  for(let i=0;i<old.length;i++){
+   if(used.has(i)||old[i].heading)continue;
+   const previous=old[i];
+   const sim=effectDice(newKey,normalizedEffectText(previous.text));
+   const sameContext=normalizedEffectText(next.context)===normalizedEffectText(previous.context);
+   // Cross-context matching is allowed for a heading being retitled, but
+   // requires very high text similarity to avoid merging distinct indications.
+   const limit=sameContext?0.72:0.90;
+   if(sim>=limit&&sim>bestScore){bestScore=sim;bestIndex=i;}
+  }
+  if(bestIndex>=0){
+   used.add(bestIndex);usedAfter.add(currentIndex);
+   const previous=old[bestIndex];
+   if(bestScore>=0.94&&!importantTherapeuticChange(previous.text,next.text)){
+    editorial++;
+   }else{
+    changes.push({kind:"modified",context:next.context,text:next.text,
+      before_text:previous.text,after_text:next.text});
+   }
+  }
+ }
+ for(const currentIndex of toCompare){
+  if(usedAfter.has(currentIndex))continue;
+  const e=current[currentIndex];
+  if(e.text.length>=18)changes.push({kind:"added",context:e.context,text:e.text,after_text:e.text});
+  else editorial++;
+ }
+ for(let i=0;i<old.length;i++){
+  const previous=old[i];if(used.has(i)||previous.heading)continue;
+  if(previous.text.length>=18)changes.push({kind:"removed",context:previous.context,text:previous.text,before_text:previous.text});
+  else editorial++;
+ }
+ const added=changes.filter(x=>x.kind==="added").length;
+ const removed=changes.filter(x=>x.kind==="removed").length;
+ const modified=changes.filter(x=>x.kind==="modified").length;
+ let type="표현 수정";
+ if(added&&removed)type="추가·삭제";
+ else if(added&&modified)type="추가·변경";
+ else if(added)type="추가";
+ else if(removed&&modified)type="삭제·변경";
+ else if(removed)type="삭제";
+ else if(modified)type="변경";
+ const grouped=new Map<string,EffectDelta[]>();
+ for(const delta of changes){
+  const context=delta.context||"효능·효과";
+  if(!grouped.has(context))grouped.set(context,[]);
+  grouped.get(context)!.push(delta);
+ }
+ const summary=[...grouped.entries()].flatMap(([context,items])=>{
+  const adds=items.filter(x=>x.kind==="added"),rems=items.filter(x=>x.kind==="removed"),mods=items.filter(x=>x.kind==="modified");
+  const short=context==="효능·효과"?"":context+" · ";
+  const first=adds[0]||mods[0]||rems[0];
+  return first?[short+first.text]:[];
+ });
+ return {changes,editorial_changes:editorial,change_type:type,
+  summary_lines:summary.slice(0,4),added_count:added,removed_count:removed,modified_count:modified};
+}
+
 function editorialChangeKind(eventType:string):string {
   if(eventType==="addition")return "추가";
   if(eventType==="deletion"||eventType==="reduction")return "삭제";
@@ -443,15 +584,22 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
     const key=editorialKey(row.product,row.changed_at);
     const event=reviewed.get(key);
     if(event)included.add(key);
-    let kind=row.classification;
-    if(event && ["addition","deletion","reduction"].includes(event.event_type))kind=editorialChangeKind(event.event_type);
-    if(!["추가","변경","삭제"].includes(kind))kind="변경";
+    const analyzed=substantiveEffectDiff(row.before_text||"",row.after_text||"");
+    let kind=analyzed.change_type;
+    if(event && ["addition","deletion","reduction"].includes(event.event_type) && kind!=="확인 필요"&&kind!=="표현 수정"){
+      if(event.event_type==="addition"&&analyzed.added_count)kind="추가";
+      else if(event.event_type!=="addition"&&analyzed.removed_count)kind="삭제";
+    }
     merged.push({
       id:"official-"+row.id,changed_at:row.changed_at,product:row.product,
       company:row.company,ingredient:row.ingredient,change_type:kind,
       title:event?.title||null,summary:event?.details||"",
       before_text:row.before_text||"",after_text:row.after_text||"",
-      added_lines:row.added_lines||[],removed_lines:row.removed_lines||[],
+      added_lines:analyzed.changes.filter(x=>x.kind==="added").map(x=>x.text),
+      removed_lines:analyzed.changes.filter(x=>x.kind==="removed").map(x=>x.text),
+      change_details:analyzed.changes,editorial_changes:analyzed.editorial_changes,
+      summary_lines:analyzed.summary_lines,added_count:analyzed.added_count,
+      removed_count:analyzed.removed_count,modified_count:analyzed.modified_count,
       diff_status:row.diff_status,evidence_url:row.evidence_url,
       source_kind:"official",comparison_kind:"literal",verified_summary:!!event
     });
@@ -466,7 +614,11 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
       change_type:editorialChangeKind(event.event_type),
       title:event.title||"",summary:event.details||"",
       before_text:event.before_text||"",after_text:event.after_text||"",
-      added_lines:[],removed_lines:[],diff_status:"editorial_summary",
+      added_lines:[],removed_lines:[],change_details:[],
+      editorial_changes:0,summary_lines:[event.title||event.after_text].filter(Boolean),
+      added_count:event.event_type==="addition"?1:0,
+      removed_count:event.event_type==="deletion"||event.event_type==="reduction"?1:0,modified_count:0,
+      diff_status:"editorial_summary",
       evidence_url:event.mfds_url||event.evidence_url,
       supplementary_url:event.evidence_url,
       source_kind:"reviewed",comparison_kind:"summary",verified_summary:true
@@ -478,7 +630,12 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   const needle=(query.get("q")||"").trim().toLocaleLowerCase("ko-KR").slice(0,80);
   const rows=merged.filter((row:any)=>{
     if(/^20\d{2}$/.test(year)&&!row.changed_at.startsWith(year))return false;
-    if(["추가","삭제","변경"].includes(kind)&&row.change_type!==kind)return false;
+    if(["추가","삭제","변경"].includes(kind)){
+      const contains=kind==="추가"?(row.added_count>0||row.change_type==="추가"):
+        kind==="삭제"?(row.removed_count>0||row.change_type==="삭제"):
+        (row.modified_count>0||row.change_type==="변경");
+      if(!contains)return false;
+    }
     if(scope==="compared"&&!["compared","editorial_summary"].includes(row.diff_status))return false;
     if(scope==="uncompared"&&["compared","editorial_summary"].includes(row.diff_status))return false;
     if(needle&&![row.product,row.company,row.ingredient].join(" ").toLocaleLowerCase("ko-KR").includes(needle))return false;
@@ -488,9 +645,9 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   const total=rows.length,offset=Math.max(0,Math.min(20000,Number(query.get("offset")||0)||0));
   const limit=Math.max(10,Math.min(50,Number(query.get("limit")||20)||20));
   const countByType={
-    added:rows.filter((x:any)=>x.change_type==="추가").length,
-    changed:rows.filter((x:any)=>x.change_type==="변경").length,
-    deleted:rows.filter((x:any)=>x.change_type==="삭제").length
+    added:rows.filter((x:any)=>x.added_count>0||x.change_type==="추가").length,
+    changed:rows.filter((x:any)=>x.modified_count>0||x.change_type==="변경").length,
+    deleted:rows.filter((x:any)=>x.removed_count>0||x.change_type==="삭제").length
   };
   return {items:rows.slice(offset,offset+limit),total,has_more:offset+limit<total,
     next_offset:offset+limit,counts:countByType,
@@ -602,16 +759,17 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  for(let i=1;i<versions.length;i++){
   const prior=versions[i-1],next=versions[i];
   const before=new Set(prior.lines.map(comparisonKey)),after=new Set(next.lines.map(comparisonKey));
-  const added=next.lines.filter(line=>!before.has(comparisonKey(line)));
-  const removed=prior.lines.filter(line=>!after.has(comparisonKey(line)));
-  let kind="변경";
-  if(added.length&&!removed.length)kind="추가";
-  if(removed.length&&!added.length)kind="삭제";
+  const analyzed=substantiveEffectDiff(prior.lines.join("\n"),next.lines.join("\n"));
   items.push({
    id:"live-"+itemSeq+"-"+next.changed_at,
-   changed_at:next.changed_at,change_type:kind,
+   changed_at:next.changed_at,change_type:analyzed.change_type,
    before_text:prior.lines.join("\n"),after_text:next.lines.join("\n"),
-   added_lines:added,removed_lines:removed,diff_status:"compared",
+   added_lines:analyzed.changes.filter(x=>x.kind==="added").map(x=>x.text),
+   removed_lines:analyzed.changes.filter(x=>x.kind==="removed").map(x=>x.text),
+   change_details:analyzed.changes,editorial_changes:analyzed.editorial_changes,
+   summary_lines:analyzed.summary_lines,added_count:analyzed.added_count,
+   removed_count:analyzed.removed_count,modified_count:analyzed.modified_count,
+   diff_status:"compared",
    evidence_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+itemSeq,
    source_kind:"official_live",comparison_kind:"literal"
   });
@@ -621,8 +779,9 @@ async function inspectMFDSItem(params:URLSearchParams):Promise<unknown>{
  for(const day of officialDates){
   if(day===baseline||known.has(day))continue;
   items.push({
-   id:"live-"+itemSeq+"-"+day,changed_at:day,change_type:"변경",
+   id:"live-"+itemSeq+"-"+day,changed_at:day,change_type:"확인 필요",
    before_text:"",after_text:"",added_lines:[],removed_lines:[],
+   change_details:[],summary_lines:[],editorial_changes:0,added_count:0,removed_count:0,modified_count:0,
    diff_status:"not_available",evidence_url:ORIGIN+"/pbp/CCBBB01/getItemDetail?itemSeq="+itemSeq,
    source_kind:"official_live",comparison_kind:"unknown"
   });
