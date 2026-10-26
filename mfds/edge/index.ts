@@ -436,7 +436,7 @@ function effectHeading(line:string):boolean {
  if(s.length>155||s.length<3)return false;
  if(/환자에서|환자의 치료|치료로서|투여|병용요법|단독요법|수술 전 보조요법|수술 후 보조요법|확인된 경우/.test(s))return false;
  return (/(?:세포암|편평세포암|선암|비인두암|림프종|백혈병|골수종|유방암|흑색종|식도암|폐암|위암|난소암|간암|직장암|당뇨병|비만|염증성 장질환).*\([^)]+\)\s*$/.test(s)
- || /^\d{1,2}[.)]\s*[^.]+(?:암|환자|질환)\s*$/.test(s)
+ || /^\d{1,2}[.)]\s*[^.]+(?:암|환자|환자에의|질환)\s*$/.test(s)
  || /^[가-힣\s/()-]+(?:암|질환|병)\s*$/.test(s));
 }
 function effectStatements(text:string):EffectEntry[]{
@@ -481,6 +481,15 @@ function importantTherapeuticChange(a:string,b:string):boolean{
  }
  return false;
 }
+
+function sharedNamedRegimen(a:string,b:string):boolean{
+ const extract=(s:string)=>{
+  const matches=[...s.matchAll(/([가-힣A-Za-z0-9-]{4,})(?:과의|와의)\s*병용요법/g)];
+  return matches.map(x=>x[1]).filter(x=>!/(?:화학요법|항암화학요법|방사선요법|기존요법|처치요법)$/.test(x));
+ };
+ const current=new Set(extract(b));
+ return extract(a).some(x=>current.has(x));
+}
 function substantiveEffectDiff(before:string,after:string):{
  changes:EffectDelta[],editorial_changes:number,change_type:string,
  summary_lines:string[],added_count:number,removed_count:number,modified_count:number
@@ -489,7 +498,8 @@ function substantiveEffectDiff(before:string,after:string):{
  if(!before.trim()||!after.trim())return {changes:[],editorial_changes:0,change_type:"확인 필요",summary_lines:[],added_count:0,removed_count:0,modified_count:0};
  const used=new Set<number>(), unmatched:number[]=[];
  const changes:EffectDelta[]=[];let editorial=0;
- for(const fresh of current){
+ for(let currentIndex=0;currentIndex<current.length;currentIndex++){
+  const fresh=current[currentIndex];
   const normalized=normalizedEffectText(fresh.text);
   let found=-1;
   for(let i=0;i<old.length;i++){
@@ -497,7 +507,7 @@ function substantiveEffectDiff(before:string,after:string):{
    if(normalizedEffectText(old[i].text)===normalized){found=i;break;}
   }
   if(found>=0){used.add(found);if(old[found].text!==fresh.text)editorial++;continue;}
-  unmatched.push(current.indexOf(fresh));
+  unmatched.push(currentIndex);
  }
  // Mark new headings as context only. They are not full treatment indications.
  const toCompare=unmatched.filter(i=>!current[i].heading), usedAfter=new Set<number>();
@@ -511,7 +521,8 @@ function substantiveEffectDiff(before:string,after:string):{
    const sameContext=normalizedEffectText(next.context)===normalizedEffectText(previous.context);
    // Cross-context matching is allowed for a heading being retitled, but
    // requires very high text similarity to avoid merging distinct indications.
-   const limit=sameContext?0.72:0.90;
+   const strongRegimen=sharedNamedRegimen(previous.text,next.text);
+   const limit=sameContext?0.72:(strongRegimen?0.48:0.90);
    if(sim>=limit&&sim>bestScore){bestScore=sim;bestIndex=i;}
   }
   if(bestIndex>=0){
