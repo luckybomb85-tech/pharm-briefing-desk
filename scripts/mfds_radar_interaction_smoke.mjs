@@ -42,6 +42,11 @@ try{
   '({cards:document.querySelectorAll("#list .item").length,body:document.querySelector("#list")?.textContent||"",active:document.querySelector("[data-view=verified]")?.getAttribute("aria-pressed")})',
   v=>v.cards>=1&&v.body.includes("임델트라")&&v.body.includes("2026.07.15")&&v.active==="true");
  console.log("MFDS_VERIFIED_CLICK_OK",verified.cards);
+ await evalPage('document.querySelector("[data-view=efficacy]").click()');
+ const official=await until("Official efficacy changes",
+  '({cards:document.querySelectorAll("#list .item").length,active:document.querySelector("[data-view=efficacy]")?.getAttribute("aria-pressed"),body:document.querySelector("#list")?.textContent||"",counter:document.querySelector("#numEfficacy")?.textContent})',
+  v=>v.cards>=14&&Number(v.counter)>=14&&v.active==="true"&&v.body.includes("얼비툭스")&&v.body.includes("2026.07.29"));
+ console.log("MFDS_EFFICACY_HISTORY_OK",official.cards);
  await evalPage('document.querySelector("[data-view=review]").click()');
  const review=await until("History tab",
   '({cards:document.querySelectorAll("#list .item").length,active:document.querySelector("[data-view=review]")?.getAttribute("aria-pressed"),hidden:document.querySelector("#moreWrap")?.hidden})',
