@@ -77,6 +77,19 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .fulltext{max-height:350px}
 .bar{align-items:baseline}
 }
+.catalogue{background:#fff;border:1px solid var(--border);border-radius:11px;padding:15px 17px;margin:14px 0}
+.catalogue-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.catalogue-head strong{font-size:14px}.catalogue-head small{color:var(--muted);font-size:12px}
+.catalogue-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.catalogue-choice{width:100%;text-align:left;background:#fff;border:1px solid #e1e7ef;border-radius:8px;padding:10px 11px;color:var(--ink)}
+.catalogue-choice:hover{border-color:#9db1d2;background:#f9fbff}
+.catalogue-choice.selected{border-color:#356ac1;background:#eef4ff}
+.catalogue-choice b{display:block;font-size:13px;margin:0 0 3px;overflow-wrap:anywhere}
+.catalogue-choice small{font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+.catalogue-foot{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.catalogue-foot button{border:1px solid #c8d4e6;border-radius:7px;background:#fff;color:var(--blue);font-size:12px;font-weight:780;padding:8px 12px}
+.catalogue-foot span{font-size:11px;color:var(--muted)}
+@media(max-width:760px){.catalogue-list{grid-template-columns:1fr}.catalogue{padding:12px}}
 </style>
 </head>
 <body>
@@ -101,6 +114,11 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
   </select>
   <button class="submit" id="searchButton" type="submit">검색</button>
 </form>
+<section id="catalogue" class="catalogue" hidden aria-label="식약처 품목 검색 결과">
+ <div class="catalogue-head"><strong id="catalogueTitle">식약처에서 품목을 검색합니다.</strong><small id="catalogueHint">원하는 품목을 선택하면 효능·효과 변경이력을 확인할 수 있습니다.</small></div>
+ <div id="catalogueItems" class="catalogue-list"></div>
+ <div class="catalogue-foot" id="catalogueFoot" hidden><button id="catalogueMore" type="button">품목 더 보기</button><span>동일 성분·회사에 속한 다른 품목도 검색할 수 있습니다.</span></div>
+</section>
 <div class="bar"><strong id="resultCount">검색 결과 확인 중…</strong><small id="sortLabel">변경일 최신순</small></div>
 <section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
   <div class="empty">자료를 불러오는 중입니다.</div>
@@ -114,7 +132,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-const state={rows:[],offset:0,total:0,more:false,busy:false,serial:0,filter:{}};
+const state={rows:[],offset:0,total:0,more:false,busy:false,serial:0,filter:{},lookupQuery:"",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false};
 function element(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text??"");return n;}
 function put(where,tag,cls,text){const n=element(tag,cls,text);where.appendChild(n);return n}
 function fmtDate(day){return /^\d{4}-\d{2}-\d{2}$/.test(day||"")?day.replaceAll("-","."):"날짜 미확인"}
@@ -232,8 +250,152 @@ async function load(reset=false){
    if(serial===state.serial){state.busy=false;$("#searchButton").disabled=false;refreshLabel();}
  }
 }
+
+function paramsFor(view,entries){
+ const u=new URL(API);u.searchParams.set("view",view);
+ for(const [key,value] of Object.entries(entries))if(value!==null&&value!==undefined&&value!=="")u.searchParams.set(key,String(value));
+ return u.toString();
+}
+async function fetchJson(url,timeout=27000){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeout);
+ try{
+  const res=await fetch(url,{cache:"no-store",signal:controller.signal});
+  const doc=await res.json();
+  if(!res.ok||doc?.error)throw Error(doc.error||"식약처 검색 요청 실패");
+  return doc;
+ }finally{clearTimeout(timer)}
+}
+function visibleSearchRows(){
+ const records=state.lookupData?.items||[];
+ const year=$("#year").value,type=$("#type").value,scope=$("#scope").value;
+ return records.filter(x=>
+  (year==="all"||x.changed_at?.startsWith(year))&&
+  (type==="all"||x.change_type===type)&&
+  (scope==="all"||(scope==="compared"?x.diff_status==="compared":x.diff_status!=="compared"))
+ );
+}
+function showSelectedHistory(){
+ const candidate=state.lookupSelected;
+ if(!candidate)return;
+ state.more=false;$("#moreWrap").hidden=true;
+ const rows=visibleSearchRows();
+ const root=$("#entries");root.replaceChildren();
+ for(const entry of rows){
+  root.appendChild(renderCard({...entry,product:candidate.product,company:candidate.company,ingredient:candidate.ingredient}));
+ }
+ $("#resultCount").textContent=candidate.product+" · 변경이력 "+rows.length+"건";
+ $("#sortLabel").textContent="실제 변경일 최신순";
+ if(!rows.length){
+  const empty=element("div","empty",state.lookupData?.total===0?
+    "식약처에서 품목을 확인했습니다. 공개된 전자화 효능·효과 이력상 최초 버전 이후의 변경은 확인되지 않습니다.":
+    "선택한 연도·변경 유형에 해당하는 이력이 없습니다.");
+  root.appendChild(empty);
+  const current=state.lookupData?.current_efficacy||"";
+  if(current&&state.lookupData?.total===0){
+   const detail=element("details","entry");
+   put(detail,"summary","","현행 전자화 효능·효과 내용 확인");
+   const box=put(detail,"div","content");
+   const txt=put(box,"div","fulltext");
+   for(const line of current.split("\n").filter(Boolean))put(txt,"div","line current",line);
+   root.appendChild(detail);
+  }
+ }
+ if(state.lookupData?.official_history_complete===false&&state.lookupData?.total===0){
+  $("#sortLabel").textContent="전자화 이력 기준";
+ }
+}
+function renderCatalogue(){
+ const panel=$("#catalogue");panel.hidden=false;
+ $("#catalogueTitle").textContent="식약처 품목검색 · "+state.lookupMatches.length+"개 품목";
+ $("#catalogueHint").textContent="품목을 선택하면 효능·효과 변경 내용을 바로 조회합니다.";
+ const root=$("#catalogueItems");root.replaceChildren();
+ for(const c of state.lookupMatches){
+  const btn=put(root,"button","catalogue-choice"+(state.lookupSelected?.item_seq===c.item_seq?" selected":""));
+  btn.type="button";btn.dataset.itemSeq=c.item_seq;
+  put(btn,"b","",c.product);
+  put(btn,"small","",[c.company,c.ingredient,c.permit_date?"최초허가 "+c.permit_date:"",c.status!=="정상"?c.status:""].filter(Boolean).join(" · "));
+  btn.addEventListener("click",()=>chooseDrug(c));
+ }
+ $("#catalogueFoot").hidden=!state.lookupHasMore;
+}
+async function chooseDrug(candidate){
+ const seq=++state.lookupSerial;
+ state.lookupSelected=candidate;state.lookupData=null;
+ renderCatalogue();
+ $("#entries").replaceChildren(element("div","empty","식약처의 효능·효과 변경이력을 확인하고 있습니다…"));
+ $("#resultCount").textContent=candidate.product+" · 변경이력 조회 중…";
+ $("#moreWrap").hidden=true;
+ $("#searchButton").disabled=true;
+ try{
+  const record=await fetchJson(paramsFor("inspect",{item_seq:candidate.item_seq}),40000);
+  if(seq!==state.lookupSerial)return;
+  if(!Array.isArray(record.items))throw Error("식약처 변경이력 응답 형식 오류");
+  state.lookupData=record;
+  showSelectedHistory();
+  renderCatalogue();
+ }catch(e){
+  if(seq!==state.lookupSerial)return;
+  $("#resultCount").textContent="효능·효과 변경이력 조회 실패";
+  $("#entries").replaceChildren(element("div","empty","식약처 변경이력 조회에 실패했습니다. 품목을 다시 선택해 주세요. "+String(e.message||e)));
+ }finally{if(seq===state.lookupSerial)$("#searchButton").disabled=false}
+}
+async function searchCatalogue(query,append=false){
+ const q=query.trim();
+ if(q.length<2){
+  $("#resultCount").textContent="검색어를 두 글자 이상 입력해주세요.";
+  $("#catalogue").hidden=true;$("#entries").replaceChildren(element("div","empty","품목명·회사명·성분명 중 하나를 입력해주세요."));
+  return;
+ }
+ if(state.lookupBusy)return;
+ const seq=++state.lookupSerial;
+ state.lookupBusy=true;
+ $("#searchButton").disabled=true;
+ if(!append){
+  state.lookupQuery=q;state.lookupMatches=[];state.lookupPage=0;
+  state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
+  $("#entries").replaceChildren(element("div","empty","식약처 전체 품목정보에서 검색하고 있습니다…"));
+  $("#resultCount").textContent="식약처 품목 검색 중…";
+  $("#catalogue").hidden=true;$("#moreWrap").hidden=true;
+ }
+ try{
+  const page=append?state.lookupPage+1:1;
+  const result=await fetchJson(paramsFor("lookup",{q,page}),40000);
+  if(seq!==state.lookupSerial)return;
+  if(!Array.isArray(result.matches))throw Error("식약처 품목 검색 결과 형식 오류");
+  const seen=new Set(state.lookupMatches.map(x=>x.item_seq));
+  for(const row of result.matches)if(!seen.has(row.item_seq)){seen.add(row.item_seq);state.lookupMatches.push(row)}
+  state.lookupPage=page;state.lookupHasMore=!!result.has_more;
+  if(!state.lookupMatches.length){
+   $("#catalogue").hidden=true;$("#entries").replaceChildren(element("div","empty","식약처 의약품 품목검색에서도 일치하는 품목을 찾지 못했습니다. 제품명 또는 성분명을 확인해주세요."));
+   $("#resultCount").textContent="식약처 품목검색 결과 0건";
+   return;
+  }
+  renderCatalogue();
+  $("#resultCount").textContent="식약처 검색 결과 "+state.lookupMatches.length+"개 품목 · 하나를 선택해 변경이력 조회";
+  $("#entries").replaceChildren(element("div","empty",state.lookupMatches.length===1?
+   "검색된 품목의 변경이력을 확인하고 있습니다…":"위 목록에서 확인할 품목을 선택해주세요."));
+  if(state.lookupMatches.length===1&&!append)await chooseDrug(state.lookupMatches[0]);
+ }catch(e){
+  if(seq!==state.lookupSerial)return;
+  $("#resultCount").textContent="식약처 품목검색 오류";
+  $("#entries").replaceChildren(element("div","empty","식약처 실시간 검색에 연결하지 못했습니다. 다시 검색해주세요. "+String(e.message||e)));
+ }finally{state.lookupBusy=false;$("#searchButton").disabled=false;}
+}
+async function submitSearch(){
+ const query=$("#keyword").value.trim();
+ if(!query){
+  state.lookupSerial++;state.lookupQuery="";state.lookupSelected=null;state.lookupData=null;state.lookupMatches=[];
+  $("#catalogue").hidden=true;return load(true);
+ }
+ if(state.lookupQuery===query&&state.lookupSelected&&state.lookupData){
+  showSelectedHistory();return;
+ }
+ await searchCatalogue(query);
+}
+
 const form=$("#searchForm");
-form.addEventListener("submit",ev=>{ev.preventDefault();load(true)});
+form.addEventListener("submit",ev=>{ev.preventDefault();submitSearch()});
+$("#catalogueMore").addEventListener("click",()=>searchCatalogue(state.lookupQuery,true));
 $("#moreButton").addEventListener("click",()=>load(false));
 if("IntersectionObserver" in window){
  const observer=new IntersectionObserver(entries=>{
@@ -245,8 +407,8 @@ for(let y=2026;y>=2014;y--){
  const option=element("option","",String(y)+"년");option.value=String(y);$("#year").appendChild(option);
 }
 const urlKeyword=(new URLSearchParams(window.location.search)).get("q");
-if(urlKeyword)$("#keyword").value=urlKeyword.slice(0,80);
-load(true);
+if(urlKeyword){$("#keyword").value=urlKeyword.slice(0,80);submitSearch()}
+else load(true);
 })();
 </script>
 </body>
