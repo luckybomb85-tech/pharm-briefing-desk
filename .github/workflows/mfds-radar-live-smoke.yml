@@ -13,7 +13,7 @@ permissions:
 jobs:
   efficacy-ui-check:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,7 +29,10 @@ jobs:
               assert resp.status==200
               assert resp.headers.get("access-control-allow-origin")=="*"
               data=json.load(resp)
-          assert data["total"]>=15,data
+          assert data["total"]>=60,data
+          assert data["master_scope"]=="official_originals",data
+          assert data["master_primary_count"]>=20,data
+          assert all(x["item_seq"] and x["product_role"] in ("new_drug","biologic_original","orphan_original","reference_original","incremental_new_drug","innovative_data_submission") for x in data["items"]),data
           assert any(x["product"]=="얼비툭스주" and x["changed_at"]=="2026-07-29" and x["added_count"]>=1 and x["removed_count"]==0 for x in data["items"])
           tev=[x for x in data["items"] if x["product"]=="테빔브라주" and x["changed_at"]=="2025-12-18"]
           assert len(tev)==1,(len(tev),"tevimbra missing")
@@ -52,6 +55,16 @@ jobs:
               assert r["has_more"]==(page<3),(page,r)
           assert counts==[15,15,6],counts
           print("OFFICIAL_CATEGORY_COUNTS_AND_PAGINATION_OK",drug["official_change_total"],drug["official_efficacy_total"],counts)
+          with urllib.request.urlopen("https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=master",timeout=22) as resp:
+              master=json.load(resp)
+          assert master["seeds"]>=810,master
+          assert master["watch_scopes"]["primary"]>=20,master
+          with urllib.request.urlopen("https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor?view=related&item_seq=202201737",timeout=40) as resp:
+              related=json.load(resp)
+          assert related["ingredient"]=="세마글루티드",related
+          assert any("위고비" in x["product"] for x in related["matches"]),related
+          assert all(x["ingredient"]=="세마글루티드" for x in related["matches"]),related
+          print("ORIGINAL_MASTER_RELATED_SEARCH_OK",master["seeds"],master["watch_scopes"]["primary"],len(related["matches"]))
           print("EFFICACY_API_OK",data["total"],data["counts"])
           PY
       - name: Test search, type/year sorting, expandable efficacy text and mobile
@@ -62,4 +75,11 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mfds-ui-server.log 2>&1 &
           sleep 1
           node scripts/mfds_radar_interaction_smoke.mjs 'http://127.0.0.1:8765/mfds/'
-          node scripts/mfds_radar_interaction_smoke.mjs 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?v=20261026-efficacy'
+          # Pages deployment can lag the GitHub commit by several seconds.
+          for attempt in $(seq 1 24); do
+            if curl -fsSL 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?v=20261026-original-master' | grep -q 'addSameIngredientSearch'; then
+              break
+            fi
+            sleep 5
+          done
+          node scripts/mfds_radar_interaction_smoke.mjs 'https://luckybomb85-tech.github.io/pharm-briefing-desk/mfds/?v=20261026-original-master'
