@@ -420,6 +420,83 @@ async function collect(): Promise<unknown> {
   return { ...report, run_id: run.id };
 }
 
+
+function editorialChangeKind(eventType:string):string {
+  if(eventType==="addition")return "추가";
+  if(eventType==="deletion"||eventType==="reduction")return "삭제";
+  return "변경";
+}
+async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
+  // Dedicated efficacy-only read API. All dates are approval-change dates,
+  // never the publication dates of delayed review reports.
+  const [history,editorial]=await Promise.all([
+    db("GET","mfds_monitor_efficacy_history?select=id,item_seq,product,company,ingredient,changed_at,classification,before_text,after_text,added_lines,removed_lines,diff_status,evidence_url&order=changed_at.desc,id.desc&limit=1000"),
+    db("GET","mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=500")
+  ]);
+  const editorialKey=(p:string,d:string)=>p.replace(/\s+/g,"").replace(/\([^)]*\)/g,"")+"@"+d;
+  const reviewed=new Map<string,any>();
+  for(const event of editorial||[]) reviewed.set(editorialKey(event.product,event.event_date),event);
+  const included=new Set<string>();
+  const merged:any[]=[];
+  for(const row of history||[]){
+    if(row.diff_status==="baseline")continue;
+    const key=editorialKey(row.product,row.changed_at);
+    const event=reviewed.get(key);
+    if(event)included.add(key);
+    let kind=row.classification;
+    if(event && ["addition","deletion","reduction"].includes(event.event_type))kind=editorialChangeKind(event.event_type);
+    if(!["추가","변경","삭제"].includes(kind))kind="변경";
+    merged.push({
+      id:"official-"+row.id,changed_at:row.changed_at,product:row.product,
+      company:row.company,ingredient:row.ingredient,change_type:kind,
+      title:event?.title||null,summary:event?.details||"",
+      before_text:row.before_text||"",after_text:row.after_text||"",
+      added_lines:row.added_lines||[],removed_lines:row.removed_lines||[],
+      diff_status:row.diff_status,evidence_url:row.evidence_url,
+      source_kind:"official",comparison_kind:"literal",verified_summary:!!event
+    });
+  }
+  for(const event of editorial||[]){
+    const key=editorialKey(event.product,event.event_date);
+    if(included.has(key))continue;
+    included.add(key);
+    merged.push({
+      id:"reviewed-"+event.id,changed_at:event.event_date,product:event.product,
+      company:event.company,ingredient:event.ingredient,
+      change_type:editorialChangeKind(event.event_type),
+      title:event.title||"",summary:event.details||"",
+      before_text:event.before_text||"",after_text:event.after_text||"",
+      added_lines:[],removed_lines:[],diff_status:"editorial_summary",
+      evidence_url:event.mfds_url||event.evidence_url,
+      supplementary_url:event.evidence_url,
+      source_kind:"reviewed",comparison_kind:"summary",verified_summary:true
+    });
+  }
+  const year=query.get("year")||"";
+  const kind=query.get("type")||"all";
+  const scope=query.get("scope")||"all";
+  const needle=(query.get("q")||"").trim().toLocaleLowerCase("ko-KR").slice(0,80);
+  const rows=merged.filter((row:any)=>{
+    if(/^20\d{2}$/.test(year)&&!row.changed_at.startsWith(year))return false;
+    if(["추가","삭제","변경"].includes(kind)&&row.change_type!==kind)return false;
+    if(scope==="compared"&&!["compared","editorial_summary"].includes(row.diff_status))return false;
+    if(scope==="uncompared"&&["compared","editorial_summary"].includes(row.diff_status))return false;
+    if(needle&&![row.product,row.company,row.ingredient].join(" ").toLocaleLowerCase("ko-KR").includes(needle))return false;
+    return true;
+  });
+  rows.sort((a:any,b:any)=>b.changed_at.localeCompare(a.changed_at)||a.product.localeCompare(b.product,"ko-KR"));
+  const total=rows.length,offset=Math.max(0,Math.min(20000,Number(query.get("offset")||0)||0));
+  const limit=Math.max(10,Math.min(50,Number(query.get("limit")||20)||20));
+  const countByType={
+    added:rows.filter((x:any)=>x.change_type==="추가").length,
+    changed:rows.filter((x:any)=>x.change_type==="변경").length,
+    deleted:rows.filter((x:any)=>x.change_type==="삭제").length
+  };
+  return {items:rows.slice(offset,offset+limit),total,has_more:offset+limit<total,
+    next_offset:offset+limit,counts:countByType,
+    source_description:"효능·효과 변경일을 기준으로 정렬. 비교 가능한 버전은 식약처 공식 효능·효과 XML 원문을 대조합니다. 일부 구버전 원문 및 품목은 미수집."};
+}
+
 async function feed(): Promise<unknown> {
   const [events, leads, recent, runs, stats, efficacy, targets] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
@@ -443,8 +520,10 @@ Deno.serve(async (req: Request) => {
   try {
     if (req.method === "GET") {
       const url=new URL(req.url);
-      return reply(url.searchParams.get("view")==="archive"
-        ? await archiveFeed(url.searchParams) : await feed());
+      return reply(url.searchParams.get("view")==="efficacy"
+        ? await filteredEfficacyFeed(url.searchParams)
+        : url.searchParams.get("view")==="archive"
+          ? await archiveFeed(url.searchParams) : await feed());
     }
     if (req.method !== "POST") return reply({error:"Unsupported method"},405);
     if (!await validToken(req.headers.get("x-monitor-token") || "")) return reply({error:"Unauthorized"},401);
