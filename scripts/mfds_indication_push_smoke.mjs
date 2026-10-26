@@ -81,6 +81,17 @@ try{
  const mobile=await evalPage('({width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width})');
  assert(mobile.scroll<=mobile.width+3,"Mobile view has horizontal overflow: "+JSON.stringify(mobile));
  console.log("MOBILE_PUSH_AND_INDICATION_LAYOUT_OK",JSON.stringify(mobile));
+ // The browser push click must link to the exact licensed product.
+ const deepLink=new URL(site);
+ deepLink.searchParams.set("seq","201501487");
+ const next=++request;
+ const navigated=new Promise((resolve,reject)=>pending.set(next,{resolve,reject}));
+ ws.send(JSON.stringify({id:next,method:"Page.navigate",params:{url:deepLink.href}}));
+ await navigated;
+ const item=await wait("Push item-sequence exact history deep link",
+  '({count:document.querySelector("#resultCount")?.textContent||"",product:document.querySelector("#entries .drug")?.textContent||"",maker:document.querySelector("#entries .meta-fields")?.textContent||""})',
+  v=>v.count.startsWith("변경이력 ")&&v.product.includes("키트루다")&&v.maker.includes("한국엠에스디"));
+ console.log("PUSH_NOTIFICATION_EXACT_PRODUCT_DEEPLINK_OK",JSON.stringify(item));
  console.log("MFDS_USER_REQUEST_20261027_PASS");
 }finally{
  try{ws?.close()}catch{}
