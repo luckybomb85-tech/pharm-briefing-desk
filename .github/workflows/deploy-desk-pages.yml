@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths:
       - 'index.html'
-      - 'mfds/index.html'
+      - 'mfds/**'
       - 'global/**'
       - 'domestic/**'
       - 'data/**'
@@ -53,7 +53,12 @@ jobs:
             if [ -d "$dir" ]; then cp -R "$dir" "_site/$dir"; fi
           done
           mkdir -p _site/mfds
-          cp mfds/index.html _site/mfds/index.html
+          cp -R mfds/. _site/mfds/
+          test -s _site/mfds/index.html
+          test -s _site/mfds/sw.js
+          test -s _site/mfds/push-ui.js
+          test -s _site/mfds/manifest.webmanifest
+          test -s _site/mfds/icon.svg
       - name: Verify Oct 13 domestic regression baseline is packaged
         run: |
           python - <<'PY'
