@@ -1,0 +1,20 @@
+{
+  "id": "/pharm-briefing-desk/mfds/",
+  "name": "데일리팜 의약품 적응증 변경이력",
+  "short_name": "적응증 변경",
+  "description": "식약처 허가 효능·효과 변경이력과 개별 알림",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8fb",
+  "theme_color": "#2458a6",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
