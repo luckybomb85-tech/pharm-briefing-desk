@@ -804,7 +804,14 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
   }
   source="MFDS 품목조회";
  }catch(e){error=String(e).slice(0,130)}
- const results=[...combined.values()].filter(x=>String(x.product||"").length<=155).sort((a,b)=>{
+ const results=[...combined.values()].filter(x=>{
+  const name=String(x.product||"");
+  if(name.length>155)return false;
+  // The MFDS global catalogue also contains oral-care quasi-drugs. Keep
+  // those out of an approved medicine indication-autocomplete menu.
+  if(/치약|치아미백|미백치아|치석제거|가글액|구강청결|화장품|제모제/.test(name))return false;
+  return true;
+ }).sort((a,b)=>{
   const rank=(x:any)=>{
    const norm=String(x.product||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"");
    if(norm===key)return 0;
