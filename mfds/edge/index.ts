@@ -57,7 +57,7 @@ async function html(url: string): Promise<string> {
 type Item = {
   source: string; source_id: string; source_url: string; title: string;
   category: string; company: string; product: string; ingredient: string;
-  published_at: string | null; stage: string; attachment_names: string[];
+  published_at: string | null; effective_at: string | null; stage: string; attachment_names: string[];
   classification: string; rationale: string; alert_state: string;
 };
 function parseRows(markup: string, source: "review" | "change_order"): Item[] {
@@ -89,7 +89,9 @@ function parseRows(markup: string, source: "review" | "change_order"): Item[] {
         "&infoClassCode=" + encodeURIComponent(cls || "");
     const dates = cells.map(plain).filter(x => /^\d{4}-\d\d-\d\d$/.test(x));
     const category = plain(cells[source === "review" ? 1 : 2]);
-    const published = source === "review" ? plain(cells[8]) : (dates[0] || null);
+    const published = source === "review" ? plain(cells[8]) : plain(cells[6]);
+    // Change-order columns: [4] date of legal effect, [6] first posted date, [7] stage date.
+    const effective = source === "change_order" ? plain(cells[4]) : null;
     const isChange = source === "review" && /변경/.test(title);
     const promising = /적응증|효능.{0,2}효과|치료대상|치료\s*범위|대상환자|허가\s*확대/i.test(title);
     const classification = source === "review"
@@ -101,6 +103,7 @@ function parseRows(markup: string, source: "review" | "change_order"): Item[] {
       product: source === "review" ? plain(cells[4]) : "",
       ingredient: source === "review" ? plain(cells[5]) : "",
       published_at: /^\d{4}-\d\d-\d\d$/.test(published || "") ? published : null,
+      effective_at: /^\d{4}-\d\d-\d\d$/.test(effective || "") ? effective : null,
       stage: source === "change_order" ? plain(cells[5]) : "",
       attachment_names: [], classification,
       rationale: source === "review"
@@ -157,6 +160,9 @@ async function archiveSource(source: "review" | "change_order", maxPages: number
         if (match) totalPages=Number(match[1]);
       }
       const rows=parseRows(doc,source);
+      if (source==="change_order" && rows.length) await db("POST","rpc/mfds_monitor_repair_order_dates",{
+        payload:rows.map(x=>({source_id:x.source_id,published_at:x.published_at,effective_at:x.effective_at}))
+      });
       if (!rows.length && page === 1) throw Error("Empty initial archive page");
       if (!rows.length) {
         await db("PATCH","mfds_monitor_archive_cursor?source=eq."+source,
@@ -197,6 +203,16 @@ async function archiveSource(source: "review" | "change_order", maxPages: number
   return {source,pages:checked,newly_saved:saved,next_page:page,last_date:lastDate,total_pages:totalPages};
 }
 
+async function repairOrderHistory(): Promise<unknown> {
+  let corrected=0;
+  for(let page=1;page<=2;page++){
+    const rows=parseRows(await html(ORIGIN+"/CCBAR01F012/getList?page="+page+"&limit=50"),"change_order");
+    corrected+=await db("POST","rpc/mfds_monitor_repair_order_dates",{
+      payload:rows.map(x=>({source_id:x.source_id,published_at:x.published_at,effective_at:x.effective_at}))
+    });
+  }
+  return {corrected};
+}
 async function backfill(): Promise<unknown> {
   // Low-impact incremental archive import, separate from daily monitoring.
   const results=[];
@@ -208,7 +224,7 @@ async function archiveFeed(query: URLSearchParams): Promise<unknown> {
   const kind=query.get("kind")==="orders"?"change_order":"review";
   const limit=Math.max(10,Math.min(50,Number(query.get("limit")||30)||30));
   const offset=Math.max(0,Math.min(10000,Number(query.get("offset")||0)||0));
-  let route="mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,first_seen_at"+
+  let route="mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,effective_at,stage,attachment_names,classification,rationale,alert_state,first_seen_at"+
     "&source=eq."+kind+"&order=published_at.desc.nullslast,id.desc&offset="+offset+"&limit="+(limit+1);
   if(kind==="review") route+="&title=ilike."+encodeURIComponent("*변경*");
   const year=query.get("year")||"";
@@ -242,6 +258,9 @@ async function collect(): Promise<unknown> {
   for (const source of ["review", "change_order"] as const) {
     try {
       const incoming = await fetchList(source);
+      if (source === "change_order") await db("POST","rpc/mfds_monitor_repair_order_dates",{
+        payload:incoming.map(x=>({source_id:x.source_id,published_at:x.published_at,effective_at:x.effective_at}))
+      });
       if (source === "review") report.reviews_checked = incoming.length;
       else report.changes_checked = incoming.length;
       const knownRows = await db("GET",
@@ -278,7 +297,7 @@ async function feed(): Promise<unknown> {
   const [events, leads, recent, runs, stats] = await Promise.all([
     db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=300"),
     db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,company,product,ingredient,published_at,attachment_names,classification,rationale,alert_state&source=eq.review&classification=eq.clinical_lead&order=published_at.desc,id.desc&limit=150"),
-    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,approval_changed_at,change_type,change_summary,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200"),
+    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,effective_at,stage,attachment_names,classification,rationale,alert_state,approval_changed_at,change_type,change_summary,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200"),
     db("GET", "mfds_monitor_runs?select=id,started_at,finished_at,status,reviews_checked,changes_checked,errors&order=id.desc&limit=5"),
     db("GET", "rpc/mfds_monitor_archive_stats")
   ]);
@@ -302,6 +321,7 @@ Deno.serve(async (req: Request) => {
     if (!await validToken(req.headers.get("x-monitor-token") || "")) return reply({error:"Unauthorized"},401);
     const input=await req.json().catch(()=>({}));
     if(input?.mode==="backfill") return reply(await backfill());
+    if(input?.mode==="repair_order_dates") return reply(await repairOrderHistory());
     return reply(await collect());
   } catch (e) {
     return reply({error:String(e).slice(0,420)},500);
