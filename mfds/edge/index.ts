@@ -92,8 +92,8 @@ function parseRows(markup: string, source: "review" | "change_order"): Item[] {
     const isChange = source === "review" && /변경/.test(title);
     const promising = /적응증|효능.{0,2}효과|치료대상|치료\s*범위|대상환자|허가\s*확대/i.test(title);
     const classification = source === "review"
-      ? (isChange ? (promising ? "high_candidate" : "change_candidate") : "other")
-      : (promising ? "change_candidate" : "monitor_only");
+      ? (isChange ? "unverified" : "other")
+      : "monitor_only";
     items.push({
       source, source_id: key, source_url: linkUrl, title, category,
       company: source === "review" ? plain(cells[3]) : "",
@@ -119,7 +119,7 @@ async function attachReportNames(item: Item): Promise<void> {
     item.attachment_names = [...new Set(names)].slice(0, 10);
     const joined = names.join(" ");
     if (/적응증|효능.{0,2}효과|치료.{0,7}추가|질환.{0,8}추가|암.{0,18}추가|확대/i.test(joined)) {
-      item.classification = "high_candidate";
+      item.classification = "unverified";
       item.rationale = "첨부 보고서 파일명에 적응증·치료영역 추가 관련 표현 발견. 원문 확인 필요.";
     }
   } catch (_e) {
@@ -181,8 +181,7 @@ async function collect(): Promise<unknown> {
       }
       report.new_total += baseline ? 0 : fresh.length;
       report.new_candidates += baseline ? 0 :
-        fresh.filter(x => x.classification === "high_candidate" ||
-          x.classification === "change_candidate").length;
+        fresh.filter(x => x.classification === "verified_change").length;
     } catch (e) {
       report.errors.push(source + ": " + String(e).slice(0, 220));
     }
