@@ -204,43 +204,124 @@ async function archiveSource(source: "review" | "change_order", maxPages: number
 }
 
 
+
+function decodeXmlAttr(raw: string): string {
+  let s=raw;
+  for(let i=0;i<3;i++){
+    const t=decodeHtml(s).replace(/&#x([0-9a-fA-F]+);/g,(_,n)=>String.fromCodePoint(parseInt(n,16)));
+    if(t===s)break;
+    s=t;
+  }
+  return s.replace(/&nbsp;/g," ").replace(/\u00a0/g," ");
+}
+function extractEfficacyLines(docData: string): string[] {
+  // The official MFDS per-revision XML is transmitted as an escaped HTML
+  // data-docdata attribute, not as an XML API response.
+  let xml=decodeXmlAttr(docData);
+  xml=xml.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,(_,t)=>t)
+    .replace(/<SECTION\b[^>]*title="([^"]+)"[^>]*>/gi,(_,t)=>"\n"+decodeXmlAttr(t)+"\n")
+    .replace(/<ARTICLE\b[^>]*title="([^"]*)"[^>]*\/?>/gi,(_,t)=>"\n"+decodeXmlAttr(t)+"\n")
+    .replace(/<PARAGRAPH\b[^>]*>/gi,"\n")
+    .replace(/<\/PARAGRAPH>/gi,"\n")
+    .replace(/<BR\b[^>]*\/?>/gi,"\n")
+    .replace(/<\/(?:ARTICLE|SECTION|ROW|CELL)>/gi,"\n")
+    .replace(/<[^>]+>/g," ");
+  const seen=new Set<string>();
+  const lines:string[]=[];
+  for(const chunk of decodeXmlAttr(xml).split(/\r?\n/)){
+    const cleaned=chunk.replace(/\s+/g," ").trim();
+    if(!cleaned || cleaned==="효능효과" || cleaned==="효능·효과") continue;
+    const canonical=cleaned.normalize("NFKC").replace(/\s+/g," ").trim();
+    if(seen.has(canonical))continue;
+    seen.add(canonical);lines.push(cleaned);
+  }
+  return lines;
+}
+function comparisonKey(line: string): string {
+  return line.normalize("NFKC").replace(/^\s*\d{1,2}\s*[.)]\s*/,"").replace(/[\u00a0\s]+/g," ").trim();
+}
+type EfficacyVersion={history_seq:number,changed_at:string,lines:string[]};
+function parseOfficialHistoryVersions(htmlText: string): EfficacyVersion[] {
+  const result:EfficacyVersion[]=[];
+  for(const row of htmlText.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+    const m=row[1].match(/data-docdata="([\s\S]*?)"\s+onclick="detailHist\(&#39;(\d+)&#39;,\s*&#39;(\d{4}-\d{2}-\d{2})&#39;/i);
+    if(!m)continue;
+    const lines=extractEfficacyLines(m[1]);
+    if(!lines.length)continue;
+    result.push({history_seq:Number(m[2]),changed_at:m[3],lines});
+  }
+  return result.sort((a,b)=>a.changed_at.localeCompare(b.changed_at)||a.history_seq-b.history_seq);
+}
 async function syncOfficialEfficacyHistory(): Promise<unknown> {
-  const targets=await db("GET","mfds_monitor_drug_targets?select=item_seq,product,company,source_url,active&active=eq.true&order=item_seq.asc&limit=100");
-  const results=[];
+  const targets=await db("GET","mfds_monitor_drug_targets?select=item_seq,product,company,ingredient,source_url,active&active=eq.true&order=item_seq.asc&limit=100");
+  const results:Record<string,unknown>[]=[];
   for(const target of targets){
-    try {
-      // Fetch the official MFDS item-detail change table. Do not infer the
-      // content/type of an indication change from the date alone.
-      const h=await html(target.source_url);
-      const tablePos=h.indexOf('id="tblChf"');
-      if(tablePos<0)throw Error("MFDS change history table not found");
-      const tbody=h.slice(tablePos).match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
-      if(!tbody)throw Error("No efficacy history rows");
-      const dates=new Set<string>();
-      for(const m of tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
-        const cells=[...m[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
-        const date=cells.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
-        const category=cells.at(-1)||"";
-        if(date&&/효능.?효과/.test(category))dates.add(date);
+    try{
+      const detail=await html(target.source_url);
+      const section=detail.slice(detail.indexOf('id="tblChf"'));
+      const tbody=section.match(/<tbody\b[^>]*>([\s\S]*?)<\/tbody>/i)?.[1]||"";
+      if(!tbody)throw Error("Official efficacy-change history table missing");
+      const officialDates=new Set<string>();
+      for(const row of tbody.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+        const cols=[...row[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(x=>plain(x[1]));
+        const day=cols.find(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
+        if(day&&/효능.?효과/.test(cols.at(-1)||""))officialDates.add(day);
       }
-      const values=[...dates].map(date=>({
-        item_seq:target.item_seq,product:target.product,company:target.company,
-        changed_at:date,change_section:"효능·효과",
-        classification:"미분류",evidence_url:target.source_url
-      }));
-      if(values.length)await db("POST",
-        "mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",
-        values,"resolution=ignore-duplicates,return=minimal");
+      const url=ORIGIN+"/pbp/CCBBB01/getItemChangeHistList?itemSeq="+target.item_seq+"&docType=EE&page=1";
+      const versions=parseOfficialHistoryVersions(await html(url));
+      // MFDS marks the first digital version with a star. It is a comparison
+      // baseline, not proof of a new indication on that date.
+      const indexed=new Map<string,Record<string,unknown>>();
+      const now=new Date().toISOString();
+      const older=versions.slice().sort((a,b)=>a.changed_at.localeCompare(b.changed_at));
+      for(let i=0;i<older.length;i++){
+        const newer=older[i],prior=older[i-1];
+        const beforeKeys=new Set((prior?.lines||[]).map(comparisonKey));
+        const afterKeys=new Set(newer.lines.map(comparisonKey));
+        const added=prior ? newer.lines.filter(x=>!beforeKeys.has(comparisonKey(x))) : [];
+        const removed=prior ? prior.lines.filter(x=>!afterKeys.has(comparisonKey(x))) : [];
+        const status=prior?"compared":"baseline";
+        const classification=prior ? (
+          added.length&&removed.length?"변경":added.length?"추가":removed.length?"삭제":"변경"
+        ):"비교 기준";
+        indexed.set(newer.changed_at,{
+          item_seq:target.item_seq,product:target.product,company:target.company,
+          ingredient:target.ingredient||"",changed_at:newer.changed_at,change_section:"효능·효과",
+          classification,evidence_url:target.source_url,
+          before_text:prior?.lines.join("\n")||null,
+          after_text:newer.lines.join("\n"),added_lines:added,removed_lines:removed,
+          diff_status:status,history_seq:newer.history_seq,
+          prior_history_seq:prior?.history_seq||null,detail_checked_at:now,
+          last_seen_at:now
+        });
+      }
+      // Some MFDS history dates predate electronic document conversion and
+      // have no version XML. Retain them as change dates, without inventing text.
+      for(const day of officialDates) {
+        if(!indexed.has(day)){
+          indexed.set(day,{
+            item_seq:target.item_seq,product:target.product,company:target.company,
+            ingredient:target.ingredient||"",changed_at:day,change_section:"효능·효과",
+            classification:"변경",evidence_url:target.source_url,
+            before_text:null,after_text:null,
+            added_lines:[],removed_lines:[],diff_status:"not_available",
+            history_seq:null,prior_history_seq:null,detail_checked_at:now,last_seen_at:now
+          });
+        }
+      }
+      const records=[...indexed.values()];
+      if(records.length)await db("POST","mfds_monitor_efficacy_history?on_conflict=item_seq,changed_at,change_section",
+        records,"resolution=merge-duplicates,return=minimal");
       await db("PATCH","mfds_monitor_drug_targets?item_seq=eq."+target.item_seq,{
-        last_checked_at:new Date().toISOString(),last_checked_status:"ok:"+values.length
+        last_checked_at:now,last_checked_status:"ok:"+records.length
       },"return=minimal");
-      results.push({product:target.product,item_seq:target.item_seq,dates:values.length,latest:[...dates].sort().at(-1)});
-    }catch(e){
-      const error=String(e).slice(0,250);
+      results.push({product:target.product,dates:records.length,comparable:records.filter(x=>x.diff_status==="compared").length,undigitized:records.filter(x=>x.diff_status==="not_available").length});
+    }catch(error){
+      const message=String(error).slice(0,250);
       await db("PATCH","mfds_monitor_drug_targets?item_seq=eq."+target.item_seq,{
-        last_checked_at:new Date().toISOString(),last_checked_status:error
+        last_checked_at:new Date().toISOString(),last_checked_status:message
       },"return=minimal");
-      results.push({product:target.product,item_seq:target.item_seq,error});
+      results.push({product:target.product,error:message});
     }
   }
   return {mode:"efficacy_sync",target_count:targets.length,results};
