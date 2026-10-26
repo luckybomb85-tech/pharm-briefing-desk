@@ -193,11 +193,14 @@ async function collect(): Promise<unknown> {
   return { ...report, run_id: run.id };
 }
 async function feed() {
-  const [items, runs] = await Promise.all([
-    db("GET", "mfds_monitor_items?select=id,source,source_id,source_url,title,category,company,product,ingredient,published_at,stage,attachment_names,classification,rationale,alert_state,first_seen_at&order=published_at.desc.nullslast,id.desc&limit=200"),
-    db("GET", "mfds_monitor_runs?select=id,started_at,finished_at,status,reviews_checked,changes_checked,new_total,new_candidates,errors&order=id.desc&limit=8"),
+  // Critical: the review-publication date is NOT the date an indication
+  // changed. Raw source-list entries are retained as internal leads only.
+  // Never publish those as clinical approval events or push notifications.
+  const [events, runs] = await Promise.all([
+    db("GET", "mfds_monitor_events?select=id,product,company,ingredient,event_date,event_type,change_area,title,before_text,after_text,details,evidence_url,mfds_url,verification,alert_state&verification=in.(reviewed,official_confirmed)&order=event_date.desc,id.desc&limit=250"),
+    db("GET", "mfds_monitor_runs?select=id,started_at,finished_at,status,reviews_checked,changes_checked,errors&order=id.desc&limit=5"),
   ]);
-  return { items, runs, description:"공개된 심사결과 및 변경명령 기반 후보. 적응증 추가 확정 아님.", count:items.length };
+  return { events, runs, description:"허가사항 실제 변경일과 전후 내용을 확인한 사건만 표시. 공개일만 있는 심사보고서는 제외.", count:events.length };
 }
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response(null,{status:204,headers:HEADERS});
