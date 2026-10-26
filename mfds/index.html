@@ -50,7 +50,7 @@ h2{margin:0;font-size:18px;letter-spacing:-.5px}
 .item-date{font-size:13px;color:#51627a;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
 .item-date.actual{font-size:15px;color:var(--blue);font-weight:850}
 .item-title{font-size:16px;font-weight:800;letter-spacing:-.35px;margin:0 0 5px;line-height:1.45}
-.item-title a{text-decoration:none}.item-title a:hover{text-decoration:underline}
+.item-title a{text-decoration:none;font-size:inherit;color:var(--ink);font-weight:inherit}.item-title a:hover{text-decoration:underline}
 .dim{font-size:12px;color:var(--muted);margin:0}
 .evidence{background:#f7f9fc;border-radius:7px;border:1px solid #edf1f6;margin-top:10px;padding:10px 12px;font-size:12px;line-height:1.6;overflow-wrap:anywhere;color:#536078}
 .diff{background:#f7faff;border:1px solid #e5edf9;border-radius:9px;padding:10px 13px;margin-top:12px}
@@ -192,10 +192,14 @@ function renderRaw(x,context){
  const lead=x.classification==="clinical_lead";
  appended(tags,"span","pill "+(lead?"lead":"unverified"),lead?"중요 검토 후보":context==="orders"?"변경명령":"변경심사 자료");
  if(x.category)appended(tags,"span","pill source",x.category);
- appended(head,"span","item-date",(context==="orders"?"최초등록 ":"자료공개 ")+date(x.published_at));
+ if(x.approval_changed_at){
+  appended(tags,"span","pill verified",x.change_type||"허가변경 확인");
+  appended(head,"span","item-date actual","허가변경 "+date(x.approval_changed_at));
+ }else appended(head,"span","item-date",(context==="orders"?"최초등록 ":"자료공개 ")+date(x.published_at));
  const h=appended(card,"h3","item-title");
  h.appendChild(link(x.source_url,x.product||x.title));
  appended(card,"p","dim",[x.company,x.ingredient].filter(Boolean).join(" · "));
+ if(x.approval_changed_at)appended(card,"div","note","심사보고서 공개일: "+date(x.published_at)+" (허가변경일과 별개)");
  const titleText=x.title&&x.title!==x.product?x.title:"";
  if(titleText)appended(card,"div","note",titleText);
  if(x.attachment_names&&x.attachment_names.length){
