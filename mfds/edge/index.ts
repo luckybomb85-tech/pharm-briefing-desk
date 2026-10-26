@@ -528,7 +528,9 @@ function substantiveEffectDiff(before:string,after:string):{
   if(bestIndex>=0){
    used.add(bestIndex);usedAfter.add(currentIndex);
    const previous=old[bestIndex];
-   if(bestScore>=0.94&&!importantTherapeuticChange(previous.text,next.text)){
+   const meaningfulClinicalChange=importantTherapeuticChange(previous.text,next.context+" "+next.text);
+   const sameExistingRegimen=sharedNamedRegimen(previous.text,next.text) && !meaningfulClinicalChange;
+   if((bestScore>=0.94&&!importantTherapeuticChange(previous.text,next.text))||sameExistingRegimen){
     editorial++;
    }else{
     changes.push({kind:"modified",context:next.context,text:next.text,
