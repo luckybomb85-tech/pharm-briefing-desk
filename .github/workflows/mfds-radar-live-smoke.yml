@@ -48,10 +48,15 @@ jobs:
           import re
           html=Path("/tmp/mfds-radar-dom.html").read_text(encoding="utf-8")
           bad=["자료를 불러오지 못했습니다","자료를 가져오지 못했습니다","연결 오류","응답 형식 오류"]
-          errors=[x for x in bad if x in html]
-          rendered=len(re.findall(r'<article class="item"',html))
-          ok=(rendered>=1 and "임델트라" in html and "최신 조회" in html and not errors)
-          print("BROWSER_RENDERS",rendered,"HAS_IMDELTRA",("임델트라" in html),"UI_ERRORS",errors)
+          # Only evaluate text actually rendered in the status / card region.
+          # Error messages appearing in <script> source are NOT UI errors.
+          status=re.search(r'id="feedStatus"[^>]*>([^<]*)<',html)
+          display_status=status.group(1) if status else "STATUS_NODE_MISSING"
+          cards=html.split('<div id="items" class="rows">',1)[-1].split('</section>',1)[0]
+          errors=[x for x in bad if x in cards or x in display_status]
+          rendered=len(re.findall(r'<article class="item"',cards))
+          ok=(rendered>=1 and "임델트라" in cards and "최신 조회" in display_status and not errors)
+          print("BROWSER_RENDERS",rendered,"STATUS",display_status,"UI_ERRORS",errors)
           if not ok:
               start=html.find('id="items"')
               print(html[max(start-300,0):start+2000])
