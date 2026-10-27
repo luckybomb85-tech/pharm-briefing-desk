@@ -19,6 +19,17 @@
       "original_title": null
     },
     {
+      "title": "FDA 경고에 유통사 탓한 로킷헬스케어, 치료용 허가 없인 美 사업 불확실성↑ - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 로킷헬스케어가 FDA 경고를 받은 가운데, 유통사를 문제로 지적하며 치료목적 허가 없이는 미국 사업의 불확실성이 증가했다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBPeGRnRHNBay1ZVnVsVzhQVm03QUVscWxUMGptTjhLS0tEZmNPMmE4ZkE3bVI2dGkxSnY3bVE2SmM0dFJVRl9nTDNkU3AwUU1tVzhqazg3SDVSbGw1eExRcExtNjhCSkZoMFZxZlpR?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-26T22:10:03+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
       "title": "[ESMO] “美 뚫은 ‘리픽투’ 12월 상업화…‘리보세라닙’, 빠르면 연내 미국 허가”",
       "summary": "엘레바테라퓨틱스가 FDA로부터 승인받은 담관암 치료제 ‘리픽투(리라푸그라티닙)’를 오는 12월 미국 시장에 상업 공급한다. 초기 치료 대상 환자는 약 600명으로 의료진 교육과 보험급여 협상에 집중 중이다. 또한 간세포암 1차 치료제로 ‘리보세라닙·캄렐리주맙’ 병용요법의 FDA 허가 재신청을 진행해 네 번째 도전에 임하고 있다. 이번 재신청의 핵심 변수는 제조시설 관련 규제 요건이다.",
       "source": "https://www.thebionews.net/news/articleView.html?idxno=29475",
@@ -195,6 +206,17 @@
       "original_title": null
     },
     {
+      "title": "코센틱스, 류마티스 다발근통 새 치료 옵션 등장 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 코센틱스가 류마티스 다발근통 치료에 새로운 옵션으로 주목받고 있다. 기존 치료법과 차별화된 효과가 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9FcEdOWWxGamVpYXZQSUJlWG5TTkJXU0xRcENFMEFUbXZPeDM0bEhqajBRRUt2cDlsQ2NDS2FnSkgyOTlzMEVlZTVMa0JBaExqNWhTYXlvWERTRUVhYXQxNEVBNzVIZXBEby1N?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-26T21:01:42+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
       "title": "[숏폼] 루닛, 미 항암제 협력에 상한가… 재무 부담 넘을까",
       "summary": "루닛은 미국 서밋 테라퓨틱스와 신약 후보물질 '이보네시맙' 임상 3상에 적용할 AI 바이오마커 플랫폼 협력을 발표했다. 이 기술은 기존 조직 슬라이드 이미지만으로 치료 반응 예측 바이오마커 발굴을 가능하게 하며, 루닛은 이번 협력으로 글로벌 신약 개발 분야에서 AI 병리 기술 활용 가치를 높일 계획이다.",
       "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80213",
@@ -222,7 +244,7 @@
   "telegram": false,
   "publish_allowed": false,
   "selected_count": {
-    "domestic": 19,
+    "domestic": 21,
     "global": 0
   },
   "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
