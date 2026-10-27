@@ -835,6 +835,7 @@ function renderCatalogue(){
  $("#catalogueMore").disabled=state.lookupBusy;
 }
 async function chooseDrug(candidate){
+ state.more=false;
  const seq=++state.lookupSerial;
  state.lookupSelected=candidate;state.lookupData=null;
  renderCatalogue();
@@ -875,6 +876,7 @@ async function searchCatalogue(query,append=false){
  $("#searchButton").disabled=append;
  $("#catalogueMore").disabled=true;
  if(!append){
+  state.more=false;
   state.lookupQuery=q;state.lookupField=field;state.lookupMatches=[];state.lookupPage=0;
   state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
   state.lookupTotalAtLeast=0;state.lookupPartial=false;
@@ -949,6 +951,7 @@ function drawSuggestions(){
  panel.hidden=false;$("#keyword").setAttribute("aria-expanded","true");
 }
 function selectSuggestion(item){
+ state.more=false;
  window.clearTimeout(state.suggestionTimer);
  ++state.suggestionSerial;
  closeSuggestions();
@@ -1086,7 +1089,7 @@ $("#catalogueMore").addEventListener("click",()=>searchCatalogue(state.lookupQue
 $("#moreButton").addEventListener("click",()=>{if(!state.lookupSelected&&state.more&&!state.busy)load(false)});
 if("IntersectionObserver" in window){
  const observer=new IntersectionObserver(entries=>{
-   if(entries.some(e=>e.isIntersecting)&&state.more&&!state.busy)load(false);
+   if(entries.some(e=>e.isIntersecting)&&state.more&&!state.busy&&!state.lookupQuery)load(false);
  },{rootMargin:"0px 0px 220px 0px"});
  observer.observe($("#sentinel"));
 }
