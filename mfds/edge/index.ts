@@ -673,6 +673,8 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
   if(start&&end&&start>end)throw Error("시작 날짜가 종료 날짜보다 늦습니다.");
   const kind=query.get("type")||"all";
   const needle=(query.get("q")||"").trim().toLocaleLowerCase("ko-KR").slice(0,80);
+  const requestedField=query.get("field")||"";
+  const searchField=["product","company","ingredient"].includes(requestedField)?requestedField:"all";
   const rows=merged.filter((row:any)=>{
     if(start&&row.changed_at<start)return false;
     if(end&&row.changed_at>end)return false;
@@ -682,7 +684,8 @@ async function filteredEfficacyFeed(query:URLSearchParams):Promise<unknown> {
         (row.modified_count>0||row.change_type==="변경");
       if(!contains)return false;
     }
-    if(needle&&![row.product,row.company,row.ingredient].join(" ").toLocaleLowerCase("ko-KR").includes(needle))return false;
+    const searchText=searchField==="all"?[row.product,row.company,row.ingredient].join(" "):String(row[searchField]||"");
+    if(needle&&!searchText.toLocaleLowerCase("ko-KR").includes(needle))return false;
     return true;
   });
   rows.sort((a:any,b:any)=>b.changed_at.localeCompare(a.changed_at)||a.product.localeCompare(b.product,"ko-KR"));
@@ -733,7 +736,10 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
  const q=(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
  if(q.length<2||q.length>70)return {matches:[],has_more:false,total_at_least:0,page:1,message:"검색어는 2~70자로 입력해주세요."};
  const page=Math.max(1,Math.min(50,Number(params.get("page")||1)||1));
- const fields=["itemName","ingrName1","entpName"];
+ const requestedField=params.get("field")||"";
+ const searchField=["product","company","ingredient"].includes(requestedField)?requestedField:"all";
+ const officialFields:Record<string,string>={product:"itemName",company:"entpName",ingredient:"ingrName1"};
+ const fields=searchField==="all"?["itemName","ingrName1","entpName"]:[officialFields[searchField]];
  const pageSize=15; // MFDS searchDrug's fixed actual page size; the 'limit' query string is ignored.
  const norm=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
  const propertyByField:Record<string,"product"|"ingredient"|"company">={
@@ -768,10 +774,15 @@ async function lookupMFDSCatalogue(params:URLSearchParams):Promise<unknown>{
  if(!ok.length)throw Error("식약처 품목 검색 서버에 연결하지 못했습니다.");
  const matches=new Map<string,CatalogueItem>();
  for(const part of ok)for(const item of part.value.items)matches.set(item.item_seq,item);
- const ranked=[...matches.values()].filter(item=>
-  [item.product,item.company,item.ingredient].some(x=>x.toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(norm))
- ).sort((a,b)=>{
+ const ranked=[...matches.values()].filter(item=>{
+  const fields=searchField==="all"?[item.product,item.company,item.ingredient]:[item[searchField as "product"|"company"|"ingredient"]];
+  return fields.some(x=>String(x||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(norm));
+ }).sort((a,b)=>{
   const score=(x:CatalogueItem)=>{
+   if(searchField!=="all"){
+    const value=String(x[searchField as "product"|"company"|"ingredient"]||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+    return value===norm?0:value.startsWith(norm)?1:2;
+   }
    const product=x.product.toLocaleLowerCase("ko-KR");
    if(product===norm||product.replace(/\([^)]*\)/g,"").trim()===norm)return 0;
    if(product.startsWith(norm))return 1;
@@ -807,11 +818,14 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
  const q=String(params.get("q")||"").normalize("NFKC").trim().replace(/\s+/g," ");
  if(q.length<2||q.length>70)return {matches:[],query:q};
  const key=q.toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+ const requestedField=params.get("field")||"";
+ const searchField=["product","company","ingredient"].includes(requestedField)?requestedField:"all";
  const escaped=q.replace(/[(),.*%\\]/g,"").trim();
  if(escaped.length<2)return {matches:[],query:q};
- const clause="(product.ilike.*"+escaped+"*,ingredient.ilike.*"+escaped+"*,company.ilike.*"+escaped+"*)";
- const local:any[]=await db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope&or="+encodeURIComponent(clause)+"&limit=50");
- const match=(x:any)=>[x.product,x.ingredient,x.company].some((t:any)=>
+ const clause=searchField==="all"?"(product.ilike.*"+escaped+"*,ingredient.ilike.*"+escaped+"*,company.ilike.*"+escaped+"*)":searchField+".ilike.*"+escaped+"*";
+ const filter=searchField==="all"?"or="+encodeURIComponent(clause):encodeURIComponent(clause);
+ const local:any[]=await db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope&"+filter+"&limit=50");
+ const match=(x:any)=>(searchField==="all"?[x.product,x.ingredient,x.company]:[x[searchField]]).some((t:any)=>
   String(t||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(key));
  const nearby=(local||[]).filter(match).map((x:any)=>({
   item_seq:x.item_seq,product:x.product,ingredient:x.ingredient,company:x.company,
@@ -827,7 +841,7 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
  try{
   const u=new URL(ORIGIN+"/searchDrug");
   u.searchParams.set("searchYn","Y");u.searchParams.set("page","1");
-  u.searchParams.set("itemName",q);
+  u.searchParams.set(searchField==="company"?"entpName":searchField==="ingredient"?"ingrName1":"itemName",q);
   const htmlText=await html(u.toString());
   for(const item of parseDrugCatalogue(htmlText))if(match(item)){
    combined.set(item.item_seq,{...item,master_watch:combined.get(item.item_seq)?.master_watch||false});
@@ -843,6 +857,10 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
   return true;
  }).sort((a,b)=>{
   const rank=(x:any)=>{
+   if(searchField!=="all"){
+    const value=String(x[searchField]||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"");
+    return value===key?0:value.startsWith(key)?1:2;
+   }
    const norm=String(x.product||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"");
    if(norm===key)return 0;
    if(norm.startsWith(key))return 1;
