@@ -1,8 +1,8 @@
 {
   "id": "/pharm-briefing-desk/mfds/",
-  "name": "데일리팜 의약품 적응증 변경이력",
-  "short_name": "적응증 변경",
-  "description": "식약처 허가 효능·효과 변경이력과 개별 알림",
+  "name": "적응증 변경 모니터 | 데일리팜",
+  "short_name": "적응증 변경 모니터",
+  "description": "의약품 적응증 변경이력 검색·비교 및 신규 변경 자동알림",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
