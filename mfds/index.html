@@ -6,11 +6,11 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#2458a6">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="적응증 변경">
+<meta name="apple-mobile-web-app-title" content="적응증 변경 모니터">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
 <script src="./push-ui.js" defer></script>
-<title>의약품 적응증 변경이력 | 데일리팜</title>
+<title>적응증 변경 모니터 | 데일리팜</title>
 <style>
 :root{--ink:#17243a;--muted:#69768b;--border:#e1e7ee;--wash:#f7f8fb;--blue:#2458a6;--green:#157347;--red:#b44242}
 *{box-sizing:border-box}
@@ -290,90 +290,69 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .push-small{font-size:11px;color:#8090a4}
 .settings-open.active::after{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#199167}
 @media(max-width:480px){.push-dialog{padding:15px}}
-/* Mobile search selector: do not squeeze three choices into the text field. */
+/* Unified search bar: search icon, keyword, clear action and field tabs. */
+.search .keyword-row{display:flex;align-items:center;position:relative;min-width:0;width:100%;height:44px;border:1px solid #d7deea;border-radius:9px;background:#fff;gap:0}
+.search .keyword-row:focus-within{border-color:#7d9fd0;box-shadow:0 0 0 2px #e8f1ff}
+.search .keyword-wrap{display:flex;align-items:center;position:relative;flex:1 1 auto;min-width:0;width:auto;height:100%}
+.search .keyword-wrap>input{display:block;flex:1 1 auto;min-width:0;width:100%;height:42px;border:0!important;border-radius:9px;background:transparent;padding:0 34px 0 37px;font-size:14px;outline:0;box-shadow:none;appearance:none}
+.search .keyword-wrap>input::-webkit-search-cancel-button{-webkit-appearance:none;display:none}
+.search-symbol{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#768aa3;pointer-events:none}
+.clear-keyword{position:absolute;right:5px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:27px;height:27px;padding:0;border:0;border-radius:6px;background:transparent;color:#8290a1;font-size:21px;line-height:1;z-index:1}
+.clear-keyword:hover{background:#edf2f8;color:#335b84}
+.clear-keyword:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.search .field-tabs{margin-right:5px;flex:0 0 auto}
+.search .suggestions{z-index:30}
+.publisher{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:0;min-height:36px;line-height:1.2;white-space:nowrap}
+.publisher-name{font-size:12px;font-weight:850;color:#496078}
+.publisher-byline{font-size:11px;font-weight:690;color:#7a8799}
+.header-tools{align-items:center}
+.settings-open{min-height:36px}
 @media(max-width:760px){
- .search .keyword-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr);
-  gap:7px;
-  width:100%;
-  min-width:0;
-  border:0;
-  border-radius:0;
-  background:transparent;
- }
- .search .keyword-wrap{display:block;min-width:0;width:100%;flex:none}
- .search .keyword-wrap>input{
-  display:block;
-  width:100%;
-  min-width:0;
-  height:43px;
-  box-sizing:border-box;
-  border:1px solid #d7deea;
-  border-radius:8px;
-  padding:10px 12px;
- }
- .search .field-tabs{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:3px;
-  width:100%;
-  max-width:none;
-  height:40px;
-  margin:0;
-  padding:4px;
-  align-self:stretch;
-  box-sizing:border-box;
-  border-radius:9px;
-  background:#eff3f8;
-  border:1px solid #e2e8f1;
- }
- .search .field-tab{
-  display:block;
-  width:100%;
-  min-width:0;
-  height:30px;
-  line-height:28px;
-  flex:none;
-  margin:0;
-  padding:0 6px;
-  font-size:13px;
-  font-weight:700;
-  text-align:center;
-  border-radius:6px;
-  white-space:nowrap;
- }
- .search .field-tab.active{
-  background:#fff;
-  color:#2458a6;
-  border-color:#cfddf0;
-  box-shadow:0 1px 3px #1b3c681c;
- }
+ .search .keyword-row{display:flex;grid-template-columns:none;gap:0;border:1px solid #d7deea;border-radius:9px;background:#fff}
+ .search .keyword-wrap{display:flex;flex:1 1 auto;min-width:0;width:auto;height:100%}
+ .search .keyword-wrap>input{display:block;min-width:0;width:100%;height:42px;border:0!important;border-radius:9px;padding:0 29px 0 32px;font-size:13px}
+ .search-symbol{left:9px;width:17px;height:17px}
+ .clear-keyword{right:2px;width:25px;height:25px;font-size:20px}
+ .search .field-tabs{display:flex;align-items:center;align-self:center;flex:0 0 auto;width:auto;max-width:none;height:34px;gap:1px;margin:0 4px 0 0;padding:2px;border-radius:8px}
+ .search .field-tab{display:block;flex:0 0 36px;width:36px;min-width:0;height:28px;line-height:26px;margin:0;padding:0 1px;font-size:11px;text-align:center;border-radius:6px}
+ .search .field-tab.active{background:#fff;color:#2458a6}
+ .publisher{min-height:34px}
+ .publisher-name{font-size:11px}
+ .publisher-byline{font-size:10px}
+ .settings-open{min-height:34px}
+}
+@media(max-width:360px){
+ .search .field-tab{flex-basis:32px;width:32px;font-size:10px}
+ .search .keyword-wrap>input{padding-left:29px;padding-right:26px}
+ .search-symbol{left:7px;width:16px;height:16px}
+ .clear-keyword{width:23px;height:23px}
 }
 </style>
 </head>
 <body>
 <main class="wrap">
 <header class="page-header">
-  <a class="page-identity home-link" href="./" aria-label="의약품 적응증 변경이력 첫 화면으로 돌아가기" title="첫 화면으로 돌아가기">
+  <a class="page-identity home-link" href="./" aria-label="적응증 변경 모니터 첫 화면으로 돌아가기" title="첫 화면으로 돌아가기">
     <svg class="title-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" role="img" aria-label="의약품">
       <rect x="4.8" y="9.2" width="22.4" height="13.6" rx="6.8" fill="none" stroke="currentColor" stroke-width="2.2" transform="rotate(-45 16 16)"/>
       <path d="m11.2 10.6 10.2 10.2" fill="none" stroke="currentColor" stroke-width="2.2"/>
     </svg>
-    <h1>의약품 적응증 변경이력</h1>
+    <h1>적응증 변경 모니터</h1>
   </a>
   <div class="header-tools">
     <button id="notificationSettings" type="button" class="settings-open" aria-label="알림 설정 열기" title="알림 설정">
       <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"/><path d="M10 21h4"/></svg>
       <span>알림 설정</span>
     </button>
-    <div class="publisher" aria-label="데일리팜"><span class="publisher-mark" aria-hidden="true">D</span><span>데일리팜</span></div>
+    <div class="publisher" aria-label="데일리팜 김진구"><span class="publisher-name">데일리팜</span><span class="publisher-byline">김진구</span></div>
   </div>
 </header>
 <form class="search" id="searchForm" autocomplete="off">
  <div class="keyword-row">
   <div class="keyword-wrap">
-   <input type="search" id="keyword" aria-label="검색어" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="품목명 검색">
+   <svg class="search-symbol" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+   <input type="search" id="keyword" aria-label="품목 검색어" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="">
+   <button type="button" id="clearKeyword" class="clear-keyword" aria-label="검색어 지우기" title="검색어 지우기" hidden>×</button>
    <div id="suggestions" class="suggestions" role="listbox" hidden></div>
   </div>
   <input type="hidden" id="searchField" value="product">
@@ -947,6 +926,9 @@ async function searchCatalogue(query,append=false){
  }
 }
 
+function syncClearKeyword(){
+ $("#clearKeyword").hidden=!$("#keyword").value.length;
+}
 function closeSuggestions(){
  $("#suggestions").hidden=true;
  $("#keyword").setAttribute("aria-expanded","false");
@@ -970,7 +952,7 @@ function selectSuggestion(item){
  window.clearTimeout(state.suggestionTimer);
  ++state.suggestionSerial;
  closeSuggestions();
- $("#keyword").value=item.product;
+ $("#keyword").value=item.product;syncClearKeyword();
  $("#searchField").value="product";syncFieldTabs();
  state.serial++;state.lookupSerial++;
  state.lookupQuery=item.product;state.lookupField="product";
@@ -994,6 +976,7 @@ async function searchSuggestions(query){
  }
 }
 function onKeywordInput(){
+ syncClearKeyword();
  window.clearTimeout(state.suggestionTimer);
  ++state.suggestionSerial;
  const q=$("#keyword").value.trim();
@@ -1037,6 +1020,7 @@ form.addEventListener("submit",ev=>{
 });
 function syncFieldTabs(){
  const current=$("#searchField").value;
+ $("#keyword").setAttribute("aria-label",({product:"품목 검색어",company:"회사 검색어",ingredient:"성분 검색어"})[current]||"검색어");
  for(const button of document.querySelectorAll(".field-tab")){
   const selected=button.dataset.searchField===current;
   button.classList.toggle("active",selected);
@@ -1053,9 +1037,8 @@ for(const button of document.querySelectorAll(".field-tab")){
 }
 syncFieldTabs();
 syncPeriodInputs();
+syncClearKeyword();
 $("#searchField").addEventListener("change",()=>{
- const placeholders={product:"품목명 검색",company:"회사명 검색",ingredient:"성분명 검색"};
- $("#keyword").placeholder=placeholders[$("#searchField").value];
  clearTimeout(state.suggestionTimer);++state.suggestionSerial;
  state.suggestionMatches=[];closeSuggestions();
  if($("#keyword").value.trim().length>=2)onKeywordInput();
@@ -1065,6 +1048,20 @@ $("#periodSelect").addEventListener("change",()=>{
  if(state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory();
 });
 $("#keyword").addEventListener("input",onKeywordInput);
+$("#keyword").addEventListener("focus",()=>{
+ if($("#keyword").value)$("#keyword").select();
+});
+$("#keyword").addEventListener("click",()=>{
+ if($("#keyword").value)$("#keyword").select();
+});
+$("#clearKeyword").addEventListener("click",()=>{
+ $("#keyword").value="";
+ syncClearKeyword();
+ window.clearTimeout(state.suggestionTimer);
+ ++state.suggestionSerial;
+ state.suggestionMatches=[];closeSuggestions();
+ $("#keyword").focus();
+});
 $("#keyword").addEventListener("keydown",event=>{
  if(event.key==="Escape"){closeSuggestions();return;}
  if($("#suggestions").hidden||!state.suggestionMatches.length)return;
@@ -1104,7 +1101,7 @@ if(/^\d{9}$/.test(directSeq)){
    state.lookupQuery=candidate.product;
    state.lookupPage=1;state.lookupMatches=[candidate];state.lookupHasMore=false;
    state.lookupTotalAtLeast=1;
-   $("#keyword").value=candidate.product.slice(0,80);
+   $("#keyword").value=candidate.product.slice(0,80);syncClearKeyword();
    await chooseDrug(candidate);
    if(/^20\d{2}-\d{2}-\d{2}$/.test(directDate)){
     const item=[...document.querySelectorAll("#entries details.entry")].find(x=>x.dataset.changeDate===directDate);
@@ -1115,7 +1112,7 @@ if(/^\d{9}$/.test(directSeq)){
    $("#entries").replaceChildren(element("div","empty","알림의 품목을 조회할 수 없습니다: "+String(e.message||e)));
   }
  })();
-}else if(urlKeyword){$("#keyword").value=urlKeyword.slice(0,80);submitSearch()}
+}else if(urlKeyword){$("#keyword").value=urlKeyword.slice(0,80);syncClearKeyword();submitSearch()}
 else load(true);
 })();
 </script>
