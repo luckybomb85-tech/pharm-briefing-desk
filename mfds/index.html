@@ -286,6 +286,66 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .push-small{font-size:11px;color:#8090a4}
 .settings-open.active::after{content:"";display:block;width:6px;height:6px;border-radius:50%;background:#199167}
 @media(max-width:480px){.push-dialog{padding:15px}}
+/* Mobile search selector: do not squeeze three choices into the text field. */
+@media(max-width:760px){
+ .search .keyword-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:7px;
+  width:100%;
+  min-width:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+ }
+ .search .keyword-wrap{display:block;min-width:0;width:100%;flex:none}
+ .search .keyword-wrap>input{
+  display:block;
+  width:100%;
+  min-width:0;
+  height:43px;
+  box-sizing:border-box;
+  border:1px solid #d7deea;
+  border-radius:8px;
+  padding:10px 12px;
+ }
+ .search .field-tabs{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:3px;
+  width:100%;
+  max-width:none;
+  height:40px;
+  margin:0;
+  padding:4px;
+  align-self:stretch;
+  box-sizing:border-box;
+  border-radius:9px;
+  background:#eff3f8;
+  border:1px solid #e2e8f1;
+ }
+ .search .field-tab{
+  display:block;
+  width:100%;
+  min-width:0;
+  height:30px;
+  line-height:28px;
+  flex:none;
+  margin:0;
+  padding:0 6px;
+  font-size:13px;
+  font-weight:700;
+  text-align:center;
+  border-radius:6px;
+  white-space:nowrap;
+ }
+ .search .field-tab.active{
+  background:#fff;
+  color:#2458a6;
+  border-color:#cfddf0;
+  box-shadow:0 1px 3px #1b3c681c;
+ }
+}
 </style>
 </head>
 <body>
