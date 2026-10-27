@@ -163,6 +163,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .entry-main .meta-value{display:block;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:thin;overscroll-behavior-x:contain;touch-action:pan-x}
 @media(max-width:650px){.entry-main .meta-fields{gap:8px}.entry-main .meta-detail{font-size:11px}}
 .bar .latest-heading{font-size:15px;font-weight:800}
+.visible-change-count{font-size:12px;font-weight:750;color:#285993;background:#edf3fb;border:1px solid #dce7f5;border-radius:6px;padding:4px 9px;white-space:nowrap;font-variant-numeric:tabular-nums}
 /* Secondary, explicit-only search for same-ingredient medicines */
 .related-products{margin-top:15px;border-top:1px solid #e7edf3;padding-top:13px}
 .related-trigger{border:1px solid #b9cce5;background:#f8fbff;color:#29578d;border-radius:8px;font-size:12px;font-weight:800;padding:10px 13px;cursor:pointer}
@@ -182,6 +183,9 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 /* Medicine heading + restrained publisher brand */
 .page-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
 .page-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.home-link{color:var(--ink);text-decoration:none;border-radius:6px}
+.home-link:hover{text-decoration:none;color:#2458a6}
+.home-link:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .title-icon{flex:0 0 auto;color:#2458a6}
 .page-identity h1{margin:0;font-size:25px;line-height:1.3;letter-spacing:-.8px}
 .header-tools{display:flex;align-items:center;gap:16px;flex:0 0 auto}
@@ -351,13 +355,13 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 <body>
 <main class="wrap">
 <header class="page-header">
-  <div class="page-identity">
+  <a class="page-identity home-link" href="./" aria-label="의약품 적응증 변경이력 첫 화면으로 돌아가기" title="첫 화면으로 돌아가기">
     <svg class="title-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" role="img" aria-label="의약품">
       <rect x="4.8" y="9.2" width="22.4" height="13.6" rx="6.8" fill="none" stroke="currentColor" stroke-width="2.2" transform="rotate(-45 16 16)"/>
       <path d="m11.2 10.6 10.2 10.2" fill="none" stroke="currentColor" stroke-width="2.2"/>
     </svg>
     <h1>의약품 적응증 변경이력</h1>
-  </div>
+  </a>
   <div class="header-tools">
     <button id="notificationSettings" type="button" class="settings-open" aria-label="알림 설정 열기" title="알림 설정">
       <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"/><path d="M10 21h4"/></svg>
@@ -411,7 +415,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  <div id="catalogueItems" class="catalogue-list"></div>
  <div class="catalogue-foot" id="catalogueFoot" hidden><button id="catalogueMore" type="button">품목 더 보기</button><span>식약처 검색 결과가 여러 페이지인 경우 이전에 보지 못한 품목을 추가합니다.</span></div>
 </section>
-<div class="bar"><strong class="latest-heading">최신 변경이력</strong></div>
+<div class="bar"><strong class="latest-heading">최신 변경이력</strong><span id="visibleChangeCount" class="visible-change-count" hidden aria-live="polite"></span></div>
 <div id="internalResultStatus" hidden aria-hidden="true"><span id="resultCount"></span><span id="resultContext"></span><span id="searchPeriod"></span><span id="sortLabel"></span></div>
 <section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
   <div class="empty">자료를 불러오는 중입니다.</div>
@@ -683,8 +687,17 @@ function setSearchPeriod(first,last){
  const text=start||end?"검색 기간: "+(start?fmtDate(start):"처음부터")+" ~ "+(end?fmtDate(end):"현재까지"):"검색 기간: 전체";
  $("#searchPeriod").textContent=text;
 }
+function updateVisibleChangeCount(count){
+ const badge=$("#visibleChangeCount");
+ const show=Number.isFinite(count)&&count>=0;
+ badge.hidden=!show;
+ badge.textContent=show?"총 "+count+"건":"";
+}
 function refreshLabel(){
  $("#resultCount").textContent="변경이력 "+state.total+"건";
+ const f=state.filter;
+ const searched=!!(f.q||f.start||f.end||(f.type&&f.type!=="all"));
+ updateVisibleChangeCount(searched&&!state.loadError?state.total:null);
  $("#resultContext").textContent="";
  $("#resultContext").hidden=true;
  setSearchPeriod(state.period?.start||"",state.period?.end||"");
@@ -768,6 +781,7 @@ function showSelectedHistory(){
   root.appendChild(renderCard({...entry,item_seq:candidate.item_seq,product:candidate.product,company:candidate.company,ingredient:candidate.ingredient}));
  }
  $("#resultCount").textContent="변경이력 "+rows.length+"건";
+ updateVisibleChangeCount(rows.length);
  setSearchPeriod(rows.at(-1)?.changed_at||state.lookupData?.items?.at(-1)?.changed_at||"",rows[0]?.changed_at||state.lookupData?.items?.[0]?.changed_at||"");
  const all=state.lookupData?.official_change_total;
  const ef=state.lookupData?.official_efficacy_total;
@@ -846,6 +860,7 @@ async function chooseDrug(candidate){
  state.lookupSelected=candidate;state.lookupData=null;
  renderCatalogue();
  $("#entries").replaceChildren(element("div","empty","식약처의 효능·효과 변경이력을 확인하고 있습니다…"));
+ updateVisibleChangeCount(null);
  $("#resultCount").textContent=candidate.product+" · 변경이력 조회 중…";
  $("#resultContext").textContent="식약처 품목 기준 검색을 진행하고 있습니다.";
  $("#resultContext").hidden=false;
@@ -869,6 +884,7 @@ async function searchCatalogue(query,append=false){
  const q=query.trim();
  const field=append?state.lookupField:$("#searchField").value;
  if(q.length<2){
+  updateVisibleChangeCount(null);
   $("#resultCount").textContent="검색어를 두 글자 이상 입력해주세요.";
   $("#catalogue").hidden=true;$("#entries").replaceChildren(element("div","empty","품목명·회사명·성분명 중 하나를 입력해주세요."));
   return;
@@ -883,6 +899,7 @@ async function searchCatalogue(query,append=false){
   state.lookupQuery=q;state.lookupField=field;state.lookupMatches=[];state.lookupPage=0;
   state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
   state.lookupTotalAtLeast=0;state.lookupPartial=false;
+  updateVisibleChangeCount(null);
   $("#entries").replaceChildren(element("div","empty","식약처 전체 품목정보에서 검색하고 있습니다…"));
   $("#resultCount").textContent="식약처 품목 검색 중…";
   $("#resultContext").textContent="전체 저장된 이력이 아닌 실시간 품목 검색입니다.";
@@ -1001,7 +1018,7 @@ async function submitSearch(){
  if(!query){
   state.serial++;
   state.lookupSerial++;state.lookupQuery="";state.lookupSelected=null;state.lookupData=null;state.lookupMatches=[];
-  $("#catalogue").hidden=true;$("#historyEnd").hidden=true;return load(true);
+  $("#catalogue").hidden=true;$("#historyEnd").hidden=true;updateVisibleChangeCount(null);return load(true);
  }
  state.serial++; // Ignore any stale initial cached-feed request after a live lookup begins.
  if(state.lookupQuery===query&&state.lookupField===$("#searchField").value&&state.lookupSelected&&state.lookupData){
