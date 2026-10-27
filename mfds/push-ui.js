@@ -22,7 +22,7 @@ function say(msg){$("#pushStatus").textContent=msg}
 function buttons(){
  $("#pushEnable").disabled=busy||!supported()||(ios()&&!standalone())||("Notification" in window&&Notification.permission==="denied");
  $("#pushDisable").disabled=busy;$("#pushDisable").hidden=!active;
- $("#pushTest").disabled=busy;$("#pushTest").hidden=!active;
+ const test=$("#pushTest");if(test){test.disabled=busy;test.hidden=!active;}
  $("#pushEnable").textContent=active?"알림 다시 연결":"알림 받기";
  $("#notificationSettings").classList.toggle("active",active);
 }
@@ -99,6 +99,6 @@ $("#notificationSettings").addEventListener("click",()=>{
 $("#pushClose").addEventListener("click",()=>$("#pushDialog").close());
 $("#pushEnable").addEventListener("click",enable);
 $("#pushDisable").addEventListener("click",disable);
-$("#pushTest").addEventListener("click",testNotification);
+$("#pushTest")?.addEventListener("click",testNotification);
 for(const id of ["pushAddition","pushChange","pushDeletion"])$("#"+id).addEventListener("change",change);
 })();
