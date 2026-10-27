@@ -218,6 +218,32 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .search .date-field>span{font-size:11px}
 .search select{flex:1 1 100%;max-width:none}
 }
+
+/* Field-scoped search above, year and change-type filters alongside one another. */
+.search{flex-direction:column;flex-wrap:nowrap}
+.search .keyword-row{display:flex;align-items:stretch;min-width:0;width:100%;border:1px solid #d7deea;border-radius:8px;background:#fff}
+.search .keyword-wrap{flex:1 1 auto;min-width:0;width:auto}
+.search .keyword-wrap>input{border:0;border-radius:8px 0 0 8px;width:100%;min-width:0;height:41px}
+.search .keyword-row #searchField{flex:0 0 110px;width:110px;min-width:0;max-width:none;border:0;border-left:1px solid #d7deea;border-radius:0 8px 8px 0;height:41px;font-weight:750;padding:7px 9px}
+.search .filter-row{display:flex;align-items:flex-start;gap:9px;width:100%;min-width:0}
+.search .period-picker,.search .type-picker{flex:1 1 0;min-width:0}
+.search .filter-row #periodSelect,.search .filter-row #type{width:100%;min-width:0;max-width:none;height:43px}
+.search .filter-row .submit{flex:0 0 83px}
+.search .date-pair{display:flex;gap:7px;margin-top:7px;min-width:0}
+.search .date-pair .date-field{display:flex;flex:1 1 0;align-items:center;gap:5px;min-width:0;font-size:11px;color:#64748b}
+.search .date-pair .date-field>input{flex:1 1 auto;width:100%;min-width:0;font-size:12px;padding:6px;height:40px}
+@media(max-width:760px){
+ .search .keyword-row{width:100%}
+ .search .keyword-wrap{flex:1 1 auto;width:auto;min-width:0}
+ .search .keyword-row #searchField{flex:0 0 86px;width:86px;font-size:12px}
+ .search .filter-row{flex-wrap:wrap;gap:7px}
+ .search .period-picker,.search .type-picker{flex:1 1 calc(50% - 4px);width:calc(50% - 4px)}
+ .search .filter-row .submit{flex:1 1 100%;width:100%}
+ .search .date-pair{flex-direction:column;gap:5px}
+ .search .date-pair .date-field{width:100%;flex:0 0 auto}
+ .search .date-pair .date-field>span{font-size:11px;min-width:35px}
+ .search .date-pair .date-field>input{flex:1 1 auto}
+}
 .push-dialog{border:1px solid #d3deec;border-radius:13px;padding:19px 22px;max-width:calc(100vw - 26px);width:410px;color:#1b2c43;box-shadow:0 15px 55px #1a2b4050}
 .push-dialog::backdrop{background:#13284279}
 .push-head{display:flex;justify-content:space-between;align-items:center;gap:9px}
@@ -259,19 +285,43 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
   </div>
 </header>
 <form class="search" id="searchForm" autocomplete="off">
+ <div class="keyword-row">
   <div class="keyword-wrap">
-   <input type="search" id="keyword" aria-label="검색어" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="품목명 · 회사명 · 성분명 검색">
+   <input type="search" id="keyword" aria-label="검색어" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="품목명 검색">
    <div id="suggestions" class="suggestions" role="listbox" hidden></div>
   </div>
-  <label class="date-field"><span>시작일</span><input id="startDate" type="date" aria-label="변경 시작일"></label>
-  <label class="date-field"><span>종료일</span><input id="endDate" type="date" aria-label="변경 종료일"></label>
-  <select id="type" aria-label="변경 유형">
+  <select id="searchField" aria-label="검색 대상">
+   <option value="product">품목</option>
+   <option value="company">회사</option>
+   <option value="ingredient">성분</option>
+  </select>
+ </div>
+ <div class="filter-row">
+  <div class="period-picker">
+   <select id="periodSelect" aria-label="기간 검색">
+    <option value="all">전체 기간</option>
+    <option value="2026">2026년</option>
+    <option value="2025">2025년</option>
+    <option value="2024">2024년</option>
+    <option value="2023">2023년</option>
+    <option value="2022">2022년</option>
+    <option value="custom">기간 직접 입력</option>
+   </select>
+   <div id="customDates" class="date-pair" hidden>
+    <label class="date-field"><span>시작일</span><input id="startDate" type="date" aria-label="변경 시작일"></label>
+    <label class="date-field"><span>종료일</span><input id="endDate" type="date" aria-label="변경 종료일"></label>
+   </div>
+  </div>
+  <div class="type-picker">
+   <select id="type" aria-label="변경 유형">
     <option value="all">유형 검색</option>
     <option value="추가">추가</option>
     <option value="변경">변경</option>
     <option value="삭제">삭제</option>
-  </select>
+   </select>
+  </div>
   <button class="submit" id="searchButton" type="submit">검색</button>
+ </div>
 </form>
 <section id="catalogue" class="catalogue" hidden aria-label="식약처 품목 검색 결과">
  <div class="catalogue-head"><strong id="catalogueTitle">식약처에서 품목을 검색합니다.</strong><small id="catalogueHint">원하는 품목을 선택하면 효능·효과 변경이력을 확인할 수 있습니다.</small></div>
@@ -312,7 +362,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/mfds-indication-monitor";
 const $=s=>document.querySelector(s);
-const state={rows:[],offset:0,total:0,period:null,productCount:0,more:false,busy:false,serial:0,filter:{},suggestionSerial:0,suggestionTimer:null,suggestionMatches:[],suggestionActive:-1,lookupQuery:"",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false,lookupBusyToken:0,lookupTotalAtLeast:0,lookupPartial:false};
+const state={rows:[],offset:0,total:0,period:null,productCount:0,more:false,busy:false,serial:0,filter:{},suggestionSerial:0,suggestionTimer:null,suggestionMatches:[],suggestionActive:-1,lookupQuery:"",lookupField:"product",lookupPage:0,lookupMatches:[],lookupHasMore:false,lookupSelected:null,lookupData:null,lookupSerial:0,lookupBusy:false,lookupBusyToken:0,lookupTotalAtLeast:0,lookupPartial:false};
 function element(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text??"");return n;}
 function put(where,tag,cls,text){const n=element(tag,cls,text);where.appendChild(n);return n}
 function fmtDate(day){return /^\d{4}-\d{2}-\d{2}$/.test(day||"")?day.replaceAll("-","."):"날짜 미확인"}
@@ -517,9 +567,16 @@ function renderCard(row){
  addSameIngredientSearch(panel,row);
  return card;
 }
+function selectedDates(){
+ const period=$("#periodSelect").value;
+ if(/^20\d{2}$/.test(period))return {start:period+"-01-01",end:period+"-12-31"};
+ if(period==="custom")return {start:$("#startDate").value,end:$("#endDate").value};
+ return {start:"",end:""};
+}
+function syncPeriodInputs(){$("#customDates").hidden=$("#periodSelect").value!=="custom";}
 function params(reset){
  if(reset){
-   state.filter={q:$("#keyword").value.trim(),start:$("#startDate").value,end:$("#endDate").value,type:$("#type").value};
+   state.filter={q:$("#keyword").value.trim(),field:$("#searchField").value,...selectedDates(),type:$("#type").value};
  }
  const url=new URL(API);
  url.searchParams.set("view","efficacy");
@@ -531,8 +588,9 @@ function params(reset){
  return url.toString();
 }
 function setSearchPeriod(first,last){
- const start=$("#startDate").value||first;
- const end=$("#endDate").value||last;
+ const dates=selectedDates();
+ const start=dates.start||($("#periodSelect").value==="all"?first:"");
+ const end=dates.end||($("#periodSelect").value==="all"?last:"");
  const text=start||end?"검색 기간: "+(start?fmtDate(start):"처음부터")+" ~ "+(end?fmtDate(end):"현재까지"):"검색 기간: 전체";
  $("#searchPeriod").textContent=text;
 }
@@ -603,7 +661,7 @@ async function fetchJson(url,timeout=27000){
 }
 function visibleSearchRows(){
  const records=state.lookupData?.items||[];
- const start=$("#startDate").value,end=$("#endDate").value,type=$("#type").value;
+ const {start,end}=selectedDates(),type=$("#type").value;
  return records.filter(x=>
   (!start||x.changed_at>=start)&&(!end||x.changed_at<=end)&&
   (type==="all"||(type==="추가"?(x.added_count>0||x.change_type==="추가"):
@@ -720,6 +778,7 @@ async function chooseDrug(candidate){
 }
 async function searchCatalogue(query,append=false){
  const q=query.trim();
+ const field=append?state.lookupField:$("#searchField").value;
  if(q.length<2){
   $("#resultCount").textContent="검색어를 두 글자 이상 입력해주세요.";
   $("#catalogue").hidden=true;$("#entries").replaceChildren(element("div","empty","품목명·회사명·성분명 중 하나를 입력해주세요."));
@@ -732,7 +791,7 @@ async function searchCatalogue(query,append=false){
  $("#searchButton").disabled=append;
  $("#catalogueMore").disabled=true;
  if(!append){
-  state.lookupQuery=q;state.lookupMatches=[];state.lookupPage=0;
+  state.lookupQuery=q;state.lookupField=field;state.lookupMatches=[];state.lookupPage=0;
   state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
   state.lookupTotalAtLeast=0;state.lookupPartial=false;
   $("#entries").replaceChildren(element("div","empty","식약처 전체 품목정보에서 검색하고 있습니다…"));
@@ -742,7 +801,7 @@ async function searchCatalogue(query,append=false){
  }
  try{
   const page=append?state.lookupPage+1:1;
-  const result=await fetchJson(paramsFor("lookup",{q,page}),40000);
+  const result=await fetchJson(paramsFor("lookup",{q,page,field}),40000);
   if(seq!==state.lookupSerial)return;
   if(!Array.isArray(result.matches))throw Error("식약처 품목 검색 결과 형식 오류");
   const seen=new Set(state.lookupMatches.map(x=>x.item_seq));
@@ -806,8 +865,9 @@ function selectSuggestion(item){
  ++state.suggestionSerial;
  closeSuggestions();
  $("#keyword").value=item.product;
+ $("#searchField").value="product";
  state.serial++;state.lookupSerial++;
- state.lookupQuery=item.product;
+ state.lookupQuery=item.product;state.lookupField="product";
  state.lookupPage=1;state.lookupMatches=[item];
  state.lookupSelected=null;state.lookupData=null;state.lookupHasMore=false;
  state.lookupTotalAtLeast=1;state.lookupPartial=false;
@@ -816,9 +876,10 @@ function selectSuggestion(item){
 }
 async function searchSuggestions(query){
  const serial=++state.suggestionSerial;
+ const field=$("#searchField").value;
  try{
-  const data=await fetchJson(paramsFor("suggest",{q:query}),16000);
-  if(serial!==state.suggestionSerial||$("#keyword").value.trim()!==query)return;
+  const data=await fetchJson(paramsFor("suggest",{q:query,field}),16000);
+  if(serial!==state.suggestionSerial||$("#keyword").value.trim()!==query||$("#searchField").value!==field)return;
   state.suggestionMatches=Array.isArray(data.matches)?data.matches.slice(0,9):[];
   state.suggestionActive=-1;
   drawSuggestions();
@@ -834,7 +895,7 @@ function onKeywordInput(){
  state.suggestionTimer=window.setTimeout(()=>searchSuggestions(q),360);
 }
 function validRange(){
- const start=$("#startDate").value,end=$("#endDate").value;
+ const {start,end}=selectedDates();
  if(start&&end&&start>end){
   $("#resultCount").textContent="시작일이 종료일보다 늦습니다.";
   $("#startDate").focus();return false;
@@ -854,7 +915,7 @@ async function submitSearch(){
   $("#catalogue").hidden=true;$("#historyEnd").hidden=true;return load(true);
  }
  state.serial++; // Ignore any stale initial cached-feed request after a live lookup begins.
- if(state.lookupQuery===query&&state.lookupSelected&&state.lookupData){
+ if(state.lookupQuery===query&&state.lookupField===$("#searchField").value&&state.lookupSelected&&state.lookupData){
   showSelectedHistory();return;
  }
  await searchCatalogue(query);
@@ -867,6 +928,18 @@ form.addEventListener("submit",ev=>{
   selectSuggestion(state.suggestionMatches[state.suggestionActive]);return;
  }
  submitSearch();
+});
+syncPeriodInputs();
+$("#searchField").addEventListener("change",()=>{
+ const placeholders={product:"품목명 검색",company:"회사명 검색",ingredient:"성분명 검색"};
+ $("#keyword").placeholder=placeholders[$("#searchField").value];
+ clearTimeout(state.suggestionTimer);++state.suggestionSerial;
+ state.suggestionMatches=[];closeSuggestions();
+ if($("#keyword").value.trim().length>=2)onKeywordInput();
+});
+$("#periodSelect").addEventListener("change",()=>{
+ syncPeriodInputs();
+ if(state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory();
 });
 $("#keyword").addEventListener("input",onKeywordInput);
 $("#keyword").addEventListener("keydown",event=>{
@@ -886,8 +959,8 @@ $("#keyword").addEventListener("blur",()=>window.setTimeout(closeSuggestions,140
 $("#keyword").addEventListener("focus",()=>{
  if(state.suggestionMatches.length&&$("#keyword").value.trim().length>=2)drawSuggestions();
 });
-$("#startDate").addEventListener("change",()=>{if(state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory()});
-$("#endDate").addEventListener("change",()=>{if(state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory()});
+$("#startDate").addEventListener("change",()=>{if($("#periodSelect").value==="custom"&&state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory()});
+$("#endDate").addEventListener("change",()=>{if($("#periodSelect").value==="custom"&&state.lookupSelected&&state.lookupData&&validRange())showSelectedHistory()});
 $("#type").addEventListener("change",()=>{if(state.lookupSelected&&state.lookupData)showSelectedHistory()});
 $("#catalogueMore").addEventListener("click",()=>searchCatalogue(state.lookupQuery,true));
 $("#moreButton").addEventListener("click",()=>{if(!state.lookupSelected&&state.more&&!state.busy)load(false)});
