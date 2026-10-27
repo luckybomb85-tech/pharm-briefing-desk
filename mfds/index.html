@@ -330,6 +330,11 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  .search-symbol{left:7px;width:16px;height:16px}
  .clear-keyword{width:23px;height:23px}
 }
+/* Keep search controls available while browsing long change histories. */
+.search{position:sticky;top:8px;z-index:40;box-shadow:0 7px 22px #172b4b1a}
+@media(max-width:760px){
+ .search{top:0;margin:12px 0;box-shadow:0 5px 15px #172b4b17}
+}
 </style>
 </head>
 <body>
