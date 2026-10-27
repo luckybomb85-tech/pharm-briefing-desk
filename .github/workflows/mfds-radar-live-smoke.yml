@@ -43,6 +43,15 @@ jobs:
           assert any(x["changed_at"]=="2025-12-18" for x in tevim["items"]),tevim
           suggest=read("mfds-indication-monitor",{"view":"suggest","q":"키트"})
           assert any("키트루다" in x["product"] for x in suggest["matches"]),suggest
+          company=read("mfds-indication-monitor",{"view":"efficacy","q":"한국릴리","field":"company","limit":50})
+          assert company["total"]>0 and all("한국릴리" in x["company"] for x in company["items"]),company
+          product=read("mfds-indication-monitor",{"view":"efficacy","q":"한국릴리","field":"product","limit":50})
+          assert all("한국릴리" in x["product"] for x in product["items"]),product
+          ingredient=read("mfds-indication-monitor",{"view":"efficacy","q":"펨브롤리주맙","field":"ingredient","limit":50})
+          assert ingredient["total"]>0 and all("펨브롤리주맙" in x["ingredient"] for x in ingredient["items"]),ingredient
+          company_suggest=read("mfds-indication-monitor",{"view":"suggest","q":"한국릴리","field":"company"})
+          assert company_suggest["matches"] and all("한국릴리" in x["company"] for x in company_suggest["matches"]),company_suggest
+          print("FIELD_SCOPED_COMPANY_PRODUCT_INGREDIENT_OK",company["total"],product["total"],ingredient["total"])
           config=read("mfds-webpush",{"view":"config"})
           assert len(config["public_key"])>70,config
           assert config["site"].endswith("/pharm-briefing-desk/mfds/"),config
