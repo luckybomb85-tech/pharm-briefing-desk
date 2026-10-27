@@ -155,10 +155,14 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .baseline-original .fulltext{max-height:400px}
 /* Compact product / ingredient / manufacturer hierarchy */
 .entry-main .drug{display:block;margin-bottom:6px}
-.entry-main .meta-fields{display:block;margin-top:5px}
-.entry-main .meta-detail{display:flex;gap:7px;align-items:baseline;min-width:0;font-size:12px;line-height:1.5;color:#596980;overflow-wrap:anywhere}
+/* Product titles scroll independently; manufacturer and ingredient share one row. */
+.entry-main .drug{display:block;width:100%;max-width:100%;min-width:0;margin-bottom:6px;white-space:nowrap;overflow-wrap:normal;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;overscroll-behavior-x:contain;touch-action:pan-x}
+.entry-main .meta-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:5px;min-width:0;max-width:100%}
+.entry-main .meta-detail{display:flex;align-items:baseline;gap:5px;min-width:0;font-size:12px;line-height:1.5;color:#596980;white-space:nowrap}
 .entry-main .meta-title{font-size:11px;font-weight:760;white-space:nowrap;color:#8190a4;flex:0 0 auto}
-@media(max-width:650px){.entry-main .meta-fields{grid-template-columns:1fr;row-gap:3px}.entry-main .meta-detail{font-size:11px}}
+.entry-main .meta-value{display:block;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;scrollbar-width:thin;overscroll-behavior-x:contain;touch-action:pan-x}
+@media(max-width:650px){.entry-main .meta-fields{gap:8px}.entry-main .meta-detail{font-size:11px}}
+.bar .latest-heading{font-size:15px;font-weight:800}
 /* Secondary, explicit-only search for same-ingredient medicines */
 .related-products{margin-top:15px;border-top:1px solid #e7edf3;padding-top:13px}
 .related-trigger{border:1px solid #b9cce5;background:#f8fbff;color:#29578d;border-radius:8px;font-size:12px;font-weight:800;padding:10px 13px;cursor:pointer}
@@ -328,7 +332,8 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  <div id="catalogueItems" class="catalogue-list"></div>
  <div class="catalogue-foot" id="catalogueFoot" hidden><button id="catalogueMore" type="button">품목 더 보기</button><span>식약처 검색 결과가 여러 페이지인 경우 이전에 보지 못한 품목을 추가합니다.</span></div>
 </section>
-<div class="bar"><div class="bar-content"><strong id="resultCount">변경이력 조회 중…</strong><span id="resultContext" hidden></span><span id="searchPeriod">검색 기간: 조회 중…</span></div><small id="sortLabel">변경일 최신순</small></div>
+<div class="bar"><strong class="latest-heading">최신 변경이력</strong></div>
+<div id="internalResultStatus" hidden aria-hidden="true"><span id="resultCount"></span><span id="resultContext"></span><span id="searchPeriod"></span><span id="sortLabel"></span></div>
 <section id="entries" class="entries" aria-label="효능효과 변경 목록" aria-live="polite">
   <div class="empty">자료를 불러오는 중입니다.</div>
 </section>
@@ -536,7 +541,12 @@ function renderCard(row){
  if(row.company){
   const company=put(info,"span","meta-detail");
   put(company,"span","meta-title","업체");
-  put(company,"span","",row.company);
+  put(company,"span","meta-value",row.company);
+ }
+ if(row.ingredient){
+  const ingredient=put(info,"span","meta-detail");
+  put(ingredient,"span","meta-title","성분");
+  put(ingredient,"span","meta-value",row.ingredient);
  }
  put(top,"span","arrow","⌄");
  const details=Array.isArray(row.change_details)?row.change_details:[];
