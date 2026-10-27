@@ -285,6 +285,9 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .push-actions button{border-radius:8px;padding:10px 15px;flex:1;font-weight:800;font-size:13px}
 #pushEnable{background:#2458a6;color:white;border:1px solid #2458a6}
 #pushDisable{background:white;color:#2e5c91;border:1px solid #bbcede}
+.push-test{width:100%;margin-top:9px;border:1px dashed #a5bad1;border-radius:8px;background:#f8fbff;color:#2b557f;padding:9px 13px;font-size:12px;font-weight:800}
+.push-test:hover{background:#eef5ff}
+.push-test:disabled{opacity:.6;cursor:default}
 .push-actions button:disabled{opacity:.6;cursor:default}
 .push-guide,.push-small{font-size:12px;line-height:1.65;color:#5a708a}
 .push-small{font-size:11px;color:#8090a4}
@@ -420,6 +423,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
     <button id="pushEnable" type="button">알림 받기</button>
     <button id="pushDisable" type="button" hidden>알림 끄기</button>
   </div>
+  <button id="pushTest" type="button" class="push-test" hidden>테스트 알림 보내기</button>
   <p id="pushGuide" class="push-guide">알림은 선택사항이며, 기기·브라우저마다 따로 설정할 수 있습니다.</p>
   <p class="push-small">iPhone은 Safari에서 홈 화면에 추가한 뒤, 홈 화면에서 열어 설정하세요. 새 변경 확인까지 수집 주기에 따른 지연이 발생할 수 있습니다.</p>
 </dialog>
