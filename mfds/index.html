@@ -228,7 +228,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 .search .keyword-row{display:flex;align-items:stretch;min-width:0;width:100%;border:1px solid #d7deea;border-radius:8px;background:#fff}
 .search .keyword-wrap{flex:1 1 auto;min-width:0;width:auto}
 .search .keyword-wrap>input{border:0;border-radius:8px 0 0 8px;width:100%;min-width:0;height:41px}
-.search .keyword-row #searchField{flex:0 0 110px;width:110px;min-width:0;max-width:none;border:0;border-left:1px solid #d7deea;border-radius:0 8px 8px 0;height:41px;font-weight:750;padding:7px 9px}
+
 .search .filter-row{display:flex;align-items:flex-start;gap:9px;width:100%;min-width:0}
 .search .period-picker,.search .type-picker{flex:1 1 0;min-width:0}
 .search .filter-row #periodSelect,.search .filter-row #type{width:100%;min-width:0;max-width:none;height:43px}
@@ -239,7 +239,7 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
 @media(max-width:760px){
  .search .keyword-row{width:100%}
  .search .keyword-wrap{flex:1 1 auto;width:auto;min-width:0}
- .search .keyword-row #searchField{flex:0 0 86px;width:86px;font-size:12px}
+
  .search .filter-row{flex-wrap:wrap;gap:7px}
  .search .period-picker,.search .type-picker{flex:1 1 calc(50% - 4px);width:calc(50% - 4px)}
  .search .filter-row .submit{flex:1 1 100%;width:100%}
@@ -249,20 +249,19 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  .search .date-pair .date-field>input{flex:1 1 auto}
 }
 
-/* Visible horizontal field switch replaces the native dropdown. */
-.search .field-tabs{display:flex;align-items:stretch;flex:0 0 auto;border-left:1px solid #d7deea;border-radius:0 8px 8px 0;overflow:hidden}
-.search .field-tab{flex:0 0 44px;min-width:0;padding:0 6px;border:0;border-left:1px solid #e4eaf3;background:#fff;color:#586c85;font-size:12px;font-weight:750;white-space:nowrap}
-.search .field-tab:first-child{border-left:0}
-.search .field-tab.active{background:#2458a6;color:#fff}
-.search .field-tab:focus-visible{outline:2px solid #16366c;outline-offset:-3px}
-.search .field-tab:not(.active):hover{background:#edf4fd}
+/* Subtle, compact segmented control for product / company / ingredient. */
+.search .field-tabs{display:flex;align-items:center;align-self:center;flex:0 0 auto;gap:2px;height:35px;margin:0 5px 0 0;padding:3px;background:#f1f4f8;border:1px solid #e3e9f2;border-radius:9px}
+.search .field-tab{flex:0 0 43px;min-width:0;height:27px;padding:0 5px;border:1px solid transparent;border-radius:6px;background:transparent;color:#63738a;font-size:12px;font-weight:650;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.search .field-tab.active{border-color:#d5e1f1;background:#fff;color:#2458a6;font-weight:800;box-shadow:0 1px 3px #1b3c6820}
+.search .field-tab:focus-visible{outline:2px solid #356cbb;outline-offset:1px}
+.search .field-tab:not(.active):hover{background:#e4ecf6;color:#345779}
 /* Date fields have the full form width, not half the period selector width. */
 .search>.date-pair{display:flex;flex-direction:row;align-items:stretch;gap:8px;width:100%;margin-top:0}
 .search>.date-pair .date-field{flex:1 1 0;width:50%;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:3px}
 .search>.date-pair .date-field>span{font-size:11px}
 .search>.date-pair .date-field>input{display:block;flex:0 0 auto;width:100%;max-width:100%;min-width:0;height:41px;padding:6px;font-size:12px}
 @media(max-width:760px){
- .search .field-tab{flex-basis:39px;font-size:12px;padding:0 3px}
+ .search .field-tab{flex-basis:38px;font-size:12px;padding:0 3px}
  .search>.date-pair{flex-direction:row;gap:7px}
  .search>.date-pair .date-field{width:calc(50% - 4px);flex:1 1 0}
  .search>.date-pair .date-field>input{flex:0 0 auto;min-width:0;width:100%}
