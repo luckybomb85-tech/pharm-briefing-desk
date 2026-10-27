@@ -22,6 +22,7 @@ function say(msg){$("#pushStatus").textContent=msg}
 function buttons(){
  $("#pushEnable").disabled=busy||!supported()||(ios()&&!standalone())||("Notification" in window&&Notification.permission==="denied");
  $("#pushDisable").disabled=busy;$("#pushDisable").hidden=!active;
+ $("#pushTest").disabled=busy;$("#pushTest").hidden=!active;
  $("#pushEnable").textContent=active?"알림 다시 연결":"알림 받기";
  $("#notificationSettings").classList.toggle("active",active);
 }
@@ -61,6 +62,18 @@ async function enable(){
  }catch(e){active=false;say("알림 연결 실패: "+e.message)}
  finally{busy=false;buttons()}
 }
+async function testNotification(){
+ if(busy||!active)return;
+ busy=true;buttons();
+ try{
+  const id=localToken();
+  if(!id)throw Error("이 기기의 알림 등록 정보가 없습니다.");
+  const result=await call({action:"test",device_token:id});
+  if(!result.test_sent)throw Error("테스트 알림 발송이 확인되지 않았습니다.");
+  say("테스트 알림을 발송했습니다. 기기의 잠금 화면이나 알림 센터에서 도착 여부를 확인해 주세요.");
+ }catch(e){say("테스트 알림 실패: "+e.message)}
+ finally{busy=false;buttons()}
+}
 async function disable(){
  if(busy)return;busy=true;buttons();
  try{
@@ -86,5 +99,6 @@ $("#notificationSettings").addEventListener("click",()=>{
 $("#pushClose").addEventListener("click",()=>$("#pushDialog").close());
 $("#pushEnable").addEventListener("click",enable);
 $("#pushDisable").addEventListener("click",disable);
+$("#pushTest").addEventListener("click",testNotification);
 for(const id of ["pushAddition","pushChange","pushDeletion"])$("#"+id).addEventListener("change",change);
 })();
