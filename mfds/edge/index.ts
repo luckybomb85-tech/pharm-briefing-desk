@@ -823,7 +823,7 @@ async function suggestDrugCatalogue(params:URLSearchParams):Promise<unknown>{
  const escaped=q.replace(/[(),.*%\\]/g,"").trim();
  if(escaped.length<2)return {matches:[],query:q};
  const clause=searchField==="all"?"(product.ilike.*"+escaped+"*,ingredient.ilike.*"+escaped+"*,company.ilike.*"+escaped+"*)":searchField+".ilike.*"+escaped+"*";
- const filter=searchField==="all"?"or="+encodeURIComponent(clause):encodeURIComponent(clause);
+ const filter=searchField==="all"?"or="+encodeURIComponent(clause):searchField+"="+encodeURIComponent("ilike.*"+escaped+"*");
  const local:any[]=await db("GET","mfds_monitor_product_roles?select=item_seq,product,company,ingredient,watch_scope&"+filter+"&limit=50");
  const match=(x:any)=>(searchField==="all"?[x.product,x.ingredient,x.company]:[x[searchField]]).some((t:any)=>
   String(t||"").toLocaleLowerCase("ko-KR").replace(/\s/g,"").includes(key));
