@@ -94,6 +94,32 @@ async function manage(input:any):Promise<any>{
   const rows=await db("PATCH",path+"?device_token_hash=eq."+tokenHash+"&select=id",update,"return=representation");
   return {ok:rows.length>0};
  }
+ if(action==="test"){
+  const rows=await db("GET",path+"?select=id,endpoint,p256dh,auth_secret,last_sent_at&enabled=eq.true&device_token_hash=eq."+tokenHash+"&limit=1");
+  if(!rows.length)throw Error("먼저 이 기기의 알림을 등록해 주세요.");
+  const sub=rows[0];
+  if(sub.last_sent_at&&Date.now()-Date.parse(sub.last_sent_at)<60000)
+   throw Error("테스트 알림은 1분 간격으로 발송할 수 있습니다.");
+  const keys=await vapid();
+  webpush.setVapidDetails(SITE,keys.public,keys.private);
+  const body=JSON.stringify({
+   title:"적응증 변경 모니터 · 테스트",
+   body:"테스트 알림입니다. 신규 적응증 변경이 확인되면 이 기기로 알려드립니다.",
+   url:APP,tag:"mfds-webpush-test"
+  });
+  try{
+   await webpush.sendNotification({endpoint:sub.endpoint,keys:{p256dh:sub.p256dh,auth:sub.auth_secret}},
+    body,{TTL:300,urgency:"high",timeout:11000});
+   await db("PATCH",path+"?id=eq."+sub.id,{last_sent_at:new Date().toISOString(),last_error:null},"return=minimal");
+   return {ok:true,test_sent:true};
+  }catch(e){
+   const code=Number((e as any)?.statusCode||0);
+   if(code===404||code===410)await db("PATCH",path+"?id=eq."+sub.id,{
+    enabled:false,last_error:"push subscription expired"
+   },"return=minimal");
+   throw Error(code===404||code===410?"알림 등록이 만료됐습니다. 다시 연결해 주세요.":"테스트 푸시 발송에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+  }
+ }
  if(action==="unsubscribe"){
   const rows=await db("PATCH",path+"?device_token_hash=eq."+tokenHash+"&select=id",
    {enabled:false,updated_at:new Date().toISOString()},"return=representation");
@@ -182,7 +208,7 @@ async function sendQueued():Promise<any>{
   const batch=jobs.slice(i,i+3);
   const part=await Promise.all(batch.map(async (job:any)=>{
    const url=APP+"?seq="+encodeURIComponent(job.item_seq)+"&date="+encodeURIComponent(job.change_date);
-   const body=JSON.stringify({title:"적응증 변경이력 · "+job.change_kind,
+   const body=JSON.stringify({title:"적응증 변경 모니터 · "+job.change_kind,
     body:String(job.product).slice(0,100)+" · "+job.change_date+" 허가변경",
     url,tag:job.event_key});
    try{
