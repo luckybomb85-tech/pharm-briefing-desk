@@ -62,8 +62,10 @@ try{
  assert(settings.dialog&&settings.types.length===3&&settings.enable&&settings.disable,"Settings dialog and per-device type preferences missing");
  console.log("OPT_IN_PUSH_SETTINGS_DIALOG_OK",JSON.stringify(settings));
  await evalPage('document.querySelector("#pushClose").click()');
- const filters=await evalPage('({field:[...document.getElementById("searchField").options].map(x=>x.value),years:[...document.getElementById("periodSelect").options].map(x=>x.value),periodRect:document.getElementById("periodSelect").getBoundingClientRect().top,typeRect:document.getElementById("type").getBoundingClientRect().top})');
+ const filters=await evalPage('(()=>{const buttons=[...document.querySelectorAll(".field-tab")];const original=buttons.map(x=>x.dataset.searchField);const width=buttons.map(x=>x.getBoundingClientRect().width);const x=buttons.map(x=>x.getBoundingClientRect().left);const values=[];for(const b of [buttons[1],buttons[2],buttons[0]]){b.click();values.push(document.getElementById("searchField").value)};return {field:original,buttonWidth:width,x,values,active:buttons.map(b=>b.getAttribute("aria-pressed")),nativeSelect:document.getElementById("searchField").tagName==="SELECT",years:[...document.getElementById("periodSelect").options].map(y=>y.value),periodRect:document.getElementById("periodSelect").getBoundingClientRect().top,typeRect:document.getElementById("type").getBoundingClientRect().top}})()');
  assert(JSON.stringify(filters.field)===JSON.stringify(["product","company","ingredient"]),"Search field options must be product, company and ingredient");
+ assert(!filters.nativeSelect&&filters.buttonWidth.every(w=>w>=34)&&filters.x[0]<filters.x[1]&&filters.x[1]<filters.x[2],"Search field options must be visible horizontal buttons, not a dropdown");
+ assert(JSON.stringify(filters.values)===JSON.stringify(["company","ingredient","product"])&&filters.active.join(",")==="true,false,false","Field buttons must change the active search field");
  assert(JSON.stringify(filters.years)===JSON.stringify(["all","2026","2025","2024","2023","2022","custom"]),"Annual period choices must be the five requested years and custom");
  assert(Math.abs(filters.periodRect-filters.typeRect)<5,"Year and change type filters are not on the same row");
  console.log("SCOPED_SEARCH_AND_ANNUAL_FILTERS_OK",JSON.stringify(filters));
@@ -78,7 +80,9 @@ try{
   '({rows:[...document.querySelectorAll("#entries details.entry .date")].map(x=>x.textContent),count:document.querySelector("#resultCount")?.textContent||"",period:document.querySelector("#searchPeriod")?.textContent||""})',
   v=>v.count.startsWith("변경이력 ")&&v.period.includes("2026.07.01")&&v.period.includes("2026.10.27")&&v.rows.length>=1);
  assert(dated.rows.every(d=>d>="2026.07.01"&&d<="2026.10.27"),"Date range contains an out-of-range item");
- console.log("CUSTOM_PERIOD_SEARCH_OK",JSON.stringify({count:dated.count,period:dated.period}));
+ const customDates=await evalPage('(()=>{const a=document.querySelector("#startDate").getBoundingClientRect(),b=document.querySelector("#endDate").getBoundingClientRect(),container=document.querySelector("#customDates").getBoundingClientRect();return {startTop:a.top,endTop:b.top,startWidth:a.width,endWidth:b.width,containerWidth:container.width,hidden:document.querySelector("#customDates").hidden}})()');
+ assert(!customDates.hidden&&Math.abs(customDates.startTop-customDates.endTop)<4&&customDates.startWidth>125&&customDates.endWidth>125,"Custom start/end date inputs must sit side by side");
+ console.log("CUSTOM_PERIOD_SEARCH_OK",JSON.stringify({count:dated.count,period:dated.period,dates:customDates}));
  await search({});
  await wait("Restore chronological timeline",'document.querySelector("#searchPeriod")?.textContent||""',v=>v.includes("검색 기간"));
  await evalPage('(()=>{let q=document.querySelector("#keyword");q.value="키트";q.dispatchEvent(new Event("input",{bubbles:true}));return true})()');
@@ -94,11 +98,12 @@ try{
  const mobileId=++request,promise=new Promise((resolve,reject)=>pending.set(mobileId,{resolve,reject}));
  ws.send(JSON.stringify({id:mobileId,method:"Emulation.setDeviceMetricsOverride",params:{width:390,height:844,deviceScaleFactor:1,mobile:true}}));
  await promise;
- const mobile=await evalPage('(()=>{const meta=[...document.querySelectorAll("#entries .meta-detail")].slice(0,2);const title=document.querySelector("#entries .drug");return {width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width,periodY:document.getElementById("periodSelect").getBoundingClientRect().top,typeY:document.getElementById("type").getBoundingClientRect().top,keywordRight:document.getElementById("keyword").getBoundingClientRect().right,fieldRight:document.getElementById("searchField").getBoundingClientRect().right,companyY:meta[0]?.getBoundingClientRect().top,ingredientY:meta[1]?.getBoundingClientRect().top,productWrap:getComputedStyle(title).whiteSpace,productOverflow:getComputedStyle(title).overflowX}})()');
+ const mobile=await evalPage('(()=>{const meta=[...document.querySelectorAll("#entries .meta-detail")].slice(0,2),title=document.querySelector("#entries .drug");document.querySelector("#periodSelect").value="custom";document.querySelector("#periodSelect").dispatchEvent(new Event("change"));const a=document.querySelector("#startDate").getBoundingClientRect(),b=document.querySelector("#endDate").getBoundingClientRect();return {width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width,periodY:document.getElementById("periodSelect").getBoundingClientRect().top,typeY:document.getElementById("type").getBoundingClientRect().top,keywordRight:document.getElementById("keyword").getBoundingClientRect().right,fieldLeft:document.querySelector(".field-tabs").getBoundingClientRect().left,fieldRight:document.querySelector(".field-tabs").getBoundingClientRect().right,startY:a.top,endY:b.top,startWidth:a.width,endWidth:b.width,companyY:meta[0]?.getBoundingClientRect().top,ingredientY:meta[1]?.getBoundingClientRect().top,productWrap:getComputedStyle(title).whiteSpace,productOverflow:getComputedStyle(title).overflowX}})()');
  assert(Math.abs(mobile.companyY-mobile.ingredientY)<4,"Mobile company and ingredient metadata must share the same row");
  assert(mobile.productWrap==="nowrap"&&mobile.productOverflow==="auto","Mobile drug title must scroll horizontally");
  assert(Math.abs(mobile.periodY-mobile.typeY)<5,"Mobile filters are not on the same row");
- assert(mobile.fieldRight>mobile.keywordRight,"Mobile search field chooser is not at the right edge of the keyword box");
+ assert(mobile.fieldRight>mobile.keywordRight&&mobile.fieldLeft>=mobile.keywordRight-2,"Mobile search field tabs must be to the right of the keyword box");
+ assert(Math.abs(mobile.startY-mobile.endY)<4&&mobile.startWidth>105&&mobile.endWidth>105,"Mobile custom dates must be side by side and usable");
  assert(mobile.scroll<=mobile.width+3,"Mobile view has horizontal overflow: "+JSON.stringify(mobile));
  console.log("MOBILE_PUSH_AND_INDICATION_LAYOUT_OK",JSON.stringify(mobile));
  // The browser push click must link to the exact licensed product.
