@@ -29,8 +29,8 @@ async function wait(title,expr,check){
 }
 const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
 async function search(fields){
- const p={keyword:"",type:"all",startDate:"",endDate:"",...fields};
- return evalPage('(()=>{const p='+JSON.stringify(p)+';for(const [k,v] of Object.entries(p))document.getElementById(k).value=v;document.getElementById("searchForm").dispatchEvent(new Event("submit",{cancelable:true,bubbles:true}));return true})()');
+ const p={keyword:"",searchField:"product",periodSelect:"all",type:"all",startDate:"",endDate:"",...fields};
+ return evalPage('(()=>{const p='+JSON.stringify(p)+';for(const [k,v] of Object.entries(p))document.getElementById(k).value=v;document.getElementById("periodSelect").dispatchEvent(new Event("change"));document.getElementById("searchForm").dispatchEvent(new Event("submit",{cancelable:true,bubbles:true}));return true})()');
 }
 try{
  let tab;
@@ -57,7 +57,18 @@ try{
  assert(settings.dialog&&settings.types.length===3&&settings.enable&&settings.disable,"Settings dialog and per-device type preferences missing");
  console.log("OPT_IN_PUSH_SETTINGS_DIALOG_OK",JSON.stringify(settings));
  await evalPage('document.querySelector("#pushClose").click()');
- const period=await search({startDate:"2026-07-01",endDate:"2026-10-27",type:"추가"});
+ const filters=await evalPage('({field:[...document.getElementById("searchField").options].map(x=>x.value),years:[...document.getElementById("periodSelect").options].map(x=>x.value),periodRect:document.getElementById("periodSelect").getBoundingClientRect().top,typeRect:document.getElementById("type").getBoundingClientRect().top})');
+ assert(JSON.stringify(filters.field)===JSON.stringify(["product","company","ingredient"]),"Search field options must be product, company and ingredient");
+ assert(JSON.stringify(filters.years)===JSON.stringify(["all","2026","2025","2024","2023","2022","custom"]),"Annual period choices must be the five requested years and custom");
+ assert(Math.abs(filters.periodRect-filters.typeRect)<5,"Year and change type filters are not on the same row");
+ console.log("SCOPED_SEARCH_AND_ANNUAL_FILTERS_OK",JSON.stringify(filters));
+ await search({periodSelect:"2026",type:"추가"});
+ const yearly=await wait("Annual year filter",
+  '({rows:[...document.querySelectorAll("#entries details.entry .date")].map(x=>x.textContent),period:document.querySelector("#searchPeriod")?.textContent||""})',
+  v=>v.period.includes("2026.01.01")&&v.period.includes("2026.12.31")&&v.rows.length>=1);
+ assert(yearly.rows.every(x=>x.startsWith("2026.")),"Yearly filter returned an event outside 2026");
+ console.log("ANNUAL_SEARCH_2026_OK",JSON.stringify({count:yearly.rows.length,period:yearly.period}));
+ const period=await search({periodSelect:"custom",startDate:"2026-07-01",endDate:"2026-10-27",type:"추가"});
  const dated=await wait("Manual date interval filter",
   '({rows:[...document.querySelectorAll("#entries details.entry .date")].map(x=>x.textContent),count:document.querySelector("#resultCount")?.textContent||"",period:document.querySelector("#searchPeriod")?.textContent||""})',
   v=>v.count.startsWith("변경이력 ")&&v.period.includes("2026.07.01")&&v.period.includes("2026.10.27")&&v.rows.length>=1);
@@ -78,7 +89,9 @@ try{
  const mobileId=++request,promise=new Promise((resolve,reject)=>pending.set(mobileId,{resolve,reject}));
  ws.send(JSON.stringify({id:mobileId,method:"Emulation.setDeviceMetricsOverride",params:{width:390,height:844,deviceScaleFactor:1,mobile:true}}));
  await promise;
- const mobile=await evalPage('({width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width})');
+ const mobile=await evalPage('({width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width,periodY:document.getElementById("periodSelect").getBoundingClientRect().top,typeY:document.getElementById("type").getBoundingClientRect().top,keywordRight:document.getElementById("keyword").getBoundingClientRect().right,fieldRight:document.getElementById("searchField").getBoundingClientRect().right})');
+ assert(Math.abs(mobile.periodY-mobile.typeY)<5,"Mobile filters are not on the same row");
+ assert(mobile.fieldRight>mobile.keywordRight,"Mobile search field chooser is not at the right edge of the keyword box");
  assert(mobile.scroll<=mobile.width+3,"Mobile view has horizontal overflow: "+JSON.stringify(mobile));
  console.log("MOBILE_PUSH_AND_INDICATION_LAYOUT_OK",JSON.stringify(mobile));
  // The browser push click must link to the exact licensed product.
