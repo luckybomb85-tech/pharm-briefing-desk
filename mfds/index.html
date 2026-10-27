@@ -248,6 +248,25 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
  .search .date-pair .date-field>span{font-size:11px;min-width:35px}
  .search .date-pair .date-field>input{flex:1 1 auto}
 }
+
+/* Visible horizontal field switch replaces the native dropdown. */
+.search .field-tabs{display:flex;align-items:stretch;flex:0 0 auto;border-left:1px solid #d7deea;border-radius:0 8px 8px 0;overflow:hidden}
+.search .field-tab{flex:0 0 44px;min-width:0;padding:0 6px;border:0;border-left:1px solid #e4eaf3;background:#fff;color:#586c85;font-size:12px;font-weight:750;white-space:nowrap}
+.search .field-tab:first-child{border-left:0}
+.search .field-tab.active{background:#2458a6;color:#fff}
+.search .field-tab:focus-visible{outline:2px solid #16366c;outline-offset:-3px}
+.search .field-tab:not(.active):hover{background:#edf4fd}
+/* Date fields have the full form width, not half the period selector width. */
+.search>.date-pair{display:flex;flex-direction:row;align-items:stretch;gap:8px;width:100%;margin-top:0}
+.search>.date-pair .date-field{flex:1 1 0;width:50%;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:3px}
+.search>.date-pair .date-field>span{font-size:11px}
+.search>.date-pair .date-field>input{display:block;flex:0 0 auto;width:100%;max-width:100%;min-width:0;height:41px;padding:6px;font-size:12px}
+@media(max-width:760px){
+ .search .field-tab{flex-basis:39px;font-size:12px;padding:0 3px}
+ .search>.date-pair{flex-direction:row;gap:7px}
+ .search>.date-pair .date-field{width:calc(50% - 4px);flex:1 1 0}
+ .search>.date-pair .date-field>input{flex:0 0 auto;min-width:0;width:100%}
+}
 .push-dialog{border:1px solid #d3deec;border-radius:13px;padding:19px 22px;max-width:calc(100vw - 26px);width:410px;color:#1b2c43;box-shadow:0 15px 55px #1a2b4050}
 .push-dialog::backdrop{background:#13284279}
 .push-head{display:flex;justify-content:space-between;align-items:center;gap:9px}
@@ -294,11 +313,12 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
    <input type="search" id="keyword" aria-label="검색어" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" placeholder="품목명 검색">
    <div id="suggestions" class="suggestions" role="listbox" hidden></div>
   </div>
-  <select id="searchField" aria-label="검색 대상">
-   <option value="product">품목</option>
-   <option value="company">회사</option>
-   <option value="ingredient">성분</option>
-  </select>
+  <input type="hidden" id="searchField" value="product">
+  <div class="field-tabs" role="group" aria-label="검색 대상">
+   <button type="button" class="field-tab active" data-search-field="product" aria-pressed="true">품목</button>
+   <button type="button" class="field-tab" data-search-field="company" aria-pressed="false">회사</button>
+   <button type="button" class="field-tab" data-search-field="ingredient" aria-pressed="false">성분</button>
+  </div>
  </div>
  <div class="filter-row">
   <div class="period-picker">
@@ -311,10 +331,6 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
     <option value="2022">2022년</option>
     <option value="custom">기간 직접 입력</option>
    </select>
-   <div id="customDates" class="date-pair" hidden>
-    <label class="date-field"><span>시작일</span><input id="startDate" type="date" aria-label="변경 시작일"></label>
-    <label class="date-field"><span>종료일</span><input id="endDate" type="date" aria-label="변경 종료일"></label>
-   </div>
   </div>
   <div class="type-picker">
    <select id="type" aria-label="변경 유형">
@@ -325,6 +341,10 @@ footer{font-size:11px;color:#8a94a4;margin-top:26px}
    </select>
   </div>
   <button class="submit" id="searchButton" type="submit">검색</button>
+ </div>
+ <div id="customDates" class="date-pair" hidden>
+  <label class="date-field"><span>시작일</span><input id="startDate" type="date" aria-label="변경 시작일"></label>
+  <label class="date-field"><span>종료일</span><input id="endDate" type="date" aria-label="변경 종료일"></label>
  </div>
 </form>
 <section id="catalogue" class="catalogue" hidden aria-label="식약처 품목 검색 결과">
@@ -875,7 +895,7 @@ function selectSuggestion(item){
  ++state.suggestionSerial;
  closeSuggestions();
  $("#keyword").value=item.product;
- $("#searchField").value="product";
+ $("#searchField").value="product";syncFieldTabs();
  state.serial++;state.lookupSerial++;
  state.lookupQuery=item.product;state.lookupField="product";
  state.lookupPage=1;state.lookupMatches=[item];
@@ -939,6 +959,23 @@ form.addEventListener("submit",ev=>{
  }
  submitSearch();
 });
+function syncFieldTabs(){
+ const current=$("#searchField").value;
+ for(const button of document.querySelectorAll(".field-tab")){
+  const selected=button.dataset.searchField===current;
+  button.classList.toggle("active",selected);
+  button.setAttribute("aria-pressed",String(selected));
+ }
+}
+for(const button of document.querySelectorAll(".field-tab")){
+ button.addEventListener("click",()=>{
+  if($("#searchField").value===button.dataset.searchField)return;
+  $("#searchField").value=button.dataset.searchField;
+  syncFieldTabs();
+  $("#searchField").dispatchEvent(new Event("change",{bubbles:true}));
+ });
+}
+syncFieldTabs();
 syncPeriodInputs();
 $("#searchField").addEventListener("change",()=>{
  const placeholders={product:"품목명 검색",company:"회사명 검색",ingredient:"성분명 검색"};
