@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-27T05:33:11+09:00",
+  "checked_at": "2026-10-28T05:35:05+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -8,21 +8,21 @@
     "pooled_queries": 1,
     "total_max": 18
   },
-  "candidate_count": 0,
+  "candidate_count": 295,
   "routes": [
     {
       "source": "FDA Press Releases",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 4,
+      "in_window_index_hits": 3,
+      "error": null
     },
     {
       "source": "FDA Drugs",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 8,
+      "in_window_index_hits": 5,
+      "error": null
     },
     {
       "source": "EMA News",
@@ -40,101 +40,101 @@
     },
     {
       "source": "Reuters",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 100,
+      "in_window_index_hits": 100,
+      "error": null
     },
     {
       "source": "STAT",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 11,
+      "in_window_index_hits": 11,
+      "error": null
     },
     {
       "source": "Endpoints News",
-      "status": "FAIL",
+      "status": "PARTIAL",
       "hits": 0,
       "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "error": null
     },
     {
       "source": "BioPharma Dive",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 2,
+      "in_window_index_hits": 2,
+      "error": null
     },
     {
       "source": "Fierce Pharma",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 9,
+      "in_window_index_hits": 9,
+      "error": null
     },
     {
       "source": "Fierce Biotech",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 9,
+      "in_window_index_hits": 8,
+      "error": null
     },
     {
       "source": "BioSpace",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 86,
+      "in_window_index_hits": 83,
+      "error": null
     },
     {
       "source": "FirstWord Pharma",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 41,
+      "in_window_index_hits": 41,
+      "error": null
     },
     {
       "source": "Scrip/Pink Sheet",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 18,
+      "in_window_index_hits": 17,
+      "error": null
     },
     {
       "source": "Evaluate",
-      "status": "FAIL",
+      "status": "PARTIAL",
       "hits": 0,
       "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "error": null
     },
     {
       "source": "Pharmaceutical Technology",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 6,
+      "in_window_index_hits": 6,
+      "error": null
     },
     {
       "source": "Labiotech",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 1,
+      "in_window_index_hits": 1,
+      "error": null
     },
     {
       "source": "GEN",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 4,
+      "in_window_index_hits": 4,
+      "error": null
     },
     {
       "source": "Global gap recovery",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 503: Service Unavailable"
+      "status": "PARTIAL",
+      "hits": 7,
+      "in_window_index_hits": 7,
+      "error": null
     }
   ],
   "originals_verified": 0,
