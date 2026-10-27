@@ -50,7 +50,12 @@ try{
   '({title:document.querySelector("h1")?.textContent||"",count:document.querySelector("#resultCount")?.textContent||"",dates:[...document.querySelectorAll("details.entry .date")].map(x=>x.textContent),period:document.querySelector("#searchPeriod")?.textContent||"",maker:document.querySelector(".entry-main .meta-title")?.textContent||"",company:document.querySelector(".entry-main .meta-fields")?.textContent||"",brand:document.querySelector(".publisher")?.textContent||""})',
   d=>d.title.includes("적응증")&&/^변경이력 \d+건$/.test(d.count)&&d.dates.length>=10&&d.period.includes("검색 기간")&&d.maker==="업체"&&d.brand.includes("데일리팜"));
  assert(loaded.dates.every((x,i)=>!i||x<=loaded.dates[i-1]),"Events are not sorted by MFDS change date");
- assert(!loaded.company.includes("성분"),"Ingredient duplicated next to the manufacturer");
+ assert(loaded.company.includes("성분"),"Ingredient must be shown alongside the manufacturer");
+ const compact=await evalPage('(()=>{const bar=document.querySelector(".bar");const title=document.querySelector("#entries .drug");const meta=document.querySelector("#entries .meta-fields");const details=[...meta.querySelectorAll(".meta-detail")];const original=title.textContent;title.textContent=original.repeat(9);const css=getComputedStyle(title);const info={heading:bar.textContent.trim(),hidden:document.querySelector("#internalResultStatus").getClientRects().length===0,nowrap:css.whiteSpace==="nowrap",horizontal:css.overflowX==="auto",scrollable:title.scrollWidth>title.clientWidth,metadataCount:details.length,columns:getComputedStyle(meta).gridTemplateColumns};title.textContent=original;return info})()');
+ assert(compact.heading==="최신 변경이력"&&compact.hidden,"The result header must only display 최신 변경이력");
+ assert(compact.nowrap&&compact.horizontal&&compact.scrollable,"Long product names must remain on one horizontally scrollable line");
+ assert(compact.metadataCount>=2&&compact.columns.split(" ").length===2,"Manufacturer and ingredient should share two columns");
+ console.log("LATEST_HEADING_SINGLE_LINE_PRODUCT_PARALLEL_META_OK",JSON.stringify(compact));
  console.log("INDICATION_TITLE_PERIOD_MANUFACTURER_OK",JSON.stringify({title:loaded.title,count:loaded.count,period:loaded.period}));
  const settings=await evalPage('(()=>{document.querySelector("#notificationSettings").click();return {dialog:document.querySelector("#pushDialog").open,types:[...document.querySelectorAll("#pushDialog input[type=checkbox]")].map(x=>x.id),enable:!!document.querySelector("#pushEnable"),disable:!!document.querySelector("#pushDisable")}})()');
  console.log("PUSH_DIALOG_DEBUG",JSON.stringify(settings));
@@ -89,7 +94,9 @@ try{
  const mobileId=++request,promise=new Promise((resolve,reject)=>pending.set(mobileId,{resolve,reject}));
  ws.send(JSON.stringify({id:mobileId,method:"Emulation.setDeviceMetricsOverride",params:{width:390,height:844,deviceScaleFactor:1,mobile:true}}));
  await promise;
- const mobile=await evalPage('({width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width,periodY:document.getElementById("periodSelect").getBoundingClientRect().top,typeY:document.getElementById("type").getBoundingClientRect().top,keywordRight:document.getElementById("keyword").getBoundingClientRect().right,fieldRight:document.getElementById("searchField").getBoundingClientRect().right})');
+ const mobile=await evalPage('(()=>{const meta=[...document.querySelectorAll("#entries .meta-detail")].slice(0,2);const title=document.querySelector("#entries .drug");return {width:window.innerWidth,scroll:document.documentElement.scrollWidth,head:document.querySelector(".page-header")?.getBoundingClientRect().width,periodY:document.getElementById("periodSelect").getBoundingClientRect().top,typeY:document.getElementById("type").getBoundingClientRect().top,keywordRight:document.getElementById("keyword").getBoundingClientRect().right,fieldRight:document.getElementById("searchField").getBoundingClientRect().right,companyY:meta[0]?.getBoundingClientRect().top,ingredientY:meta[1]?.getBoundingClientRect().top,productWrap:getComputedStyle(title).whiteSpace,productOverflow:getComputedStyle(title).overflowX}})()');
+ assert(Math.abs(mobile.companyY-mobile.ingredientY)<4,"Mobile company and ingredient metadata must share the same row");
+ assert(mobile.productWrap==="nowrap"&&mobile.productOverflow==="auto","Mobile drug title must scroll horizontally");
  assert(Math.abs(mobile.periodY-mobile.typeY)<5,"Mobile filters are not on the same row");
  assert(mobile.fieldRight>mobile.keywordRight,"Mobile search field chooser is not at the right edge of the keyword box");
  assert(mobile.scroll<=mobile.width+3,"Mobile view has horizontal overflow: "+JSON.stringify(mobile));
