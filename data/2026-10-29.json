@@ -1,0 +1,329 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "[단독인터뷰]바이오헤이븐 “BHV-1530, ‘계열 내 최초’ 기대, 릴리 물질 넘어섰다” - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 바이오헤이븐이 BHV-1530 신약후보물질에 대해 계열 내 최초라는 기대감을 표명하며, 기존 릴리 물질을 넘어섰다고 평가했다. 본 내용은 단독 인터뷰를 통해 공개됐다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSjJ1VUVzTWl1YUxmSy14eENTMFN1V0x4NkdqLVpKaDQ3ZFlXOVhJbmhIa21KQXE3V2Y1MXpUVk1XajBuTWVlaDlBeVlRUFo3MjZoWGVteUNUbE9qZVIxTVJOMGxzT1lhOFhxNTlTTTQ1dWlTU2tyaDVxUHlaZXFjQQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-28T22:37:02+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "식약처, “제출자료 사실 전제로 심사”…임상·허가자료 검증 강화 검토",
+      "summary": "식품의약품안전처가 제넨셀 임상시험 자료 조작 논란과 관련해 제출자료 진실성을 전제로 심사가 이뤄졌음을 인정하고, 임상시험계획 승인과 품목허가 신청자료 신뢰성 검증 방안을 검토 중이다. 제넨셀 코로나19 치료제 임상시험 참여자 93명 중 연락 안 된 22명에 대해 건강상태 추가 확인을 지속할 예정이다. 또한, 바이오시밀러 28품목 시판 후 안전관리 결과를 반영해 허가사항을 변경했으며, 제네릭 공동생물학적동등성시험 폐지 문제는 이해관계자 논의와 합의가 필요하다고 밝혔다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47819",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-28T21:10:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "킴 팽 노보홀딩스 파트너 “中, 패스트 팔로어 넘어 ‘혁신신약 개발국’ 도약”",
+      "summary": "노보홀딩스 아시아 킴 팽 파트너는 2026년 바이오플러스-인터펙스 코리아에서 중국이 기존 후속 신약 중심의 패스트 팔로어 전략에서 계열 내 최초 혁신신약 개발로 전환할 것으로 전망했다. 중국 정부는 5개년 계획을 통해 혁신신약 개발에 집중 투자 중이며, 이에 따라 글로벌 신약 개발 프로그램이 확대될 전망이다. 싱가포르는 글로벌 투자와 의약품 제조 허브로 아시아 바이오 산업에서 중요 거점으로 부상하고 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29573",
+      "source_name": "더바이오",
+      "published_at": "2026-10-28T21:10:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "식약처 “비만약 오남용 지정만으론 한계”…처방관리 복지부와 협의",
+      "summary": "식약처가 위고비·마운자로 등 비만치료제 오남용우려의약품 지정만으로는 효과적 관리에 한계가 있다며 의료기관 처방행태 포함한 대책을 보건복지부와 마련할 필요가 있음을 밝혔다. 의료용 마약류 수거약국을 내년 200곳으로 확대하고, 과다처방 감시를 위한 통합감시체계 구축을 연말까지 완료할 계획이다. ADHD치료제의 저연령 사용 제한과 중독자 치료 재활 연계도 강화한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47822",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-28T21:06:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "정신질환 치료 선택지 넓히는 제약업계···신약 도입부터 DTx까지 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 제약업계가 신약 도입과 디지털 치료제(디지털치료제, DTx) 개발을 통해 정신질환 치료 선택지를 넓혀가고 있다. 다양한 치료 전략이 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1XY1dJUDhIdk4xME5hR21IZzlYM3Jnc1ctd2hxWEdXNm83dGlVSUtCWFgyYkZMSm5EUXBpbW9ZX1haclNBR0g1bjZwRTVHUlN5dGZEdHNWOTZGb1d2WUw3WFB2X3N2SXg3X3Vz?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-28T21:05:33+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"노화 늦췄다\" 어떻게 증명하나… 치료신약 개발의 딜레마",
+      "summary": "서울에서 열린 '2026 첨단재생의료 미래전략포럼'에서 노화 치료의 임상 진입 과제가 논의되었다. 노화 자체를 임상 대상으로 삼기 위해서는 신체 기능과 건강 상태 변화를 종합적으로 평가할 수 있는 표준화된 평가지표 마련이 중요하며, 임상 현장에서는 근거 축적이 우선돼야 한다는 의견이 제시되었다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80320",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-28T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "이식형 좌심실 보조장치 급여범위 확대…뇌손상과 퍠혈증 환자 '불인정'",
+      "summary": "보건복지부가 이식형 좌심실 보조장치 치료술 급여 기준을 개정해 비가역적 말기신부전 환자 등에게 급여를 확대하나, 중증 뇌손상, 패혈증, 말기 암 등 장기 생존이 제한적인 환자에 대해서는 급여를 인정하지 않기로 했다. 체외형 심실보조장치 급여 기준도 강화됐다. 대한병원협회가 회원병원 의견을 수렴해 복지부에 전달할 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47816",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-28T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO 2026]김동건 엘레바 대표 “리픽투 美 약가 연내 확정…프리미엄 전략 추진” - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 엘레바의 김동건 대표가 ESMO 2026에서 리픽투(Lipittu)의 미국 약가가 연내 확정될 예정이며, 이를 바탕으로 프리미엄 전략을 추진할 계획이라고 말했다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43VnFSQk9VU2hRMjFkMEpmdUFsYkFkNGdYQl8zb2FFcDZkNlZYcFg5cndIYnEyVVkyVHFNanVKUXBNS05BQ0d0WjVWbjh5b0pSdHgzZ1EzdkU1b293LW5sWEQ1WkZwTEFkLVBDbmhB?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-28T21:00:09+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "AZ, 방광암 '임핀지+파드셉' 3상 성공..\"新이슈 촉발\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 아스트라제네카가 방광암 치료를 위한 면역항암제 임핀지(Imfinzi)와 파드셉(Padcev)의 병용 3상 임상시험에서 성공적인 결과를 보고하며 새로운 이슈를 촉발시켰다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DUWV6dHBDRll5SkRPTGMwWEFBMUx4TkMtZmxqSG52aDdOaE50bFhqZmFCQkNJTmhQNUZHM3l3ZjluUV83QnpuZkdIMmZSVnZXNmg1ejJ3VQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-28T21:42:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "삼성바이오로직스 “이중항체 개발, 물질별 전략 달라야…맞춤형 CMC로 승부”",
+      "summary": "삼성바이오로직스는 이중·다중항체의 분자 구조와 특성에 맞춘 맞춤형 제조·품질관리(CMC) 전략을 도입해 개발 일정을 기존 13개월에서 9.5개월로 약 27% 단축했다. 세포주 개발에서 체인 비율 최적화, 배양 조건과 정제 공정 최적화, 고농도 제형 안정화, 정밀 분석기술 활용 등 차별화된 공정을 적용 중이다. 복잡한 이중항체의 불순물 제거와 안정성 확보가 핵심 과제이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29580",
+      "source_name": "더바이오",
+      "published_at": "2026-10-28T21:20:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "리베이트 제약사 ‘혁신형 인증’ 취소 기준 도마에…진흥원 “의견 수렴”",
+      "summary": "한국보건산업진흥원이 리베이트 관련 혁신형 제약기업 인증 취소 기준이 법령 위임에 따라 고시에 명확히 명시돼 있다고 답변했다. 복지부와 전문가 의견 수렴을 예고했으나 구체적 개정 방향이나 일정은 미제시했다. 외국계 별도 인증 유형을 신설해 국내 투자와 공동연구 배점을 높이고, 올해 신규 인증 결과를 연내 발표할 계획이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47818",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-28T21:12:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“수액세트 재질 따라 약물 손실”…항암제·항생제 흡착 연구 검토",
+      "summary": "식약처가 수액세트 재질에 따른 약물손실 문제와 관련해 항암제·항생제 등 약물흡착도 평가 연구 필요성을 검토 중이다. 국가필수의료기기는 내년 상반기 구체적 지정기준 마련 후 하반기 대상 품목을 지정할 계획이며, 공급중단 의료기기 대응체계 보완도 추진한다. 건강기능식품과 의료기기 안전관리 정책도 함께 개선해 나갈 방침이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47821",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-28T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임델트라, 소세포폐암 1차 유지치료 정조준···생존 개선 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 임델트라는 소세포폐암 1차 유지치료제로서 생존 개선을 목표로 하는 임상시험을 진행 중이며, 의미 있는 결과를 기대하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5YeTJpeXE5U3QwdU9SRmF6YjBuX29adkRPeHRZOGRoOXZiYXJVYWw1ZnVWLTcwZ0d0QVdMZ3F5Sk1YT0ZSNWM4UDlFR2VHRTR0V01jTGV5TU1KSDltVjJacy01eXBBWVFRd3Zr?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-28T21:04:41+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "삼성바이오 노사, 내달 3일 '끝장교섭'… 결렬 땐 순차 파업",
+      "summary": "삼성바이오로직스 노사가 11월 3일부터 재협상을 시작하기로 했으며, 이번 협상이 결렬될 경우 순차적으로 파업에 들어갈 예정이다. 법원은 쟁의행위 제한을 확대하여 주요 생산 공정 파업에 제약을 가하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80321",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-28T21:03:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "린버크, 중증 원형탈모 치료···24주 절반 이상 모발 80% 회복 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 린버크가 중증 원형탈모 치료에 대한 임상 결과를 발표했다. 24주 치료 후 대상자의 절반 이상에서 모발이 80% 이상 회복된 것으로 나타났다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBmQmZIcjg1TnQxUkFXZTB6UEtZekhMSGg5MTBsRjd3a1Bwd240TktKWHhmTVpqZy1vNVlBQkNUVmxydVRYZkNpaHd2UW54M1VpX3NFNE80TUNXQUtBQzluZ3RQSXprSjI5T21n?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-28T21:02:23+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[경력채용] 녹십자웰빙, 휴온스, 대화제약, 조아제약, HLB제약",
+      "summary": "녹십자웰빙, 휴온스, 대화제약, 조아제약, HLB제약 등의 제약기업들이 인허가, 품질관리, 개발 등 다양한 부문의 경력직 채용을 진행 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80315",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-28T21:01:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한미약품, 차세대 비만약 ‘UCN2·GLP-1’ 병용으로 체중·체성분↓",
+      "summary": "한미약품은 UCN2 유사체와 GLP-1 계열 치료제 병용을 통해 단독 투여 대비 체중 감량 및 체성분 개선 효과가 우수함을 비임상 연구로 확인했다. 차세대 비만치료제는 체중 감량의 질과 치료 지속성을 중시하며, 병용요법으로 환자별 맞춤 치료가 가능할 것으로 전망된다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29583",
+      "source_name": "더바이오",
+      "published_at": "2026-10-28T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "의약품관리정보센터 국고 지원 대폭 감액...\"유지 보수 외 지출 최소화\"",
+      "summary": "보건복지부는 내년도 의약품관리종합정보센터 운영 예산을 올해 대비 46% 감액된 약 8.7억원으로 편성했다. 예산 감액은 안정기에 진입한 센터가 유지보수와 사업관리비 등 필수 비용 위주로 예산을 집중하기 위한 조치이며, 실시간 의약품 유통정보 추적 시스템 강화에 초점을 맞춘다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47817",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-28T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "준시바이오, ESMO에서 단계 3 네오토르치 연구 최종 분석 결과 발표",
+      "summary": "준시바이오가 ESMO 2026에서 진행한 단계 3 NEOTORCH 임상시험의 최종 분석 결과를 공개했다. 이는 항암제 개발의 중요한 진전이다.",
+      "source": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPaldyWEJVMjZ3Z2xPM3Y5ek5VYkdHLXc0WmRNNk1PVm1GcDJyRXB1Wm03dFRrbHItWVZLdFJaTEJ0d3BKNHE4Nk1RbVcwamdoX1Q0SVdWMm4yWVg3ZzEyODEzVzZzWlNaaEo1ZkNHMFJZbFNuVnVOOXNBaUk2YzFGN0pDbk5BbHlCbGFjLTdRY1ZWUmRHM19BTWIyRTdJSWYybGNSR1pNcG9XaERqckd0TmhsUU1ZbUp1NDRBNEwzVEtRbkM4OUEzbVhFcG5UcUE4b2QxWnlJeXp0Yk0?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-28T09:57:20+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Junshi Biosciences Announces Final Analysis Results of the Phase 3 NEOTORCH Study at ESMO Congress 2026 - BioSpace"
+    },
+    {
+      "title": "Palisade Bio, 궤양성 대장염 치료용 경구제 PALI-2108 글로벌 2b상 첫 환자 투여 시작",
+      "summary": "Palisade Bio가 궤양성 대장염 치료 후보 약물 PALI-2108의 글로벌 2b상 임상에서 첫 환자 투여를 시작하며 개발 진전을 알렸다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8tRURQZURTN083WFpqM1BGSGdJR0E5MGhkUFZka2JaNGFtM3RlalN4ejNLenBteklCU3VHVFYzMmliaGlDNk45MG1iR3htSmNUYXpN?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-28T14:24:54+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Palisade Bio Announces First Patient Dosed in Global Phase 2b ASCENTRA-UC Study Evaluating Once-Daily Oral PALI-2108 for the Treatment of Ulcerative Colitis - FirstWord Pharma"
+    },
+    {
+      "title": "United Therapeutics, 폐동맥 고혈압 치료제 트레프로스티닐-일로프로스트 SMI 임상시험 FDA 승인 획득",
+      "summary": "United Therapeutics가 폐동맥 고혈압 치료제를 위한 트레프로스티닐-일로프로스트 SMI 임상시험에 대해 FDA의 승인을 받았다고 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4wSEpDOVpSTFY5Q1lpdEx1QUF1TDlycDZjS09fWGxJRFRieHRKOUt1aEt5am80cUh6Z3lsbHpXd19FaXFMajh5ck5YajFNTjZIdVBz?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-28T15:57:19+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "United Therapeutics Announces FDA Clearance to Proceed with Clinical Trial for Treprostinil-Iloprost SMI in Pulmonary Arterial Hypertension - FirstWord Pharma"
+    },
+    {
+      "title": "릴리, 당뇨 신약 레트라투타이드 임상 3상에서 오젬픽보다 우수한 혈당 및 체중 개선 효과 입증",
+      "summary": "릴리의 레트라투타이드가 3상 임상시험에서 경쟁 약물인 오젬픽 대비 혈당과 체중 감소 효과에서 우수한 결과를 보였다. 당뇨병 치료 분야에서 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMjBLYTAyUUhUd3FGdWJJUFNxaktuQ3Y2X1kxcEV1OXlRdTJ5amNYZUJybnM2NzV0dl8xUEtvcm0yZVhIN2NpZlRKQ3k5UDc1MTJQamoyNWt0c1lHNnJuWG5lb0xQNzRmTTI5MGtwS05naWJUYjA1NXBPRE9JcXZpLUNQcDNQcTFaUkkxeFQ2SWRhWThyZ3pfV2phUUFxRUI1?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-28T11:45:58+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Lilly’s retatrutide bests Ozempic on blood sugar, weight loss in phase 3 diabetes showdown - Fierce Biotech"
+    },
+    {
+      "title": "Nacuity Pharmaceuticals, 유셔 증후군 관련 망막색소변성 치료제 NPI-001 글로벌 임상 3상 첫 환자 투여 소식",
+      "summary": "Nacuity Pharmaceuticals가 유셔 증후군 관련 망막색소변성 치료제 NPI-001의 글로벌 확증 임상 3상에서 첫 환자 투여를 시작했다고 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5oYmRNMVRuOEttc0czdUxObVZmamRHQUoxRWljM0VBS1lTcjV0R1NXWnZzUzNNNE1HSHhVVUM5S241WmlkUnNobHNaNVpzUzBOWWdr?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-28T14:24:51+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Nacuity Pharmaceuticals Announces First Patient Dosed in Global Confirmatory Phase 3 Trial of NPI-001 (N-acetylcysteine amide) Tablets for the Treatment of Retinitis Pigmentosa Associated with Usher Syndrome - FirstWord Pharma"
+    },
+    {
+      "title": "Genmab, 암 이중특이항체 임상 3상에서 조기 생존율 개선 성공",
+      "summary": "Genmab이 개발한 암 치료용 이중특이항체가 임상 3상에서 조기 생존율 개선이라는 긍정적인 결과를 보였다. 회사는 이를 '매우 긍정적' 성과로 평가했다.",
+      "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMThiQ01VU2F5OFNFUUhOY2JqS21hVFJmSlJGbktWYjNNVEJKcDRGNGRZaVZsUF9nYkZndW1nSmdfeVlNZ0NwZUdxVzJmQk9JUTQ3cW9vY0hWYlp3MGkxSjdfaWZuMllYWV9lUUtWbDhWN3o2TGVwejd3VElWMmVqTndMWmJ0aGFiY0dWYnV0LVYtR0hCQVpGTlRMR3ZTa2VUOGx0bE5pU0Ezc2Fsc3RFTjZ2Z3hwU3JxMlc3bmRTNlVLSHR1d3hHNDE4SjIyNENM?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-28T19:21:40+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Genmab’s cancer bispecific delivers early survival win in ‘exceedingly positive’ Phase 3 readout - BioSpace"
+    },
+    {
+      "title": "Actinogen, 알츠하이머병 중대한 임상시험 데이터 마감 단계 도달",
+      "summary": "Actinogen이 알츠하이머병 치료제 관련 중대한 임상시험 데이터 마감 단계에 도달했다고 발표했다. 이는 임상 개발에서 중요한 이정표다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBpQURVdkswRUFONmJkWmR3ZzhwZXlIcGlBTS16bTJrTjhRVmNYa3lVbmlDdlVYeUdBN0pMWE41ZWRHRzlXV2h0MXhaamF4X2VOaGJ3?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-28T15:57:19+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Actinogen pivotal Alzheimer’s disease trial database lock milestone - FirstWord Pharma"
+    },
+    {
+      "title": "Geron, 재발성 골수섬유증 대상 이멧텔스타트 임상 3상 실패 소식",
+      "summary": "Geron의 재발성 및 난치성 골수섬유증 치료제 이멧텔스타트의 임상 3상 시험이 목표치 달성에 실패했다고 보고했다. 개발 계획에 차질이 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5RdE1PaVRVb0d1cm1xUkFGb0lseS03bUk4Y2pSSlYwcVlBN0E4OF9hUGZ3LXZta2dtcUwzbnVwb0RYTXY5akpCMXN3b3RQSUtBZVAw?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-28T19:51:39+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Geron's Rytelo expansion bid falters in Phase III myelofibrosis trial - FirstWord Pharma"
+    },
+    {
+      "title": "Idorsia, 파브리병 치료제 루세라스타트 임상 3상 돌입 및 공동개발 계약 체결",
+      "summary": "Idorsia가 파브리병 신약 루세라스타트의 임상 3상 시험을 개시하고 Nxera와 공동개발 및 상업화 계약을 체결했다. 이로써 글로벌 개발이 본격화된다.",
+      "source": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNQ21mbVk2blRkdHhFTjQtV3FGWVB4ZXhqUE1RVmpRRF9oMlY0dGJtUWdJRkJ5ek51OGVXZFFEbkRnbzZOemtrRE95MmtmaG0zZzh1TDRPU0VHSG13elBpOFhaaUdGRWxiOW9pYk90alROR2xfSW5uRmZiS1dQZXNPZGZLVlRFOXBLM0t2VVAtNjRNb0ZXV2ZvVTFmMlMtZlBxVGdvdl9CZko4ajlTdzFTQ3RPUzBxY2RYSWtFbjdfTFBiMWd6OGJ2dllyMjJHUm1SdEk2X0VYUTZMb1lRU2dZUVNKOHNBNTI4eFhhTFUxQlBIb3lQM24zbzA4eEVhTFdtTG5wUFVNZW1sUmZo?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-28T09:57:20+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Idorsia initiates pivotal Phase 3 study for lucerastat in Fabry disease and enters co-development and commercialization agreement with Nxera - BioSpace"
+    },
+    {
+      "title": "Nxera Pharma, 파브리병 경구 치료제 루세라스타트 일본 및 아시아태평양 독점 권리 획득",
+      "summary": "Nxera Pharma가 파브리병 치료제 루세라스타트에 대해 일본 및 일부 아시아 태평양 시장에서 독점 권리를 확보했다. 현지화 전략 강화 목적이다.",
+      "source": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQek9jencwQWNkLUpoMkx1c1J6TDhUWnlOMUt5N3gzN3hHUVNKWWdqYjhua09YRmlTUkNPSXAxWDlEbVg0eGk3RVhjdjU0cUQzWlpOVUFsTW5PbUtmSTZDcko5NTFId2pkVXlmbHhnSTgzUjltUFVULWZzNTM2T2hOUlBrQ0p3VGNjdE9oa0lEbDg1emFqM1lzZVBtWExQU3V6cmFLVjRrR1NKaDlDNXVJTDk3aWJJZmpsV3prYmc3MTBYZjhEWWkzb2x5TFdCNjhadkEyRFpNODlNZTJVaTNoODdXRlZBU0lHa2lxeG4xN3R0YWRwaThxMjF5dnZOSGh1ZXVRa2FjMGZsYnIy?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-28T09:34:58+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Nxera Pharma Secures Exclusive Rights to Fabry Disease Phase 3 Oral Therapy Candidate Lucerastat for Japan and Selected Asia Pacific Markets - BioSpace"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 18,
+    "global": 10
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
