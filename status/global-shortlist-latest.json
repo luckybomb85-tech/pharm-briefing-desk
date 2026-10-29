@@ -1,41 +1,27 @@
 {
-  "total_input": 306,
-  "ranked_count": 48,
+  "total_input": 352,
+  "ranked_count": 33,
   "shortlist": [
     {
-      "title": "AI in Pharma 2026: From Insight to Execution in Clinical Trials - citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TR1U4bmVSWVBNWFdJdkhqOTNRdmZaTElES1NzLVl1dTIyQjlsS0JHMXNGM3haOVJrR1NnU0tzVUtUNkZNY2NRZld0YWxWMnpfVk1GNUdnWQ?oc=5",
-      "published_at": "Wed, 28 Oct 2026 09:31:11 GMT",
-      "source": "Scrip/Pink Sheet",
+      "title": "MIMEDX Announces $25 Million Patent License Agreement - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaENFTWktYnVMOER0aFBIbkNYWWVzdHYta0hVSFliWlo2X2NyUE1PTHBqUC0xZnhDc0ZhSW5wblNyY0VuckJDTmtXSENTeFV3V1BCeW1uNkxnNnU3XzhLX2JINnNURUlVOFB1Q29ULWpYSlRPbmJBUUplM3BwZDl3WlVOcVVnT0dhSGo5Qm1odE1Rck1fNzMw?oc=5",
+      "published_at": "Thu, 29 Oct 2026 11:17:37 GMT",
+      "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
-      "score": 4,
+      "score": 6,
       "signals": [
-        "CLINICAL"
+        "DEAL",
+        "IP"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "Actinogen pivotal Alzheimer’s disease trial database lock milestone - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBpQURVdkswRUFONmJkWmR3ZzhwZXlIcGlBTS16bTJrTjhRVmNYa3lVbmlDdlVYeUdBN0pMWE41ZWRHRzlXV2h0MXhaamF4X2VOaGJ3?oc=5",
-      "published_at": "Wed, 28 Oct 2026 15:57:19 GMT",
-      "source": "FirstWord Pharma",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Annexon to Host Virtual Investor Event on November 3, 2026: Vonaprument for the Treatment of Geographic Atrophy - Highlighting Key Aspects of Phase 3 ARCHER II Trial - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxNeFcxY3ZhbEYyLVdrLUhTUTdib3JZTTJvWDZ5TldSYm40QVdRWlpNSEo0QkVmLVpaZkJBdTRua0VVenRkZHYxdE5vZWRkemNKcWJKSkVldXBpQ0ZjSndNTG9FT1JfMzN2MUxQSnJVbVRaWDZTLTFnVTlFVVhyc3JYU1FsV1ZPUHk3dWczSzlnYzkzNWdUS3VxMlZzTk9qQ3JwWm1NT3VVdzkyUTdaQ1JCeUgzZnh2R3V4cnk1U3dQMFJGLXktcG5tLVRfemE3blc2a2RKZEhMMTFDamNCN1RFa3BfRDRiUWNZejRtN2dlbDV0TW5NdTZLOVRSb1VtVlJfWElOMmhXVElUb3dlSElmbGlJdjZMRWI4UElDUDJfVTJrV3FQZ3hvYw?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:03:26 GMT",
+      "title": "Ascletis' Oral Small Molecule GLP-1, ASC30, Demonstrated Placebo-Adjusted HbA1c Reduction of 1.7% at 12 Weeks from Its U.S. Phase II Study in Participants with Diabetes - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxPczRVa0I4Mktmd196cDFNOWNCcVRlX0ZrbnNSUG5VWXdYeUNIUTNzOGZfdlktVGY4VmxDYUdxNW1SSmdWbzE2X3lObWNJS1daYi1zNk94eWxjR2IzUEZRRnBOdmJmS0drMkdPR0FmcTJ5eXBiU0preE00TllaaEdSUE12ck9UcTJGMkMzVzhwYl82NEZIZ2dFczdkNVBIbXJBOXkzcFFfcy1kZEJySVBuNDVwZXJmWk16V1J6N0trTTVOMnZJc0NlelZIWGdwZl9fUUp1SkRCdmpIdVlnVm5QeXdKc3VDTDJyaE5tQWpFd0VJaDZWODlzWXF5MmxpUmFrNVBhcEMzbVNQVWRHX1hna1h1VG5QMTc1aF9Bb3pEbWFyQTRLX0VlY3hmMA?oc=5",
+      "published_at": "Thu, 29 Oct 2026 08:12:07 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -48,24 +34,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Blue Lake Biotechnology Secures $5 Million Grant to Support Ongoing Pediatric Phase 1/2a Clinical Trial of Intranasal RSV Vaccine Candidate - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaG50bHNaemJ5NjczZFlrbjV0akJCU3lITHkxMno1S3QyeEJreFRLbTltbnVvbmVVVjRZSktnMGxsYktraHVrUS1Ock1yc0oxWXZUWVE3SzZWSmVVdXRSYlMzcks1bDhQVk5hMXBmRDh3enhYSTV1b1BBd1RjZjJ3T2tvVFduZlFteHgwUEt3RENhQmJJVzAxSF9fbFY0UkhYVElVQjEtVmxKMlczUnVJeVk1NGs4RnctWkVVTmxSZndSRE5Cd3JZOS1GcTJWR1Fwa1dwOFhjYmRuTXJHV0NhNGdwVTlDYTBWZzJ3NzNQNWtjbWx4YnBOaFBpdGRqeG9DUmRxMHFJRDl4Zw?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:35:19 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Genmab's $8B Merus bet delivers as bispecific combo halves risk of death in phase 3 - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOaGZDMDVVV3FNSFZqeEVzM1JaUHZfRHpHcDBqS1BFZEoxUHZfcTR1U0c0ZmFOOWczNnpKcVNWaEZWV2lBNkFrVmFXdXczN3gyRV8xT19YdmpmM0tYMTFhR0RaRlN4d2g3UVhJSVR4X3J3Ni0zUmJadE51X2M3c0duSzVpdm83VHJjMjdmMV93bkdLa2VNREFPazdNQ0lyN0pRZTdBbg?oc=5",
-      "published_at": "Wed, 28 Oct 2026 20:33:00 GMT",
+      "title": "Ascletis’ challenger to Lilly’s Foundayo hits goals in phase 2 diabetes trial - Fierce Biotech",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOU05ReGJfemh6ZVR1Yjl5NXk4NjVsRWVJaF9KVWlqcWFnaGhUVU1IdlNLdDdHTk14RkNObHEwWDdjWUJPalpTaUVjSUE1Z2RubWh5YXNENG51SjNFeG00VWoydjRGc2dCUlFJNEN5SjNjQzVnQ3Vua1dGNWhJWG4yaXJLcUNfemM3VEt5dHkzNzVTdGZndmstakNIdVZkamxoN2pfdVdBTXQ0Z3BBTzcxZA?oc=5",
+      "published_at": "Thu, 29 Oct 2026 09:11:17 GMT",
       "source": "Fierce Biotech",
       "group": "GLOBAL",
       "verified_original": false,
@@ -78,9 +49,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Genmab’s cancer bispecific delivers early survival win in ‘exceedingly positive’ Phase 3 readout - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMThiQ01VU2F5OFNFUUhOY2JqS21hVFJmSlJGbktWYjNNVEJKcDRGNGRZaVZsUF9nYkZndW1nSmdfeVlNZ0NwZUdxVzJmQk9JUTQ3cW9vY0hWYlp3MGkxSjdfaWZuMllYWV9lUUtWbDhWN3o2TGVwejd3VElWMmVqTndMWmJ0aGFiY0dWYnV0LVYtR0hCQVpGTlRMR3ZTa2VUOGx0bE5pU0Ezc2Fsc3RFTjZ2Z3hwU3JxMlc3bmRTNlVLSHR1d3hHNDE4SjIyNENM?oc=5",
-      "published_at": "Wed, 28 Oct 2026 19:21:40 GMT",
+      "title": "Brixton Biosciences Announces Pivotal Clinical Data for Reneurx™ Nerve-Selective Therapy in Knee Osteoarthritis to be Presented at AAHKS 2026 - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPQldMT2NkTEliNTdyZUpJQnNnMlItRlEwamVIV1FyVXFWTEVNYWtkaEZQYTY2VHlLRkwwVjBtanNJa1FZU2FjaTFocjFXQzdQQ2ZvMUF3TlR2NmFkZzcwMnRDdVZKQ3dHSTBaY0Eyb01qeWt0d2xqeXdidXNKZjBFazk0UjRieUFwaWZHaFNzSU1MLWlMdEpLYlJXYnI4ZWg5QWwyUkZBZ3BKWkhDZEtZV3F4dzNXMnFhdUROY1JodXRmQjFrVHNoenNpdE9RTmlKbUNXVkN3RFA2b0RPM09mVC04WmRTQl84Smg3RlJSNDFQT3MzTnphaENQT284X3BVMXJpaExjVmNsTXpE?oc=5",
+      "published_at": "Thu, 29 Oct 2026 12:59:56 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -93,25 +64,70 @@
       "original_url_verified": false
     },
     {
-      "title": "Geron Corporation Provides Update on Phase 3 IMpactMF Clinical Trial of Imetelstat in Relapsed/Refractory Myelofibrosis - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNTWs3Uy1KQ2FxX2J5ektMM05uX05NeE1LZUhYWTd2U0JMQmhBNU9pT3BqV0NOWnFfME9KV1NvYUMwQnU4Tm5iTUl1TzBuTXB5amVDV3lFWmFua2g4eVlvbGdGcEhoV1BhandGN1dXa3dGZVpVSnVCMjV6U1RzQ0RXUW9WOXhCeklSS0VyYzRNSFFyYkRZcEctMXhxUlo3YjlsakwzM0NJVnp4QWlzVXhHQzBUWjRDNFl4UkdmS3Y4NnpuTGFFLXZEd0R0NnZTYk9NSlNzM0xrZ2RJR3MwYkdMdFJ5OEV4aUQwdDJxNThyQnY?oc=5",
-      "published_at": "Wed, 28 Oct 2026 13:51:11 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Geron's Rytelo expansion bid falters in Phase III myelofibrosis trial - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5RdE1PaVRVb0d1cm1xUkFGb0lseS03bUk4Y2pSSlYwcVlBN0E4OF9hUGZ3LXZta2dtcUwzbnVwb0RYTXY5akpCMXN3b3RQSUtBZVAw?oc=5",
-      "published_at": "Wed, 28 Oct 2026 19:51:39 GMT",
+      "title": "Cerenome Completes Enrollment in Phase 2 ReSPECT-GBM Trial of REYOBIQ in Recurrent Glioblastoma - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1OLXl5Mm9pT2lTRUdSOXV6bGg4bWVTWWZOd2xodHN6cE54eDRTSWRIT0tVSHZEYXdDOWVab2ZyakFpZzFyd244V3JpOWJVMmNYay1F?oc=5",
+      "published_at": "Thu, 29 Oct 2026 15:53:32 GMT",
       "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Eisai to Present New Five-Year Lecanemab Data and Real-World Alzheimer's Disease Research at the 19th Clinical Trials on Alzheimer's Disease (CTAD) Conference - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5aVnByQWlHX1dmVXZqQlFSbHpCUno2YkdqX2NnWm5vd09jSUtFem0wU3oxeWI5MHU2T2lEMGpyWl81eWRCNmlKN2lXNWNSdGJoSmVF?oc=5",
+      "published_at": "Thu, 29 Oct 2026 16:48:22 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Eli Lilly scraps phase 2 Alzheimer's program after drug falls short of expectations - Fierce Biotech",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMi1zQUd4ZWF4czhpWDRvdDQydWtoWFlKNTJ4dzdpcm9uNHA5VGR1OE42VWxyYXhPVE85V3FveU03eWdIeTNJWHN3OV9xVjd1TmZ6Rmx4QlhmWHpUYVR2R0Q1d0FZNFBPM2lWRlBuV1EtU0kwVUFqdkV0ZGp0RTAyVUU0RVBkaTZ1NEF4a1o2X2l0TklaQ3BxNWZucWs1SnIzOWdJakxMTVdnY1NvRzFXcGRTOA?oc=5",
+      "published_at": "Thu, 29 Oct 2026 18:09:59 GMT",
+      "source": "Fierce Biotech",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Elicio Therapeutics to Present Phase 2 AMPLIFY-7P Results at the SITC 2026 Annual Meeting - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBtYXN5bC1xSzkxX1p3bnRkNkpFeUY0UVpFYjkyRUJtOFJQaWNoN1ktUHhVcVM3QUU0Z3BLY0ZOZE9aRlAwN21idWlNQ3hMMGRWOU44?oc=5",
+      "published_at": "Thu, 29 Oct 2026 15:12:50 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Geron’s Rytelo stumbles in phase 3 as Novartis gears up for post-JAK inhibitor blood cancer bid - Fierce Pharma",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPOThnSFBNTEpsWTZicmltZWtFX2dfM0NUZmdsaXRjZjlUYnVSem4wMC1nRnN1TE9VMFY0UlNJNVl5bzFEUFVBczV6blVObVRMMmJET2hMdDFSa0JkSk9FWFUwbFFNTFN1UEo3YnlsSElrS2RaNkVfWDBsbUU1R0NZeUxXYTFqdDgxaGFOZTBvaEE0NDYwOUl0NG1JX0pONl9mT3BNYkNiWGhBZTNzVjNBZUpmX1VxbUk?oc=5",
+      "published_at": "Thu, 29 Oct 2026 12:15:40 GMT",
+      "source": "Fierce Pharma",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
@@ -125,7 +141,7 @@
     {
       "title": "IDWeek 2026: despite missing primary endpoint, LB6V shows promise in Lyme disease - Pharmaceutical Technology",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMEljdVM2SUdmSHZDZ2xvYlhEQWhaT3JtSDczd3dZc2Iwb1dpZ2lReXU1SGJfN053ZGtkV2dJWmxja19nY0NYc1hXV2hiS2JVR0Mzd2YzUThLeUdrbEhhVDdPNmNUMjdNRnQ4Y2FobmFhenltVk5vRkFUZENNMnV3bWU0TWNOM2RwazlNSldHRWlWOTYwUldvZnJsSFY?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:02:19 GMT",
+      "published_at": "Thu, 29 Oct 2026 09:45:00 GMT",
       "source": "Pharmaceutical Technology",
       "group": "GLOBAL",
       "verified_original": false,
@@ -138,70 +154,10 @@
       "original_url_verified": false
     },
     {
-      "title": "Idorsia initiates pivotal Phase 3 study for lucerastat in Fabry disease and enters co-development and commercialization agreement with Nxera - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNQ21mbVk2blRkdHhFTjQtV3FGWVB4ZXhqUE1RVmpRRF9oMlY0dGJtUWdJRkJ5ek51OGVXZFFEbkRnbzZOemtrRE95MmtmaG0zZzh1TDRPU0VHSG13elBpOFhaaUdGRWxiOW9pYk90alROR2xfSW5uRmZiS1dQZXNPZGZLVlRFOXBLM0t2VVAtNjRNb0ZXV2ZvVTFmMlMtZlBxVGdvdl9CZko4ajlTdzFTQ3RPUzBxY2RYSWtFbjdfTFBiMWd6OGJ2dllyMjJHUm1SdEk2X0VYUTZMb1lRU2dZUVNKOHNBNTI4eFhhTFUxQlBIb3lQM24zbzA4eEVhTFdtTG5wUFVNZW1sUmZo?oc=5",
-      "published_at": "Wed, 28 Oct 2026 09:57:20 GMT",
+      "title": "Instylla's Embrace® Hydrogel Embolic System Receives FDA Approval for Peripheral Arterial Bleeds - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNMHU0ZTV6cnZtcTdKS21CaUJSc3FfU3BJNDJkZTBBc3hPQzFrZzNjY0hJSGdWaTRIUGNYbzVrR1puTFdMM1V5RHVJNEJZWnFndUNqVHYtRnBWV3oxcW1sQkRyeHhBblhvQndydjY1ZV9jQnpOVVJfdThQbGtFRmcwU3ZpMzlMMXJzTlgtVWp2cnBNT29xXzBfNGdQRmIyQWFqbkZRMTc4UUhwTE5Jenpzc3k3UFcxekhNeXZJQVo3RHRrb3ZsRTJHeWRRTnpDekE?oc=5",
+      "published_at": "Thu, 29 Oct 2026 14:05:41 GMT",
       "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Junshi Biosciences Announces Final Analysis Results of the Phase 3 NEOTORCH Study at ESMO Congress 2026 - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPaldyWEJVMjZ3Z2xPM3Y5ek5VYkdHLXc0WmRNNk1PVm1GcDJyRXB1Wm03dFRrbHItWVZLdFJaTEJ0d3BKNHE4Nk1RbVcwamdoX1Q0SVdWMm4yWVg3ZzEyODEzVzZzWlNaaEo1ZkNHMFJZbFNuVnVOOXNBaUk2YzFGN0pDbk5BbHlCbGFjLTdRY1ZWUmRHM19BTWIyRTdJSWYybGNSR1pNcG9XaERqckd0TmhsUU1ZbUp1NDRBNEwzVEtRbkM4OUEzbVhFcG5UcUE4b2QxWnlJeXp0Yk0?oc=5",
-      "published_at": "Wed, 28 Oct 2026 09:57:20 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Lilly’s retatrutide bests Ozempic on blood sugar, weight loss in phase 3 diabetes showdown - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMjBLYTAyUUhUd3FGdWJJUFNxaktuQ3Y2X1kxcEV1OXlRdTJ5amNYZUJybnM2NzV0dl8xUEtvcm0yZVhIN2NpZlRKQ3k5UDc1MTJQamoyNWt0c1lHNnJuWG5lb0xQNzRmTTI5MGtwS05naWJUYjA1NXBPRE9JcXZpLUNQcDNQcTFaUkkxeFQ2SWRhWThyZ3pfV2phUUFxRUI1?oc=5",
-      "published_at": "Wed, 28 Oct 2026 11:45:58 GMT",
-      "source": "Fierce Biotech",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Lynk Pharmaceuticals Reports Positive Long-Term Phase III Results for Zemprocitinib in bDMARDs-Inadequate Responders with Moderate-to-Severe Rheumatoid Arthritis - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9FekJuNEFjWmZsRTB0R3dVNzd4bHA3ZWd2UmdfbjlqdW5QcUhMd0pYck5KZ3VSMnNWdkxmSkw1eXBuUGtLQXppeW1TcDcwcFdwcUtj?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:24:52 GMT",
-      "source": "FirstWord Pharma",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Marshall purchased stock in obscure pharma company just before it secured key FDA approval - Popular Information",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9hanZvc2o1cVNCSGV0eEFUZnBzV01RUGJKOExTcXVqYUZQX2I4N3o3b0dVeG9HRkJ1cVh6NDhKVkFDOHg3YllLTURrNG5Rbnk3NGgtbXFBb3NGdnNnRF9lSDVnR3ppRGJNakE?oc=5",
-      "published_at": "Wed, 28 Oct 2026 10:31:00 GMT",
-      "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
@@ -213,24 +169,9 @@
       "original_url_verified": false
     },
     {
-      "title": "MetaVia to Present Phase 1 Clinical Trial Data for DA-1726 in Oral Presentation at the Precision Liver Symposium 2026 - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBVZkRyT1YyMEN3d1phMy1kT3NyWnprX2VmVGYtV3MwVFo0RFVrNE5jOTExYm1TUWJMMzJYYmM0OTB4RVZPNFA4c1ByeEV4cko0UEZv?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:24:52 GMT",
-      "source": "FirstWord Pharma",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Mineralys Therapeutics Announces Publication of Phase 2 Explore-CKD Trial Results for Lorundrostat in Kidney International - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPdmdwWndtZFNpZU94ZXh6QVRxVEY3ZlBJX1VHX1RBWUNxWUVIUmMwRWk0SUpWYVgwa1FxMFNvcThfUGFaX1QzTXNFYUVqQVMzVkxicHFKMGtVSGR1OWpfaVRaazFHTnlGbXQtVkhxRnBlRUJabTI2YnE5MmNBR0ZzbU8tdjlEdXBNbV9Kc0FBd1QwenF2cVlLMmlwWXMtWVRGUXBycEdvdUd3b3dFc2tLWmEwLUpQRHN5SEduYU5pZl9yVnowazJCZkN3YTJrdW9ZakEtR013RE9WNlk3S1BUSWNFZ2dXTUxyX0FRZE1JVGZuVXBQ?oc=5",
-      "published_at": "Wed, 28 Oct 2026 13:31:44 GMT",
+      "title": "Junshi Biosciences Announces the Completion of First Patient Dosing in the Phase 3 Clinical Trial of JS207 in Combination with JS007 for the First-Line Treatment of Advanced Hepatocellular Carcinoma - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxNVTRHWGkySUxBNVpiWDM1RmRkazlFWEJTcmplbWhOUngwN0hPMkRZejJmRElzUmxSTjY4cFRsaVRNRFliWUZJZl9fRVFQb2lIMjBXT1Bkc1IxZzFDQU40c2NuV1lCZGlsODZpR1ItNmcxUVJ5UWtOQVpQa1VLQmd1emIxNFl6NTFOcWxvaU05b29DUzM0cFpNaTJuMjB6SGxYdEUwVlZ6VUY1cms1alZwekV0SFpJUkhrYUQ5SVBwTnpEUEtQY3pnWHZIS09SWTc1bEJuSjd0dXN0YU9ucmxYM0NLTklSM05Ldlc1TkZqNTFYS2p4U05jTlJ4YzdVeEF2elpWQ0tBOHBJeGwwQWxHRjRGa2FLbjhxdHpBR1l4LU9kRVpkV2Vqcm1rNnhtaGxzNWFNT29VbU9kYkVVUnlfNzVUd3F4ZGswOTc3S1NoSTdxZWU0d2JqMGVB?oc=5",
+      "published_at": "Thu, 29 Oct 2026 12:25:12 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -243,9 +184,39 @@
       "original_url_verified": false
     },
     {
-      "title": "Monte Rosa Therapeutics Announces Milestone Achievement Associated with Second Phase 2 Clinical Study Initiation for VAV1-directed Molecular Glue Degrader MRT-6160 (DDY391) - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMitAJBVV95cUxPQ1lJWDlJRVdDZ0lUS2NpSFN4bktXN0tWOURlTmpEaW5ob2U1MHd1b3JQUjBhNjNrRW1BemRWTXF2dDhyOFozb2pjaFh5cWRKbGFZY1pyMXktS3lDb3pUTzNzVE9RZWUteng3NVd1eEZGWFU1dW9pUl9hM3ZEM1c2U3ZuZE1lU2lhQXhEV1FaQ0x1SU1XVGxhSlc3aTMySjY1X3RkODlPZmxVUEJ0VV92UVVtRzduYnEyakFRaUdwSVhQdnZOSVBxcS1aTk1DS1BLNWppdHRiT1hiMHFENmxHakR3amxXcElpN3pqbHpYUFdCTUFpc3M5TnpvZGxXXzRGMXctay1ic1RnZ1BGVDgxQWJabGY4RHlPQTE3U2J6Zm9Ta2Y2YzR3YjNERUdXTllWakFaOA?oc=5",
-      "published_at": "Wed, 28 Oct 2026 13:32:39 GMT",
+      "title": "Late-breaking Phase 3 REDUCE-2 data show clinically meaningful and durable serum urate lowering with pozdeutinurad - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5uUVQyYnlnUVFDZlh6M1pWMng0M1RtdjBBR1dyWU4xbmZUQjctOTJHRWRnMjR6SzUxMW1FN2JHeTBRd2ROTzZNZ1gtZnZ5WUpSTUZF?oc=5",
+      "published_at": "Thu, 29 Oct 2026 08:07:10 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "NeuroSense to Present Integrated Clinical and Biomarker Evidence Shaping PrimeC's Phase 3 Development at NEALS 2026 - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFAtcFZPX01BaWdEUXRIeDVlaXh5R2NBU2hrTGkxTHZQU3A0UzFrUV9zTVBTb2VYWko1WUFYYl9qZXJ1Zmp0WFdPa3V3N3JPbDAtTmkw?oc=5",
+      "published_at": "Thu, 29 Oct 2026 16:53:52 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Nuvation Bio to Expand Pivotal Phase 3 SIGMA Study of Safusidenib for IDH1-Mutant Glioma to Six European Countries - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPV3paNU1NZTZTOGlPZVY5cFVVTTg4ZmNsVVNMc0NwZENuSEZDTndZb3RkaDRrdGZPaTZQWWVRSmRRTWN5LUdocE1UZFA5TWJnWHczcHZQempIcU5PRGxmMHFNOFlpU0VudGhOVC1rV2ZwY0I5Skl3RFdKOVNsTHdfdzh3VnRBOGpDUHRRTnZaVGZnOXUyZUREeVJVVWRXTUlfc2tjNU8zOFFVVW9sR0VBalRsTzlPWDFMVWFmNFUyamlCOEJ4b1dSSXJqQi1yN1RpZTlxbmlzT2VNMmdTMkpleFRPUHF6bFYxRkE?oc=5",
+      "published_at": "Thu, 29 Oct 2026 13:24:08 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -258,9 +229,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Nacuity Pharmaceuticals Announces First Patient Dosed in Global Confirmatory Phase 3 Trial of NPI-001 (N-acetylcysteine amide) Tablets for the Treatment of Retinitis Pigmentosa Associated with Usher Syndrome - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5oYmRNMVRuOEttc0czdUxObVZmamRHQUoxRWljM0VBS1lTcjV0R1NXWnZzUzNNNE1HSHhVVUM5S241WmlkUnNobHNaNVpzUzBOWWdr?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:24:51 GMT",
+      "title": "OSE Immunotherapeutics Reports Additional Positive Results of Combi-TED Phase 2 Randomized Trial with Tedopi (OSE2101) in metastatic Non-Small Cell Lung Cancer - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mdVFZcDVoLTJEbzk3TkkxV3poVWhUQlI3ak0tMHlaaGZoOW9WdEI4M2NLMEZ3elVfV3JkbTVQaXBOV2R4bFRZSTc4Qk5sOF9pZ21R?oc=5",
+      "published_at": "Thu, 29 Oct 2026 18:18:23 GMT",
       "source": "FirstWord Pharma",
       "group": "GLOBAL",
       "verified_original": false,
@@ -273,9 +244,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Nxera Pharma Secures Exclusive Rights to Fabry Disease Phase 3 Oral Therapy Candidate Lucerastat for Japan and Selected Asia Pacific Markets - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQek9jencwQWNkLUpoMkx1c1J6TDhUWnlOMUt5N3gzN3hHUVNKWWdqYjhua09YRmlTUkNPSXAxWDlEbVg0eGk3RVhjdjU0cUQzWlpOVUFsTW5PbUtmSTZDcko5NTFId2pkVXlmbHhnSTgzUjltUFVULWZzNTM2T2hOUlBrQ0p3VGNjdE9oa0lEbDg1emFqM1lzZVBtWExQU3V6cmFLVjRrR1NKaDlDNXVJTDk3aWJJZmpsV3prYmc3MTBYZjhEWWkzb2x5TFdCNjhadkEyRFpNODlNZTJVaTNoODdXRlZBU0lHa2lxeG4xN3R0YWRwaThxMjF5dnZOSGh1ZXVRa2FjMGZsYnIy?oc=5",
-      "published_at": "Wed, 28 Oct 2026 09:34:58 GMT",
+      "title": "Ono cans 2 endocannabinoid drug studies after quintuple Phase 2 failure - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQam53QS1GZTFnekJNeWxORnZraU84d1M0MjZ4VXIxRXVZXzgzeEZRRmsydFMwR05reC1HbWtRcHIySDN0dnRmRGNiOVdjZWdMMkx4bzNDdVREcjVrdktlLTdTWFU2SUNJOGlhdlJmejhta05TNzQyaHhBbEtlaTIzUEYtSlBUWmVncmJSRmJYUWFxbzFqbXdRNnVLeHl3aWg1alB5Q2l4NWNkWGFpSVFSQ1hOVQ?oc=5",
+      "published_at": "Thu, 29 Oct 2026 13:42:08 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -288,9 +259,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Palisade Bio Announces First Patient Dosed in Global Phase 2b ASCENTRA-UC Study Evaluating Once-Daily Oral PALI-2108 for the Treatment of Ulcerative Colitis - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8tRURQZURTN083WFpqM1BGSGdJR0E5MGhkUFZka2JaNGFtM3RlalN4ejNLenBteklCU3VHVFYzMmliaGlDNk45MG1iR3htSmNUYXpN?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:24:54 GMT",
+      "title": "Xenon Announces Positive Phase 1 and New Preclinical Data at IASP 2026 Supporting Advancement of XEN1701 and XEN1120 to Phase 2 Proof-of-Concept Studies in Acute Pain - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5USV9PdU5ZLXJ5RkNlVHBVZWU3Y21NMklUdkxrc2otRFNoTHJGTVp0blg2S3V1MFVkY3FjZF9BcFlRNTQwYXRFdXNWcjA0SlhSUlF3?oc=5",
+      "published_at": "Thu, 29 Oct 2026 17:02:32 GMT",
       "source": "FirstWord Pharma",
       "group": "GLOBAL",
       "verified_original": false,
@@ -303,39 +274,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Polycystic Kidney Disease Pipeline Analysis 2026: Phase III and Phase II Assets, MOA Breakdown, and ROA Trends | Otsuka Pharma, Sanofi S.A, Reata Pharma, Galapagos N.V, Janssen Pharma - StreetInsider",
-      "url": "https://news.google.com/rss/articles/CBMi6wJBVV95cUxOSFc1VWlkNDFhdkYxZFI4RzlJNmdvTV9LRmNLZGFVVFBqOUZjOWU5Q2E4VktlNFZiR2g3enZuYnE5NEMxbUQ3ODM0NFRIRlVyUjlxN2VxeEl1dVdScWFuLWQ4U2VMcUZURlpGRTJ5RzNkUE5mUEN3bm5ueWg4TnZ3bmZoZDV6S2pOQ1J4NmR5T1U2ZWwzVEdUazhfalBaX24xRTdBa0p2MFcwV1o5ejdkUVVYb0Z2Z29uMkh6dE9yMmRFYU8yalNnWks4REF4bVctdHFtbG51bzZ1OGx5NEJ0NTVkRG1zelFfSVQ5SEtHc0dla09Lc19jNkR1OWtrZDNtUVFnOEtVcUdKYnNubnAtMzEyT2ZicVVOc3VBXzg2UmEtWWJUSWQybWdUbkllLWI2R0RYdkNQTzh6U0dqc1RBN240TjFEbFNDdFZRaGtOaUJtYXZ1VXlCcGg0UFBvTjBzYk5GYzBUSmNUQms?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:30:54 GMT",
-      "source": "Global gap recovery",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "TCG Labs Soleil Highlights Portfolio Momentum with Three Programs Entering First-in-Human Clinical Trials Across Oncology and Cardiovascular Disease - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQZHhmZ3hCZDdGNVV3WFl4dm5DNTlrSFJsdWF6SUFCUFJ3ejlDcFdFNE9UNnU3M1B4ekhsRmVoOU5yaUJiTmxsTjE2Sl9wN0NDdmVSUl91ZkZOSkdIenZfV0U0cTQ0bFkxbWphM05mM2plVXhSdnNPWEQ5UUtkcVIzQnd6VDlzbFNiZW5LRmNseXY4WWJheWhBOVd1UjJSUmJWWkRZMkdOLWNPNER4dlpVeDV1WFBpTllkdWRxbHZEaldRZ1NiZWRyLU4tVmxaTXJfanZaeW5rWWN3RnM4c3VKTEZFcnBWRW9pVkw2NnIwQUN2RmhLNzI3alU1YzdrWUFnZFltb0hhTko4TDU1LURNVndyaVRuUFU?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:09:03 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "United Therapeutics Announces FDA Clearance to Proceed with Clinical Trial for Treprostinil-Iloprost SMI in Pulmonary Arterial Hypertension - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4wSEpDOVpSTFY5Q1lpdEx1QUF1TDlycDZjS09fWGxJRFRieHRKOUt1aEt5am80cUh6Z3lsbHpXd19FaXFMajh5ck5YajFNTjZIdVBz?oc=5",
-      "published_at": "Wed, 28 Oct 2026 15:57:19 GMT",
+      "title": "aTyr Pharma Announces Publication of Results from the Phase 3 EFZO-FIT Study of Efzofitimod in Pulmonary Sarcoidosis in The Lancet Respiratory Medicine - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB5N1hXQ3VIMkswMkktN0JhTnRSRDNCRm5EQnlfcnNTV25rV0FRNTRabVJXTGNHWWxGMktBMHlCaTRMaVNyamZWQllkYXl0WXhDZFJz?oc=5",
+      "published_at": "Thu, 29 Oct 2026 15:53:31 GMT",
       "source": "FirstWord Pharma",
       "group": "GLOBAL",
       "verified_original": false,
@@ -348,69 +289,24 @@
       "original_url_verified": false
     },
     {
-      "title": "'Numbers speak for themselves': Biogen's Apellis buyout fuels best quarter since 2020 - Fierce Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOTVlSay1XbC1LWDJQRnIxYTFWWldTM0NNRlVTU2Q5SU5mMjVUUGVLcE1iVEJYZ1hCOHBONFhOUmlSWW1KYkIySHR4T3ltUHZid09TQ1hHVlg4cDRiOXVIWk84RzQ3eXBUR0dFYnJkdGpVNGl4LTg1N0YzMjlBZnZEdHpabGdnQ2tyOGc?oc=5",
-      "published_at": "Wed, 28 Oct 2026 15:54:07 GMT",
-      "source": "Fierce Pharma",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "60 Degrees Pharmaceuticals Announces Partnership with The University of Southern Mississippi to Evaluate Castanospermine in Nonclinical Models of Alpha-Gal Syndrome - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9maEtvWGdvRndjbnlaLTdGWjJDMVUwUmZyZFdRc056VkpWZ0JFejV3T2NvXzBnaUZrNE5qQzA1Q18zY1k5cVIwN1JqZ3lwLUJCYWlr?oc=5",
-      "published_at": "Wed, 28 Oct 2026 14:24:51 GMT",
-      "source": "FirstWord Pharma",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Amgen Says US FDA’s Advertising Warning Letter Was For The Wrong Promotional Video - insights.citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPcFN2eWo1VmtGVmwzRkF1OVUweG5Td1BDdVVITTl6eDVmRDRieThCQmRrV2VWMjhoRU53MEVBRHZvLXFqaVRncEpQODBRT0E4RGxSV2JJZkdiT2VMWXRQVUhGQmRQZUxob3E4Y3FCOU1yckIwUWROZExtczBnSVhobEtnbXc0bllSaDRrZHM1ZFFDYTNXVE11MXNHTkRuY1pWTHpYT2pqUGpiUEtTZThEYWM3UmIweFgzTGM4VEhvSF9vUkZNUWgweUpMNzh3OVcxRVE1OXozLUVoTGFSZkhidHJNN3A0THJmUWJoZnBYY1VkZ3F5b3ZnYjRlR0RuRlZ6UHVYVU9EbnE3QkNySEloNWdTc09PQQ?oc=5",
-      "published_at": "Wed, 28 Oct 2026 18:48:42 GMT",
+      "title": "Adalvo Takes On Amgen’s Nplate With Enzene Biosimilar Purchase - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQUGpHOE9HOXVtMTB6YVZfWHJ1OXZlZkdReXUxMkZNNGZTeGpPdE5DdlA5SXFLSXVhVzFFYVVQVXZueHZQZ3FFZW5hb2MwRmJGOU5OcDRqcVp1NGpkWjl0YnZmRjhVT3hkSHlzNUszUGNZUF9GcV9HeEJRZ2l3MGh1T3JMRUVmRGRuSHBHSzB2SE1sOGR4SmNzN0w5RDlSNUhtZTVRNmluV0VHZmdlbVhuTHI2UnZkX1phME1kVk5fS05OWlZmaUF3SW9PQXB0SUpKdGFGTGNyY2VKSlR4cnFkSDUyRzFveFQxRnYzaWp3dw?oc=5",
+      "published_at": "Thu, 29 Oct 2026 14:11:50 GMT",
       "source": "Scrip/Pink Sheet",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
       "score": 3,
       "signals": [
-        "SAFETY"
+        "IP"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "Amgen hit with FDA warning letter for ‘misleading’ Vectibix promotion - Fierce Pharma",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMDBfcUFEc3BmLTc3RmNmX1hYbF9PalNVR05SdGw4cnduUWpFWWFJdEVCLXBJX1EySm12cndIN3h2LWRMeDlHdWpmRUlmWG43QTY1Q2ljOUlNYzZOZmJSZEJUd3hvN28yZzVHRm1DeFVod0x3cWJyNTItSUNibDVEWktNMkVzM0pnRXpib1g4LV9Vb1BOMUpSR3lPdVpjUQ?oc=5",
-      "published_at": "Wed, 28 Oct 2026 13:42:26 GMT",
-      "source": "Fierce Pharma",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "SAFETY"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Anthropic acquires drug discovery platform Mithril Medicine - Health Tech World",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZVpqbTNYV3UwOFdibV9GRXROTmVKRUJZYlN1UnoxV01UNTBpbGFUT09oRENWZ0pkWl8tUVlLQ1JuNEJmQ25TNXd0U0RNY2RWeG1ta2ZDVmkxN3lybWJORFlrc3RkTGR1bVJDd2VBQTl0SkR1Nzg4aDFUYTJQb1pqaTJ0R1NfV3hOQ3A1clZjV3FWdzNzdUozaXBWQkUtN0hsUko4c2ZoSndTMnFXMUR5UGwtSTRuNTJI?oc=5",
-      "published_at": "Wed, 28 Oct 2026 12:07:18 GMT",
+      "title": "BioMarin Licenses Fabry Disease Therapy From GC Biopharma and Hanmi - Securities.io",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYTZTYmxxc19BeGF6Q1k3ZWU0Q2EyTDBEaE4xMDNxTGZIVDZvZWZ4Sk1xcFgtbTU0ZDI4dl9Eck1kd0NXT0dlMUpkeHlCekpPSlJTQVUzOVJlakdyYUJVbC1fYlE2Q18xTzlNdkRTMVRMSXktUnlsMEllazktSkhwMWM1eGtiZW5nYWdXUFpsR0RNVUtFcXk0M1B3?oc=5",
+      "published_at": "Thu, 29 Oct 2026 13:08:39 GMT",
       "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
@@ -423,10 +319,25 @@
       "original_url_verified": false
     },
     {
-      "title": "Anthropic acquires first in-house drug programme from 'pipeline-in-a-person' company - FirstWord Pharma",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9IUTN2SUpwR1dNakx2R2xneVJjeFZoUnJ4Q29CV1E4X2hWZEVnZllYcm5WYWNLdVBPNThqal9ySW1uYkZLcU1RTWFzZ2E2N21uOEw4?oc=5",
-      "published_at": "Wed, 28 Oct 2026 19:42:14 GMT",
-      "source": "FirstWord Pharma",
+      "title": "Canada’s Biosimilar Switching Schemes: An Uptake Model For Others To Emulate? - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOZXZmQWhYTW90bmhnY0xqXzFGaS1QS1RQUGthX1RYZjZ2cWxjSG5aUmV6VHVfaFEwN3FXSm05R0NjOTlNVnVqMWhXc3QxcXdYQmxIQ3UwTzJ3ZmFFakM1NVJPeXNDaEVzZ2pzMGh1Mzl2b0FHYzN1Q1hNWVdvaThRRGQ4QkhrLXlPQUYzclFXaGVOU2dHYjQ1dUZkRWhyZ2J4R2s5Zk1MTWFsZlRIYVh6TzRBZHRMYk9neW94RjB1QkFjTmRVdnFOWFdfNTA0WU1FaXZpX2t0RFYyS1FyZUZIMllvbzM3dGxNemZZbmZBOFI0UU1CY2RSeUd0cXlhd0Y4?oc=5",
+      "published_at": "Thu, 29 Oct 2026 12:54:03 GMT",
+      "source": "Scrip/Pink Sheet",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "IP"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "DoorDash strikes $17 billion deal for US rival Instacart in mega grocery delivery bet - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORW5SOWQwSzcyUFRocHlTSmRhdWJtN2QzXzRCM3FPSjdXeDlBREVZSERWdGRiZUQ3OU1kMldlT3J1TnpwUFl3dEk1S1hkM0lpYmlDTlNfcllDdWc4VkYzZ2hzT0FmNm4zY2JNOEtJYUx4OVN4X045a2pXLWs5Wk9sMHdrMWFFMFI5R0VXV09uLTV4TFpnNTBPV3BNUHMxM2o2dEloNlJpWks2NjJUci13Vzd3QXlPeXdVQVpsUlhaQ1JyZk81aU5sdw?oc=5",
+      "published_at": "Thu, 29 Oct 2026 16:45:25 GMT",
+      "source": "Reuters",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
@@ -438,10 +349,100 @@
       "original_url_verified": false
     },
     {
-      "title": "Astellas fortifies immuno-oncology pipeline on $1.3bn Audax licensing deal - Pharmaceutical Technology",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOV3dsUVJ3clRVRkVfbHI1bjlQNzhnUnVzaE1RTHlsSTJZOU5CZmk1YVNya2xzT1NnRmx3bnNESGZrOVk1ZmtvNmZGVkRJdURNczBtYmozaVVKOTU0SWJFZnRLSlEzZ3RaUEZQVXlaekxKN2ZDUzJxVFp0Vm90bXJaRjgxVTI3VGYtY0g1STNOUWZfUXRDTFE?oc=5",
-      "published_at": "Wed, 28 Oct 2026 12:53:41 GMT",
-      "source": "Pharmaceutical Technology",
+      "title": "Germany, South Korea deepen security partnership amid Russia-North Korea concerns - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOd1RoZjFhNXBDeHVTOHhPdWhOWHFOZGFzOVNzemRNYTRZd1V1MnoybGs1WUlzLWpXY09XRjRHMVI4QmRXRDRENnRHdU9BcF81S0pnQ09idHNUOTZkNnppSXpVS3ZqRHQ5TGNMQVUyWktCVVBXRnlOSWp1N05KRnpHV1g1TTN1bjBIWjFYdGRrWVBoQU05VUh4d1VYYUg5a3NqclI3ZVJGeWo5OGpYUV9TblItSU9BQUJJOTVZalhFUHhGZTFxNE9jS2NlaTBMZl9peHhOcHZIR3I3RHc?oc=5",
+      "published_at": "Thu, 29 Oct 2026 11:34:09 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Home security firm ADT to be taken private by Thrive Holdings for $7.6 billion - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORUlHQW1KZ0kxaWZMdzR5VGl5djVBRU9PMUVTeE5NTGcxYVpTWE1hRkpwRE9JQjVWTGt4NGUxbUJIazdheXQ3NHNfLXg0a080VWRrMUNPSDVCdjczTG96SXJiaURuOUJia0Y2ZGFVdGhqaElSTzFaaW04OXFRcFlQcEtPZWQ5NnlxSGRCWFc2Y1FKVFRLMmxxZExHT1g1RUpuZkZNYXpnU0hTNzNQTC1lOG9KQVBxOGlIRGtqRG5HbzA5TEEtZmlJYQ?oc=5",
+      "published_at": "Thu, 29 Oct 2026 16:12:35 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Kalshi raises $1 billion at $40 billion valuation as it expands beyond prediction markets - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbzd3N0FYcjQ3ZFIzYjhnUWZ4V2tPT0QyUDQ5T0hCai1WM3JXRG1GWjNXUlczOEoxRmVyTmdicmNSSlVMWENEdUNjcFhFMkpFQUw4dW9Ed2V0c01EeWZ3cnhGSnhuQldid3pjVTVmOGVEV0Z5ZWZ1VWZncDhTUG9ROEdIMDNiYnRBaWJwSjBIUWN4TmFrTHpyalRYQ183T3lJWGRUTl94d0cxM1FuejJHZFM3R1piRllmbVE?oc=5",
+      "published_at": "Thu, 29 Oct 2026 18:05:58 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "MSCI warning a 'short-term shock', Indonesia central bank chief reassures businesses - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQekZ0Z0EwQnVmbEVqREZsVFd6SkNsMmNXbGhNbnhQN3dDYTE2WTNhUzQ3UHVFeVh3MlBRaUY0WktsNkgzSWM2Q1drU0gwUDExbWVpM2NXOU9KUzR1c1Nhby1mSlYtZTVqUnI2UTNGNDB2ZHlYQXVzUy1BTEV1RjBGclBjWWZ2eTB5RGdKd1pHSnJwYXFhOFF2bHhZUjVzZnVyZzdsdlEzbEEwZGwxRG5jT1ZjRGZFa2haaWc?oc=5",
+      "published_at": "Thu, 29 Oct 2026 11:10:26 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "SAFETY"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Microsoft expects to raise $25 billion in US bond sale, source says - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNakliRm9KY3R6ekRkaEl2SzZaUWtUdzczRlRyYmJNd2V2MDBLdkVVZjZQSmtVd3pzYk5JREM4M29hVHREdHBLWGljQ19rTWV5LVJMcmM0UW1OME9EY2MtTGcyRUpCcjVaYmcyVk1ZMEY5aWdvRmRpdy0tMGRfSWF2anVwQlBEOFNtaklfNDdsQURObDVXOERYejh6U3hTYzh0RGpJUDk4cU1KOE01N1FDdl9R?oc=5",
+      "published_at": "Thu, 29 Oct 2026 18:02:10 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Ottawa takes stake in Cohere as AI company opens $4.5 billion funding round - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWGNfQVUyVmlObW9LNWZfU09nUFBaUGFoS2pmNWJfM2lpdWdlRm4zRmJxeWtPXzk1Zmk5ZzlELWdvbGttdTNfMC03bFJ4ZGpfY3pGTzU5TXMzOWZ2V05UN2t6bGswdFE5dThJMDctaWRiLU5IU245Q04zN2RWb2d5UTd5RHlGVlJ5ampjaE1fUXlpenQ0ZksxMW03MGpocEZmQThtbG5falE4RmxOaEs4RUlB?oc=5",
+      "published_at": "Thu, 29 Oct 2026 16:23:00 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Roundup: BioMarin Licenses Long-Acting Fabry Enzyme Therapy for $70 Million Upfront, Ferring to Acquire Fertility Biotech Gameto in Deal Worth Up to $1.38 Billion - Pharmaceutical Executive",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY29yYzlrSWpMQmwtRVJJTWZici03NVRjQWM4eER5b1pqS1doY2pXSzBLSjU5NlRtQm1IdDMzZjlHcVFOVXFJWUg0WmFSNFZTbldvR2ZyUHViTGQ3MmcySFJKZ3hMWElzYkVHdnZ4czlwUF80UThrN2RwS1B1LUxLTUNpd21MMG5JUTh0cERlMks5SDFGeHF5UnhaOA?oc=5",
+      "published_at": "Thu, 29 Oct 2026 15:45:43 GMT",
+      "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-29T05:38:57+09:00",
+  "checked_at": "2026-10-30T05:40:25+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -8,27 +8,27 @@
     "pooled_queries": 1,
     "total_max": 18
   },
-  "candidate_count": 306,
+  "candidate_count": 352,
   "routes": [
     {
       "source": "FDA Press Releases",
       "status": "PARTIAL",
-      "hits": 4,
-      "in_window_index_hits": 0,
+      "hits": 6,
+      "in_window_index_hits": 1,
       "error": null
     },
     {
       "source": "FDA Drugs",
       "status": "PARTIAL",
-      "hits": 4,
-      "in_window_index_hits": 0,
+      "hits": 6,
+      "in_window_index_hits": 2,
       "error": null
     },
     {
       "source": "EMA News",
       "status": "PARTIAL",
-      "hits": 11,
-      "in_window_index_hits": 0,
+      "hits": 12,
+      "in_window_index_hits": 1,
       "error": null
     },
     {
@@ -48,8 +48,8 @@
     {
       "source": "STAT",
       "status": "PARTIAL",
-      "hits": 13,
-      "in_window_index_hits": 13,
+      "hits": 14,
+      "in_window_index_hits": 14,
       "error": null
     },
     {
@@ -69,71 +69,71 @@
     {
       "source": "Fierce Pharma",
       "status": "PARTIAL",
-      "hits": 9,
-      "in_window_index_hits": 9,
+      "hits": 21,
+      "in_window_index_hits": 21,
       "error": null
     },
     {
       "source": "Fierce Biotech",
       "status": "PARTIAL",
-      "hits": 9,
-      "in_window_index_hits": 9,
+      "hits": 8,
+      "in_window_index_hits": 8,
       "error": null
     },
     {
       "source": "BioSpace",
       "status": "PARTIAL",
-      "hits": 69,
-      "in_window_index_hits": 68,
+      "hits": 100,
+      "in_window_index_hits": 98,
       "error": null
     },
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 48,
-      "in_window_index_hits": 48,
+      "hits": 64,
+      "in_window_index_hits": 64,
       "error": null
     },
     {
       "source": "Scrip/Pink Sheet",
       "status": "PARTIAL",
-      "hits": 27,
-      "in_window_index_hits": 24,
+      "hits": 24,
+      "in_window_index_hits": 21,
       "error": null
     },
     {
       "source": "Evaluate",
       "status": "PARTIAL",
-      "hits": 3,
-      "in_window_index_hits": 3,
+      "hits": 1,
+      "in_window_index_hits": 1,
       "error": null
     },
     {
       "source": "Pharmaceutical Technology",
       "status": "PARTIAL",
-      "hits": 7,
-      "in_window_index_hits": 7,
+      "hits": 8,
+      "in_window_index_hits": 8,
       "error": null
     },
     {
       "source": "Labiotech",
       "status": "PARTIAL",
-      "hits": 2,
-      "in_window_index_hits": 1,
+      "hits": 0,
+      "in_window_index_hits": 0,
       "error": null
     },
     {
       "source": "GEN",
       "status": "PARTIAL",
-      "hits": 6,
-      "in_window_index_hits": 6,
+      "hits": 4,
+      "in_window_index_hits": 4,
       "error": null
     },
     {
       "source": "Global gap recovery",
       "status": "PARTIAL",
-      "hits": 15,
-      "in_window_index_hits": 15,
+      "hits": 8,
+      "in_window_index_hits": 8,
       "error": null
     }
   ],
