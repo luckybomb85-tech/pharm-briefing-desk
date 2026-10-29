@@ -1,0 +1,340 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-30",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "한미약품·GC녹십자, 美 바이오마린에 파브리병 신약 기술수출 … 최대 6352억원 규모",
+      "summary": "(제목 기준·원문 미검증) 한미약품과 GC녹십자가 미국 바이오마린에 파브리병 신약의 기술수출 계약을 체결했다. 계약 규모는 최대 6,352억원에 이르며, 두 회사가 공동 개발하는 신약이 미국 시장에 진출할 전망이다.",
+      "source": "https://biz.newdaily.co.kr/site/data/html/2026/10/29/2026102900445.html",
+      "source_name": "뉴데일리",
+      "published_at": "2026-10-29T23:59:40+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "녹십자·한미약품, 파브리병 신약 美 바이오마린에 최대 6300억원 기술수출 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 녹십자와 한미약품이 파브리병 치료 신약 후보물질을 미국 바이오마린에 최대 6300억원 규모로 기술수출했다. 이번 계약은 국내 제약사들의 대형 기술수출 사례로 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBIZU81LUV6RTJVX1FfOXJnRG1rNXVsUWQ5alF2dUpZd2xDeUFSR3QzaURLRENmYVdPZlBrdC1IeFllb3F2SXhNQkhWTzcxT2lJNHBVLWs2QzVKdUVFN2R1aVlZX3ZheGNtT1lHXzVB?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-29T21:00:12+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "美 제론, ‘이메텔스타트’ 골수섬유증 임상3상 중단…DMC “OS 개선 어려워”",
+      "summary": "미국 제론코퍼레이션이 재발성·불응성 골수섬유증 환자 대상 텔로머라제 저해제 이메텔스타트의 임상3상(IMpactMF)을 중단했다. 독립 데이터모니터링위원회(DMC)는 전체 생존기간(OS) 개선 가능성이 낮다고 판단했다. 다만 안전성에는 새로운 문제는 없었다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29623",
+      "source_name": "더바이오",
+      "published_at": "2026-10-29T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "공급중단 위기 넘긴 국가 필수약 삼진로라제팜, 약가 607% 인상",
+      "summary": "지난해 공급 중단 위기에 놓였던 국가 필수의약품 로라제팜 주사제의 건강보험 상한금액이 607% 인상된다. 삼진제약이 생산을 인수해 공급을 이어가면서 생산원가 보전을 위한 약가 현실화가 이뤄졌다. 이 약은 급성 불안 완화와 응급 진정 등에 사용되며 대체가 어려운 필수 약제다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80359",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-29T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항암 신약은 진화하는데 환자는 못 쓴다… ESMO가 던진 질문",
+      "summary": "2026년 유럽종양학회(ESMO)는 혁신 항암제가 빠르게 개발되는 가운데 환자의 치료 접근성 문제가 심각하다는 점을 집중 조명했다. 신약 허가와 적응증 확대 속도는 빠르나 건강보험 급여 등재와 접근성 개선은 이를 따라가지 못하고 있으며, 환자가 경제적 부담 없이 치료받을 수 있는 제도적 혁신이 필요함을 강조했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80289",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-29T21:04:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "킬레이션 주사 관리 강화…내년 3월 비급여 보고항목에 추가",
+      "summary": "보건복지부가 납중독 치료제인 킬레이션 주사제 칼킬레이트주와 레드큐어주의 비급여 사용 실태를 별도 보고항목으로 관리하고 임상적 근거 및 사용 적정성 평가 연구에 착수한다. 오남용 우려가 큰 의료기관에 대한 행정조사도 검토하며, 사용량 및 진료비 증가 현상을 감시한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47832",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-29T21:03:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"기술은 여러 곳에, 특허권리는 선명하게\"…알테오젠의 협상법",
+      "summary": "알테오젠 전태연 대표가 글로벌 기술이전 계약에서 특허권과 IP 조항의 범위 설정이 매우 중요하다고 밝혔다. 하나의 플랫폼 기술을 여러 제약사에 라이선스하는 구조에서 계약 별 특허 권리 범위가 다른 파트너와의 협력에 영향을 줄 수 있어 신중한 협상과 계약 조건 검토가 필요하다고 말했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80365",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-29T21:03:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "도수치료 묶자 신장분사치료 진료비 235% 증가…관리급여 확대 검토",
+      "summary": "도수치료의 건강보험 관리급여 전환 이후 신장분사치료 등 유사 비급여 항목의 이용량과 진료비가 급증하는 풍선효과가 나타났다. 보건복지부는 오남용 우려가 큰 항목에 대해 관리급여 추가 지정과 자율시정 가이드라인 마련, 건강보험·실손보험 청구정보 연계 분석 등을 추진한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47833",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-29T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO 2026]김동건 엘레바 대표 “리픽투 美 약가 연내 확정…프리미엄 전략 추진” - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 엘레바의 김동건 대표가 ESMO 2026에서 자사 항암제 리픽투의 미국 내 약가가 올해 안에 확정될 예정임을 알리고, 이를 기반으로 한 프리미엄 가격 정책을 추진하겠다고 밝혔다. 이는 회사의 글로벌 사업 확장과 수익성 강화 전략의 일환으로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQak5fNExRSFBROG8xYUtpdXJhajRpQUtXYmhUQVVNTWpRNDVscWxYOHFrS002cHZZcGRrX01ISFd1UkRIdzBERGp0WWhUR2lKUGlUZEtkSDNjY0tzZlBVVmVOQkZYQVNIdGZpUVVCVFNzRmVScUhydWtKdUN2LXVLOA?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-29T21:01:04+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 비원메디슨, 간암 신약 1상서 최대 35.7% 환자 종양 감소",
+      "summary": "비원메디슨이 개발한 진행성 간세포암 대상 이중특이항체 BGB-B2033이 임상 1상에서 600mg 투여군에서 최대 35.7%의 부분반응률을 보였다. 대부분 면역관문억제제 치료 경험 환자 대상이며, 완전관해 사례도 보고돼 후속 글로벌 3상 연구가 예정돼 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80360",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-29T21:01:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "엇갈린 투심, 되는 곳 밀어준다… 의료로봇 강세 [바이오맥짚기] - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 국찬우 KB인베스트먼트 최고투자책임자가 한국 바이오기업이 글로벌 투자 유치를 위해서는 뛰어난 연구 성과뿐 아니라 시장 수요, 경쟁 우위, 경제성까지 종합적으로 검증된 전략을 제시해야 한다고 강조했다. 한국의 초기 연구개발 역량은 우수하지만 글로벌 임상 경험과 체계적 개발 자료 확보가 필요하다고도 밝혔다. 또한 M&A와 IPO를 연계한 투자 회수 전략과 현지 조직 확보 중요성도 함께 설명했다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUlpBQ1d2MUlKaUMta29VLXRhSFpKX20yNG5YYWtfLUludFFuT2FMZjA3WHE0aUZReEhicGlaalJoUWNTcWthbmkycjkwQXJXeF9ST3NfNWhULUdYTWJleTFoMUZEdXl1V2JHRGpqUXE1QWljNWxROC13aDRBXzZkSQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-29T22:21:03+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "릴리, '삼중작용제' 첫 직접비교 3상서 \"오젬픽 이겨\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 릴리가 개발한 삼중작용제 약물이 진행한 임상 3상 직접 비교에서 경쟁 약물인 오젬픽을 뛰어넘는 결과를 보였다. 이번 임상은 신약 효능과 안전성을 입증하는 중요한 근거가 되었다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1LNzJxcnZlMVpBdDhHYUZIczd6ZmZvbmhSQmN6VEloa0s4aGh2X2RZRk1UcGRtcFFrVUVGWXhIaEhCdVI0Q2VjNGdEWE0xOGpTdlRuNkpHZw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-10-29T21:51:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "전태연 알테오젠 대표 “바이오 딜 핵심은 ‘IP’…제품은 독점·타깃은 비독점”",
+      "summary": "알테오젠 전태연 대표는 글로벌 제약사와의 기술이전 계약에서 제품 독점권은 부여하지만 타깃 독점권은 비독점으로 관리하는 것이 중요하다고 밝혔다. 플랫폼 기술의 지속성장을 위해 지식재산권(IP) 조항 설계와 관리가 핵심임을 강조했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29633",
+      "source_name": "더바이오",
+      "published_at": "2026-10-29T21:30:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신속 등재 치료제 11월 4일 당락 결정…11개 약제, 10개 제약사 '결전'",
+      "summary": "보건복지부가 11월 4일 희귀질환 치료제 신속 등재 시범사업 선정심사위원회를 개최한다. 11개 의약품을 신청한 10개 제약사가 대면 발표를 하며, 선정시 기존 240일 걸리던 급여 등재 기간을 100일 이내로 단축한다. 아스트라제네카, MSD, BMS 등 주요 제약사들의 희귀질환 치료제 등재가 결정될 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47844",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-29T21:10:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"면역항암제 안 듣는 환자 70%\"… 넥스아이가 파고든 '빈틈'",
+      "summary": "넥스아이는 면역항암제가 효과를 내지 못하는 약 70~90% 환자의 불응 원인을 연구해 새로운 표적 치료제를 개발 중이다. 일본 오노약품에 기술이전한 NXI-101은 현재 임상 1상 단계이며, 비소세포폐암 적응증으로 개발 중이다. 바이오마커 기반 환자 선별 전략도 함께 마련해 임상 성공 가능성을 높이고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80358",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-29T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀의약품 지정 해제 절차 마련…환자단체 의견도 듣는다",
+      "summary": "식품의약품안전처가 희귀의약품 지정 해제 요청 시 타당성 평가 절차를 구체화하는 개정안을 행정예고했다. 희귀의약품 지정받은 자, 의약단체, 소비자단체 등이 해제 요청할 수 있으며, 의·약학 학회와 환자단체 의견을 수렴하고 중앙약심 자문도 가능하도록 했다. 해제 확정 후 6개월 내 시행일을 지정한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47845",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-10-29T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약바이오 3분기 성적표···외형 성장 속 영업익 희비 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 국내 제약바이오기업들의 3분기 실적 발표에서 매출 외형 성장세는 유지됐으나 일부 기업에서는 영업이익에서 희비가 엇갈렸다. 재무 구조 및 R&D 투자 현황이 기업별로 상이한 것으로 나타났다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE14TGQ0WUNTZWVMNGhZajZHMzRQd2NJZXpTNlVPS2hoSkNzRUxLbmpJck5OWk91RU56Sk4yU0NGOWExYUxZZENmTU5tZ1BlbDluY1d5c1pJaTBOQzljaExTWHpoX2JDaFV2WnQ0?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-29T21:00:55+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "셀트리온, 역대 최대 실적...‘R&D 투자 속 고성장’ 실현에 기업가치 재평가 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 셀트리온이 3분기 역대 최대 실적을 기록했다. 연구개발(R&D) 투자 확대와 고성장 제품들의 매출 성장에 힘입어 기업가치 재평가가 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSkZxcWtUZk4xNGpxS2dOY0dYSTc1eEpycFktVUF5X1VxQURfaFdRbDBWdHpkTFExOW9ETnNVQzZLaVNIVk9qaWtjYTZiMWprY3RqRmdXMHdKU2g4eE1FY1B4SDhtcnFjT2sxdUNzQjhGZUNtTmtuRURPOVRHWnFuZzZFZw?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-29T21:00:09+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "Ascletis 경구용 소분자 GLP-1 후보물질 ASC30, 미국 2상 당뇨 환자 대상 임상서 12주 만에 위약 대비 HbA1c 1.7% 감소 입증",
+      "summary": "Ascletis의 ASC30이 미국에서 진행한 2상 임상에서 당뇨 환자를 대상으로 위약 대비 HbA1c 수치를 1.7% 낮추는 유효성을 확인했다. 이는 당뇨 치료제 개발에 중요한 긍정적 결과로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxPczRVa0I4Mktmd196cDFNOWNCcVRlX0ZrbnNSUG5VWXdYeUNIUTNzOGZfdlktVGY4VmxDYUdxNW1SSmdWbzE2X3lObWNJS1daYi1zNk94eWxjR2IzUEZRRnBOdmJmS0drMkdPR0FmcTJ5eXBiU0preE00TllaaEdSUE12ck9UcTJGMkMzVzhwYl82NEZIZ2dFczdkNVBIbXJBOXkzcFFfcy1kZEJySVBuNDVwZXJmWk16V1J6N0trTTVOMnZJc0NlelZIWGdwZl9fUUp1SkRCdmpIdVlnVm5QeXdKc3VDTDJyaE5tQWpFd0VJaDZWODlzWXF5MmxpUmFrNVBhcEMzbVNQVWRHX1hna1h1VG5QMTc1aF9Bb3pEbWFyQTRLX0VlY3hmMA?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-29T08:12:07+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Ascletis' Oral Small Molecule GLP-1, ASC30, Demonstrated Placebo-Adjusted HbA1c Reduction of 1.7% at 12 Weeks from Its U.S. Phase II Study in Participants with Diabetes - BioSpace"
+    },
+    {
+      "title": "aTyr Pharma, 폐육아종증 대상 Efzofitimod 3상 EFZO-FIT 연구 결과 란셋 호흡기 의학지 게재",
+      "summary": "aTyr Pharma가 폐육아종증 치료제 Efzofitimod의 3상 EFZO-FIT 연구 결과를 권위 있는 'The Lancet Respiratory Medicine' 학술지에 게재했다. 이는 치료제의 임상적 유효성을 뒷받침한다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB5N1hXQ3VIMkswMkktN0JhTnRSRDNCRm5EQnlfcnNTV25rV0FRNTRabVJXTGNHWWxGMktBMHlCaTRMaVNyamZWQllkYXl0WXhDZFJz?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-29T15:53:31+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "aTyr Pharma Announces Publication of Results from the Phase 3 EFZO-FIT Study of Efzofitimod in Pulmonary Sarcoidosis in The Lancet Respiratory Medicine - FirstWord Pharma"
+    },
+    {
+      "title": "BioMarin, GC바이오·한미약품과 파브리병 치료제 기술이전 계약 체결",
+      "summary": "BioMarin이 GC바이오 및 한미약품과 파브리병 치료제에 대한 기술이전 계약을 체결했다. 이번 계약은 희귀질환 치료제 개발과 글로벌 시장 진출에 중요한 협력 사례다.",
+      "source": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYTZTYmxxc19BeGF6Q1k3ZWU0Q2EyTDBEaE4xMDNxTGZIVDZvZWZ4Sk1xcFgtbTU0ZDI4dl9Eck1kd0NXT0dlMUpkeHlCekpPSlJTQVUzOVJlakdyYUJVbC1fYlE2Q18xTzlNdkRTMVRMSXktUnlsMEllazktSkhwMWM1eGtiZW5nYWdXUFpsR0RNVUtFcXk0M1B3?oc=5",
+      "source_name": "Global gap recovery",
+      "published_at": "2026-10-29T13:08:39+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "BioMarin Licenses Fabry Disease Therapy From GC Biopharma and Hanmi - Securities.io"
+    },
+    {
+      "title": "오노 파마, 엔도카나비노이드 2개 약물 5회 연속 임상 2상 실패로 개발 중단 발표",
+      "summary": "오노 파마가 엔도카나비노이드 신약 후보 2종에 대해 5차례 임상 2상 실패 후 임상 개발을 전면 중단했다. 임상 실패로 관련 치료제 개발에 큰 차질이 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQam53QS1GZTFnekJNeWxORnZraU84d1M0MjZ4VXIxRXVZXzgzeEZRRmsydFMwR05reC1HbWtRcHIySDN0dnRmRGNiOVdjZWdMMkx4bzNDdVREcjVrdktlLTdTWFU2SUNJOGlhdlJmejhta05TNzQyaHhBbEtlaTIzUEYtSlBUWmVncmJSRmJYUWFxbzFqbXdRNnVLeHl3aWg1alB5Q2l4NWNkWGFpSVFSQ1hOVQ?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-29T13:42:08+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Ono cans 2 endocannabinoid drug studies after quintuple Phase 2 failure - BioSpace"
+    },
+    {
+      "title": "엘리 릴리, 알츠하이머병 신약 임상 2상 실패로 관련 프로그램 중단",
+      "summary": "엘리 릴리가 알츠하이머병 치료제 임상 2상에서 기대에 미치지 못하는 결과로 인해 해당 신약 개발 프로그램을 중단했다. 이는 알츠하이머 치료제 개발에 있어 중요한 임상 실패 사례다.",
+      "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMi1zQUd4ZWF4czhpWDRvdDQydWtoWFlKNTJ4dzdpcm9uNHA5VGR1OE42VWxyYXhPVE85V3FveU03eWdIeTNJWHN3OV9xVjd1TmZ6Rmx4QlhmWHpUYVR2R0Q1d0FZNFBPM2lWRlBuV1EtU0kwVUFqdkV0ZGp0RTAyVUU0RVBkaTZ1NEF4a1o2X2l0TklaQ3BxNWZucWs1SnIzOWdJakxMTVdnY1NvRzFXcGRTOA?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-29T18:09:59+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Eli Lilly scraps phase 2 Alzheimer's program after drug falls short of expectations - Fierce Biotech"
+    },
+    {
+      "title": "OSE Immunotherapeutics, 비소세포폐암 전이 환자 대상 Tedopi (OSE2101) 병용요법 2상 임상에서 추가 긍정적 결과 보고",
+      "summary": "OSE Immunotherapeutics가 진행성 비소세포폐암 환자를 대상으로 Tedopi (OSE2101)를 포함한 병용요법 2상 임상에서 안전성과 유효성을 입증하는 추가 긍정적 결과를 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1mdVFZcDVoLTJEbzk3TkkxV3poVWhUQlI3ak0tMHlaaGZoOW9WdEI4M2NLMEZ3elVfV3JkbTVQaXBOV2R4bFRZSTc4Qk5sOF9pZ21R?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-29T18:18:23+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "OSE Immunotherapeutics Reports Additional Positive Results of Combi-TED Phase 2 Randomized Trial with Tedopi (OSE2101) in metastatic Non-Small Cell Lung Cancer - FirstWord Pharma"
+    },
+    {
+      "title": "Instylla Embrace® Hydrogel Embolic System, 말초 동맥 출혈 치료 FDA 승인 획득",
+      "summary": "Instylla의 Embrace® Hydrogel Embolic System이 말초 동맥 출혈 치료용으로 미국 식품의약국(FDA) 승인을 받았다. 이는 혈관 출혈 치료에 새로운 치료 옵션을 제공할 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNMHU0ZTV6cnZtcTdKS21CaUJSc3FfU3BJNDJkZTBBc3hPQzFrZzNjY0hJSGdWaTRIUGNYbzVrR1puTFdMM1V5RHVJNEJZWnFndUNqVHYtRnBWV3oxcW1sQkRyeHhBblhvQndydjY1ZV9jQnpOVVJfdThQbGtFRmcwU3ZpMzlMMXJzTlgtVWp2cnBNT29xXzBfNGdQRmIyQWFqbkZRMTc4UUhwTE5Jenpzc3k3UFcxekhNeXZJQVo3RHRrb3ZsRTJHeWRRTnpDekE?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-29T14:05:41+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Instylla's Embrace® Hydrogel Embolic System Receives FDA Approval for Peripheral Arterial Bleeds - BioSpace"
+    },
+    {
+      "title": "준쉬바이오사이언스, 진행성 간암 1차 치료용 JS207과 JS007 병용 3상 임상 1차 환자 투약 완료 발표",
+      "summary": "준쉬바이오사이언스가 진행성 간세포암 1차 치료를 위한 JS207과 JS007 병용요법 3상 임상시험에서 첫 환자 투약을 완료했음을 발표했다. 이는 국내 간암 치료 신약 개발에 중요한 진전이다.",
+      "source": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxNVTRHWGkySUxBNVpiWDM1RmRkazlFWEJTcmplbWhOUngwN0hPMkRZejJmRElzUmxSTjY4cFRsaVRNRFliWUZJZl9fRVFQb2lIMjBXT1Bkc1IxZzFDQU40c2NuV1lCZGlsODZpR1ItNmcxUVJ5UWtOQVpQa1VLQmd1emIxNFl6NTFOcWxvaU05b29DUzM0cFpNaTJuMjB6SGxYdEUwVlZ6VUY1cms1alZwekV0SFpJUkhrYUQ5SVBwTnpEUEtQY3pnWHZIS09SWTc1bEJuSjd0dXN0YU9ucmxYM0NLTklSM05Ldlc1TkZqNTFYS2p4U05jTlJ4YzdVeEF2elpWQ0tBOHBJeGwwQWxHRjRGa2FLbjhxdHpBR1l4LU9kRVpkV2Vqcm1rNnhtaGxzNWFNT29VbU9kYkVVUnlfNzVUd3F4ZGswOTc3S1NoSTdxZWU0d2JqMGVB?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-29T12:25:12+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Junshi Biosciences Announces the Completion of First Patient Dosing in the Phase 3 Clinical Trial of JS207 in Combination with JS007 for the First-Line Treatment of Advanced Hepatocellular Carcinoma - BioSpace"
+    },
+    {
+      "title": "Nuvation Bio, IDH1 돌연변이 교모세포종 치료제 사푸시데닙 3상 SIGMA 연구 유럽 6개국으로 확대",
+      "summary": "Nuvation Bio가 IDH1 변이 교모세포종 치료제 사푸시데닙의 임상 3상 SIGMA 연구 대상을 유럽 6개국으로 확장키로 했다. 글로벌 임상 확대는 치료제 상용화 가속화의 중대 신호다.",
+      "source": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPV3paNU1NZTZTOGlPZVY5cFVVTTg4ZmNsVVNMc0NwZENuSEZDTndZb3RkaDRrdGZPaTZQWWVRSmRRTWN5LUdocE1UZFA5TWJnWHczcHZQempIcU5PRGxmMHFNOFlpU0VudGhOVC1rV2ZwY0I5Skl3RFdKOVNsTHdfdzh3VnRBOGpDUHRRTnZaVGZnOXUyZUREeVJVVWRXTUlfc2tjNU8zOFFVVW9sR0VBalRsTzlPWDFMVWFmNFUyamlCOEJ4b1dSSXJqQi1yN1RpZTlxbmlzT2VNMmdTMkpleFRPUHF6bFYxRkE?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-29T13:24:08+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Nuvation Bio to Expand Pivotal Phase 3 SIGMA Study of Safusidenib for IDH1-Mutant Glioma to Six European Countries - BioSpace"
+    },
+    {
+      "title": "포즈데우티누라드, 3상 REDUCE-2 데이터서 임상적으로 의미 있는 지속적 혈청 요산 저하 효과 확인",
+      "summary": "포즈데우티누라드의 3상 REDUCE-2 임상시험 결과 혈청 요산 수치가 임상적으로 유의미하고 내구성 있게 감소하는 효과를 보였다. 이는 통풍 치료제 시장에 중요한 데이터다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5uUVQyYnlnUVFDZlh6M1pWMng0M1RtdjBBR1dyWU4xbmZUQjctOTJHRWRnMjR6SzUxMW1FN2JHeTBRd2ROTzZNZ1gtZnZ5WUpSTUZF?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "2026-10-29T08:07:10+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Late-breaking Phase 3 REDUCE-2 data show clinically meaningful and durable serum urate lowering with pozdeutinurad - FirstWord Pharma"
+    },
+    {
+      "title": "엔젠 바이오시밀러, 아달보, 암젠 Nplate 바이오시밀러 시장 진입 겨냥 인수 계약 체결",
+      "summary": "엔젠이 아달보 바이오시밀러를 인수하며 암젠의 Nplate 바이오시밀러 시장 경쟁에 뛰어들었다. 바이오시밀러 시장 확대와 경쟁 구도 변화에 중요한 영향이 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQUGpHOE9HOXVtMTB6YVZfWHJ1OXZlZkdReXUxMkZNNGZTeGpPdE5DdlA5SXFLSXVhVzFFYVVQVXZueHZQZ3FFZW5hb2MwRmJGOU5OcDRqcVp1NGpkWjl0YnZmRjhVT3hkSHlzNUszUGNZUF9GcV9HeEJRZ2l3MGh1T3JMRUVmRGRuSHBHSzB2SE1sOGR4SmNzN0w5RDlSNUhtZTVRNmluV0VHZmdlbVhuTHI2UnZkX1phME1kVk5fS05OWlZmaUF3SW9PQXB0SUpKdGFGTGNyY2VKSlR4cnFkSDUyRzFveFQxRnYzaWp3dw?oc=5",
+      "source_name": "Scrip/Pink Sheet",
+      "published_at": "2026-10-29T14:11:50+00:00",
+      "tag": "기업·경영",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Adalvo Takes On Amgen’s Nplate With Enzene Biosimilar Purchase - insights.citeline.com"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 18,
+    "global": 11
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
