@@ -1,0 +1,197 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-10-31",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "셀비온, 전립선암 임상 재조명에 '강세'…한미약품도 비만약 출시에 5%↑[바이오 맥짚기] - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 셀비온은 전립선암 관련 임상 재조명 소식에 강세를 보였으며, 한미약품도 비만 치료제 출시 기대감에 주가가 5% 상승했다. 다만 이는 임상 결과 발표나 허가와 직접 연결된 뉴스는 아니다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNanA1eklKWVdlTXQ3ZmpJVllTbHJ6alY3ci1VNGdleDA5X1Vkb0RvYVRZM0dTaW9UZjB0YWtTYXVqOFF3OUN3QmRkMlFwZGxSNHJIYjZWMTdNVHE4TWd2bVJ4LXhmNTdrWEdEM3pHb2lWdWREcGFFMnV5Z1FIM19fSQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-10-30T22:07:06+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[임상 업데이트] 큐로셀, ‘림카토’ 2차 치료 적응증 확대 위한 3상 신청 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 큐로셀은 비소세포폐암 치료제 ‘림카토’의 2차 치료 적응증 확대를 목표로 임상 3상을 신청했다. 이번 임상은 신약의 적응증 확대를 위한 중요한 단계로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5WS0NXd1B4ZEtXanE0NkpSWDg4MExaSFdOSjM5aDFTaUd4RXowdzBDMU91eXE5b3hOT1MxNGhjTWlNclNKdkhGSk91eVNtSFM4aWdNWTdMQ3VGWW4yNXpfdHIzelFMUmt4T2UtQjBR?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-10-30T22:00:06+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"필터 하나 바꿨는데 9개국 출하 막혔다\"… AI로 푸는 허가관리",
+      "summary": "케이론은 의약품 허가 후 변경관리를 위한 인공지능(AI) 기반 솔루션을 시연했다. 필터 교체 같은 단일 변경 사항도 국가별 허가 절차가 달라 공급에 영향을 준다는 점을 반영해 9개국 규제 정보를 AI가 분석하고 실제 출하 가능 여부까지 확인할 수 있다. 이 기술은 의약품 허가 후 변경관리 업무 부담과 리스크를 크게 줄일 수 있을 것으로 기대된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80388",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-30T22:00:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "RSA약제의 다른 선택…입랜스 약가인하, 카보메틱스 유연계약",
+      "summary": "위험분담제(RSA)를 적용받던 항암제 입랜스와 카보메틱스가 11월부터 계약 종료 및 약가 조정에 들어간다. 입랜스는 약가가 약 35.5% 인하되고, 카보메틱스는 약가유연계약으로 전환돼 상한금액은 유지되나 실제 상한금액은 별도 합의된다. 린파자와 크리스비타는 위험분담제 사용범위가 확대된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80390",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-30T21:03:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "자료제출 수수료 인상에 중소사 우려… 끝장교섭 앞둔 삼성바이오",
+      "summary": "식약처가 자료제출의약품 품목허가 수수료를 약 6배 인상하는 개편안을 공개해 중소 제약사들의 비용 부담과 개발 위축 우려가 커지고 있다. 한편 삼성바이오로직스 노사는 내달 3일 끝장교섭을 시작, 결렬 시 순차적 파업에 돌입할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80383",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-30T21:02:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[경력채용] 경보제약, 지놈앤컴퍼니, 유유제약, 부광약품, 디오",
+      "summary": "경보제약, 지놈앤컴퍼니, 유유제약, 부광약품, 디오 등이 연구개발, 품질관리, 마케팅 등 다양한 분야에서 경력직 채용을 진행 중이다. 각 사는 신약 개발과 시장 확장에 필요한 전문가 영입에 적극 나서고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80378",
+      "source_name": "히트뉴스",
+      "published_at": "2026-10-30T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [
+    {
+      "title": "NRx Pharmaceuticals, 보존제 없는 케타민 FDA 승인 획득",
+      "summary": "NRx Pharmaceuticals가 보존제 없는 케타민에 대해 FDA 승인을 받았다. 이 승인으로 치료제 출시가 앞당겨질 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNQy14aUViZ3VrbUNwSlp4MmVYTzRxdDhRQWktVjNWaXRpTFVuQ0xHbFdUQ3Ftb0ppa2RaUE9DUTRHZEtILTQ2U3NIbnNrekRnT3pBREYzR0IzQ2VXczBEWFN5cXlHemgyNEx1ek9pTzJJM0lBcGk4MnBCQXJNVXlQTFA3ZUNtUGg2cjZGNWtOYmVRU19FR0Q5bWE0MVM4VGRZQVBOR0lNTU9KOVdackJXTEYzYWVqeUpMalE4d3hqZ3R1TF9JYnVjNUJSOVlOTzJ3UmpmWFhEdldMU2lfbDhZRkRfdkdLTkZkMk5rWFdlMA?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-30T12:17:42+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "NRx Pharmaceuticals (Nasdaq:NRXP) Receives FDA Approval of Preservative-Free Ketamine Ahead of November 10 FDA Goal Date - BioSpace"
+    },
+    {
+      "title": "Xbrane, 루센티스 바이오시밀러에 대해 FDA 승인 획득",
+      "summary": "Xbrane이 루센티스 바이오시밀러에 대해 FDA 승인을 받았다. 이는 루센티스 시장 진입을 위한 중요한 진전이다.",
+      "source": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQRkVtZGhDajQ5ZzMwWTEwT0oxN2U3M1gwcmF3ZjZKNkFIcU5VaGIwYlpKTmJmVEw3LU41M1NsQ2MtRzJILWhCSnJEWlBudEVXY2tCbHZ3elpwUlNlV0htVC00cGpRV2F5SXFWVk9YN3hlOGRQb1FPNDRwT2hqa1I2dFdqaE5tZmthdTNRUTNHZlVfZ0xkQVpWaktzdlhnN05neGtZY2d2Nm9pdUtKUGNZV0drZkUtMlViWTlsNERKSDhpMEV4MWN1eVVYU0pHZHVwdXhocHRuOElhQ21yUUNmWjAyNDVNY0xkeHFlVVBlX05QSThKa2c?oc=5",
+      "source_name": "Scrip/Pink Sheet",
+      "published_at": "2026-10-30T14:44:15+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "After A Long Wait, Xbrane Gets FDA Approval For Lucentis Biosimilar - insights.citeline.com"
+    },
+    {
+      "title": "Medline, 두 건의 사망과 16건 부상 발생 후 병원용 침대 시장에서 철수하며 FDA 안전 경고 발령",
+      "summary": "Medline이 병원용 침대 관련 두 건의 사망과 16건의 부상이 발생한 뒤 해당 시장에서 철수했다. FDA는 관련 안전 경고를 발표했다.",
+      "source": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNcExRWGZtemhjb2JORnY4SmVTbGh4dHFQUHBqaHY4b1lBbDdaOENxXzRGSTJwcHZZXzVSZ3hZVzRsZVZPMXN5TTFKeDYxRlFYZXVCNTBEU2l5S0pHMGNNa0ltek8yWEpFNU41OHNaQzc2R09qLUR6VG5vQzJhVldhYXhzRDRlQWExejBmcVlVZWVRS3lVN3J3eU5WcXZENTFFSWxnaDhOaE9PUnJXOS03alFHVXowVFh3cERoeVhMeHZJWk9MZm1UaDJmNlo2am4wSkV3blZmYjgxUHJHRHIwUXR0WWtyc2hiV0YtaVJpUExMaUtjNGIzd244TkFlZGlJN2loX005dVh0SWc3MG1NR2hBWGxvem8?oc=5",
+      "source_name": "Scrip/Pink Sheet",
+      "published_at": "2026-10-30T19:32:08+00:00",
+      "tag": "허가·규제",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "FDA Issues Safety Alert as Medline Exits Bed Market Following Two Deaths, 16 Injuries - insights.citeline.com"
+    },
+    {
+      "title": "Aer Therapeutics, 만성폐쇄성폐질환(COPD) 치료제 Fexlamose 임상 2a상 긍정적 톱라인 결과 발표",
+      "summary": "Aer Therapeutics가 COPD 치료용 Fexlamose의 임상 2a상 증명시험에서 긍정적 톱라인 결과를 발표했다. 이는 치료제 개발 진전을 의미한다.",
+      "source": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOYjBUdGtHUWhpc096eHhNSXlhb1ZyOC1Qc2dEQjhLQ01hbS0tSUNTaGVncDM5ck9INHM1Tk5kMUtCWU5FSmh5N2xwc0NDTGtMSjAyR2xVMWM2Zl9VenF4azR6dVNDbHRSQVp5WFdaekZXY0hvakZ6TGM5SVNIR3BVNXR2b0R2b3JpX09lRlg2WnUzS2xjaU5QeUQxTUZPTE1Xd3RvblZjb0xOUW9zQ2ZHNklTdFpQQnUzQmNjSlI1Wnd6ejl4NW5NX2Y1NkdTMHVSRV9JUWhVZDdodV9PZGJZdEdaeW5vU0FubFNZdlZNWS1BdHZIYjRXU3JUbUQyTWdiTjdPUGVkNVdtRGMxbHRMTQ?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-30T14:03:38+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Aer Therapeutics Announces Top-Line Results from its Phase 2a Proof-of-Concept Trial of Fexlamose in Chronic Obstructive Pulmonary Disease (“COPD”) - BioSpace"
+    },
+    {
+      "title": "Acumen Pharmaceuticals, 초기 알츠하이머 치료제 ACU193 임상 2상 실패 발표",
+      "summary": "Acumen Pharmaceuticals는 ACU193의 알츠하이머병 초기 치료용 임상 2상 시험 결과 주요 평가변수 미달성으로 실패했다고 밝혔다. 임상 실패 소식은 향후 개발 방향에 영향을 줄 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxNWVVxNXlEcFJ1YVZySWhOczZMOHg0czBteURtX25hU2ZnQ0pTS2p0VTNVb2QxRWpiWjFwb1ZvSkJ1ekxGaTBFVXlkWHY4bEE5RjIxVE54SFZYV0RqME5LT3ZQbUt3NmloY1ViQmdqZ3NSY21tWTVSM0NnbUZMVk1oakVKTUpBRlFqaVJ1VUNJLTlfMzFkWmNNZ2FiekZQLVZlWHMwSThQYnpldkVSTnZNdWlMa1kyUXlnN29xU1FoMWRZZFd6bmFNeGdVbW5jTWFEekxITG41NTdQQVpvNzV0ZnRVVldvdnVnaTF1bERzTVZva0h3VnIweTMtQTQtVU5hRzd2YTFVMjM1clBoaHA2ZWpJUlZnMHFsQWNpcTYwb1RPcnd1cnVzbXpRa3llblpHeEtTNUQwdzdTU2ZXWkVoN2VlM1gzUHc1U1lSU2o4ZHE?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-30T12:58:02+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Acumen Pharmaceuticals Announces Topline Results from Phase 2 ALTITUDE-AD Clinical Trial of Sabirnetug (ACU193) for the Treatment of Early Alzheimer’s Disease; Trial Did Not Meet Primary Endpoint - BioSpace"
+    },
+    {
+      "title": "Jazz, 8억 2천만 달러 규모 Actio 인수 완료로 Setara 설립 및 9천만 달러 시리즈 A 투자 유치",
+      "summary": "Jazz가 8억 2천만 달러 규모로 Actio를 인수해 신생 기업 Setara를 설립했고, 9천만 달러 규모 시리즈 A 투자도 확보했다.",
+      "source": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZDdLUHpJMnBXZm41WEdqczJLWVoyUmJYVnh2enNqVkxKaVQxUEM2cUhrZGtMMVlIaXY4cVViQ3FLd3VRZXpLYm5GbDZfVTR6RWFVbTBJQ2tzTmpBZWFjR1RTVEwwVzZjNER1NDREaG5TdDh6N05NMmc3VHBQdk1jZlJCVXhuRkdSY2JHRy0zRzZvWm13RDJ3eUo1WTZjZzVKdVBnSG9yVmtUTWpzSEtz?oc=5",
+      "source_name": "Fierce Biotech",
+      "published_at": "2026-10-30T10:30:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Jazz's $820M Actio buyout gives rise to Setara, armed with $90M series A - Fierce Biotech"
+    },
+    {
+      "title": "Repligen, 10억 달러 규모 사모 전환사채 거래 발표",
+      "summary": "Repligen이 10억 달러 규모의 사모 전환사채 거래를 성사시켰다. 이번 거래는 자본 확충과 성장 전략에 기여할 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZWhvVm1HQ2ZJS280UFY4NV80MFE5aXVsdGJsUHVoQWZGU1dCVE4wT1JnUllBOHVtZ252NlkwM1FSV3JEcElwR2hjcGY4RW1MM3ZVUG0zV3NjWVp1NUszMndyOVVuYzNhTVNkc0k2ajBvN3ZkZ2tzQTc1STlGM1M3M25BY01vbW9uUW9SRWpiRnZwNzRVbXo3R0xudTlvb2NvVTRNQVYzSUR4U2ZReXMzVjhwcw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-30T13:31:42+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Repligen Announces $1 Billion Private Convertible Senior Notes Transaction - BioSpace"
+    },
+    {
+      "title": "Valion Bio, Entolimod 미국 정부 지원 치료효능 연구 진행‥안전성 긍정적",
+      "summary": "Valion Bio가 Entolimod의 미국 정부 지원 치료효능 연구에 착수했으며, 초기 안전성 결과는 긍정적이다. 후속 임상 단계 진입에 청신호다.",
+      "source": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQOGVKWmViUHZWbjc5TS1GUFNjY0RxQkQyTzVQWDZRMUdoZ2xURTJFWTdxUmlodTNtOW02UTlwVDdxTlpYYktQME1kckNRUWJQUHQ5V1V3dlJyOG9oeHBFNWNKNm9ZZ3Q5OEtPbklBUFRnMmZwSUNfbW5hekxZcnRfOTdEa192d1J2d194SnBDVFJCM2dmeVdJVWtqdjJNQndDcWZHUERXc0MwbDVxbUdDSkZidTljVXM3cEw0elJ3aV9jOU10dUZQR2R2Z1lVdk8teUNRS0hjUnhhRy1jX0VUU0cwSmJXT3V3bDctVjVIcw?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-30T14:00:03+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Valion Bio Advancing Entolimod into U.S. Government-Funded Therapeutic Efficacy Study Following Positive Safety Results - BioSpace"
+    },
+    {
+      "title": "Boehringer, 만성폐쇄성폐질환 치료제 Verducatib 임상 3상 준비 착수",
+      "summary": "Boehringer가 COPD 치료제 Verducatib의 임상 3상을 준비 중이라고 밝혔다. 임상 3상 진입은 제품 상용화에 핵심 단계이다.",
+      "source": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNbE9NTzFvU2dLVkI1bGZrVjdRbXczRnNQZFk3ZElmUVljVVJkQ3hUamluVy16MTlYMGtQUmNyZkhEUGxBLVZrS2E1Wkd6Qk1fbi1IeHl0Sk84NklZdUhGc0hKZGVmSThUYWg2UFF6a2xkVkpPTWpNVWM4bWgtb0ZWaW80MG5TN0lvamd4TjYyYXpZTWFDVlJ1M1BVTjZmX1hmXzhrYXp2eGVzT0ZIcnpqS09PTWJtVHJnc0Q3eUYybmlGODIyMnA0MXVRNTlTS1VocXlza2h5OTVFRXJKZERv?oc=5",
+      "source_name": "Scrip/Pink Sheet",
+      "published_at": "2026-10-30T14:35:34+00:00",
+      "tag": "신약·임상",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Boehringer Lines Up Phase III Trial For Verducatib In COPD - Scrip"
+    },
+    {
+      "title": "Fractyl Health, Revita 특허 포트폴리오 강화하며 FDA 제출 및 상업화 추진 본격화",
+      "summary": "Fractyl Health가 Revita 제품의 특허 포트폴리오를 확장하며 FDA 허가 신청과 상업화 준비를 가속화하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPdEE0ZThWSG9NUGh1c2lNbENwWVpobm1OUTBpRDJ3TmtubGdVelpiajVkN2lvUDQ1SHBqalFabTM4OGxleHlQaTllakpYLWYzX01ZcmhSSnRIMmR0cUVSRk8xMktjTmItQV9EdnktaFM4Y2lMMThGYW93MHNDd1kxYmlIYmFheVlncWVlbUd2ZGJEd1F6MkNBb1VHY1RMeUR1cXFGb0RoT2ZvQ0hsSUljbXozclRDOFVKYnRROC15bjBmdUlxaWNzNy1FSFdRQ0hibWNuZ3pFbkEtRU9vTGs3Q0Q3TnBRYjZNRzRMZXpvblU?oc=5",
+      "source_name": "BioSpace",
+      "published_at": "2026-10-30T12:17:42+00:00",
+      "tag": "특허·소송",
+      "verification_status": "headline_only",
+      "selection_status": "selected",
+      "original_title": "Fractyl Health Strengthens Revita Patent Portfolio as It Advances Toward FDA Submission and Potential Commercialization - BioSpace"
+    }
+  ],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 6,
+    "global": 10
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
