@@ -1,0 +1,75 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-01",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "신약개발에 10년간 4.5조원 투자…임상 3상에 13억원 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 최근 발표에 따르면 신약 개발에 10년간 4.5조원이 투자되었으며, 임상 3상에 소요되는 금액은 약 13억원으로 집계됐다. 장기간 대규모 투자가 신약 성공에 필수임을 보여준다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4wQnBBVENSMTlVNnRmR25md2l3OHFlc1V6SjU2VW5ZamlLLUNTb2xJV1l3N01YVm4zU2l6MlF4NENWVEU2S2djVVpvd3M2bGdsSDVwWXh4a0hnakZwYVZMZWhPNy1jVFQ5M253?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-31T10:40:23+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"6347억 기술수출·44호 신약\"…제약사 손잡으니 통했다 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 최근 제약사들이 기술수출에서 6347억원 규모의 성과를 내고 44번째 신약을 배출해 공동 개발과 기술 이전이 신약 개발 성공의 핵심 전략임을 입증했다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1HUWJWOWdYNG14Z1NyMWxtR2pGRXdRR1B6b2pPUVlhM1V6OHBkekU5RnQyT05RU2JKTzg3ajNEUnZnWGRMdHVzbDg1M3hGYUVpM1RrVWx3?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-10-31T09:50:14+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아스트라제네카, 연 15억달러 비용절감…신약개발에 재투자 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 아스트라제네카가 연간 15억 달러 규모의 비용 절감을 달성해 절감된 자금을 신약 개발에 재투자하는 전략을 발표했다. 이는 연구개발 경쟁력 강화의 일환이다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBSREZDb3VqamY5dk9IYmpUZ3pSRGppblN5QlN1NGdWa3NTWnZlOFBYcEcwbVRxOEFLcVloeTI5Y2EtVUFZTmVES2VWdVM2TVV0b2Nrd2xsY01zZEdmNnJLTGNHYThWZ21zVDlz?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-31T12:01:03+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신약 후보물질은 팔고, 남은 기술로 새 회사…美 바이오의 변신 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 미국 바이오업체들이 신약 후보물질을 매각한 후 남은 기술을 기반으로 신회사 설립 등 새로운 사업 모델을 시도하며 혁신 생태계 변화를 주도하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9vX1dMYlAxOUhxWEtnTFdaRkVURlBvMlZDdHJLVXFZRUVIelpYNU9RM0Z0b1U2MEl1M042cFQzVDFHOWFMTnZING5OUjJ2a1FYTHV0QTE5ZHFiTzJBOFVWcWFMSlZYek5zUmUw?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-10-31T11:42:14+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "반복 유산 관리의 패러다임 전환: 질내 프로게스테론의 임상적 적용 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 최근 임상 연구를 통해 반복 유산 관리에 있어 질내 프로게스테론 적용이 새로운 치료 패러다임으로 부상하고 있으며, 임상 현장 적용이 확대되고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5zN21BLUYyQW12UFNZOC1vRUFwdFAtcnlVV2llS2FRUjRERlg2alB4cnl0QkpxSEprZWlUVDMteGRDV01aeWdKRGlVdXBuM2F6QXZEbDRPU2tPSHlPMXFIM1hoQkRFSE9GYjh3?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-10-31T09:33:14+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 5,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
