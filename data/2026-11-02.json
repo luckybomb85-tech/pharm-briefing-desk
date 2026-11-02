@@ -1,0 +1,251 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-02",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "실적·재무 다 잡은 한미약품, 국산 비만신약 ‘에페’로 외형·수익성 동시 점프",
+      "summary": "한미약품은 3분기 누적 매출 1조2376억원, 영업이익 2226억원을 기록하며 안정적인 실적 성장과 재무구조 개선을 달성했다. 특히 비만신약 ‘에페’를 앞세워 국내 2조원 규모 비만 치료제 시장에 진출해 외형 확대와 수익성 개선에 속도를 낼 계획이다. ‘에페’는 최근 식약처 허가를 받고 본격 판매 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29692",
+      "source_name": "더바이오",
+      "published_at": "2026-11-01T22:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "더 쉽게, 더 안전하게… 치매 신약 경쟁 2라운드 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 치매 신약 개발 경쟁이 본격화되면서 치료 효과와 안전성을 높인 차세대 신약들이 주목받고 있다. 이번 경쟁은 기존 치료제의 한계를 극복하고 더 나은 환자 편의성을 제공하는 데 초점이 맞춰져 있다.",
+      "source": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNN3lhT2FGN25GUHJIMG02REdHWHpMLWJYSG00ZF81MTQ2cHpDWU05a09zLTJ6emQweWU5OG1FNjMtUEdoR1dITDZzbWRkMnM0cXphVWV1MS1hb3dINlpEUDNnNXFxYnp2d3YyZXhaZEZybDdHZWIzdHk4bEV0Sk54dFNacWNqUDFwTnd3NdIBoAFBVV95cUxQdlptX1FwcHhQbEpCLS1hcTdodDE4VVRlWmZCQVBmTDlPOGxsRW1jU0dfbTFoWHlCYzVHOXFiTmoxWUdpTmRXTmdpQ3F3Q3ZKVGpnMDl5anRjYjFtOVhOM2FIaWNRMTJjZEMwWE1jcTBlRnQ0cGdHTnFFUGZvM1V2ajRsMUt1WWQ1NHc1MjZ6WG5OS2l6ZE5CZ1hZUTB6dHJn?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-01T21:49:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아이엠지티 “초음파로 췌장암 약물 전달 강화…美확증임상 돌입·코스닥 도전”",
+      "summary": "아이엠지티는 췌장암 대상 집속초음파 기반 항암약물 전달 의료기기 ‘IMD10’의 미국 확증임상을 시작했다. ‘키모소노 테라피’라는 기술로 기존 항암제의 종양 침투를 강화하며 내년 국내 임상 등록도 예정되어 있다. 췌장암 치료 효율을 높이고, 고형암 및 병용요법 적용 확대를 추진하며, 코스닥 기술특례상장에도 도전한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29687",
+      "source_name": "더바이오",
+      "published_at": "2026-11-01T21:35:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] 6년 생존 혜택까지 확인 CDK4·6 억제제 ‘키스칼리’…“급여 근거 충분”",
+      "summary": "ESMO 2026에서 발표된 ‘나탈리’ 임상 6년 결과에 따르면, ‘키스칼리(리보시클립)’ 병용군은 단독군 대비 사망 위험을 19.1% 낮추며 6년 전체생존률(OS)도 2.1%포인트 개선됐다. 서울대 임석아 교수는 이를 근거로 조기 유방암 보조요법 급여 인정을 강조했다. 국내에서는 급여가 미승인된 상황으로 치료 접근성 확대가 요구된다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29691",
+      "source_name": "더바이오",
+      "published_at": "2026-11-01T21:15:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "엑스코프리, 조절 안 되는 성인 부분발작에 새 선택지…임상 개선 인정",
+      "summary": "동아에스티의 엑스코프리정(세노바메이트)이 기존 항뇌전증약으로 발작이 조절되지 않는 성인 부분발작 환자에 부가요법으로 건강보험 급여를 적용받는다. 동북아 3상 임상에서 200mg 군은 발작빈도를 78.3% 감소시키는 등의 유의한 임상 개선을 보였다. 약가는 12.5mg부터 200mg까지 6개 함량에 대해 각각 정해졌으며, 약가유연계약도 반영됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47857",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:14:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "보노프라잔, 치료·유지·재발 방지에 용량별 급여…3개사 6품목 등재",
+      "summary": "칼륨 경쟁적 위산분비억제제 보노프라잔 성분 제제가 위궤양 치료와 미란성 위식도역류질환 치료에 20mg, 유지 및 궤양 재발 방지에 10mg 용량으로 건강보험 급여를 받는다. 보노프라잔은 기존 프로톤펌프억제제와 동등한 효능을 보이며 복용 편의성, 야간 위산억제 효과에서 우수하다고 평가받았다. 보신티정에는 약가유연계약이 적용됐으며, 연간 예상 대상 환자는 30만 명대다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47856",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "팁소보, IDH1 변이 담관암 2차 치료 급여…백혈병은 전액본인부담",
+      "summary": "한국세르비에의 IDH1 변이 표적치료제 팁소보정(이보시데닙)이 이전 치료 경험이 있는 국소 진행성 또는 전이성 담관암 2차 이상 치료에 건강보험 급여를 적용받는다. 임상에서 무진행 생존기간 개선이 인정됐다. 그러나 급성 골수성 백혈병 적응증은 비용효과성 부족으로 보험급여가 적용되지 않아 환자가 약값을 전액 부담해야 한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47855",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:10:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "스프라바토, 중증 치료저항성 우울증에 제한 급여…4주 뒤 반응 평가",
+      "summary": "한국얀센의 스프라바토나잘스프레이가 기존 항우울제와 항정신병약 치료 실패한 18세 이상 65세 미만 중증 치료저항성 우울증 환자 대상으로 제한적으로 건강보험 급여를 받는다. 최초 4주 투여 후 우울증 평가점수가 50% 이상 감소해야 급여 혜택이 계속되며, 처방은 정신건강의학과 전문의가 약물 사용관리 프로그램 등록 기관에서만 가능하다. 예상 연간 대상 환자는 약 1612명이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47853",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:06:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "식약처, 주사제 155품목 재평가…PDRN 성분 24품목도 명단에",
+      "summary": "식품의약품안전처가 동등성 미입증 주사제 155품목에 대해 내년까지 생물학적동등성 재평가를 실시한다. 67개사 제품이 대상이며 휴온스 8개, 종근당·삼천당·알보젠코리아 각 7개 품목이 포함됐다. PDRN 성분 주사제 24품목도 포함돼 연내 계획서 제출하고 내년 말까지 결과보고서를 제출해야 한다. 미제출 시 행정처분된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47876",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:04:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "동아에스티, '엑스코프리' 급여에 웃고 '에독사반'에 울고",
+      "summary": "동아에스티가 SK바이오팜 개발 뇌전증 신약 엑스코프리정을 국내에서 건강보험 급여에 성공적으로 등재하며 제품 포트폴리오를 확대했다. 반면 자사 에독사반 구강붕해정은 심의가 완료되지 않아 후발의약품 급여 등재에서 제외돼 출시가 지연되는 상황이다. 에독사반 정제형의 물질 특허 만료로 후발의약품 다수가 등재되는 가운데, 구강붕해정 특허 심의가 남아 급여 출시 시점이 뒤처질 전망이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80402",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-01T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "13년 만에 열린 GIST 신약의 문…'퀸락', 4차 치료 공백 메운다",
+      "summary": "오노약품공업의 '퀸락정(리프레티닙)'이 3차 치료 실패한 성인 진행성 위장관기질종양(GIST) 환자 대상으로 국내 허가를 받았다. 기존 치료제 대비 새롭게 광범위한 키나아제 억제 기전을 갖췄으며, 글로벌 3상 INVICTUS 연구에서 무진행생존기간과 전체생존기간이 위약군 대비 유의하게 개선됐다. 회사는 급여 등재를 추진 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80399",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-01T21:03:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약국 유통시장 지각변동…알피바이오, 특허 제형 앞세워 ODM 공략 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 알피바이오는 특허 받은 제형 기술을 활용해 약국 유통시장 내 ODM(제조자개발생산) 사업을 확대하고 있다. 이를 통해 차별화된 제품 공급 전략으로 유통시장 지각변동에 대응하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAxZG8tT1pkT0U1TU5GVmxydmhjMWpHVW8ySWo1ZWR0bGJZVjR6N2loRUV6WU1OZVhBcm50YnRyQnk5Si1tV2NTcFVqS1JNMF9hbU53Nkd6ZUEyVzk2WjVIdEhZblkzMDdoejNzdnpR?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-01T21:00:09+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "천연물 신약의 르네상스, AI가 이끈다 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) AI 기술을 활용해 천연물 신약 개발 과정이 혁신을 맞고 있다. AI는 후보 물질 발굴과 최적화에 기여하며 신약 개발 속도를 크게 높이고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaWhXeXpzckZtY1FNLXhaWW40MmxpRTlaeUJyOG1SVENSVjRpZ3BVbHloSjJ4OHRxV0xlWE9IbTdoZkVZcHg5RmJad0FJbWNvRHJMZnJTM1dQcHpCeFlYTTNXa09xcklxVlNVWm5kMl9mZ1lhVTBBU2FaVXF0dDM1ZE9QamVxYmfSAZsBQVVfeXFMUGl6eTB0dG91cThrY2F3Rk96R0Q1dHNkQVltZ0xncnhVTDJSNVpLTVNNclpZdUQ0OWQ1WWk5cmVVaEg1Y3FUQk5lUnQwTFJCVjVZOHI0blNtcmxoOS16MVRKdEw3VFRsNjNlMTNmMmd4Uzd4UVM2bVdzbHVIbVZYRHRRV2VueWRNQ0M5bDJWdXBrR1F2ZWNvYTlZRGs?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-01T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "中, 세포·유전자치료 원천기술 해외 이전 통제…K바이오 영향은 - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 중국 정부가 세포 및 유전자 치료 분야의 원천기술 해외 이전을 엄격히 통제하는 조치를 발표했다. 이번 규제 강화는 K바이오 기업들의 중국 진출 및 협력에 영향을 미칠 수 있어 관련 업계의 주목을 받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTkp6NnFNZXdDUUIyVXBpbGw1LS1xR1Y0ZDZHMmpmMjQ2U3pRWDgwZWJ1RGtYdEFxN21Sc3ZXU2REZkZNazhiVl9LRGdwYkZKV1RlY3RCV24xUWFnN00wNW9uQkt4YzVQVTFDVmpObE5jWlp4N1V3YjZFUGR4M1djbw?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-01T22:22:03+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "대원제약 '펠루비' 관절염 넘어 수술 통증까지…18개국 수출 승부수 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 대원제약이 NSAID 진통소염제 '펠루비'의 효능을 관절염에서 수술 후 통증 완화까지로 확장하며 18개국으로 수출 범위를 넓혔다. 이는 해외 시장에서 경쟁력을 강화하고 글로벌 진출을 가속하는 전략으로 평가받는다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8wVnhyaGdVaWFUU0hCYTVNWWZNQm1EQlNFMGZwcFg2UHllVko2VF9TNENyZHJxa2tNQnNWNWluX3lEU1pLSG1UQ0tmN2FyWEk3N1p4aDY5ZEE2N2Y1dkdRcjFoeHpnMmU3RWJNZkh3?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-01T22:00:06+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "넥스아이, 불응성암 新타깃 차별성 “내후년 흑자전환” - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 넥스아이는 불응성암을 타깃으로 한 신약 개발에 집중하며 내후년 흑자전환을 계획하고 있다. 이 신약은 차별화된 기전으로 난치암 치료에 새로운 가능성을 제시한다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1uWW1xOU1iWW5SMnl2VGhZamdoQkNSOTdXUGFYejVwazdqZWZMOGhsUGlQaDc1R1ZkY3FxVkxQWklORW11UWltMVNzSEVpZU5jOGh0TUhpWQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-01T21:42:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[ESMO] 루닛 “AI 병리 연구 5건 발표…‘루닛 스코프 IO’ 제약사 관심 확대”",
+      "summary": "루닛은 ESMO 2026에서 AI 기반 병리 분석 플랫폼 ‘루닛 스코프’와 종양미세환경 분석 솔루션 ‘루닛 스코프 IO’를 활용한 다양한 연구 결과 5건을 발표했다. 일본 비소세포폐암 환자 PD-L1 판정 비교와 종양 기질 및 면역세포 분석 등이 주목받았으며, 서밋테라퓨틱스와 항암제 바이오마커 연구 협력도 공개했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29502",
+      "source_name": "더바이오",
+      "published_at": "2026-11-01T21:40:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀약 신속등재 ‘5개 문턱’…“요건 갖춘 치료제 모두 선정해야”",
+      "summary": "희귀질환 치료제 건강보험 신속등재 시범사업에 신청한 14개 품목이 모두 해외 3개국 이상의 급여 요건을 충족한 것으로 확인됐다. 11월 4일 보건복지부 선정심의위원회에서 회사별 10분 발표 후 5개 품목 내외 선정 예정이며, 경쟁률은 약 2.8대 1이다. 환자단체와 제약계는 선정 물량 확대를 요구하고 있으나, 복지부 실무진은 관리 부담 등 이유로 신중한 입장을 보이고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47860",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:20:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "준혁신형 공모 시기 11월 판가름...\"법제처 심의 시기에 따라 유동적\"",
+      "summary": "보건복지부가 제약특별법 시행령·시행규칙 개정안 의견수렴을 마치고 법제처 심의 절차에 들어갔다. 혁신형 탈락기업이 준혁신형 제약기업으로 공모 신청 시 제출서류를 최소화하는 방안이 검토 중이다. 법제처 심의 후 차관회의, 국무회의를 거쳐 연내 공모 및 선정이 추진된다. R&D 비중과 리베이트 결격 여부 등이 선정 기준이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47879",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:16:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "옥스루모, 희귀 유전질환 ‘PH1’ 치료에 성과기반 위험분담 적용",
+      "summary": "메디슨파마코리아의 옥스루모주(루마시란나트륨)가 희귀질환 제1형 원발성 고옥살산뇨증(PH1) 치료에 건강보험 급여를 적용받았다. 유전자 변이와 옥살산 수치, 임상 증상에 따른 투여 대상이 정해지고, 반응 평가를 통해 지속 급여 여부를 결정하는 성과기반 위험분담제가 적용된다. 연간 대상 환자는 약 20명이며, 약가 병당 6900만원으로 책정됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47854",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-01T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비타민C 1000mg의 진화… 코아팜바이오, 2030 뷰티 수요 공략",
+      "summary": "코아팜바이오는 기미·주근깨 완화 효능을 내세운 고함량 비타민C 일반의약품 ‘톡비타씨오디프스산’을 출시했다. 오디프스(ODiFS®) 제형 기술로 신맛과 잔류감을 줄여 복용 편의성을 높였으며, 슬로우에이징 트렌드 확산에 맞춰 2030 세대 피부 색소침착 완화 시장에 진입한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80395",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-01T21:07:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 21,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
