@@ -1,0 +1,163 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-03",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "11월 신규·급여확대 약제 연 2252억원…실제 추가 부담은 이보다 낮아",
+      "summary": "11월 건강보험에 신규 등재되거나 급여 범위가 확대되는 8개 성분 약제의 연간 보험자 부담 기준 재정소요액이 약 2252억원으로 추산됐다. 약가유연계약과 위험분담제가 반영되면 실제 부담금은 낮아질 전망이며, 카보메틱스는 기존 치료비를 대체해 추가 재정 소요가 없을 것으로 보인다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47859",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-02T21:16:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[기고] 평생의 상흔 남기는 치료 공백…신경섬유종증 신약 도입 시급",
+      "summary": "희귀유전질환인 신경섬유종증 1형 환자들의 치료 환경이 개선되고 있지만, 국내에서는 만 3세 이상 환자만 표적치료제 사용이 허용되고 있어 만 2세부터 치료 가능한 해외와 차이가 크다. 또한 성인 환자 급여 적용도 제한돼 치료 지속성이 떨어지는 상황으로, 혁신 신약의 조속한 도입과 급여 체계 개선이 시급하다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47895",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-02T21:14:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가제도 바꿀 때 공청회 의무화…최수진, 건보법 개정안 발의",
+      "summary": "국민의힘 최수진 의원이 약제 건강보험 급여 결정과 약가 직권조정의 중요 사항 변경 시 보건복지부 장관이 공청회를 개최하도록 하는 국민건강보험법 개정안을 대표 발의했다. 이를 통해 약가제도 개편이 의약품 공급 축소와 연구개발 위축 우려에 대응하고 각계 의견 수렴으로 정책 수용성과 투명성을 제고한다는 취지다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47902",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-02T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "中 허치메드, MET 증폭 폐암에 ‘오파티스·타그리소’ 병용 유럽·日 허가 신청",
+      "summary": "중국 허치메드는 MET 표적항암제 오파티스와 EGFR 저해제 타그리소의 병용요법에 대해 유럽과 일본에서 허가 신청을 접수했다. 해당 병용요법은 MET 과발현·증폭 EGFR 변이 비소세포폐암 환자 대상 글로벌 임상 3상(SAFFRON) 결과를 근거로 하며, 화학요법 대비 질병 진행 또는 사망 위험을 45% 낮추고 안전성 프로파일에도 문제가 없었다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29761",
+      "source_name": "더바이오",
+      "published_at": "2026-11-02T21:10:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "법 바꿔야 한다는 식약처… \"허가전 제조약 판매, 18년 전 변경\"",
+      "summary": "식약처는 허가 전 제조 의약품 판매를 위해 약사법 개정이 필요하다는 입장을 밝힌 반면, 업계는 2008년 약사법 문언 변경과 2014년 가이드라인에 근거해 현행법만으로도 허가 전 제조 의약품 판매가 가능하다고 해석하고 있다. 이에 법 개정보다는 하위 규정 개정을 통한 제도 시행을 요구하는 목소리가 제기되고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80445",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-02T21:06:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만주사 원내 판매 실태조사…위고비 급여·관리급여도 검토",
+      "summary": "복지부와 지자체는 비만치료 자가주사제의 원내 불법 판매 여부를 조사 중이며, 3개 의료기관에서 투약 기록 등을 점검했다. 한편 위고비의 건강보험 급여 신청이 접수되어 적용 대상과 재정 영향이 검토되고 있으며, 관리급여 적용 여부도 심사 결과를 토대로 논의할 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47835",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-02T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신약먼저 보던 바이오 투자시장, AI·의료기기로 눈 돌렸다",
+      "summary": "최근 바이오·헬스케어 비상장기업 중 신약개발 기업보다 AI 기반 헬스케어 및 의료기기, 웨어러블 로봇 기업들의 투자유치 규모가 두드러졌다. 트리오어(ADC 플랫폼), 휴로틱스(보행 재활 로봇), 바이온사이트(AI 화학단백질체학 신약표적 발굴) 등 의료 현장 적용 가능 기술을 갖춘 기업들이 대규모 투자를 유치했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80439",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-02T21:04:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "복지부, 국산 신약 비만치료제 '에페' 출시로 비대면진료 지침 개정",
+      "summary": "국내 제약사 한미약품이 출시한 비만치료제 '에페'(에페글레나타이드 성분)를 비대면진료 시범사업 처방 금지 의약품 목록에 추가하는 지침 개정이 11월 1일부터 시행됐다. 비대면진료 시 마약류와 오남용 우려 의약품, 사후피임약, 비만치료제는 처방할 수 없으며, DUR 확인 후 처방해야 한다고 복지부가 강조했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47901",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-02T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "심평원 \"국내 개발 의약품 별도 재평가 기준, 신중한 검토 필요\"",
+      "summary": "(제목 기준·원문 미검증) 심사평가원은 국내 개발 의약품에 대한 별도 재평가 기준 마련과 관련해 신중한 접근이 필요하다는 입장을 밝혔다. 구체적 세부 내용은 미공개이나, 제약산업 및 환자 영향을 고려한 검토가 요구된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80442",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-02T21:03:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "中·獨 ‘바이오시밀러’ 동맹…최대 37종 개발 협력에 삼성·셀트리온 경쟁 가열",
+      "summary": "독일 프레제니우스와 중국 우시바이오로직스가 최대 37종의 바이오시밀러 후보물질 개발을 위한 10년간 독점 협력 계약을 체결했다. 이번 협력은 자가면역질환과 종양 등 13개 치료 분야를 대상으로 단일클론항체 및 ADC, 이중항체 등을 포함하며, 삼성바이오에피스와 셀트리온 등 국내 기업들과 경쟁 구도가 심화될 전망이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29762",
+      "source_name": "더바이오",
+      "published_at": "2026-11-02T22:11:12+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "대웅제약, 692억 규모 동남아 수출계약 해지…불성실공시법인 지정 예고 - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 대웅제약이 약 692억 원 규모의 동남아시아 수출계약 해지를 발표하면서 한국거래소로부터 불성실공시법인 지정 예고를 받았다. 이번 계약 해지는 회사 사업에 중대한 영향을 미칠 수 있어 투자자 주의가 요구된다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBWOUNQcldpYW9tdzh6NWRRSFZhRklQdWRPNlF1Xzh3akFHcDB6MVlaMHZDQXVTeDlxeW5IeVMwU3FpRlo3OUEzcXFpUTd5TDR2cUHSAVNBVV95cUxNWm5mVDF2SHFCcWstajE5bm1obVVmYUNCYzFhRDE3OVVfM0wzdWNBRUs4dV9jcTR1SWRNdzZjSjJZeTZYOFNJeFMzLVJDbnB4UUI4QQ?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-11-02T22:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "AZ, 'AR분해제·STEAP2 TCE' 등 초기에셋 4개 \"중단\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 아스트라제네카(AZ)가 AR분해제와 STEAP2 타깃 티로신 케네이스 억제제(TCE) 등 초기 단계 파이프라인 4건의 개발을 중단한다고 밝혔다. 이번 결정은 임상 및 연구개발 전략 수정에 따른 것으로, AZ의 신약 파이프라인 효율화 움직임의 일환이다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBQajRpUW5wcFdqWGtoNGRqQlNLRWlIS0U2QmVNa01rUmFUNzJ6NzdBMXhMVF9DV1lUR2NUTW1ZVFctM1hteXJSclpldm8yR0p2VkR2Zmpjbw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-02T21:23:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약사에 찍힌 '저PBR' 주홍글씨… 산업 특수성은 어디갔나",
+      "summary": "금융위원회와 한국거래소가 저주가순자산비율(PBR) 기업 151곳을 공표하며 제약바이오업계 18개사가 포함됐다. 업계는 사업형 지주사 구조 및 약가 인하, 제네릭 가격 경쟁 등 제약업 특성을 반영하지 않은 일괄적인 저PBR 꼬리표 부착에 강한 우려를 표했다. 현금 배당 확대나 자사주 매입 외에는 해결책이 제한적이라는 지적도 나오고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80432",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-02T21:05:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 13,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
