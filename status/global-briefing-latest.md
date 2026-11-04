@@ -1,67 +1,67 @@
-# 글로벌 제약바이오 브리핑 | 2026-11-03
+# 글로벌 제약바이오 브리핑 | 2026-11-04
 
 > 자동 발견·선별된 취재 후보입니다. 원문 및 핵심 사실은 기사 작성 전 확인해야 합니다.
 
-### 1. Monopar to Present at AASLD – The Liver Meeting® 2026: Phase 3 FoCus Baseline Data and ALXN1840 Molybdenum Safety Data - BioSpace
-- 매체: BioSpace | 중요도 점수: 7
-- 분류: CLINICAL, SAFETY
-- 발견 링크: https://news.google.com/rss/articles/CBMi6gFBVV95cUxQZjd3aGJwaUNXWlFjWFg2cEsxdVFFMnVQdmJZQVc3djJUM1lkV0Y1SUxTT1kycGZMM0Qxb0JGNHQwUkFUY2pIQy1jdFlYOWVGSTFVcUx3QnM2dEtual91eUU4WmFJdW16cXkzcEQ4cmtSYTBGZWVub1J6WFFvNHZGbnNVeW13NEVQSGNIMDN3S2RyU0k2WnhxeUg3V0h0ZHlYNG5jVVJvd1g4bXFNVm9OZmxLVndrNUQ1UmRiLXB0WlNCeGRrcW1FRzYxeUZLSkgxZ3ROdnA4MmVRZTlTVjFlQXlPZUE5OGJZbnc?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 2. AN2 Therapeutics Receives U.S. FDA IND Clearance to Proceed with Planned Phase 2 Global Study of Oral Epetraborole in Polycythemia Vera - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMihAJBVV95cUxNOHNiYThNZWtZTkFIc2JZeFdDVkNTVGR4ck13SFNKMlhlU2JjLXV2TDhGTE5WaXlacDgxM29BbHc0Y25INGhua0hBdWF3WnY2bnBxak5COE9qRC1wYUotLXFvQkY1dHhVYzY1TWZDSFZheW1FajFna3FPNWU4ZUlEN0JUQnRPRHRLVzFOdFlNSVRLdWp3WmtseHJSZWhLeFY0NnFORVA1MmZUdnV2bkVvNW1LWm9hR3QxS0psMjI0NGdNYlpPaGh2ZHpOYTlYckMxNUhOd0EyaEF6NnFwdENfeEJxMmJLbm5zVXY0dTltRi1ERlhreDg1TXhmY0NablhHUkxIcw?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 3. Atom Therapeutics to Present Phase 2b/3 Data Showing Superior Efficacy of Lingdolinurad (ABP-671), Compared to Febuxostat, for Patients with Chronic Gout and Hyperuricemia at ACR Convergence 2026 - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi0AJBVV95cUxNQjY4RDRPR0h6aURrRmlnVGg3WU9XaDlJeXc3c2ZiWUJRY1FWQmpXSjdZWU5EVTcwTlFSRWZlUHpmV0lTeTJZZXR2S3RHRDRiRzBJVDBvWFRoOWZmdG9rVVZ5M1VWdk52bVBrc3NjdnNYbHA1aFEzNl8wNlVoUm8ybEcyMFlvbllKb1lHTXRMZ2xTOHdxYjlNY19YUC1tcDI0SVhweEJ3VGctc0wybzhtUDlGaUptYndmUE5JUUVpal9NT042UHFmYW1KTTMzX1FnRHB6SGUyOThiWWVjU0VLQ0pPTUJvOWRCZlJfSGFfTG0zbDZVOVoxSWlXaTNBN2otMk13dVlEdnBvZXdKRmJHdWJtMDBGZGpmWEo2cjktMTVDSTRtaE5xSExxZmVJUE5FNXBudnNzc3ZqS3VaX0xwdWpJV1FFWk9HNDJoRG1nb3M?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 4. China's InventisBio delivers competitive TYK2 data in phase 3 psoriasis win - Fierce Biotech
+### 1. AbbVie abandons phase 2 solid tumor drug over ‘limited benefit’ - Fierce Biotech
 - 매체: Fierce Biotech | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMipAFBVV95cUxPV0k2Tk1rd1g4bU1OTXVST2gzYmROS2ZyQVFmR21kaDRBQlUxVXU3RlhqUlN2QW1mZVlBeWV0Zzgxb1dIbE9uWjZjbjNCekxQbHotMFJIQVp4V1BqOVFuLU5CMTI5VDhGcjVwWDNjZGIweU1vN3BYR0dSOHJwNDQ3LUdJZ3ZMbll3Nl9taWIwazBuSnJMRGVTVTVGdXFmWHdYTHkydg?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQVRPTUtoZTB2SkR0T2NyaWJ5OFVOVmgwc1p4bTlEU084Ym9zcDYwb3F0dzNsVHRUZjVUNHN6enBZejJNbUN1dENCSHJjdkxxU3JyTkg1UUdfS0xDSTcwTHVQZmpPZHB4ekFlUHB0OHVET3Nvbkg3eVZWdW41Z2JlWWZrTEw3bkZVb0xBRFkyUHRIbzZBT1VWODhPMVJRYnZrLTZ5THF4Skg?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 5. How advanced AI can improve clinical trial decision-making - Fierce Pharma
-- 매체: Fierce Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMingFBVV95cUxPNVhMUVJJeGh2cnlZTldteU1JMWhNZW9GUG9xYnozOFE4Q2FfNlZ5eHp1YVllMFlmV3JGa1JTbm5BTjEtWENwR0d5SDBiRzZJVUthTjVtVVJrdjNDT3R5RjZZbkNJdk5ZNzJfOWdta0lJcnNNY1g0cGVWWDhGbDVDd24yZGVJZ0w1UmhFVGFoZFh0WUlERTRzTkNjMnY3dw?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 6. Lupin Receives U.S. FDA Approval for Amifampridine Tablets - BioSpace
+### 2. Ardelyx Completes Enrollment in Phase 3 ACCEL Clinical Trial of IBSRELA® (tenapanor) in Adults with Chronic Idiopathic Constipation - BioSpace
 - 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi_AFBVV95cUxQSFhnWE1vZVIyUnV4QWlQMjNoNkJOMlNtTEMtV0RtQVRMNmprUzBwNHpQMTl3R0NwWGpwNWE2bHVGdVpHaVZIM21rMmJMTGVWOElIRUUwMjhMVnpXbUdsRnl5VXI0VGZsQ2pRR3lvRjI5Z1RNQkU1Ulh6UXlBUEFkOFEtOFFXamtVN3QxSnV4aDdCdlRWcmpZbkxBVlg4Nk1tNHhoN05fTnFwaGVSaVdpSzJHRTQycHo5elM4TXVFWWk1MzRCQXNTMklhZktwVDd4TEFYRS1BZVlkUE1xeXE1X2VYMGNobWk3VDlYSGZ0UjNBcG9JOFNQVXdnMGM?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 3. Pfizer pares back obesity pipeline, drops phase 2-stage lung disease candidate - Fierce Biotech
+- 매체: Fierce Biotech | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMirgFBVV95cUxPTW0wUVdGT0daMll1QWt6WGYyM21JR0tqSWV5TmpOd2xuMG5CUVRyTHdneWFTUkRBbWdRX3dpSV9PRXpQME00Z0MxOUlvdVpka1J6RkFjZGdDaXdpWWtXVDdhdUdqVlVSejlBMW94WV9vTy1HS1p5Z2EzYkIxTjUxZjIxVmFkc09ScUh1SEk1Wm5XdDkzdlpFcmg1Y0E4TVEweW9FdFhGeWFqQk1YR0E?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 4. Pipeline Watch: Four Approvals And Forty One Phase III Readouts - insights.citeline.com
+- 매체: Scrip/Pink Sheet | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi4wFBVV95cUxOZXJVTzZVOFBUMGVBeTR1V2lXNWpVdk1aRTJlWDZjU0dLTWxta2xSU2JSS29NQm1NdHBxUS1heVAxV3RCUkUxVEIzMFhvdjE0cGxTeFNyZGE1WXpVRU1lcjdMa1UtX0puNjNvMi00REVRdGNEN2FzbmtYaUhxOTJpWDFib1o2U0JQc1RDYW03VnotVUduQ1ByaWZRODNyeWVfTXQzemw2UDRWMG1ucXhZekIzN25aOHJTZnd0azlBNjFXdkp3WmZsRUpyUEJNQnktc1dIbmNxaGZuMEhPcFRvb0FZaw?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 5. Recursion Eyes H2 2027 Pivotal Trial for Lead Candidate After Positive Phase II FAP Data - Genetic Engineering and Biotechnology News
+- 매체: GEN | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRnpnY2lYdl92MTJZd014bi1mZE1YdlNOa3I1NW9xandRTm90SE1lVHA4R0NTbmlxU1BLNXNrbEw2QkFJa1RnU2QtMnZoUmVfbS00ZmlVU1dMMVRHczluaVFubjR1cUVhcXZ1QUtkaF9TY01PQ0dpUFM4MDBFR0tlcGZmeGkydHpSUVJzSFRHUGs5Zl9XUU9HU19FTFl2YTVNdFhlclE2elF2cjBWQlJJeS1lMjctRkFYVVB2ZTJmdkJ1dHE4TmNWQ09BQ1Q5dVpWRktLVTFvT01CMDV1NWxxQQ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 6. TCT 2026: Abbott Expects H1 2027 FDA Approval Of SonicForce IVL After Successful TECTONIC Trial - Medtech Insight
+- 매체: Scrip/Pink Sheet | 중요도 점수: 4
 - 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMingFBVV95cUxOcG5IaVNyQVlVTkVPTzZ1M1JrWHF2WmhWME1rTkRWbEJWRXlYejFtb1BBb3FMdXVlcmpuLS1wUlN1YzgycVg5ZU1aUlI2UkFQcjFNRUpHd09fZF9hMUFycHlqZXk2amJYNl9IaUtCay1tODU3ZkxoeG5NbDNQWWhuZklhbnpYRGpWSERpV2VCVlhwdTRrRTRHYjEzaU81Zw?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMijAJBVV95cUxNWEVObG82TEJRS2NNZ3V4MWxlZXp1aFpTMncwRVluakhwS1lVS2FNc1JEak1NZzBtc0VoZERQRFZzWWt1Z2M4X1VHNEtrV1NBTTdxWGVIVHR0ckRXdWoyTjhPcDJXcTZ0ai1nQUgwZDBhakdicUUtQ3JwVHZkSW5zcC01NUNBb0dIb0V6UUs3OXdOdjFzVU5aZ05JSnNRSmxDYU1DNHFUaFNMdE9jMmZaZE9PZnpvaFBaUUdSMGtDNlVTSGhvOEJTVk00WGlOdzFET3l1WHlVVWdEb2lSeUVlaUdWZl9xNndXcDdjZW44S0p1VmlaX2xTdkVJc25BbEhwYWtGLVE2V0hMQUE3?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 7. Nuvation Bio to Present Additional Updated Phase 2 Results at 2026 Society for Neuro-Oncology Annual Meeting - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
+### 7. ‘More Than A Tech Upgrade’: UK Building End-To-End Platform For New Clinical Trials Era - insights.citeline.com
+- 매체: Scrip/Pink Sheet | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi4gFBVV95cUxNdXp5NWkyRzlYczFSdXBNQ1R5aVBKTEtzY2VtdVpkeGoyVWxueHgtYmlmWWtjY05aR2RfLU9XbS1iRnJ2VkhOckMxOVF2U2FyYVdvNTZyZ2l6S3Q4QmRYWXVzNXRUTGdFSDZKS3dlT0NLTmZmb1VxWU5jUm1PZFRMcU51N0U5LWxWT1Z3Vk94QnJELURySmkyWnV4cWlMOVZmX1kxSjIyeTQxTGpWMUpwY0xqckpCNlJpZ3hjMmZ1aUlqLTBxYjhpd24tVmhQbDk2ZHFsclY0OGprc1lydklTOXJ3?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMimwJBVV95cUxNN0dfUjhZSEFERzd1cmlVNm9Ea2R0LXN3WEM0ZGsyeEJLcUpUeGluRUZyc2Jzb29VUDE4SGlfbzRlS203NzBFQ3c5bEFNdVltZ3QtTzhKbG9TeFVVSHJmVTQxZmtmblFObmxsY2FaVWtjN0ZNN3dLcUdEcWtXVFNiU0gtM01VVHJHd2REVG1JX29JOG5iVzdFQTRMWkZxY2RwWXBBX3pZb2xZMkh3TFY0dHlRMlBtMjh5Q0JfQm5GUFR4dExGVUFhWWtwWGVsQ3BKNDhUcGRjX2V0WnZfZnl4WTRLbm9YRTJuUkh1T3RHRUM0RV9KUjI2Nklpck1UTjQtVGlvUUFfS2VhQUhXeFpDLUdSYUdIV01RU0ZR?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 8. Ractigen Therapeutics Kicks Off Multi-Center Phase II Clinical Trial of First-in-Class saRNA Therapeutic RAG-01 for Non-Muscle Invasive Bladder Cancer - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMimgJBVV95cUxNZ21BaUdjMGg0azUwZWNHOW84QUZ3UEJyajByZ0VXZlJjVU9majU4MjBDMVdYWE9fb2ZxeUZlemRhZnZKNXFlTFF6LWdvZVhQV0RsQ3Y4QjYxUGYxSzJ2ZkQwa2g4bHB0SHE5TnhCcDdRNm5pWEEyNjVmQkRTeEdXXzExSVdaV1BPZVNNeFh4d21jbEFaMk9pRWx2MThlZGxVU3NnXzJQQWxVcmxqSWQ3cHktaWZtaDBaZGlTWm5EMkVLZkljeXcxa0ZLd1I4bHo5LXZVZXc1aEpNaHNvSWxSZHdHbEllaThrcjAzTEY3c3RfQUFxSU1xWnJGN241OFpwYmNpWG04MUxZTDNya2dWVm9TS2F2aHVseHc?oc=5
+### 8. "The Essential Guide to the Food Safety Modernization Act" - Fierce Pharma
+- 매체: Fierce Pharma | 중요도 점수: 3
+- 분류: SAFETY
+- 발견 링크: https://news.google.com/rss/articles/CBMi2AFBVV95cUxOLXJuLS1zNGtlMTVsNWhYcU5oMk1raW9TNWNpLVd5STMtQ045aHZjSEgyYUNITUdmcTZwVGhhNmkyUTM2S0JlUVA1NUdINVNBalB3dmoweHlHZE0wYVhtaXQ0bzhNa1VHUGd0elJSbFZQNmJFUklrV0NIaExOdU9Vb1phRnRSUHJvR2ZsaE8wbzZiOWczRHNFaUdtbjlkeXJoNl8tUDdWTnZXcjk0QjBrejFQOWZVNk5UN0dXUVVNdkZwaG51UkVWeTJTVkl1R2JQaU9aSF9yUm4?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 9. Teva to Discontinue Phase 2 TOPAS-MSA Study of emrusolmin (TEV-‘286) Following Interim Futility Analysis - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi2AFBVV95cUxQQ2Rzakpzc2g4S2FPVGhwSkJsamJsd0Y3MDAySE5DNmNWdHJmSTlyYjNnWGdMT3Iyck9veVdjQWRINk5HM0FvZDIzdFR1R1V6YTVDZkoyQ1dUQ21CWXBOSWRvM3p0SzIzbk1TYXZyTEhIcndfb0Fkck9aRTZPZlRubHZ4X2pMWG9scG1ISXU5R1JtWWJ0MFpLaW9tYVBLbEpvQlc4R3pobW51eTc3RGFla0RTZDZXYkp6N1dpeFFEZVlDU2c2anA4dnpaTnhxSFNYUVFSdmc1REM?oc=5
+### 9. ARCHIMED Life Science Tools & Services Completes Acquisition of Standard BioTools’ Microfluidics Business, Now Biomark Scientific - BioSpace
+- 매체: BioSpace | 중요도 점수: 3
+- 분류: DEAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi-AFBVV95cUxONTZpVDNJb2Jwam9fUkJrRHVtZ1ZLQ2RtVWtEeXF4cmtBbzdlOVhKSVQ3UlhMalpMNGZqMU80MWtZcFE0aVktcGp4cDVpal9qdlkzWXNHQ2tEXzdyMTVWZW15VXU0elFYSG9OTjVuTURrN1Fkam10cmhaMlBmQy1qcEFScWxkN3BtdEJES1I2aUpWVkZtRGYxSnU0R1N5X2MxUjViQk1TdDNjckxiRkVYelBLcEdhSDZlYklEdnJFS0toOXdRQmVuamZaZkVSc0lpUFR4Y3JnaldPWTJhWWxuSExzNTV0VjVnbTBHVEczRjR5LV8weS1Ndg?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 10. Vicapsys Life Sciences Provides Shareholder Update on VICAPSYN(TM) Program Advancing Toward Phase 1 Human Clinical Trial, Vertically Integrated With the Company's Indian Health Service Strategy - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMizgJBVV95cUxOLWk3MjBRdzBJOUtGVUx6OHFWMXlpT21YT0FWbmNJZE1zQ2VEUFlVWjRwdmJGNExndEV3ZmZzSHNZOTA0bVREVE5pVURkTE0ybWhYclM1WS1VNW81SlFxNElJRmd5WjVFZ2FHOGJMTUtIWFAyeXN1QndzNDZ5bXZrY19Qd1hzWTNNSGJoQjRQTDJ1bG52MU9iRkZsVHJJU09RQ2JlRy16bTc1NTZsaDctLXktbWtPOFJHYnFaWFVnVnRzeTBqaUs3Y19JdnF6ZXEtZlNsTndrcXlCLTlBNWxWbFZxR1JkOVMtdUtwRF92cHlOSHZ3LVBsRTRsOC1LMVdPSE5xUWkyeVNZakJyUEdaM2g1ZlRva3l6djVoRUFKbXJnZUtHem9ybjJRcHk5Z25KTTdvQ01hZVFuVU11eGtXczlnOTdMRFBmOXJXNlh3?oc=5
+### 10. As Americans vote, Trump says US will stop $4 billion in aid to Israel - Reuters
+- 매체: Reuters | 중요도 점수: 3
+- 분류: DEAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTnAzZzVDS3N1RTJJdnkxYUJPQkl1X3h4d3hZaC1MX0RwXzRHOGRybmM3QjEzR1kybkJIUmNYcnVPbkNPMkt6TFBnTEdOYWFJemJkelBhVXZsRDQ5VG4wc1lSS0Q2dlRlUmV0VHI2Y3YxNWstRWVPUV95Y2pNUVp5TUlES3pCMC1GUzNTTXVfWWlGd1JlQ3p1XzJUWmJmbzlWUmtYTFlXNDFlZw?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-선별 대상 286건 중 중요도 기준 통과 43건. 상위 10건 표시.
+선별 대상 278건 중 중요도 기준 통과 30건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
