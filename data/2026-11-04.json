@@ -1,0 +1,240 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-04",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "디앤디파마텍 MASH 후보 ‘DD01’ 연내 기술수출 예고…“신약 개발 성과 증명”",
+      "summary": "디앤디파마텍은 대사이상 관련 지방간염(MASH) 치료제 후보 ‘DD01’의 임상2상 성공을 바탕으로 연내 글로벌 파트너와 기술수출 계약을 체결할 계획이다. 회사는 후속 파이프라인의 개발 및 투자 전략을 병행하며 글로벌 임상3상을 주도할 의지를 밝혔다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29807",
+      "source_name": "더바이오",
+      "published_at": "2026-11-03T21:30:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "요양병원 간병 급여화 내년 상반기 시범사업…독감 주사 가격 공개 검토",
+      "summary": "건강보험심사평가원은 내년 상반기부터 요양병원 간병서비스 급여화 시범사업을 시작할 계획이다. 2030년까지 약 500개 요양병원과 8만8000명 중증환자를 대상으로 단계적 시행하며 본인부담률 등 세부 기준은 추가 연구와 의견 수렴 후 결정된다. 또한 독감 항바이러스 주사제에 대한 비급여 진료비용 공개 방안과 고위험 분만 보상 수가 개선도 검토 중이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47918",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-03T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 아리바이오 'AR1001', 임상 3상 발표 앞두고 일본 특허 등록",
+      "summary": "아리바이오는 알츠하이머병 경구용 치료제 후보물질 'AR1001'에 대해 일본 특허를 확보하고 유럽 특허 등록 예정 통지를 받았다. 지난해 미국 특허에 이어 주요 시장에서 지식재산권 보호를 강화한 것으로, AR1001은 PDE-5 억제 기반으로 아밀로이드 베타 응집 억제를 목적으로 개발되고 있다. 현재 초기 환자 대상 글로벌 임상 3상을 마치고 임상시험학회에서 주요 결과를 곧 발표할 예정이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80463",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-03T21:01:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "경구 TYK2 억제제 개발 경쟁 격화…中 3상 잇단 성공·다케다 美 허가 심사",
+      "summary": "중등도~중증 판상건선 치료용 경구용 TYK2 억제제 개발 경쟁이 가열되는 가운데 중국의 인벤티스·한소·이노케어가 임상3상에서 유의미한 결과를 발표했다. 다케다는 자사의 TYK2 억제제 자소시티닙으로 FDA 우선심사 대상에 올라 2027년 1분기 승인 여부 결정이 예정돼 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29815",
+      "source_name": "더바이오",
+      "published_at": "2026-11-03T22:20:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항암 새로운 전기, 中 신약 '이자브렌', 폐암환자 생존 2배 연장 - 뉴스핌",
+      "summary": "(제목 기준·원문 미검증) 중국에서 개발된 폐암 신약 '이자브렌'이 폐암 환자의 생존 기간을 기존 대비 2배 연장하는 성과를 냈다. 이는 암 치료법에 새로운 전기를 마련하는 중요한 임상 결과다.",
+      "source": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8ya1dsbm92Y1ViRUlnZFZZMnBwV2d3OGl1NGp2ckI1bkVRaDRBM0trRmRQT292WjlScEszX0VGVVBzLXpUXzNJNWxybEZNX21IYlRTRGNkWjZpdUhJ?oc=5",
+      "source_name": "뉴스핌",
+      "published_at": "2026-11-03T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀약 신속등재 “확대 검토”…카빅티 급여 문턱엔 재정 부담",
+      "summary": "건강보험심사평가원은 희귀질환 치료제 신속등재 시범사업 선정 규모 확대 필요성을 보건복지부와 협의 중이라고 밝혔다. 다발골수종 치료제 카빅티주는 대체약제 존재 및 건강보험 재정 지속가능성 등을 고려해 급여 기준을 설정하지 않았다. 이외 알투비오, 엘라히어, 브렌랩주 등 3종은 경제성평가가 진행 중이며, 저인산효소증 치료 확대도 추진 중이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47917",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-03T21:16:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "위험분담약도 약가유연계약 전환…건보공단 “병행 적용 단계적 검토”",
+      "summary": "국민건강보험공단은 기존 위험분담 계약이 중도 해지되거나 계약 기간 만료 시 약가유연계약으로 전환할 수 있다고 밝혔다. 두 제도의 병행 적용은 환자 약품비 환급 행정 절차 해소 등의 편익을 고려해 보건복지부와 단계적으로 추진할 예정이다. 위험분담제 적용 대상 확대는 혁신 신약 접근성 개선 효과가 있지만, 임상적·재정적 불확실성에 따른 건강보험 지속가능성 영향도 검토하고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47912",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-03T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오아틱, 노바티스와 BBB 뇌질환 신약 개발 협력 종료…“기술과는 무관”",
+      "summary": "스웨덴 바이오아틱은 다국적 제약사 노바티스와의 뇌혈관장벽 투과 기술을 활용한 신약 개발 협력을 종료했다. 계약 종료는 노바티스 측의 프로그램 중단 결정에 따른 것으로, 바이오아틱은 기술 자체와 무관하다고 밝혔다. 선급금 3000만 달러는 이미 수령했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29813",
+      "source_name": "더바이오",
+      "published_at": "2026-11-03T21:10:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항체 하나로 여러 신약 개발…아이엠바이오로직스의 '프랜차이즈 전략'",
+      "summary": "아이엠바이오로직스는 하나의 면역조절 항체(IMB-105)를 다양한 표적과 조합해 다수의 이중항체 후보물질을 개발하는 프랜차이즈 전략을 추진 중이다. GC녹십자와 자가면역질환 치료용 이중항체 개발을 위한 물질이전계약을 체결했다. 또한 자가면역질환 특화 Fc 엔지니어링 플랫폼 'Selicon-T' 개발과 면역항암 항체 후보물질 IMB-201의 초기 임상 진입 후 파트너십 사업화도 계획하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80482",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-03T21:07:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "디앤디파마텍 \"DD01 연내 기술이전 정조준…후속 신약도 속도\"",
+      "summary": "디앤디파마텍은 대사 이상 관련 지방간염 치료제 후보물질 'DD01'에 대해 복수 글로벌 제약사와 연내 기술이전 계약 체결을 목표로 협상을 진행 중이다. DD01 임상 2상에서 섬유화 악화 없는 MASH 해소율 62.5%를 기록하는 등 위약 대비 우수한 결과를 나타냈다. 2027년 FDA와 임상 2상 종료 후 회의를 준비하며 후속 비만·섬유화·신경퇴행성 질환 신약 후보들에 대해 단계별로 파트너링을 추진하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80479",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-03T21:05:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "병원마다 다른 비급여 진료비…‘가격관리 기준’ 법으로 만든다",
+      "summary": "백혜련 의원이 의료기관별로 차이가 큰 비급여 진료비의 가격과 제공 과정을 국가가 체계적으로 관리할 수 있도록 하는 ‘비급여항목 관리에 관한 법률안’을 대표 발의했다. 법안은 복지부 장관 소속 비급여항목관리위원회 설치, 5년 주기 비급여 가격관리 기준 고시, 표준임상진료지침 마련 등을 규정한다. 또한 의료기관이 비급여항목을 제공할 때 진료 전 비용·필요성·부작용을 설명하고 환자 동의를 받도록 하고, 비급여 내역 제출 및 정보시스템 구축도 포함된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47921",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-03T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신약 약가협상 5년간 10건 결렬… 8건은 재협상 거쳐 급여",
+      "summary": "국민건강보험공단 자료에 따르면 지난 5년간 신약 약가협상 246건 중 10건이 결렬됐으나 이 중 8건은 재협상을 거쳐 급여 적용됐다. 재협상 기간은 17일에서 최대 1086일까지 다양하며 평균 협상 소요기간은 약 55일이었다. 협상 중지기간을 제외할 경우 법정기한인 60일 내 마무리된 건이 대부분이다. 협상 중지는 제약사 내부 조율이나 환자 접근성 및 재정 영향 검토 이유 등이었다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80471",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-03T21:03:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "LG화학-SFC 특허소송 확전 되나…OLED 소재업계 촉각",
+      "summary": "서울중앙지법은 LG화학이 보유한 중수소화 OLED 소재 특허에 대해 SFC의 일부 청색 호스트 소재가 침해했다고 판단해 80억원대 손해배상 책임을 인정했다. 법원은 해당 소재 생산·판매 금지 및 폐기를 명령했으나, 양사는 항소했으며 항소심에서 고의 침해 여부와 손해액 등을 두고 다툼이 예상된다. 이번 판결은 화합물 구조 자체에 대한 특허 보호를 인정한 점에서 업계가 향후 유사 분쟁 확대 가능성에 주목하고 있다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1730332",
+      "source_name": "EBN",
+      "published_at": "2026-11-03T21:00:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "복지부 공무원 소송 당하면 변호사 선임비 최대 2천만원까지 '지원'",
+      "summary": "보건복지부는 적극행정 공무원이 소송에서 무죄 확정 시 기소 후 변호사 선임비용을 최대 2000만원까지 국비로 지원하는 규정을 신설했다. 기존에는 기소 전 수사 단계에 최대 500만원 지원했으나 1000만원으로 상향했다. 또한 고문변호사 운영 규정을 개정해 이해충돌 미신고 및 비밀 누설 시 해촉 근거를 강화했다. 이 제도는 2026년 12월 1일부터 시행된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47911",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-03T21:00:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만 다음은 탈모?…일라이 릴리, 투자·인수 행보 주목[클릭 e종목] - 아시아경제",
+      "summary": "(제목 기준·원문 미검증) 제약사 일라이 릴리가 비만 치료제에 이어 탈모 치료제 분야에서도 연구개발과 전략적 투자, 인수를 적극 추진하며 포트폴리오를 확장하고 있다. 해당 움직임은 바이오산업 내 신약 개발 경쟁 심화와 시장 다변화에 기인한다.",
+      "source": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5wV1hLS2dZTGhmN2xBYW5BWFA4S3BZYlJVRmZqNmNYLXlUN2ZtU2R0TUNnSURsejBremNOU05BejVsa0I3TUQydkJnTGEwb3BDX05zckpPbnBpNXhKcXJ1Qg?oc=5",
+      "source_name": "아시아경제",
+      "published_at": "2026-11-03T22:20:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "주빈국 러브콜부터 中 소부장 구매까지…‘K바이오’ 위상, 어떻게 달라졌나",
+      "summary": "한국바이오협회가 글로벌 바이오산업 협력 강화를 위해 국내외 대사관과 업무협약 체결, 해외 간담회 재개 등 협력 확대에 힘쓰고 있다. 2027년 BIX 주빈국 선정 논의를 비롯해 중국 소재·부품 구매 확대 지원 등 국내 기업의 해외 진출 기회 마련에 집중하고 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29812",
+      "source_name": "더바이오",
+      "published_at": "2026-11-03T22:10:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "프레제니우스, 中우시와 '시밀러 37개' 개발 \"옵션딜\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 프레제니우스가 중국 우시 지역 기업과 바이오시밀러 37개 제품 개발을 위한 옵션 딜을 체결했다. 이번 계약은 글로벌 바이오시밀러 개발 및 사업 확대에 중요한 의미를 가진다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1WUDc4VWtaZ1ppb1ppRG5lZGtYX3JTMXl4X3BKdmd5UFFpclplbTFyQ1BJdVdiekhoUVBOa0NtdlEtUXkxbGdXRkJiTUpZLXlKTUZBQWs5Yw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-03T21:20:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "의약품 부작용 피해구제, 보상 넓히고 신청 문턱 낮춘다",
+      "summary": "한국의약품안전관리원은 부작용 피해구제 제도의 보상 범위를 입원 전후 외래 진료비 포함으로 확대하고, 연내 진료비 보상 한도를 3000만원에서 5000만원으로 상향하는 법령 개정을 준비 중이다. 신청 서류 간소화를 위해 행정정보 공동이용망을 활용하며, 의료진과 협력한 홍보 전략 강화로 피해구제 인지도를 높이고 있다. 또한 원장은 라디오 방송 출연 등 대국민 홍보를 확대하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80484",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-03T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "1160억 들인 CGB, 사용승인 7개월째…상업 가동은 언제?[차바이오 딥시크⑤] - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 1160억원을 투자한 CGB가 사용 승인을 받은 지 7개월이 지났지만 아직까지 상업 가동이 이루어지지 않고 있어 상업 가동 시점에 대한 관심이 집중되고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPWFpfT3dKdXRPbnd5WHp6dEJsRTFPdjlXVVFQMExKYWl1OC1tVy1TVlNYTzJwTnpwYjJPZ21jM3Vhb2hOY200VEF3dGRVdk9QSFZqS2VkMldrV2hKdlFUVnZLOVlMTHNFWGVSeGJrZ21UYmpxNmk2ejIzNXR5SzRGeA?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-03T21:01:02+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "中 인벤티스바이오, ‘노멜시티닙’ 건선 3상 성공…PASI 90 달성률 70% 돌파",
+      "summary": "인벤티스바이오가 자체 개발한 선택적 TYK2 억제제 ‘노멜시티닙’이 391명 대상 임상3상에서 16주차 PASI 90 개선률 70%를 넘고, 안전성 프로파일도 양호한 것으로 나타났다. 현재 BMS ‘소틱투’와 직접비교 임상3상도 진행 중이며 중국 내 적응증 확장 임상도 추진 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29791",
+      "source_name": "더바이오",
+      "published_at": "2026-11-03T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 20,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
