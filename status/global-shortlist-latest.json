@@ -1,26 +1,75 @@
 {
-  "total_input": 278,
-  "ranked_count": 30,
+  "total_input": 346,
+  "ranked_count": 32,
   "shortlist": [
     {
-      "title": "AbbVie abandons phase 2 solid tumor drug over ‘limited benefit’ - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQVRPTUtoZTB2SkR0T2NyaWJ5OFVOVmgwc1p4bTlEU084Ym9zcDYwb3F0dzNsVHRUZjVUNHN6enBZejJNbUN1dENCSHJjdkxxU3JyTkg1UUdfS0xDSTcwTHVQZmpPZHB4ekFlUHB0OHVET3Nvbkg3eVZWdW41Z2JlWWZrTEw3bkZVb0xBRFkyUHRIbzZBT1VWODhPMVJRYnZrLTZ5THF4Skg?oc=5",
-      "published_at": "Tue, 03 Nov 2026 13:38:42 GMT",
-      "source": "Fierce Biotech",
+      "title": "Applied Biologics Announces Full Enrollment of BIOxHEAL™ Phase 3 Sentinel Safety Cohort - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObkh6eTVyQ1loZDl1UGFjdmwyLWxUQ0huVGM5QUg1MVo4R012b1dkVXRqYmVoWW5aaXhQMEFzd2w0bGRmbVpMYXFzQjhoNkRuaHo4ekNmQlNLOEpIWEZtUWJoUjZvVFlSMUNaODNzekEtdHhXTHZ5WEI3bzZIazY3ZGVBVHRSUmhHUTF0VG54RTRmakx6S2ZTczYwMzN6RlZqZjlnaklacGgxOGNhU2ZJQVVGR1drUWNWWWlTek84YTh4QjFN?oc=5",
+      "published_at": "Wed, 04 Nov 2026 15:11:43 GMT",
+      "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
-      "score": 4,
+      "score": 7,
       "signals": [
-        "CLINICAL"
+        "CLINICAL",
+        "SAFETY"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "Ardelyx Completes Enrollment in Phase 3 ACCEL Clinical Trial of IBSRELA® (tenapanor) in Adults with Chronic Idiopathic Constipation - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQSFhnWE1vZVIyUnV4QWlQMjNoNkJOMlNtTEMtV0RtQVRMNmprUzBwNHpQMTl3R0NwWGpwNWE2bHVGdVpHaVZIM21rMmJMTGVWOElIRUUwMjhMVnpXbUdsRnl5VXI0VGZsQ2pRR3lvRjI5Z1RNQkU1Ulh6UXlBUEFkOFEtOFFXamtVN3QxSnV4aDdCdlRWcmpZbkxBVlg4Nk1tNHhoN05fTnFwaGVSaVdpSzJHRTQycHo5elM4TXVFWWk1MzRCQXNTMklhZktwVDd4TEFYRS1BZVlkUE1xeXE1X2VYMGNobWk3VDlYSGZ0UjNBcG9JOFNQVXdnMGM?oc=5",
-      "published_at": "Tue, 03 Nov 2026 14:28:19 GMT",
+      "title": "Servier’s $1.55B Edgewise acquisition backfires after Phase 2 setback - European Biotechnology Magazine",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNR2lzN09ZdkNjeHFFeFZpNXVacHd2emJMU3lCakJheVlGb3FncVdDaDY5TjRFUlc1TmY1Z09oWm9iaWdJZEI2bnRxWGNtS0QxdHhYbEdmcGNUWm5MUzRzajlkV2lmRUdOZ2RaZE5ocXVlbjVqd2Qxc0ZibHFoSzcyYzFGclpJZmtSODNJVjM4d1hLUzJoa0FfR0dMXzczRkFMSlRvSUc5NjhIQVgxNVpHem9JeEtqZw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 08:32:57 GMT",
+      "source": "Global gap recovery",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 7,
+      "signals": [
+        "CLINICAL",
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Zuellig Pharma Acquires Hangzhou Facility to Strengthen Clinical Trial Supply in China - BioPharma APAC",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPcnlxVzhrdlBWNUNVOEo5cG5jaS1pZE5pTWJFWkdXVHZ0VFVKcU0yRmkwZHloX1VCeGl5N2dHU3plZXY0dFY5c1lwS0s2Q2Uwa09QLXVlcG4teHF3NTFrZU5UVGFSMUZ0SDV0WjBuTDJhS1JocnVxNDQzeGZXNlNEVzR2a3V0RDhYbFhveFk4NzVQYWlKbXNWRXkzeTVBanRfUVk3WF94eFgyLUhIcHl2RmtfbDhzb0lnNnhnclA1UVhmRUcxUXdUQmNkbw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 18:33:34 GMT",
+      "source": "Global gap recovery",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 7,
+      "signals": [
+        "CLINICAL",
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Madrigal’s former clinical development head files whistleblower lawsuit alleging Rezdiffra safety cover-up - Fierce Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNOHJDczRVVlo5QnZPQUF2OTBMOWRxcGFkX3ZwV2tmNE40OTlnRXZuYTdWdDJWS0Y3b2t5ZE9NZWcwUG1kOGZOR3pRYldDNDc3ZXBXWV9ucl9iLUZsblJ0Tjd3eE9sc0JaMFdpYlE4XzUyOXNtVkpLZy00cjRXRExKV1RNV0duQ055Y2tHa2dBMGxzYlNwY2VSZzlPZXhuVkloc01nRHFLckdoaFZZVHZqanJrdFdLZ1J2RnVaYWRXR0Rldw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 15:49:32 GMT",
+      "source": "Fierce Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 6,
+      "signals": [
+        "IP",
+        "SAFETY"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Amgen starts MariTide autoinjector study as pivotal readouts approach - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeERHd1JBNFQtNTh1dVhPbGJGcVZ4WmRBZnlhc3A4a1FVaTVJZWw1LVAtZFNhX3M2NmRZLWtyU0VMN2I0a1NaS3h5cXdGbkFuVnNKclZpakdLQkJCaEtmSWJCRHd4b0RZc1h3YnRvQjhsYTNjUDFRMzl3bktXSnFmTkRXRVB0TEtjQkdEeUFuS1NmY3ZGX05FX09BNWNSaTNJSkdmNlVR?oc=5",
+      "published_at": "Wed, 04 Nov 2026 16:18:31 GMT",
       "source": "BioSpace",
       "group": "GLOBAL",
       "verified_original": false,
@@ -33,9 +82,114 @@
       "original_url_verified": false
     },
     {
-      "title": "Pfizer pares back obesity pipeline, drops phase 2-stage lung disease candidate - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTW0wUVdGT0daMll1QWt6WGYyM21JR0tqSWV5TmpOd2xuMG5CUVRyTHdneWFTUkRBbWdRX3dpSV9PRXpQME00Z0MxOUlvdVpka1J6RkFjZGdDaXdpWWtXVDdhdUdqVlVSejlBMW94WV9vTy1HS1p5Z2EzYkIxTjUxZjIxVmFkc09ScUh1SEk1Wm5XdDkzdlpFcmg1Y0E4TVEweW9FdFhGeWFqQk1YR0E?oc=5",
-      "published_at": "Tue, 03 Nov 2026 13:02:12 GMT",
+      "title": "Anixa Biosciences Announces Presentation of Ovarian Cancer CAR-T Clinical Trial at ESMO Immuno-Oncology & Advanced Therapies Congress 2026 - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOWjhHR09TTDN2bkdpdnlrQWE5UWgtTlI2bG5MVWV6cmRKYmpHdlZZdlNOczVMb3VkRjgxYjltajBzcVp1NDhjVDBveW9WMEE3N0dRUlBJTnNpVG1raWhvUW1GeF9qbEhLd0Y3Y3BSSWpEMklld1NlSnlhNGZDd2g3b29nWlc5NVRPT01YUy1mZTlFUS0xMWxDN1ZaXy1XT1RmbUhhYnhLcmlXTlFKTnJsVmRkYm9EY28zY1o1VEhoSXdXMldMaXVpOFBub052ZU51VEN5Y2tjWDItTldNVXBMeExGN2RlZXp5TGIzS0NHa0FPOE53dHlEZ1F4SHJscXpvY1dKY29jYw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 15:11:42 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Definium Therapeutics Presents Topline Phase 3 Data for DT120 ODT in Generalized Anxiety Disorder and Major Depressive Disorder at 2026 NEI Fall Congress - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMingJBVV95cUxNb0NHQUhFNWsyZjZfM2RaSWZuLWJ3U0JldDh2d0tGWnFIQmJFVjM4Uk5CQXpIeDZBVTRRMml4VU9ENDZnNDNGckdRMXROVkxEaWNhcVVfWUt0T0xleEtKSmtNVy1xXzl3TzhPc2N5YlJpN3dlMnh1TlppaEF0Y2JxZzJxT19tZlpucDRZNHZ5bHoxNnFWQnRmdjR3b3gxMDlhcWZEVFRXWVprZHVJQVgyTHRHN3lkaVdJYndvMWMyWVM3NEFmOXJKTGF4cWU3MFZEV0lRbEZrSmlocloyNmpNRTkxZm5SbHN1bUlUbHBhM3lKR1UzQUt2enplYjRKQW1DdDRsUmxUWTVvS0tqcnRKblpza3ZoT1lRNUw0Rmtn?oc=5",
+      "published_at": "Wed, 04 Nov 2026 14:06:11 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Immix Biopharma’s NXC-201 NEXICART-2 Interim Clinical Trial Results Selected for Oral Presentation at ASH 2026 - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPemZ5LTFXTE9uc0YtY2lhOWk5dHpqc1lwLUctR1VVM1JIUWVvaU5oMzFRQ0VoQzFmU3NTbHRGd1pyQWdwaGhNNnczY2JSelJrSzZnVzRjT2ljQmhQQzFBSGc3ejMxZXA0eWphS1h5ak9EeVZZY3UwMDB5dkxjVnZNU1FHcTI2OGNaeFJpbVZwY2pBdDNxdm45SnJMSU9rOVBfV2wzT1Z2R0xBWWQ1cklmeUNhQ0E4RDlabnBmbWsybzB4ZW9Ba1B3dFZucUxucXV3T3VySGtkVWVCNm9qOVF2cUtwMA?oc=5",
+      "published_at": "Wed, 04 Nov 2026 15:11:42 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Intellia Therapeutics Completes Enrollment in Phase 3 MAGNITUDE-2 Trial of Nexiguran Ziclumeran (Nex-z) for Patients with Hereditary Transthyretin Amyloidosis with Polyneuropathy (ATTRv-PN) - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxOOU9JanlnS19rWDBKOXpUdk9JOHd5aG5HMWZwekp4SDJGLVF1aldyaUJhR0RYaUd6VXp3Uko2X1Bld1lxY0psVjVTWk9pLUxqY2xXdXVwVmtJeURmUW40QWRLTjdCck5oMVM2WnpfajVVY25tWFl2ZndBSHdJM0lVYkpIanZiWGM1OVNvdk9qYV94MUJ2NlJuckVtUkI0NU40Ymk1cHpLNi1NOFJOcFIwS0h5MC10MFYwRnkwQWJ3cHNEdUFVNU9mNjE3M1JKY29rWGczNGIzemF1Ukk3VjNleFc2Mktjd0Zta0V2WjZ6NWswN0MzaFAwLVFGM3JmWFg4UFJZS3ZwNU53N0Vtc29DRDhoQjh3OU5XcG9va1JxUndvYk16N3N1OTEzRzJTSTEzdlYycFBUaTRUV3VPVlFkWmlHdVA4cTFU?oc=5",
+      "published_at": "Wed, 04 Nov 2026 15:05:40 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Menarini Group and Ryvu Therapeutics Announce First Clinical Data from the Phase II JASPIS-01 Study of dapolsertib (MEN1703, SEL24) in Heavily Pretreated Relapsed/Refractory Aggressive B-cell non-Hodgkin Lymphoma at the 2026 ASH Annual Meeting - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5lNzAza2lNX3g0TWZqZ0hlb00tZnBTVHVuVWcwQkxMRlpHd1Fmd0cwZHRsVTBhbnBkOGIycFF2aFpSUThfYTR1T0Z5cGE0aG9qSGVV?oc=5",
+      "published_at": "Wed, 04 Nov 2026 18:05:48 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Pivotal Phase 2 Rezatapopt PYNNACLE Data to Be Featured in Late-Breaking Oral Presentation at ENA 2026 - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOcklETGpGVVJmYXkwUTEzWkFzQTdvVXZrNkUtQVRFNTZyWUxBTk9NQTBjckxOa1NRRnh1TmNxOFJrMkVzcGJLeXdWd05XcGo4eVBfdWdxUW9LeGtkd3JUVVlQTG5BMHM1ODc0b2hRX2hLWjIzSTRObjY3RUdWTkRZcFpPbi1QSlZHM3VteGxqT2JELVhtcGEtQ2FUSUFqZFpERmxpVGprblloRklzZnRRSUFIUXdPYTA5eXR2WUwyRWNPZFlCcktyWXZtb2lHdW1qUzFsMnZPb2FSZw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 14:06:13 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Radiopharm Theranostics Announces Alignment with U.S. FDA on Single Pivotal Phase 3 Trial for RAD101 in Diagnosis of Brain Metastases - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNZlh5b3VkUDRraEFaM3UtTF8yQUNuNjhMWmRsb2tEb0JZTXlpbUhRWXFoT3IwaTUtSWhXQ3JkOGZhWDRFS3RCQ1hKSXFKZEtRaXp3dEdwUVo0UEZCN3d6U3lYYkJRdW9PbUJxUEFfaFlsMDRpc3lXNGg0blZoQVlDenMwQmI3Y0FNaGNBTGJNdUd3TVZVNXhXeExaX3M3Zy1kQWtRUUFLYi14aXF4SHdQVkNLYmpJSFJLbXdQMHNrNGI2VjlhMUhrOVUydzE0YmpsN3dpekc2WmFGSFJkU3VJYUNnTkotN3NCWUlNU2xwUnlRWVVldU84d2pEc05nSHNtaFE?oc=5",
+      "published_at": "Wed, 04 Nov 2026 14:29:18 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Servier’s $1.6B muscular dystrophy bet on Edgewise delivers quick-fire pivotal failure - Fierce Biotech",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUExBNEI2M3BLeTVlSHFSQS00WG85dzJ3ZlpXemlqczNiX3B6X3lXTjU3Y2htM2s2WWxpZlN3MnZfSEJUVFU1RE5ueW1ELWRadk1uN0VDX20xeG1TakJIUGdYLVEtUzhIenBLME5wRURNZkw4cEJEcXFiN0UtdVpDcjdRWVQ5bngwRExnT29YSTNCR2ZrNktGcUNfaXJnVm9wX1ozV3lIRjZLdElTSmN3?oc=5",
+      "published_at": "Wed, 04 Nov 2026 08:06:38 GMT",
       "source": "Fierce Biotech",
       "group": "GLOBAL",
       "verified_original": false,
@@ -48,70 +202,175 @@
       "original_url_verified": false
     },
     {
-      "title": "Pipeline Watch: Four Approvals And Forty One Phase III Readouts - insights.citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOZXJVTzZVOFBUMGVBeTR1V2lXNWpVdk1aRTJlWDZjU0dLTWxta2xSU2JSS29NQm1NdHBxUS1heVAxV3RCUkUxVEIzMFhvdjE0cGxTeFNyZGE1WXpVRU1lcjdMa1UtX0puNjNvMi00REVRdGNEN2FzbmtYaUhxOTJpWDFib1o2U0JQc1RDYW03VnotVUduQ1ByaWZRODNyeWVfTXQzemw2UDRWMG1ucXhZekIzN25aOHJTZnd0azlBNjFXdkp3WmZsRUpyUEJNQnktc1dIbmNxaGZuMEhPcFRvb0FZaw?oc=5",
-      "published_at": "Tue, 03 Nov 2026 12:22:15 GMT",
+      "title": "3M stock soars following $7.35 billion 'forever chemicals' settlement - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUG5PMU43SGNodjZ5UUd2SnB6cFoxYU5TOUU5MG9CU1VFZEhXSHYzSE42Y0FTQVdob2tSTWhpMUF3c3VUazU3MWc2dEhUVVpOS3hrMVI5RnBjdGlEVTlsSFdkWXBiSF9WVjdWVVFMMVFYR0owME5vbEVKSHljbkcxb1ZzbTU1eW9JLXNZS2VrQXpvUGV6Si14Sy1qQmhwQkI3LWozUllXV2N6MVRDSXJjWnQ2TmVveW1JWlE?oc=5",
+      "published_at": "Wed, 04 Nov 2026 20:27:41 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "ARRAY to combine with Shoals in $1.32 billion all-stock deal - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOOVd4WnFxc1ZvSS1EcXJ1dEl2NlEydVhsOWhiNExIdER1d3dhLW9LOXdNSFVyaFltYnFzbTIyaUN6ODV2QmRmdUdhYVkyS3lmek95SWpEb1B6RExTSjN6MGJKUFZWMWwyQ0NiOGhoLXZHUjdQSGZWdTliSWNTWTdzUElvYlhUNURvT2xxM3pzU1BDNWNia0t2Snoxd1VTcm5l?oc=5",
+      "published_at": "Wed, 04 Nov 2026 14:31:59 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "AstraZeneca made $10 billion offer for obesity drugmaker Rhythm, sources say - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZmFGV0prMVV6V1h5NnN6anN1djhhUlBvVVVPMV9WQkZhTkxETlN1VThxQzFJQ284aXhHaktOX1U5WlBxNUtsSzNacVNsb2laWGNQYzQ4TTJ5Uk0xX2tNYmtZM0pRWmtRX045UDB0Z2loUmd0WjVOdjV6Um9MWUI1cFRubXNkbFlxN2xZVkRGRzhYdFZFR093OEJuUWpKN19QX09nMHJRYnVzMmp4Q0d2dl9vSzIwZm5QYkRR?oc=5",
+      "published_at": "Wed, 04 Nov 2026 22:56:24 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Billionaire industrialist Dangote launches $2.5 billion Namibia fuel storage project - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOT19QMXk5UDFfbS1UckoxR0pXbTl6eE5VQkE3OHJrTDZMZnM3Zy1QTDJNX3BmTFQtWW5OQ2F5dHNacUpYcVAxdkhaUTI1cVYwT0RKUUd1RlEwdVhIMnZiMXlWcWFiMU83X1RMUkpKY3M3WEU4UWJ5WkNuQmgtZTZsU3JLUlQyQVVPS2YyMnpmOWYtemQ4d0dpeEw4ZEc0dFFfZi1ON0tTZVpUbjBkM2QxdGNyNWNWYXgweEFzWVJUQ3c?oc=5",
+      "published_at": "Wed, 04 Nov 2026 16:30:18 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Billionaire tax measure trails as California tallies votes - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYkEyRmc5d1YtTTNnZ3pCVUxxdmZ2S0NnbHpVdlBManREQkxVVG5QekRoNVVnOXZwTExrWGlJSnFpUXJMenlqZ2ZBVWhKX3JUakcyYmNKcUxsZFdLdmJUUml6T21lOVBJM2w0TlNBTWpHX2NBS0U5YXExNHhQTkhlODlPZm5DWnp1dVdxWlI3SWkwc1FNc3FjN0M3WWVlUG0tTE1Lb0JXMy1qMjV3cXIwbQ?oc=5",
+      "published_at": "Wed, 04 Nov 2026 18:59:31 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Boehringer Ingelheim and SBP Group enter partnership to advance next-generation cancer therapies - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOdks5Sm5hcFlXWW9FU21DekREWVpBblRCUVA2b1lMYm43Ym4waGZKRDBBWngySHZvWFJ1WXU2Ymh4YUFKV3V1ZHhHYlY5Rk1FSzJySC0wZVZOd0pYNXlpT20wWGMyS1k3Ul9zUlN5Z3dZMGU5ZlExeUNUWEM3ZXVZTk5XellvR0xIWmlrS1U5ZDhpUldNQ0JHZWpPbmFHLThyTi1iN0NaV1NTOU5CcjNXRGZrZHlRNWg5a2NqU1FPbkRXdWtJWlNUUVpJc2NDbnJSa0E?oc=5",
+      "published_at": "Wed, 04 Nov 2026 13:05:19 GMT",
+      "source": "BioSpace",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "CVS to break up $117 billion business, separating pharmacies from insurance; shares fall - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQajJWZGJKRmQ0T1UtdWxsc1Q5d2ItVmFRUjdzRmRnT2tpVjc5Q3ZobXd1bmxyMHZUMDVtVFNsQkRTYTFkMUV3SXpGRmNRel93bEl4OW12YV9yTGpnUzV0Sk01OWFJZ1BzdXhWYmdQeUR4eG02OWdqbHJhWXcwODhyN0RpS0JxMk1UdUlrTGpvRUFrRGFPcXJCcmNHV3dvb1dfOHlGWjNYYnA0TlViRGJOamdUSzMxQQ?oc=5",
+      "published_at": "Wed, 04 Nov 2026 21:36:39 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "China Proposes Market Exclusivity For Rare Disease, Pediatric Medicines - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNaldfckMyOHR4TmxiMkhEVldLZDQteHdBN3RyMmRzNV9jWVVDSEx6YkVYVjhJcVNFWEp3V1U4Nzh5QmVGbnZ0NERfeUlGZHM2endVV1dBS0tlOTZHUVh0MnczQ2RuU1BWYUNST2F2MU5qc2Jrbm42aHd2YjdLY0N0djRUTmppQkI4eVZPVmplZnN2a01ZSW0tcWNUcXdFOFM2MFhXSjJJQ2RXQlZsZy1Eb05mR3lDdnVRNGVKbWdiRDNEVXZrdTVod0lfUzZzc2VHTXV3aEduZmVwanJZb1E5Z2dBYWdHU3RjNmRvRktjUmNWdw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 08:00:27 GMT",
       "source": "Scrip/Pink Sheet",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
-      "score": 4,
+      "score": 3,
       "signals": [
-        "CLINICAL"
+        "IP"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "Recursion Eyes H2 2027 Pivotal Trial for Lead Candidate After Positive Phase II FAP Data - Genetic Engineering and Biotechnology News",
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRnpnY2lYdl92MTJZd014bi1mZE1YdlNOa3I1NW9xandRTm90SE1lVHA4R0NTbmlxU1BLNXNrbEw2QkFJa1RnU2QtMnZoUmVfbS00ZmlVU1dMMVRHczluaVFubjR1cUVhcXZ1QUtkaF9TY01PQ0dpUFM4MDBFR0tlcGZmeGkydHpSUVJzSFRHUGs5Zl9XUU9HU19FTFl2YTVNdFhlclE2elF2cjBWQlJJeS1lMjctRkFYVVB2ZTJmdkJ1dHE4TmNWQ09BQ1Q5dVpWRktLVTFvT01CMDV1NWxxQQ?oc=5",
-      "published_at": "Tue, 03 Nov 2026 18:33:50 GMT",
-      "source": "GEN",
+      "title": "Democrats' midterm sweep fuels $750 billion Big Tech rally - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTzc2SlBDbW9CQmpVSmZXdzM1aW9hSGV3cnF2ZFZWTnozUHl0ejU2T3R1eG5xVmhFMG1Vb25oQTc0clFCUVhOQ1ZQaHhLWF9POElFb3cwMjVGdGt5UTFlaWgyUlAtWWIwbFlpbDFmaC1mM1Rta2g5OE1NVk0yNlA4bl9HTi1VTWdqYlc0enR0a3BMUW5MU1RPaTBiWmVVNy00SmdteVk0LVptR21iWGRyVnk2ekttazR3?oc=5",
+      "published_at": "Wed, 04 Nov 2026 19:28:58 GMT",
+      "source": "Reuters",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
-      "score": 4,
+      "score": 3,
       "signals": [
-        "CLINICAL"
+        "DEAL"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "TCT 2026: Abbott Expects H1 2027 FDA Approval Of SonicForce IVL After Successful TECTONIC Trial - Medtech Insight",
-      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNWEVObG82TEJRS2NNZ3V4MWxlZXp1aFpTMncwRVluakhwS1lVS2FNc1JEak1NZzBtc0VoZERQRFZzWWt1Z2M4X1VHNEtrV1NBTTdxWGVIVHR0ckRXdWoyTjhPcDJXcTZ0ai1nQUgwZDBhakdicUUtQ3JwVHZkSW5zcC01NUNBb0dIb0V6UUs3OXdOdjFzVU5aZ05JSnNRSmxDYU1DNHFUaFNMdE9jMmZaZE9PZnpvaFBaUUdSMGtDNlVTSGhvOEJTVk00WGlOdzFET3l1WHlVVWdEb2lSeUVlaUdWZl9xNndXcDdjZW44S0p1VmlaX2xTdkVJc25BbEhwYWtGLVE2V0hMQUE3?oc=5",
-      "published_at": "Tue, 03 Nov 2026 22:12:19 GMT",
+      "title": "EXCLUSIVE: Google extends voluntary buyout offers to employees in several countries - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNN3N5M3JKaG93ZWY0OHkzNkZuaXNvcllrWV9EZTJocmdSZ19NTWU5Nzg4aVV3VTF1dUIxdHZoczZkZU1MYjVpaEJRQ0txUG44c214NjFDeFNvN21nbnltZFBUZ0F4YkVobEI2R3F2ZXJqUW56N3psczhCSWM2RXBMMEd2VXJjV1VqeFFsWnA5R1A0dnpOUTZGc2ZEVXNCTWNHME4tSU9yaTdSRzhWbzlaRF9QRXM3OVJSS3N5Q2diU2JKT00?oc=5",
+      "published_at": "Wed, 04 Nov 2026 15:48:10 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "FDA Tentative Approval Clears Path For Dr Reddy’s Launch Of Generic Lenacapavir In 120 Countries - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQZnVGek4tWjlFaEt6YXlCVjF6TlAzYkJ3aXVueWFiTmJnM3loWVBBNXIwZUYwcUdVQjQxRHdoSzZLb1ROMHpDQ05oWHBQMTNSeFl0dExXZUg3ZFNQSlc3OHh1cnBzemZlcFBicTJjWExYYzlZdzNybVY1MlBjb3dFYWQwSjlqeWtqVGd1N3NmM0VkMHZMbnFNSWJjNDlncGhxSjJRZTRGZWJLX2JDZjVUZG9KSE92S095Y3JSdFZpa3U3ZElqRmxPVm04Q2ZjeFE1SEVUOUszcHlpVExpMHE2MW9YUTM1TE1HbEtMMk9ybnY4RmFIRHBPWDFpc2JOSy1YMFlvN04wVld5N19YeGE3Z2lXZ01JdlRM?oc=5",
+      "published_at": "Wed, 04 Nov 2026 14:55:56 GMT",
       "source": "Scrip/Pink Sheet",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
-      "score": 4,
+      "score": 3,
       "signals": [
-        "REGULATORY"
+        "IP"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "‘More Than A Tech Upgrade’: UK Building End-To-End Platform For New Clinical Trials Era - insights.citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNN0dfUjhZSEFERzd1cmlVNm9Ea2R0LXN3WEM0ZGsyeEJLcUpUeGluRUZyc2Jzb29VUDE4SGlfbzRlS203NzBFQ3c5bEFNdVltZ3QtTzhKbG9TeFVVSHJmVTQxZmtmblFObmxsY2FaVWtjN0ZNN3dLcUdEcWtXVFNiU0gtM01VVHJHd2REVG1JX29JOG5iVzdFQTRMWkZxY2RwWXBBX3pZb2xZMkh3TFY0dHlRMlBtMjh5Q0JfQm5GUFR4dExGVUFhWWtwWGVsQ3BKNDhUcGRjX2V0WnZfZnl4WTRLbm9YRTJuUkh1T3RHRUM0RV9KUjI2Nklpck1UTjQtVGlvUUFfS2VhQUhXeFpDLUdSYUdIV01RU0ZR?oc=5",
-      "published_at": "Tue, 03 Nov 2026 16:31:04 GMT",
-      "source": "Scrip/Pink Sheet",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 4,
-      "signals": [
-        "CLINICAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "\"The Essential Guide to the Food Safety Modernization Act\" - Fierce Pharma",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOLXJuLS1zNGtlMTVsNWhYcU5oMk1raW9TNWNpLVd5STMtQ045aHZjSEgyYUNITUdmcTZwVGhhNmkyUTM2S0JlUVA1NUdINVNBalB3dmoweHlHZE0wYVhtaXQ0bzhNa1VHUGd0elJSbFZQNmJFUklrV0NIaExOdU9Vb1phRnRSUHJvR2ZsaE8wbzZiOWczRHNFaUdtbjlkeXJoNl8tUDdWTnZXcjk0QjBrejFQOWZVNk5UN0dXUVVNdkZwaG51UkVWeTJTVkl1R2JQaU9aSF9yUm4?oc=5",
-      "published_at": "Tue, 03 Nov 2026 12:08:32 GMT",
-      "source": "Fierce Pharma",
+      "title": "Former Madrigal Pharmaceuticals executive alleges coverup of safety issues tied to its drug - STAT",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPX1BlMU40RnhydURhLWhldHpDaE1pRDJuRUVuRVN0eEUyNXNhTXNkRWlVa2otZnloczkxOW9wM1BmMXdVdmJOdXJGaUdvUzhGQWppdnNpc1phSXp6V0ZPTDI5RmJOYlJHd3F4NllRTFRlNVRrSHRFbmFmbzdYOUp2TnpRelZDR1Q5dy1kRDFZdVpzZ2JocEJVeVN0SlQ?oc=5",
+      "published_at": "Wed, 04 Nov 2026 12:35:14 GMT",
+      "source": "STAT",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
@@ -123,24 +382,9 @@
       "original_url_verified": false
     },
     {
-      "title": "ARCHIMED Life Science Tools & Services Completes Acquisition of Standard BioTools’ Microfluidics Business, Now Biomark Scientific - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxONTZpVDNJb2Jwam9fUkJrRHVtZ1ZLQ2RtVWtEeXF4cmtBbzdlOVhKSVQ3UlhMalpMNGZqMU80MWtZcFE0aVktcGp4cDVpal9qdlkzWXNHQ2tEXzdyMTVWZW15VXU0elFYSG9OTjVuTURrN1Fkam10cmhaMlBmQy1qcEFScWxkN3BtdEJES1I2aUpWVkZtRGYxSnU0R1N5X2MxUjViQk1TdDNjckxiRkVYelBLcEdhSDZlYklEdnJFS0toOXdRQmVuamZaZkVSc0lpUFR4Y3JnaldPWTJhWWxuSExzNTV0VjVnbTBHVEczRjR5LV8weS1Ndg?oc=5",
-      "published_at": "Tue, 03 Nov 2026 14:28:21 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "As Americans vote, Trump says US will stop $4 billion in aid to Israel - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTnAzZzVDS3N1RTJJdnkxYUJPQkl1X3h4d3hZaC1MX0RwXzRHOGRybmM3QjEzR1kybkJIUmNYcnVPbkNPMkt6TFBnTEdOYWFJemJkelBhVXZsRDQ5VG4wc1lSS0Q2dlRlUmV0VHI2Y3YxNWstRWVPUV95Y2pNUVp5TUlES3pCMC1GUzNTTXVfWWlGd1JlQ3p1XzJUWmJmbzlWUmtYTFlXNDFlZw?oc=5",
-      "published_at": "Tue, 03 Nov 2026 23:11:02 GMT",
+      "title": "Google to invest $15 billion in Malaysia in 2027 and 2028 - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPY1FaR0wwZ3NzY3ZuM1lwaExfWVRlOGVrTGFJakc1dHZsY2RyMV9tYXNVbDJKYVczUk1DUFVCYURtejVSOTNtR1ZzMVh2Z2NSQjl5UG9jRzlza0h6NUFMS3EzTnRsQTlmWTF4dzd6bkpfbnV4TFdLRFNST0ZxblFIMjVIdzIwRE9pUWNKUU1LWVJqRFlhZFhXWFhzb1owSkU?oc=5",
+      "published_at": "Wed, 04 Nov 2026 09:14:09 GMT",
       "source": "Reuters",
       "group": "GLOBAL",
       "verified_original": false,
@@ -153,84 +397,9 @@
       "original_url_verified": false
     },
     {
-      "title": "Binance hackers used fake job interview in $6.3 billion attack - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOHZFVzJneVFEOFFQSm5yVXh2T0Z4Nk1mZkhpSzZHQkJvbkdDVVhyMjJ6dnRZb2J6cEowUVB3UU4tRUVJX2wtRVkxdE5xVjh4WFMwVkFMeGRnUTIwd0lkNERVNUpETVQta2paOWV4bkVfczhVWE9OTzNqa3hLWlBxY1JJV0pablZ3dDVIdUd3RVJmaFRrMkNOeGdyaWRNeGRkVHZhOHUwWnlHV3g4cUVPbS1KZkM3aWc?oc=5",
-      "published_at": "Tue, 03 Nov 2026 17:35:37 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Booking Holdings takes $1 billion hit to third-quarter results linked to FTC action - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOcm5JT2Vkb2lvTVdwVHpqV2FaTG5fWXd4SzNlVHQ1VEw2M196QXBGZGcwc0JBN2JoOVlMNl9EcER0WkczVGRscjc0cF95akk1dG5GTkdxU0o5NGVRMlRUa1lrVVpaTndYRi04MG5HSDU3MHhJVjY2M2VNQkt1MGd5eUlpOWJqUC00SU5uZngxTWMwRjJjY3NDMWd0aWtFRDdNU091YW1FeEc3Rjd4QlM4NmFpQWhYRDJhNDJ3?oc=5",
-      "published_at": "Tue, 03 Nov 2026 22:11:17 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "EXCLUSIVE: US billionaire leads swap plan to buy Lukoil's overseas assets, sources say - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdlc5d1FIMl9JRFFnMHlQaW5pLVZrOGFFNzZmYWQ2MS1hcFdjOGd2eUc3a1NQZzlNRjc4azNDSDJURzBCTFJuTUVwZVVJbVlfSDV1aUN2Z1ljZktQRGNLYks3ZUdJOHJ0ZzBDaGl3UFR5YzRMVElIbi16U09uVV96RTVxVS1Odk5sSHhMQTE1eUk1aHNnWTRTZ1E1X1diSnRfNVJnRFkyVWFicWtLaTd0NW9rWmR5TFVnM1NBRVNLVVI?oc=5",
-      "published_at": "Tue, 03 Nov 2026 16:35:45 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Evestia Clinical Acquires Emtex Life Science to Further Enhance its Global Full-Service Clinical Research Capabilities - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOUWE0SEdqMkdPUm1zVFN4U1B5V2R6TFJ1U1hVcUdzdkxWamxfT0RiMzJvZnFCX3dLbjVneGVRUl81Ty00cjVlZ0k0WXdpVGtfZjQxNzlvV3oyNGUwZl9SMTdqbjNmLUJKck1TNUFyOGtLUjJRSTNpUTBPN2RxcExxeDlTc2RtMmo4MEcxeGRyUDZEbDV6QXhwRDRZcjUzLXh3NUZ0c0FtSko4Unl6dHJuYXlRcHVGZEU2U3kwU1BEcDUtQkNQaVdpUDAyRHEtUm85bEZiTTZaSTZlUXJiSTVuMWdaQUJSWS1XYVl4dmJTTQ?oc=5",
-      "published_at": "Tue, 03 Nov 2026 13:21:12 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Fairfax's $5.5 billion deal for India's IDBI Bank faces employee, political opposition - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdnYyd1d6NDhFVHN5Y2diNGdPa29fb1NwWVJrQkloMjlneFZyZTEyOUVLTFItb3o4STloUUxnOE55b2xZNUpJWDI5RXNDZjBpUFJPdXF4enE5WHpxaXYxY3ctRW8xdS0yTjYxd2lzem1sOF8zb2pUaGdvdWFFVE95V3ZOOE0xY0hmOFhFRUktXzRRd3BXTV9aZ3lEcUJSbWs5STlOalFOa1lwU2taYVBHMFdzTVZ2NjVEQ3FkeXU2cUFZdVk?oc=5",
-      "published_at": "Tue, 03 Nov 2026 17:28:24 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "India's cancer drug price cuts meet pharma acquisition boom - The Pharma Letter",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNallHNkU4bFNWWEpGckQ1Sy1VUnFaSDZnSGMteGRPM2FMLVJkUWQ1YmhIajBmcTVwTEtDeksxaVh5Rmd5ZFJOWkdBdHRoT19YQVZRamdDNFF2R2prbGN2WHUtblMwV0RmWUtORTJlN3hDazRfMEtVX0lhZnZUU2N4RG93Z3Z4Y1l5VVBhbElnTUNOS3A5dW13WFlJMVQ3YXk4Q1BESDVB?oc=5",
-      "published_at": "Tue, 03 Nov 2026 21:28:25 GMT",
+      "title": "HRV Pharma acquires trial drugs sourcing firm Phatebo - pharma.economictimes.indiatimes.com",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTnVmeWduNEhsZVYtQlBVX2d5RWZtZ1V1RTV6VFZwNTlFWmg5amFJbDBxZ2hPUTV1UnAyZnAtVUxJMlVpT1hlUk1WemMwYkhLdzJnc0MxRC1HQkdNRzh1Wk9TRlhPay00czNhTzV6QnlSRzRYZzRIQ2tndUR0T2o4Z1VQT21LYWlEekoyZHFLbXg0RUwySG9nbkZhazdjMXZZcGlmWDBmZ1owQW5pSnoybUNJUjRwaUdNU2JhUGFYWXpFdkpoeFQ0c05CdlDSAcwBQVVfeXFMTk51ZnlnbjRIbGVWLUJQVV9neUVmbWdVdUU1elRWcDU5RVpoOWphSWwwcWdoT1E1dVJwMmZwLVVMSTJVaU9YZVJNVnpjMGJIS3cyZ3NDMUQtR0JHTUc4dVpPU0ZYT2stNHMzYU81ekJ5Ukc0WGc0SENrZ3VEdE9qOGdVUE9tS2FpRHpKMmRxS214NEVMMkhvZ25GYWs3YzF2WXBpZlgwZmdaMEFuaUp6Mm1DSVI0cGlHTVNiYVBhWFl6RXZKaHhUNHNOQnZQ?oc=5",
+      "published_at": "Wed, 04 Nov 2026 12:33:06 GMT",
       "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
@@ -243,144 +412,24 @@
       "original_url_verified": false
     },
     {
-      "title": "JD.com wins EU approval for acquisition of Germany's Ceconomy - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWGgxLUp6cElmMWJIUmRRUndreE00cUhJTWc1M1VULVZraElsc3ZWckhPWEs5ZDFGUnJJZkNDNHMyY19zZlhZMWVydjRRSV94ZTdBQ0VCSkVpRE83NWRBa1V1dkwzU2dtVEdpaFUwRWN5bFpRQ2VnYUYwQWVVaUp0dXJ3OHVmcDA2WEtYdVZyT2FUQzJzSEppNlZjNVE?oc=5",
-      "published_at": "Tue, 03 Nov 2026 17:07:44 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Lonza to acquire five US manufacturing sites from Merck KGaA - Pharmaceutical Technology",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPaXdEYVRCdm1oVHZ3UkppMU5aNkxHMDE5U0RoTVFPLVJPUjhESEM1TWVtR3FwX1BWSmptSEhNQlhrNFIwcGY5WmNxR3JrWGk5bll5TmstNEdzR0hBUFBial83d040bzBFa2xzWXBUNDZSZGxkR1lrV1FQNDFnWExnNThQVEZTaHFnRlpIRk5ycmo?oc=5",
-      "published_at": "Tue, 03 Nov 2026 16:29:21 GMT",
+      "title": "MSD’s non-oncology sales set to double as Keytruda faces patent cliff - Pharmaceutical Technology",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUi1IcEFCYUhsQWFJQWVzT1c1Rm1TSV9lZ25rWUJFR3VBaF9kbXM4U0ZLNjZ3Sk1QRUJsOXRUN0tPNUhFWEhCUGlNcmNGWnNFWmVJX21uUE9Rd2FnbU1LVUJQZ1dQb0YzTDNON3VfU1ZGSWd0S2M4d2cwV1FndE5zWEZ4Vnk4OG1PSDA1bDdrWURSVGZ4T091Zk5xWFI5dw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 17:04:57 GMT",
       "source": "Pharmaceutical Technology",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
       "score": 3,
       "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYk1jSlk5alhjdDdoMVY1U240WngyaDYwVGhJWUtKX2tmdDBaTXJ5MXlCaGZ5VVJjRTNRZE9nWHo2UkdjbXlDT0h6RE0tNTJFZlYxT2RRN1M5TTJTS2hUV25nMnRUbzNBeGhlalI0bjFIejktLUkwZ3QtLThGU1g1R3pnYkhjVHk0Q2VHb2tjNHFZT0xNWC1zRWhrOG9zWnFCaVJYQm1KZkhKTFhYMlVuMTFuVmtLR3VM?oc=5",
-      "published_at": "Tue, 03 Nov 2026 18:26:15 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Meta raises $15 billion in five-part US bond sale - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZ0dOQjhPM1A5WmJrZFlkRV9MeFZLNHJZakRnUzQwa0ZpY1J2eXVuZmJ6QkQ3TXpZY3Q0VW9tWlJ1S0tQU25YbHZqS3QwUEFnZmlFcjJMZ2t3V19QX2ttXzNMTFNHS3BsWU9qOFFJamd6R2ttQVE3bnM0MGRlNUJpTzY0WXNzMnlMSS1fRDJzWVpoYUhreERlblhKMA?oc=5",
-      "published_at": "Tue, 03 Nov 2026 22:55:43 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Musk’s pay under a SpaceX-Tesla merger: voting control, but no $1 trillion payday​ - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQenlkU0tVOVBzcm1oVTFKMjNPUVlJY25RNjBfUXo5OGFPeWg2S01zM0lTa3ZXa216UjhPTVlXdzU1RXU4aWtJVnZ4cmJQX19xV1M1NG5HbWFLYm9ReUp0VUFBMThuS1JHMzJRZGxLZnNmNVlCb0lOQ2tfamowMU9TRnRLZ2l1X1I0Qkk5YWotZ1pIeXVyNHp0MEZ3V2h4ZVpmX2lXMlRqbHlTaU1VQUd1N1NKa3lNa25hdXZuSlBTNUZLVDJfUU1CTE1n?oc=5",
-      "published_at": "Tue, 03 Nov 2026 20:34:40 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Pfizer flat in Q3 despite 32% growth for new and acquired products - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZ2MyNzU1MF8tUFFXNHVqS2xxejBpQUdxS2JsMDQ5UEZoTDNycDlheHJNdTVVYXFqdTBNNVZWdFVDMm5YUi1sNkFmODRyWkNwX0lxMGt6bWxWVF9aQ1ZfaGV3TVJITXpRbjJjYVA0Ti1saTBCalU3ZU8zYW5mWmFkMnhmanRTcFItVjZYcVIxVGZxQjAxdGN1aFRYYTU0dkla?oc=5",
-      "published_at": "Tue, 03 Nov 2026 14:13:10 GMT",
-      "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Pharmalittle: We're reading about a generic HIV prevention shot, Lonza buying U.S. facilities, and more - STAT",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOM0FKUFRnS1NheDd6WkhOMVZKcWhtMmxTdElJcjltRTQ5SmJyUHk3Mm5kMlRiSERpZkpOMVNqWkQxcE8zSGh4UVhobDlYMVVPWHM0RkZHUnFTQjQ3Tng0cHhMRWE2clRsMFFWVXhhTHZ0MUF0UVFORlgyQzFaMGFlOXFaUWwyUjh6cjFtY3RkeEpyM3VuN0Jla2F1cTZEUUhlODY1dnFyOA?oc=5",
-      "published_at": "Tue, 03 Nov 2026 14:50:15 GMT",
-      "source": "STAT",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
         "IP"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "Philips sets aside $322M for proposed DOJ settlement over sleep apnea device recall - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQkM3VjlIS3dVTVN1TWV5cGV6OElLcDk1Zl9keVdjS28xZmpMVWdFVkp3SnJSeVZZU3BDMV9YX3U1Vk8wbnhTeS1BZnNpcmlYSXc4WUE1LWEtelN6UGdkbGV1R3o1RW1VajdEdHhtUEcwN29EVUxhVTNxWGRnOF8zVWtzNlI2elNLVHlmbnZ3TDFhaGRhZ3p0UlBmOEtpbWtFemR4SWdQZTMtQUpvTkc5eTJzQm1sdW00bkIw?oc=5",
-      "published_at": "Tue, 03 Nov 2026 15:50:13 GMT",
-      "source": "Fierce Biotech",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "SAFETY"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Rhythm doubles down on LG obesity license, raising payout to as much as $855M - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZ2EtMzlvUjZQd1FScUJSZTJFQ0s2WEF3aEZRVGdYUzB5RGtJcHdKYlh4Z191Q0g3WHhORm13eVRaZ3N2WGtmT2RUNlpPdHpHa3BNMHRXYVdqTTlOVjNVTDQ1TnVXeEI1UXAwbldVUWwwblB2QjVvUDZFZjAzc3RTT3REOWdreU5DalN1OTFqdDhYV0FwTDRaWVBLX0lMXzJMRzZJ?oc=5",
-      "published_at": "Tue, 03 Nov 2026 14:32:11 GMT",
-      "source": "Fierce Biotech",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Samsung Bioepis Ramps Up Profits As It Confirms US Keytruda Biosimilar Filing - insights.citeline.com",
-      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNb3ppUEszSlFPRmx0NU12QXlaSFFqdGdZUy14MXJnMUxvWjlXZUp3eG5rTVZ1LTktOGctMl9JdVBVR1U5VTY3Sy0zdzZpaXlRd3pMN1JvMVdaeU1oUGVISXlNWkdMdDh0eGMyMDVLSFBWRWRORTdYQ0N2eEhjY0ZHOGN5VnR4eGRTSE81LXVmekdrdi1fR192ZjFLSUxkb2dxOURzWVllNjdtWjF2bXlOZndHdWl4REJ0M2NtNzIxdnQ2Vko1SGlGbkFCMVhISzQxM3ZQd0tYMVN4MWg2UDU0TzVkQ3k4bzg1TUR0SWtIczFKbWdHUVBBM0d1OWh2OVNQ?oc=5",
-      "published_at": "Tue, 03 Nov 2026 11:56:04 GMT",
+      "title": "Madrigal Faces Whistleblower Lawsuit From Former Clinical Development Head - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPbG1LT2Jldlh6aWxnWUl2eVVlS0xUMHpZOEk0MWpGT3hPd0JGVkI4dTE3T2lnak1MYk9kemlZZlRVZUUxT2tvMWMtdDN3eXdKbnJLX1liQ1JTc3loTlB6WldvQ3pHbnM2TjJ5SUdXM2ZIU2RfMGdybDlhSWNJazRLR0F3U05PWXVSc0JwZWZfQ3JSdlJrMUtHMlJhbUdMQXcyZ1F2Y1czajU0TF9hdHhKbWRmZjdZaGZ5SHBZc3dUUVRHRXdvLUlKVldkQnFKSkRBbGc5TmhtNFBQbjM0TW1BXzVWVHM4eEswelZUdTgzYw?oc=5",
+      "published_at": "Wed, 04 Nov 2026 23:51:15 GMT",
       "source": "Scrip/Pink Sheet",
       "group": "GLOBAL",
       "verified_original": false,
@@ -393,55 +442,10 @@
       "original_url_verified": false
     },
     {
-      "title": "Servier’s $1.55 billion muscular dystrophy drug fails first major test - STAT",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbFozdHJXUG5zT0ptR01VQ2V4VWpzZ0dZTzhxWjR0TlQyb1NjanQ4NmE5ZENOTUZkZ3FLSHBhUmFmb2YwSEtGY0h1WElTTDQ5eU5iSDJQYXJCdm9QQjlkT2NHRGE2OTZVdkt5MDJTdl9aZWUzVG45LXZhSjdwbGNaRnZwSWF1V0tPaWdqcUlCXzhVWnFwbGpmSU1vbw?oc=5",
-      "published_at": "Tue, 03 Nov 2026 20:55:11 GMT",
-      "source": "STAT",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Unilever targets $1.12 billion savings in home, personal care pivot - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaFJYeG9UMjdNc1k0TElralpWVEwzN1lCTkVMV0V3VUlEYW5sV1RhVUk0MzFKSGZNNGFFTVVBcmRlR0h0VWExMFIyNlAzaFhOWklFLXo1Z25qNlBGYUtCMmNfeDltTlk4MVpkZmVpaHlrOTl6Ylg5VnFxcU5DYWtEczVPQ3FBRVhqZlJETmQxNFlnVVc0OXZOYmM0aXc5UFUyS2RqYVFIT1pZcTVmRkE?oc=5",
-      "published_at": "Tue, 03 Nov 2026 18:06:53 GMT",
-      "source": "Reuters",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "Waters Acquires MOBILion Systems, Bringing Advanced Ion-Mobility Separation to its Mass Spectrometry Portfolio with the Speed and Resolution AI Workflows Require for Proteomics Biomarker Discovery - BioSpace",
-      "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxPcVFYY1Y0WWNFd25IWVZ3T2JqQ2NXemJ2b2JjSjkxWDdneVBnS1g1YllzMGhMWVZBTHRTLTlpSmt6eU9yRzRuYTFOSFVFckRtOWlrTWl3N21OUnBLWGhNMTlZdkVIR1AxTU5CWlJITUdPVzRmcVNqc0tLLWZoTl9lN1RYUWhtMTRTYUJCNjBsZXIwZExkbTQ4R09ubmdaNFlWMXVid25adE5GRzZaWE95RF9jZEZLcWFpX1B2YUhvN3NvMW1ScF9ON0J0TWFXbEhoY0dLWHdJYlVJcXE1LUpWeVdyZ1hQb203bDNsWVF0eXJockxtckhoWnJ6cFFjR2VIZ1pSejJhNUY3NnVadGNNLWRBcFBHMmJfSUVJbmFXZHUtWkNLcDNKbG1JZDFSWEdxQkdSWU1jT2NaaWhCcTVpMzN6RzlOYkNOR3ltVkE2TG5veDI2TXc?oc=5",
-      "published_at": "Tue, 03 Nov 2026 12:36:46 GMT",
+      "title": "Minghui Pharmaceutical and ASKA Pharmaceutical Enter into Exclusive License Agreement for the IGF-1R Antibody in Japan - BioSpace",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQc00waFFyLWtUeUx5UUlDbnNsYnZ0V2tKOWNjTklOdEVaNjZ6RnZ6ZDdSN3dCVV9qSmhvZHI3WFgzNDdLV09YV2tHZGtKXzh3LUNVb1dEcDdNT1pmZUZjQXRNaG5YTm81MnQ4bGlZX3h1YjZkdkhRbXdGSDEzYjJ0bVVWZUZtdklPOG9HTGVoUHhzR1Z6YjBMYVVEZ0ZpOWMzbEE4djgyTWJHTUdPX3pQOU5kX0pIM0g1SUt4MEduNW82S051UGVuVzhaRXJUZDdfcFVsYndDNjFUWkYtaUh1Ny1Nd19aRFFoRWhlWXlWRQ?oc=5",
+      "published_at": "Wed, 04 Nov 2026 13:07:13 GMT",
       "source": "BioSpace",
-      "group": "GLOBAL",
-      "verified_original": false,
-      "timestamp_origin": "feed_or_index",
-      "score": 3,
-      "signals": [
-        "DEAL"
-      ],
-      "editorial_status": "DISCOVERY_READY",
-      "original_url_verified": false
-    },
-    {
-      "title": "What the SEC Registration Effectiveness Means for the Chemomab and Scipher Medicine Merger (NASDAQ:CMMB) - Kalkine",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMUs0U0VUR0ktWW5hTUg4TW1TOGZBQ2VXeXFaSktMTkdzRHBZbS1qS1duSjYzbVV5YXVoaFRTTENwVnlVbHdlaFp5Y1hlaDNYaEx4YVpsQXhjbjllbmUwSk4yNk9rdWs2eW40MnIzeXgtTVJTNXRPd1BBeC15SUZVX0g1NWpNWkZFTzFST19yM3JDb29KYjUyeFhsN2lQSUFhS3ZFUGIzcHB4TnRZbnN4UE9lRlB6NkNDR3EteW5LZE1Yc3ZGWm5JcXZtd0RYbHB5SXdQVEdxOA?oc=5",
-      "published_at": "Tue, 03 Nov 2026 08:02:00 GMT",
-      "source": "Global gap recovery",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
