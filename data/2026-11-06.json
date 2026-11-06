@@ -1,0 +1,174 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-06",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "특허절벽 넘은 빅파마…사라진 매출보다 더 번 후속 신약들 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 대형 제약사들이 특허만료로 인한 매출 감소를 후속 신약 개발을 통해 극복하며 더욱 높은 매출을 달성하고 있다. 이들은 신약 파이프라인 강화로 경쟁력을 높여 지속 성장을 꾀하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBzLVNFN0lhaE5GcW0tWDF5TEtuTFllNGNYQnlULXdCM21KMmdaNDA1Q0tSYjFWaUxrbEFHRk5uLVpuVDBURjNvNjM3MUdYTzNkLV9XTmJvVFVJM1VSRGtGSDhfcnFiMTRuV1RN?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-11-05T21:01:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한미약품 자회사 앱토즈, ‘투스페티닙’ AML 임상1·2상서 반응률 81.8%",
+      "summary": "한미약품의 자회사 앱토즈바이오사이언스가 개발 중인 급성 골수성 백혈병(AML) 치료제 후보물질 투스페티닙을 포함한 3제 병용요법이 임상1·2상에서 81.8%의 높은 치료 반응률을 보였다. 특히 FLT3 변이 환자 9명 전원이 복합 완전관해를 달성했으며, 안전성도 관리 가능한 수준으로 평가됐다. 해당 연구 결과는 12월 미국혈액학회(ASH 2026)에서 발표될 예정이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29926",
+      "source_name": "더바이오",
+      "published_at": "2026-11-05T22:25:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "오일환 리젠이노팜 대표 “국내 첫 miRNA 신약 임상…당뇨발 재생 도전” - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 오일환 리젠이노팜 대표는 국내 최초로 miRNA 기반 신약을 개발해 당뇨발 재생 치료제로 임상시험에 도전한다고 밝혔다. 이 신약은 혁신적인 치료법으로 국내 환자 치료에 기여할 것으로 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9QVzlWY1loVUpOcFBwMk13RF9PYWs1ZGQxNW92S3FIRUQ0NnlHNnBpSnNHTDB4SHZqZEhic3RrdGNUMFVIVTM3c3FtWFJhM3NaYTQ0b1U2Wi11bFBTbkFSNDQtQ3hvLUV0OGF0RGRB?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-05T22:00:05+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "식약처 “마약 제조 악용 감기약, 병포장 60정 이하로 줄여달라”",
+      "summary": "식약처가 슈도에페드린과 에페드린 함유 일반의약품의 병포장 용량을 기존 100~1000정에서 60정 이하로 줄이고, 조제용 표시를 의무화하도록 제약계에 요청했다. 약국에서는 처방전이 있는 소량 병포장만 판매하고, 낱알 소포장 반복 구매 시 즉시 신고하는 등 판매 관리도 강화한다. 비상식적 판매 약국은 윤리기준 위반으로 징계될 수 있으며, 관련 내용은 약사 연수교육에 반영된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47954",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-05T21:10:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임상시험약 표시기준 구체화…시판약은 기존 표시 활용 허용",
+      "summary": "식약처가 임상시험용의약품 포장에 표시해야 할 정보 항목과 기재 방법을 구체화하는 ‘임상시험용의약품 표시 등에 관한 규정’ 제정안을 행정예고했다. 임상시험용 문구, 의약품 식별정보, 배치번호, 사용기한 등을 1차·2차 포장에 각각 명확히 기재해야 하며, 시판 의약품을 임상에 사용하는 경우 기존 표시를 활용하는 대신 '임상시험용' 문구와 임상시험 식별코드를 추가하도록 했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47956",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-05T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "유럽, 경구 GLP-1 허가 권고…영국은 치쿤구니야 백신 퇴출",
+      "summary": "유럽의약품청(EMA)은 성인의 제2형 당뇨병 치료와 비만·과체중 관리를 위한 경구용 GLP-1 제제 'Foundayo'(오르포글리프론)의 시판허가를 권고했다. 메트포르민이 적절치 않은 환자에 단독 또는 병용요법으로 사용할 수 있으며, 주요 이상반응은 오심·구토·설사다. 함께 EMA는 소아 연골무형성증 치료제, 망막병증 치료제 등 여러 신약의 신규 허가 및 적응증 확대도 권고했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47952",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-05T21:02:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] HLB 간암 신약, FDA 허가 재도전…4월 9일 심사 결론",
+      "summary": "HLB의 미국 자회사 엘레바가 간세포암 신약 리보세라닙과 캄렐리주맙 병용요법의 FDA 본심사 착수를 통보받았다. 주요 근거인 글로벌 3상 'CARES-310'에서 병용치료군의 전체생존기간 중앙값은 23.8개월로, 기존 소라페닙 대비 8.6개월 연장되었으며 사망 위험도 36% 감소했다. FDA는 두 약물 허가신청을 통합 심사해 병용요법 허가 여부를 심사할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80544",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-05T21:01:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "압타바이오 신장신약 승부처는 내년…이수진 대표 “2b상 65% 등록” - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 압타바이오가 내년을 신장질환 신약 개발의 승부처로 삼고, 현재 임상 2상 중간단계인 2b상 임상 환자 등록을 약 65% 완료했다고 밝혔다. 해당 임상은 신약 후보물질의 효능과 안전성을 평가하는 중요한 단계로 자리매김하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1vN1lSRFFpdk5nQlRhMzE3QU1GaHk2YkVQZWkzUVJhZHJrQlAwTWs0U0F2S05KTnkxWHZGR3dTTDJ1bDZJVU4zMl9UM0dLUElzQlVtQ2wtNzhyQWtjaUllVmQyTTdoZ2lYWDVlOEhR?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-05T21:00:07+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한미약품 '에페' 1000억 매출 방정식…효능·가격·공급망에 답 있다",
+      "summary": "한미약품의 GLP-1 계열 비만치료 신약 ‘에페’가 국내 개발 45호 신약으로 품목허가를 받고 시장에 출시된 이후, 출시 첫해 연간 매출 1000억원 돌파가 전망된다. 임상 3상에서 한국인 비만 환자 대상 평균 체중감소율 9.75%를 기록했고, 특히 여성군에서 우수한 효과가 관찰됐다. 상대적으로 저렴한 가격과 내약성도 경쟁력으로 작용하며, 의료진과 환자 관심이 높은 상태다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80551",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-05T21:06:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "혁신형·CSO 관리·제네릭 구조개편...정부안 마련 속도 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 정부가 혁신형 제약기업 지정과 관리, CSO(최고전략책임자) 제도화, 그리고 제네릭 의약품 시장의 구조개편과 관련한 방안을 신속히 마련하고 있다. 이는 국내 제약바이오 산업 경쟁력 강화와 체계적 관리 강화를 목적으로 하는 정책으로, 구체적 실행 계획 및 법·제도 개선안이 조만간 발표될 예정이다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE11TFZZS1VNUWtucngzdWtwVlByVFA5VG9zSVpJZWVvZUdoYlYwWjlPd21BRVhkejRrbmI2VVI5RUpKWlluaXdsbGFJTWE4U2hBVXhmd2ZR?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-05T21:00:59+00:00",
+      "tag": "산업·정책",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“적자가 죄는 아니다”…바이오업계, 기술특례상장 ‘법차손 규제’ 개선 촉구",
+      "summary": "바이오기업의 장기간 연구개발과 계속된 적자를 산업 특성으로 인정하고, 기술특례상장 유지 제도 중 법인세비용차감전계속사업손실(법차손) 규제를 완화해야 한다는 목소리가 나왔다. 제도 개선을 통해 연구개발에 집중하는 바이오기업의 성장 기회를 지원하고, 시장 신뢰 훼손 행위는 엄격히 단속하는 방안도 함께 제시됐다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29921",
+      "source_name": "더바이오",
+      "published_at": "2026-11-05T22:05:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "돈은 흩어지고 규제는 막히고… 바이오 대혁신, 해법은 '연결ㆍ연합'",
+      "summary": "대한민국 넥스트 엔진 ‘바이오 대혁신’을 위해 연구개발 예산과 인력, 데이터, 규제 등을 통합 지원하고, 국내 빅파마와 바이오벤처가 공동으로 임상 2·3상에 집중 투자하는 방안이 논의됐다. 전문가들은 법차손 규제 완화, 자금 흐름 연결, 데이터 재사용 및 통합 규제체계 구축 등 바이오산업 생태계 혁신을 위한 정책적 지원을 강조했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80536",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-05T21:07:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"K-바이오 육성, 양적 확대 넘어 '연결·집중' 초점 맞춰야\" - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 국내 바이오산업 발전을 위한 정부 및 전문가 포럼에서 K-바이오 육성 전략은 단순한 규모 확대를 넘어서 자원과 정책의 ‘연결’과 ‘집중’에 초점을 맞춰야 한다는 의견이 제시됐다. 정부 지원과 규제, 연구개발, 인프라 등을 유기적으로 묶어 시너지를 내는 통합적 접근이 필요하며, 이를 위해 연속성과 집중 투자가 필수적임을 강조했다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE54ZnlTUkxyeU5jNUkyandNbGN6QmNKaHJIRUEtM250NjZQRXRvdElHeEVEblhmamQwdmNVUGRDdVBGOVJyTlVYdlkyS3NFUTVtQnk2SUFuWHp1bTdBR2Voako3WnpqcG5TQk1J?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-11-05T21:03:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"3주간 일손 놓는다\"…삼성바이오 노조, 오늘부터 부분파업 돌입 - 한국경제",
+      "summary": "(제목 기준·원문 미검증) 삼성바이오로직스 노동조합이 3주간 부분파업에 들어갔다. 이번 파업은 경영진과의 협상 지연이 원인으로 알려졌으며, 생산 및 연구개발 활동에 일부 영향이 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE05QXdaYkNzZXh4THpram5ncHY5cm8tZEd2T1IzQ1pxbC01dE1IRExRUnpuMG9IWU1jVmR6ODFtNXB2TWVXaU84dk5OQ1hORjM5TjBVT2stT1lzdw?oc=5",
+      "source_name": "한국경제",
+      "published_at": "2026-11-05T21:02:24+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 14,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
