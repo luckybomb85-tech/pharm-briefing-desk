@@ -1,0 +1,97 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-07",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "매출 3분의 2가 한 성분…빅파마 성장 뒤에 숨은 '신약 의존증' - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 매출의 3분의 2가 특정 성분에 의존하는 빅파마들의 성장 뒤에는 신약 의존증이라는 구조적 문제가 존재한다. 이 현상은 신약 개발 및 포트폴리오 다변화의 필요성을 시사한다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9wTnV5OEhHOWpMbWNQOHAwM3RfT1VRV2F4OG5LYzNXUXFIeXVSTVFtWWZKT29HWTBUdTkyWGJYRmdHNEh0U1hBTXp1alRrbEVycWFBWTBvbWxBUE1KLVV2X2lZRzZ4dExtOS00?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-11-06T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "오일환 리젠이노팜 대표 “국내 첫 miRNA 신약 임상…당뇨발 재생 도전” - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 오일환 리젠이노팜 대표가 국내 최초 miRNA 신약 임상에 나서 당뇨발 재생 치료를 시도한다. 이는 희귀 및 난치 질환 치료제 개발에 새로운 가능성을 보여준다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOeUdlbkFNQ2piZk8tdXNpbFlxdWNiLU9YZms3TnhaMGRHQmwwOEVHa2Y1bG5tTnhfdXJmZXR6eHlNZGhEYU9kMEJ5QnJ6UmdPTHExb2xyOGJCNjRKaGw0b3duYlRUOGVKS2x3aUJ4TE54X2tBYjNrYUNiUHBrZ2xKcQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-06T22:01:02+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "건강보험 신속등재 문 열리고 품목허가 비용은 오르고",
+      "summary": "보건복지부는 희귀질환 치료제 건강보험 등재 기간 단축을 위한 신속등재 시범사업 대상 약제 5개를 선정했다. 식품의약품안전처는 첨단바이오의약품과 신규생물의약품 품목허가 수수료를 대폭 인상하는 개정안을 입법 예고했다. 이번 제도 변화로 급여 등재 기간 단축과 허가 심사 인력 확충 기반 마련이 기대된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80588",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-06T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 한미약품 '에페', 출시 첫해 매출 1000억 목표",
+      "summary": "한미약품의 비만치료제 '에페'가 첫 4주분 공급가격을 약 13만원으로 책정하고, 출시 첫해 매출 1000억원 달성을 목표로 내세웠다. 임상 3상에서 평균 9.75% 체중감소율을 기록했으며, 국내 일부 병·의원에서 처방이 시작됐다. 한미약품은 자체 생산 역량과 영업망을 기반으로 시장 공략에 나설 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80579",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-06T21:01:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "에제티미브 복합제 시장, 대형 제약사들 '아토르'로 무게 이동",
+      "summary": "올해 1~3분기 에제티미브 복합제 시장에서 로수바스타틴 계열이 여전히 규모는 크지만, 성장 속도와 처방 증가율은 아토르바스타틴 계열이 앞서고 있다. 특히 아토르바스타틴 복합제는 고용량 처방이 크게 늘면서 시장 점유율이 점차 이동하는 추세다. 약가 인하 영향은 주로 로수바스타틴 계열 상위 품목에 집중됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80577",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-06T21:07:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "생산·판매·기술이전 '3색 성장'…K바이오 5사 3Q 성적표",
+      "summary": "삼성바이오로직스, 셀트리온, 삼성바이오에피스, SK바이오팜, 알테오젠 5개사가 2026년 3분기에 매출과 영업이익을 모두 늘리며 성장세를 이어갔다. 삼성바이오로직스는 생산시설 확대, 셀트리온과 에피스는 바이오시밀러 판매 증가, SK바이오팜은 신약 미국 직접판매, 알테오젠은 기술이전 수익을 견인 요인으로 꼽았다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80587",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-06T21:06:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "오스테오닉, 본업 성장에 수술로봇 더한다…美 시장 공략[인베스트 바이오] - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 오스테오닉이 본업인 골관절 치료제 성장에 더해 수술로봇 분야 진출로 미국 시장을 공략한다. 이는 의료기술 융합을 통한 사업 경쟁력 강화 전략의 일환이다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqRXV0SmFKeXVWeVVPeXlkdWxMWnpsTjBqYklkYVo4dndzQVMwTzRJVEp3T0hJaFhLMXZici1VeUtuSWhrcVctUkE2SmdQekdxc0RKOV9zVFd4V2JnZ3Z2eW43TXpaTVFyV3gtT2RB?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-06T21:00:06+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 7,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
