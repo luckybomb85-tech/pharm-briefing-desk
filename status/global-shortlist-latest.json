@@ -1,12 +1,12 @@
 {
-  "total_input": 113,
-  "ranked_count": 3,
+  "total_input": 155,
+  "ranked_count": 10,
   "shortlist": [
     {
-      "title": "Use Kidney Genetics to Strengthen Clinical Trial Design - Fierce Biotech",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUmJXR0Nvbm0wdDBIMFVxc3BXbEFOZnZ3U3c3c2FrZVJUSVZRZUZ5RkRLS1pBc3R1TnhDUElhQzNsNE9YVE9xRUR1amxnMERNLTlSMEJGc0NzbzF6S3AtWDFQZkZCVXQtWXZ1NC1KZ2FTN1JKRDJHM3BQdW5MZXNUeERHZHg4TUVSaFlKdVBfS1VTS0JnNmo0?oc=5",
-      "published_at": "Sat, 07 Nov 2026 16:49:48 GMT",
-      "source": "Fierce Biotech",
+      "title": "Experimental weight-loss drug eases painful knee osteoarthritis in two clinical trials - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE94RWs1aHpvSExwc1J1MWkyZDF6d0QyaEZmWkI3bTdEMmNlZVcyb1N1VzBzd09sWWo1SnhiV0JBcXRjS1lGUjJmUGF4R2VWcXByU0tV?oc=5",
+      "published_at": "Sun, 08 Nov 2026 23:01:20 GMT",
+      "source": "FirstWord Pharma",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
@@ -18,25 +18,130 @@
       "original_url_verified": false
     },
     {
-      "title": "Big pharma chase rare obesity drugs as safety risks test trillion-won bets - Chosunbiz",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeWhiYjFVMVdsbW9pSXdia2w2dHdyc3BiM3p2b20zdkt3NktXLVFpYmJKdjZkM2RxbHJjZGE3QUFfXy1nb3BDanRXOGFVamV0dnJlbWtzeV9keTE5WVlIb2M5Nmd5bVRtcVU3RzNpalVwQjIxOFl4WlNHOFZyV2JjStIBlAFBVV95cUxPMVRZR3FONVRMSVNVYmlaYjhJQm80UmFFeVB0N3UxN2hzRnd4eGtFczZZdEpWSDYtamFGbm1QRUdTdUFXdk5UUTFrNGdmc292RjFLRU1DSllleFAtSjhicFQ4N19STlFXNkVyUmRQSzBsd1FzTE14b2ZhNm8tUExPVlRaQ2w0djVDaU10VmhLQjJSTThJ?oc=5",
-      "published_at": "Sat, 07 Nov 2026 22:56:00 GMT",
-      "source": "Global gap recovery",
+      "title": "J&J says Icotyde succeeded in Phase III psoriatic arthritis trial - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9uRWZHNllxVUdrNHdfQ0lId21IUDZVR0k4OGt5cGZadmcwcnEybkVmcXhsQ1RBeExuQ2R0TFdZTWFFTzFDTFc1U3oxYjdxZzR0M2RV?oc=5",
+      "published_at": "Sun, 08 Nov 2026 23:26:02 GMT",
+      "source": "FirstWord Pharma",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
-      "score": 3,
+      "score": 4,
       "signals": [
-        "SAFETY"
+        "CLINICAL"
       ],
       "editorial_status": "DISCOVERY_READY",
       "original_url_verified": false
     },
     {
-      "title": "Justice Department joins Texas lawsuit against Planned Parenthood - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOcEtVRkFVbGJ5NEFvVlFIbUpIUWxuMXlDbDMzOEVNckJEd0RBZVlGYnhBa2tsOFBVdW1RMHl2ZkVIMFpRbVE2SHQ0eENDS3Q4dGFLdm5reWo2YkZwTzhpaWxQZkZ3cjdwdi1SeVFPWXlzMWgyalVXR2tpczNqNWZfbTBJQ1JiMDZ5a1gwcUMtd1lHbzJ2bkdnQWoybGRHV0dtNmRUVlBBTnA1bzl4ME1mcmJ6cHVfR2NjUkE?oc=5",
-      "published_at": "Sat, 07 Nov 2026 21:09:43 GMT",
+      "title": "Johnson & Johnson announces new Phase 2 nipocalimab study data in Sjögren’s disease that reveal insights on importance of symptom improvements most valued by patients - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFAwOEVtbThPdEtacG1EZ0hDbUpraDZiMFUzS2NicXZ4ZjZQSnNMYmp2NVIwZWdUNmpXTW9PdUUtNk1LeXhBY0p5TkNhbkhZZEcxZHdv?oc=5",
+      "published_at": "Sun, 08 Nov 2026 17:32:07 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Vir Biotechnology Announces Expanded Phase 2 SOLSTICE Data for Elebsiran and Tobevibart in Chronic Hepatitis Delta, Showing Deep and Sustained Viral Suppression, and Exploratory Finite Treatment Data - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5CUzJlQUFsOGFZMmJ5cDFaN0YwZkJIUktZelNrRllQYmZLaEVUZWNBbnlWYnh2Wk1lb0dNenk1OVpSYVJhYUtiaEtEUmNNdjBUVHpZ?oc=5",
+      "published_at": "Sun, 08 Nov 2026 23:01:19 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Vir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and Tobevibart in Chronic Hepatitis Delta - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE95dktZSHRUaFFjRlozd0lDb29oLVdSMXNCcGtRdHJCbV91X1RPVnNYSFRjMFgzcTRPOXY2ZEs1bm05SDBFcldaTWhaakQxR0VldnpF?oc=5",
+      "published_at": "Sun, 08 Nov 2026 23:06:01 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "argenx Presents Phase 3 ALKIVIA Data at ACR Convergence 2026 Showing Rapid and Sustained Improvement with Efgartigimod in Autoimmune Myositis - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1aYm54NjRMNmphZHF0c1dVMzdvS2szQ1VsRV9rRUoxcUdrcXBHTTdtcUwxVkhpS2kyVHpZN3NlMk5JenNkSzYzc0hpSVpNbGZNUDlF?oc=5",
+      "published_at": "Sun, 08 Nov 2026 17:30:57 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 4,
+      "signals": [
+        "CLINICAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Abbott and Novo expand partnership to launch Plosbrio® broadening access to semaglutide for advanced diabetes care across Asia Pacific - FirstWord Pharma",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE4zbU9BbUVGd0ZOSHFBSXQtaEt6UjB6ZlBLUkRrS0pScUFBMV8wM0RZRXlzdGFvR0dxWl9RZGZoR0huUkF4RDVfaWhodzgycmhXejZB?oc=5",
+      "published_at": "Sun, 08 Nov 2026 17:32:05 GMT",
+      "source": "FirstWord Pharma",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNTUktcGxpNENhQ1llV2F3a3V5RUZya0dDc0ZLeFVTZmFqclBqSVhuYkNiSFpSTkkwVnZ2NkFVVEVjQjZPLTJzMGMyU0dnaFg0X1pPd2pMV0ZCWWtMWlpSdTNvckRlaGxLcWs1SnljenEwcUs0N0doWG0yRDdET2o4YlZMVWl6c2lpYWJ1emstVFI1S3VyUXdIdG1xdmZpS3k3ZW5LVUpibUZ0SWxmZUNLNXN0SDBMZE5nWFJZdDlQSQ?oc=5",
+      "published_at": "Sun, 08 Nov 2026 12:54:10 GMT",
       "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "DEAL"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Democratic attorney general wins could reshape US lawsuits on abortion, immigration and more - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQOVhnSVFMUFFmdE44UE92bGdvMmg4VGZWQTZRajFZaEk3eFdGU1A4Vzk4eFlWOUhJd0pnd2VFZUdrekdpMzJxMUt2OU1FNGJxWGhMaTUwV3JhOGtxNjVITkRocmh1ZnRXQ2FLOW9TVVZjLUQ4UUJQSndvZXpENThsNUZDSmR5NGJnME92RnVCemNGcUVIamV5MlZYSWxMMG5LZmxiTF9IMFdtSDkybGQ4c3ozck1heTRvYTMzd3g0bXdEcThSdWFsRWxPc20?oc=5",
+      "published_at": "Sun, 08 Nov 2026 11:05:11 GMT",
+      "source": "Reuters",
+      "group": "GLOBAL",
+      "verified_original": false,
+      "timestamp_origin": "feed_or_index",
+      "score": 3,
+      "signals": [
+        "IP"
+      ],
+      "editorial_status": "DISCOVERY_READY",
+      "original_url_verified": false
+    },
+    {
+      "title": "Primatene Mist Third Quarter Sale Give Amphastar $2.7M More Reasons To Protect Exclusivity - insights.citeline.com",
+      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQSjlJY1l5MDE0ZGtSa0wtUnFLMXktZGstT0E4S295c25ydUN4X2wzNzcxcFU3OWxiaG10SG9xSXd2MkoxOVMwX1FfNldNU0FNVmNrZmxuVXdaeHpFZDAxQmFHRkI3SkJkbXMxNVIyVlQyZl9XQks0R3pHcGt6cHpHYy1PRnlTVFNBRkRXcEJmM0lTQ2hzVjhtNW1fcHZqSE1UUVJSNjRYaVVINXhLVlZNbXBTbnQ4WmZISkRlWks5SzBpZ3VwaUVVTlBoNkNEWFJIVWE1ZWZRVnhSUTNjbklNQzMtSjZjUGd5UWhWR3NocEw1UzU2Z19adms2NUVrQ3VEdDZwNi1tcTR2RDQxM21HRQ?oc=5",
+      "published_at": "Sun, 08 Nov 2026 18:13:43 GMT",
+      "source": "Scrip/Pink Sheet",
       "group": "GLOBAL",
       "verified_original": false,
       "timestamp_origin": "feed_or_index",
