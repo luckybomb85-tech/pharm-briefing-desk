@@ -1,0 +1,240 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-09",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "동아에스티, 영업익 회복·뇌전증 신약 가세…별도기준 연매출 8000억 청신호",
+      "summary": "동아에스티는 3분기 누적 영업이익이 지난해 연간 실적을 뛰어넘었고, 뇌전증 신약 '엑스코프리' 건강보험 급여 출시로 별도기준 연간 매출 8000억원 달성에 청신호가 켜졌다. 올해 3분기 매출은 2065억원, 영업이익은 214억원으로 각각 전년 동기 대비 4.1%, 27.7% 증가했다. 재무구조도 개선돼 부채비율 93.4%를 기록했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29975",
+      "source_name": "더바이오",
+      "published_at": "2026-11-08T21:50:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "불붙은 ‘TL1A’ 이중항체 개발 경쟁…美 칼데라 임상 진전·中 기술수출 확대",
+      "summary": "칼데라테라퓨틱스는 염증성 장질환 치료를 목표로 하는 TL1A·IL-23 이중항체 CLD-423의 임상1a상에서 안전성과 지속적인 표적 억제 효과를 확인했다. 약물은 단회 및 반복 투여 시 혈중 유리 TL1A 농도를 낮추고 반감기는 40일 이상이며, 2등급 이상 이상사례는 없었다. 칼데라는 내년 초 궤양성 대장염 임상2b상과 크론병 임상2a상을 시작할 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29979",
+      "source_name": "더바이오",
+      "published_at": "2026-11-08T21:20:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "1兆 시장 열린 지방간 치료제…한미약품 기술수출 신약, MSD 임상 초록불 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 한미약품이 기술수출한 지방간 치료제가 1조 원 시장을 겨냥해 MSD에서 임상시험에 진전이 있는 것으로 알려져 주목받고 있다. 지방간 치료제 시장 확대에 따른 경쟁이 치열해질 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUlFzOU5vSDJhTkJwVlM4VXZuNmhRbWVZRTBHYnNhUHM5VzhSUFBKV1pHVFVQSmNlVld3QTVZbi1HMlRtRWxadUJZaVNhbVd1NUJ0YUMwblY0UEtPd0dyVHkzWnJNUDFBbHF3ejc3eXFxV19tWDdqRTkyNTk1bjZ0dDhOaEhCUkHSAZsBQVVfeXFMTllXOGtSd3p4THZScExhSVZ4Qlo4RzhwX0NaMGVJVjJkTXpVRmNCeXVENE9tbkxQRF9Kc1BHdXhHeE5CZnpJRmJmTVRhLTBiYnpFWkR0cFcweGY3TzgzUWVneVowWU1WSGRTTzkzYWEzbjBMTXQtY0N1dE1UMFN6djM5SWh4VmpfQ0tlUzB0akZZZWRXaGxNdVk2cEE?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-08T21:02:56+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "알테오젠, ‘바이오유럽’서 황반변성 신약·하이브로자임 앞세워 파트너십 확대",
+      "summary": "알테오젠이 글로벌 제약바이오 파트너링 행사 '바이오유럽 2026'에서 자회사와 함께 황반변성 신약후보물질 ALTS-OP01과 피하주사 전환 플랫폼 하이브로자임을 앞세워 해외 사업개발 미팅을 활발히 진행하며 파트너십 확대에 나섰다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29981",
+      "source_name": "더바이오",
+      "published_at": "2026-11-08T22:20:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“임상 끝났어도 환자들 치료는 계속”…삼성에피스, 고가항암제 무상 지원 - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 삼성에피스가 임상시험 종료 후에도 고가항암제를 치료가 필요한 환자에게 무상으로 지원하는 프로그램을 운영 중이다. 이를 통해 환자 치료 연속성을 확보하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5BT3NNUUIyUEctNEJPdW1ONlFKLUpXbzdSU0ZkNGNiaGhSR3RMaU05U095M01NWFVOQzNjWWZybHlBWEhxYjZHWEJQdWdJNWNGWmfSAVNBVV95cUxPUTJsSVVBUl82MjhINjFhLXFBUXVsSXNMYkU0d0hrRzdLY3JkRk9CWml3Y3BlMjZsd3N5Q1JINjhQT0gweEV0YXc1eGdYaWhVVjg3aw?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-11-08T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "3년 기다린 스페비고, 급여 물꼬…신속등재 5개 약제 면면 보니",
+      "summary": "신속등재 시범사업 1차 선정 약제로 스페비고주, 아감리현탁액, 조엔자정, 칼소다주, 아이커보정 등 5개 품목이 확정됐다. 신속등재는 허가 후 보험급여 적용까지 대기 기간을 단축하는 제도로, 해당 의약품들은 내년 4~5월께 보험 적용이 가능할 전망이다. 선정된 약제들은 기존 치료가 어려운 급성 악화 질환부터 진행성 희귀질환까지 다양하다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47972",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-08T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "식약처, 자료제출약 허가 수수료 1604만원…허가·심사 비용 현실화",
+      "summary": "식품의약품안전처는 자료제출의약품과 신규 생물의약품의 품목허가 및 변경허가 신청 수수료를 대폭 인상하고 첨단바이오의약품 허가·심사 비용도 조정했다. 이는 올해 6월부터 추진하는 240일 허가 제도 실현을 위한 심사 인력 운영 재원 확보를 목적으로 한다. 인체조직 부작용 보고 주기도 연 1회에서 반기 1회로 단축하며, 환자의 직접 신고 근거도 마련했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47978",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-08T21:10:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "프랑스, 신약 초기 약가 우대…호주는 의약품 표시기준 바꾼다",
+      "summary": "프랑스가 약가를 생애주기별로 재평가하는 새로운 약가체계를 도입해 신약 초기 약가를 우대하고, 호주는 처방 및 비처방 의약품 표시기준을 개편했다. 유럽 EMA는 원료의약품 제조소 중복 실사를 개선할 계획이며, 영국은 AI 의약품 개발 규제 조화를 요구하고 있고, 중국은 동물대체시험 도입 시범사업을 진행 중이다. FDA는 의약품 연계 소프트웨어 사용 관련 지침을 발표했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47971",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-08T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "기대 높였지만…허가 전 생산약 허용의 먼 길",
+      "summary": "식품의약품안전처가 허가 전 생산 의약품의 판매 허용 방안을 발표했으나 곧바로 관련 법 개정이 필요하다고 밝혀 업계의 기대감이 꺾였다. 제약업계는 신속한 제도 개선을 위해 식약처가 구체적인 후속 조치를 제시할 것을 요구하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80531",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-08T21:07:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "美 FDA, 알츠하이머 예방 개발 지원…의료기기 품질 위반엔 경고장",
+      "summary": "미국 FDA는 알츠하이머병 등 신경계 질환 예방과 조기 개입을 위한 의료제품 개발 촉진을 목적으로 '신경과학 발전 및 혁신 넥서스(NAIN)' 프로그램을 출범했다. 의약품·바이오·의료기기 부서가 협력해 신경계 질환 의료제품 개발의 과학적·규제적 난제를 해결하며, 바이오마커와 디지털 헬스 기술 활용을 모색한다. 의료기기 제조업체 품질 위반에 경고장도 발부했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47966",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-08T21:04:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "위험분담 환급대상 74개 약제군…베클루리·팍스로비드 ‘급여 때만’",
+      "summary": "국민건강보험공단이 11월 1일 기준 위험분담계약에 따라 환급대상이 되는 74개 약제군 목록을 공개했다. 주요 포함 품목은 키트루다, 졸겐스마, 옥스루모 등이며, 베클루리와 팍스로비드는 보험급여를 적용받은 경우에만 환급 대상이다. 전액 본인부담 시에는 환급 대상에 포함되지 않는다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47962",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-08T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[채용 원픽] 삼성바이오에피스, 제제·DP공정·임상개발(~11/13)",
+      "summary": "삼성바이오에피스가 제형 및 DP 공정개발, 임상개발, 비임상개발, 정제공정개발 직무 담당자를 모집한다. 각 직무별로 관련 분야 경력 8년 이상의 학사 이상 학위 보유자를 선발하며, ADC 관련 경험자 등 전문 인력 우대를 명시했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80554",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-08T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"내년 매출목표 승인 못받아\"…제약, 2027년 사업계획 '막막'",
+      "summary": "기등재 의약품에 대한 약가 인하와 제네릭 경쟁 심화로 2027년 사업계획 수립에 어려움을 겪는 제약사가 많다. 일부는 인력 감축과 신규 개발 보류로 비용 절감에 나섰으며, 신규 품목 발굴도 어렵다. 경영진 간 의견 차이로 매출목표 승인 지연도 나타나고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80590",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-08T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "셀트리온, 브라질서 '후속 바이오시밀러' 3종 출시 - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 셀트리온이 브라질 시장에 후속 바이오시밀러 3종을 출시했다. 이번 출시로 글로벌 바이오시밀러 확장에 속도를 낼 것으로 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5rUEpmaDUxSHFhaG0tYnRGX2ZyV2kxZ3RualA3Q0NJOGRzWWtuRWFoTHlNa1ROOUpQQV83TVNsU0lzTGdhUW4tQXRVMGg0bG9USGs2Q044bw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-08T22:05:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "J&J, 폐암 '블록버스터 목전'..유한 \"토탈 3억弗 수령\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) J&J의 폐암 신약이 블록버스터 진입을 눈앞에 두면서 유한양행이 라이선스 계약에 따라 총 3억 달러를 수령했다. 양사는 해당 폐암 치료제 관련 수익 공유 계약을 진행 중이다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TUmZ4bjVCSFVxcUloa3BjeTRQRThteUhkTXZsNmpDRkpROE9vWWxhZ1J3MTFFaVpRTUxCVVAtUmp3WHNiX3ZzOF9oTV9mbkY5UkNucVZ0Yw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-08T21:31:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "새비로보틱스 “로봇으로 바이오 공정 ‘자동화’…비용·오염까지 잡는다”",
+      "summary": "새비로보틱스가 GMP 환경에 적합한 방수·방진·청정도 기준 대응 로봇을 개발해 바이오 공정 자동화와 생산 효율화를 추진한다. 세포배양 자동화 장비와 결합해 24시간 작업 지원으로 인건비 최대 70% 절감효과를 기대하며 글로벌 시장 공략도 계획 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29978",
+      "source_name": "더바이오",
+      "published_at": "2026-11-08T21:30:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신속등재 의약품 선정 성패, 사후평가 수용 제약사 책임감서 갈렸다",
+      "summary": "보건복지부가 희귀질환 신속등재 시범사업에서 5개 약제를 선정하고 사후평가 계획서 보완 및 이행약정서 제출 등을 요구했다. 제약사에게는 사후평가 결과에 따른 약가 조정 및 환자 치료 보장 계획 수립의 책임이 강조됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=47977",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-08T21:14:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "셀트리온제약, 고수익 ‘시밀러’ 타고 성장 가속…2028년 영업익 1000억 전망",
+      "summary": "셀트리온제약이 신규 바이오시밀러 6종 출시와 만성질환 치료제 사업 강화로 고성장 중이다. 2028년 매출 8000억원, 영업이익 1000억원 전망이며, 키트루다·다잘렉스 바이오시밀러 등 글로벌 블록버스터 후속제품 개발도 진행 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=29974",
+      "source_name": "더바이오",
+      "published_at": "2026-11-08T21:10:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "100만명 바이오빅데이터, 희귀질환 진단에 쓸 준비 시작",
+      "summary": "국가통합바이오빅데이터구축사업단이 100만명 이상 대상 바이오빅데이터 구축을 통해 희귀질환의 조기발견과 정밀진단을 위한 한국인 특화 유전자 변이 추출 연구용역을 진행한다. 임상 현장에서 활용 가능한 파이프라인 구축과 데이터 인프라 마련이 목표다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80589",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-08T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "이상지질혈증 치료제가 심혈관질환 위험을 정말 낮추나요? - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 최근 이상지질혈증 치료제가 심혈관질환 위험을 얼마나 낮추는지에 대한 연구 분석이 보고됐다. 치료제의 임상적 유효성과 안전성에 대한 객관적 데이터 검토가 이뤄지면서 치료 전략에 참고될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5NZklGZDJselV0Ty1velg4c21wQ3RsaGVKUUNpaEQ4VVNSSFZ6LW1yT2FmRXF4cmljRndWR1Q5NGFtVWlQNlpqREc1cmJVRlZYekdRdExDSzBJOUR4QkQtcWRROUJZdll3dG5z?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-08T21:03:52+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 20,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
