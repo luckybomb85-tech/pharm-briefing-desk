@@ -1,67 +1,67 @@
-# 글로벌 제약바이오 브리핑 | 2026-11-09
+# 글로벌 제약바이오 브리핑 | 2026-11-10
 
 > 자동 발견·선별된 취재 후보입니다. 원문 및 핵심 사실은 기사 작성 전 확인해야 합니다.
 
-### 1. Experimental weight-loss drug eases painful knee osteoarthritis in two clinical trials - FirstWord Pharma
+### 1. Abeona Therapeutics® Acquires Phase 3-Ready APT-1011, Now ABO-801, and Enters Into Agreement for $30 Million Private Placement - BioSpace
+- 매체: BioSpace | 중요도 점수: 7
+- 분류: CLINICAL, DEAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi9AFBVV95cUxQX2JpSl9yeFRsdDYxcEhLRkFmb2dfUTVaTjR0T2RNMzF4cWlROUU0TmtjSmdEMmxUaDhCNWdyTzV5NW1TMXBfTE0zVnp3U0QzQnNQWEJqZERoSnpjb0JSQVZ3WkpCUk9la2tDazlFa003bi1DbkhUeTM1MXdBY3pORE1UVU5HQ0JSX1BONUNYMjROYWRvUEZudXpBRUc5dGZ4NFpPeVZGbEJFMl9GVjJsVUpaS21EUmtqeGlGRGMzZDUwaGt1ejhwWE9RSmxteXd2Y0Q4UEo1U19RZ3FVRC1JcGNObTB6aG1ZalZCeEk0OEszR1ZR?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 2. 101 Therapeutics Presents Macrophage-Targeted, Steroid-Sparing Glucocorticoid 101-PGC-005 at ACR Convergence 2026 Following Phase 2/3 Superiority Over Dexamethasone - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE94RWs1aHpvSExwc1J1MWkyZDF6d0QyaEZmWkI3bTdEMmNlZVcyb1N1VzBzd09sWWo1SnhiV0JBcXRjS1lGUjJmUGF4R2VWcXByU0tV?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5qcUdoWF9IOTlOTzhyZDllNVA4VlhQMTRsRTExX29XMGlvQ212RjVlSS1XY0hfOUlOTjJDVm85X3lUT0ZfTDUyVDVGd2I4SGMyN0RV?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 2. J&J says Icotyde succeeded in Phase III psoriatic arthritis trial - FirstWord Pharma
+### 3. Acadia Pharmaceuticals to Present Remlifanserin Data at the 2026 Clinical Trials on Alzheimer's Disease (CTAD) Conference - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9uRWZHNllxVUdrNHdfQ0lId21IUDZVR0k4OGt5cGZadmcwcnEybkVmcXhsQ1RBeExuQ2R0TFdZTWFFTzFDTFc1U3oxYjdxZzR0M2RV?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE50ZjltYW94V3J3S0twOHNoWU80d1AxM0s4dUsxLXAwUV9FdzZuRWh2cU1COEpUbzhYZXF6YzdhMkxSaFpBbEp6QlVNZkpzRVRianBj?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 3. Johnson & Johnson announces new Phase 2 nipocalimab study data in Sjögren’s disease that reveal insights on importance of symptom improvements most valued by patients - FirstWord Pharma
+### 4. Aisa Pharma to Present New Data from the Phase 2 RECONNOITER-1 Trial in Systemic Sclerosis-Associated Raynaud's Phenomenon at ACR Convergence 2026 - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFAwOEVtbThPdEtacG1EZ0hDbUpraDZiMFUzS2NicXZ4ZjZQSnNMYmp2NVIwZWdUNmpXTW9PdUUtNk1LeXhBY0p5TkNhbkhZZEcxZHdv?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE81NXRUenoySUVuT0poajNmLWJJZ0s1UnVOQl9HeGZMUmhVV0I0MXpzU0V3UlVFREJYRUtIWGs0U3E4YjNfcUgyOXR0Rl94cFlnSDZv?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 4. Vir Biotechnology Announces Expanded Phase 2 SOLSTICE Data for Elebsiran and Tobevibart in Chronic Hepatitis Delta, Showing Deep and Sustained Viral Suppression, and Exploratory Finite Treatment Data - FirstWord Pharma
+### 5. AriBio to Unveil Pivotal Phase 3 POLARIS-AD Topline Results for Oral AR1001 in Alzheimer’s Disease at CTAD 2026 - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5CUzJlQUFsOGFZMmJ5cDFaN0YwZkJIUktZelNrRllQYmZLaEVUZWNBbnlWYnh2Wk1lb0dNenk1OVpSYVJhYUtiaEtEUmNNdjBUVHpZ?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFAxNS1GbXNDOU9MMDc3OThoelNaNUNpR1NuWTZJZjVGWnYyOTZaeTdoYlZERHAwdjFDemc3UTRsSUtJcGRlOU5ydXB1UkFIdEE5M1Vv?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 5. Vir Biotechnology Announces Primary Endpoint Met in Pivotal Phase 3 ECLIPSE 1 Trial for Elebsiran and Tobevibart in Chronic Hepatitis Delta - FirstWord Pharma
+### 6. Brixton Biosciences Presents Pivotal NICE Clinical Trial Data Showing Reneurx™ Nerve-Selective Therapy is Superior to Corticosteroid Injection for Pain Associated with Knee Osteoarthritis - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE95dktZSHRUaFFjRlozd0lDb29oLVdSMXNCcGtRdHJCbV91X1RPVnNYSFRjMFgzcTRPOXY2ZEs1bm05SDBFcldaTWhaakQxR0VldnpF?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5aMVh4STlJdzVuOExQbC1FYVFFVnlVU3laellWQXZVTWpsWlZkNkFzSTNveWdoZWstLV9iUEdqZU1fZGdGaVlaZEFwcExsZUtGX2hV?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 6. argenx Presents Phase 3 ALKIVIA Data at ACR Convergence 2026 Showing Rapid and Sustained Improvement with Efgartigimod in Autoimmune Myositis - FirstWord Pharma
+### 7. Capricor’s HOPE-3 Phase 3 Cardiac Results for Deramiocel Win American Heart Association Outstanding Research Award in Pediatric Cardiology - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1aYm54NjRMNmphZHF0c1dVMzdvS2szQ1VsRV9rRUoxcUdrcXBHTTdtcUwxVkhpS2kyVHpZN3NlMk5JenNkSzYzc0hpSVpNbGZNUDlF?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9icjhIbzlETF9xeWNxenpna3NQMkgtSVJJZXY3SVA5WG1SOUN2NDBicTIzRmxzck4yZVRjYzJjTEY0U0loS3ZJbkdxamRoel9VeDZJ?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 7. Abbott and Novo expand partnership to launch Plosbrio® broadening access to semaglutide for advanced diabetes care across Asia Pacific - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 3
-- 분류: DEAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE4zbU9BbUVGd0ZOSHFBSXQtaEt6UjB6ZlBLUkRrS0pScUFBMV8wM0RZRXlzdGFvR0dxWl9RZGZoR0huUkF4RDVfaWhodzgycmhXejZB?oc=5
+### 8. Cloudbreak Pharma Inc. (02592.HK) Unveils Phase III Topline Data for CBT-001: The First Randomized, Double-Blind Validation of a Drug Treatment for Pterygium - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBKeEdKUjlUZkVvaEMwbGgxWG1aQTVIZ1ZzVjdnVzVPTDNwTGhzWVBUNEpwYTdsSlducUF4Q3NGVkVyWVFuM01PZWxXRjNyVlRfMm5R?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 8. Anthropic secures $3.4 billion generator deal for AI data centers, FT reports - Reuters
-- 매체: Reuters | 중요도 점수: 3
-- 분류: DEAL
-- 발견 링크: https://news.google.com/rss/articles/CBMivwFBVV95cUxNTUktcGxpNENhQ1llV2F3a3V5RUZya0dDc0ZLeFVTZmFqclBqSVhuYkNiSFpSTkkwVnZ2NkFVVEVjQjZPLTJzMGMyU0dnaFg0X1pPd2pMV0ZCWWtMWlpSdTNvckRlaGxLcWs1SnljenEwcUs0N0doWG0yRDdET2o4YlZMVWl6c2lpYWJ1emstVFI1S3VyUXdIdG1xdmZpS3k3ZW5LVUpibUZ0SWxmZUNLNXN0SDBMZE5nWFJZdDlQSQ?oc=5
+### 9. FDA approves novel Bayer drug to reduce recurrence of stroke - STAT
+- 매체: STAT | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMimAFBVV95cUxPUXNZUTNPR3h4OFhqTzlDT1FSSGQ0Q25ZODNPeEZRTFY1RTFyOUFMZ2tZOWg1azVwcWVPaThpTE5vb2pKUUFDRVd1aUFxUVFZZ3EtLUtrcHdfRjY3Z1FaN0Z1T2Rvc21nVFIzQzNDWUV0VzlxMGhnNzlURWlHZ2l0TFhkcFZWTUtzV25tdW42a0FYcWR2cGZLbA?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 9. Democratic attorney general wins could reshape US lawsuits on abortion, immigration and more - Reuters
-- 매체: Reuters | 중요도 점수: 3
-- 분류: IP
-- 발견 링크: https://news.google.com/rss/articles/CBMizAFBVV95cUxQOVhnSVFMUFFmdE44UE92bGdvMmg4VGZWQTZRajFZaEk3eFdGU1A4Vzk4eFlWOUhJd0pnd2VFZUdrekdpMzJxMUt2OU1FNGJxWGhMaTUwV3JhOGtxNjVITkRocmh1ZnRXQ2FLOW9TVVZjLUQ4UUJQSndvZXpENThsNUZDSmR5NGJnME92RnVCemNGcUVIamV5MlZYSWxMMG5LZmxiTF9IMFdtSDkybGQ4c3ozck1heTRvYTMzd3g0bXdEcThSdWFsRWxPc20?oc=5
+### 10. Faeth Reports Positive Preliminary Phase 2 Topline Results from the PIK-201 Trial Evaluating PIKTOR in Combination with Paclitaxel in Patients with Advanced Endometrial Cancer - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBRQjFKRUFxTGMwemFucEdSbENtV3E1czlVV0ljMWo5ZHI4LUYwYmEwNHdFVVRUMHgxeXpKdGI0VHFpX2piUFlzaWhNRXF6MmROSHow?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 10. Primatene Mist Third Quarter Sale Give Amphastar $2.7M More Reasons To Protect Exclusivity - insights.citeline.com
-- 매체: Scrip/Pink Sheet | 중요도 점수: 3
-- 분류: IP
-- 발견 링크: https://news.google.com/rss/articles/CBMikAJBVV95cUxQSjlJY1l5MDE0ZGtSa0wtUnFLMXktZGstT0E4S295c25ydUN4X2wzNzcxcFU3OWxiaG10SG9xSXd2MkoxOVMwX1FfNldNU0FNVmNrZmxuVXdaeHpFZDAxQmFHRkI3SkJkbXMxNVIyVlQyZl9XQks0R3pHcGt6cHpHYy1PRnlTVFNBRkRXcEJmM0lTQ2hzVjhtNW1fcHZqSE1UUVJSNjRYaVVINXhLVlZNbXBTbnQ4WmZISkRlWks5SzBpZ3VwaUVVTlBoNkNEWFJIVWE1ZWZRVnhSUTNjbklNQzMtSjZjUGd5UWhWR3NocEw1UzU2Z19adms2NUVrQ3VEdDZwNi1tcTR2RDQxM21HRQ?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-선별 대상 155건 중 중요도 기준 통과 10건. 상위 10건 표시.
+선별 대상 365건 중 중요도 기준 통과 62건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
