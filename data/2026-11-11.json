@@ -1,0 +1,174 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-11",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "인건비 따져보니 수수료 낮았다는 식약처, 제네릭도 인상 시사",
+      "summary": "식약처가 자료제출의약품 허가 수수료를 기존 대비 약 6.1배 인상할 계획이며, 복수 함량 품목 수수료 부담 완화와 제네릭 의약품 허가·심사 수수료 개편 확대 가능성을 검토 중이다. 인상된 수수료는 신약 심사 전문인력의 안정적 운영과 교육 등에 활용될 예정이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80674",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-10T21:07:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"살 덜 빠져도 간섬유화 개선\" … 한미약품 MASH 신약, '란셋'이 주목한 이유",
+      "summary": "(제목 기준·원문 미검증) 한미약품의 MASH 신약이 체중감소 효과는 크지 않지만 간섬유화 개선에 의미 있는 결과를 내어 국제학술지 '란셋'에서 주목받았다. 이 신약은 간질환 치료 영역에서 새로운 치료 옵션으로 기대를 모으고 있다.",
+      "source": "https://biz.newdaily.co.kr/site/data/html/2026/11/10/2026111000400.html",
+      "source_name": "뉴데일리",
+      "published_at": "2026-11-10T22:44:16+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "박상규 노벨티노빌리티 대표 “면역·염증질환서 승부…신약 3상까지 직접 개발” - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 박상규 노벨티노빌리티 대표가 면역질환과 염증질환 신약 분야에서 경쟁력을 강화하며, 신약 후보물질을 임상 3상까지 직접 개발하겠다는 전략을 밝힌 인터뷰를 공개했다. 이는 국내 혁신 신약 개발에 대한 의지를 보여준다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5iQk5nejRpZEpFYjJYc0JQWENpUHdldGhRcjF1eWtHbTZrTFZkZFZpa0h1cXVCY0ExYmVMR0JyTXZWdTI0X1EyOG1iODhKVFMwM0HSAVNBVV95cUxOVDlNR3lZZGV6ZUFqd0xmN1BUc0RQZW4tbjkya0hhQ0xQd19GcDVveG9oZ2RsTEg0WkNFMmtOOW9Qc0FoZXJHTzVhcW5XSzUxVWZXQQ?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-11-10T22:00:02+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "휴사이언스, 에이치더마글로벌임상센터와 인체적용시험·검체 분석 협력",
+      "summary": "휴사이언스가 에이치더마글로벌임상센터와 인체적용시험과 검체 분석을 연계하는 연구 협력을 위한 전략적 업무협약을 체결했다. 양사는 검체 분석 업무를 공유해 다양한 연구 수요에 대응하고, 인체적용시험 분야 협력 범위를 확대해 고객사의 연구 지원을 강화할 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30095",
+      "source_name": "더바이오",
+      "published_at": "2026-11-10T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[단독]황만회 애드바이오텍 대표, 사기·업무방해 혐의 피소 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 애드바이오텍 황만회 대표가 사기 및 업무방해 혐의로 고발되었다. 사건은 의료산업 관련 기업 경영진의 중대 법적 문제로 제약바이오 업계 내 긴장감이 커지고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8xTWMzbzlFSGhfeFQ3NzR6d0ZuUU1DRnZlNlU5VW5vdXZ2Tlp3QmdTWlowa3B6YXZ1aVRKWWVyWGwybTR2NF9TS0NpdzFLVllsQlNucXZWVG4tcmZxaWltWTVEOVNPUXlCblBnaFp3?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-10T21:40:03+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "앱셀레라, ‘아토피’ 신약 1상 지표 충족에도 개발 중단…OX40 계열 잇단 좌절",
+      "summary": "캐나다 생명공학기업 앱셀레라의 아토피 피부염 신약 후보 ABCL575가 임상1상에서 모든 평가변수를 충족했음에도 개발을 중단한다. OX40 경로를 표적으로 하는 아토피 치료제 개발은 앞서 사노피와 교와기린도 중단했다. 앱셀레라는 3분기 매출이 전년 대비 19% 증가했으나 순손실은 지속해서 발생하고 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30099",
+      "source_name": "더바이오",
+      "published_at": "2026-11-10T21:20:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "로슈, 알츠하이머 신약 개발 가속…NLRP3 억제제 2상·트론티네맙 3상 시작",
+      "summary": "다국적 제약사 로슈가 경구용 NLRP3 억제제 RG6434의 초기 증상 알츠하이머병 임상 2상과 이중항체 후보물질 트론티네맙 임상 3상을 시작한다. RG6434는 신경염증을 표적하며, 트론티네맙은 뇌혈관장벽 투과 기술을 활용해 아밀로이드 제거 효과를 극대화하는 약물이다. 관련 신규 데이터는 11월 미국 보스턴 알츠하이머 임상시험 학회에서 발표 예정이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30098",
+      "source_name": "더바이오",
+      "published_at": "2026-11-10T21:10:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한미약품 MASH 신약, 체중감량보다 '간 섬유화 개선'에 주목",
+      "summary": "한미약품이 MSD에 기술수출한 신약 후보물질 에피노페그듀타이드가 임상 2b상에서 간 섬유화 개선 및 MASH 소실 효과를 나타냈다. 체중감량 효과는 세마글루타이드에 비해 낮았으나, 간 조직학적 개선 가능성을 보이며 후발 MASH 치료제로 차별화 가능성을 제시했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80673",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-10T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "美 엔카르타, 동종 CAR-NK 후보 ‘자가면역질환’ 초기 임상서 치료 반응 확인",
+      "summary": "미국 엔카르타가 개발 중인 동종 CAR-NK 치료제 NKX019가 근염과 전신경화증 등 자가면역질환 대상 임상1상에서 우수한 임상 반응과 안전성을 보였다. 주요 환자의 80% 이상에서 임상개선과 피부증상 호전을 관찰했으며, 중대한 이상반응 없이 외래 투여가 가능해 새로운 치료 대안이 기대된다. FDA와 허가 임상 진행 방안도 논의 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30086",
+      "source_name": "더바이오",
+      "published_at": "2026-11-10T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀질환 환자 등록사업 활성화 풀무질...\"상급병원과 종합병원 확대\"",
+      "summary": "질병관리청이 희귀질환 환자 통계 수집과 관리 강화를 위해 등록기관을 기존 17개 희귀질환 전문기관에서 상급종합병원과 종합병원까지 확대할 계획이다. 의료기관 참여를 높이기 위한 재정적·행정적 인센티브 방안도 검토 중이다. 사업 활성화를 위한 설명회는 11월 25일 개최 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48005",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-10T21:12:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "SK그룹, 제약바이오도 성장세…상장 3사, 다음 먹거리 확보 ‘속도’",
+      "summary": "SK그룹은 SK케미칼, SK바이오사이언스, SK바이오팜 등 상장 3사를 중심으로 제약바이오 사업에서 성장 국면에 접어들었다. SK케미칼은 외부 도입 의약품 확대와 자체 개량신약 개발, 만성질환 시장 진출 등으로 제약사업 매출을 크게 늘리고 있는 한편, 2030년 제약사업 영업이익 500억원 달성을 목표로 신규 치료 영역 개척과 마케팅 효율화에 집중하고 있다. 또한 신약 공동개발 및 글로벌 진출 협력도 추진 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30096",
+      "source_name": "더바이오",
+      "published_at": "2026-11-10T22:05:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "머크, 한미 'GLP/GCG' MASH 2b상 \"긍정적\" 란셋 게재 - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 머크가 한미약품과 공동개발한 GLP/GCG 이중작용제의 MASH 2b상 임상 결과가 긍정적으로 나타났으며, 이 결과를 국제학술지 『란셋』에 게재했다. 이번 임상은 치료 효능과 안전성 측면에서 의미 있는 진전을 보여 국내외에서 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9LdXFxSkduM1JFRnpIMWJNRnBORDlnN3lBQ2x4ZjBFX3dzcURQQ0ptOGVTTko5N1QwZmxYdTFER01MYlRrV21tQ2YyX09HYkdZdXA3S2xaNlBHX3JxMUVYbGhTN01lM0p4YjJYbg?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-10T21:35:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "다시 꺼낸 인천 바이오과기원… 업계는 '사람', 인천시는 '제도'",
+      "summary": "인천시는 바이오산업 특화 과학기술원 설립을 위해 총사업비 4000억원 규모의 인프라 구축을 계획 중이며, 산업계는 신약개발 인재 육성과 연구 중심 기관 구성을 요청하고 있다. 법·제도 마련과 인재 확보 문제를 동시에 해결하는 것이 성공의 핵심 과제로 부각되고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80657",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-10T21:05:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀비만 시장 꿈틀···첫 승인 치료제에 AZ 눈독 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 희귀비만 질환을 겨냥한 최초의 승인 치료제가 곧 시장에 출시될 전망이며, 아스트라제네카가 이 분야에서 전략적 관심을 보이고 있다. 이번 승인은 희귀질환 분야 신약 개발 활성화에 중요한 의미를 갖는다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ZWWtTVHM5dXA1WXVxNnZLTGRJdkVhTmdrM0REemJEUW9CaGtvdXZDNnVVeG1YRXgxVUpRMlJGeXVvdXl2MFZYbnBuVV9SN2VBZ0hXQzJUSE9KUmR6RGpZWHFXSU9MV1V2U29B?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-10T21:02:05+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 14,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
