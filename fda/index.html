@@ -183,7 +183,8 @@ function titleOf(x){return x.title_ko||"한국어 제목 변환 중"}
 function summaryOf(x){return x.summary_ko||"한국어 요약을 준비하고 있습니다."}
 function showMajor(items){
  const major=$("majorList");major.replaceChildren();$("majorPeriod").textContent="최근 "+prefs.days+"일";
- if(entry>0){$("majorPeriod").textContent="주요 발표";return}
+ if(entry>0){document.querySelector(".major").hidden=true;return}
+ document.querySelector(".major").hidden=false;
  const grouped=new Map();
  for(const item of items||[]){
   const k=item.event_date||"날짜 미확인";
@@ -203,7 +204,7 @@ function showMajor(items){
 function article(item,parent){
  const el=node("article",parent,null,"article");
  const meta=node("div",el,null,"article-meta");
- node("time",meta,safeDate(item.event_date||item.decision_date||""));
+ node("time",meta,(item.decision_date?"결정일 ":"게시일 ")+safeDate(item.event_date||item.decision_date||""));
  node("span",meta,names[item.category]||"FDA","tag");
  if(item.importance>=4)node("span",meta,"주요","tag high");
  const h=node("h4",el,titleOf(item));
