@@ -1,7 +1,7 @@
 {
   "id": "/pharm-briefing-desk/fda/",
-  "name": "FDA 의약품 규제 모니터",
-  "short_name": "FDA 모니터",
+  "name": "데일리팜 U.S. FDA 워치",
+  "short_name": "FDA 워치",
   "description": "FDA 의약품 규제 발표 자동 수집·한국어 요약·중요 발표 알림",
   "start_url": "./",
   "scope": "./",
