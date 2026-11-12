@@ -67,7 +67,7 @@ footer{font-size:11px;color:#8390a1;margin-top:20px;line-height:1.8}
 <div class="metric"><strong>3시간</strong><span>규제·가이드라인 관련 공고</span></div>
 </section>
 <form class="filters" id="searchForm">
-<input id="query" type="search" placeholder="영문 제품명·성분명·FDA 발표 검색" aria-label="FDA 발표 검색">
+<input id="query" type="search" placeholder="한글·영문 제품명·성분명·FDA 발표 검색" aria-label="FDA 발표 검색">
 <select id="category" aria-label="분야 선택">
 <option value="">전체 분야</option><option value="safety">안전성</option><option value="approval">허가·적응증</option><option value="recall">리콜·회수</option><option value="guidance">가이드라인</option><option value="regulation">규제정책</option><option value="general">기타 발표</option>
 </select>
@@ -93,7 +93,7 @@ function date(v){if(!v)return"발표일 미확인";const d=new Date(v);return Nu
 function render(item){
  const section=add("article",$("articles"),undefined,"article");
  const row=add("div",section,undefined,"top");
- add("span",row,date(item.published_at||item.first_seen_at),"date");
+ add("span",row,item.decision_date?"결정일 "+date(item.decision_date):"게시·수정 "+date(item.published_at||item.first_seen_at),"date");
  add("span",row,labels[item.category]||"FDA","chip");
  if(item.importance>=4)add("span",row,"중요도 "+item.importance+"/5","chip importance");
  add("span",row,item.ai_status==="complete"?"AI 요약":"원문 수집","chip "+(item.ai_status==="complete"?"ai":"source"));
