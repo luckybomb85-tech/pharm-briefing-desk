@@ -41,9 +41,10 @@ async function api(x){
  return data;
 }
 function instructions(){
- $("iosInstructions").hidden=!ios();
- $("androidInstructions").hidden=!android();
- $("otherInstructions").hidden=ios()||android();
+ // Both device guides remain visible regardless of the visitor's current device.
+ $("iosInstructions").hidden=false;
+ $("androidInstructions").hidden=false;
+ $("otherInstructions").hidden=true;
 }
 function showHelp(message){
  instructions();say(message);redraw();modal();
@@ -65,23 +66,23 @@ async function status(){
 async function enable(){
  if(working)return;
  if(ios()&&!standalone()){
-  showHelp("아이폰에서는 Safari에 '홈 화면에 추가'한 뒤 그 앱에서 알림을 켤 수 있어.");return;
+  showHelp("아이폰: 홈 화면에 추가 → 홈 화면 앱 실행 → 🔔 알림 허용");return;
  }
  if(!supported()){
-  showHelp("현재 브라우저에서는 직접 알림을 켤 수 없어. 아래 기기별 설정 방법을 확인해 줘.");return;
+  showHelp("현재 브라우저에서 자동알림 사용 불가 · 기기별 설정 방법 확인");return;
  }
  if(Notification.permission==="denied"){
-  showHelp("이미 알림이 차단돼 있어. 아래 안내에 따라 사이트 알림을 허용해 줘.");return;
+  showHelp("현재 알림 차단 상태 · 브라우저 사이트 설정에서 허용 필요");return;
  }
  // Permission must be requested in the direct button click, before any await.
  const permission=Notification.permission==="default"?
   Notification.requestPermission():Promise.resolve(Notification.permission);
  working=true;redraw();
  try{
-  if(await permission!=="granted")throw Error("알림 권한이 허용되지 않았어.");
-  const token=localToken(true);if(!token)throw Error("이 기기의 로컬 저장소를 사용할 수 없어.");
+  if(await permission!=="granted")throw Error("알림 권한 미허용");
+  const token=localToken(true);if(!token)throw Error("기기 저장소 사용 불가");
   const conf=await fetch(API+"?view=config",{cache:"no-store"}).then(r=>r.json());
-  if(!conf.public_key)throw Error("알림 서버 인증키가 준비되지 않았어.");
+  if(!conf.public_key)throw Error("알림 서버 인증키 확인 필요");
   const text=conf.public_key.replace(/-/g,"+").replace(/_/g,"/");
   const raw=Uint8Array.from(atob(text.padEnd(Math.ceil(text.length/4)*4,"=")),c=>c.charCodeAt(0));
   const reg=await navigator.serviceWorker.register("./sw.js",{scope:"./"});
@@ -90,10 +91,10 @@ async function enable(){
   if(!sub)sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:raw});
   await api({action:"subscribe",device_token:token,subscription:sub.toJSON(),preferences:currentPrefs()});
   enabled=true;
-  say("알림이 켜졌어. 설정에서 선택한 FDA 발표 분야를 이 기기로 알려줄게.");
+  say("FDA 자동알림 활성화 완료 · 선택한 분야 알림 수신");
   instructions();redraw();modal();
  }catch(e){
-  enabled=false;showHelp("알림 연결을 완료하지 못했어: "+e.message);
+  enabled=false;showHelp("알림 연결 실패: "+e.message);
  }finally{working=false;redraw()}
 }
 async function disable(){
@@ -103,7 +104,7 @@ async function disable(){
   const reg=await navigator.serviceWorker.getRegistration("./");
   const sub=reg&&await reg.pushManager.getSubscription();
   if(sub)await sub.unsubscribe();
-  enabled=false;say("FDA 자동알림을 껐어.");
+  enabled=false;say("FDA 자동알림 해제 완료");
  }catch(e){say("알림 해제 실패: "+e.message)}
  finally{working=false;redraw()}
 }
@@ -114,7 +115,7 @@ async function test(){
   const token=localToken();
   if(!token)throw Error("등록된 기기가 없어.");
   await api({action:"test",device_token:token});
-  say("테스트 알림을 보냈어. 휴대전화 알림 센터에서 확인해 줘.");
+  say("테스트 알림 발송 완료 · 기기 알림 센터 확인");
  }catch(e){say("테스트 알림 실패: "+e.message)}
  finally{working=false;redraw()}
 }
@@ -125,15 +126,15 @@ async function savePreferences(prefs){
 }
 $("bellBtn").addEventListener("click",()=>{
  if(enabled){
-  instructions();say("현재 FDA 알림이 켜져 있어. 아래에서 테스트하거나 끌 수 있어.");modal();
+  instructions();say("FDA 자동알림 활성화 상태 · 테스트 또는 해제 가능");modal();
  }else enable();
 });
 $("notifyEnable").addEventListener("click",enable);
 $("notifyDisable").addEventListener("click",disable);
 $("notifyTest").addEventListener("click",test);
 $("notifyCopyLink").addEventListener("click",async()=>{
- try{await navigator.clipboard.writeText(location.href.split("?")[0]);say("웹사이트 주소를 복사했어. Safari나 Chrome에서 열어 줘.")}
- catch{say("주소를 복사하지 못했어. 브라우저의 공유 메뉴에서 '링크 복사'를 선택해 줘.")}
+ try{await navigator.clipboard.writeText(location.href.split("?")[0]);say("웹사이트 주소 복사 완료")}
+ catch{say("주소 복사 실패 · 브라우저 공유 메뉴의 '링크 복사' 선택")}
 });
 window.FDAPush={savePreferences,refreshStatus:status,isEnabled:()=>enabled};
 status();
