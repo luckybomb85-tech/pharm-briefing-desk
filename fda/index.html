@@ -4,6 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FDA 의약품 규제 모니터 | 약학 브리핑 데스크</title>
 <meta name="description" content="FDA 의약품 허가·안전성·가이드라인·규제 발표 자동 모니터">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml">
 <style>
 :root{--ink:#18243b;--sub:#69778c;--blue:#23539d;--line:#e2e8f1;--bg:#f5f7fb;--teal:#16745c}
 *{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55}
@@ -33,6 +34,12 @@ button.secondary{background:white;color:var(--blue)}button:disabled{opacity:.45;
 .empty{padding:60px 12px;text-align:center;color:var(--sub);background:white;border:1px solid var(--line);border-radius:10px}
 .pager{text-align:center;margin:20px 0}
 footer{font-size:11px;color:#8390a1;margin-top:20px;line-height:1.8}
+.notify{border:1px solid #d2dfef;border-radius:12px;padding:14px 17px;margin:18px 0;background:#fafdff;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.notify b{font-size:13px}.notify p{margin:2px 0 0;color:var(--sub);font-size:12px}.notify .actions{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.notify button{font-size:12px;padding:8px 10px}.alerts{border:1px solid #f3dfbd;background:#fffdf8;border-radius:12px;padding:14px 17px;margin:15px 0}
+.alerts h2{font-size:14px;margin:0 0 7px}.alerts a{display:block;margin:5px 0;font-size:13px}
+.info-note{font-size:12px;border-left:2px solid #d3deec;padding:5px 10px;color:#6a7690;margin:10px 0 2px}
+.chip.ai{background:#e8f5ef;color:#19714b}.chip.source{background:#f3f5f9;color:#66778f}
 .quick{color:var(--blue);border:0;background:transparent;font-size:12px;text-decoration:underline;padding:3px 5px}
 @media(max-width:660px){.wrap{padding:20px 12px 50px}header{flex-direction:column;align-items:flex-start}h1{font-size:23px}.metrics{gap:6px}.metric{padding:11px}.metric strong{font-size:17px}.metric span{font-size:10px}.filters{gap:8px;padding:10px}.filters input{flex:1 1 100%;min-width:0}.filters select{flex:1 1 45%}.filters button{flex:1 1 40%}.article{padding:14px}.article h2{font-size:15px}}
 </style>
@@ -45,6 +52,15 @@ footer{font-size:11px;color:#8390a1;margin-top:20px;line-height:1.8}
 <div class="label">U.S. DRUG REGULATORY INTELLIGENCE</div>
 <h1>FDA 의약품 규제 모니터</h1>
 <p class="subtitle">허가·적응증 확대·안전성·리콜·가이드라인·규제 발표를 공식 자료에서 자동 수집합니다.</p>
+<section class="notify" aria-label="FDA 중요 발표 푸시 알림">
+ <div><b>중요 발표 자동알림</b><p id="pushStatus">기기 알림 설정 확인 중…</p></div>
+ <div class="actions"><button id="pushEnable" type="button">중요 발표 알림 받기</button>
+ <button id="pushTest" type="button" class="secondary" hidden>테스트 발송</button>
+ <button id="pushDisable" type="button" class="secondary" hidden>알림 끄기</button></div>
+</section>
+<section class="alerts" id="alertSection" hidden aria-label="최근 중요 발표">
+ <h2>새로 확인된 중요 FDA 발표</h2><div id="alertList"></div>
+</section>
 <section class="metrics" aria-label="수집 상태">
 <div class="metric"><strong id="count">—</strong><span>현재 검색 결과 표시 건수</span></div>
 <div class="metric"><strong>1시간</strong><span>FDA 뉴스·안전성·허가</span></div>
@@ -64,7 +80,7 @@ footer{font-size:11px;color:#8390a1;margin-top:20px;line-height:1.8}
 <div class="pager"><button class="secondary" id="more" type="button" hidden>더 보기</button></div>
 </main>
 <footer>자료 출처: 미국 FDA · openFDA · Federal Register. 원문과 발표 날짜를 우선 확인하세요.
-<br>시험 운영 중인 자동 수집 서비스입니다. 번역·AI 요약은 준비 중이며, 자료의 규제적 의미는 원문으로 최종 확인해야 합니다. 수집 주기는 실제 FDA 발표·데이터 반영 시점을 의미하지 않습니다.</footer>
+<br>시험 운영 중인 자동 수집·AI 요약 서비스입니다. AI 결과는 원문 확인 전 잠정 분류이며, 규제적 의미는 원문으로 최종 확인해야 합니다. 수집 주기는 FDA 발표·데이터 반영 시점을 의미하지 않습니다.</footer>
 </div>
 <script>
 "use strict";
@@ -80,8 +96,11 @@ function render(item){
  add("span",row,date(item.published_at||item.first_seen_at),"date");
  add("span",row,labels[item.category]||"FDA","chip");
  if(item.importance>=4)add("span",row,"중요도 "+item.importance+"/5","chip importance");
+ add("span",row,item.ai_status==="complete"?"AI 요약":"원문 수집","chip "+(item.ai_status==="complete"?"ai":"source"));
+ if(item.is_new_decision===false)add("span",row,"이전 자료·안내 페이지 가능성","chip source");
  const h=add("h2",section,item.title_ko||item.title_en);
- if(item.summary_ko||item.summary_en)add("p",section,(item.summary_ko||item.summary_en).slice(0,550));
+ if(item.summary_ko||item.summary_en)add("p",section,(item.summary_ko||item.summary_en).slice(0,750));
+ if(item.ai_editorial_note&&item.ai_status==="complete")add("div",section,"확인 필요: "+item.ai_editorial_note,"info-note");
  const a=add("a",section,"FDA 원문 보기","original");a.href=item.url;a.target="_blank";a.rel="noopener noreferrer";
  if(item.pdf_url){add("span",section," · ");const p=add("a",section,"PDF","original");p.href=item.pdf_url;p.target="_blank";p.rel="noopener noreferrer"}
  return section;
@@ -91,12 +110,23 @@ async function load(reset=true){
  if(reset){offset=0;$("articles").replaceChildren();$("count").textContent="—";}
  $("status").textContent="자료 확인 중…";
  const q=new URLSearchParams({limit:"30",offset:String(offset)});
+ if(location.search.includes("entry=")&&!window._fdaDiscardEntry){
+  const id=Number(new URLSearchParams(location.search).get("entry"));
+  if(Number.isInteger(id)&&id>0)q.set("entry",String(id));
+ }
  if($("query").value.trim())q.set("q",$("query").value.trim());
  if($("category").value)q.set("category",$("category").value);
  try{
   const r=await fetch(API+"?"+q.toString(),{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
   const data=await r.json();if(data.error)throw Error(data.error);
   const items=data.items||[];for(const item of items)render(item);
+  const alerts=Array.isArray(data.alerts)?data.alerts:[];
+  $("alertSection").hidden=!alerts.length;
+  const list=$("alertList");list.replaceChildren();
+  for(const a of alerts.slice(0,6)){
+   const link=add("a",list,(a.title_ko||a.title_en)+" · "+date(a.alert_eligible_at));
+   link.href="?entry="+a.id;
+  }
   offset+=items.length;
   $("count").textContent=offset+"건";
   $("more").hidden=!data.pagination?.has_more||items.length===0;
@@ -106,11 +136,12 @@ async function load(reset=true){
  }catch(e){$("status").textContent="연결 오류";add("div",$("articles"),"현재 자료를 가져올 수 없습니다. 잠시 후 다시 시도해 주세요. ("+e.message+")","empty")}
  finally{busy=false;$("more").disabled=false}
 }
-$("searchForm").addEventListener("submit",e=>{e.preventDefault();load(true)});
-$("reset").addEventListener("click",()=>{$("query").value="";$("category").value="";load(true)});
+$("searchForm").addEventListener("submit",e=>{e.preventDefault();window._fdaDiscardEntry=true;load(true)});
+$("reset").addEventListener("click",()=>{$("query").value="";$("category").value="";window._fdaDiscardEntry=true;load(true)});
 $("more").addEventListener("click",()=>load(false));
-$("zolgensma").addEventListener("click",()=>{$("query").value="Zolgensma";$("category").value="";load(true)});
-$("safety").addEventListener("click",()=>{$("query").value="";$("category").value="safety";load(true)});
+$("zolgensma").addEventListener("click",()=>{$("query").value="Zolgensma";$("category").value="";window._fdaDiscardEntry=true;load(true)});
+$("safety").addEventListener("click",()=>{$("query").value="";$("category").value="safety";window._fdaDiscardEntry=true;load(true)});
 load(true);
 </script>
+<script src="./push-ui.js" defer></script>
 </body></html>
