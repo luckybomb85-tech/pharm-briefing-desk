@@ -7,7 +7,7 @@
 <meta name="description" content="FDA 의약품 주요 발표·안전성·허가·가이드라인 자동 모니터">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
-<title>FDA 모니터링</title>
+<title>데일리팜 FDA 워치</title>
 <style>
 :root{--ink:#16263c;--sub:#62738b;--line:#e1e7ef;--bg:#f7f8fa;--blue:#245ba3;--hover:#eef4fb}
 *{box-sizing:border-box}
@@ -99,11 +99,27 @@ dialog::backdrop{background:#11203470}
 .inline-retry:disabled{opacity:.55;cursor:default}
 .page-error{font-size:12px;color:#85543a;border:1px solid #eedccd;padding:10px 12px;background:#fffaf4;border-radius:8px}
 
+
+.brand-heading{display:flex;align-items:center;gap:7px;min-width:0;white-space:nowrap}
+.brand-wordmark{position:relative;display:block;flex:0 0 115px;width:115px;height:31px;overflow:hidden;background:white}
+.brand-wordmark img{position:absolute;width:123px;height:123px;top:50%;left:50%;transform:translate(-50%,-50%);object-fit:contain}
+.brand-fallback{position:absolute;inset:0;display:flex;align-items:center;font-size:19px;letter-spacing:-1px;font-weight:800;color:#0874c9}
+.brand-title{font-size:23px;letter-spacing:-.8px;font-weight:800;white-space:nowrap}
+.article-meta .meta-source{margin-left:2px;color:#245ba3;font-size:11px;font-weight:650;white-space:nowrap;text-decoration:underline;text-underline-offset:2px}
+.article-meta .meta-source:hover{text-decoration:none}
+@media(max-width:550px){
+ .brand-heading{gap:5px}
+ .brand-wordmark{flex-basis:103px;width:103px;height:29px}
+ .brand-wordmark img{width:111px;height:111px}
+ .brand-fallback{font-size:17px}
+ .brand-title{font-size:20px}
+ .article-meta .meta-source{font-size:10.5px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><h1>FDA 모니터링</h1>
+<header><h1 class="brand-heading" aria-label="데일리팜 FDA 워치"><span class="brand-wordmark" aria-hidden="true"><span class="brand-fallback">데일리팜</span><img loading="eager" decoding="async" src="https://cdn.imweb.me/thumbnail/20230623/bb848183f99cf.jpg" alt=""></span><span class="brand-title">FDA 워치</span></h1>
 <div class="head-actions">
 <button class="icon-button" id="bellBtn" type="button" title="자동알림 켜기" aria-label="자동알림 켜기">🔔</button>
 <button class="icon-button" id="settingsBtn" type="button" title="설정" aria-label="설정">⚙️</button>
@@ -114,11 +130,11 @@ dialog::backdrop{background:#11203470}
 <div id="majorList"><div class="major-empty">주요 발표를 확인하고 있습니다.</div></div>
 </section>
 <form id="searchForm" class="search" role="search">
-<select id="category" aria-label="분야"><option value="">전체 분야</option>
+<select id="category" aria-label="분야별 검색"><option value="">분야별 검색</option>
 <option value="safety">안전성</option><option value="approval">허가·적응증</option>
 <option value="recall">리콜·회수</option><option value="guidance">가이드라인</option>
 <option value="regulation">규제정책</option><option value="general">기타 발표</option></select>
-<input id="query" type="search" aria-label="검색어" placeholder="제품명·성분명·FDA 발표 검색">
+<input id="query" type="search" aria-label="직접 검색(영문)" placeholder="직접 검색(영문)">
 <button type="submit" title="검색" aria-label="검색">⌕</button>
 </form>
 <div class="meta-line"><span id="status">자료 확인 중…</span><button class="back" id="backBtn" type="button" hidden>전체 목록으로</button></div>
@@ -127,7 +143,7 @@ dialog::backdrop{background:#11203470}
 <span id="loadSpinner" class="spinner" hidden aria-hidden="true"></span>
 <span id="loadText">10건 더 보기 ↓</span></button></div>
 </main>
-<footer>출처: 미국 FDA · openFDA · Federal Register. 자동 번역·분류 결과는 원문 확인이 필요하며, 게시물 수정일과 실제 규제 결정일은 다를 수 있습니다.</footer>
+<footer>출처: 미국 FDA · openFDA · Federal Register. FDA의 공식 운영·후원 서비스가 아닙니다. 자동 번역·분류 결과는 원문 확인이 필요하며, 게시물 수정일과 실제 규제 결정일은 다를 수 있습니다.</footer>
 </div>
 
 <dialog id="settingsDialog" aria-label="FDA 모니터링 설정">
@@ -308,13 +324,13 @@ function renderEntry(x){
  node("time",meta,(x.decision_date?"결정일 ":"게시일 ")+formatDay(x.event_date||x.decision_date));
  node("span",meta,names[x.category]||"FDA","tag");
  if(x.importance>=4)node("span",meta,"주요","tag high");
+ const link=node("a",meta,"FDA 원문 보기 ↗","original meta-source");
+ link.href=x.url;link.target="_blank";link.rel="noopener noreferrer";
+ link.title="FDA 원문 새 창에서 열기";
+ link.setAttribute("aria-label","FDA 원문 보기 (새 창)");
  const heading=node("h4",card,titleOf(x));
  let paragraph=null;
  if(summaryOf(x))paragraph=node("p",card,summaryOf(x));
- const link=node("a",card,"FDA 원문 보기","original");
- link.href=x.url;link.target="_blank";link.rel="noopener noreferrer";
- if(x.pdf_url){node("span",card," · ");const pdf=node("a",card,"PDF","original");
- pdf.href=x.pdf_url;pdf.target="_blank";pdf.rel="noopener noreferrer";}
  retryButton(x,card,heading,paragraph);
 }
 async function loadPage(reset=false){
