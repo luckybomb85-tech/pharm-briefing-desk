@@ -5,6 +5,7 @@ on:
     paths:
       - 'index.html'
       - 'mfds/**'
+      - 'fda/**'
       - 'global/**'
       - 'domestic/**'
       - 'data/**'
@@ -54,6 +55,13 @@ jobs:
           done
           mkdir -p _site/mfds
           cp -R mfds/. _site/mfds/
+          mkdir -p _site/fda
+          cp -R fda/. _site/fda/
+          test -s _site/fda/index.html
+          test -s _site/fda/sw.js
+          test -s _site/fda/push-ui.js
+          test -s _site/fda/manifest.webmanifest
+          test -s _site/fda/icon.svg
           test -s _site/mfds/index.html
           test -s _site/mfds/sw.js
           test -s _site/mfds/push-ui.js
