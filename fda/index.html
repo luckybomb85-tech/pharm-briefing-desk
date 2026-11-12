@@ -1,147 +1,332 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FDA 의약품 규제 모니터 | 약학 브리핑 데스크</title>
-<meta name="description" content="FDA 의약품 허가·안전성·가이드라인·규제 발표 자동 모니터">
-<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f7fa">
+<meta name="description" content="FDA 의약품 주요 발표·안전성·허가·가이드라인 자동 모니터">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>FDA 모니터링</title>
 <style>
-:root{--ink:#18243b;--sub:#69778c;--blue:#23539d;--line:#e2e8f1;--bg:#f5f7fb;--teal:#16745c}
-*{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55}
+:root{--ink:#16263c;--sub:#62738b;--line:#e1e7ef;--bg:#f7f8fa;--blue:#245ba3;--hover:#eef4fb}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.48 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}
 a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1100px;margin:0 auto;padding:26px 20px 65px}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:23px}
-.brand{font-weight:850;letter-spacing:-.4px}nav{display:flex;gap:13px;font-size:12px;color:var(--sub)}nav a{white-space:nowrap}
-h1{font-size:28px;letter-spacing:-1.1px;margin:4px 0 5px}
-p.subtitle{color:var(--sub);font-size:13px;margin:0}
-.label{color:#396194;font-size:11px;font-weight:800;letter-spacing:.12em}
-.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0 18px}
-.metric{padding:15px 18px;background:white;border:1px solid var(--line);border-radius:12px}
-.metric strong{font-size:22px;display:block;font-variant-numeric:tabular-nums;line-height:1.5}.metric span{font-size:11px;color:var(--sub)}
-.filters{border:1px solid var(--line);background:white;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.filters input,.filters select{height:42px;border:1px solid #d2dbe8;border-radius:7px;padding:9px 11px;background:white;font:inherit;color:var(--ink)}
-.filters input{flex:2 1 240px;min-width:190px}.filters select{flex:1 1 165px}
-button{font:inherit;cursor:pointer;border-radius:7px;padding:10px 14px;border:1px solid var(--blue);background:var(--blue);color:#fff;font-weight:750}
-button.secondary{background:white;color:var(--blue)}button:disabled{opacity:.45;cursor:not-allowed}
-.hints{font-size:12px;color:var(--sub);display:flex;justify-content:space-between;gap:8px;align-items:center;margin:14px 2px;flex-wrap:wrap}
-#status{color:var(--sub)}.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#1f9e65;margin-right:5px}
-.list{display:grid;gap:9px}.article{background:#fff;border:1px solid var(--line);padding:17px 19px;border-radius:11px}
-.top{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
-.date{font-size:12px;font-weight:700;color:#4c6080}.chip{background:#ebf1fb;border-radius:5px;padding:2px 7px;font-size:11px;color:#2e5793;font-weight:750}.importance{color:#a05f24;background:#fff3e8}
-.article h2{font-size:17px;letter-spacing:-.4px;margin:3px 0 9px;line-height:1.45}
-.article p{font-size:13px;color:#506176;margin:0 0 9px;line-height:1.7;overflow-wrap:anywhere}
-.original{font-size:12px;font-weight:700}
-.empty{padding:60px 12px;text-align:center;color:var(--sub);background:white;border:1px solid var(--line);border-radius:10px}
-.pager{text-align:center;margin:20px 0}
-footer{font-size:11px;color:#8390a1;margin-top:20px;line-height:1.8}
-.notify{border:1px solid #d2dfef;border-radius:12px;padding:14px 17px;margin:18px 0;background:#fafdff;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
-.notify b{font-size:13px}.notify p{margin:2px 0 0;color:var(--sub);font-size:12px}.notify .actions{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
-.notify button{font-size:12px;padding:8px 10px}.alerts{border:1px solid #f3dfbd;background:#fffdf8;border-radius:12px;padding:14px 17px;margin:15px 0}
-.alerts h2{font-size:14px;margin:0 0 7px}.alerts a{display:block;margin:5px 0;font-size:13px}
-.info-note{font-size:12px;border-left:2px solid #d3deec;padding:5px 10px;color:#6a7690;margin:10px 0 2px}
-.chip.ai{background:#e8f5ef;color:#19714b}.chip.source{background:#f3f5f9;color:#66778f}
-.quick{color:var(--blue);border:0;background:transparent;font-size:12px;text-decoration:underline;padding:3px 5px}
-@media(max-width:660px){.wrap{padding:20px 12px 50px}header{flex-direction:column;align-items:flex-start}h1{font-size:23px}.metrics{gap:6px}.metric{padding:11px}.metric strong{font-size:17px}.metric span{font-size:10px}.filters{gap:8px;padding:10px}.filters input{flex:1 1 100%;min-width:0}.filters select{flex:1 1 45%}.filters button{flex:1 1 40%}.article{padding:14px}.article h2{font-size:15px}}
+[hidden]{display:none!important}
+.wrap{max-width:960px;margin:0 auto;padding:15px 17px 48px}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+h1{font-size:25px;letter-spacing:-.9px;margin:0;font-weight:800;line-height:1.3}
+.head-actions{display:flex;gap:6px;align-items:center}
+.icon-button{width:40px;height:40px;background:white;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;font-size:20px;line-height:1}
+.icon-button:hover,.icon-button:focus-visible{background:var(--hover);border-color:#9bb7d5}
+.icon-button.active{border-color:#83c7a3;background:#eaf8ef}
+.major{background:white;border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-bottom:12px}
+.section-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:9px}
+h2{font-size:15px;font-weight:790;margin:0;letter-spacing:-.35px}
+.small{font-size:11px;color:var(--sub)}
+.major-day{display:grid;grid-template-columns:72px minmax(0,1fr);border-top:1px solid #edf0f4;padding:8px 0;gap:9px}
+.major-day:first-child{border-top:0;padding-top:2px}
+.major-day time{font-size:12px;font-weight:750;color:#4b6585}
+.major-links{display:flex;flex-direction:column;gap:5px}
+.major-links a{font-size:13px;line-height:1.48;font-weight:600;color:#203d69;overflow-wrap:anywhere}
+.major-links a:hover{text-decoration:underline}
+.major-empty{color:var(--sub);padding:6px 0;font-size:12px}
+.search{display:grid;grid-template-columns:minmax(0,1fr) 122px 40px;align-items:center;gap:7px;margin:0 0 11px}
+.search input,.search select{height:40px;border:1px solid #d4dce8;background:white;border-radius:8px;padding:7px 10px;min-width:0;color:var(--ink)}
+.search button{height:40px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:white;font-size:18px;line-height:1}
+.search input:focus,.search select:focus{outline:2px solid #b4cae9;outline-offset:1px}
+.meta-line{display:flex;justify-content:space-between;align-items:center;gap:9px;font-size:11px;color:var(--sub);padding:1px 1px 7px}
+.window-head{display:flex;justify-content:space-between;gap:8px;align-items:center;margin:12px 0 7px}
+.window-head h3{font-size:13px;letter-spacing:-.2px;margin:0}
+.window-head small{font-size:11px;color:var(--sub)}
+.entries{display:grid;gap:7px}
+.article{border:1px solid var(--line);border-radius:10px;background:white;padding:11px 14px}
+.article-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:var(--sub);font-size:11px}
+.tag{border-radius:5px;padding:2px 6px;font-size:10.5px;font-weight:750;background:#edf2fa;color:#3e6090}
+.tag.high{background:#fff1e3;color:#98601c}
+.article h4{font-size:15px;line-height:1.42;margin:6px 0 4px;letter-spacing:-.25px;font-weight:740;overflow-wrap:anywhere}
+.article p{font-size:12.5px;color:#55687b;line-height:1.63;margin:0 0 6px;overflow-wrap:anywhere}
+.original{font-size:11.5px;font-weight:650}
+.empty{border:1px solid var(--line);background:white;border-radius:10px;padding:26px 10px;color:var(--sub);text-align:center;font-size:13px}
+.load{margin:12px 0 0;text-align:center}
+.load button{padding:11px 20px;border:1px solid #b9cde5;background:white;color:#23539d;border-radius:9px;font-weight:750;min-width:205px}
+.load button:disabled{opacity:.55;cursor:default}
+.back{border:0;color:var(--blue);background:none;text-decoration:underline;font-size:12px;margin-left:auto}
+footer{font-size:10.5px;line-height:1.6;color:#8995a5;margin-top:26px}
+dialog{border:1px solid #d9e2ec;border-radius:15px;background:white;color:var(--ink);padding:0;width:min(92vw,480px);max-height:86dvh;overflow:auto;box-shadow:0 14px 65px #16263c33;position:fixed;top:8vh;left:50%;transform:translateX(-50%);margin:0}
+dialog::backdrop{background:#11203470}
+.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:15px 17px;border-bottom:1px solid var(--line)}
+.dialog-head h2{font-size:18px}.close{width:31px;height:31px;border:0;background:#f1f4f8;color:#465975;border-radius:7px;font-size:20px}
+.dialog-body{padding:15px 17px 18px}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label,.pref-title{font-size:12.5px;font-weight:750}
+.field select{height:42px;border:1px solid #d0dae6;border-radius:8px;background:white;color:var(--ink);padding:8px 10px}
+.help{color:var(--sub);font-size:11.5px;line-height:1.65;margin:6px 0 14px}
+.pref-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:9px 0 15px}
+.pref-group label{display:flex;align-items:center;gap:7px;font-size:13px;padding:8px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.pref-group input{width:17px;height:17px;accent-color:#245ba3}
+.actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.action{border:1px solid #b9cbe2;border-radius:8px;background:white;color:var(--blue);padding:9px 12px;font-weight:700}
+.action.primary{background:var(--blue);border-color:var(--blue);color:white}
+.status{font-size:12px;color:var(--sub);margin:0 0 13px}
+.instructions{margin:0 0 15px;padding:11px 13px;background:#f5f8fc;border:1px solid #e1e9f4;border-radius:9px;font-size:12.5px;line-height:1.75}
+.instructions ol{padding-left:20px;margin:6px 0}
+@media(max-width:550px){.wrap{padding:12px 10px 38px}h1{font-size:23px}header{margin-bottom:11px}
+.icon-button{width:37px;height:37px;font-size:20px}
+.major{padding:10px 11px;margin-bottom:10px}.major-day{grid-template-columns:65px minmax(0,1fr)}
+.search{grid-template-columns:minmax(0,1fr) 94px 39px;gap:5px}
+.search input,.search select{padding:6px 7px;font-size:12px}.search input::placeholder{font-size:11.5px}
+.article{padding:10px 11px}.article h4{font-size:14px}.article p{font-size:12px}
+.dialog-body{padding:14px}.pref-group{gap:6px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><div class="brand">약학 브리핑 데스크 <span style="color:#2f64af">/ FDA</span></div>
-<nav><a href="../">브리핑 데스크</a><a href="../mfds/">식약처 적응증 모니터</a></nav></header>
+<header><h1>FDA 모니터링</h1>
+<div class="head-actions">
+<button class="icon-button" id="bellBtn" type="button" title="자동알림 켜기" aria-label="자동알림 켜기">🔔</button>
+<button class="icon-button" id="settingsBtn" type="button" title="설정" aria-label="설정">⚙️</button>
+</div></header>
 <main>
-<div class="label">U.S. DRUG REGULATORY INTELLIGENCE</div>
-<h1>FDA 의약품 규제 모니터</h1>
-<p class="subtitle">허가·적응증 확대·안전성·리콜·가이드라인·규제 발표를 공식 자료에서 자동 수집합니다.</p>
-<section class="notify" aria-label="FDA 중요 발표 푸시 알림">
- <div><b>중요 발표 자동알림</b><p id="pushStatus">기기 알림 설정 확인 중…</p></div>
- <div class="actions"><button id="pushEnable" type="button">중요 발표 알림 받기</button>
- <button id="pushTest" type="button" class="secondary" hidden>테스트 발송</button>
- <button id="pushDisable" type="button" class="secondary" hidden>알림 끄기</button></div>
+<section class="major" aria-label="새로 확인된 주요 FDA 발표">
+<div class="section-head"><h2>새로 확인된 주요 FDA 발표</h2><span class="small" id="majorPeriod">최근 7일</span></div>
+<div id="majorList"><div class="major-empty">주요 발표를 확인하고 있습니다.</div></div>
 </section>
-<section class="alerts" id="alertSection" hidden aria-label="최근 중요 발표">
- <h2>새로 확인된 중요 FDA 발표</h2><div id="alertList"></div>
-</section>
-<section class="metrics" aria-label="수집 상태">
-<div class="metric"><strong id="count">—</strong><span>현재 검색 결과 표시 건수</span></div>
-<div class="metric"><strong>1시간</strong><span>FDA 뉴스·안전성·허가</span></div>
-<div class="metric"><strong>3시간</strong><span>규제·가이드라인 관련 공고</span></div>
-</section>
-<form class="filters" id="searchForm">
-<input id="query" type="search" placeholder="한글·영문 제품명·성분명·FDA 발표 검색" aria-label="FDA 발표 검색">
-<select id="category" aria-label="분야 선택">
-<option value="">전체 분야</option><option value="safety">안전성</option><option value="approval">허가·적응증</option><option value="recall">리콜·회수</option><option value="guidance">가이드라인</option><option value="regulation">규제정책</option><option value="general">기타 발표</option>
-</select>
-<button type="submit">검색</button><button type="button" class="secondary" id="reset">초기화</button>
+<form id="searchForm" class="search" role="search">
+<input id="query" type="search" aria-label="의약품 검색" placeholder="제품명·성분명·FDA 발표 검색">
+<select id="category" aria-label="분야"><option value="">전체 분야</option><option value="safety">안전성</option>
+<option value="approval">허가·적응증</option><option value="recall">리콜·회수</option>
+<option value="guidance">가이드라인</option><option value="regulation">규제정책</option>
+<option value="general">기타 발표</option></select>
+<button type="submit" title="검색" aria-label="검색">⌕</button>
 </form>
-<div class="hints"><div id="status"><span class="live"></span>시스템 연결 중…</div>
-<div>빠른 검색: <button class="quick" type="button" id="zolgensma">Zolgensma</button>
-<button class="quick" type="button" id="safety">안전성 발표</button></div></div>
-<section id="articles" class="list" aria-live="polite"><div class="empty">FDA 자료를 불러오고 있습니다.</div></section>
-<div class="pager"><button class="secondary" id="more" type="button" hidden>더 보기</button></div>
+<div class="meta-line"><span id="status">자료 확인 중…</span><button class="back" id="backBtn" type="button" hidden>전체 목록으로</button></div>
+<div id="results" aria-live="polite"></div>
+<div class="load"><button id="loadOlder" type="button">이전 7일 불러오기 ↓</button></div>
 </main>
-<footer>자료 출처: 미국 FDA · openFDA · Federal Register. 원문과 발표 날짜를 우선 확인하세요.
-<br>시험 운영 중인 자동 수집·AI 요약 서비스입니다. AI 결과는 원문 확인 전 잠정 분류이며, 규제적 의미는 원문으로 최종 확인해야 합니다. 수집 주기는 FDA 발표·데이터 반영 시점을 의미하지 않습니다.</footer>
+<footer>출처: 미국 FDA · openFDA · Federal Register. 자동 번역·분류 결과는 원문 확인이 필요하며, 게시물 수정일과 실제 규제 결정일은 다를 수 있습니다.</footer>
 </div>
+
+<dialog id="settingsDialog" aria-label="FDA 모니터링 설정">
+<div class="dialog-head"><h2>설정</h2><button type="button" class="close" data-close="settingsDialog" aria-label="닫기">×</button></div>
+<form id="settingsForm" class="dialog-body">
+<div class="field"><label for="days">검색 결과 표시 기간</label>
+<select id="days"><option value="7">최근 7일 (기본)</option><option value="14">최근 14일</option><option value="30">최근 30일</option><option value="90">최근 90일</option></select></div>
+<div class="field"><label for="newsMinutes">주요 뉴스·안전성·허가 새로 확인</label>
+<select id="newsMinutes"><option value="30">30분 간격</option><option value="60">1시간 간격</option><option value="180">3시간 간격</option><option value="360">6시간 간격</option></select></div>
+<div class="field"><label for="policyMinutes">규제·가이드라인 공고 새로 확인</label>
+<select id="policyMinutes"><option value="60">1시간 간격</option><option value="180">3시간 간격</option><option value="360">6시간 간격</option><option value="720">12시간 간격</option></select></div>
+<p class="help">이 간격은 이 기기의 화면 업데이트 주기야. 서버의 FDA 원문 자동 수집은 현재 1시간·3시간 간격으로 유지돼. 서버 전체 주기 변경은 관리자 권한이 필요해.</p>
+<div class="pref-title">알림을 받을 항목</div>
+<div class="pref-group">
+<label><input type="checkbox" data-alert="safety" checked> 안전성</label>
+<label><input type="checkbox" data-alert="approval" checked> 허가·적응증</label>
+<label><input type="checkbox" data-alert="recall" checked> 리콜·회수</label>
+<label><input type="checkbox" data-alert="guidance" checked> 가이드라인</label>
+<label><input type="checkbox" data-alert="regulation" checked> 규제정책</label>
+</div>
+<div class="status" id="settingsStatus" role="status">이 기기에서 사용할 설정을 저장해.</div>
+<div class="actions"><button class="action" type="button" data-close="settingsDialog">취소</button><button class="action primary" type="submit">설정 저장</button></div>
+</form>
+</dialog>
+
+<dialog id="notifyDialog" aria-label="FDA 자동알림 설정 안내">
+<div class="dialog-head"><h2>FDA 자동알림</h2><button type="button" class="close" data-close="notifyDialog" aria-label="닫기">×</button></div>
+<div class="dialog-body">
+<p class="status" id="notifyMessage" role="status">기기의 알림 상태를 확인합니다.</p>
+<div class="instructions" id="iosInstructions" hidden>
+<strong>아이폰 · 아이패드에서 설정</strong>
+<ol><li>이 페이지를 Safari에서 열어.</li><li>Safari 하단 공유 버튼(□↑)을 눌러.</li><li><strong>홈 화면에 추가</strong>를 선택해.</li><li>홈 화면의 FDA 모니터링 앱을 실행한 뒤 🔔을 눌러 알림을 허용해.</li></ol>
+</div>
+<div class="instructions" id="androidInstructions" hidden>
+<strong>갤럭시 · 안드로이드에서 설정</strong>
+<ol><li>Chrome 또는 삼성 인터넷에서 이 페이지를 열어.</li><li>🔔 버튼을 누르고 알림을 허용해.</li><li>차단됐으면 브라우저 설정 → 사이트 설정 → 알림을 허용해.</li><li>기기 설정 → 앱 → 사용 중인 브라우저 → 알림도 켜져 있는지 확인해.</li></ol>
+</div>
+<div class="instructions" id="otherInstructions" hidden>
+<strong>브라우저 알림 안내</strong>
+<p>이 사이트에 대한 알림 권한을 허용해. 이미 차단했다면 브라우저의 사이트 권한에서 알림 차단을 해제해.</p>
+</div>
+<div class="actions">
+<button id="notifyCopyLink" class="action" type="button">주소 복사</button>
+<button id="notifyTest" class="action" type="button" hidden>테스트</button>
+<button id="notifyDisable" class="action" type="button" hidden>알림 끄기</button>
+<button id="notifyEnable" class="action primary" type="button">알림 켜기</button>
+</div>
+</div>
+</dialog>
+
 <script>
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/fda-monitor-feed";
 const $=id=>document.getElementById(id);
-const labels={safety:"안전성",approval:"허가·적응증",recall:"리콜·회수",guidance:"가이드라인",regulation:"규제정책",general:"기타"};
-let offset=0,busy=false;
-const add=(tag,parent,text,cl)=>{const el=document.createElement(tag);if(cl)el.className=cl;if(text!==undefined)el.textContent=text;parent.appendChild(el);return el};
-function date(v){if(!v)return"발표일 미확인";const d=new Date(v);return Number.isNaN(+d)?"발표일 미확인":new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",year:"numeric",month:"2-digit",day:"2-digit"}).format(d)}
-function render(item){
- const section=add("article",$("articles"),undefined,"article");
- const row=add("div",section,undefined,"top");
- add("span",row,item.decision_date?"결정일 "+date(item.decision_date):"게시·수정 "+date(item.published_at||item.first_seen_at),"date");
- add("span",row,labels[item.category]||"FDA","chip");
- if(item.importance>=4)add("span",row,"중요도 "+item.importance+"/5","chip importance");
- add("span",row,item.ai_status==="complete"?"AI 요약":"원문 수집","chip "+(item.ai_status==="complete"?"ai":"source"));
- if(item.is_new_decision===false)add("span",row,"이전 자료·안내 페이지 가능성","chip source");
- const h=add("h2",section,item.title_ko||item.title_en);
- if(item.summary_ko||item.summary_en)add("p",section,(item.summary_ko||item.summary_en).slice(0,750));
- if(item.ai_editorial_note&&item.ai_status==="complete")add("div",section,"확인 필요: "+item.ai_editorial_note,"info-note");
- const a=add("a",section,"FDA 원문 보기","original");a.href=item.url;a.target="_blank";a.rel="noopener noreferrer";
- if(item.pdf_url){add("span",section," · ");const p=add("a",section,"PDF","original");p.href=item.pdf_url;p.target="_blank";p.rel="noopener noreferrer"}
- return section;
+const names={safety:"안전성",approval:"허가·적응증",recall:"리콜·회수",guidance:"가이드라인",regulation:"규제정책",general:"기타 발표"};
+const SETTINGS="fda_monitor_settings_v3";
+const DEFAULT={days:7,newsMinutes:60,policyMinutes:180,alerts:{safety:true,approval:true,recall:true,guidance:true,regulation:true}};
+function getSaved(){try{const x=JSON.parse(localStorage.getItem(SETTINGS)||"null");if(!x)return {...DEFAULT,alerts:{...DEFAULT.alerts}};return {...DEFAULT,...x,alerts:{...DEFAULT.alerts,...x.alerts}}}catch{return {...DEFAULT,alerts:{...DEFAULT.alerts}}}}
+let prefs=getSaved(),olderCount=0,busy=false,seq=0,timer=null,entry=Number(new URLSearchParams(location.search).get("entry")||0)||0;
+const node=(tag,parent,text,cls)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined&&text!==null)e.textContent=text;parent.append(e);return e};
+const safeDate=v=>/^\d{4}-\d{2}-\d{2}$/.test(String(v||""))?String(v).replace(/-/g,"."):String(v||"");
+function isoDay(offset){
+ const now=new Date(Date.now()+9*3600000);
+ const noon=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()+offset));
+ return noon.toISOString().slice(0,10);
 }
-async function load(reset=true){
- if(busy)return;busy=true;$("more").disabled=true;
- if(reset){offset=0;$("articles").replaceChildren();$("count").textContent="—";}
- $("status").textContent="자료 확인 중…";
- const q=new URLSearchParams({limit:"30",offset:String(offset)});
- if(location.search.includes("entry=")&&!window._fdaDiscardEntry){
-  const id=Number(new URLSearchParams(location.search).get("entry"));
-  if(Number.isInteger(id)&&id>0)q.set("entry",String(id));
+function periodText(weeks){
+ const end=isoDay(-weeks*prefs.days),start=isoDay(-weeks*prefs.days-prefs.days+1);
+ return start.replace(/-/g,".")+" ~ "+end.replace(/-/g,".");
+}
+function status(s){$("status").textContent=s}
+function titleOf(x){return x.title_ko||"한국어 제목 변환 중"}
+function summaryOf(x){return x.summary_ko||"한국어 요약을 준비하고 있습니다."}
+function showMajor(items){
+ const major=$("majorList");major.replaceChildren();$("majorPeriod").textContent="최근 "+prefs.days+"일";
+ if(entry>0){$("majorPeriod").textContent="주요 발표";return}
+ const grouped=new Map();
+ for(const item of items||[]){
+  const k=item.event_date||"날짜 미확인";
+  if(!grouped.has(k))grouped.set(k,[]);
+  grouped.get(k).push(item);
  }
- if($("query").value.trim())q.set("q",$("query").value.trim());
- if($("category").value)q.set("category",$("category").value);
- try{
-  const r=await fetch(API+"?"+q.toString(),{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
-  const data=await r.json();if(data.error)throw Error(data.error);
-  const items=data.items||[];for(const item of items)render(item);
-  const alerts=Array.isArray(data.alerts)?data.alerts:[];
-  $("alertSection").hidden=!alerts.length;
-  const list=$("alertList");list.replaceChildren();
-  for(const a of alerts.slice(0,6)){
-   const link=add("a",list,(a.title_ko||a.title_en)+" · "+date(a.alert_eligible_at));
-   link.href="?entry="+a.id;
+ if(!grouped.size){node("div",major,"해당 기간에 확인된 주요 발표가 없습니다.","major-empty");return}
+ for(const [day,events] of grouped){
+  const group=node("div",major,null,"major-day");
+  node("time",group,safeDate(day));
+  const links=node("div",group,null,"major-links");
+  for(const item of events){
+   const link=node("a",links,titleOf(item));link.href="?entry="+item.id;
   }
-  offset+=items.length;
-  $("count").textContent=offset+"건";
-  $("more").hidden=!data.pagination?.has_more||items.length===0;
-  const latest=(data.runs||[]).find(x=>x.status==="success"||x.status==="partial");
-  $("status").textContent=latest?"마지막 수집 "+new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",dateStyle:"short",timeStyle:"short"}).format(new Date(latest.finished_at||latest.started_at))+" · 수집기 정상":"수집 실행 내역 확인 중";
-  if(!offset)add("div",$("articles"),"검색 결과가 없습니다.","empty");
- }catch(e){$("status").textContent="연결 오류";add("div",$("articles"),"현재 자료를 가져올 수 없습니다. 잠시 후 다시 시도해 주세요. ("+e.message+")","empty")}
- finally{busy=false;$("more").disabled=false}
+ }
 }
-$("searchForm").addEventListener("submit",e=>{e.preventDefault();window._fdaDiscardEntry=true;load(true)});
-$("reset").addEventListener("click",()=>{$("query").value="";$("category").value="";window._fdaDiscardEntry=true;load(true)});
-$("more").addEventListener("click",()=>load(false));
-$("zolgensma").addEventListener("click",()=>{$("query").value="Zolgensma";$("category").value="";window._fdaDiscardEntry=true;load(true)});
-$("safety").addEventListener("click",()=>{$("query").value="";$("category").value="safety";window._fdaDiscardEntry=true;load(true)});
-load(true);
+function article(item,parent){
+ const el=node("article",parent,null,"article");
+ const meta=node("div",el,null,"article-meta");
+ node("time",meta,safeDate(item.event_date||item.decision_date||""));
+ node("span",meta,names[item.category]||"FDA","tag");
+ if(item.importance>=4)node("span",meta,"주요","tag high");
+ const h=node("h4",el,titleOf(item));
+ const p=node("p",el,summaryOf(item));
+ const a=node("a",el,"FDA 원문 보기","original");a.href=item.url;a.rel="noopener noreferrer";a.target="_blank";
+ if(item.pdf_url){node("span",el," · ");const pdf=node("a",el,"PDF","original");pdf.href=item.pdf_url;pdf.rel="noopener noreferrer";pdf.target="_blank";}
+ return el;
+}
+async function fetchWindow(weeks,options={}){
+ const current=seq;const args=new URLSearchParams({days:String(prefs.days),weeks:String(weeks),limit:"150",offset:"0"});
+ if(options.entry)args.set("entry",String(options.entry));
+ else {
+  if($("category").value)args.set("category",$("category").value);
+  if($("query").value.trim())args.set("q",$("query").value.trim());
+ }
+ const result=[];let major=null,runs=[];
+ let offset=0;
+ for(let batch=0;batch<7;batch++){
+  args.set("offset",String(offset));
+  const response=await fetch(API+"?"+args.toString(),{cache:"no-store"});
+  if(!response.ok)throw Error("HTTP "+response.status);
+  const data=await response.json();if(data.error)throw Error(data.error);
+  if(current!==seq)return null;
+  result.push(...(data.items||[]));
+  if(batch===0){major=data.major||[];runs=data.runs||[]}
+  if(!data.pagination?.has_more||!(data.items||[]).length)break;
+  offset+=data.items.length;
+ }
+ return {items:result,major,runs};
+}
+function renderWindow(weeks,data,replace=false){
+ const where=$("results");let container=$("window"+weeks);
+ if(!container){
+  container=node("section",where,null,"window");
+  container.id="window"+weeks;
+ }
+ container.replaceChildren();
+ const head=node("div",container,null,"window-head");
+ node("h3",head,weeks===0?"최근 "+prefs.days+"일":"이전 "+prefs.days+"일");
+ node("small",head,periodText(weeks));
+ const list=node("div",container,null,"entries");
+ if(!(data.items||[]).length){node("div",list,"해당 기간의 검색 결과가 없습니다.","empty");return}
+ const seen=new Set();
+ for(const item of data.items){
+  const key=String(item.url||"").replace(/^http:/,"https:").replace(/\/$/,"");
+  if(seen.has(key))continue;seen.add(key);
+  article(item,list);
+ }
+}
+async function refreshWeek(weeks,replace){
+ if(busy)return;
+ busy=true;$("loadOlder").disabled=true;
+ try{
+  const result=await fetchWindow(weeks,{entry:entry>0?entry:null});
+  if(!result)return;
+  renderWindow(weeks,result,replace);
+  if(weeks===0)showMajor(result.major);
+  const latest=(result.runs||[]).find(r=>r.status==="success"||r.status==="partial");
+  status(latest?"최근 FDA 자료 확인됨":"FDA 자료 확인");
+  if(!replace)olderCount=Math.max(olderCount,weeks+1);
+  $("loadOlder").hidden=entry>0;
+ }catch(e){
+  status("데이터 연결 확인 필요");
+  if(!replace){const window=node("div",$("results"),"자료를 가져오지 못했습니다. 다시 눌러 주세요.","empty");window.id="failedWindow";}
+ }finally{
+  busy=false;$("loadOlder").disabled=false;
+  $("loadOlder").textContent="이전 "+prefs.days+"일 불러오기 ↓";
+ }
+}
+function resetSearch(){
+ seq++;entry=0;history.replaceState(null,"",location.pathname);
+ $("results").replaceChildren();olderCount=0;
+ $("backBtn").hidden=true;$("loadOlder").hidden=false;
+ refreshWeek(0,false);
+}
+function restartTimer(){
+ if(timer){clearInterval(timer);timer=null}
+ const minutes=Math.min(prefs.newsMinutes,prefs.policyMinutes);
+ timer=setInterval(()=>{
+  if(document.visibilityState==="visible"&&!busy&&entry===0)refreshWeek(0,true);
+ },minutes*60000);
+}
+function loadSettings(){
+ $("days").value=String(prefs.days);$("newsMinutes").value=String(prefs.newsMinutes);
+ $("policyMinutes").value=String(prefs.policyMinutes);
+ for(const c of Object.keys(DEFAULT.alerts)){
+  const e=document.querySelector('[data-alert="'+c+'"]');if(e)e.checked=prefs.alerts[c]!==false;
+ }
+}
+function openDialog(id){const dialog=$(id);if(typeof dialog.showModal==="function"&&!dialog.open)dialog.showModal();else dialog.setAttribute("open","")}
+for(const b of document.querySelectorAll("[data-close]")){
+ b.addEventListener("click",()=>{const d=$(b.dataset.close);if(d.close)d.close();else d.removeAttribute("open")});
+}
+$("settingsBtn").addEventListener("click",()=>{
+ loadSettings();$("settingsStatus").textContent="설정을 변경한 뒤 저장하면 이 기기에 반영됩니다.";openDialog("settingsDialog");
+});
+$("settingsForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ prefs={
+ days:Number($("days").value),newsMinutes:Number($("newsMinutes").value),policyMinutes:Number($("policyMinutes").value),
+ alerts:Object.fromEntries(Object.keys(DEFAULT.alerts).map(k=>[k,document.querySelector('[data-alert="'+k+'"]').checked]))
+ };
+ try{localStorage.setItem(SETTINGS,JSON.stringify(prefs))}catch{}
+ $("settingsStatus").textContent="알림 항목을 저장하고 있습니다.";
+ try{if(window.FDAPush)await window.FDAPush.savePreferences(prefs.alerts);
+  $("settingsDialog").close();restartTimer();resetSearch();
+ }catch(err){$("settingsStatus").textContent="설정은 기기에 저장됐지만 알림 항목 동기화에 실패했습니다: "+err.message}
+});
+$("searchForm").addEventListener("submit",e=>{e.preventDefault();resetSearch()});
+$("category").addEventListener("change",resetSearch);
+$("query").addEventListener("search",()=>{if(!$("query").value)resetSearch()});
+$("loadOlder").addEventListener("click",async()=>{
+ if(busy||olderCount>=53)return;
+ const before=olderCount;await refreshWeek(before,false);
+ if(olderCount===before)$("loadOlder").textContent="다시 시도 ↓";
+ if(olderCount>=53)$("loadOlder").hidden=true;
+});
+$("backBtn").addEventListener("click",()=>{
+ $("query").value="";$("category").value="";resetSearch()
+});
+window.FDADashboard={getSettings:()=>prefs,openDialog,status,resetSearch};
+if(entry>0){$("backBtn").hidden=false;$("loadOlder").hidden=true;status("FDA 발표 상세 보기")}else{status("최근 FDA 발표")}
+refreshWeek(0,false);restartTimer();
 </script>
 <script src="./push-ui.js" defer></script>
 </body></html>
