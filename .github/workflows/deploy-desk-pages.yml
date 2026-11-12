@@ -67,6 +67,22 @@ jobs:
           test -s _site/mfds/push-ui.js
           test -s _site/mfds/manifest.webmanifest
           test -s _site/mfds/icon.svg
+      - name: Validate FDA website JavaScript and controls
+        run: |
+          node --check _site/fda/push-ui.js
+          node --check _site/fda/sw.js
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const vm=require('node:vm');
+          const html=fs.readFileSync('_site/fda/index.html','utf8');
+          const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
+          if(!scripts.length)throw Error('FDA inline script missing');
+          for(const [i,x] of scripts.entries())new vm.Script(x[1],{filename:'FDA-script-'+i});
+          for(const id of ['bellBtn','settingsBtn','majorList','searchForm','loadOlder','settingsForm','notifyDialog']){
+            if(!html.includes('id="'+id+'"'))throw Error('Missing FDA control: '+id);
+          }
+          console.log('FDA JavaScript syntax and required controls OK');
+          NODE
       - name: Verify Oct 13 domestic regression baseline is packaged
         run: |
           python - <<'PY'
