@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDA 의약품 규제 모니터 | 약학 브리핑 데스크</title>
+<meta name="description" content="FDA 의약품 허가·안전성·가이드라인·규제 발표 자동 모니터">
+<style>
+:root{--ink:#18243b;--sub:#69778c;--blue:#23539d;--line:#e2e8f1;--bg:#f5f7fb;--teal:#16745c}
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;margin:0;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1100px;margin:0 auto;padding:26px 20px 65px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:23px}
+.brand{font-weight:850;letter-spacing:-.4px}nav{display:flex;gap:13px;font-size:12px;color:var(--sub)}nav a{white-space:nowrap}
+h1{font-size:28px;letter-spacing:-1.1px;margin:4px 0 5px}
+p.subtitle{color:var(--sub);font-size:13px;margin:0}
+.label{color:#396194;font-size:11px;font-weight:800;letter-spacing:.12em}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0 18px}
+.metric{padding:15px 18px;background:white;border:1px solid var(--line);border-radius:12px}
+.metric strong{font-size:22px;display:block;font-variant-numeric:tabular-nums;line-height:1.5}.metric span{font-size:11px;color:var(--sub)}
+.filters{border:1px solid var(--line);background:white;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.filters input,.filters select{height:42px;border:1px solid #d2dbe8;border-radius:7px;padding:9px 11px;background:white;font:inherit;color:var(--ink)}
+.filters input{flex:2 1 240px;min-width:190px}.filters select{flex:1 1 165px}
+button{font:inherit;cursor:pointer;border-radius:7px;padding:10px 14px;border:1px solid var(--blue);background:var(--blue);color:#fff;font-weight:750}
+button.secondary{background:white;color:var(--blue)}button:disabled{opacity:.45;cursor:not-allowed}
+.hints{font-size:12px;color:var(--sub);display:flex;justify-content:space-between;gap:8px;align-items:center;margin:14px 2px;flex-wrap:wrap}
+#status{color:var(--sub)}.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#1f9e65;margin-right:5px}
+.list{display:grid;gap:9px}.article{background:#fff;border:1px solid var(--line);padding:17px 19px;border-radius:11px}
+.top{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.date{font-size:12px;font-weight:700;color:#4c6080}.chip{background:#ebf1fb;border-radius:5px;padding:2px 7px;font-size:11px;color:#2e5793;font-weight:750}.importance{color:#a05f24;background:#fff3e8}
+.article h2{font-size:17px;letter-spacing:-.4px;margin:3px 0 9px;line-height:1.45}
+.article p{font-size:13px;color:#506176;margin:0 0 9px;line-height:1.7;overflow-wrap:anywhere}
+.original{font-size:12px;font-weight:700}
+.empty{padding:60px 12px;text-align:center;color:var(--sub);background:white;border:1px solid var(--line);border-radius:10px}
+.pager{text-align:center;margin:20px 0}
+footer{font-size:11px;color:#8390a1;margin-top:20px;line-height:1.8}
+.quick{color:var(--blue);border:0;background:transparent;font-size:12px;text-decoration:underline;padding:3px 5px}
+@media(max-width:660px){.wrap{padding:20px 12px 50px}header{flex-direction:column;align-items:flex-start}h1{font-size:23px}.metrics{gap:6px}.metric{padding:11px}.metric strong{font-size:17px}.metric span{font-size:10px}.filters{gap:8px;padding:10px}.filters input{flex:1 1 100%;min-width:0}.filters select{flex:1 1 45%}.filters button{flex:1 1 40%}.article{padding:14px}.article h2{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">약학 브리핑 데스크 <span style="color:#2f64af">/ FDA</span></div>
+<nav><a href="../">브리핑 데스크</a><a href="../mfds/">식약처 적응증 모니터</a></nav></header>
+<main>
+<div class="label">U.S. DRUG REGULATORY INTELLIGENCE</div>
+<h1>FDA 의약품 규제 모니터</h1>
+<p class="subtitle">허가·적응증 확대·안전성·리콜·가이드라인·규제 발표를 공식 자료에서 자동 수집합니다.</p>
+<section class="metrics" aria-label="수집 상태">
+<div class="metric"><strong id="count">—</strong><span>현재 검색 결과 표시 건수</span></div>
+<div class="metric"><strong>1시간</strong><span>FDA 뉴스·안전성·허가</span></div>
+<div class="metric"><strong>3시간</strong><span>규제·가이드라인 관련 공고</span></div>
+</section>
+<form class="filters" id="searchForm">
+<input id="query" type="search" placeholder="영문 제품명·성분명·FDA 발표 검색" aria-label="FDA 발표 검색">
+<select id="category" aria-label="분야 선택">
+<option value="">전체 분야</option><option value="safety">안전성</option><option value="approval">허가·적응증</option><option value="recall">리콜·회수</option><option value="guidance">가이드라인</option><option value="regulation">규제정책</option><option value="general">기타 발표</option>
+</select>
+<button type="submit">검색</button><button type="button" class="secondary" id="reset">초기화</button>
+</form>
+<div class="hints"><div id="status"><span class="live"></span>시스템 연결 중…</div>
+<div>빠른 검색: <button class="quick" type="button" id="zolgensma">Zolgensma</button>
+<button class="quick" type="button" id="safety">안전성 발표</button></div></div>
+<section id="articles" class="list" aria-live="polite"><div class="empty">FDA 자료를 불러오고 있습니다.</div></section>
+<div class="pager"><button class="secondary" id="more" type="button" hidden>더 보기</button></div>
+</main>
+<footer>자료 출처: 미국 FDA · openFDA · Federal Register. 원문과 발표 날짜를 우선 확인하세요.
+<br>시험 운영 중인 자동 수집 서비스입니다. 번역·AI 요약은 준비 중이며, 자료의 규제적 의미는 원문으로 최종 확인해야 합니다. 수집 주기는 실제 FDA 발표·데이터 반영 시점을 의미하지 않습니다.</footer>
+</div>
+<script>
+"use strict";
+const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/fda-monitor-feed";
+const $=id=>document.getElementById(id);
+const labels={safety:"안전성",approval:"허가·적응증",recall:"리콜·회수",guidance:"가이드라인",regulation:"규제정책",general:"기타"};
+let offset=0,busy=false;
+const add=(tag,parent,text,cl)=>{const el=document.createElement(tag);if(cl)el.className=cl;if(text!==undefined)el.textContent=text;parent.appendChild(el);return el};
+function date(v){if(!v)return"발표일 미확인";const d=new Date(v);return Number.isNaN(+d)?"발표일 미확인":new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",year:"numeric",month:"2-digit",day:"2-digit"}).format(d)}
+function render(item){
+ const section=add("article",$("articles"),undefined,"article");
+ const row=add("div",section,undefined,"top");
+ add("span",row,date(item.published_at||item.first_seen_at),"date");
+ add("span",row,labels[item.category]||"FDA","chip");
+ if(item.importance>=4)add("span",row,"중요도 "+item.importance+"/5","chip importance");
+ const h=add("h2",section,item.title_ko||item.title_en);
+ if(item.summary_ko||item.summary_en)add("p",section,(item.summary_ko||item.summary_en).slice(0,550));
+ const a=add("a",section,"FDA 원문 보기","original");a.href=item.url;a.target="_blank";a.rel="noopener noreferrer";
+ if(item.pdf_url){add("span",section," · ");const p=add("a",section,"PDF","original");p.href=item.pdf_url;p.target="_blank";p.rel="noopener noreferrer"}
+ return section;
+}
+async function load(reset=true){
+ if(busy)return;busy=true;$("more").disabled=true;
+ if(reset){offset=0;$("articles").replaceChildren();$("count").textContent="—";}
+ $("status").textContent="자료 확인 중…";
+ const q=new URLSearchParams({limit:"30",offset:String(offset)});
+ if($("query").value.trim())q.set("q",$("query").value.trim());
+ if($("category").value)q.set("category",$("category").value);
+ try{
+  const r=await fetch(API+"?"+q.toString(),{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
+  const data=await r.json();if(data.error)throw Error(data.error);
+  const items=data.items||[];for(const item of items)render(item);
+  offset+=items.length;
+  $("count").textContent=offset+"건";
+  $("more").hidden=!data.pagination?.has_more||items.length===0;
+  const latest=(data.runs||[]).find(x=>x.status==="success"||x.status==="partial");
+  $("status").textContent=latest?"마지막 수집 "+new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",dateStyle:"short",timeStyle:"short"}).format(new Date(latest.finished_at||latest.started_at))+" · 수집기 정상":"수집 실행 내역 확인 중";
+  if(!offset)add("div",$("articles"),"검색 결과가 없습니다.","empty");
+ }catch(e){$("status").textContent="연결 오류";add("div",$("articles"),"현재 자료를 가져올 수 없습니다. 잠시 후 다시 시도해 주세요. ("+e.message+")","empty")}
+ finally{busy=false;$("more").disabled=false}
+}
+$("searchForm").addEventListener("submit",e=>{e.preventDefault();load(true)});
+$("reset").addEventListener("click",()=>{$("query").value="";$("category").value="";load(true)});
+$("more").addEventListener("click",()=>load(false));
+$("zolgensma").addEventListener("click",()=>{$("query").value="Zolgensma";$("category").value="";load(true)});
+$("safety").addEventListener("click",()=>{$("query").value="";$("category").value="safety";load(true)});
+load(true);
+</script>
+</body></html>
