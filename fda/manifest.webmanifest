@@ -1,0 +1,20 @@
+{
+  "id": "/pharm-briefing-desk/fda/",
+  "name": "FDA 의약품 규제 모니터",
+  "short_name": "FDA 모니터",
+  "description": "FDA 의약품 규제 발표 자동 수집·한국어 요약·중요 발표 알림",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#23539d",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
