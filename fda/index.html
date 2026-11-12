@@ -81,6 +81,24 @@ dialog::backdrop{background:#11203470}
 .article{padding:10px 11px}.article h4{font-size:14px}.article p{font-size:12px}
 .dialog-body{padding:14px}.pref-group{gap:6px}
 }
+
+/* Compact search with a left category selector and newest-first ten-row paging */
+.search{grid-template-columns:122px minmax(0,1fr) 40px}
+@media(max-width:550px){.search{grid-template-columns:98px minmax(0,1fr) 39px}}
+.load button{display:inline-flex;gap:9px;align-items:center;justify-content:center}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #bed1e4;border-top-color:#245ba3;border-radius:50%;animation:fda-spin .7s linear infinite}
+@keyframes fda-spin{to{transform:rotate(360deg)}}
+.admin-link{display:block;margin:12px 0 0 auto;border:0;background:transparent;color:#7f8da1;text-decoration:underline;font-size:11px;padding:5px 0}
+.admin-form{display:grid;gap:10px}
+.admin-form label{font-size:12px;font-weight:700}
+.admin-form input,.admin-form select{width:100%;height:40px;border:1px solid #d0dae6;border-radius:8px;padding:8px 10px;background:white;color:var(--ink)}
+.admin-form input{text-align:left}
+.admin-divider{border:0;border-top:1px solid var(--line);margin:10px 0}
+.admin-form button{justify-self:end}
+.inline-retry{display:inline-flex;align-items:center;gap:3px;margin-left:8px;padding:3px 5px;border:1px solid #cfdbeb;border-radius:6px;background:#f7faff;color:#235ba0;font-size:11px;font-weight:600;white-space:nowrap}
+.inline-retry:disabled{opacity:.55;cursor:default}
+.page-error{font-size:12px;color:#85543a;border:1px solid #eedccd;padding:10px 12px;background:#fffaf4;border-radius:8px}
+
 </style>
 </head>
 <body>
@@ -96,16 +114,18 @@ dialog::backdrop{background:#11203470}
 <div id="majorList"><div class="major-empty">주요 발표를 확인하고 있습니다.</div></div>
 </section>
 <form id="searchForm" class="search" role="search">
-<input id="query" type="search" aria-label="의약품 검색" placeholder="제품명·성분명·FDA 발표 검색">
-<select id="category" aria-label="분야"><option value="">전체 분야</option><option value="safety">안전성</option>
-<option value="approval">허가·적응증</option><option value="recall">리콜·회수</option>
-<option value="guidance">가이드라인</option><option value="regulation">규제정책</option>
-<option value="general">기타 발표</option></select>
+<select id="category" aria-label="분야"><option value="">전체 분야</option>
+<option value="safety">안전성</option><option value="approval">허가·적응증</option>
+<option value="recall">리콜·회수</option><option value="guidance">가이드라인</option>
+<option value="regulation">규제정책</option><option value="general">기타 발표</option></select>
+<input id="query" type="search" aria-label="검색어" placeholder="제품명·성분명·FDA 발표 검색">
 <button type="submit" title="검색" aria-label="검색">⌕</button>
 </form>
 <div class="meta-line"><span id="status">자료 확인 중…</span><button class="back" id="backBtn" type="button" hidden>전체 목록으로</button></div>
 <div id="results" aria-live="polite"></div>
-<div class="load"><button id="loadOlder" type="button">이전 7일 불러오기 ↓</button></div>
+<div class="load"><button id="loadOlder" type="button" aria-live="polite">
+<span id="loadSpinner" class="spinner" hidden aria-hidden="true"></span>
+<span id="loadText">10건 더 보기 ↓</span></button></div>
 </main>
 <footer>출처: 미국 FDA · openFDA · Federal Register. 자동 번역·분류 결과는 원문 확인이 필요하며, 게시물 수정일과 실제 규제 결정일은 다를 수 있습니다.</footer>
 </div>
@@ -113,13 +133,13 @@ dialog::backdrop{background:#11203470}
 <dialog id="settingsDialog" aria-label="FDA 모니터링 설정">
 <div class="dialog-head"><h2>설정</h2><button type="button" class="close" data-close="settingsDialog" aria-label="닫기">×</button></div>
 <form id="settingsForm" class="dialog-body">
-<div class="field"><label for="days">검색 결과 표시 기간</label>
+<div class="field"><label for="days">상단 주요 발표 표시 기간</label>
 <select id="days"><option value="7">최근 7일 (기본)</option><option value="14">최근 14일</option><option value="30">최근 30일</option><option value="90">최근 90일</option></select></div>
 <div class="field"><label for="newsMinutes">주요 뉴스·안전성·허가 새로 확인</label>
 <select id="newsMinutes"><option value="30">30분 간격</option><option value="60">1시간 간격</option><option value="180">3시간 간격</option><option value="360">6시간 간격</option></select></div>
 <div class="field"><label for="policyMinutes">규제·가이드라인 공고 새로 확인</label>
 <select id="policyMinutes"><option value="60">1시간 간격</option><option value="180">3시간 간격</option><option value="360">6시간 간격</option><option value="720">12시간 간격</option></select></div>
-<p class="help">이 간격은 이 기기의 화면 업데이트 주기야. 서버의 FDA 원문 자동 수집은 현재 1시간·3시간 간격으로 유지돼. 서버 전체 주기 변경은 관리자 권한이 필요해.</p>
+<p class="help">화면 갱신 간격 설정 · 실제 FDA 수집 간격은 관리자 설정에서 변경</p>
 <div class="pref-title">알림을 받을 항목</div>
 <div class="pref-group">
 <label><input type="checkbox" data-alert="safety" checked> 안전성</label>
@@ -130,24 +150,58 @@ dialog::backdrop{background:#11203470}
 </div>
 <div class="status" id="settingsStatus" role="status">이 기기에서 사용할 설정을 저장해.</div>
 <div class="actions"><button class="action" type="button" data-close="settingsDialog">취소</button><button class="action primary" type="submit">설정 저장</button></div>
+<button id="adminLink" class="admin-link" type="button">관리자 설정</button>
 </form>
 </dialog>
+
+<dialog id="adminDialog" aria-label="관리자 설정">
+<div class="dialog-head"><h2>관리자 설정</h2><button type="button" class="close" data-close="adminDialog" aria-label="닫기">×</button></div>
+<div class="dialog-body">
+<p id="adminStatus" class="status" role="status">비밀번호 입력 후 수집 간격 변경 가능</p>
+<form id="adminLoginForm" class="admin-form">
+<label for="adminPin">관리자 비밀번호 · 숫자 4자리</label>
+<input id="adminPin" type="password" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" autocomplete="off" required aria-label="관리자 비밀번호">
+<button type="submit" class="action primary">관리자 로그인</button>
+</form>
+<div id="adminArea" hidden>
+<form id="adminScheduleForm" class="admin-form">
+<label for="adminNews">주요 뉴스·안전성·허가 FDA 원문 수집</label>
+<select id="adminNews">
+<option value="30">30분 간격</option><option value="60">1시간 간격</option>
+<option value="180">3시간 간격</option><option value="360">6시간 간격</option>
+</select>
+<label for="adminPolicy">규제·가이드라인 FDA 원문 수집</label>
+<select id="adminPolicy">
+<option value="60">1시간 간격</option><option value="180">3시간 간격</option>
+<option value="360">6시간 간격</option><option value="720">12시간 간격</option>
+</select>
+<p class="help">변경 시 서버의 실제 FDA 자동 수집 예약에 반영</p>
+<button type="submit" class="action primary">수집 간격 저장</button>
+</form>
+<hr class="admin-divider">
+<form id="adminPasswordForm" class="admin-form">
+<label for="adminNewPin">관리자 비밀번호 변경</label>
+<input id="adminNewPin" type="password" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" autocomplete="new-password" placeholder="새 비밀번호 · 숫자 4자리" required>
+<input id="adminConfirmPin" type="password" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" autocomplete="new-password" placeholder="새 비밀번호 재입력" required>
+<button type="submit" class="action">비밀번호 변경</button>
+</form>
+</div></div></dialog>
 
 <dialog id="notifyDialog" aria-label="FDA 자동알림 설정 안내">
 <div class="dialog-head"><h2>FDA 자동알림</h2><button type="button" class="close" data-close="notifyDialog" aria-label="닫기">×</button></div>
 <div class="dialog-body">
 <p class="status" id="notifyMessage" role="status">기기의 알림 상태를 확인합니다.</p>
-<div class="instructions" id="iosInstructions" hidden>
-<strong>아이폰 · 아이패드에서 설정</strong>
-<ol><li>이 페이지를 Safari에서 열어.</li><li>Safari 하단 공유 버튼(□↑)을 눌러.</li><li><strong>홈 화면에 추가</strong>를 선택해.</li><li>홈 화면의 FDA 모니터링 앱을 실행한 뒤 🔔을 눌러 알림을 허용해.</li></ol>
+<div class="instructions" id="iosInstructions">
+<strong>아이폰 · 아이패드</strong>
+<ol><li>Safari 공유 버튼(□↑) 선택</li><li><strong>홈 화면에 추가</strong> 선택</li><li>홈 화면에 추가된 FDA 모니터링 실행</li><li>상단 🔔 버튼 선택 → 알림 허용</li></ol>
 </div>
-<div class="instructions" id="androidInstructions" hidden>
-<strong>갤럭시 · 안드로이드에서 설정</strong>
-<ol><li>Chrome 또는 삼성 인터넷에서 이 페이지를 열어.</li><li>🔔 버튼을 누르고 알림을 허용해.</li><li>차단됐으면 브라우저 설정 → 사이트 설정 → 알림을 허용해.</li><li>기기 설정 → 앱 → 사용 중인 브라우저 → 알림도 켜져 있는지 확인해.</li></ol>
+<div class="instructions" id="androidInstructions">
+<strong>갤럭시 · 안드로이드</strong>
+<ol><li>상단 🔔 버튼 선택</li><li>브라우저 알림 권한 허용</li><li>차단된 경우: 브라우저 설정 → 사이트 설정 → 알림 허용</li><li>수신이 안 되는 경우: 기기 설정 → 앱 → 브라우저 → 알림 허용</li></ol>
 </div>
 <div class="instructions" id="otherInstructions" hidden>
 <strong>브라우저 알림 안내</strong>
-<p>이 사이트에 대한 알림 권한을 허용해. 이미 차단했다면 브라우저의 사이트 권한에서 알림 차단을 해제해.</p>
+<p>사이트 알림 권한 허용 · 차단 상태라면 브라우저의 사이트 설정에서 알림 허용</p>
 </div>
 <div class="actions">
 <button id="notifyCopyLink" class="action" type="button">주소 복사</button>
@@ -161,173 +215,248 @@ dialog::backdrop{background:#11203470}
 <script>
 "use strict";
 const API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/fda-monitor-feed";
+const ADMIN_API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/fda-monitor-admin";
+const RETRY_API="https://mqkhtnryxyntrrfrfing.supabase.co/functions/v1/fda-monitor-retry";
 const $=id=>document.getElementById(id);
 const names={safety:"안전성",approval:"허가·적응증",recall:"리콜·회수",guidance:"가이드라인",regulation:"규제정책",general:"기타 발표"};
 const SETTINGS="fda_monitor_settings_v3";
 const DEFAULT={days:7,newsMinutes:60,policyMinutes:180,alerts:{safety:true,approval:true,recall:true,guidance:true,regulation:true}};
-function getSaved(){try{const x=JSON.parse(localStorage.getItem(SETTINGS)||"null");if(!x)return {...DEFAULT,alerts:{...DEFAULT.alerts}};return {...DEFAULT,...x,alerts:{...DEFAULT.alerts,...x.alerts}}}catch{return {...DEFAULT,alerts:{...DEFAULT.alerts}}}}
-let prefs=getSaved(),olderCount=0,busy=false,seq=0,timer=null,entry=Number(new URLSearchParams(location.search).get("entry")||0)||0;
-const node=(tag,parent,text,cls)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined&&text!==null)e.textContent=text;parent.append(e);return e};
-const safeDate=v=>/^\d{4}-\d{2}-\d{2}$/.test(String(v||""))?String(v).replace(/-/g,"."):String(v||"");
-function isoDay(offset){
- const now=new Date(Date.now()+9*3600000);
- const noon=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()+offset));
- return noon.toISOString().slice(0,10);
+function savedSettings(){
+ try{const v=JSON.parse(localStorage.getItem(SETTINGS)||"null");
+ if(!v)return {...DEFAULT,alerts:{...DEFAULT.alerts}};
+ return {...DEFAULT,...v,alerts:{...DEFAULT.alerts,...v.alerts}}}
+ catch{return {...DEFAULT,alerts:{...DEFAULT.alerts}}}
 }
-function periodText(weeks){
- const end=isoDay(-weeks*prefs.days),start=isoDay(-weeks*prefs.days-prefs.days+1);
- return start.replace(/-/g,".")+" ~ "+end.replace(/-/g,".");
+let prefs=savedSettings(),offset=0,hasMore=true,busy=false,seq=0,timer=null,
+ activeController=null,adminPin=null,entry=Number(new URLSearchParams(location.search).get("entry")||0)||0;
+const node=(tag,parent,value,cls)=>{
+ const e=document.createElement(tag);
+ if(cls)e.className=cls;
+ if(value!==undefined&&value!==null)e.textContent=value;
+ parent.append(e);return e;
+};
+function formatDay(s){return /^\d{4}-\d{2}-\d{2}$/.test(String(s||""))?s.replace(/-/g,"."):(s||"날짜 미확인")}
+function titleOf(x){return String(x.title_ko||x.title_en||"FDA 발표 제목 확인 필요")}
+function summaryOf(x){return String(x.summary_ko||x.summary_en||"")}
+function setStatus(s){$("status").textContent=s}
+function loading(on){
+ $("loadOlder").disabled=on;
+ $("loadSpinner").hidden=!on;
+ $("loadText").textContent=on?"불러오는 중…":"10건 더 보기 ↓";
+ $("loadOlder").setAttribute("aria-busy",String(on));
 }
-function status(s){$("status").textContent=s}
-function titleOf(x){return x.title_ko||"한국어 제목 변환 중"}
-function summaryOf(x){return x.summary_ko||"한국어 요약을 준비하고 있습니다."}
+async function fetchOne(id){
+ const r=await fetch(API+"?entry="+encodeURIComponent(id),{cache:"no-store"});
+ if(!r.ok)throw Error("데이터 연결 실패");
+ const d=await r.json();if(d.error)throw Error(d.error);
+ return d.items?.[0]||null;
+}
+function retryButton(x,parent,titleElement,summaryElement){
+ if(x.title_ko&&x.summary_ko)return;
+ const btn=node("button",parent,"↻ 다시 불러오기","inline-retry");
+ btn.type="button";btn.title="한국어 제목·요약 다시 확인";
+ btn.addEventListener("click",async()=>{
+  btn.disabled=true;btn.textContent="확인 중…";
+  try{
+   const item=await fetchOne(x.id);
+   if(item?.title_ko&&item?.summary_ko){
+    titleElement.textContent=titleOf(item);if(summaryElement)summaryElement.textContent=summaryOf(item);
+    btn.remove();return;
+   }
+   const r=await fetch(RETRY_API,{method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify({entry_id:x.id}),cache:"no-store"});
+   const queued=await r.json();
+   if(!r.ok||queued.error)throw Error(queued.error||"번역 재시도 실패");
+   btn.textContent="번역 요청됨 · 다시 확인 ↻";
+   setTimeout(async()=>{
+    try{const latest=await fetchOne(x.id);
+     if(latest?.title_ko&&latest?.summary_ko){titleElement.textContent=titleOf(latest);
+       if(summaryElement)summaryElement.textContent=summaryOf(latest);btn.remove();}
+    }catch{}
+   },7000);
+  }catch(e){btn.textContent="다시 시도 ↻";btn.title=String(e.message||e)}
+  finally{btn.disabled=false}
+ });
+}
 function showMajor(items){
- const major=$("majorList");major.replaceChildren();$("majorPeriod").textContent="최근 "+prefs.days+"일";
- if(entry>0){document.querySelector(".major").hidden=true;return}
- document.querySelector(".major").hidden=false;
- const grouped=new Map();
- for(const item of items||[]){
-  const k=item.event_date||"날짜 미확인";
-  if(!grouped.has(k))grouped.set(k,[]);
-  grouped.get(k).push(item);
+ const major=$("majorList");major.replaceChildren();
+ $("majorPeriod").textContent="최근 "+prefs.days+"일";
+ document.querySelector(".major").hidden=entry>0;
+ if(entry>0)return;
+ const groups=new Map();
+ for(const x of items||[]){
+  const d=x.event_date||"날짜 미확인";
+  if(!groups.has(d))groups.set(d,[]);
+  groups.get(d).push(x);
  }
- if(!grouped.size){node("div",major,"해당 기간에 확인된 주요 발표가 없습니다.","major-empty");return}
- for(const [day,events] of grouped){
-  const group=node("div",major,null,"major-day");
-  node("time",group,safeDate(day));
-  const links=node("div",group,null,"major-links");
-  for(const item of events){
-   const link=node("a",links,titleOf(item));link.href="?entry="+item.id;
+ if(!groups.size){node("div",major,"해당 기간에 확인된 주요 발표가 없습니다.","major-empty");return}
+ for(const [day,list] of groups){
+  const g=node("div",major,null,"major-day");
+  node("time",g,formatDay(day));
+  const links=node("div",g,null,"major-links");
+  for(const x of list){
+   const link=node("a",links,titleOf(x));
+   link.href="?entry="+encodeURIComponent(x.id);
+   if(!x.title_ko)retryButton(x,links,link,null);
   }
  }
 }
-function article(item,parent){
- const el=node("article",parent,null,"article");
- const meta=node("div",el,null,"article-meta");
- node("time",meta,(item.decision_date?"결정일 ":"게시일 ")+safeDate(item.event_date||item.decision_date||""));
- node("span",meta,names[item.category]||"FDA","tag");
- if(item.importance>=4)node("span",meta,"주요","tag high");
- const h=node("h4",el,titleOf(item));
- const p=node("p",el,summaryOf(item));
- const a=node("a",el,"FDA 원문 보기","original");a.href=item.url;a.rel="noopener noreferrer";a.target="_blank";
- if(item.pdf_url){node("span",el," · ");const pdf=node("a",el,"PDF","original");pdf.href=item.pdf_url;pdf.rel="noopener noreferrer";pdf.target="_blank";}
- return el;
+function renderEntry(x){
+ const card=node("article",$("results"),null,"article");
+ const meta=node("div",card,null,"article-meta");
+ node("time",meta,(x.decision_date?"결정일 ":"게시일 ")+formatDay(x.event_date||x.decision_date));
+ node("span",meta,names[x.category]||"FDA","tag");
+ if(x.importance>=4)node("span",meta,"주요","tag high");
+ const heading=node("h4",card,titleOf(x));
+ let paragraph=null;
+ if(summaryOf(x))paragraph=node("p",card,summaryOf(x));
+ const link=node("a",card,"FDA 원문 보기","original");
+ link.href=x.url;link.target="_blank";link.rel="noopener noreferrer";
+ if(x.pdf_url){node("span",card," · ");const pdf=node("a",card,"PDF","original");
+ pdf.href=x.pdf_url;pdf.target="_blank";pdf.rel="noopener noreferrer";}
+ retryButton(x,card,heading,paragraph);
 }
-async function fetchWindow(weeks,options={}){
- const current=seq;const args=new URLSearchParams({days:String(prefs.days),weeks:String(weeks),limit:"150",offset:"0"});
- if(options.entry)args.set("entry",String(options.entry));
- else {
-  if($("category").value)args.set("category",$("category").value);
-  if($("query").value.trim())args.set("q",$("query").value.trim());
+async function loadPage(reset=false){
+ if(!reset&&(busy||!hasMore))return;
+ if(reset){
+  seq++;if(activeController)activeController.abort();
+  busy=false;offset=0;hasMore=true;$("results").replaceChildren();
  }
- const result=[];let major=null,runs=[];
- let offset=0;
- for(let batch=0;batch<7;batch++){
-  args.set("offset",String(offset));
-  const response=await fetch(API+"?"+args.toString(),{cache:"no-store"});
-  if(!response.ok)throw Error("HTTP "+response.status);
-  const data=await response.json();if(data.error)throw Error(data.error);
-  if(current!==seq)return null;
-  result.push(...(data.items||[]));
-  if(batch===0){major=data.major||[];runs=data.runs||[]}
-  if(!data.pagination?.has_more||!(data.items||[]).length)break;
-  offset+=data.items.length;
+ const current=seq;const start=offset;
+ busy=true;loading(true);
+ if(reset)node("div",$("results"),"FDA 발표 목록을 불러오는 중…","empty").id="listLoading";
+ const ctrl=new AbortController();activeController=ctrl;
+ const params=new URLSearchParams({offset:String(start),major_days:String(prefs.days)});
+ if(entry>0)params.set("entry",String(entry));
+ else{
+  if($("category").value)params.set("category",$("category").value);
+  const text=$("query").value.trim();if(text)params.set("q",text);
  }
- return {items:result,major,runs};
-}
-function renderWindow(weeks,data,replace=false){
- const where=$("results");let container=$("window"+weeks);
- if(!container){
-  container=node("section",where,null,"window");
-  container.id="window"+weeks;
- }
- container.replaceChildren();
- const head=node("div",container,null,"window-head");
- node("h3",head,weeks===0?"최근 "+prefs.days+"일":"이전 "+prefs.days+"일");
- node("small",head,periodText(weeks));
- const list=node("div",container,null,"entries");
- if(!(data.items||[]).length){node("div",list,"해당 기간의 검색 결과가 없습니다.","empty");return}
- const seen=new Set();
- for(const item of data.items){
-  const key=String(item.url||"").replace(/^http:/,"https:").replace(/\/$/,"");
-  if(seen.has(key))continue;seen.add(key);
-  article(item,list);
- }
-}
-async function refreshWeek(weeks,replace){
- if(busy)return;
- busy=true;$("loadOlder").disabled=true;
  try{
-  const result=await fetchWindow(weeks,{entry:entry>0?entry:null});
-  if(!result)return;
-  renderWindow(weeks,result,replace);
-  if(weeks===0)showMajor(result.major);
-  const latest=(result.runs||[]).find(r=>r.status==="success"||r.status==="partial");
-  status(latest?"최근 FDA 자료 확인됨":"FDA 자료 확인");
-  if(!replace)olderCount=Math.max(olderCount,weeks+1);
-  $("loadOlder").hidden=entry>0;
+  const r=await fetch(API+"?"+params.toString(),{signal:ctrl.signal,cache:"no-store"});
+  if(!r.ok)throw Error("HTTP "+r.status);
+  const d=await r.json();if(d.error)throw Error(d.error);
+  if(current!==seq)return;
+  $("listLoading")?.remove();
+  if(start===0)showMajor(d.major||[]);
+  if(!d.items?.length&&start===0)node("div",$("results"),"검색 결과가 없습니다.","empty");
+  for(const item of d.items||[])renderEntry(item);
+  offset+=d.items?.length||0;
+  hasMore=Boolean(d.pagination?.has_more);
+  $("loadOlder").hidden=entry>0||!hasMore;
+  if(!entry)setStatus("검색 결과 "+offset+"건 표시 · 최신순");
+  else{setStatus("FDA 발표 상세");$("backBtn").hidden=false}
  }catch(e){
-  status("데이터 연결 확인 필요");
-  if(!replace){const window=node("div",$("results"),"자료를 가져오지 못했습니다. 다시 눌러 주세요.","empty");window.id="failedWindow";}
+  if(e.name==="AbortError"||current!==seq)return;
+  $("listLoading")?.remove();
+  const errorNode=node("div",$("results"),"목록을 불러오지 못했습니다. 아래 버튼으로 재시도","page-error");
+  errorNode.id="listError";
+  setStatus("목록 새로고침 필요");
+  $("loadOlder").hidden=false;hasMore=true;
+  $("loadText").textContent="다시 불러오기 ↻";
  }finally{
-  busy=false;$("loadOlder").disabled=false;
-  $("loadOlder").textContent="이전 "+prefs.days+"일 불러오기 ↓";
+  if(current===seq){
+   busy=false;loading(false);
+   if($("listError"))$("loadText").textContent="다시 불러오기 ↻";
+  }
  }
 }
 function resetSearch(){
- seq++;entry=0;history.replaceState(null,"",location.pathname);
- $("results").replaceChildren();olderCount=0;
- $("backBtn").hidden=true;$("loadOlder").hidden=false;
- refreshWeek(0,false);
+ entry=0;history.replaceState(null,"",location.pathname);
+ $("backBtn").hidden=true;$("listError")?.remove();loadPage(true);
 }
 function restartTimer(){
  if(timer){clearInterval(timer);timer=null}
- const minutes=Math.min(prefs.newsMinutes,prefs.policyMinutes);
+ const ms=Math.min(Number(prefs.newsMinutes),Number(prefs.policyMinutes))*60000;
  timer=setInterval(()=>{
-  if(document.visibilityState==="visible"&&!busy&&entry===0)refreshWeek(0,true);
- },minutes*60000);
+  if(document.visibilityState==="visible"&&!busy&&entry===0&&offset<=10)loadPage(true);
+ },Math.max(60000,ms));
 }
+function openDialog(id){const d=$(id);if(d.showModal&&!d.open)d.showModal();else d.setAttribute("open","")}
+function closeDialog(id){const d=$(id);if(d.close)d.close();else d.removeAttribute("open")}
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>closeDialog(b.dataset.close)));
 function loadSettings(){
- $("days").value=String(prefs.days);$("newsMinutes").value=String(prefs.newsMinutes);
+ $("days").value=String(prefs.days);
+ $("newsMinutes").value=String(prefs.newsMinutes);
  $("policyMinutes").value=String(prefs.policyMinutes);
  for(const c of Object.keys(DEFAULT.alerts)){
-  const e=document.querySelector('[data-alert="'+c+'"]');if(e)e.checked=prefs.alerts[c]!==false;
+  const i=document.querySelector('[data-alert="'+c+'"]');if(i)i.checked=prefs.alerts[c]!==false;
  }
 }
-function openDialog(id){const dialog=$(id);if(typeof dialog.showModal==="function"&&!dialog.open)dialog.showModal();else dialog.setAttribute("open","")}
-for(const b of document.querySelectorAll("[data-close]")){
- b.addEventListener("click",()=>{const d=$(b.dataset.close);if(d.close)d.close();else d.removeAttribute("open")});
-}
-$("settingsBtn").addEventListener("click",()=>{
- loadSettings();$("settingsStatus").textContent="설정을 변경한 뒤 저장하면 이 기기에 반영됩니다.";openDialog("settingsDialog");
-});
+$("settingsBtn").addEventListener("click",()=>{loadSettings();$("settingsStatus").textContent="이 기기에 적용할 설정";openDialog("settingsDialog")});
 $("settingsForm").addEventListener("submit",async e=>{
  e.preventDefault();
- prefs={
- days:Number($("days").value),newsMinutes:Number($("newsMinutes").value),policyMinutes:Number($("policyMinutes").value),
- alerts:Object.fromEntries(Object.keys(DEFAULT.alerts).map(k=>[k,document.querySelector('[data-alert="'+k+'"]').checked]))
- };
+ prefs={days:Number($("days").value),newsMinutes:Number($("newsMinutes").value),
+  policyMinutes:Number($("policyMinutes").value),
+  alerts:Object.fromEntries(Object.keys(DEFAULT.alerts).map(c=>[c,document.querySelector('[data-alert="'+c+'"]').checked]))};
  try{localStorage.setItem(SETTINGS,JSON.stringify(prefs))}catch{}
- $("settingsStatus").textContent="알림 항목을 저장하고 있습니다.";
  try{if(window.FDAPush)await window.FDAPush.savePreferences(prefs.alerts);
-  $("settingsDialog").close();restartTimer();resetSearch();
- }catch(err){$("settingsStatus").textContent="설정은 기기에 저장됐지만 알림 항목 동기화에 실패했습니다: "+err.message}
+  closeDialog("settingsDialog");restartTimer();loadPage(true);
+ }catch(err){$("settingsStatus").textContent="화면 설정 저장됨 · 알림 분야 동기화 확인 필요: "+err.message}
 });
 $("searchForm").addEventListener("submit",e=>{e.preventDefault();resetSearch()});
 $("category").addEventListener("change",resetSearch);
 $("query").addEventListener("search",()=>{if(!$("query").value)resetSearch()});
-$("loadOlder").addEventListener("click",async()=>{
- if(busy||olderCount>=53)return;
- const before=olderCount;await refreshWeek(before,false);
- if(olderCount===before)$("loadOlder").textContent="다시 시도 ↓";
- if(olderCount>=53)$("loadOlder").hidden=true;
+$("loadOlder").addEventListener("click",()=>{
+ if(busy)return;
+ $("listError")?.remove();loadPage(false);
 });
 $("backBtn").addEventListener("click",()=>{
- $("query").value="";$("category").value="";resetSearch()
+ $("query").value="";$("category").value="";entry=0;resetSearch();
 });
-window.FDADashboard={getSettings:()=>prefs,openDialog,status,resetSearch};
-if(entry>0){$("backBtn").hidden=false;$("loadOlder").hidden=true;status("FDA 발표 상세 보기")}else{status("최근 FDA 발표")}
-refreshWeek(0,false);restartTimer();
+const adminStatus=msg=>$("adminStatus").textContent=msg;
+async function adminRequest(action,payload={}){
+ const r=await fetch(ADMIN_API,{method:"POST",headers:{"content-type":"application/json"},
+ body:JSON.stringify({action,pin:adminPin,...payload}),cache:"no-store"});
+ const d=await r.json().catch(()=>({}));
+ if(!r.ok||d.error)throw Error(d.error||"관리자 서버 연결 실패");
+ return d;
+}
+$("adminLink").addEventListener("click",()=>{
+ adminPin=null;$("adminPin").value="";
+ $("adminArea").hidden=true;$("adminLoginForm").hidden=false;
+ $("adminNewPin").value="";$("adminConfirmPin").value="";
+ adminStatus("관리자 비밀번호 입력");closeDialog("settingsDialog");openDialog("adminDialog");
+});
+$("adminLoginForm").addEventListener("submit",async e=>{
+ e.preventDefault();const entered=$("adminPin").value;
+ if(!/^[0-9]{4}$/.test(entered)){adminStatus("숫자 4자리 입력 필요");return}
+ adminPin=entered;
+ adminStatus("인증 확인 중…");
+ try{
+  const data=await adminRequest("login");
+  $("adminNews").value=String(data.news_minutes);
+  $("adminPolicy").value=String(data.policy_minutes);
+  $("adminLoginForm").hidden=true;$("adminArea").hidden=false;
+  $("adminPin").value="";adminStatus("관리자 인증 완료");
+ }catch(err){adminPin=null;adminStatus("인증 실패: "+err.message)}
+});
+$("adminScheduleForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!adminPin)return;
+ adminStatus("FDA 수집 예약 변경 중…");
+ try{
+  const d=await adminRequest("schedules",{news_minutes:Number($("adminNews").value),policy_minutes:Number($("adminPolicy").value)});
+  adminStatus("수집 간격 적용 완료: 주요 발표 "+d.news_minutes+"분 / 규제·지침 "+d.policy_minutes+"분");
+ }catch(err){adminStatus("변경 실패: "+err.message)}
+});
+$("adminPasswordForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!adminPin)return;
+ const next=$("adminNewPin").value,confirm=$("adminConfirmPin").value;
+ if(!/^[0-9]{4}$/.test(next)||next!==confirm){adminStatus("새 비밀번호 4자리 일치 확인");return}
+ adminStatus("비밀번호 변경 중…");
+ try{
+  await adminRequest("change_pin",{new_pin:next});
+  adminPin=next;$("adminNewPin").value="";$("adminConfirmPin").value="";
+  adminStatus("비밀번호 변경 완료 · 다음 접속부터 새 비밀번호 적용");
+ }catch(err){adminStatus("변경 실패: "+err.message)}
+});
+document.addEventListener("visibilitychange",()=>{
+ if(document.visibilityState==="visible"&&entry===0&&offset<=10&&!busy){/* timer handles refresh */}
+});
+window.FDADashboard={getSettings:()=>prefs,openDialog,status:setStatus,resetSearch};
+if(entry>0){$("backBtn").hidden=false;$("loadOlder").hidden=true}
+loadPage(true);restartTimer();
 </script>
 <script src="./push-ui.js" defer></script>
 </body></html>
