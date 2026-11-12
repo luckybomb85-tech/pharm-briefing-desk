@@ -1,0 +1,163 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-12",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "K피하주사 전환 기술, 美 약가인하에 발목 잡힐까…전망은 - 마켓인",
+      "summary": "(제목 기준·원문 미검증) 미국의 약가 인하 정책이 K바이오의 피하주사 전환 기술 상용화와 시장 진출에 제약을 줄 수 있다는 전망이 나왔다. 이는 국내 바이오 기업의 미국 시장 접근 전략과 제품 가격 책정에 중요한 변수로 작용할 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1zZElWY3ozSEFDLXVqQ2NjWFdKaUFjUjdkckl6dXU4TnFkMFpnYk84a01lajgzcFFNMVl0aTAtbmtrSzlKZ19vVjhuZElaZmY1UHY2ZTdZWmtHci11TzNCSGZDU21SYzlpRWtGS1piUzNIcjQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-11T22:01:03+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "中 이아소바이오, 인비보 CAR-T 후보 ‘IASO208’ 美·中 동시 임상개발",
+      "summary": "중국 이아소바이오의 체내 CAR-T 치료제 후보 'IASO208'이 미국과 중국에서 임상시험에 들어갔다. IASO208은 환자 체내에서 직접 CAR-T 세포를 생성하는 렌티바이러스 벡터 기반 치료제로, 기존 체외제작 방식과 차별화된다. 초기 중국 임상에서 11명 투여가 완료됐으며, 안전성과 항종양 효과가 확인됐다. 임상 데이터는 2026년 ASH 학회에서 공개될 예정이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30154",
+      "source_name": "더바이오",
+      "published_at": "2026-11-11T21:30:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“유럽 제약 R&D 경쟁력 약화”…임상시험 점유율 10년새 22%→12%",
+      "summary": "베링거인겔하임과 EY 보고서에 따르면 유럽경제지역의 기업 후원 임상시험 점유율이 2013년 22%에서 2023년 12%로 10년 새 10%포인트 하락하며 글로벌 신약 개발 경쟁에서 입지가 약화됐다. 미국과 중국의 R&D 투자 증가 속도와 비교할 때 유럽은 뒤처지고 있으며, 혁신 지원 정책 여부가 R&D 투자에 큰 영향을 준다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30153",
+      "source_name": "더바이오",
+      "published_at": "2026-11-11T21:20:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "美 약값 낮추려다 유럽 신약 출시 27% 줄었다",
+      "summary": "미국에서 다른 선진국 약가와 연동하는 정책 도입 이후 유럽에서 신약 출시가 약 27% 감소한 것으로 나타났다. 제약사들이 미국 약값 하락을 우려해 유럽 출시를 미루거나 시장에서 철수하는 사례가 보고됐다. 허가 건수는 유지되는 가운데 실제 시장 진입 단계에서 출시가 위축됐다. 이는 유럽 환자들의 신약 접근성에 부정적 영향을 미치고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48031",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-11T21:14:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항암·치매 신약부터 정밀의료까지…연말 바이오 IPO '빅 랠리'",
+      "summary": "면역항암, 알츠하이머병 치료제, 정밀의료 플랫폼, AI 신약개발 기업들이 2026년 연말 코스닥 상장을 추진 중이다. 넥스아이·엠비디·아델·이노보테라퓨틱스 등 주요 기업들이 임상개발 및 기술이전을 기반으로 자금조달에 나서고 있다. 특히 아델은 알츠하이머병 후보물질을 글로벌 제약사 사노피에 기술이전해 최대 1조5300억원 계약을 체결했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80703",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-11T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "테바 “2030년 혁신의약품 매출 최대 9.3조원”…매년 1개 출시 목표",
+      "summary": "다국적 제약사 테바가 2030년까지 혁신의약품 매출을 최대 70억 달러(약 9.3조원)로 확대하고 매년 1개 이상의 혁신 신제품을 출시하겠다는 성장 전략을 발표했다. 셀리악병, 백반증 등 차세대 정밀 항체 파이프라인과 임상 2상 이상의 후기 파이프라인 7개를 확보해 매출 성장을 추진할 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30152",
+      "source_name": "더바이오",
+      "published_at": "2026-11-11T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"미·중은 10배 속도로 달린다\"…한국, '소버린 바이오'로 맞선다",
+      "summary": "2026 바이오미래포럼에서 바이오넥서스 김태형 대표는 미국과 중국이 AI 신약개발에 빠르게 앞서가는 상황에서 한국이 국내 바이오 데이터와 AI 모델, 실험 인프라를 국가 자산으로 확보해 연구 주도권을 유지해야 한다고 강조했다. 과기정통부가 추진하는 K-문샷 프로젝트는 AI 기반 신약개발 가속화를 목표로 하며, 2035년까지 후보물질 발굴 속도를 10배 높이고 임상 성공률을 두 배 이상 올리겠다는 계획을 제시했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80694",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-11T21:09:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아리바이오 'AR1001' 운명의 성적표…학회 엠바고에 선공개 무산",
+      "summary": "아리바이오가 개발 중인 경구용 알츠하이머병 치료제 후보 'AR1001'의 글로벌 임상 3상 톱라인 결과를 11월 17일 미국 CTAD 2026에서 발표한다. 해당 후보물질은 기존 항체 치료제와는 달리 복합 기전과 경구 투여가 특징이며, 안전성에서도 차별화가 기대된다. 이번 임상 결과는 국내 기업의 글로벌 신약 경쟁력과 직결된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80706",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-11T21:08:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "보건의료 예산 7.2% 늘지만… 제약바이오 육성 엇갈린 증감",
+      "summary": "정부의 2027년도 보건의료 예산이 전년 대비 7.2% 증가했으나, 제약바이오 산업 관련 세부 사업 예산은 증감이 엇갈렸다. 바이오헬스산업 육성지원 예산은 38.6% 감소한 반면, 신약개발 플랫폼과 CRDMO 육성, 첨단재생의료 분야에는 신규 예산이 편성됐다. 연구중심병원 육성 R&D와 바이오 빅데이터 구축 사업 예산은 축소됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80696",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-11T21:07:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한미약품, 근육보존 '마이오스타틴 저해제' 다른 이유? - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 한미약품이 개발 중인 근육보존용 마이오스타틴 저해제가 기존 치료제와 다른 기전과 효능으로 주목받고 있다. 이 후보물질의 차별성은 향후 연구개발 방향과 신약 상용화에 중요한 의미를 가진다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9JUTBxVk1qQ0pLOE9jQmxLa2hxQzF3a3ZpbmhnaU53S0lFQkRHamxNcVVST2JtZzd6clBxRHZxcXliS2NxU0ZZQ1FiM2xaU2VZSk1WWXJYWQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-11T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비보존제약 32개 품목, 12월 판매정지 처분설 나돌아",
+      "summary": "비보존제약이 과거 불법 리베이트 혐의와 관련해 약 32개 품목에 대해 12월 중 판매정지 처분이 있을 것이라는 소문이 돌고 있다. 해당 사안은 비보존제약 인수 전 발생한 것으로 알려졌다. 이번 처분으로 인한 시장 영향은 크지 않을 것으로 보이나, 회사는 사전 재고 확보를 권장하는 등 대비 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80695",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-11T21:03:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[HIF 2026] 알츠하이머병 치료 새 열쇠 뇌 염증…세계적 뇌 과학자 폴 매튜스 온다 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 2026 바이오미래포럼에서 세계적 뇌과학자 폴 매튜스가 알츠하이머병 치료에 있어 뇌 염증의 역할을 강조하며 새로운 치료 열쇠로 제시했다. 관련 심층 연구와 기술 발전이 치매 치료 다변화에 기여할 것으로 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaWJHdk85LS1hR2xieVFKdXlIZlBVN2VEOWFSM0JOQmlpQUZtY3E0OGhPZ3lXRFFVT1phcGVOVFNjOU1XNHdnWGxpRC1SRF9Zem9URHN1aW54bjhoTEVyVmtSQWF3TC1uS3ZoYWJkbmtmcnlpMjlEX1JRSW5DcEpaSWs5QllNSTDSAZsBQVVfeXFMTjctVzRYU1FlVVE2cWptYURteVNmS3JxUE5XaE8xZmpCT3ViT2x6WEllNmJIcGIzZGlUekxPdC0yb3kydXBCN29TbTFQUVFZQ0dwUTh2d2M0Q1R4V0FKdnB6LXA1RUpMZGdNVFl4MktsbXA1REhRV2dQVkJXamNBcmZzTHJHQ09pa1dZcEM4R3ZNdDBXOFJQUHdOMW8?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-11T21:02:58+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "같은 '177억 횡령' 의혹인데...동성제약 경영진 3인의 엇갈린 운명",
+      "summary": "동성제약 경영진이 연루된 177억 원 횡령 의혹 수사에서 남궁광 전 사외이사는 각하 처분을 받았으나 나원균 전 대표와 원용민 전 전무는 횡령 혐의로 송치됐다. 해당 의혹은 창업주 일가 경영권 분쟁 과정에서 제기됐으며, 향후 법적 공방이 지속될 전망이다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1731202",
+      "source_name": "EBN",
+      "published_at": "2026-11-11T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 13,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
