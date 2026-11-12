@@ -252,14 +252,14 @@ async function fetchOne(id){
  return d.items?.[0]||null;
 }
 function retryButton(x,parent,titleElement,summaryElement){
- if(x.title_ko&&x.summary_ko)return;
+ if(x.title_ko)return;
  const btn=node("button",parent,"↻ 다시 불러오기","inline-retry");
  btn.type="button";btn.title="한국어 제목·요약 다시 확인";
  btn.addEventListener("click",async()=>{
   btn.disabled=true;btn.textContent="확인 중…";
   try{
    const item=await fetchOne(x.id);
-   if(item?.title_ko&&item?.summary_ko){
+   if(item?.title_ko){
     titleElement.textContent=titleOf(item);if(summaryElement)summaryElement.textContent=summaryOf(item);
     btn.remove();return;
    }
@@ -271,7 +271,7 @@ function retryButton(x,parent,titleElement,summaryElement){
    btn.textContent="번역 요청됨 · 다시 확인 ↻";
    setTimeout(async()=>{
     try{const latest=await fetchOne(x.id);
-     if(latest?.title_ko&&latest?.summary_ko){titleElement.textContent=titleOf(latest);
+     if(latest?.title_ko){titleElement.textContent=titleOf(latest);
        if(summaryElement)summaryElement.textContent=summaryOf(latest);btn.remove();}
     }catch{}
    },7000);
