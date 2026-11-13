@@ -1,0 +1,141 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-13",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "질랜드파마, 비만신약 ‘페트렐린타이드’ 3상 돌입…3Q 누적 매출은 절반 ‘뚝’",
+      "summary": "덴마크 제약사 질랜드파마가 로슈와 공동 개발 중인 비만신약 후보물질 ‘페트렐린타이드’의 글로벌 임상 3상에 착수했다. 앞선 임상 2상에서 체중 감소와 당화혈색소 개선 효과를 확인했다. 그러나 올해 1~9월 누적 매출은 전년 동기 대비 약 50% 감소했고, 영업이익도 절반 수준으로 줄었다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30203",
+      "source_name": "더바이오",
+      "published_at": "2026-11-12T21:30:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "다이이찌·AZ, ‘엔허투’ HER2 발현 자궁암육종 日 허가 확대 신청…sNDA 제출",
+      "summary": "다이이찌산쿄와 아스트라제네카가 공동 개발한 HER2 표적 항체약물접합체 ‘엔허투’가 일본에서 HER2 발현 진행성 또는 재발성 자궁암육종 적응증으로 보충신약허가신청(sNDA)을 제출했다. 임상2상(STATICE)에서 효능과 안전성을 확인했으며, 자궁암육종 환자에 대한 새로운 표적 치료 옵션이 될 전망이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30202",
+      "source_name": "더바이오",
+      "published_at": "2026-11-12T21:20:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신약개발 새 무기 NAMs… 연구 현장이 따지는 건 따로 있다",
+      "summary": "신약개발 분야에서 신규접근법(NAMs)이 활용이 확대되는 가운데, 대웅제약은 간 오가노이드 기술을 도입해 초기 독성 위험 관리를 강화하는 전략을 소개했다. 주요 평가 기준은 신약개발 활용성, 즉시 사용 가능성, 규제기관 인정 표준 여부이며, 기존 동물시험과 병행하는 방식으로 적용 중이다. 산업계는 시험법 검증과 규제 수용성 확보가 확대의 과제라고 밝혔다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80739",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-12T21:07:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "최근 5년간 건보공단 약가협상 결렬 약제 사유 살펴보니...",
+      "summary": "국민건강보험공단과 2022년부터 2026년 8월까지 약가협상이 결렬된 38품목을 분석한 결과, 결렬의 대부분(71.1%)은 약가와 예상청구금액 간 이견 때문이었다. 위험분담 조건, 본사 공급계획 미확인, 생산 증빙 미제출 등도 사유에 포함됐다. 일부는 재신청 후 합의가 이뤄졌으며, 주요 품목으로 비트락비, 레테브모 등이 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48057",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-12T21:06:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'유연계약' 통했다…펙수클루 UAE 약가 1000원대→2000원대",
+      "summary": "대웅제약의 위식도역류질환 치료제 ‘펙수클루’가 국내 ‘약가유연계약제’를 근거로 아랍에미리트(UAE)에서 기존 1000원대에서 2000원대 약가로 인상에 성공했다. 이는 해외 약가 협상에서 국내 제도 활용 사례로 주목받는다. 약가유연계약제는 국내 약가와 실제 보험 청구가를 분리해 해외 진출 기업의 가격 경쟁력을 높이는 제도다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80733",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-12T21:05:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“잠 못 드는 아토피 아이들…듀피젠트 급여 문턱 낮춰달라”",
+      "summary": "소아·청소년 중증 아토피피부염 환자의 신속한 치료를 위해 현재 엄격한 전신 면역억제제 선행 사용 요건을 완화하고, 가려움과 수면장애 등 실제 증상도 급여 심사에 반영할 것을 요구하는 국민동의청원이 제기됐다. 청원은 치료 접근성 개선과 합리적 중증도 평가 기준 정립을 촉구하고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48060",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-12T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 지엘팜텍 '레코플라본', 미국·유럽·일본서 특허 확보",
+      "summary": "지엘팜텍이 안구건조증 치료 신약 ‘레코플라본’에 대해 미국, 유럽, 일본 특허 등록을 완료하며 글로벌 권리 보호 기반을 마련했다. 해당 특허는 원료물질과 점안 조성물 및 제제 기술을 포함하며, 국내에서는 식약처 품목허가를 받은 상태다. 회사는 국내 출시와 해외 시장 진출을 단계적으로 추진할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80731",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-12T21:02:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "국찬우 KB인베 CIO “K바이오, R&D 넘어 R&BD로…빅파마 ‘도넛홀’ 찾아야”",
+      "summary": "국찬우 KB인베스트먼트 CIO는 국내 바이오기업들이 글로벌 임상 개발 역량을 보완하고 연구개발(R&D)을 넘어 사업개발(BD)까지 고려하는 R&BD 전략으로 신약 개발에 임해야 한다고 강조했다. 그는 글로벌 제약사의 미충족 수요(도넛홀)를 찾아 기술을 발굴하고 해외 투자자와의 소통도 강화해야 한다고 밝혔다. 또한 바이오 투자시장 침체기를 비상장 기업 투자 좋은 기회로 평가하며, 기술력뿐만 아니라 경영진의 소통 능력도 중요하다고 설명했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30204",
+      "source_name": "더바이오",
+      "published_at": "2026-11-12T22:30:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "중국이 노리는 바이오굴기, 中 VC가 분석한 '차이나 스피드'의 정체",
+      "summary": "중국 바이오AI 산업의 빠른 성장 배경에는 신약 발굴의 각 단계를 전담하는 기업의 등장, 대규모 투자, 도시간 역할 분담, 그리고 강력한 정부 지원 정책이 있다고 중국 VC가 분석했다. 중국 기업들은 단백질 구조 예측, 신약 설계, 후보물질 반응 예측, 통합 실험 플랫폼 구축 등 전 단계에서 혁신을 이루었으며, 대규모 자금 투입과 낮은 초기비용이 성장 동력이 됐다. 특히 중국 내 AI 신약 개발 기업들이 글로벌 빅파마와 협력하며 산업 생태계를 빠르게 확장하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80741",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-12T21:08:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "증권가가 본 제약바이오 반등 조건… 기대감 걷고 '숫자'로 승부",
+      "summary": "증권가는 국내 제약바이오 섹터가 조정 국면을 지나 반등 국면에 접어들었다고 진단하며, 과거 기술이전 기대감 중심에서 실적과 임상 데이터, 기술적 차별화가 주가를 견인할 핵심 요소로 변했다고 평가했다. 글로벌 빅파마의 대규모 특허 만료와 미·중 갈등은 국내 기업에 기회지만, 중국과 경쟁에서 우위를 확보하고 임상 및 사업 성과로 연결하는 것이 관건이다. 투자자들은 기술이전 성과보다 현금 창출력과 실질적인 매출에 더 집중하는 추세다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80735",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-12T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "지속가능경영 민낯 드러낸 K제약바이오 …ESG 무더기 '낙제점'",
+      "summary": "한국ESG기준원의 2026년 정기 평가에서 국내 제약바이오 업계 중소·중견기업 다수가 최하위인 D등급을 받았다. 이는 체계적 지속가능경영 미흡과 비재무 리스크 관리 소홀 등이 원인으로, 글로벌 시장 진출과 기술 수출, 기관투자 유치에 부정적 영향을 미칠 우려가 크다. 대형사는 우수 평가를 받았으나 산업 내 ESG 양극화가 심화되고 있다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1731376",
+      "source_name": "EBN",
+      "published_at": "2026-11-12T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 11,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
