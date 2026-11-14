@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-15",
+  "status": "discovery-only",
+  "items": [
+    {
+      "title": "FDA, 원발성 막성 신장병증이 있는 성인을 치료하는 최초의 약물 승인 - FirstWord Pharma",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1HdlZOWkM1N0IzaUc0UWdnY0tDLUs1cktCYmo2TUtGUnE3Tml2VDhPdlM3RGMyOG03bGdMSXk1NHpLMXg2MTR4b2daVEhYNDc1UE4w?oc=5",
+      "source_name": "FirstWord Pharma",
+      "published_at": "Sat, 14 Nov 2026 17:37:23 GMT",
+      "tag": "REGULATORY",
+      "summary": "해외 기사 제목을 자동 번역한 취재 후보입니다. 원문 내용과 핵심 사실은 검증되지 않았습니다.",
+      "discovery_only": true,
+      "original_title": "FDA Approves First Drug to Treat Adults with Primary Membranous Nephropathy - FirstWord Pharma"
+    },
+    {
+      "title": "릴리, 비만치료제가 임상시험에서 환자의 체중 감량에 도움이 됐다 - 로이터 통신",
+      "source": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOc3Fwd2JPd1BmUzdyUXZnazRZdlN4RlpjSFhFb3lDRWdzRUhHTndaUC05OFRhYXdxcF9SVktnN2kwbDc2U1BRQTZWcjBabV8ya2w0TFlMMkhrM0YzS0N4MGszTkFqelh3X0tfQ1lJcS1WTExfVnp2Z3U3QjI5d21zN0NoelF4QkRTUVhzcmdNWlgwV0ttQmF4bWNqUU03Tk10QTJOWkdkc0xsMllaeHVPRVZmdmdyZk5EWEpXSzZLTnpweVE?oc=5",
+      "source_name": "Reuters",
+      "published_at": "Sat, 14 Nov 2026 17:03:43 GMT",
+      "tag": "CLINICAL",
+      "summary": "해외 기사 제목을 자동 번역한 취재 후보입니다. 원문 내용과 핵심 사실은 검증되지 않았습니다.",
+      "discovery_only": true,
+      "original_title": "Lilly says its obesity drugs helped patients lose weight in clinical trials - Reuters"
+    }
+  ],
+  "translation_status": "complete"
+}
