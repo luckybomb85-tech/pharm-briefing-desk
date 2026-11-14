@@ -1,0 +1,75 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-14",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "약가인하로 허덕이는데 허가 수수료까지 인상… 업계 \"유예 필요\"",
+      "summary": "식품의약품안전처가 자료제출의약품 허가 수수료를 6배 인상하는 방안을 예고하면서 제약업계가 약가 인하에 이어 비용 부담이 커지고 있다고 토로하고 있다. 업계는 사전 안내 부족과 시행 시기의 갑작스러움, 글로벌 본사의 예산 승인 곤란 등을 이유로 최소 1~2년의 유예 기간이 필요하다고 주장한다. 수수료 인상은 중견·중소 제약사의 핵심 개발 영역인 복합제 및 개량신약에도 영향을 미칠 우려가 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80773",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-13T21:06:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "리가켐, '돈·기술력·임상 데이터' 3박자 갖췄다...남은 건 빅딜?",
+      "summary": "리가켐바이오사이언스가 ADC 플랫폼 관련 파트너사 임상에서 유효성 데이터를 잇따라 확보하고, 5000억원대 연구개발 재원을 확보해 후기 임상 추진 기반을 갖췄다. 기술이전 후보물질들의 긍정적 임상 성과와 오노약품공업 기술이전 계약에 따른 마일스톤 수익 등이 실적 개선에 기여했다. 회사는 추가 대형 기술수출 계약 성사 여부에 시장의 관심이 집중되고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80774",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-13T21:04:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오업계 실적·상장 '활기'… 제약업계는 약가개편에 '난감'",
+      "summary": "삼성바이오로직스, 셀트리온, SK바이오팜 등 국내 주요 바이오 5사가 3분기 매출과 영업이익을 크게 늘리며 성장세를 보였다. 반면 제약업계는 약가 인하에 따른 매출 감소 우려로 2027년 사업계획 수립에 어려움을 겪고 있고, 일부 기업은 인력 구조조정에 나섰다. 바이오 기업들은 연말에 다수 기업공개(IPO)를 앞두고 적극적인 투자·개발에 나서고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80766",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-13T21:03:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "유전자 변이 찾아도 치료제 없는 희귀질환…해법은 '국경 넘는 데이터'",
+      "summary": "국내외 희귀질환 환자의 임상 및 유전체 데이터를 연계해 AI 분석 및 정밀치료 플랫폼을 개발하는 프로젝트가 추진 중이다. 하지만 희귀질환 특성상 환자 수가 적고 이질성이 높아 국가별 데이터 협력과 실사용근거(RWE) 축적을 통한 공동 연구가 필수적이다. FDA와 유럽의 규제사례를 참고해 국제적 데이터 공유와 임상 개발 협력 체계 구축이 요구된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80772",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-13T21:02:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 공항·군부대 의약품 취급 문턱 낮춘다…복지부, 규제 완화 추진",
+      "summary": "보건복지부가 약국 없는 공항 및 군의관 미배치 군부대에 안전상비의약품을 취급할 수 있도록 약사법 시행령과 고시 개정안을 입법예고했다. 군부대 부대장 지정 인력이 해열진통제 등 11개 품목 의약품을 취급 가능하게 하고, 공항 여객터미널에서도 지정된 인력이 안전상비약을 판매할 수 있도록 하는 방안이다. 복지부는 의견 수렴 후 제도 개선을 추진할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80767",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-13T21:01:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 5,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
