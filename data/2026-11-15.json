@@ -1,0 +1,75 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-15",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "\"인공지능(AI)이라는 이름표가 신약의 가치를 결정해서는 안 된다\"",
+      "summary": "제약바이오 산업에서 AI 기술 사용이 확대되고 있으나, AI라는 키워드 자체가 신약개발의 가치 판단 기준이 되어서는 안 된다는 지적이 나왔다. 신약개발은 질병기전 규명, 후보물질 안전성과 유효성 검증을 포함해 과학적 근거와 임상시험이 가장 중요하며, AI는 이를 보조하는 도구일 뿐이다. 정부 정책도 AI 활용 실적 대신 실질적인 연구성과를 기준으로 평가해야 한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80762",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-14T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "청소년 화농성 한선염에도 '코센틱스'…노바티스, 유럽 허가 확대 눈앞 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 노바티스가 생물학적제제 ‘코센틱스’의 청소년 화농성 한선염 치료 적응증에 대해 유럽에서 허가 확대를 앞두고 있다. 이는 해당 질환 치료 옵션을 넓혀 청소년 환자 치료에 중요한 진전을 의미한다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5jNkJfeGNrbW52U0dEVTJJUlpVekI0NmtZZS1BT1FyMWJfMkFEVUhMVFZSaGVxZ0tWTE9GeHBLVnl0SVJVaF8tTFl6Mk1Ra09qNFZXdUNUODVqYkJUQnJ5WXhhQUN2T3BqVnVB?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-11-14T11:33:30+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항암제였던 '가지바', 희귀 신장질환 첫 치료제로…美 FDA 승인 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 항암제로 개발된 '가지바'가 희귀 신장질환 치료제로 미국 식품의약국(FDA) 승인을 받았다. 이로써 해당 질환에 대한 새로운 치료 옵션이 마련됐다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE81SFhwejRGUXlLVzBPbjJJV2lPVXZPNTJxZFhMNjg4MzBHQkNzdFpwX085RXRlMWxFT19nR1JZa2Q2R1RKdy1uaW5LX3d6YXd4MnNCQnRwX0J2V1BWWnVldzVBd0o4TWJxR0VN?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-11-14T11:29:14+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "노보메디슨, IPO 앞두고 임상 탄력…\"내년 신약 품목허가 신청 목표\" - 머니투데이 - 머니투데이",
+      "summary": "(제목 기준·원문 미검증) 노보메디슨이 기업공개(IPO)를 앞두고 임상시험에 박차를 가하고 있으며 내년 신약 품목허가 신청을 목표로 하고 있다. 신약 개발에 중요한 진전이다.",
+      "source": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1oNDZTSkFEY3FmTUwxODBQSkZEelpadmU4YWN2VUtkZTlTQnBKeGc3bi1PWFB0c0QtdHFUb0s0dF9RMVFaYTBHcW9EbC1NQ0FESGZoSDJpRGExLU1FeFBDZkZjbF9vY3VWNXfSAW9BVV95cUxNajhVX2dYdlJjSTdjcmh5QTcwdk9hXzNySXptVWxtREZWOG9heE85WFcwQzNRR3B6QmZmOEdMUlhYTE1tZmxSbkxZWWZlX1c4eXltZWxRemJvenpyZlNIRU9GdmlLNnFHdnhTZUVlN2M?oc=5",
+      "source_name": "머니투데이",
+      "published_at": "2026-11-14T09:26:49+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "방광암 수술 전후 치료 달라진다…美 FDA, 임핀지·패드세브 병용 승인 - 메디파나뉴스",
+      "summary": "(제목 기준·원문 미검증) 미국 FDA가 방광암 수술 전후 치료에 임핀지와 패드세브 병용요법을 허가했다. 이는 방광암 환자 치료 전략에 중요한 변화가 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9YNlRGZ1VFcHRqaUdheXZwQ2pRdmVJN0tVWS14NWNqdzlQOUV0ZXY1czRhc05FTmdfUXdpMjZNWDV2ZUZ4Q0xwb2k3a18yejBOc2ZlSU5VcmZnM0daVjhTS2lmNVZkU1owRUZN?oc=5",
+      "source_name": "메디파나뉴스",
+      "published_at": "2026-11-14T08:13:50+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 5,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
