@@ -1,0 +1,196 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-16",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "약가 달라도 수수료는 50%대… 릭시아나 제네릭 경쟁의 역설",
+      "summary": "릭시아나 제네릭 출시로 국내 12개 제약사 중 80% 이상이 약가의 50% 이상을 CSO 판매 수수료로 지급하는 것으로 나타났다. 약가 차이와 회사 규모에 관계없이 높은 수수료 경쟁이 벌어지고 있으며, 시장 내 영업력 차이로 인해 수수료 상승 압박이 지속되고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80742",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-15T21:05:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "인벤테라, 조영제 상업화 가시권…허가 전 공급·첫 매출 촉각",
+      "summary": "인벤테라는 나노의약품 기반 MRI 조영제 'INV-002'의 임상 3상 결과를 확보하고 올해 4분기 내 식약처 품목허가 신청을 준비 중이다. 허가 취득 후 내년 가을 전후 제품 출시가 예상되며, 동국생명과학과의 협력 아래 출시 전 재고 공급도 검토 중이다. 후속 조영제 INV-003은 임상 1상 IND 승인 후 내년 임상을 계획 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80790",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-15T21:03:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "서밋, PD-1xVEGF '이보네스시맙' 폐암 \"FDA 허가거절\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 서밋의 폐암 치료용 PD-1xVEGF 이중항체 이보네스시맙이 미국 FDA로부터 허가를 거절당했다. 이번 FDA 결정은 임상 및 제품 상용화에 중요한 영향을 미칠 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFAxYmdDLXFON2NTbUROMHl0M3RRQWhzX1dLZWRxbS14WFFkY3pqNmVHVVdoQkl4RWp6YV9rc2RDVGx2QzBXV2F2QnQ3VzNrcGZ0eldQcHhKRQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-15T21:29:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "국내서 막힌 ‘세계 첫 먹는 파클리탁셀’…네 번째 급여 도전",
+      "summary": "대화제약이 개발한 세계 첫 경구용 파클리탁셀 ‘리포락셀액’이 국내 건강보험 급여 등재에 네 번째 도전한다. 2016년 허가 이후 급여 문턱을 넘지 못했으나 국내 유방암 적응증 추가 확보 및 암질심 통과로 급여 기준이 설정됐다. 반면 중국에서는 위암과 유방암 적응증으로 이미 보험 적용을 받고 있으며 최근 베트남 독점 라이선스 계약도 체결했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48069",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-15T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "마더스제약 올해 신규 급여등재 21품목…종근당 이어 업계 2위",
+      "summary": "마더스제약이 2026년 2월부터 10월까지 21개 의약품을 신규 급여 목록에 등재하며 종근당(25개)에 이어 업계 2위를 기록했다. 당뇨병 치료제, 복합제, 염변경 의약품 등으로 포트폴리오를 확대했고, 약가협상 절차도 적극 활용해 시장 진입에 속도를 내고 있다. 코스닥 상장 절차도 진행 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80789",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-15T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "AI 보정값도 비급여 청구되나…'바이탈케어' 고시 해석 쟁점",
+      "summary": "에이아이트릭스의 AI 기반 환자 상태 예측 솔루션 바이탈케어가 일부 혈액검사 미실측 항목을 AI 보정값으로 대체해 비급여 진료비를 청구하면서 보험금 지급 거절 논란이 불거졌다. 회사는 식약처 허가대로 정상 사용 중이라고 반박하며, 관련 법원 소송에서도 1심에서 청구 기각 판결을 받는 등 문제 없다는 입장이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80788",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-15T21:01:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'보신티' 특허도전 첫 심결서 각하…후발업체 3곳 제동 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 한미약품 ‘보신티’(성분명)의 특허 도전에 대한 첫 심결에서 후발 제네릭 3곳의 특허 무효 요청이 각하됐다. 이는 주요 특허권을 인정받으며 후발 업체들의 특허침해 도전이 제동 걸린 사례로 제네릭 경쟁 및 특허 분쟁의 중요한 분기점이 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBlTXM3U1BRaS0tSDdmYS1HSHpVOFEyUnpvTGZLV1JENzZ2M2lNLWlPNUs0VUFZRUNaeW5sSmF3X0Vxcm94V1FWT251TUxJTmdXbnROVkZ3?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-15T21:00:59+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오 CDMO 원료물질, 품목허가 없이 신속 수입 길 열려 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 식품의약품안전처는 바이오의약품 위탁개발생산에 사용되는 원료의약품과 원료물질을 품목허가 없이 지방청 확인을 거쳐 수입할 수 있도록 하는 ‘바이오의약품 원료물질 수입절차 특례’ 규정 제정을 행정예고했다. 확인서 한 번 제출로 최대 1년간 재수입 시 서류 첨부를 생략할 수 있어 바이오 CDMO의 생산 편의성이 크게 향상될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBJenFvYmRzek9TaEZVTEl1WFdPYUZlbEQ4U2R1S19UMzA3bnhwek9rMklCcW1VU0EzdXJJZFdRbklWZ1ZOaVVGZUhYUDdIZWp3dVpjWVVR?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-15T21:00:58+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "의료급여 미지급 예상액 9000억…약국도 약제비 지연 우려 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 의료급여 미지급액이 약 9000억원에 달할 것으로 예상되면서, 약국 현장에서도 약제비 지급 지연에 대한 우려가 커지고 있다. 이로 인해 약국의 재정 운영에 상당한 부담이 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBUdkJmQi1zOEVsdGdhQVFSdmFTYXRTSC1jZXFhZklwWHFQcGdzTzYxa3ZvUy1NLTAwOUJrTk5kbW9rb1I0Mm5VbmpTX1BSN0NvamdFSzd3?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-15T21:00:56+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "허가 없는 바이오 원료도 수입 길 열린다…위탁생산 특례 추진",
+      "summary": "식약처가 바이오의약품 위탁개발생산에 사용하는 원료의약품과 원료물질에 대해 품목허가 없이도 별도 확인 절차를 거쳐 수입할 수 있는 수입절차 특례를 행정예고했다. 세포주, 세포은행, 벡터, 배양배지 등이 특례 대상이며, 확인서 제출 후 최대 1년간 재수입 시 확인서 생략이 가능하다. 시행은 2026년 12월 31일 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48067",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-15T21:00:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "수출 늘어도 적자, 매출 줄어도 손실 축소…제약 실적 가른 ‘비용’",
+      "summary": "휴온스는 미국 수출 공백과 리콜 비용 영향으로 3분기 영업적자 전환했고, 팬젠은 원재료 불량에 따른 생산 중단으로 이익이 크게 감소했다. 반면 대원제약은 매출 감소에도 영업손실 폭을 크게 줄이며 누적 흑자 전환을 기록했다. 제약사별 비용 구조와 생산 안정성이 3분기 수익성에 결정적 영향을 미쳤다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48068",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-15T21:01:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "‘리투오’로 외형·내실 키운 엘앤씨바이오…1447억 유증으로 생산 기반 확대",
+      "summary": "엘앤씨바이오는 ‘리투오’ 제품 매출 증가로 올해 3분기 누적 영업이익이 약 10배 증가하는 등 수익성을 크게 개선했다. 회사는 1447억 원 규모 유상증자로 동탄 생산거점 구축에 1050억 원을 투입하며 생산능력 확충과 원재료 확보에 나서고 있다. 이를 통해 국내외 수요 확대와 후속 제품 생산에 대응할 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30264",
+      "source_name": "더바이오",
+      "published_at": "2026-11-15T21:40:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“공모가, 프리 IPO 투자 단가 ‘하회’”…바이오 IPO ‘한파’에 기업·투자자 ‘한숨’",
+      "summary": "올 하반기 국내 제약·바이오 기업들 중 절반가량이 희망 공모가 범위 하단 이하로 공모가를 확정하며 프리 IPO 투자 단가를 밑도는 사례도 나타났다. 이런 흐름은 기업의 자금 조달 규모 축소와 연구개발 자금 운용에 부정적 영향을 미치고 있어 투자시장 위축 우려를 낳고 있다. 연말 기술이전 성과 보유 신약 개발기업들의 공모시장 성과가 주목된다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30259",
+      "source_name": "더바이오",
+      "published_at": "2026-11-15T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "준혁신형 제약 지원 법안 심의 일정 '불투명'…\"법제처 설득에 총력\"",
+      "summary": "보건복지부가 추진하는 준혁신형 제약기업 지원 법안이 법제처 심의 일정 지연으로 이달 내 심의 마무리가 불투명하다. 이에 따라 연내 공모 절차 및 지원 계획 발표가 새해로 연기될 가능성이 제기된다. 복지부는 법제처 및 타부처와 협의를 지속하며 심의 조속 완료에 총력을 기울이고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48066",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-15T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "이연제약, 조영제 공급 문제 해결…수익성 개선 다시 시동 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 이연제약이 조영제 공급 문제를 해결하면서 수익성 개선에 다시 시동을 걸었다. 안정적인 공급망 확보로 사업 전반에 긍정적인 효과가 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9tRmNrSFJHZ2tHZnpFUlJCTVpMMHdiZjR3MVRfWDBGTW4xZ0RzSE1ZNl9IbFk1akNqYmZqSGUwMmU2WWpGcTU0UUp1N0lWWC02UGd0VzVn?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-15T21:00:52+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "상장 직전 기업에만 돈 몰린다… 초기 바이오벤처 생존법은",
+      "summary": "국내 바이오벤처 투자가 상장 직전 단계 및 상장 기업에 집중되는 가운데 초기 신약개발 기업은 자금난에 직면하고 있다. 오는 11월 문정바이오CEO포럼에서는 제약사와 바이오벤처 간 공동연구, 지분투자, M&A 및 기술특례상장 제도 개선 등 투자 생태계 회복을 위한 정책과 협력 방안이 논의될 예정이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80778",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-15T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 16,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
