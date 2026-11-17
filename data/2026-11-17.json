@@ -1,0 +1,207 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-17",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "[속보]아리바이오, '먹는 치매약' 임상3상서 단독투여군 1차지표 충족 - 머니투데이 - 머니투데이",
+      "summary": "(제목 기준·원문 미검증) 아리바이오의 알츠하이머병 신약 후보물질 AR1001이 글로벌 임상 3상에서 기존 치료제 미복용 단독투여군 대상으로 1차 유효성 평가변수를 충족했다. 단독투여군에서 위약 대비 질병 악화 속도가 31% 지연됐으며, 전체 환자군에서는 통계적 유의성을 확보하지 못했다.",
+      "source": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1KS3pkR0phNGdwUEZhWU1ubmZTMTVORXZabVJjOGtUa3pScDRJSDlvNHFjTUtiOFRpMGE5b3FqdXJXSGtJa3A1c2NoSmtLUzI5SDMxTnlsOEc4UDZUd3c0b1lLeWNIejktbGNIYjM4Y2UtT25WRndZ0gF8QVVfeXFMTjNYdlRiUmZBa1VQTHpZVUQxdFJIbENfcm9KWUF6aEw0T2ZnZEFyVmhCN20xbG5MOTl1VjVvUHRkU283OWx4dEV1R1JPWEgyTlN0RndmWE9CdFkwYU02eU9FWG1tUWhsQUhqZXNWZm95SDd2aS0tb1ZSTXEyUw?oc=5",
+      "source_name": "머니투데이",
+      "published_at": "2026-11-16T22:07:49+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[속보] 아리바이오 먹는 치매약, 임상 3상 단독투여군서 1차 목표 달성 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 아리바이오는 알츠하이머병 치료제 AR1001의 글로벌 3상 임상에서 전체 환자군에서는 1차 지표를 달성하지 못했으나, 사전에 지정한 단독투여군 분석에서 임상치매척도(CDR-SB) 악화 속도를 약 31% 늦춰 1차 평가변수를 충족했다. 안전성은 위약군과 유사했으며 추가 분석과 52주 연장시험이 진행 중이다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOT19nNF9ob0ZXSnJsQWlZWS1BZUs0SUdXcy1rVFFkNkllVDI2U3hHSmlNZGxqcjM2T2VaMHM4OHFISHRaWjNQTUt1QU1Va0oxczRva2J3enVtV1JRaVQwWUg4eG1hMEhMZ3ZqZkM4U2FhdkFPRHpWYzRHVWJ2cnkzVjRrRG5pM0nSAZsBQVVfeXFMTlg1aEdtRmU5ZTEzOWZnLVFRYUFmLXVYRV9JZWFxWlpselJPbDNWTE41TVc0T09uMS1DaHFRNW94bmRKaXRURmcwanNvcUcwa0RGSk11anlZMTUtQzY0YzZhSWp5QTZjSXpDYUZWRDRycXdMcGExQnJ4TTl2VjhKNGpNamtwQlVicEFvcnp3aWl6cHBJdWRMZW1iOFE?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-16T21:51:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아리바이오, ‘AR1001’ 3상 단독군 질병 악화 31% 지연·1차 충족…전체군, 유의성 미확보(종합)",
+      "summary": "아리바이오의 경구용 알츠하이머병 치료제 후보물질 ‘AR1001’이 글로벌 임상3상 ‘POLARIS-AD’에서 기존 치료제를 병용하지 않은 단독요법군을 대상으로 한 1차 유효성 평가변수를 충족했다. 단독요법군에서 위약 대비 질병 악화 속도가 31% 늦춰졌으나, 전체 환자군에서는 통계적 유의성을 확보하지 못했다. 안전성은 대체로 위약군과 유사했으며, 일부 이상사례로 인해 중단 환자가 늘어난 점이 관찰됐다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30327",
+      "source_name": "더바이오",
+      "published_at": "2026-11-16T22:21:07+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "대웅제약, ‘펙수클루’ 내수·해외 시장서 약가유연계약 효과 ‘톡톡’",
+      "summary": "대웅제약의 ‘펙수클루’가 약가유연계약 제도 적용 이후 국내 올해 3분기 처방액이 전년 대비 약 2배 증가하며 처방 순위도 13계단 상승했다. 해외 시장, 특히 아랍에미리트(UAE)에서는 해당 제도를 활용해 기존 가격 대비 2배 가량 높은 약가를 인정받아 수출 수익성 개선에 기여했다. 국내 환자 본인부담금은 별도 관리되어 부담 증가 우려는 낮다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30309",
+      "source_name": "더바이오",
+      "published_at": "2026-11-16T22:05:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아리바이오, ‘AR1001’ 글로벌 3상 단독요법군서 1차 지표 충족…질병 악화 속도 31% 감소(상보)",
+      "summary": "아리바이오의 알츠하이머병 치료제 후보물질 'AR1001'이 글로벌 임상3상에서 기존 치료제 병용 없이 단독 투여한 환자군에서 1차 유효성 평가변수를 충족하며 질병 악화 속도를 31% 늦췄다. 전체 환자군에서는 통계적 유의성을 확보하지 못했다. 연구는 1535명 초기 알츠하이머병 환자를 대상으로 52주간 진행됐다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30326",
+      "source_name": "더바이오",
+      "published_at": "2026-11-16T21:47:48+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "디앤디파마텍, ‘DD18’ 전임상 체지방↓·제지방↑…세마글루티드 병용 효과",
+      "summary": "디앤디파마텍의 비만 치료 후보물질 ‘DD18’이 식이유도 비만 생쥐에서 체지방은 줄이고 제지방량은 늘리는 전임상 결과를 보였다. 세마글루티드와 병용 시 체중 감소 효과가 확대돼 체중 감량의 질 개선 가능성을 제시했다. DD18은 ‘UCN2’-‘CRFR2’ 경로를 표적으로 하는 신규 기전 치료제로, 약동학 평가에서는 주 1회 투여 가능성이 확인됐으며, 내년 임상 진입 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30325",
+      "source_name": "더바이오",
+      "published_at": "2026-11-16T21:30:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "美 웨이브, siRNA 비만신약 후보 내장지방 14.3% 감소…제지방량은 보존",
+      "summary": "웨이브라이프사이언시스의 siRNA 기반 비만 치료 후보물질 WVE-007은 임상1상 단회 240mg 투여 후 6개월에서 내장지방이 위약 대비 14.3% 감소하는 효과를 보였고 제지방량은 유지됐다. 안전성도 양호했으며, 현재 BMI 35 이상 비만 환자 대상 임상 2a상이 진행 중이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30323",
+      "source_name": "더바이오",
+      "published_at": "2026-11-16T21:20:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "복지부 상대로 소송 중인 제약사는…7개사, 약가인하·리베이트 처분 다퉈",
+      "summary": "유영제약, LG화학 등 7개 제약사가 보건복지부를 상대로 리베이트 행정처분 및 오리지널 의약품 약가인하 처분 취소 소송을 벌이고 있다. 리베이트 관련 소송은 2심, 약가인하 소송은 2·3심에 계류 중이며, 일부 약품은 급여정지 후 순차적으로 급여가 재개된 상태다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48078",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-16T21:14:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"스프라바토 급여 적용, 치료저항성 우울증 환자의 새로운 치료 옵션\"",
+      "summary": "한국얀센의 치료저항성 우울증 치료제 스프라바토가 11월 1일부터 건강보험 급여가 적용되면서 환자의 경제적 부담 완화와 삶의 질 향상에 기여할 것으로 기대된다. 임상에서 우울증 증상 개선과 안전성이 확인됐으며, 보건복지부는 엄격한 급여 기준을 적용해 치료 접근성을 높였다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48081",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-16T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "RLT 생산부터 신약 공동개발까지…노바티스의 한국 구상",
+      "summary": "한국노바티스는 방사성리간드 치료제(RLT) 생산 시설 구축과 공동 연구개발을 통해 혁신 신약 개발과 스타트업 육성을 지원하며 한국 바이오산업 발전에 기여하겠다는 계획을 밝혔다. 안전하고 효과적인 RLT 치료제 공급과 규제 대응 체계 구축에 집중하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80818",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-16T21:03:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "메지온, 호주 특허 54억에 판 이유…‘법차손 75%’ 낮춰 관리종목 피한다 - 이데일리",
+      "summary": "(제목 기준·원문 미검증) 메지온이 호주 특허권을 54억원에 매각하며 법률상 손실률을 75% 낮춰 관리종목 지정 회피에 나섰다. 해당 거래는 회사 재무 구조 개선 및 경영 안정화를 위한 전략적 결정이다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNcFpSMmtYZE01TEFlN3JuMFJKc1czeDNTcmM4TjhQRE0tXzlraGJyUkFQaUhlcFFGMTFEbXR4blJFM2hEbXZaT0VCdXVtck9OSmR5OWp6Y1lCWktlQk45dXpwM1VGdndldzJvU08ybTBFLXlHeGVCUXlrRHIyc01IYQ?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-16T21:01:02+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "셀렉티스, CAR-T→'인비보 염기편집' 변경..\"인력 70%↓\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 셀렉티스는 기존 CAR-T 치료제 개발을 중단하고 새롭게 인비보 염기편집 기반 치료제 개발로 전략을 전환하며 이에 따라 전체 인력의 약 70%를 감축할 계획이라고 밝혔다. 이는 사업 포트폴리오 재구성에 따른 주요 변화다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5PWGJZSEtXNzIwVDhsTFhDektBVVFFRGh6Q3FnejdsU0FWVU1haXdrRTFtU0FkRnRvUWtSU1NhbF92NElFWmlNR0hzY1kxV3V6Z3BpcVlZNA?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-16T21:57:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "코오롱생명과학, ‘원료의약품 CDMO TF’ 본격 가동…수익 기반 넓힌다",
+      "summary": "코오롱생명과학이 합성 신약 원료의약품 위탁개발생산(CDMO) 사업 확대를 위해 태스크포스(TF)를 신설, 3분기부터 본격 가동에 들어갔다. 기존 원료의약품 생산과 수출 역량을 바탕으로 공정 개발 및 위탁생산 역량을 강화해 국내외 신규 고객사 확보를 추진한다. CDMO 사업 확장은 중장기 신규 수익원 창출 및 신약 개발 투자의 재원 확보에 기여할 전망이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30319",
+      "source_name": "더바이오",
+      "published_at": "2026-11-16T21:40:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "함께 쓰면 안 되는 의약품 조합 295개 추가…연령·임부금기도 확대",
+      "summary": "식품의약품안전처가 병용금기 대상 의약품 성분 조합 295개를 추가하는 내용의 개정안을 행정예고했다. 드로네다론-필시카이니드 등 심혈관계 부정맥 치료제, 진통제, 수면제 등 다양한 약물 조합이 포함됐다. 또한 특정 연령 및 임부에 대한 사용 금기도 확대하여 환자 안전성을 높일 계획이며, 의견 수렴은 오는 12월 7일까지 진행된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48083",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-16T21:06:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "파업에 현안까지 겹친 삼성바이오 노사…17일 교섭에 쏠린 눈",
+      "summary": "삼성바이오로직스 노사가 17일 임금 및 단체협약 교섭을 재개한다. 노조는 부분파업 규모를 확대 중이며 한국노총 가입 찬반투표도 진행 중이다. 핵심 쟁점은 임금 인상률과 성과급 지급방식이며, 노사 간 쌓인 불신 해소가 관건이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80819",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-16T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 삼성바이오로직스, 2.7조 유증에 청약 경쟁률 135.6대 1",
+      "summary": "삼성바이오로직스가 폴리펩타이드그룹 인수를 위한 약 2조7000억원 규모 유상증자 일반공모 청약에서 135.6대 1의 경쟁률을 기록했다. 증거금은 11조4400억원 이상 몰렸다. 신규 주식은 오는 30일 상장 예정이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80815",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-16T21:01:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아리바이오랩·코아스템켐, 동반 급등…HLB테라퓨틱스는 3상 실패에 '下'[바이오맥짚기] - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 아리바이오랩과 코아스템켐의 주가가 급등하는 가운데, HLB테라퓨틱스는 임상 3상 실패 소식이 전해지며 주가가 하락했다. 이는 임상 결과가 투자 심리에 직접적인 영향을 미친 결과로 분석된다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBMNlhQeEwzNXAxMm85VDZkdWptQ25mZWQ1MmdQQkhlMnZMcTlQQlllS3dJLTMzWnltZklVSWN2V2FEbW9xRDVQVncxTWsxN1VHSGJIOVkxZ0dSZkVad3JwTkJUeEQ1bkJ4Tk5qYWRB?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-16T21:00:11+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 17,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
