@@ -1,0 +1,229 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-18",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "\"대한민국 회사의 글로벌 알츠하이머병 임상 3상이 성공했다\"",
+      "summary": "아리바이오는 초기 알츠하이머 환자 1535명을 대상으로 한 AR1001 글로벌 임상 3상 결과를 공개했다. 전체 환자군에서는 통계적 유의성이 없었으나, 기존 치매약을 복용하지 않은 단독투여군에서는 치매 증상 악화 속도를 약 31% 늦추는 효과를 확인했다. 안전성은 위약군과 유사했으며 이상반응으로 인한 중단률은 투여군에서 다소 높았다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80852",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "삼성바이오·롯바 초대 대표들, HLB그룹 품으로…신약 넘어 글로벌 사업 확대",
+      "summary": "HLB그룹이 삼성바이오로직스와 롯데바이오로직스 초대 대표들을 연이어 영입하며 글로벌 항암신약 사업 및 CDMO 확대에 속도를 내고 있다. 특히 미국 FDA 품목허가를 받은 간암 신약 리픽투의 상업화와 추가 허가 추진에 전문 경영진이 투입된다. 이원직 사장은 HLB펩 사장으로서 펩타이드 원료의약품 글로벌화와 수익성 개선에 주력할 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30369",
+      "source_name": "더바이오",
+      "published_at": "2026-11-17T22:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "정재준 아리바이오 대표 “치매약 3상 효과…내년초 FDA 허가 협의” - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 아리바이오는 먹는 치매약 'AR1001' 임상 3상에서 단독 투여군에서 치매 증상 악화 속도를 약 31% 늦추는 효과를 확인했다. 이를 바탕으로 내년 초 미국 FDA와 허가 절차에 관해 협의할 계획이다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBVNXNWRWtLNlVXM3FoRzFNTkh3N1M4Q19tVEoxTzF5cUxmdHZYM1FOWW50YkZrOFN3b0tnVi1hOEc2dkpRMl9NNXNlQmQ3YzNIeWfSAVNBVV95cUxNLWtwb3ZyOThobmdaQkZqZlRpT0tWekpaRnJERW5sWVpLRHhVcDY0alU2ZHk3UFowYmNPMzQxOEdKdHRDX19NbVY3N2RMVVo5b0VPRQ?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-11-17T22:00:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "GSK 폐암 신약 '넬카르미' 미국 가속승인…기존 표적치료 환자 반응률 49%",
+      "summary": "FDA가 GSK 누발렌트의 ALK 유전자 재배열 양성 비소세포폐암 치료제 '넬카르미(성분명 넬라달키브)'를 가속승인했다. 임상 1/2상에서 기존 ALK 억제제 치료 경험자 중 49%가 종양 크기 감소 반응을 보였고 효과가 1년 이상 지속된 사례도 다수 확인됐다. 넬라달키브는 ALK 내성 돌연변이와 뇌 전이에 효과적인 차세대 경구용 표적항암제다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351719",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-17T21:59:36+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "니만피크병 환자 생존기간 4.9년→8.5년…미국, 첫 생존 개선 신약 승인",
+      "summary": "미국 FDA가 희귀 유전질환 니만피크병 C형 치료제 ‘렘바즈(아드라베타덱스)’를 승인했다. 임상 및 확대접근 프로그램 참여 환자 비교 분석에서 렘바즈 투여군의 사망위험이 비투여군 대비 55% 감소했으며, 생존기간 중앙값도 8.5년으로 대조군 4.9년에 비해 크게 연장됐다. 2주마다 척수강 주사하는 방식으로 중추신경계에 직접 투여하며, 청력 손상 관련 박스형 경고문이 포함됐다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351718",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-17T21:40:36+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가 가산, 받은 뒤에도 관리…요건 바뀌면 10일 내 보고",
+      "summary": "국민건강보험공단은 2028년 4월부터 가산 적용 품목을 대상으로 매년 전수점검을 시행한다. 약가 가산 요건을 충족하지 않을 경우 10일 이내 자진보고해야 하며, 미보고 시 가산 차액을 환급해야 한다. 국내 생산·원료 직접 생산 등 주요 조건에 대한 별도 검증도 계획하고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48091",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-17T21:14:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "PV 약가인하 차액 환급 '유형 다' 제외…재평가 약제 사전협상 2월",
+      "summary": "국민건강보험공단은 2027년부터 사용량·약가 연동 협상에 따른 약가 인하 시기를 매년 4월 1일과 10월 1일, 연 2회로 통합한다. 인하 시기가 늦춰지는 기간에 발생하는 건강보험 재정 지출 증가분은 제약사가 환급해야 하며, 유형 '다'는 환급 대상에서 제외된다. 2027년 2월 사전협상 및 3월 본협상을 통해 기등재 약가 재평가도 진행된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80870",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'데이비고' 임상적 우수성 재확인 \"불면증 치료제 새로운 선택지 기대\"",
+      "summary": "한국에자이는 DORA 계열 불면증 치료제 데이비고의 글로벌 임상 결과를 바탕으로 국내 출시를 앞두고 임상적 우수성을 재확인했다. 18세 이상 성인 불면증 환자 대상 임상 3상에서 지속적 수면 잠복기 감소 및 수면 효율 개선 등이 확인됐으며, 안전성 및 내성 문제도 우수한 성과를 보였다. 11월 말 SK케미칼과 공동 프로모션으로 국내 출시 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48089",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-17T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가 가산 유지여부 매년 확인… 2028년부터 전수점검",
+      "summary": "국민건강보험공단은 2028년부터 약가 가산 적용 약품에 대해 제조소 및 생산 조건 점검을 연례 실시한다. 가산 요건 미충족 시 자진 신고하면 환급 없이 처리하나, 미신고 적발 시에는 환급 조치를 적용한다. 또한 공급 중단에 따른 환자 영향 평가도 강화하며, 해당 약품은 환수 조치 대상이 될 수 있다. 점검 대상은 약 600품목이며, 제약사의 자료 제출 부담 완화를 위해 식약처 의약품 허가정보를 우선 활용할 계획이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80868",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[드럭 인포그래픽] AML 표적치료제 ‘반플리타’, 급여 진입 첫 관문 통과",
+      "summary": "한국다이이찌산쿄의 급성골수성백혈병(AML) 표적치료제 ‘반플리타(퀴자티닙염산염)’가 건강보험심사평가원의 2026년 제8차 중증질환심의위에서 급여기준을 설정하며 국내 건강보험 급여 진입의 첫 관문을 통과했다. 글로벌 임상 3상에서 전체 생존기간 및 무재발 생존기간이 유의미하게 연장됐으며, FLT3-ITD 변이 양성 AML 환자에게 1차 치료 옵션으로 의미가 크다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30352",
+      "source_name": "더바이오",
+      "published_at": "2026-11-17T21:00:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "매출 늘어도 적자, 기술료에 흑자… 코스닥 바이오 3분기 명암",
+      "summary": "2026년 3분기 코스닥 상장 바이오기업 10개사 중 알테오젠과 에스티팜만 영업흑자를 기록했다. 알테오젠은 기술이전 및 상업화 수익이, 에스티팜은 CDMO 사업이 실적을 견인했다. 반면 리가켐, 오스코텍 등은 기술료 인식 시점 차이로 적자 지속, HLB는 매출 증가에도 임상 개발비 부담으로 적자 확대됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80866",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:07:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[골프존카운티 M&A] 5000억 쏘기로 했던 메리츠…홈플러스 망령에 위험분산 - 딜사이트",
+      "summary": "(제목 기준·원문 미검증) 국민건강보험공단은 위험분담계약 유형 약제에 대해서도 약가유연계약 적용을 검토 중이다. 제약계는 단순 환급형뿐 아니라 총액제한형, 복합형 등 다양한 계약 유형으로 확대 및 신청 시기 제한 완화를 요청했다. 공단은 이로 인해 환급 절차와 행정 부담 완화 효과가 있을 것으로 보고 있으나, 규정 개정과 기존 계약 조정이 필요한 만큼 관련 기관과 협의할 예정이다.",
+      "source": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8xRkgwWTlDZnlMbE0tV0NVQjVfaGJ2WWpJQjZsUjNRUGl3UnNGUlBwMTRsWkxYZlRGZFVTQkVSQ3pGVThfSkZ6ckt3ZkJzZ0k?oc=5",
+      "source_name": "딜사이트",
+      "published_at": "2026-11-17T21:20:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "위험분담 약제도 유연계약 적용 검토…“환자·제약사 환급 부담 해소”",
+      "summary": "국민건강보험공단은 위험분담 약제에 대해서도 약가 유연계약 적용 방안을 검토 중이다. 이를 통해 환자와 제약사, 공단의 환급 부담을 줄이는 것이 목표며, 대상 확대와 계약 시기 조정 등을 위해 유관기관과 협의할 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48094",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-17T21:18:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "톡신으로 세계를 연 휴젤, '토탈 에스테틱'으로 다음 25년 연다",
+      "summary": "휴젤은 보툴리눔톡신을 기반으로 필러, 스킨부스터, 화장품 등 6개 영역으로 사업을 확장하고 4대 빅마켓(미국, 중국, 유럽, 브라질)에서 점유율 확대에 나섰다. 2027년 하반기 미국에서는 직접 판매 체제로 전환하며 중국 시장에서는 5년 내 점유율 1위를 목표로 하며, 국내외 매출 성장세를 이어가고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80861",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:09:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "PVA 약값 인하 미뤄진 만큼 제약사가 환급…“유형 다는 제외”",
+      "summary": "2027년부터 사용량-약가 연동 협상에 따른 약가 인하 시기가 연 2회(4월 1일, 10월 1일)로 통합되어 시행되며, 인하 시기가 미뤄진 기간의 보험재정 지출 증가분은 제약사가 환급하게 된다. 유형 가·나 약제가 환급 대상이며 유형 다는 행정 부담 등으로 제외된다. 환급 고지 시점과 담보 설정 관련 세부 절차는 연내 확정 예정이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48095",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-17T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "근육 지키려는 한미약품과 온코닉…릴리·노보는 치료 영역 확장",
+      "summary": "2026년 ObesityWeek 학회에서 한미약품은 마이오스타틴 억제 후보물질 HM500197을 티르제파타이드와 병용해 체중 감량 중 근육 손실을 억제하는 전임상 데이터를, 온코닉은 저분자 후보물질 OCN-501 병용 효과를 발표했다. 빅파마들도 다중작용제로 비만 관련 동반질환 및 식욕 조절 효과 연구를 진행 중이며, 내약성 관리도 중요한 과제로 제시됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80862",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:06:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 아리바이오 '먹는 치매약', 3상 엇갈린 결과에 관련주 하락",
+      "summary": "아리바이오가 발표한 먹는 치매약 임상 3상 결과에서 전체 환자군은 1차 평가 목표를 충족하지 못했으나 단독 투여군에서 의미 있는 효과를 나타냈다. 그러나 2차 지표에서 유의성 확보에 실패했고, 관련 상장사 주가가 크게 하락했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80856",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-17T21:02:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약사는 왜 약국 조제자료를 찾나…'실적 검증' 관행 덫으로 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 제약사들이 약국 조제자료를 수집하는 배경과 관행에 대해 문제점이 제기되고 있다. 실적 검증을 명목으로 약국 조제정보를 수집하거나 활용하는 과정에서 개인정보보호 및 법적 이슈가 발생할 수 있으며, 약국과 제약사 간 신뢰 저하와 부적절한 영향력 행사 우려도 크다는 점이 드러났다. 이러한 관행은 업계 내에서 비판적인 시각이 늘고 있어 개선이 요구된다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB5alBSS1NjeDZiUEZDY3RJREE0cGQ3SDhvT1Q5SnhKV3BTR3kzb0Z1dmhkamFYR0VhVlJteXhGa00xeVlMMzMwX3VqRmQybVBrUVc2TE5n?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-17T21:00:56+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "희귀질환 치료제 '옥스루모주', 혈액암협회 약제비 환급절차 '개시'",
+      "summary": "희귀 유전질환 PH1 치료제 옥스루모주가 건강보험에 급여 적용됨에 따라 혈액암협회를 통한 환자 약제비 환급 절차가 시작됐다. 약제비 병당 6900만원이며 연간 환자 약 20명으로 추정된다. 공단은 위험분담 계약 약제로서 환자 본인부담 100% 시 제약사가 환급을 책임진다. 입랜스캡슐과 카보메틱스정의 위험분담 계약은 종료됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48088",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-17T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 19,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
