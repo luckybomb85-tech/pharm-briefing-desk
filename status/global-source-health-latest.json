@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-17T11:52:04+09:00",
+  "checked_at": "2026-11-18T11:18:50+09:00",
   "status": "PARTIAL",
   "request_budget": {
     "official_feeds": 2,
@@ -8,12 +8,12 @@
     "pooled_queries": 1,
     "total_max": 18
   },
-  "candidate_count": 348,
+  "candidate_count": 312,
   "routes": [
     {
       "source": "FDA Press Releases",
       "status": "PARTIAL",
-      "hits": 6,
+      "hits": 7,
       "in_window_index_hits": 4,
       "error": null
     },
@@ -27,8 +27,8 @@
     {
       "source": "EMA News",
       "status": "PARTIAL",
-      "hits": 5,
-      "in_window_index_hits": 0,
+      "hits": 6,
+      "in_window_index_hits": 1,
       "error": null
     },
     {
@@ -48,8 +48,8 @@
     {
       "source": "STAT",
       "status": "PARTIAL",
-      "hits": 20,
-      "in_window_index_hits": 20,
+      "hits": 16,
+      "in_window_index_hits": 16,
       "error": null
     },
     {
@@ -62,58 +62,58 @@
     {
       "source": "BioPharma Dive",
       "status": "PARTIAL",
-      "hits": 10,
-      "in_window_index_hits": 10,
+      "hits": 4,
+      "in_window_index_hits": 4,
       "error": null
     },
     {
       "source": "Fierce Pharma",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "PARTIAL",
+      "hits": 14,
+      "in_window_index_hits": 12,
+      "error": null
     },
     {
       "source": "Fierce Biotech",
       "status": "PARTIAL",
-      "hits": 13,
-      "in_window_index_hits": 12,
+      "hits": 11,
+      "in_window_index_hits": 11,
       "error": null
     },
     {
       "source": "BioSpace",
       "status": "PARTIAL",
-      "hits": 100,
-      "in_window_index_hits": 97,
+      "hits": 65,
+      "in_window_index_hits": 60,
       "error": null
     },
     {
       "source": "FirstWord Pharma",
       "status": "PARTIAL",
-      "hits": 78,
-      "in_window_index_hits": 78,
+      "hits": 59,
+      "in_window_index_hits": 58,
       "error": null
     },
     {
       "source": "Scrip/Pink Sheet",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "PARTIAL",
+      "hits": 26,
+      "in_window_index_hits": 24,
+      "error": null
     },
     {
       "source": "Evaluate",
       "status": "PARTIAL",
-      "hits": 3,
-      "in_window_index_hits": 3,
+      "hits": 0,
+      "in_window_index_hits": 0,
       "error": null
     },
     {
       "source": "Pharmaceutical Technology",
-      "status": "FAIL",
-      "hits": 0,
-      "in_window_index_hits": 0,
-      "error": "HTTP Error 429: Too Many Requests"
+      "status": "PARTIAL",
+      "hits": 5,
+      "in_window_index_hits": 5,
+      "error": null
     },
     {
       "source": "Labiotech",
@@ -125,15 +125,15 @@
     {
       "source": "GEN",
       "status": "PARTIAL",
-      "hits": 6,
-      "in_window_index_hits": 5,
+      "hits": 4,
+      "in_window_index_hits": 4,
       "error": null
     },
     {
       "source": "Global gap recovery",
       "status": "PARTIAL",
-      "hits": 18,
-      "in_window_index_hits": 18,
+      "hits": 11,
+      "in_window_index_hits": 11,
       "error": null
     }
   ],
