@@ -1,67 +1,67 @@
-# 글로벌 제약바이오 브리핑 | 2026-11-18
+# 글로벌 제약바이오 브리핑 | 2026-11-19
 
 > 자동 발견·선별된 취재 후보입니다. 원문 및 핵심 사실은 기사 작성 전 확인해야 합니다.
 
-### 1. AriBio’s oral Alzheimer’s drug meets monotherapy goal in phase 3 as Fosun weighs licensing option - Fierce Pharma
-- 매체: Fierce Pharma | 중요도 점수: 7
-- 분류: CLINICAL, DEAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUmktYmEzYTJteVh1QUhLSFh0TEVkVDcxMDdmaHFkWHNGTW9Dd0swTTMybnFYQWpFMUpia2w4WUhaUVZEYVAxcG9mNjhqTEl0aHA5U3o0Y3ZFVklJbGl6TGtnSTd5QkgzcjRNUkJONTJWczBQQlhVX0paSW5leVNLcnZNU3pqQlkxUHcyT1NsbFdwaXhDZ3RmcldVdHFGQ1hEcmpyR0QyZFhlUEJ4RHY5c3VmYVM5RTcxREwzTkJFeHlwZw?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 2. Acadia Pharmaceuticals Presents Additional Phase 2 RADIANT Study Results Evaluating Remlifanserin for the Treatment of Alzheimer's Disease Psychosis at the 2026 Clinical Trials on Alzheimer’s Disease (CTAD) Conference - FirstWord Pharma
+### 1. Almirall secures positive CHMP opinion for expanded tirbanibulin treatment area - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBxdzdMdC0zNkstY0syT0ctc0FuVFUwZnBEWWU5MUpkb0NVU1RkN1ZqVVNpWXN0UEJIRTVVdnc4N1ozN0pWTHpEcnotQUJXcFFKc2R3?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 3. Annovis Receives Second Positive DSMB Recommendation for its Phase 3 DUET-AD Study - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMivwFBVV95cUxNSVM5UmpxYzVYdU9MeHJoVDZobXhFNTlCaGJ0YTB2NEJuSVNQbHEzSzBnRXV5M2hxVHNMQnVQZW1rZlltMEFCRjNlSnc1TVU3am5WSGNvWVdaQ3ZKYm8taWw4S0NlS0ttLVhfdmZRcTExTE1ObkpDX2syaTZlbnpfMXFvdkc5dnA3eDM2X0FFN29HbEg2MncxUFkzMW1wUlZMMGRKeFR6U2RZRmxzbHlYalZoRXVaME1VRElqcTZNQQ?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 4. AriBio sees subgroup hope for AR1001 in pivotal study for early Alzheimer's - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFB4Vi1FNHI2MDZmeTh5TUZnaC1HZUQ0MU85QkZmd0FDLWN3aHJTNlFJak1vZkU2ZUtTMXdpOUs3Y00tWTRubEhuY09aR1BESWs0bU5F?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 5. AriBio’s Oral AR1001 Meets Primary Efficacy Objective in Prespecified Monotherapy Population in Phase 3 POLARIS-AD Trial - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE82UVFMTzdMVVE3ZG5MbFp3X0NjRWdINFFyYkFFUmZFV0p6RktqQ2hjQk05bmNLcko2Vy15WjRzRWh5dnVzMEtSZEQ0T0tSZmhEREFz?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 6. Cognition Therapeutics Announces CTAD Poster Highlighting Screening Efficiencies with p-Tau217 in the Ongoing Phase 2 START Study - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFB5S0g2RExXeUwwbEpQVjhDUG9oSGU1M05qQ0NIVG5nS29TUmgtRWNLZGh0LTVyUjNSWUhHRXFJeExNakhTRnctUjhxQ2xYZ3hWZkRz?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 7. Daewoong Pharmaceutical Presents Phase 1 Clinical Trial Data for New Autoimmune Disease Drug Plodicitinib at ACR Convergence 2026 - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTFBGWWgyM085M2VLdGttRlcyQy1DVG8yRmU1VnNpWmZkaDc2TW1VU0pSU1M1UFVsSmFQVlFWXzhZTWhVUlJ1X09SWElJZ3pCaTZBcG9R?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 8. Ensem Therapeutics Announces Dosing of First Patients in Phase 1/2 Clinical Trial of ETX-929, a Potential Best-in-Class Oral Pan-KRAS Inhibitor - BioSpace
-- 매체: BioSpace | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMijwJBVV95cUxPX3lIRXNrRHVHcGxZX2R6aFVCYXdZZXRROTNubkRuWUV3SDlTaXV5WmMxSzVGQjRNT2pLZFIyUkpsUlJPQ0c3RjV3SDhoamhrSEVPS1g1MU1lZU5HRkE3bDdMX2FINXpkNmNuMTJ0ZWRpRkdqc2dqWFoxek1OQXowWnIzLUEwQ3l6RFJMSlNVemVMa28yUllhQkk5VDRsQ0RhWWVQeTZ3LXhoNFRhR0w5UWRvMVNjNHByaExnVmsydFBFanhVWGFiQW9mUnU5eDEyZUJtY1FTemIxMEVuMWJ0ZV9CQVlpeHRQeEtOcEJpSV9ES2plbXBVbWU0QzBrdnpwVnpOUmdXcDJBUlRkMkdj?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 9. FDA approves pimicotinib for symptomatic tenosynovial giant cell tumor - U.S. Food and Drug Administration (.gov)
-- 매체: FDA Press Releases | 중요도 점수: 4
 - 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMirgFBVV95cUxQaXg1UDd4V0FfeklrUjl0YlNSRFNibnRUd3JWajhxR0EtTEFUVlFCOHdoOEl6RlVySVJpNTM3U0xNVHJ5SW5RMHoyZVJRWkxvcmRZaEZVUTlCdkRCWUhEOG5hZDJsR2FvVmFaV2t5RTlacjZWalNWM2JKd256a3cxT1RVWnBGZ1hUNlRnUGxoX1hadnFXSGluNTBuaTJQdzBrbmo5V1lXRkNHUVBFMVE?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE80aXRnQWNqYUdLRElzWS1ad1VhY21JS2NDOXJoYV9qN0d5NTBiQ1A3TzgydmVJYjRTMFRzZlN6UV9jSzRnbFhkZjBxWS1nbENFRzZN?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 10. FDA’s complete response letter for Summit’s ivonescimab cites China-heavy data beyond survival miss - Fierce Pharma
+### 2. Anixa Biosciences and Curia will Develop Final Formulation for Breast Cancer Vaccine in Preparation for Phase 2 Clinical Trial - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi-gFBVV95cUxPYUtpSmZoNW1yR18yVW9wd2s1ZUw4enpiMUNGZ1AwLUEyVThDR1B6NDdud09JTmtSaGMzSjNQemlaMVN5Yk80VG1CZklsWkxGMDVjMUpZMF83eENVcm1PWEhzdDh5a20tT29sNjFTT1N6dG9uSmdaalBvRFhWYTNENmZkWXVOUWhBY0NhbENQNm1zeWRjUi1FNzlMY1hmclFOclhXazJwci02X1BDYTJsTGoya2ZGZjVSak9WdzNYYzVQN2JDSzF3cEJVQldFN1BUSTVnS3liTFBtZzM1ODJacWpHWldNZU9XTlpGSmR1bUwtNlJBalI1azJ3?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 3. Can-Fite Pivotal Phase III Psoriasis Study Under an FDA- and EMA-agreed protocol: All Patients Completed Dosing and Interim Analysis Expected Q1 2027 - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMilgJBVV95cUxPeTNlM3ZNYlZyclJPSmh4Zkl5eDh6V0s0b1JsSmE3aEdTa1d5VUZUTmI4cC1DYVMzUEdnM29HS1QwVGVQZ192S0xVMlB2RWx4V014MkpHZUFad0M4ZUl2SnVoNHozSFB5czNWNEFkbXE5WHVrdDVPVWQ3OGVmc0FZdVZyU2Y5N1dzSXVBTGdGSFJfeVd3Zkx1WDk4emt4RUFxMWUweDQtakRWcF9uSTRPSEwyNHhTQU5uWl8xaGZSdzJTbmgxWVFDdERvOG1odk9oWlBXUFJFOHdmQ0hxTjhPS1prU0ZhQXZkX2cyckw5N3pmelNKVTFBUkxCaHVjV2tuVHFEVmktZnFic1dCckQyVU9qNkhzUQ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 4. Cognito phase 3 flops in light-and-sound Alzheimer's trial, but sees ‘signal’ for HOPE - Fierce Biotech
+- 매체: Fierce Biotech | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMirgFBVV95cUxObzYwVXd6VmtRbkhaUHFuU2NnVl9HRjBLY1kwMHVaWTF3YV81TWRIUTZaLWhvNkNKanlPZXh3SDlST3BLeXdmZE1BRjRKdmdXYl9JZzJpNGE3MndsTHV3ZnFTb1ViVzA0QTVvbm1QdFRQa1JzbXVwY3A3QTBNNlpCd0htX0pTMDNMbXVNbE9GUkZTX2ZvR0JpR0Zob3Q3Nm1fUWZLRWFMVHhSclFSV1E?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 5. Eloxx Pharmaceuticals Announces Publication of Phase 2a Exaluren Data in Nonsense Mutation Alport Syndrome in the Journal of Clinical Investigation - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE5ONHNJVDJQaXhMVTI1eE53THo0djd4WUtFanNVaG1XZkdkYVRhYmRxWEZOd0lEbDFlQmQ2Q05mMmJMMGJOS1hyY0otVm9hWUlGcHc4?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 6. FDA moves to yank Salerno's liquid cholesterol drug approval on missing reports - Fierce Pharma
 - 매체: Fierce Pharma | 중요도 점수: 4
 - 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMixwFBVV95cUxNX0Z0ZC1TZ0ZFQmliUnZTMjBTcHVsTjREeFhRZWFRNllUVVNfckpQUkdycDFEUmtWM1VkYkNtdkNYWE9HZGJmbmdGWG5BLXdfSmRPZlctZDJZd3o4OTJ0cEZfNlY3N3lsVEZiZ21oNUVHVUYweXVLMXQtenZYLWdJbzgwRlhIdjBYTWZaSGhzclBBbzJHX09lMFBZVHNoc2JRcnRZbEIwTW1WZnNETFpPNlo1dm5hZFhkcjM2T2QxMW5scjNWTXIw?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZVhQdDVBRlk3RnpEUDh3WE5FakprRDc1NnJhV2xHVzBFY21qVGlUZGhRS3kxRVhUTTVDYmM4MDg2dG5HcGN1MDJSejVrOGc1R21FVEhiVXlpV2xvd2RJQjhSQVRrZXJPdXNNTUY2ejdhTDZNU3ZtLXo3cDBjM0Y5WXptcG1YdlZTekRQUllFbHZSRWgxcVd4Unh5bXJNdjZyZW5EeHBXOFpoRjQ?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-선별 대상 312건 중 중요도 기준 통과 46건. 상위 10건 표시.
+### 7. GSK's Nelkarmi wins accelerated FDA approval - The Pharma Letter
+- 매체: Global gap recovery | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMikAFBVV95cUxQUHVsRjd6Tlhpa2ZiNlR1S2VjeVhhYUh3dXRmUzR2QUdfX09VTDJDWldFajRWOC16VjFMdS1yQmhiN24xdGc1SVQtMWJ6RnppdWdXVS01UVZrcE9KeGlzYmpyTE80M2dKVGxtMGZvV2xyNV9tazd5OVI0cGlzYXlBdHpHUEJWMHZwcGJLWG9zaDM?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 8. GSK’s $10.6bn Nuvalent bet pays off with second lung cancer drug approval - Pharmaceutical Technology
+- 매체: Pharmaceutical Technology | 중요도 점수: 4
+- 분류: REGULATORY
+- 발견 링크: https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWmtfNmdfN0ltSFhGR0FwbzFEV1JXVEpHaEVZZkFmRWZHa1pxVkZuS2JWYUxqalhySUJmNUYzX0hpYUJWZDI2ZUhhb1haQjRTUFJhMzFQNE5SQlBhcHZXR2p1Q1hzNnNfLVZTcVJOU1NaX0lyMXlkdVdVdTd6cXNzUTlKRVZSYVhncTBmb21BVEF1eVMySnk1SXBtVGZEZVNzd1czV1kzTDRyblhLWV9QX1l6LUdLQmlVNVhn?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 9. IGC Pharma Completes Dosing in Phase 2 CALMA Trial of IGC-AD1 for Agitation in Alzheimer's Dementia - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNUJkQklVM1V2dklDNmdRVWVRVVp0aXBoeHRXUHJpTlhRNlByTEQyVjRRSGdlaVpuRUgwYThfckZuRVBFQVlnX29KRnc3NTRndnQxdGN2V0JxUTVUTDNlcjlId2ZsTzR4UXZWT0hjLTJJYTVrNTJkV3lKdVNQd3ZrMHc0Wl95RGhqNER4aTBPQWxZMDhKbTFKdHo5LXZqRnRhSlVMUVZ0blg4NVI4MlNPMERmRDJpUGxJdmRlQmc2YUltZFF4ZERrdXhPNFNSTXIwTU1VOQ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 10. Lynch Regenerative Medicine (LRM) Announces FDA Authorization of Two New INDs For Investigator-Initiated Clinical Trials Evaluating Injectable rhPDGF-BB for Facial Skin Quality and Treatment of Infraorbital Hollowing - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi7wJBVV95cUxNZGhlWERfdmFHR1JmSDZmQ3lpYjJBemtCWUtuTXFTcXdRSFRXWUZvX0FEel9ZVTZyV3B4cEVGSmpvY19fWnFib2FkNjBpa1BYNlUtSE1sdXFSWkhqM25KS0lSQ0t6Wmk1NTlLVHZfNFdnLS1KTHIwZFFsTGwtUmlxVmRmOW1mREZlLXdhVm1paW9kYl9VU3AwVEl5T2E4cFdLcC12Mi12alRVODAtZWdBY2dONC1zVzJUemZRYWhsMG4wVzBwQzUyc3RPWndwVVpNNUpIc0ZSU2NZTUpJZFJrREdWZ3ZhcUFHNHN6NTZCYVV2X09uNTVwSWZMTFZuUUZGRFQ0VVg2MHM0eE54eWVRbXpDbDlIODNNWUZPVERNUFhGaHRBalU1Si10T0k3LURUMzUyb3Q2SmNrd3VWekM2V215WnNQb1V2YkhkUFlfWXpQdnpMWjg3MEx0Vm8wa09WbFZhMXdWSVlsRW1kR3pZ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+선별 대상 328건 중 중요도 기준 통과 48건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
