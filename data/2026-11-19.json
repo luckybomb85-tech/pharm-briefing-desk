@@ -1,0 +1,196 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-19",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "FDA, 3형 고셔병 신경 증상 치료제 美 첫 허가…국내 기업도 개발 중",
+      "summary": "미국 FDA가 3형 고셔병 신경 증상 치료제 인필브레이(Infilbray)를 성인 및 체중 15kg 이상 소아 환자에게 첫 허가했다. 인필브레이는 혈액뇌장벽을 통과해 뇌에 쌓이는 지방 성분을 줄이는 경구용 신약이다. 국내에서는 유한양행이 GC녹십자에서 도입한 글루코실세라마이드 합성효소 억제제 YH35995를 임상 개발 중이며, 이수앱지스도 효소대체제 애브서틴의 적응증 확대 임상을 진행하고 있다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351731",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-18T21:58:44+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“약은 급여인데 검사는 200만원”…난소암 HRD 검사도 건보 적용해야",
+      "summary": "아주대병원 장석준 교수는 난소암 치료에서 린파자·베바시주맙 병용 유지요법 급여 확대에 비해 환자가 200만원에 달하는 HRD 검사 비용을 부담해야 하는 현실을 문제로 지적했다. HRD 검사는 치료제 급여 사용을 위해 필수적이나 건보 적용은 되지 않아 비용 부담 불균형이 심각하다고 밝혔다. 또한 백금저항성 재발 치료제 허가 후에도 비용 문제로 치료 접근성이 낮은 점을 개선할 필요가 있다고 강조했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48108",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-18T21:10:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "복지부 \"의료급여 진료비 9천억 미지급 사태, 연내 재정 투입에 총력\"",
+      "summary": "보건복지부는 올해 10월 말 기준 의료급여 환자 진료비 미지급액 약 9천억 원에 대해 내년도 예산에 5,800억 원 반영과 예비비 활용으로 연내 최대한 해소하겠다고 밝혔다. 늘어난 의료급여 수급자 수로 인한 예산 부족으로 의료기관과 약국의 운영에 어려움이 있으나, 지급 일정 안내 및 제도 개선 등의 대응도 병행할 계획이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48111",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-18T21:06:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"신약은 빠르게, 관리는 촘촘히…국민 관점에서 접근성 보장\"",
+      "summary": "올해 3분기 제약업계 연구개발비 투자가 상반기 대비 둔화됐으나 매출 하위권 제약사들은 준혁신형 제약기업 지정 기대감에 따라 R&D 투자를 늘리고 있다. 65개사 누적 R&D투자액은 증가했으나 증가율은 9%대로 감소했고, 매출 상위권과 하위권 간 투자 양상이 엇갈렸다. 이는 최근 약가개편에서 준혁신형 제약 우대가 중견기업 투자 확대 동기로 작용한 결과로 분석된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80824",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:04:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "메토트렉세이트에 ‘2차 발암 보고’ 추가…식약처, 허가사항 변경 예고",
+      "summary": "식품의약품안전처가 메토트렉세이트 주사제·경구제에 2차 발암 위험 보고를 허가사항에 추가하고, 경구용 트리플루리딘·티피라실염산염에는 폐렴, 경구용 덱사메타손에는 패혈증 이상사례를 신설할 예정이다. 변경명령은 12월 4일로 사전 예고 기간은 12월 3일까지다. 다만 해당 이상사례와 성분 간 인과관계는 입증되지 않았다고 명시했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48114",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-18T21:02:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "의료급여 미지급 9000억…복지부 \"올해 최대한 해소, 지급일정 안내\"",
+      "summary": "보건복지부는 올해 의료급여 진료비 예산 부족분 약 9000억원을 예비비 등을 활용해 최대한 연내 해소하겠다고 밝혔다. 의료급여 수급권자는 작년 152만명에서 올해 171만명으로 증가했고, 1인당 진료비도 상승해 예산 부족 원인이 됐다. 복지부는 의료기관과 약국의 자금 운용 부담을 고려해 진료비 지급 일정 정보를 제공할 계획이며, 내년도 의료급여 제도개선안도 준비 중이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80907",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "박범찬 와이바이오 대표 “SITC 성과에 빅파마 관심↑…내년 AR170 기술수출 목표” - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 와이바이오의 박범찬 대표는 SITC(미국암학회)의 성과로 빅파마의 관심이 커지고 있다며, 2027년에 자사의 신약 후보물질 AR170의 기술수출을 목표로 하고 있다고 밝혔다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5YbTV5QjVmZDRRZHR4anVUMzlGbGd2Q2hiT1NrWXFETFlZZjVEeGg2Xy0yYUh0TlNlUjQ5VENBLXpNNFZwUk5Db01oVi1mUWJwaFlsTzFCWko0bnEwR0FENDVudGtqbWhpV3E2Yll3?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-18T22:00:05+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약 R&D 투자 증가세 꺾였다… 매출 하위권 기업은 오히려 확대",
+      "summary": "2026년 3분기 누적 기준 제약업계 연구개발비 투자 증가율이 상반기 대비 감소해 9%대에 머무른 반면, 매출 하위권 기업들의 연구개발비 투자는 오히려 늘었다. 이는 매출 하락과 연구개발비 투자 간 상관관계가 있는 것으로 분석되며, 준혁신형 제약기업 지정 제도가 중견 제약사들의 투자 확대 유인으로 작용하고 있다. 대웅제약, 종근당, 유한양행 등 주요 상위권 기업들도 여전히 1000억원 이상의 연구개발비를 투자하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80913",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "한·미 생산거점 잇고 글로벌 정조준…롯데바이오 '매출 1조' 청사진",
+      "summary": "롯데바이오로직스가 인천 송도에 12만ℓ 규모 바이오의약품 생산시설 완공을 앞당겨 GMP 준비를 마쳤고, 미국 시러큐스 공장과 연계해 총 16만ℓ 생산능력을 확보했다. 첫 상업생산 계약도 체결하며 2028년부터 본격 상업생산에 돌입할 방침이다. 생산 규모뿐 아니라 고객 맞춤형 서비스와 글로벌 시장 확대를 통한 매출 1조원 달성을 목표로 하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80911",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:05:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "셀라스, 'WT1 암백신' 백혈병 3상 \"사망위험 41%↓\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 셀라스는 WT1 암백신을 활용한 백혈병 환자 대상 임상 3상에서 사망 위험을 41% 낮춘 긍정적 결과를 확인했다. 해당 임상은 백혈병 환자에서 효과와 안전성을 중점적으로 평가했으며, 사망률 감소라는 의미 있는 임상 지표를 도출해 치료 옵션 확장에 기여할 것으로 기대된다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBjY2lfdmItazJkOEVuVjJjNldCaTR1SjljaTF0UklMRVNhS2p6SlhsU3ZlWnF5eTUwY2dVTGozMUVrRlJISTJQUmdHVTF5RkhadnRCYjQyWQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-18T21:22:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "수술 뒤 ADC, 재발 땐 표적 따라…아스트라제네카의 부인암 개발 전략",
+      "summary": "아스트라제네카는 자궁내막암과 난소암 등 부인암 치료를 위한 항체약물접합체(ADC) 및 면역항암제, PARP 억제제 병용 요법 임상을 진행 중이다. HER2, FRα, B7-H4, TROP2 등 다중 표적 ADC 후보 약물과 파마코더믹스 기반 환자 선별을 통해 치료 효과를 조기 개선하는 전략이다. 난소암 1차 유지요법에 쓰이는 올라파립(린파자) 병용요법은 국내에서 최근 급여 적용 확대를 받았다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48107",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-18T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "톡신으로 세계를 연 휴젤, '토탈 에스테틱'으로 다음 25년 연다",
+      "summary": "휴젤은 보툴리눔톡신에 이어 필러, 스킨부스터, 화장품 등 6개 영역으로 사업을 확장하며 '토탈 에스테틱' 기업으로 성장 중이다. 미국·중국·유럽·브라질 등 4대 핵심 시장에서 점유율 확대를 추진하며, 2027년 하반기 미국에서 직접판매 전환을 목표로 하고 있다. 올해 3분기까지 누적 매출은 전년 대비 15% 증가해 글로벌 확장 전략이 성과를 내고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80861",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:08:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "동국·동화·동구·올릭스 등 6개사 혁신형기업 재인증…3년 연장",
+      "summary": "동화약품, 동국제약, 제넥신 등 6개 제약사가 보건복지부의 개편된 혁신형 제약기업 인증기준에 따라 재인증을 받았다. 이번 인증은 연구개발 투자 규모, 임상시험 단계, 특허 전략, 수출 실적 등 정량 및 정성 평가를 강화한 첫 사례로, 총 혁신형 제약기업은 47개사로 유지된다. 혁신형 기업에는 연구개발 사업 가점, 세제 혜택, 금융 지원, 연구시설 규제 완화 등의 인센티브가 제공된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80912",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:04:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제넥신·동국제약 등 6곳, 혁신형 제약기업 인증 3년 연장",
+      "summary": "아스트라제네카는 부인암에서 HER2·FRα·B7-H4·TROP2 표적 항체약물접합체(ADC) 및 차세대 PARP1 억제제, 이중특이 면역항암제 등 다양한 신약 파이프라인을 활용해 수술 후 보조요법부터 재발 치료까지 다단계 임상을 수행 중이다. 특히 난소암 HRD 양성 환자에게 린파자·베바시주맙 병용 유지요법에 급여를 확대해 맞춤형 정밀의료 기반 치료를 강화하고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48113",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-18T21:04:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[시가총액 모니터] 제약바이오 상장기업 ‘톱 100’(11월 18일)",
+      "summary": "(제목 기준·원문 미검증) 2026년 11월 18일 기준 국내 제약바이오 상장기업 중 시가총액 상위 100대 기업의 현황이 공개되었다. 시장 변동과 주요 기업의 시가총액 추이를 분석할 수 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30435",
+      "source_name": "더바이오",
+      "published_at": "2026-11-18T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 롯데바이오로직스, 송도 12만ℓ 공장 준공…첫 대형 수주 확보",
+      "summary": "롯데바이오로직스가 인천 송도에 연면적 10만㎡, 12만ℓ 규모 바이오의약품 생산공장을 완공하고 내년부터 상업생산에 돌입한다. 공장 준공식 직전 글로벌 제약사와의 대규모 위탁생산(CDMO) 계약을 체결했으며, 임상용 원료부터 완제 의약품까지 생산할 예정이다. 이번 신규 공장으로 미국과 국내 생산 거점을 확보해 CDMO 사업 확대 기반을 마련했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80901",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-18T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 16,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
