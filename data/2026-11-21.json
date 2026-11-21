@@ -1,0 +1,75 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-21",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "빅파마는 '새로운 신약'보다 '차별화 신약'을 산다… 전승호의 교훈",
+      "summary": "전승호 코오롱티슈진 대표는 빅파마들이 신규성보다 차별화된 신약과 예측 가능한 데이터를 중요하게 여기며, 선급금 규모가 자산 가치를 결정한다고 강조했다. 기술 거래 시 신규 타깃보다 이미 검증된 타깃에 차별성이 명확한 약물이 선호되며, 생산 공정의 일관성도 매우 중요하다고 밝혔다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80960",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-20T21:08:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"LLM 의료기 허가, 정해진 임상 공식 없다…업체가 기준 세워야\"",
+      "summary": "식약처는 거대언어모델(LLM) 기반 디지털의료기기에 대해 일률적 임상평가 기준이 없어, 개발사가 제품 특성에 맞춰 유효성 평가 변수와 임상 성공 기준을 직접 정해야 한다고 밝혔다. 특히 새로운 의료 기능 구현 시 탐색 임상시험을 통한 평가 기준 검증과 식약처와의 사전 협의가 중요하다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80982",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-20T21:07:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'AR1001'은 이제 'FDA 승부'… 제약업계는 '실적 방어 고심'",
+      "summary": "아리바이오의 알츠하이머 치료제 후보 AR1001이 글로벌 임상 3상에서 단독투여군 1차 평가지표를 충족했다. 회사는 2027년 하반기 FDA 신약허가신청을 목표로 하며, 삼진제약 등과 지역별 상업화 파트너십을 확보했다. 경구용 복용 편의성과 임상 효과가 상업적 경쟁력으로 평가된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80974",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-20T21:03:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 알리코제약, 위기 속 저력 발휘…신사업 매출 14배 성장",
+      "summary": "알리코제약은 임상재평가 실패로 인한 건강보험 환수 부담을 선제 대응하며, 의료기기·건강기능식품·화장품 등 신사업 매출을 14배 확대했다. 3분기 영업손실은 환수 반영에도 전년 대비 적자 폭이 크게 줄었으며, 신사업 비중이 14.5%로 확대되고 유통망도 확대되고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80971",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-20T21:02:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "ADC, 암종의 경계는 넘었지만…치료 효과는 암마다 달랐다",
+      "summary": "분당서울대병원 김진원 교수는 ADC가 암종 구분 없이 적용 범위를 넓히고 있지만, 암종별 표적 발현 양상과 항암약물(페이로드)의 특성에 따라 치료 효과가 다르다고 분석했다. HER2 표적 ADC 엔허투의 임상 사례에서 암종별 객관적 반응률과 안전성 차이를 소개하며 맞춤 적용 필요성을 강조했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80983",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-20T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 5,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
