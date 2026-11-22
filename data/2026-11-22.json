@@ -1,0 +1,53 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-22",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "HLB펩, 스킨메드 임상 2상용 원료의약품 CDMO 계약 - 머니투데이 - 머니투데이",
+      "summary": "(제목 기준·원문 미검증) HLB펩이 스킨메드와 임상 2상 용 원료의약품 위탁개발생산(CDMO) 계약을 체결했다. 이번 계약은 HLB펩의 CDMO 역량 확대와 임상용 원료의약품 생산을 위한 중요한 사업 진전으로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhZHNJemlrbllsNlJ3dGV0QWNLVG53V1E2V3lKdkg2RXQ0OFUyR0I1c3dMRGtmM014RlNiTEhPSXlRT3BEc0Znd3FBY1E3VkMwWkxVeXJjbDFvdVVpcm1OWWVlbGQ0eTZ20gFuQVVfeXFMUDY4UXlTM0hDR01FalFQT05QYVNjVUFPM0lhaVo0NU9IMG1pV0hiX2JwZjVLaWlUem5UeUZBZVEzRlZLcUhIYWJqci1wWUVmNm41TFB3emhrOEVhTll2VmgxYXI1UklPSXdMUmpWdGc?oc=5",
+      "source_name": "머니투데이",
+      "published_at": "2026-11-21T12:00:02+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[오스코텍 명암①] 폐암신약 로열티 껑충…R&D 대대적 투자 - 데일리팜",
+      "summary": "(제목 기준·원문 미검증) 오스코텍이 폐암 신약으로부터 발생한 로열티가 크게 증가함에 따라 연구개발(R&D)에 대대적인 투자를 계획하고 있다. 회사는 이를 통해 신약 개발 역량 강화와 신규 파이프라인 확대를 도모할 예정이다.",
+      "source": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5Mak1uZks5YmhTN3NBQjJiczN4RDZsV3Z0TDZaVmFCUTlfZnZRTVc0emdodnEwd0RGMGhwT2ZNckhfYU5wS3hnaE55MlFUVzRRMkFaNjRB?oc=5",
+      "source_name": "데일리팜",
+      "published_at": "2026-11-21T07:44:02+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "FDA, 뒤센근이영양증 세포치료제 ‘데라미오셀’ 두 번째 허가 거절",
+      "summary": "미국 FDA가 뒤센근이영양증 세포치료제 데라미오셀의 허가를 임상 3상 시험 과정 중 통계분석계획을 승인 없이 변경하고 눈가림 절차를 위반하는 등 자료 무결성 문제로 두 번째 거절했다. FDA는 임상자료 신뢰성 훼손으로 치료 효과 입증 근거가 부족하다고 판단하며 회사는 결과 신뢰성을 강조하며 후속 대응을 준비 중이다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351749",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-21T03:56:42+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 3,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
