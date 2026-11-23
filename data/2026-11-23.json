@@ -1,0 +1,251 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-23",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "셀트리온, 다잘렉스 시밀러 임상 3상 9개월 단축…제품 개발 속도전 본격화 - 서울경제",
+      "summary": "(제목 기준·원문 미검증) 셀트리온은 다잘렉스(다라투무맙) 바이오시밀러 임상 3상을 9개월 단축하는 데 성공해 제품 개발 속도를 높이고 있다. 이를 바탕으로 후속 제품 개발과 시장 진입을 가속화할 계획이다. 빠른 임상 진전은 경쟁 심화 속에서 시장 선점과 글로벌 진출 경쟁력 강화에 도움이 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1SdlVxaGpvOS1vUFBheDVvSUQzMm5MbTVmUWdJQUR5dm5LaDNyNEs3eUZKNGZGTHd3aFV3VGdfX1l4TnNyV21tLVJORzlIRnNIcUHSAVNBVV95cUxPLTVyLWN2ZXAxVzVrY1d1S2trdmZKNG5mUWswdE1UYm4wWUpjVkZQeGxNTmJWVjB0Y2Y2eU1udHhkdWtRdGdobEkzRHBFdDcxUTdPYw?oc=5",
+      "source_name": "서울경제",
+      "published_at": "2026-11-22T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "‘과천시대’ 연 안국약품, 매출 1.7배 확대…R&D·외부 신약 도입 ‘속도’",
+      "summary": "안국약품은 경기 과천시로 본사를 이전 후 매출과 이익이 크게 성장하며, 올해 3분기 누적 매출 2880억원으로 전년 동기 대비 25.1% 늘었다. 순환기계 개량신약인 페바로젯 판매 호조와 함께 고혈압 3제 복합제 및 호흡기 개량신약 후보물질 임상도 진행 중이다. 2024년 대비 올해 R&D 투자 규모가 102.8% 증가하며, 외부 신약 도입과 방사성의약품 공동개발 협력 등도 활발히 추진하고 있다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30525",
+      "source_name": "더바이오",
+      "published_at": "2026-11-22T21:20:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "프리클리나, ‘엠비디’와 PDOX 기반 항암 비임상 사업 협력 MOU 체결",
+      "summary": "프리클리나가 엠비디와 환자 유래 암 오가노이드 이종이식 모델(PDOX) 기반 항암 비임상 평가 서비스 공동 개발 및 사업 협력을 위한 업무협약을 맺었다. 양사는 PDO 초기 스크리닝부터 PDOX 기반 효능 평가까지 연계하는 항암신약 후보물질 평가 체계 구축을 추진한다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30527",
+      "source_name": "더바이오",
+      "published_at": "2026-11-22T22:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "실제가 가려진 약가유연계약 약제 52→62품목으로 확대",
+      "summary": "건강보험 약가유연계약이 12월 1일자로 기존 52품목에서 62품목으로 확대되며, 혈우병 치료제 '하임파지'가 신규 등재된다. 기존 등재된 자스타프라잔, 소그로야, 레코벨 등 9품목도 약가유연계약으로 전환돼 표시가가 조정된다. 이 계약은 안정적 의약품 공급과 적정 약가 관리를 위한 별도 상한금액 합의 제도다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48143",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:18:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "오큐카르핀·셉트린 등 퇴장방지약 6품목 약가 최대 44.5% 인상",
+      "summary": "보건복지부는 퇴장방지의약품 6품목 상한금액 인상을 12월 1일 시행 목표로 추진 중이며, 오큐카르핀점안액은 44.5% 인상된다. 또한 진이메딕스의 치료용 요오드화나트륨 캡슐 2품목도 공단 협상 끝에 상한금액 인상이 확정됐다. 이들 약제는 환자 진료에 필수적이나 낮은 수익성으로 제조·수입 기피를 막기 위한 원가 보전 조치다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48146",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:14:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "12월 1일 건보 약가 조정 추진…릭시아나 30% 내린다",
+      "summary": "항응고제 '릭시아나정' 3품목 건강보험 상한금액이 약 30% 인하될 예정이며, 리툭시맙 제제 트룩시마주와 맙테라주 4품목은 급여 사용 범위 확대에 앞서 약 3.3% 인하된다. 유통질서 문란에 따른 동성제약 26품목과 제약사 자진신청 12품목도 약가가 조정된다. 여보이주는 위험분담 재계약을 이어가며, 프레비미스는 사용량 연동 협상으로 실제가가 변경된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48145",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "림카토, 림프종 3차 이상 치료에 급여 추진…킴리아는 투여 기준 손질",
+      "summary": "큐로셀의 CAR-T 세포치료제 림카토가 재발·불응성 성인 미만성 거대 B세포 림프종과 원발성 종격동 B세포 림프종 환자의 3차 이상 치료에 12월 1일부터 급여 대상이 된다. 킴리아는 림프종 및 급성 림프모구백혈병 환자 급여 기준에 이전 CAR-T 치료 이력 조건이 추가됐다. 급여 대상은 CAR-T 치료 경험 없는 환자로 한정되며, 임상 근거 기반으로 급여기준을 마련했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48141",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:08:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "P-CAB '자큐보'도 약가유연계약…911원→4000원, 4.4배 상향",
+      "summary": "온코닉테라퓨틱스의 위식도역류질환 치료제 P-CAB '자큐보'가 약가유연계약을 통해 표시가격이 911원에서 4000원으로 약 4.4배 인상된다. 이는 건강보험 급여목록에 공개되는 표시가격 조정으로 실제 청구가격과는 다를 수 있으며, 향후 해외 진출 시 약가협상 근거로 활용될 전망이다. 대웅제약 '펙수클루'에 이어 국내개발 신약의 약가유연계약 사례가 확대되고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80993",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-22T21:05:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임상시험 위반 신고에 포상금…재생의료기관은 3년마다 재지정 추진",
+      "summary": "국회에서 임상시험계획 승인 과정 거짓자료 제출 등 준수사항 위반 조기 발견을 위한 임상시험 신고센터 설치와 신고자 포상금 제도를 담은 약사법 개정안이 발의됐다. 또한 의원 개설 자격을 지역 의료단체가 검토하고, 첨단재생의료기관은 3년마다 운영 실태 점검 후 재지정하도록 하는 법안들도 함께 제출됐다. 인체세포 공급 경로 확대 및 재생의료기관 법정 교육비 부과 근거도 마련된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48136",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:04:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "특허만료 앞둔 5000억 '키트루다'… 한국MSD 주력 라인업 주목",
+      "summary": "한국MSD의 면역항암제 키트루다는 2028년 국내 물질특허 만료를 앞두고 있으며, 바이오시밀러 출시가 예상된다. 이에 대비해 폐렴구균 백신 박스뉴반스, 폰히펠-린다우병 치료제 웰리렉, 폐동맥고혈압 치료제 윈레브에어 등이 주력 파이프라인으로 부상 중이다. 키트루다 피하주사 제형 출시와 18개 암종별 처방 지속으로 바이오시밀러와 경쟁에 대응할 전략을 마련하고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80991",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-22T21:03:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[교육] 사례로 배우는 '경제성평가', 히트뉴스 신약 등재 전략 심화 과정",
+      "summary": "히트뉴스는 내년 1월부터 8주간 신약 건강보험 등재에 필요한 경제성평가 실무 역량 강화 심화과정을 서울 서초구에서 진행한다. 교육은 비용효과성 평가 방법론의 쟁점, 생존분석 기법, 정책 환경 등을 다루며 약가 실무자 대상 전문 강사진이 참여한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80994",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-22T21:02:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "척수성 근위축증 치료제 34건 급여 유지…크리스비타 6건도 승인",
+      "summary": "건강보험심사평가원은 척수성 근위축증 치료제 스핀라자와 에브리스디의 건강보험 지속투여 신청 34건을 모두 승인했다. 크리스비타는 기존 치료로 조절되지 않은 구루병 환자 1건 신규 승인 및 기존 5건 지속투여도 인정됐다. 혈우병 A 면역관용요법 1건도 급여를 유지했다. 심평원은 환자 상태와 치료 효과를 종합적으로 고려해 투여 심의를 진행했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48135",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:00:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "보로노이 폐암 신약, 치료 시장 넓힌다…글로벌 '몸값' 상승 기대 - 딜사이트",
+      "summary": "(제목 기준·원문 미검증) 보로노이의 폐암 신약이 치료 시장을 확장하며 글로벌 가치 상승이 기대된다. 해당 신약의 개발 및 상용화 전략이 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1hSnp6YTYwNi1mWF9jQlQzU3JlLWY4eE9vOU9WaG9jRUdHazhPYl9RV29hYWhaSlNTd2lZRnN4ZUpfcGtad2k5SzRSaW1sRXc?oc=5",
+      "source_name": "딜사이트",
+      "published_at": "2026-11-22T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "대원제약, 효자 ‘건강기능식품’ 매출 껑충…‘2년 연속’ 연매출 6000억 정조준",
+      "summary": "대원제약이 건강기능식품 매출 증가와 원가 부담 완화로 올해 3분기 누적 영업이익이 흑자로 전환했다. 건강기능식품 매출 비중은 15%로 확대됐고 건기식 사업의 성장세로 연매출 6000억원 달성이 유력하다. 동시에 부채 관리도 강화해 재무구조 개선에 성공했다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30521",
+      "source_name": "더바이오",
+      "published_at": "2026-11-22T21:30:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "명인제약 ‘에베나마이드’, 기존 약 오래 쓴 환자서도 효과",
+      "summary": "명인제약이 국내 판권을 가진 조현병 치료 저항성 신약 후보 ‘에베나마이드’가 기존 D2 수용체 차단제 복용 이력이 있는 환자에게서도 효과를 나타냈다는 연구 결과가 국제학술지에 발표됐다. 에베나마이드는 해마의 과도한 흥분을 직접 억제하는 기전으로, 기존 약물의 한계를 극복했다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351757",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-22T22:20:08+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "레켐비 빈틈 파고들까…‘먹는 치매약’ 아리바이오 AR1001 전략은 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 아리바이오가 경구용 치매 치료제 AR1001의 시장 전략을 공개했다. 기존 치료제의 빈틈을 공략하는 차별화된 개발 및 사업 계획이 핵심이다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1QR3NKOVdCMXU1d29WcVZzQnp5VEVyTDJ6YWYtWUhKckM4TTBUd2pleUYtU0c5NVFiNWZfSzZFLVg4QVZfOG9KQkg0aDFUTGZ4TE1DbDFqSm1Cd1pVRWs3cTQ4SGFJTmVVaTZmcHlR?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-22T22:10:03+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "해태htb M&A 이슈 기사목록 - 딜사이트",
+      "summary": "(제목 기준·원문 미검증) 해태htb 관련 M&A 이슈를 다룬 기사들이 소개되었다. 이와 관련한 기업 인수합병 동향이 제약·바이오 산업 내에서 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE45VHAtUVItWTZLVkJBbHR4c2dMOGN4NEg5SnlraVBwSk9wVC1Iajd5OUVkMzNlcEM1eTVoNmlhMlJ0WVNXY2hEMU1ZdnltS0YtZlZN?oc=5",
+      "source_name": "딜사이트",
+      "published_at": "2026-11-22T22:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "머크, 27억弗 아큘 'BTK 저해제' 3상 \"실패..끝내 중단\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 머크가 개발 중이던 BTK 저해제 ‘아큘’의 3상 임상시험이 실패해 최종적으로 개발을 중단하기로 결정했다. 이로 인해 27억 달러 규모의 임상 개발 투자가 중단되었다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1hMzNxSno0OVlrX0l2em1uY0dfZXZZb1FiUnR6YnpaTmdpOURVaXpwenZsZFZRaGNiNWgzZEZmUi11Y3V5eXU4TkRfS0NZbHpTTVk4MVRjZw?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-22T21:36:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약기업에 CSO 관리감독권 부여하는 약사법 개정안 12월 나온다",
+      "summary": "보건복지부가 제약사에 CSO(의약품 판촉영업자) 관리감독 권한을 위임하는 약사법 일부 개정안을 국회와 협의 중이며, 12월 중 의원 입법 형태로 발의될 전망이다. 관리감독 인력 규모와 타업무 병행 여부는 제약사에 일임할 계획이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48139",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:06:00+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "제약사 절반 넘게 '번 돈보다 들어온 돈' 많았다…창고 비운 효과?",
+      "summary": "2026년 3분기까지 국내 상장 제약사 73곳 중 56.2%가 장부상 영업이익보다 현금 확보액이 많았으며, 이들 25곳은 재고를 줄인 것으로 나타났다. 현금흐름이 영업이익을 웃돈 것은 재고 감소와 매출채권 회수 영향으로 해석되며, 일부에서는 약가 개편 영향에 따른 출고 증가 가능성도 제기된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=80959",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-22T21:06:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항암제 2품목 23일부터 주문제조 공급…답토마이신은 12월 예정",
+      "summary": "한국희귀·필수의약품센터가 11월 23일부터 긴급도입 의약품 재고 소진에 맞춰 항암제 에이디마이신동결건조주와 다우노신주를 주문제조 방식으로 공급하며, 답토마이신주는 12월 재고 소진 후 공급 예정이다. 다우노신주는 건강보험이 적용된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48140",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-22T21:02:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 21,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
