@@ -1,0 +1,251 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-24",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "기등재 약가 재평가 결과 25일 공개… 차수조정 건은 제외",
+      "summary": "건강보험심사평가원은 오는 25일부터 26일까지 원주 본원에서 약 1만1953품목의 기등재 의약품 상한금액 재평가 1차 결과에 대한 제약사 사전열람을 실시한다. 품목별 1~4년 차 인하금액과 기준요건, 가산 적용 결과를 확인할 수 있으며, 재평가 제외 및 차수 조정 신청 결과는 추후 안내할 예정이다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81006",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-23T21:03:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[특허 대해부]워터스와 법정 싸움 나선 큐리옥스…히든 ‘특허 카드’ 3장은 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 큐리옥스가 워터스와 법적 다툼을 벌이며 특허 관련 3개의 주요 특허 카드를 보유하고 있어 주목된다. 해당 특허들은 향후 소송 결과에 핵심적인 영향을 미칠 것으로 예상된다.",
+      "source": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWExQZFZ4Z3VMMUJzbHp4UmptRXoxN1k2NFlWTUFaTW1JMXhMaVdSdElBRTJXSzFGS1BCaVBGSjB1M2lidHpudGswRTdjeVU2bkZaU05nTkJVNlNsNThUQks1ZXJyYllYd0R2bU5JbExWUFlQNGtFMkt6bkJEcTlrN0N0dzc?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-23T22:20:03+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만치료제가 쏘아올린 '감식사회'…식약처 '1회 섭취량' 손본다 - 아시아경제",
+      "summary": "(제목 기준·원문 미검증) 비만치료제 부작용으로 인해 사회적 논란이 확산되자 식품의약품안전처가 1회 섭취량 기준을 손보는 방안을 검토하고 있다. 이번 조치는 안전한 약물사용을 위해 규제 강화에 초점을 두고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE80R1ZySWtxR0FwYWZyZzVSUWtNMDlzTWNFNF91T0RCRlNnM3V2cUhRNmdqc05vWXZoWDFHb21yMXh1Q1F4Z2JkSmJzdkkxdkhLUXl1aVM5bmRoU2R6UmNxSQ?oc=5",
+      "source_name": "아시아경제",
+      "published_at": "2026-11-23T22:11:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "GC녹십자·대웅제약 ‘엔블로’ 기술료 항소심 내달 판결 … 法, 첫 변론서 곧바로 종결",
+      "summary": "국산 당뇨병 신약 엔블로의 쌍둥이약 수탁매출 기술료 분쟁 관련 GC녹십자와 대웅제약의 항소심 재판부가 변론을 한 차례로 마치고 12월 23일 판결을 선고한다. 쌍둥이약 판매 수익 배분 방식 해석이 쟁점으로, 1심은 대웅제약이 관계사에 유상 제조 납품한 행위도 제품 판매에 해당한다고 판단해 GC녹십자의 손을 들어줬다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351770",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-23T21:32:47+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "2차 허가·평가·협상 병행 시범약 ‘림카토’, 허가 216일 만에 급여권으로",
+      "summary": "큐로셀의 국산 CAR-T 치료제 림카토주가 제2차 허가·평가·협상 병행 시범사업을 통해 12월 1일부터 건강보험 급여를 받는다. 두 차례 이상 항암치료 후 재발 또는 불응한 성인 B세포 림프종 환자가 대상이며, 임상 2상에서 67.1% 완전관해율을 보였다. 위험분담계약을 적용해 건강보험 지출 부담도 관리한다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48163",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:12:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "카보메틱스 2차 급여 확대···면역항암제 이후 치료 접근성 개선 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 카보메틱스의 급여 기준이 확대되면서 면역항암제 치료 후 진행된 전이성 신장 세포암 환자들도 2차 치료제로 카보메틱스를 건강보험 급여로 사용할 수 있게 됐다. 의료진과 환자단체는 이를 환영하며 신장암 치료 선택권이 넓어지고 치료 연속성이 강화될 것으로 기대하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE52dUtPd2ZLY0drVFZpY0tVS0tOSjM3NlJTSnQ5cm5oQUhPRjNIZ2ZfMkVtazVzNjRvU3R6M21EeVpXWmEyZmkzOE1nY2NVc05lNGg1OUF4YmQwSEJtcTAydnQxYnhuYVJiSzZV?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-23T21:09:02+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "美, GLP-1 약에 ‘시력 상실’ 위험 경고 요구…뇌졸중 예방 신약 허가",
+      "summary": "미국 FDA는 당뇨병·비만 치료제 GLP-1 계열 제품에 비동맥염성 전방 허혈성 시신경병증 위험 경고를 제품정보에 추가하도록 요구했다. 또한, 재발 위험이 높은 성인 환자의 뇌졸중 예방을 위한 첫 제11a인자 억제제 아순덱시안 정제를 승인했다. 두경부암과 재발성 호흡기 유두종증 치료제도 가속승인했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48155",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:08:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "하보니정·리스프리정 등 22품목, 12월부터 급여목록서 빠진다",
+      "summary": "보건복지부는 하보니정과 리스프리정 등 의약품 22품목을 담당 업체의 품목허가 자진취하, 유효기간 만료, 양도·양수, 수출용 전환 등을 반영해 12월 1일부터 건강보험 급여 목록에서 제외할 예정이다. 해당 고시는 고시 개정을 통해 시행된다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48162",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "허가 전 제조 의약품 판매 길 열고, 의료용 마약류 위해성 관리 강화",
+      "summary": "더불어민주당 허종식 의원은 허가·신고 전에 제조한 의약품도 일정 요건 충족 시 판매를 허용하는 법안을 발의했다. 국민의힘 백종헌 의원은 의료용 마약과 향정신성의약품 허가 신청 시 위해성 관리계획 제출과 시판 후 결과 보고를 의무화하는 법안을 대표 발의했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48156",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:06:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "40개국 미용의료 전문가 서울 집결…K-에스테틱 임상 경험 공유",
+      "summary": "휴젤이 주최한 글로벌 학술 심포지엄 HELF IN SEOUL 2026에 40개국 약 400명의 미용의료 전문가들이 참석해 보툴리눔 톡신 시술 전략, 비만치료제에 따른 안면 변화 대응 및 피부 재생 복합 시술 등 최신 임상 지견을 공유했다. 특히 비만치료제 확산에 따른 ‘오젬픽 페이스’ 대응 전략이 주요 의제로 다뤄졌다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81024",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-23T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "네비로스타정 허가사항에 ‘심방조동·심부전’ 추가 추진",
+      "summary": "식품의약품안전처는 네비로스타정의 6년간 시판 후 조사 결과를 반영해 허가사항에 심방조동과 심부전, 울혈성 심부전 이상반응을 추가하는 변경안을 마련하고 12월 8일까지 의견을 접수한다. 이 약은 네비보롤과 로수바스타틴 복합제로, 환자 626명을 대상으로 한 조사에서 중대한 약물이상반응 사례가 일부 보고됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48160",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:04:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "국가신약개발 58개 과제 선정…공개된 개발 과제, 항암제 중심",
+      "summary": "국가신약개발사업단이 발표한 올해 2차 선정 과제 58개 중, 공개된 기업 과제는 주로 혈액암·고형암 대상 항암제 개발에 집중돼 있다. CAR-T 세포치료제부터 표적항암제, ADC 등 다양한 기술이 포함돼 있으며, 후속 임상 2상 단계 과제도 일부 포함됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81013",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-23T21:02:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "소아청소년 신경차단술 15건 요양급여 불인정...\"의학적 타당성 결여\"",
+      "summary": "건강보험심사평가원 진료심사위원회는 소아청소년 대상 신경차단술 15건 모두 임상적 근거 불충분과 적합성 미확인으로 요양급여를 불인정했다. 마취기록지, 영상검사 소견 등이 미확인되고, 시술 부위와 환자 상태가 명확하지 않아 적정 치료로 보기 어렵다고 판단했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48157",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "신장암 2차 치료제 '카보메틱스' 급여 확대…치료 선택지 늘어",
+      "summary": "입센코리아의 신장암 2차 치료제 카보메틱스의 급여 기준이 확대돼, 면역항암제 병용치료 이후 환자도 급여 혜택을 받게 됐다. 임상 3상 METEOR 연구 등 근거에 기반해 골전이·뇌전이 환자 대상 효과가 확인됐으며, 치료 접근성 및 다양한 환자 맞춤 치료 가능성이 높아졌다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81026",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-23T21:01:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "백인들 병? 고령화에 한국인도 급증하는 피부암… ‘AI 조기 진단·표적 신약’ 개발 봇물 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 고령화에 따른 피부암 환자 급증에 대응해 국내에서 인공지능 기반 조기 진단 기술과 표적 신약 개발이 활발히 진행되고 있다. 이 같은 연구는 치료 효과를 높이고 조기 치료를 가능하게 할 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQXpERUNfXzhsc0E2QVk2cE50OGkxeDBuNDdJQ3h4aVZ1Qk12cExqT3JENzJtYUxoWE5NMjZWVFB3RGtLYlBWUXJCYmZBSElzNTU5eW9wanloQUdBOGIxTVo5bHRQZ1EtMjlXaUpOS3ZFWjFkS2lkbkJEa2h1bnpkdk1EaFo0eHl3U19ELdIBoAFBVV95cUxPb0Z1bVg4X29lc3NmaVpyTW5pNU9UYkE5eEdUdndyUU5DUXdxMXh6TDlfVENhWWNZZEVhRXZPVVN1N2xIVjdqaEttSmIxaURGWjVqMHdMaWVsM0dlYzZ2LWxFYS1NVzRQZ3hqNndJdnhtU05OZkxzRXg0UmRITE5hNC1faHY0Q2J4U0REUWhNS0NwZVFKcVJyaUl0ajA2WDN5?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-23T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임상변경·계약해지 또 '뒷북 공시'…불신 쌓이는 제약·바이오업계",
+      "summary": "국내 제약바이오 업계에서 임상 변경, 대규모 공급계약 해지 등 주요 사안을 늑장 공시하거나 뒤늦게 공시 번복하는 사례가 잇따르고 있다. 이로 인해 관련 기업들이 불성실공시법인 지정 및 지정예고를 받고 있으며, 금융당국은 공시 투명성 강화를 위해 제재와 개선 방안을 시행 중이다.",
+      "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1732645",
+      "source_name": "EBN",
+      "published_at": "2026-11-23T21:00:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'엔허투가 놓친 암세포 노린다'…지니너스, 58조 유방암 치료제 시장 정조준 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 지니너스가 암세포를 표적으로 하는 유방암 치료제 개발에 집중하며 58조 원 규모의 시장 진입을 노리고 있다. 이는 기존 엔허투가 놓친 분야를 겨냥한 전략으로 주목된다.",
+      "source": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSlI0YVhRTDIxSW9VbWQ4SnF0SU1XQ2s2clFiMi1pajJVaDJ3SnN4UEtVTm01NzRfbjVVWEhmeEhGODVzLXNmV193U0NLWlJjWDhNaFVucUw0Q0MtUnJHd3U4b2dqWGtpbkZYcFVNdmp4eVZ0SDFKUENhMXJPeTFXSHBqOW0?oc=5",
+      "source_name": "이데일리",
+      "published_at": "2026-11-23T22:05:03+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"카보메틱스, 신장암 2차 치료제 최선 선택지…환자 치료 한단계 진전\"",
+      "summary": "입센코리아가 신장암 치료제 카보메틱스 급여 확대 기념 미디어데이를 개최했다. 전문가들은 면역항암제 이후 환자의 후속 치료 연결이 중요한 과제라며, 급여 확대가 환자 치료 접근성 개선에 의미가 크다고 평가했다. 다만 임상 데이터 부족과 전문의 확보 문제 등 현장의 어려움도 지적됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48159",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-23T21:10:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "머크 \"또\", 인제니아 'Tie2xVEGF' 3rd 적응증 \"신규 3상\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 머크가 인제니아의 ‘Tie2xVEGF’ 이중항체에 대해 세 번째 적응증을 겨냥한 신규 3상 임상시험을 계획하고 있다. 이는 해당 후보물질의 적응증 확대와 시장 경쟁력 강화를 위한 전략으로 풀이된다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBwMjlGY0kwTExVdUxYUmlJVkRQQUNiMjVoVWdZb210enRTdUR5ZVpLMUo3dGE0YjNpcTRCVXI4ZDQ3emhOemd5c0FCVDFwRlh3UWRPcFAxSQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-23T21:09:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "세포·유전자치료제 보완 5000건…개발사 발목 잡은 문제?",
+      "summary": "식품의약품안전처는 세포·유전자 치료제 개발 시 반복된 품질 보완 사례 5000건을 분석하고, 무균 시험 검체 채취 시기 오류 등 주요 보완 유형을 짚어 가이드라인 33개와 연계한 점검용 체크리스트를 공개했다. 개발사의 IND 신청 단계 품질자료 준비에 도움을 주기 위한 조치다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81028",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-23T21:04:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "“제2의 에이비엘바이오 될라“…직원 주식 거래 막고 내부 단속 나선 K바이오 - Chosunbiz",
+      "summary": "(제목 기준·원문 미검증) 일부 K바이오 기업들이 직원들의 주식 거래를 제한하고 내부 단속을 강화하며 과거 에이비엘바이오 사태 재발 방지에 나섰다. 이는 기업 지배구조 및 내부 관리 강화 차원에서 진행 중이다.",
+      "source": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbXVRNjRONnlvMXpqWUdtbjNqM1htUVdTYnNNZmhhQ0RVeVR5S0pBMjB3dEZ6Mm1qTDRNRHhFMGd6YmFtNXJyVC1ZQlZhY2Zqa3BqTzJpdG1ta0hVRDBWN1ZWTEJkcml1eUpPbll6dEJuWnpfS29YVktIcmtEMGNpdGxDbUZIWmvSAZsBQVVfeXFMUGNzTWU4d2lMSjlTZEl3ODRTdHhuaTBlbjAtbEZFbEZrYmt2UXU5Wk9JelhrVWlLZ1ZLZmJFZzFyVkUwcnRPWERtZVpGNnROSWRkMzZvZ2V4XzM3bHlWOXpTRmhOcWRtSDJsX0lDLVBZRTRMMXVyaWtLRlVWeXdzU0tIX3d3NXVvVGdhdW1jXzJiY3FMU1U2bHVhTTQ?oc=5",
+      "source_name": "조선비즈",
+      "published_at": "2026-11-23T21:02:08+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 21,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
