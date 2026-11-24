@@ -1,6 +1,6 @@
 {
   "status": "FAIL",
-  "checked_at": "2026-11-23T10:07:12+09:00",
+  "checked_at": "2026-11-24T13:57:51+09:00",
   "timezone": "Asia/Seoul",
   "detail": "schedule collector failed: RuntimeError: OPENAI_API_KEY is not configured"
 }
