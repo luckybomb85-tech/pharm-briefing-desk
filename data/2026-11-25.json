@@ -1,0 +1,207 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-25",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "브릿지바이오 웰젬다, 임상3상서 보행 능력·폐기능 개선 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 브릿지바이오의 웰젬다가 임상 3상에서 환자의 보행 능력과 폐 기능 개선 효과를 보이며 중요한 임상 결과를 발표했다. 이는 국내 치료제 개발에서 의미 있는 성과로 평가된다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB0OGp0c2FmQkJYTHRLT3FwYTBxaWttTHIybS1waUtFWkVuaFZpdW5pMkVSY0EtTzUyelFyNk15STZreURKbUlvcFFZT2IwSHNSNGdjZGNfM2JFLUhYd1Z2cWZ2WjczLUJ1bDE0?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-24T21:10:46+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"마운자로, 2형 당뇨병 적응증 급여 필요…치료비 부담 완화 기여\"",
+      "summary": "한국릴리 주최 기자간담회에서 임상 전문가들이 마운자로의 2형 당뇨병 확진된 심혈관계 질환 환자 적응증에 건강보험 급여가 적용돼야 한다고 강조했다. 마운자로는 혈당 조절이 어려운 당뇨 환자에 새로운 치료 옵션을 제공하며, 소아 2형 당뇨병 병용요법도 최근 승인받았다. 전문가들은 혈당 조절과 심혈관계 위험 관리의 중요성을 환기하며, 급여 확대가 환자 접근성과 장기 치료비 부담 완화에 기여할 것이라고 밝혔다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48184",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-24T21:10:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "'엑스코프리', 美서 소아 부분발작 등으로 허가 확대 추진",
+      "summary": "SK바이오팜이 뇌전증 치료제 엑스코프리(세노바메이트)의 미국 내 적응증을 소아 부분발작과 일차성 전신 강직간대발작으로 확장하기 위해 FDA에 신청했다. 단독요법 임상 데이터 분석과 첫 항발작제에 추가하는 임상시험도 준비 중이며, 신약은 이미 미국과 유럽에서 허가받아 국내에선 건강보험도 적용 중이다. 회사 측은 내년 중 허가 결과를 기대하고 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48172",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-24T21:08:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "높은 약가 기대했던 '로수+에제 ODT', 로수젯보다 낮게 등재",
+      "summary": "최근 식약처가 로수바스타틴과 에제티미브 복합제 구강붕해정(ODT) 48개 품목을 한미약품 로수젯보다 낮은 가격으로 건강보험 등재를 승인했다. 해당 복합제는 새로운 제형임에도 개량신약으로 인정받지 못해 기존 제형 대비 약가 산정 기준이 낮게 적용됐다. 동아에스티의 에독시아구강붕해정은 최초 등재제품으로 가산을 적용받아 상대적으로 높은 약가로 책정됐다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81062",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-24T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "질병청, 제4급 법정 감염병 '칸디다 오리스 감염증' 격리실 급여 적용",
+      "summary": "질병관리청과 보건복지부는 제4급 법정 감염병인 칸디다 오리스 감염증에 대해 지난 11월 11일부터 격리실 입원료 건강보험 급여를 적용한다. 이는 의료기관 내 감염 확산 방지 및 감염관리 강화 차원에서 이뤄진 조치로, 입원 후 3개월 이내 균 분리가 된 환자를 선제적으로 격리하는 경우 급여가 인정된다. 이전에는 엠폭스(Mpox) 감염병 격리실 급여가 포함된 바 있다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48182",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-24T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "영국, 유전자편집 치료제 카스게비 중증 혈액질환 아동에도 허가",
+      "summary": "영국 MHRA가 유전자편집 치료제 카스게비의 투여 대상 연령을 기존 12세 이상에서 5세 이상으로 낮추는 허가 확대를 승인했다. 이로써 중증 겸상적혈구질환 및 수혈 의존성 베타지중해빈혈 아동 5~11세가 치료 대상에 포함됐다. 이외에도 영국은 희귀 대사질환 경구제 도졸비와 진행성 항문암 병용요법 자이니즈도 허가했으며, EMA는 니트로사민 불순물 관리 지침을 개정하는 등 유럽의약품당국 동향이 반영됐다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48178",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-24T21:02:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "CTAD 2026, 국내 치매 신약 개발 성과 주목 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) CTAD 2026 학회에서 국내에서 개발 중인 치매 신약의 연구 성과가 크게 주목받았다. 이는 국내 치매 치료제 허가에 중요한 밑거름이 될 전망이다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBpaS1OX05SQ0hRdzhVUDlmRW5jZ19Ld0FwUVRXYmxFdHkwUm40YWVRUEZieTVYd09KSHYzT0o3QTU1aFhfZWFqdU5uXzB5WUxMWlhBcDRPeU5NUzNrcFlneFFBN3AtRGE2UF8w?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-24T21:01:02+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "마운자로, 당뇨병 치료 영역 확대···급여는 여전히 과제 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) 마운자로가 당뇨병 치료제 분야에서 적응증 확대를 추진하고 있으나 급여 문제 해결이 과제로 남아있다. 이는 환자 접근성과 시장 확대에 영향을 끼칠 수 있다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4zOC1CR3hKU3Nudks4YmFMTG5Zd1ljRW9oRVp3aFM5UTdDX1hUdjNRdE1vUVlEREZEeVRuT2ZLN3NVV2FhX25aUUF0dXUzdmxZcGRpSWRMYV9kcFJKdFl6QTFjWXREOXJnSWow?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-24T21:00:25+00:00",
+      "tag": "약가·급여",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이젠셀 희귀 혈액암 치료제 ‘VT-EBV-N’, 식약처 신속심사 81호 지정",
+      "summary": "바이젠셀의 희귀 혈액암 치료용 세포치료제 VT-EBV-N이 식품의약품안전처 글로벌 혁신제품 신속심사(GIFT) 제81호에 선정됐다. 이 치료제는 EBV 양성 절외 NK/T세포림프종 완전관해 후 재발 방지를 위한 공고요법으로 개발 중이며, 기존 치료법이 없는 점이 신속심사 지정 이유다. 임상 2상에서 무질병생존율 95%, 생존율 100%라는 우수한 결과를 지난 10월 발표했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48180",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-24T21:00:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "다임바이오, 'PARP1 저해제' 고형암 1상결과 \"공개\" - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 다임바이오가 개발 중인 PARP1 저해제에 대해 고형암 환자를 대상으로 한 임상 1상 결과를 공개했다. 해당 결과는 안전성과 효능 평가에 중요한 자료로 활용된다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBjY3k0dl8wb3pmOGxIb1VYa1EydXNHRThMRVE3ZFBlX1lFSFJRaDlmZ3JLNDlSX25NR2VWcHh4Q1ZPTkhUdjM5bU1PelpITDl1N2hWaGU3UQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-24T22:15:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "JW중외제약, 레보티록신 제제 시장 도전장 … 부광·다림 양분 구도 흔드나",
+      "summary": "JW중외제약이 국내 갑상선기능저하증 치료제인 레보티록신 제제 시장에 도전한다. 최근 0.1mg 대비 고함량 0.15mg 제제 동등성 시험 계획을 식약처에서 승인받았으며, 이후 하위 용량까지 허가 범위를 확대할 계획이다. 기존 시장은 부광약품과 다림바이오텍이 양분 중으로, JW중외제약 진입 시 공급 안정화 및 경쟁 강화가 전망된다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351783",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-24T21:30:16+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "IPO 시장 덮친 한파... 상장 앞둔 마더스제약·이노보 '바짝 긴장'",
+      "summary": "IPO 시장 투자심리 위축으로 인해 마더스제약과 이노보테라퓨틱스 등 제약바이오 기업들이 공모 흥행과 상장 후 주가 방어에 부담을 겪고 있다. 기관투자자들의 보수적 평가가 이어져 공모가 산정에 어려움이 예상된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81056",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-24T21:08:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "메트포르민 복합제에 ‘미토콘드리아 질환 환자 투여 비권장’ 명시",
+      "summary": "식약처는 메트포르민 함유 복합제 19개 조합의 허가사항에 미토콘드리아 질환 환자에 대한 주의 문구를 신설한다. MELAS 증후군과 모계 유전성 당뇨병 및 난청 환자에게는 메트포르민 투여를 권장하지 않으며, 증상 발생 시 즉시 투여 중단과 진단 평가를 실시하도록 했다. 이는 EMA의 안전성 검토 결과를 반영한 조치다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48179",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-24T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "의약품 회수 '보고 범위 확대, 시한도 단축'… '업계 부담' 우려",
+      "summary": "식품의약품안전처가 의약품 회수 의심 품질정보의 즉시 통지 의무화와 회수계획서 제출기한을 기존 5일에서 3일로 단축하는 지침 개정을 추진하고 있다. 이에 따라 업체들이 회수 필요성 미확정 의심정보도 광범위하게 보고해야 하며, 내부 위해성 평가 기간 단축으로 업무 부담과 자원 소모가 커질 전망이다. 식약처는 의약품 안전성 확보 차원의 조치임을 강조했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81053",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-24T21:05:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 같은 목표, 다른 전략… 제약바이오 4社의 글로벌 승부수",
+      "summary": "유한양행, 한국노바티스, 코오롱티슈진, SK바이오팜 등 주요 제약바이오 기업 대표들이 글로벌 신약 개발과 기술이전, 미국 시장 진출 전략을 발표했다. 유한양행은 2030년까지 두 번째 글로벌 신약을 개발하고 마케팅까지 추진할 계획이며, 노바티스는 국내 방사성리간드 치료제 생산 역량 강화에 나섰다. 코오롱은 임상 및 제조 안정성을 강조했고, SK바이오팜은 미국 내 직접판매 전략으로 1조 매출 달성을 목표로 한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81063",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-24T21:02:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "회생 제약사서 찾은 성장동력 … 김슬기 바로팜 대표의 100억 승부수 - 뉴데일리 경제",
+      "summary": "(제목 기준·원문 미검증) 바로팜 김슬기 대표가 회생 제약사에서 성장 동력을 찾아 100억 원 규모의 투자를 단행했다. 이는 중견 제약사 성장 전략의 사례로 주목받고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQQTI5elRlRFljN2g5b0psV1JKdkFfUGhJWWFGMTNVc3JfWDZ4M0ZnTEd2MEZfNEYwSDdHcFRSanpLc1ZjTy1oX3lHLUsxRWlmS1VlSVpUaE1sT0NiWXJZekxWazZtSkxmVnJ3X0pTZWV3RjZQcEk0LUVpc2VSQnhQU9IBgAFBVV95cUxQQTI5elRlRFljN2g5b0psV1JKdkFfUGhJWWFGMTNVc3JfWDZ4M0ZnTEd2MEZfNEYwSDdHcFRSanpLc1ZjTy1oX3lHLUsxRWlmS1VlSVpUaE1sT0NiWXJZekxWazZtSkxmVnJ3X0pTZWV3RjZQcEk0LUVpc2VSQnhQUw?oc=5",
+      "source_name": "뉴데일리",
+      "published_at": "2026-11-24T21:00:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "반도체발 반등, 자동차·배터리로 번졌다…바이오·소형주는 온도차 [젠슨황 귀환, 오천피 탈환] - 이투데이",
+      "summary": "(제목 기준·원문 미검증) 최근 반도체와 자동차, 배터리 업종 중심으로 증시가 반등하는 가운데 바이오 및 소형주 주가는 온도차를 보이고 있다. 이는 제약바이오 업계 투자 환경 변화를 반영한다.",
+      "source": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9LdEFaQ0NDQm5ZZ2lyTlctLUdIX0RyRWxuVDA4ZGNRNGVNcnZQbk1qakVicGN4MlIwbkFNMkVKcmhoVXkzSzRTdE5Ta3d6QTlfNGNhYg?oc=5",
+      "source_name": "이투데이",
+      "published_at": "2026-11-24T21:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 17,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
