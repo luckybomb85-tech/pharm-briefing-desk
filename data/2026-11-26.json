@@ -1,0 +1,218 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-26",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "BMS, ‘소틱투’ 루푸스 임상3상 2건 중 1건 성공…규제당국과 후속 논의",
+      "summary": "BMS의 경구용 TYK2 억제제 '소틱투'가 전신홍반루푸스(SLE) 환자 대상 글로벌 임상3상 두 건 중 SLE-1에서 1차 평가변수를 충족하며 치료 효과를 확인했으나, SLE-2는 위약 반응률 상승으로 1차 목표를 달성하지 못했다. 안전성은 기존 건선 치료에서 확인된 바와 유사하다. BMS는 임상2상과 3상 데이터를 종합해 규제당국과 후속 논의를 진행할 계획이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30680",
+      "source_name": "더바이오",
+      "published_at": "2026-11-25T21:20:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "항암제 급여화 평균 46개월…\"종양내과, 비용부담에 처방 못한 경험 100%\"",
+      "summary": "대한종양내과학회가 항암 신약의 건강보험 급여 화까지 평균 46개월이 걸린다는 조사 결과를 공개하며, 의료진 전체가 고비용 부담으로 처방을 주저하는 현실을 밝혔다. 학회는 조기 도입, 합리적 가격 책정, 치료 지속 지원, 가치 평가, 적합 치료 대상 선별 등 5가지 개선방안을 정부에 제언했다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48205",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-25T21:10:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "알테오젠 기술 엔허투SC 임상 환자 축소는 악재?…사례 찾아보니 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 알테오젠의 엔허투SC 기술 관련 임상 환자 수 축소가 악재로 평가받는 가운데, 유사 사례 분석을 통해 향후 전망을 평가했다. 임상 진행에 중요한 시사점을 제공한다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hWFdQQm0tXzE4LUlyMEpaZzd1UkpLZGxtRHlpMVFFVFptZUZXYUY1bVQzV2h5OE5NY00yWDZpYXJZWXJzUjJhMEt6dy1QUUNzZ3hvaVAzclpYelV6RFJESHJDZjBrNi1nX1ktS0Rn?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-25T22:30:04+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[단독]LG화학, 美 파트너사 항암제 협력 정리…8년 만에 방향 튼 배경은 - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) LG화학이 미국 파트너사와 진행해온 항암제 공동 개발 협력을 정리하며 8년 만에 방향을 전환했다. 이번 변화의 배경과 향후 계획에 업계의 관심이 집중되고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBtaE1zU0RyZDVCQjBqcmFxYk9UQS0zbWwzSE1lem05enVFbWZ5bWNram03RVNZMldQLU5JU3hBa2JoQnc0bjdjSEVlRlAtRHZQWEs4c0dINFFnVF8zV0prR0NOSGhDR1Z1U2dncWFR?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-25T22:00:08+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "특허 쌓고 독점 깨고 한계 넘고… 한미약품 알테오젠 올릭스의 도전",
+      "summary": "한미약품, 알테오젠, 올릭스가 보건산업 성과교류회에서 각 사의 연구개발 경험과 대규모 기술수출 성과를 공유했다. 한미약품은 신약 특허 경쟁력을 강조하며 GLP-2 계열 희귀질환 신약 후보를 일라이 릴리에 기술이전했고, 알테오젠은 단백질 조합 기술로 피하주사 전환 및 약물 전달 물질 ALT-B4를 개발해 글로벌 제약사와 다수 계약을 체결했다. 올릭스는 RNAi 치료제 개발 초기 어려움을 극복하며 성장했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81097",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-25T21:08:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가인하에 급여 유지 여부까지…제약, 12월 약평위 주목",
+      "summary": "건강보험심사평가원이 12월 3일 약제급여평가위원회에 기등재 의약품 상한금액 재평가와 올해 급여적정성 재평가 결과를 상정할 예정이다. 약가 인하와 급여 유지 여부가 결정되면서 제약사들은 이에 따른 처방시장 영향과 급여 적용 방식에 주목하고 있다. 특히 올해는 개편된 평가체계 하 첫 심의 결과로 주목된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81094",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-25T21:07:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "베링거인겔하임 한국 진출 50년…국내서 신약 찾고 글로벌 임상 잇는다",
+      "summary": "한국베링거인겔하임은 국내 진출 50주년을 맞아 국내 바이오기업과 초기 신약 후보물질 발굴 및 국내 의료기관과 다국적 임상시험 협력을 확대한다고 밝혔다. 에임드바이오 발굴 ADC 후보물질은 5개국에서 글로벌 1상 임상 중이며, 국내서도 임상시험 44건(1상 10건 포함)을 직접 운영 중이다. 비만 연관 간질환 조기 발견 및 환자 교육 프로그램도 추진 중이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48196",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-25T21:06:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "임상 성공하면 영웅, 실패하면 사기꾼… 우리가 놓친 '이것'",
+      "summary": "최근 AI 활용과 임상 시험 결과 해석을 둘러싼 논란이 이어지고 있다. 아리바이오 임상 3상 결과에 대한 다양한 평가와 코오롱티슈진 인보사 사례를 통해 신약 개발 과정의 복잡한 현실과 환자의 치료제 활용 가능성에 대한 고민을 짚었다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81103",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-25T21:05:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "허가 전 생산약 판매 법안 발의…숙원 풀릴까, 시행은 언제",
+      "summary": "허가 전 생산 의약품의 판매를 허용하는 약사법 일부개정법률안이 발의돼 업계의 관심이 집중되고 있다. 개정안은 제조 사실 사전 보고를 의무화하고, 제조공정 일관성 검증인 공정밸리데이션(PV) 요건을 판매 기준에 포함했다. 이를 통해 품목허가 전 제조된 생산분도 허가 후 별도 승인 없이 판매할 수 있게 된다. 다만 국회 일정상 연내 심사는 불투명하다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81101",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-25T21:03:00+00:00",
+      "tag": "허가·규제",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "JW중외제약, 리바로 4제 복합제 허가 추진···패밀리 확장 - 메디칼업저버",
+      "summary": "(제목 기준·원문 미검증) JW중외제약이 고지혈증 치료제 '리바로'의 4제 복합제 허가를 추진하며 제품 라인업 확장에 나선다. 현재 관련 허가 절차가 진행 중인 것으로 알려졌다.",
+      "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5UYmloUC1Gd3BMbWloQ3liRTM1MG1aREQwMEJ5ZFE5N0JrcjZVcFlwWVhlenc4VjhBbnRzLThLTmEyd2J0T2UxbVBlNWJuMGdROHJPeUZfOTJwd08tM0FYbDVJQnBvUVNlNHkw?oc=5",
+      "source_name": "메디컬옵저버",
+      "published_at": "2026-11-25T21:00:40+00:00",
+      "tag": "허가·규제",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[특허, 톡!] 분쟁 불러온 이수만의 ‘A2O’ 상표 - 이투데이",
+      "summary": "(제목 기준·원문 미검증) 이수만이 출원한 ‘A2O’ 상표가 특허 분쟁을 일으켰다. 해당 상표를 둘러싼 법적 쟁점이 주요 이슈로 부상했다.",
+      "source": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Za2JscUEwdnBlUnd0RkZRd2RMQ1UwMHZGZjVLNXRsMDBTNnJHVEdRY2xhSHM3Q3dEcHFYbmw5aGptcnVmMERPQlBrX245RHkzNi1OUA?oc=5",
+      "source_name": "이투데이",
+      "published_at": "2026-11-25T21:00:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "암젠, BMS·오노와 ‘옵디보’ 시밀러 특허 분쟁 합의…2028년 10월 美 출시",
+      "summary": "암젠이 BMS 및 오노약품공업과 면역항암제 옵디보의 바이오시밀러 ABP 206 관련 미국 내 특허 소송을 종결하며, FDA 허가 전제로 2028년 10월 미국 시장에 출시할 계획이다. 이번 합의로 암젠은 핵심 물질 특허 만료 시점보다 약 3개월 앞서 시장 진입이 가능해진다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30674",
+      "source_name": "더바이오",
+      "published_at": "2026-11-25T21:00:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "대웅제약, ‘린버크’ 제제 개선 추진 … 변색·반점 잡고 제네릭 차별화 승부",
+      "summary": "대웅제약이 애브비의 자가면역치료제 린버크(유파다시티닙) 오리지널 제형의 변색 및 반점 문제를 보완한 서방정 제제 기술을 개발해 특허 출원 중이다. 푸마르산을 산성화제로 사용하고 제제를 습식 과립부와 후혼합부로 분리하는 방식으로 안정성을 개선했으며, 생물학적 동등성 시험에서 동등성을 입증했다. 물질특허 만료 전 제네릭 경쟁에서 차별화를 노린 전략이다.",
+      "source": "https://www.hkn24.com/news/articleView.html?idxno=351793",
+      "source_name": "헬스코리아뉴스",
+      "published_at": "2026-11-25T21:10:23+00:00",
+      "tag": "산업·정책",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "아커스, 길리어드 opt-in ‘CD73’ 췌장암 3상 “중단” - 바이오스펙테이터",
+      "summary": "(제목 기준·원문 미검증) 아커스는 길리어드와 공동개발 중인 췌장암 치료제 CD73의 임상 3상을 중단하기로 결정했다. 이 결정은 임상 실패 또는 안전성 문제와 관련된 중대한 사안으로 분석된다.",
+      "source": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9kTzQyTXlSU01PaDNMWTc3ZUNyR1NxaFdhN0Y1cnRmODl3SlhUY3NUVFBpZ1hoSmhxQ05QcWk4a1lrdGhUbU5FR3FXN1RKWUxkZk5DUk1oSQ?oc=5",
+      "source_name": "바이오스펙테이터",
+      "published_at": "2026-11-25T21:28:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "바이오 벤처 IPO 새 변수 ‘중복상장 규제’…“지분구조 최소 1년 전 점검 필요”",
+      "summary": "법무법인 율촌 변호사는 바이오기업 IPO 준비 시 한국거래소의 중복상장 규제를 대응하기 위해 상장 최소 1년 전부터 지분구조를 점검하고, 모회사의 주주 보호 방안 마련 및 자회사 독립성 입증을 준비해야 한다고 강조했다. 규제는 계열사 포함 지분 요건과 상장 후 일정 기간 내 재상장을 제한하며, 주주 동의 확보가 핵심 쟁점이다.",
+      "source": "https://www.thebionews.net/news/articleView.html?idxno=30673",
+      "source_name": "더바이오",
+      "published_at": "2026-11-25T21:10:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "통합돌봄 환자 집으로 약사가 직접 방문…‘조제약 전달’ 허용 법안 발의",
+      "summary": "더불어민주당 남인순 의원이 통합돌봄 대상자 및 방문요양급여 대상자의 요청 시 약사가 환자 거주지나 복지시설을 방문해 약국에서 조제한 의약품을 직접 전달하고 복약지도 및 약물관리를 할 수 있도록 하는 약사법 개정안을 발의했다. 현행법상 약국 밖 의약품 소매가 금지된 점을 개선한 내용이다.",
+      "source": "https://www.newsthevoice.com/news/articleView.html?idxno=48199",
+      "source_name": "뉴스더보이스",
+      "published_at": "2026-11-25T21:04:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "돈 떨어진 바이오벤처, 기술도 매몰…투자·회수 막힌 생태계 어쩌나",
+      "summary": "국내 바이오벤처가 자금 부족으로 연구개발이 중단되고 기술이 매몰될 위기에 직면했다. 전문가들은 정책금융과 별도 지원 체계를 마련해 자금난에 빠진 벤처를 살리고, 기존 연구 성과를 활용하는 방안의 시급함을 강조했다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81099",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-25T21:04:00+00:00",
+      "tag": "기업·경영",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[숏폼] 대웅제약, 독성·내성 개선 겨냥한 표적항암제 1상 승인",
+      "summary": "대웅제약이 Hippo 신호전달 경로를 선택적으로 표적하는 표적항암제 후보물질 'DWP216262'의 국내 임상 1상 시험계획을 식약처로부터 승인받았다. 40~50명의 진행성 고형암 환자를 대상으로 안전성, 내약성, 약동학 및 항종양 활성을 탐색할 예정이며, 성공 시 글로벌 임상 확대와 병용요법 개발도 추진한다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81087",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-25T21:02:00+00:00",
+      "tag": "신약·임상",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 18,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
