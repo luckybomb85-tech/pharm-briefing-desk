@@ -1,67 +1,67 @@
-# 글로벌 제약바이오 브리핑 | 2026-11-26
+# 글로벌 제약바이오 브리핑 | 2026-11-27
 
 > 자동 발견·선별된 취재 후보입니다. 원문 및 핵심 사실은 기사 작성 전 확인해야 합니다.
 
-### 1. Applied Biologics Announces First Patient to Successfully Complete Treatment in BIOxHEAL™ Phase 3 Sentinel Safety Cohort - BioSpace
-- 매체: BioSpace | 중요도 점수: 7
-- 분류: CLINICAL, SAFETY
-- 발견 링크: https://news.google.com/rss/articles/CBMi8AFBVV95cUxNNVdwT1BmSHpYVnhKaVNuN3NhZ1Qtc0VXWHM5clNqRmpRMWRVU3g4OWthekhELXQ1dlNwdEx5MjUxN2V4cmh4WkpTaFl3ZmM1NzJuY0FMd2NpNC1lNkpMdjNoUGVIUExtWWZmM0V6UnlON0cwZGNzLWFBa0FzNFJtNGgzdXgzMV9oX2NaT29pNDV1Zkh2VFNCdUE3Q0JCRDRYWXRhNUtVT3ZMaXhxZktqV0pzRGpWekR2cXRlcktCSFVXMG1BUFc4aURJejVBWFVsR2tMSHExQUprNHl2OThLT2o5cGcyTmxUcWVuWm95ZFI?oc=5
+### 1. Richter and Adalvo Expand Strategic Partnership to Co-Develop Generic Oral Semaglutide - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 6
+- 분류: DEAL, IP
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE8zNmViSUJIdmRNOTlWR2dhRWxBRXhPVGlXQVRhY0lLMl9mUkpMTDBONFpZc1JkWFkwSVVLdXlGZnFWUXhsc3EwSG9HMnJtY2tCMlhN?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 2. U.S. FDA Approves First ANDA Generic Flovent HFA in 110 mcg and 220 mcg strengths for the Treatment of Asthma - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 7
-- 분류: REGULATORY, IP
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9FMUJKNmEwMDk2VWJTdGRMV0RqREE1S1RWd1FmS3ZFYUxlMFJoYUVEdlFaVHpWTXU1UnctcWs5Q1drNHNqa2Z2VnZpcHNxYTNuSFFr?oc=5
+### 2. Faron Announces First Patient Dosed in Phase 2b BEXERA Trial of Bexmarilimab in Treatment-Naïve HR-MDS - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
+- 분류: CLINICAL
+- 발견 링크: https://news.google.com/rss/articles/CBMi2gFBVV95cUxQS3d2azJGazcxcFYyaTA4YXk2VVk5Vml6ZjZGa25xNW1xaXozd0FMdkx4RHZkWmtILUtZUG1ibENkSzV5T1RBZm1qLTM0VVhoVEV3WldoMVZsRmRQdlB2ZFNlM21rTEZRSmhiTHhYVFgwMU9DMkZ5Q3hXMnRSX29rQldReEYta3U2cVVET0Z4VnBJNUtpNGhBdW5PLW5rRHU4c28zN01oZGRuQ3dScTZLM3FXeUFfbFpLNkdraGx6OWJQdDV1Y1oteVNCSnNyMzBGMnNZN1FKZlhhQQ?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 3. BMS sees mixed results for Sotyktu in pivotal systemic lupus erythematosus studies - FirstWord Pharma
+### 3. First patient dosed in Gabather's Phase II TOTEMS study of GT-002 - FirstWord Pharma
 - 매체: FirstWord Pharma | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HRDlWenlkYlpTYVFlWXdXeVNBOXBNUGdpbm9PZ1FIWUR2ODBoa3I4YnppU2VOdXp4NVZiNy11bnNkbGFBU1VMSlFvb2YyVUR3Um5v?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE00WVRPcGdJczVUSGI2UjRlRUIxTDJUUjR1aXBTUUpPNEcwenYtT1d0b2hkcHI5NHZ5Z1Fvd3hzQUlTOWJVTGhWNndjdkk0d0VPTUVB?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 4. Bioclinica: Clinical Trials & Imaging Guide - CASRAI
-- 매체: Global gap recovery | 중요도 점수: 4
+### 4. Matisse Pharmaceuticals announces first patient dosed in phase 2 sepsis trial (SHIELDS-1) - BioSpace
+- 매체: BioSpace | 중요도 점수: 4
 - 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiTEFVX3lxTFBvRHR3OHoyZEJRWnQwZjBaaUtIRV9XT2RuN0xxMjhqREJSZ1FVaDlIblJ5dmdIaTEtd1Vwa2VsbHlGOWUyRmJOMi02ekk?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMixgFBVV95cUxOVDdRSHA1eDAxdDRCc2w3TS05LVJLcTB2RHZuTXRZcXFWVVBJdmd0SEFrR19tRWp4T1RWWTdaY1gwbmxoblBJaVRDcDQ1LUdBUEMyYTEwcXZvSTFNaF9YOUpZdkNIOU9LdHBqQ2ZNblllTzNvVE1sc05BTzVqVDhsdHc3MUhvUWM4TUVGNHFSd1g2UzdxMGpuVzRYZ21lVk4zcWtrNUExUlNIdlV5bmhodkRlOW5PSzR4ZHB4ajhfemlsVWo3MlE?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 5. Bristol Myers Squibb Announces Results from Phase 3 POETYK SLE-1 and POETYK SLE-2 Trials Evaluating Sotyktu (deucravacitinib) in Systemic Lupus Erythematosus - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ETWQxTFctb1otT0kxeVV4TVBXUXVHa0F4ZjhMZVhLY3UtZU5XQlJqbTM4aHl0SDdkb3Vldl9CUmdKWHFBRE5kZVhoZngtRENfbkxV?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 6. Bristol’s Sotyktu Hits In One Of Two Pivotal Lupus Trials - insights.citeline.com
-- 매체: Scrip/Pink Sheet | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMi3AFBVV95cUxOWDltdEZQU0VCMndtMXhlUVJOUmlLM1lpZjNSMmtBdGNULU1Nbm1kT2xaZzh4TzNNVFJNZTlRWGx4bVhZQzEzVzUzYTN6MXFvbWlhNWJfSnU1a094SWREUWJmNURTYkRIYnI4OGhock5KSU1MVkxrc3NraUs4SWNfa1hjRjFNRFZEYllvVVM2MVZhNXhodGNYeE9nS29sdVMyRWZNLXZiQmF2bnlrVXk1elpid2xUaThzRkFNYkRIaTNfaWozWGxZRWRBNmJLRFEwT0gyRHZCMlNtN20y?oc=5
-- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
-
-### 7. Cogent Biosciences announces FDA approval and launch of Ekitna - The Pharma Letter
+### 5. Musk's Neuralink gets FDA approval for brain implant trial - MedWatch
 - 매체: Global gap recovery | 중요도 점수: 4
 - 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdC0tRkZRWlZZRV9iYUF4elNmem9wT21pNHFKUkg4U2FjM0phZ3V0NVhCWGtKazRubzgtcTZPUkdvUXZLVC1HVEJDV2w0ZTdtaGtRblBaaXhyX21nMnFvdWRETXJfUGd5LU5lc2wwRjZ5UUEzdG5oTzBMa2VhLThKXzFTd2QtWHJRdTk3Q04zMGhmdi1heWVQVVBCSFZuVVdqY2ZMRDZ5cmlnZkE?oc=5
+- 발견 링크: https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ya0VZTUloV3V2bEFqR1hLVkZybDNHYU4xSFF2Qm1PaWpQZndNQktiQkJiODJyS3Y5RGx2Mk81T1l4eGdwXzlBVnhoNHREak1kdVFjakotcVBfVTNoTWdRNldyUQ?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 8. Cogent Biosciences gains FDA approval for Ekitna combo in GIST - Pharmaceutical Technology
-- 매체: Pharmaceutical Technology | 중요도 점수: 4
-- 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMikgFBVV95cUxPenptQVp1YU5iZllSaW4yNktzZU4xWmx2Y1dhMHZhWkRBTXRvaV9rUEJsYzdTOTBOVlFPWFVrMDJzbHl5SmNvV3ZqTFVFakROTUJuQ2h6bW9WWFV6VzdsZUxWQnR5YmZ2ODdwUzlKX01sREh3UmF2dk4tVFpwRlVIMkt5WnVrWXN6d2NJcnEyN1F2Zw?oc=5
+### 6. CPHI 2026: What Will It Take To Accelerate India’s Push Beyond Generics? - insights.citeline.com
+- 매체: Scrip/Pink Sheet | 중요도 점수: 3
+- 분류: IP
+- 발견 링크: https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQTQ2bnBzenFObkdtZFJyanF2akRySlFIQzZ2UkZSTndTaEJrUDZOT25VX1RmTVdHM19BTlFsa2RwRlhKdmFfbDdscHB4U2ZXeXVRVElLbl9Tek1Fam1sSXFSdDlfQzMwSU9GQ1hCYzFWM1A4cWh4ZTRZSFNCNWYtekszeUs5eVl4bEsyUzE1b1VKVnFSVF9zLUJsZG9fTmk2N0l2aEpHb05neGE5Z2hzZ2d0cEZrQkFvanUyTExSYkxQRmNaZXJiYWVaX0VrVGNTOExyRlRMZ3F6aFVUUnFUS0V2WDloeEdp?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 9. Desentum announces successful outcome of Phase 2 trial with its short-course birch pollen allergen immunotherapy demonstrating persistent clinical symptom reduction - FirstWord Pharma
-- 매체: FirstWord Pharma | 중요도 점수: 4
-- 분류: CLINICAL
-- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE94ZGdaR0JYWWhELWo5U041VTQ2Zy15YWFGMGtwa3YxS3dVZ2lMaVdBUnluVXF6a2R2WmFTUUVTWU1PSWJua3V6RzRuWm1PMi1wUzBN?oc=5
+### 7. Class 1 Device Recall Arrow - U.S. Food and Drug Administration (.gov)
+- 매체: FDA Press Releases | 중요도 점수: 3
+- 분류: SAFETY
+- 발견 링크: https://news.google.com/rss/articles/CBMif0FVX3lxTE95YXVuUWJGUXVFZFdqYnFJVXVmWVRfaUlZNllPTE03M2E3YTZNMWVNSDFpVDM5dTg5RXZfaVZJMEt5OXhNMVptWEF2cWZGdjRvYWRTejRmVncwdTFOTkpMdFlrUGMyZ1czRU1xRWpyTVhGaVlzVU5PdDVfY2tpUzg?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-### 10. FDA approves Cogent’s drug for rare stomach cancer - STAT
-- 매체: STAT | 중요도 점수: 4
-- 분류: REGULATORY
-- 발견 링크: https://news.google.com/rss/articles/CBMioAFBVV95cUxNYXFpSXJ3UmpPU05pdlRWMDdfbmhmTlJhYkRtajZFeVdEMFp4NXFyNm1hdXl1cktnUG1kQklZV25LOUtlMG5iVk9ubzlBWC1NSlYwX0M0UXRpbEloQ0pVbmNRSjRoa0Nvd3NMd0NuRGNGbGtJWTFpQkEtZzhROVA0WnhVY3BmUmMwSTlNd3lOZUIxVWNiSzdFSEFTRlJzS2xD?oc=5
+### 8. FDA's Response to Peer Review Comments on the Safety Assessment for Ingested N-Acetylcysteine (NAC) Exposure: A Systematic R - U.S. Food and Drug Administration (.gov)
+- 매체: FDA Drugs | 중요도 점수: 3
+- 분류: SAFETY
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE10Rk5YM2RNUlk3dUtxWWwtRkhuSEpFdUlJb2thNGlvb2dnNThLcjd1LXdfQk02NE1TdHZJc0lHLVkwN3lTWWY3T3I1Ujc4OGlucVlR?oc=5
 - 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
 
-선별 대상 286건 중 중요도 기준 통과 42건. 상위 10건 표시.
+### 9. PMEC 2026: India ‘Missed The Bus’ On Biologics, Panelists Say, As China Out-Licenses To US Firms - insights.citeline.com
+- 매체: Scrip/Pink Sheet | 중요도 점수: 3
+- 분류: DEAL
+- 발견 링크: https://news.google.com/rss/articles/CBMihgJBVV95cUxPMjcxazYwSVBycFJOcVBlWDk5NHpoenhlOVUtdDg0ZEdMd0xCd3VEdTliSVJBc1c5QXhKSkVaRXFvTUQzM21MS1IwbjBCYWc0LUhjcVh1RVE0blotQ0VQM2l0eUh0SDQ4cFpiUTlOdUI3REk1NWpTdUwxVmZkdWhpaDRpeXhoTWQweFQ1OHZsaXRuQUZ3SU90Snp6emJDbjczZHg1WFQzZmEzTXd5cW9WbFhFQmJaS2o2Z0p4NS0wZnJuNVdOc1Rhb3oyTkpfdzNYQThENk05bmltMllEZVI1SDhvdVRWY0tseVNEWUl3Yk9YcmczMjZ4WEZMM2xyNDR3MWtzWmxR?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+### 10. Sanofi's Insmed Acquisition Provides Growth Visibility Beyond Dupixent, RBC Says - FirstWord Pharma
+- 매체: FirstWord Pharma | 중요도 점수: 3
+- 분류: DEAL
+- 발견 링크: https://news.google.com/rss/articles/CBMiU0FVX3lxTE10RGNocEpsMzBlTm9INHdEVE9GS05qWEhKcTFhVkxUUzltT0M4eGlQOXMzY1pQZktvYUo4b1ZtR0hJSFNiRFB6X1phX01LNUVlWmVZ?oc=5
+- 확인 수준: 검색 색인 후보 (원문 사실관계 미검증)
+
+선별 대상 198건 중 중요도 기준 통과 15건. 상위 10건 표시.
 
 자동 기사 발행 없음. 원문 검증 실패는 브리핑 후보 제외 사유가 아닙니다.
