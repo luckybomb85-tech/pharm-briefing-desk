@@ -1,0 +1,97 @@
+{
+  "schema_version": "briefing-editorial-v1",
+  "date": "2026-11-28",
+  "timezone": "Asia/Seoul",
+  "status": "editorial-selected",
+  "generated_by": "daily-editorial-snapshot-v3",
+  "editorial_scope": "중요 기사만 선별한 자동 브리핑. 주말도 최소 건수 없음",
+  "test_run": false,
+  "domestic": [
+    {
+      "title": "올테면 오라? HK이노엔, 케이캡 헬리코박터 제균 특허 벽 쌓아",
+      "summary": "HK이노엔이 위식도역류질환 치료제 케이캡의 헬리코박터 제균요법 특허를 7년 만에 등록하는 데 성공했다. 해당 특허는 2039년까지 유효하며, 기존 표준 제균 처방과 동일한 용법으로 국내 다수 제네릭사의 시장 진입에 영향을 미칠 수 있다. 이는 기존 물질특허가 끝난 이후 제네릭사의 제균 적응증 활용을 제한하는 전략으로 평가된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81178",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-27T21:05:00+00:00",
+      "tag": "특허·소송",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "비만약 시장 흔드는 급여 변수… 제약사별 셈법은 달랐다",
+      "summary": "노보 노디스크가 비만치료제 위고비의 건강보험 급여 신청을 제출하면서 국내 비만약 시장의 경쟁 구도가 변하고 있다. 일라이 릴리의 마운자로는 임상에서 입증된 높은 체중감량 효과로 비급여 시장에서 빠르게 성장한 반면, 한미약품 에페는 가격 경쟁력을 무기로 후발주자로 진입했다. 급여화 추진이 가격과 매출 균형에 미칠 영향이 제약사별로 엇갈리는 등 셈법이 복잡하다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81187",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-27T21:04:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "약가개편에 현금 챙기는 제약사…바이오는 투자 한파에 신음",
+      "summary": "국내 상장 제약사 73곳 중 절반 이상이 올해 3분기 현금흐름이 영업이익을 상회하며 재고관리와 매출채권 회수에 집중하고 있다. 반면 바이오업계는 IPO 시장 침체와 투자 감소로 자금 조달에 난항을 겪고 있어 R&D 자산 유실 우려가 대두된다. 신규 상장 예정 기업들도 수요예측 부진 등 자본시장 불확실성에 부담을 느끼고 있다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81179",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-27T21:02:00+00:00",
+      "tag": "약가·급여",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "대원제약, 독감 유행에 실적 반등 기대…신약 개발 성과도 주목[인베스트 바이오] - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 대원제약이 독감 유행으로 실적 반등을 기대하고 있으며, 신약 개발에서 나타난 성과에도 관심이 모이고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9BbVpfbWdRUVZfbThzUWlwTjVXcE93UEZrWFkwX1RKbW5oX3NDTjR1ZEdacEYtVkRXRHl1XzJvSGJuSEpiYmtBQkpQaU9OTUVFYzFGbjcxZUwzOUNiSW1BcFBsVHJoZ05lWkFTTl9R?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-27T21:00:05+00:00",
+      "tag": "기업·경영",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "\"기술수출로는 못 크고, 독자 개발 버겁고\"... 성장판 닫힌 K-바이오",
+      "summary": "제10회 미래의학국제포럼에서 한국 바이오산업이 기술수출에 의존하는 현 상황에서 벗어나 자체 신약 개발과 글로벌 상업화까지 이어가는 협력 모델 구축이 필요하다고 강조됐다. 일본은 공동개발과 전략제휴로 글로벌 제약사로 성장했고 중국은 뉴코(NewCo) 모델과 대규모 자본을 활용해 성과를 냈다. 한국은 자본과 환경에 맞는 맞춤형 성장 사다리가 요구된다.",
+      "source": "https://www.hitnews.co.kr/news/articleView.html?idxno=81181",
+      "source_name": "히트뉴스",
+      "published_at": "2026-11-27T21:06:00+00:00",
+      "tag": "기술수출·계약",
+      "verification_status": "verified",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "[바이오브리핑] 한국파스퇴르연구소, 약물 간독성 평가기술 이전 - 시사저널e",
+      "summary": "(제목 기준·원문 미검증) 한국파스퇴르연구소가 약물 간독성 평가기술을 이전하며 제약바이오 분야 기술 경쟁력을 강화하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMickFVX3lxTE1XLWxpSEFLeXZMVUVjRXRoVmtJUmhsMVVCME1abGtGZGRaN1h0ZkRLTHFDa0lPZ1FPWmwzNDBCWTJHcE5GYVcxLUF0eVZ6cjV6dWtpS2F2ZXBITnJFRzlWTllEM0U1SzBmTHlDMU1nMnY3d9IBdkFVX3lxTE54OXN1QV9hNW9PWF9wU0tudVFpNEVWb21YX295UHVybmNQVXFRc0NYUVhVdDdQQVBudjRXQjRQOTl2ZUQ3MHJzU1R0eFJnMkpyUHpjR0ZIbGtWSlVrYk5NTmc5cFZESV9NYmF6bWxQblBQd2VFVXc?oc=5",
+      "source_name": "시사저널e",
+      "published_at": "2026-11-27T22:00:00+00:00",
+      "tag": "의약품·시장",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    },
+    {
+      "title": "‘먹는 치매약’ 3상 결과 받아든 정재준 아리바이오 대표, 코스피 직행 추진[화제의 바이오人] - 팜이데일리",
+      "summary": "(제목 기준·원문 미검증) 아리바이오가 먹는 치매약 임상 3상 결과를 확보함에 따라 정재준 대표가 코스피 상장을 추진하고 있다.",
+      "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE91M25OZ3dYc2YxQUM2N09pV3lubS02ZGtUMlI1eXRwQXl5alppczJTSG1JTUpQTVFEWEFTa0x2S2o1S25peDNFNFJMcWtyS2xCOHR6UEFMaWJzU2haWHRKcUVQS1NJTDh2T1AxU21R?oc=5",
+      "source_name": "팜이데일리",
+      "published_at": "2026-11-27T21:00:07+00:00",
+      "tag": "신약·임상",
+      "verification_status": "candidate",
+      "selection_status": "selected",
+      "original_title": null
+    }
+  ],
+  "global": [],
+  "patent": [],
+  "telegram": false,
+  "publish_allowed": false,
+  "selected_count": {
+    "domestic": 7,
+    "global": 0
+  },
+  "note": "원문 확인이 완료되지 않은 기사는 별도 표시. 이 파일은 공개 데스크 보존용이며 텔레그램 자동발송을 의미하지 않는다."
+}
